@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rootLayout"
+    tools:context=".PinActivity">
+
+    <com.scwang.wave.MultiWaveHeader
+        android:id="@+id/waveHeader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/pinLayout"
+        android:scaleY="1"
+        app:mwhVelocity="1"
+        app:mwhProgress="1"
+        app:mwhGradientAngle="45"
+        app:mwhWaveHeight="30dp"
+        app:mwhColorAlpha="0.90"
+        app:mwhStartColor="@color/colorGradientStart"
+        app:mwhCloseColor="@color/colorGradientEnd"
+        app:mwhWaves="PairWave"/>
+
+    <LinearLayout
+        android:id="@+id/oliverBankLayout"
+        android:layout_alignParentTop="true"
+        android:padding="4dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_margin="10dp"
+            android:src="@drawable/oliver_app_iconv2"
+            android:layout_width="70dp"
+            android:layout_height="70dp" />
+
+        <TextView
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="30sp"
+            android:textColor="@android:color/white"
+            android:text="Oliver "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtMessage"
+        android:layout_marginTop="5dp"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_below="@id/oliverBankLayout"
+        android:text="Hola!"
+        android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/pinLayout"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edtPin"
+            android:drawableStart="@drawable/pin_icon"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginTop="40dp"
+            android:padding="10dp"
+            android:background="@drawable/edit_text_style"
+            android:maxLength="4"
+            android:inputType="numberPassword"
+            android:hint="PIN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnConfirmPin"
+            android:background="@drawable/red_button_style"
+            android:textColor="@android:color/white"
+            android:text="CONFIRMAR"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/txtCurrentVersion"
+        android:layout_margin="2dp"
+        android:gravity="end"
+        android:layout_alignParentBottom="true"
+        android:textColor="@android:color/black"
+        android:text="v: 1.0.30"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+</RelativeLayout>

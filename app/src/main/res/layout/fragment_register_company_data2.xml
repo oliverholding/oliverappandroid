@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Companies.RegisterCompanyData2Fragment">
+
+    <RelativeLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:layout_above="@id/btnContinue"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_margin="8dp"
+                    app:cardElevation="8dp"
+                    app:cardCornerRadius="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:src="@drawable/identity_card"
+                            android:layout_margin="8dp"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"/>
+
+                        <TextView
+                            android:layout_margin="8dp"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black"
+                            android:text="Nombre Comercial"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <EditText
+                            android:id="@+id/edtCommercialName"
+                            android:inputType="textCapWords"
+                            android:padding="8dp"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:hint="Nombre Comercial..."
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+
+                        <TextView
+                            android:layout_margin="8dp"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black"
+                            android:text="R.U.C."
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <EditText
+                            android:id="@+id/edtDocumentNumber"
+                            android:inputType="number"
+                            android:padding="8dp"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:hint="R.U.C..."
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:layout_margin="8dp"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black"
+                            android:text="Fecha de Inscripción (SUNAT)"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <Button
+                                android:drawableStart="@drawable/calendar_icon"
+                                android:id="@+id/edtBthDay"
+                                android:inputType="number"
+                                android:padding="8dp"
+                                android:maxLength="2"
+                                android:layout_margin="8dp"
+                                android:background="@drawable/edit_text_style"
+                                android:hint="Día"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content" />
+
+                            <Button
+                                android:drawableStart="@drawable/calendar_icon"
+                                android:id="@+id/edtBthMonth"
+                                android:inputType="number"
+                                android:padding="8dp"
+                                android:maxLength="2"
+                                android:layout_margin="8dp"
+                                android:background="@drawable/edit_text_style"
+                                android:hint="Mes"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content" />
+
+                            <Button
+                                android:drawableStart="@drawable/calendar_icon"
+                                android:id="@+id/edtBthYear"
+                                android:inputType="number"
+                                android:padding="8dp"
+                                android:maxLength="4"
+                                android:layout_margin="8dp"
+                                android:background="@drawable/edit_text_style"
+                                android:hint="Año"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_margin="8dp"
+                    app:cardElevation="8dp"
+                    app:cardCornerRadius="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:src="@drawable/maps_icon"
+                            android:layout_margin="8dp"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"/>
+
+                        <TextView
+                            android:layout_margin="8dp"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black"
+                            android:text="Departamento o Región del Negocio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <Button
+                            android:id="@+id/btnDepartment"
+                            android:padding="8dp"
+                            android:gravity="start|center_vertical"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:hint="Departamento o Región..."
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:layout_margin="8dp"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black"
+                            android:text="Provincia del Negocio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <Button
+                            android:id="@+id/btnProvince"
+                            android:padding="8dp"
+                            android:gravity="start|center_vertical"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:hint="Provincia..."
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:layout_margin="8dp"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black"
+                            android:text="Distrito del Negocio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <Button
+                            android:id="@+id/btnDistrict"
+                            android:padding="8dp"
+                            android:gravity="start|center_vertical"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:hint="Distrito..."
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+        <Button
+            android:id="@+id/btnContinue"
+            android:layout_alignParentBottom="true"
+            android:text="CONTINUAR"
+            android:textColor="@android:color/white"
+            android:background="@drawable/rectabgle_red_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#103256</color>
+    <color name="colorPrimaryDark">#001d19</color>
+    <color name="colorAccent">#103256</color>
+
+    <color name="colorGradientStart">#E60000DD</color>
+    <color name="colorGradientCenter">#E60000DD</color>
+    <color name="colorGradientEnd">#E60505B5</color>
+
+    <color name="colorGradientStartRed">#F08B8B8C</color>
+    <color name="colorGradientCenterRed">#F08B8B8C</color>
+    <color name="colorGradientEndRed">#F0666667</color>
+
+    <color name="pinBackgroundDialog">#A3721B18</color>
+
+</resources>

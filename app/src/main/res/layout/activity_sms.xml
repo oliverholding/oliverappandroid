@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rootLayout"
+    tools:context=".SmsActivity">
+
+    <com.scwang.wave.MultiWaveHeader
+        android:id="@+id/waveHeader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/phoneNumberLayout"
+        android:scaleY="1"
+        app:mwhVelocity="1"
+        app:mwhProgress="1"
+        app:mwhGradientAngle="45"
+        app:mwhWaveHeight="30dp"
+        app:mwhColorAlpha="0.90"
+        app:mwhStartColor="@color/colorGradientStart"
+        app:mwhCloseColor="@color/colorGradientEnd"
+        app:mwhWaves="PairWave"/>
+
+    <LinearLayout
+        android:id="@+id/titleLayout"
+        android:gravity="center"
+        android:layout_margin="22dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgIcon"
+            android:layout_margin="8dp"
+            android:src="@drawable/oliver_app_iconv2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"/>
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:textSize="32sp"
+            android:text="Oliver"
+            android:textColor="@android:color/white"
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imgPhoneAuthIcon"
+        android:layout_below="@id/titleLayout"
+        android:layout_margin="22dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/sms_message_icon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"/>
+
+    <TextView
+        android:textSize="18sp"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="48dp"
+        android:text="Ingresa el código de verificación SMS"
+        android:id="@+id/txtUserIndication"
+        android:layout_below="@id/imgPhoneAuthIcon"
+        android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/phoneNumberLayout"
+        android:layout_below="@+id/txtUserIndication"
+        android:gravity="center"
+        android:layout_margin="22dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edtSmsCode"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:inputType="number"
+            android:hint="_ _ _ _ _ _"
+            android:maxLength="6"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:background="@drawable/edit_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnVerify"
+        android:text="VERIFICAR"
+        android:textColor="@android:color/white"
+        android:background="@drawable/red_button_style"
+        android:layout_margin="22dp"
+        android:layout_below="@+id/phoneNumberLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ProgressBar
+        android:visibility="invisible"
+        android:id="@+id/progressbar"
+        android:layout_centerInParent="true"
+        android:layout_margin="8dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"/>
+
+</RelativeLayout>

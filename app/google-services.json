@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "677856304103",
+    "firebase_url": "https://oliver-holding.firebaseio.com",
+    "project_id": "oliver-holding",
+    "storage_bucket": "oliver-holding.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:677856304103:android:e0f55b1dd8859b1ffabb42",
+        "android_client_info": {
+          "package_name": "com.oalonedeveloper.oliver.oliverappandroidapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "677856304103-smbdf3vet6kl0ljl4ae267juc1vs9fr2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.oalonedeveloper.oliver.oliverappandroidapp",
+            "certificate_hash": "1c5d1fd08812d0dfd619db26314f51733b23a6ba"
+          }
+        },
+        {
+          "client_id": "677856304103-dl2o2psd4099lk62cetuu7jfdv5m6687.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaaAz3-jx7E3rI9BLO1WX4kA-UDc9QVmI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "677856304103-dl2o2psd4099lk62cetuu7jfdv5m6687.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "677856304103-eue71ll5moo7iem5qrq3hucqqek39rv9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.oliver.oliver.com.pe"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
