@@ -14,4 +14,7 @@
 
     <color name="pinBackgroundDialog">#A3721B18</color>
 
+    <color name="greenColor">#4CAF50</color>
+    <color name="redColor">#9B300E</color>
+
 </resources>

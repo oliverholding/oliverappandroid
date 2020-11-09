@@ -20,6 +20,8 @@
             android:layout_height="wrap_content">
 
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgCompanyProfile"
+                android:src="@color/colorGradientEnd"
                 android:layout_margin="8dp"
                 android:layout_width="80dp"
                 android:layout_height="80dp"/>
@@ -31,6 +33,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:id="@+id/txtCompanyName"
                     android:textSize="18sp"
                     android:layout_margin="4dp"
                     android:textStyle="bold"
@@ -40,6 +43,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
+                    android:id="@+id/txtCompanyRuc"
                     android:layout_margin="4dp"
                     android:textSize="14sp"
                     android:text="RUC: 000000"
@@ -53,6 +57,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
+                        android:id="@+id/txtCompanyVerification"
                         android:layout_margin="4dp"
                         android:textSize="14sp"
                         android:text="Verificación: En Proceso"
@@ -60,6 +65,7 @@
                         android:layout_height="wrap_content"/>
 
                     <ImageView
+                        android:id="@+id/imgCompanyVerification"
                         android:layout_margin="4dp"
                         android:src="@color/colorGradientEnd"
                         android:layout_width="25dp"
@@ -73,6 +79,7 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/btnCompanyManage"
             android:text="GESTIONAR"
             android:textColor="@android:color/white"
             android:layout_margin="8dp"

@@ -20,7 +20,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_below="@id/toolbar"
         android:layout_above="@id/btnAddCompany"
-        android:layout_margin="4dp"
+        android:layout_margin="8dp"
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
