@@ -16,12 +16,14 @@
         android:layout_height="wrap_content">
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgCompanyProfile"
             android:src="@color/colorGradientEnd"
             android:layout_margin="8dp"
             android:layout_width="100dp"
             android:layout_height="100dp"/>
 
         <TextView
+            android:id="@+id/txtCompanyName"
             android:layout_margin="8dp"
             android:textStyle="bold"
             android:text="COMPANY_NAME"
@@ -65,6 +67,7 @@
                         android:layout_height="wrap_content"/>
 
                     <TextView
+                        android:id="@+id/txtCurrentMonth"
                         android:textStyle="bold"
                         android:textColor="@android:color/black"
                         android:gravity="center"
@@ -189,7 +192,7 @@
                             android:textSize="14sp"
                             android:layout_margin="4dp"
                             android:textColor="@android:color/black"
-                            android:text="index_one"
+                            android:text="Capital de Trabajo"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
@@ -231,7 +234,7 @@
                             android:textSize="14sp"
                             android:layout_margin="4dp"
                             android:textColor="@android:color/black"
-                            android:text="index_two"
+                            android:text="Rotación de Inventario"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
@@ -273,7 +276,7 @@
                             android:textSize="14sp"
                             android:layout_margin="4dp"
                             android:textColor="@android:color/black"
-                            android:text="index_three"
+                            android:text="Rentabilidad sobre las Ventas"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>

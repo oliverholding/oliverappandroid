@@ -128,7 +128,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:src="@drawable/operations_icon"
+                    android:src="@drawable/operations_wihte_icon"
                     android:layout_width="30dp"
                     android:layout_height="30dp"/>
 
