@@ -19,7 +19,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CareManager.CareManagerActivity"></activity>
+        <activity android:name=".CareManager.IntructionModule.IntroductionModuleActivity"></activity>
+        <activity android:name=".CareManager.CareManagerActivity" />
         <activity android:name=".Companies.OliverAppForBusinessActivity" />
         <activity android:name=".Companies.AddCompanyActivity" />
         <activity android:name=".Companies.MyCompaniesActivity" />

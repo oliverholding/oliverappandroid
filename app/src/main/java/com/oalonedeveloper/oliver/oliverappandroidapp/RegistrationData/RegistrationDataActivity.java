@@ -110,12 +110,5 @@ public class RegistrationDataActivity extends AppCompatActivity {
                 Toast.makeText(this, "AL RECHAZAR LOS PERMISOS ALGUNAS FUNCIONES NO ESTARÁN DISPONIBLES", Toast.LENGTH_LONG).show();
             }
         }
-        if (requestCode == MY_STORAGE_REQUEST_CODE) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                //Toast.makeText(this, "camera permission granted", Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText(this, "AL RECHAZAR LOS PERMISOS ALGUNAS FUNCIONES NO ESTARÁN DISPONIBLES", Toast.LENGTH_LONG).show();
-            }
-        }
     }
 }

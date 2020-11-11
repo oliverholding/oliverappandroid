@@ -91,7 +91,7 @@
 
                             <ImageView
                                 android:layout_margin="8dp"
-                                android:src="@color/colorGradientEnd"
+                                android:src="@drawable/incomes_icon"
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"/>
 
@@ -123,7 +123,7 @@
 
                             <ImageView
                                 android:layout_margin="8dp"
-                                android:src="@color/colorGradientEnd"
+                                android:src="@drawable/outcomes_icon"
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"/>
 
@@ -182,7 +182,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@color/colorGradientEnd"
+                            android:src="@drawable/working_capital_icon"
                             android:layout_margin="4dp"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
@@ -224,7 +224,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@color/colorGradientEnd"
+                            android:src="@drawable/invetary_rotation_icon"
                             android:layout_margin="4dp"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
@@ -266,7 +266,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@color/colorGradientEnd"
+                            android:src="@drawable/profit_icon"
                             android:layout_margin="4dp"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"

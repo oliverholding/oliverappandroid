@@ -1,4 +1,4 @@
-package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager;
+package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -10,16 +10,12 @@ import android.os.Bundle;
 
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.CareManagerActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.CareManagerSumaryFragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.CareToolsFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
-import com.oalonedeveloper.oliver.oliverappandroidapp.RegistrationData.DataSumaryFragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.RegistrationData.RegisterData1Fragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.RegistrationData.RegisterData2Fragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.RegistrationData.RegisterData3Fragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.RegistrationData.RegisterData4Fragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.RegistrationData.RegisterData5Fragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.RegistrationData.RegistrationDataActivity;
 
-public class CareManagerActivity extends AppCompatActivity {
+public class IntroductionModuleActivity extends AppCompatActivity {
 
     ViewPager mViewPager;
     SectionsPagerAdapter mSectionsPagerAdapter;
@@ -28,7 +24,7 @@ public class CareManagerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_care_manager);
+        setContentView(R.layout.activity_introduction_module);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         TabItem tabItem = findViewById(R.id.tabItem);
@@ -62,9 +58,9 @@ public class CareManagerActivity extends AppCompatActivity {
             // Return a PlaceholderFragment (defined as a static inner class below).
             switch (position) {
                 case 0:
-                    return new CareManagerSumaryFragment();
+                    return new Video1Fragment();
                 case 1:
-                        return new CareToolsFragment();
+                    return new CareToolsFragment();
 
                 default:
                     return null;
