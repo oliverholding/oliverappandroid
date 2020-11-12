@@ -15,12 +15,11 @@
         android:scaleY="1"
         app:mwhVelocity="1"
         app:mwhProgress="1"
-        app:mwhGradientAngle="45"
-        app:mwhWaveHeight="30dp"
-        app:mwhColorAlpha="0.90"
+        app:mwhGradientAngle="180"
+        app:mwhWaveHeight="0dp"
+        app:mwhColorAlpha="1"
         app:mwhStartColor="@color/colorGradientStart"
-        app:mwhCloseColor="@color/colorGradientEnd"
-        app:mwhWaves="PairWave"/>
+        app:mwhCloseColor="@color/colorGradientEnd" />
 
     <LinearLayout
         android:id="@+id/oliverBankLayout"

@@ -60,7 +60,18 @@ public class IntroductionModuleActivity extends AppCompatActivity {
                 case 0:
                     return new Video1Fragment();
                 case 1:
-                    return new CareToolsFragment();
+                    return new Video2Fragment();
+                case 2:
+                    return new Video3Fragment();
+                case 3:
+                    return new Video4Fragment();
+                case 4:
+                    return new Video5Fragment();
+                case 5:
+                    return new Video6Fragment();
+                case 6:
+                    return new Video6Fragment();
+
 
                 default:
                     return null;

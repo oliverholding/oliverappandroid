@@ -13,7 +13,7 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:background="@color/colorGradientEnd"
+            android:background="@drawable/gradient_start"
             android:gravity="center"
             android:padding="12dp"
             android:orientation="horizontal"
@@ -52,7 +52,7 @@
     <com.google.android.material.tabs.TabLayout
         android:layout_below="@+id/appBar"
         android:id="@+id/tabLayout"
-        android:background="@color/colorGradientEnd"
+        android:background="@drawable/gradient_start"
         app:tabTextColor="@android:color/white"
         android:gravity="center"
         android:orientation="horizontal"

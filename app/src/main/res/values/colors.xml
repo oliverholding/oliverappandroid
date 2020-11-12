@@ -6,7 +6,7 @@
 
     <color name="colorGradientStart">#E60000DD</color>
     <color name="colorGradientCenter">#E60000DD</color>
-    <color name="colorGradientEnd">#E60505B5</color>
+    <color name="colorGradientEnd">#0097f0</color>
 
     <color name="colorGradientStartRed">#F08B8B8C</color>
     <color name="colorGradientCenterRed">#F08B8B8C</color>

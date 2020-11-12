@@ -15,8 +15,8 @@
         android:scaleY="1"
         app:mwhVelocity="1"
         app:mwhProgress="1"
-        app:mwhGradientAngle="45"
-        app:mwhWaveHeight="30dp"
+        app:mwhGradientAngle="180"
+        app:mwhWaveHeight="0dp"
         app:mwhColorAlpha="0.90"
         app:mwhStartColor="@color/colorGradientStart"
         app:mwhCloseColor="@color/colorGradientEnd"
@@ -25,7 +25,7 @@
     <LinearLayout
         android:id="@+id/titleLayout"
         android:gravity="center"
-        android:layout_margin="22dp"
+        android:layout_margin="32dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
