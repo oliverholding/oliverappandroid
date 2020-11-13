@@ -222,7 +222,7 @@ public class RegisterCompanyData2Fragment extends Fragment {
             }
         });
 
-        bthYear.add("2019");bthYear.add("2018");bthYear.add("2017");bthYear.add("2016");bthYear.add("2015");bthYear.add("2014");bthYear.add("2013");bthYear.add("2012");bthYear.add("2011");bthYear.add("2010");
+        bthYear.add("2020");bthYear.add("2019");bthYear.add("2018");bthYear.add("2017");bthYear.add("2016");bthYear.add("2015");bthYear.add("2014");bthYear.add("2013");bthYear.add("2012");bthYear.add("2011");bthYear.add("2010");
         bthYear.add("2009");bthYear.add("2008");bthYear.add("2007");bthYear.add("2006");bthYear.add("2005");bthYear.add("2004");bthYear.add("2003");bthYear.add("2002");bthYear.add("2001");bthYear.add("2000");
         bthYear.add("1999");bthYear.add("1998");bthYear.add("1997");bthYear.add("1996");bthYear.add("1995");bthYear.add("1994");bthYear.add("1993");bthYear.add("1992");bthYear.add("1991");bthYear.add("1990");
         bthYear.add("1989");bthYear.add("1988");bthYear.add("1987");bthYear.add("1986");bthYear.add("1985");bthYear.add("1984");bthYear.add("1983");bthYear.add("1982");bthYear.add("1981");bthYear.add("1980");
@@ -378,7 +378,7 @@ public class RegisterCompanyData2Fragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                searchDistricts();
+                searchEconomicActivities();
             }
 
             @Override
@@ -392,6 +392,27 @@ public class RegisterCompanyData2Fragment extends Fragment {
 
         departmentDialog.setView(finance_method);
         departmentDialog.show();
+    }
+
+    private void searchEconomicActivities() {
+        Query query = economic_activities.orderByChild("name").startAt(edtSearch.getText().toString().toUpperCase()).endAt(edtSearch.getText().toString().toUpperCase()+"\uf8ff");
+        FirebaseRecyclerAdapter<EconomicActivitiesModel, EconomicActivitiesViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<EconomicActivitiesModel, EconomicActivitiesViewHolder>
+                (EconomicActivitiesModel.class, R.layout.location_item, EconomicActivitiesViewHolder.class, query) {
+            @Override
+            protected void populateViewHolder(final EconomicActivitiesViewHolder viewHolder, EconomicActivitiesModel model, final int position) {
+                viewHolder.setName(model.getName());
+
+                viewHolder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        btnEconomicActivities.setText(viewHolder.act_name);
+                        userRef.child("economic_activity").setValue(viewHolder.act_name);
+                        departmentDialog.dismiss();
+                    }
+                });
+            }
+        };
+        recyclerView.setAdapter(firebaseRecyclerAdapter);
     }
 
     private void showEconomicActivities() {

@@ -36,7 +36,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@drawable/suitcase_color_icon"
+                            android:src="@drawable/suitcase_icon"
                             android:layout_margin="8dp"
                             android:layout_width="60dp"
                             android:layout_height="60dp"/>

@@ -68,9 +68,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/tabItem4"
+                android:icon="@drawable/number_four"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabItem5"
                 android:icon="@drawable/transaction_completed_white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />

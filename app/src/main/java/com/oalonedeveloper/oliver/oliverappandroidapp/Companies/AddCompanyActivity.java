@@ -88,6 +88,8 @@ public class AddCompanyActivity extends AppCompatActivity {
                 case 2:
                     return new RegisterCompanyData3Fragment();
                 case 3:
+                    return new RegisterCompanyData4Fragment();
+                case 4:
                     return new CompanyDataSumaryFragment();
                 default:
                     return null;

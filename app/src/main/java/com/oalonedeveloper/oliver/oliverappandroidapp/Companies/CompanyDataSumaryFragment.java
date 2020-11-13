@@ -76,11 +76,11 @@ public class CompanyDataSumaryFragment extends Fragment {
     DatabaseReference userRef,ratesRef, myCompaniesRef;
     String currentUserID;
     ProgressDialog loadingBar;
-    ImageView imgOne,imgTwo,imgThree;
+    ImageView imgOne,imgTwo,imgThree,imgFour;
     String profile_image_verification,sunat_api,document_number,name,surname, database_name,json_name, personal_data_verification,contact_data_verification,additional_data_verification,access_data_verification,
             docs_verification,dni_exist,saveCurrentDate,saveCurrentTime,company_bth_day,company_bth_month,company_bth_year,company_profileimage, department,province,district,ruc_file;
-    TextView txtProfileImage,txtPersonalData,txtContactData,txtAditionalData,txtAccessData,txtTermsAndConditions;
-    String olbk_phone_number,username_exist,username,postRandomName,phoneNumber,email,document_state, razon_social,fecha_inscripcion,contribuyente_tipo,contribuyente_estado,register_date,domicilio_fiscal;
+    TextView txtProfileImage,txtPersonalData,txtContactData,txtAditionalData,txtAccessData,txtTermsAndConditions,txtAdditionalData;
+    String olbk_phone_number,username_exist,username,postRandomName,phoneNumber,email,document_state, razon_social,fecha_inscripcion,contribuyente_tipo,contribuyente_estado,register_date,domicilio_fiscal,company_economic_activity,customer_output,company_value;
     CheckBox cbTermsAndConditions,cbLegalRepresentation;
     Button btnContinue;
     RelativeLayout rootLayout;
@@ -119,13 +119,14 @@ public class CompanyDataSumaryFragment extends Fragment {
         txtPersonalData = view.findViewById(R.id.txtPersonalData);
         imgThree = view.findViewById(R.id.imgThree);
         txtContactData = view.findViewById(R.id.txtContactData);
-        txtAditionalData = view.findViewById(R.id.txtAditionalData);
         txtAccessData = view.findViewById(R.id.txtAccessData);
         cbTermsAndConditions = view.findViewById(R.id.cbTermsAndConditions);
         txtTermsAndConditions = view.findViewById(R.id.txtTermsAndConditions);
         cbLegalRepresentation = view.findViewById(R.id.cbLegalRepresentation);
+        imgFour = view.findViewById(R.id.imgFour);
         btnContinue = view.findViewById(R.id.btnContinue);
         rootLayout = view.findViewById(R.id.rootLayout);
+        txtAditionalData = view.findViewById(R.id.txtAditionalData);
 
         loadingBar.setTitle("Preparando todo...");
         loadingBar.setMessage("Cargando...");
@@ -157,8 +158,9 @@ public class CompanyDataSumaryFragment extends Fragment {
                 userRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.hasChild("commercial_name") && dataSnapshot.hasChild("company_document_number") && dataSnapshot.hasChild("commercial_name") && dataSnapshot.hasChild("company_bth_day")
-                                && dataSnapshot.hasChild("company_bth_month") && dataSnapshot.hasChild("company_bth_year") && dataSnapshot.hasChild("department")&& dataSnapshot.hasChild("province")&& dataSnapshot.hasChild("district")) {
+                        if (dataSnapshot.hasChild("commercial_name") && dataSnapshot.hasChild("company_document_number") && dataSnapshot.hasChild("company_bth_day")
+                                && dataSnapshot.hasChild("company_bth_month") && dataSnapshot.hasChild("company_bth_year") && dataSnapshot.hasChild("department")&& dataSnapshot.hasChild("province")&& dataSnapshot.hasChild("district")
+                                && dataSnapshot.hasChild("economic_activity")) {
 
                             document_number = dataSnapshot.child("company_document_number").getValue().toString();
                             name = dataSnapshot.child("commercial_name").getValue().toString();
@@ -168,6 +170,7 @@ public class CompanyDataSumaryFragment extends Fragment {
                             department = dataSnapshot.child("department").getValue().toString();
                             province = dataSnapshot.child("province").getValue().toString();
                             district = dataSnapshot.child("district").getValue().toString();
+                            company_economic_activity = dataSnapshot.child("economic_activity").getValue().toString();
 
 
                             register_date = company_bth_year +"-"+company_bth_month+"-"+company_bth_day;
@@ -216,8 +219,9 @@ public class CompanyDataSumaryFragment extends Fragment {
 
                                 }
                             });
-                        } else if (!dataSnapshot.hasChild("commercial_name") && !dataSnapshot.hasChild("company_document_number") && !dataSnapshot.hasChild("commercial_name") && !dataSnapshot.hasChild("company_bth_day")
-                                && !dataSnapshot.hasChild("company_bth_month") && !dataSnapshot.hasChild("company_bth_year") && !dataSnapshot.hasChild("department")&& !dataSnapshot.hasChild("province")&& !dataSnapshot.hasChild("district")) {
+                        } else if (!dataSnapshot.hasChild("commercial_name") && !dataSnapshot.hasChild("company_document_number")  && !dataSnapshot.hasChild("company_bth_day")
+                                && !dataSnapshot.hasChild("company_bth_month") && !dataSnapshot.hasChild("company_bth_year") && !dataSnapshot.hasChild("department")&& !dataSnapshot.hasChild("province")&& !dataSnapshot.hasChild("district")
+                                && !dataSnapshot.hasChild("economic_activity")) {
                             loadingBar.dismiss();
                         } else {
                             imgTwo.setImageResource(R.drawable.error_icon);
@@ -253,6 +257,23 @@ public class CompanyDataSumaryFragment extends Fragment {
                             contact_data_verification = "true";
                             loadingBar.dismiss();
                         }
+
+                        if (dataSnapshot.hasChild("customer_output") && dataSnapshot.hasChild("company_value")) {
+                            customer_output = dataSnapshot.child("customer_output").getValue().toString();
+                            company_value = dataSnapshot.child("company_value").getValue().toString();
+                            imgFour.setImageResource(R.drawable.transaction_completed);
+                            txtAditionalData.setText("Datos adicionales completado");
+                            txtAditionalData.setTextColor(Color.GREEN);
+                            additional_data_verification = "true";
+                            loadingBar.dismiss();
+                        } else if (!dataSnapshot.hasChild("customer_output") && !dataSnapshot.hasChild("company_value")) {
+                            loadingBar.dismiss();
+                        } else {
+                            imgFour.setImageResource(R.drawable.error_icon);
+                            txtAditionalData.setText("Falta completar datos");
+                            txtAditionalData.setTextColor(Color.RED);
+                            loadingBar.dismiss();
+                        }
                     }
 
                     @Override
@@ -285,6 +306,10 @@ public class CompanyDataSumaryFragment extends Fragment {
                 }
                 else if (contact_data_verification.equals("false")) {
                     Snackbar.make(rootLayout, "Debes subir tu Ficha RUC", Snackbar.LENGTH_LONG).show();
+                    return;
+                }
+                else if (additional_data_verification.equals("false")) {
+                    Snackbar.make(rootLayout, "Debes completar la información adicional", Snackbar.LENGTH_LONG).show();
                     return;
                 } else if (!cbTermsAndConditions.isChecked()) {
                     Snackbar.make(rootLayout, "Debes aceptar los términos y condiciones", Snackbar.LENGTH_LONG).show();
@@ -373,6 +398,9 @@ public class CompanyDataSumaryFragment extends Fragment {
                     postMap.put("company_bth_month",company_bth_month);
                     postMap.put("company_bth_year",company_bth_year);
                     postMap.put("ruc_file",ruc_file);
+                    postMap.put("customer_output",customer_output);
+                    postMap.put("company_value",company_value);
+                    postMap.put("company_economic_activity",company_economic_activity);
                     postMap.put("company_verification","progress");
                     postMap.put("current_account_pen","0.00");
                     postMap.put("current_account_usd","0.00");

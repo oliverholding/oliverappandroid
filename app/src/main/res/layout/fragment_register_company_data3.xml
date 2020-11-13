@@ -151,7 +151,7 @@
 
                 <ImageView
                     android:layout_margin="8dp"
-                    android:src="@drawable/camera_option"
+                    android:src="@drawable/camera_white_icon"
                     android:layout_weight="0.3"
                     android:layout_width="0dp"
                     android:layout_height="35dp"/>
@@ -179,7 +179,7 @@
 
                 <ImageView
                     android:layout_margin="8dp"
-                    android:src="@drawable/upload_file1"
+                    android:src="@drawable/upload_file_white_icon"
                     android:layout_weight="0.3"
                     android:layout_width="0dp"
                     android:layout_height="35dp"/>
