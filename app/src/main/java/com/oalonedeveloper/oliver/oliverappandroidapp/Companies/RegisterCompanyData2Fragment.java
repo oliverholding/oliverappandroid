@@ -41,7 +41,7 @@ public class RegisterCompanyData2Fragment extends Fragment {
     EditText edtCommercialName,edtDocumentNumber;
     Button edtBthDay,edtBthMonth,edtBthYear;
     FirebaseAuth mAuth;
-    DatabaseReference userRef,ratesRef,peruLocations;
+    DatabaseReference userRef,ratesRef,peruLocations,economic_activities;
     String currentUserID,province_code;
     RelativeLayout rootLayout;
     ProgressDialog loadingBar;
@@ -58,7 +58,7 @@ public class RegisterCompanyData2Fragment extends Fragment {
     RecyclerView recyclerView;
     EditText edtSearch;
     AlertDialog departmentDialog;
-    Button btnDepartment,btnDistrict,btnProvince;
+    Button btnDepartment,btnDistrict,btnProvince,btnEconomicActivities;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -74,6 +74,7 @@ public class RegisterCompanyData2Fragment extends Fragment {
         btnDepartment = view.findViewById(R.id.btnDepartment);
         btnProvince = view.findViewById(R.id.btnProvince);
         btnDistrict = view.findViewById(R.id.btnDistrict);
+        btnEconomicActivities = view.findViewById(R.id.btnEconomicActivities);
 
         loadingBar = new ProgressDialog(getActivity());
 
@@ -82,6 +83,7 @@ public class RegisterCompanyData2Fragment extends Fragment {
         userRef = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserID).child("Company Registration");
         ratesRef = FirebaseDatabase.getInstance().getReference().child("Rates");
         peruLocations= FirebaseDatabase.getInstance().getReference().child("Peru Locations");
+        economic_activities = FirebaseDatabase.getInstance().getReference().child("Economic Activities");
 
         loadingBar.setTitle("Preparando todo...");
         loadingBar.setMessage("Cargando...");
@@ -123,6 +125,10 @@ public class RegisterCompanyData2Fragment extends Fragment {
                 if (dataSnapshot.hasChild("district")) {
                     String district = dataSnapshot.child("district").getValue().toString();
                     btnDistrict.setText(district);
+                }
+                if (dataSnapshot.hasChild("economic_activity")) {
+                    String economic_activity = dataSnapshot.child("economic_activity").getValue().toString();
+                    btnEconomicActivities.setText(economic_activity);
                 }
                 loadingBar.dismiss();
             }
@@ -336,9 +342,78 @@ public class RegisterCompanyData2Fragment extends Fragment {
             }
         });
 
+        btnEconomicActivities.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showEconomicActtivitiesDialog();
+            }
+        });
 
 
         return view;
+    }
+
+    private void showEconomicActtivitiesDialog() {
+        departmentDialog = new AlertDialog.Builder(getActivity()).create();
+
+        LayoutInflater inflater = LayoutInflater.from(getActivity());
+        View finance_method = inflater.inflate(R.layout.departments_locations_dialog,null);
+
+        edtSearch = finance_method.findViewById(R.id.edtSearch);
+        recyclerView = finance_method.findViewById(R.id.recyclerView);
+
+        recyclerView.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+        linearLayoutManager.setReverseLayout(false);
+        linearLayoutManager.setStackFromEnd(false);
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+        showEconomicActivities();
+
+        edtSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                searchDistricts();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+
+
+
+        departmentDialog.setView(finance_method);
+        departmentDialog.show();
+    }
+
+    private void showEconomicActivities() {
+        Query query = economic_activities.orderByValue();
+        FirebaseRecyclerAdapter<EconomicActivitiesModel, EconomicActivitiesViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<EconomicActivitiesModel, EconomicActivitiesViewHolder>
+                (EconomicActivitiesModel.class, R.layout.location_item, EconomicActivitiesViewHolder.class, query) {
+            @Override
+            protected void populateViewHolder(final EconomicActivitiesViewHolder viewHolder, EconomicActivitiesModel model, final int position) {
+                final String postKey = getRef(position).getKey();
+                viewHolder.setName(model.getName());
+
+                viewHolder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        btnEconomicActivities.setText(viewHolder.act_name);
+                        userRef.child("economic_activity").setValue(viewHolder.act_name);
+                        departmentDialog.dismiss();
+                    }
+                });
+            }
+        };
+        recyclerView.setAdapter(firebaseRecyclerAdapter);
     }
 
     private void showDistrictDialog() {
@@ -624,5 +699,25 @@ public class RegisterCompanyData2Fragment extends Fragment {
         public void setId_ubigeo(String id_ubigeo) {
             id_location = id_ubigeo;
         }
+    }
+
+    public static class EconomicActivitiesViewHolder extends RecyclerView.ViewHolder {
+        View mView;
+        TextView txtName;
+        String act_name;
+
+        public EconomicActivitiesViewHolder(View itemView) {
+            super(itemView);
+            mView = itemView;
+
+            txtName = mView.findViewById(R.id.txtName);
+        }
+        public void setName(String name) {
+            TextView textView = mView.findViewById(R.id.txtName);
+            textView.setText(name);
+            act_name = name;
+        }
+
+
     }
 }

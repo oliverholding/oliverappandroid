@@ -134,6 +134,24 @@
 
                         </LinearLayout>
 
+                        <TextView
+                            android:layout_margin="8dp"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black"
+                            android:text="Actividad Económica"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <Button
+                            android:id="@+id/btnEconomicActivities"
+                            android:padding="8dp"
+                            android:gravity="start|center_vertical"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:hint="Actividad Económica..."
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
 
                     </LinearLayout>
 

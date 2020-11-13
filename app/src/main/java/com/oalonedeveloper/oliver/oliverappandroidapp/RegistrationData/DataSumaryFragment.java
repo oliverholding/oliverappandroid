@@ -415,7 +415,7 @@ public class DataSumaryFragment extends Fragment {
     }
 
     private void sendEmail() {
-        String subject = name+", Bienvenido a Oliver App";
+        String subject = name+", Bienvenido a Oliver";
         String message = "";
         JavaMailAPI javaMailAPI = new JavaMailAPI(getActivity(), email,subject,message);
         javaMailAPI.execute();

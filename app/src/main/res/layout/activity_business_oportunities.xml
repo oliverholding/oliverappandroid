@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CareManager.IntructionModule.IntroductionModuleActivity">
+    tools:context=".CareManager.BusinessOportunitiesModule.BusinessOportunitiesActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/appBar"
@@ -21,7 +21,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:src="@drawable/introduction_module_white_icon"
+                android:src="@drawable/business_oportunities_white_icon"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="35dp"/>
@@ -30,7 +30,7 @@
                 android:gravity="center_vertical"
                 android:textSize="18sp"
                 android:textColor="@android:color/white"
-                android:text="Introducción al Módulo de Gestión Mype"
+                android:text="Oportunidades de Negocio"
                 android:layout_weight="4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
@@ -111,5 +111,6 @@
         android:layout_height="match_parent">
 
     </androidx.viewpager.widget.ViewPager>
+
 
 </RelativeLayout>
