@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CareManager.CareManagerActivity">
+    tools:context=".Companies.MyCustomersActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/appBar"
@@ -20,8 +20,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:src="@drawable/care_peru"
+            <ImageView
+                android:id="@+id/imgCompanyProfile"
+                android:src="@drawable/oliver_app_iconv2"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="35dp"/>
@@ -30,7 +31,7 @@
                 android:gravity="center_vertical"
                 android:textSize="18sp"
                 android:textColor="@android:color/white"
-                android:text="Oliver Negocios - CARE"
+                android:text="Mis Clientes "
                 android:layout_weight="4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
@@ -49,46 +50,38 @@
 
     </androidx.cardview.widget.CardView>
 
-    <com.google.android.material.tabs.TabLayout
-        android:layout_below="@+id/appBar"
-        android:id="@+id/tabLayout"
-        android:background="@drawable/gradient_start"
-        app:tabTextColor="@android:color/white"
-        android:gravity="center"
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_above="@id/buttonsLayout"
+        android:layout_below="@id/appBar"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:id="@+id/buttonsLayout"
+        android:layout_margin="8dp"
+        android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab1"
-            android:text="RESUMEN"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab2"
-            android:text="HERRAMIENTAS"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab3"
-            android:text="MIS LOGROS"
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/btnAddCustomer"
+            android:textColor="@android:color/white"
+            android:background="@drawable/blue_button_style"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:layout_width="0dp"
+            android:text="Agregar nuevo cliente"
             android:layout_height="wrap_content"/>
 
 
-    </com.google.android.material.tabs.TabLayout>
-
-    <androidx.viewpager.widget.ViewPager
-        android:layout_below="@id/tabLayout"
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </androidx.viewpager.widget.ViewPager>
-
-
-
+    </LinearLayout>
 
 </RelativeLayout>

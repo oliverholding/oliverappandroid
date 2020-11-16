@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CareManager.ValueProposalModule.NoDataTestFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewTitle"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="8dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="Mi Propuesta de Valor"
+                android:textSize="18sp"
+                android:layout_margin="4dp"
+                android:textColor="@android:color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="Completa el siguiente Test para conocer si brindas valor a tus clientes"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_below="@id/cardViewTitle"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="12dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="¿Damos un producto o servicio que no muchas empresas dan?"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/rd001A"
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Sí"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:id="@+id/rd001B"
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="No"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="¿Ayuda al rendimiento de las personas o sus actividades?"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/rd002A"
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Sí"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:id="@+id/rd002B"
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="No"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="¿Se adapta a la necesidad específica de nuestros clientes?"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/rd003A"
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Sí"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:id="@+id/rd003B"
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="No"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="¿Ayuda a elaborar trabajos o labores específicas?"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/rd004A"
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Sí"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:id="@+id/rd004B"
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="No"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="¿Tiene un diseño novedoso nuestro producto o servicio?"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/rd005A"
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Sí"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:id="@+id/rd005B"
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="No"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="¿Nuestro producto genera un status alto?"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/rd006A"
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Sí"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:id="@+id/rd006B"
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="No"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="¿Por el precio que se paga ante un producto similar, nuestro cliente esta satisfecho?"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/rd007A"
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Sí"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:id="@+id/rd007B"
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="No"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="¿Nuestro producto o servicio ayuda a disminuir costos de nuestros cliente?"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/rd008A"
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Sí"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:id="@+id/rd008B"
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="No"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="¿Comprarnos reduce riesgos frente a la compra del producto de la competencia?"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/rd009A"
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Sí"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:id="@+id/rd009B"
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="No"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="¿Tenemos formas diferentes de que nuestros clientes nos compren a parte de la forma tradicional?"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/rd010A"
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Sí"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:id="@+id/rd010B"
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="No"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="¿La forma de comprarnos es comodo y util?"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/rd011A"
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Sí"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:id="@+id/rd011B"
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="No"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <Button
+                android:id="@+id/btnSendSurvey"
+                android:textColor="@android:color/white"
+                android:background="@drawable/blue_button_style"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:text="Finalizar Test"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

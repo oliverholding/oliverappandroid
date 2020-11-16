@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="18dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_margin="8dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:text="Nombre del cliente:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/edtName"
+        android:inputType="textCapWords"
+        android:padding="8dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/edit_text_style"
+        android:hint="Nombre del cliente..."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_margin="8dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:text="Correo del cliente:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/edtEmail"
+        android:inputType="textEmailAddress"
+        android:padding="8dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/edit_text_style"
+        android:hint="Correo del cliente..."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_margin="8dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:text="Teléfono móvil del cliente:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/ccpPhoneCode"
+            app:ccp_textSize="14sp"
+            android:layout_margin="8dp"
+            android:padding="3dp"
+            android:background="@drawable/edit_text_style"
+            app:ccp_showFlag="true"
+            app:ccp_autoDetectLanguage="true"
+            app:ccp_showPhoneCode="true"
+            app:ccp_showNameCode="false"
+            app:ccp_textGravity="LEFT"
+            app:ccp_autoDetectCountry="true"
+            android:layout_weight="0.4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/edtPhoneNumber"
+            android:inputType="phone"
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Teléfono móvil del cliente..."
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_margin="8dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:text="Tipo de Cliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RadioGroup
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rdPerson"
+            android:background="@drawable/edit_text_style"
+            android:padding="8dp"
+            android:text="Persona"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/rdCompany"
+            android:background="@drawable/edit_text_style"
+            android:padding="8dp"
+            android:text="Empresa"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnAddCustomer"
+        android:text="registrar cliente"
+        android:layout_margin="12dp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/blue_button_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/txtCancel"
+        android:textColor="@color/colorGradientCenterRed"
+        android:layout_margin="12dp"
+        android:gravity="center"
+        android:text="CANCELAR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

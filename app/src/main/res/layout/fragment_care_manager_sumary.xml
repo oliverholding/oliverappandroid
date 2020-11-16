@@ -19,18 +19,92 @@
             android:id="@+id/imgCompanyProfile"
             android:src="@color/colorGradientEnd"
             android:layout_margin="8dp"
-            android:layout_width="100dp"
-            android:layout_height="100dp"/>
+            android:layout_width="80dp"
+            android:layout_height="80dp"/>
 
-        <TextView
-            android:id="@+id/txtCompanyName"
-            android:layout_margin="8dp"
-            android:textStyle="bold"
-            android:text="COMPANY_NAME"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtCompanyName"
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:text="COMPANY_NAME"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_margin="4dp"
+                    android:text="Nivel del Negocio:"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:src="@drawable/information_vector_asset"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_margin="4dp"
+                    android:src="@drawable/number_one"
+                    android:layout_weight="0.2"
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"/>
+
+                <com.xw.repo.BubbleSeekBar
+                    app:bsb_track_color="@android:color/black"
+                    app:bsb_bubble_color="@color/colorAccent"
+                    app:bsb_bubble_text_color="@android:color/white"
+                    app:bsb_second_track_color="@color/colorGradientEnd"
+                    app:bsb_max="100"
+                    app:bsb_min="0"
+                    app:bsb_second_track_size="8dp"
+                    app:bsb_progress="50"
+                    app:bsb_section_count="0"
+                    app:bsb_track_size="8dp"
+                    app:bsb_show_progress_in_float="false"
+                    app:bsb_show_section_mark="false"
+                    app:bsb_show_section_text="false"
+                    app:bsb_show_thumb_text="false"
+                    app:bsb_always_show_bubble="false"
+                    app:bsb_thumb_color="@android:color/transparent"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:layout_margin="4dp"
+                    android:src="@drawable/number_two"
+                    android:layout_weight="0.2"
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
 
     </LinearLayout>
 
@@ -207,7 +281,7 @@
                             android:layout_height="wrap_content"/>
 
                         <ImageView
-                            android:src="@color/colorGradientEnd"
+                            android:src="@drawable/information_vector_asset"
                             android:layout_margin="4dp"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
@@ -249,7 +323,7 @@
                             android:layout_height="wrap_content"/>
 
                         <ImageView
-                            android:src="@color/colorGradientEnd"
+                            android:src="@drawable/information_vector_asset"
                             android:layout_margin="4dp"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
@@ -291,7 +365,7 @@
                             android:layout_height="wrap_content"/>
 
                         <ImageView
-                            android:src="@color/colorGradientEnd"
+                            android:src="@drawable/information_vector_asset"
                             android:layout_margin="4dp"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"

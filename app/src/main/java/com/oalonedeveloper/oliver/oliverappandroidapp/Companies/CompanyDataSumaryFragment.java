@@ -62,6 +62,7 @@ import java.io.ByteArrayOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 import androidmads.library.qrgenearator.QRGContents;
@@ -424,6 +425,9 @@ public class CompanyDataSumaryFragment extends Fragment {
                     postMap.put("credit_line_pen_request_state","false");
                     postMap.put("credit_line_usd_request_state","false");
 
+                    //Company Score by Care
+                    postMap.put("company_level","1");
+
                     postMap.put("pen_accoount_is_enabled","true");
                     postMap.put("usd_accoount_is_enabled","true");
 
@@ -431,9 +435,11 @@ public class CompanyDataSumaryFragment extends Fragment {
                     //Abvo
                     postMap.put("customer_rating","0.00");
                     postMap.put("abvo_store_state","none");
-                   
 
-                    myCompaniesRef.child(currentUserID+postRandomName).updateChildren(postMap).addOnCompleteListener(new OnCompleteListener() {
+                    Long tsLong = System.currentTimeMillis()/1000;
+                    String timestamp = tsLong.toString();
+
+                    myCompaniesRef.child(currentUserID+timestamp).updateChildren(postMap).addOnCompleteListener(new OnCompleteListener() {
                         @Override
                         public void onComplete(@NonNull Task task) {
                             if (task.isSuccessful()) {

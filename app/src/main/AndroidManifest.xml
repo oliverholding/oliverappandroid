@@ -7,6 +7,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <meta-data
         android:name="com.google.android.gma.vision.DEPENDENCIES"
@@ -19,7 +21,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CareManager.BusinessOportunitiesModule.BusinessOportunitiesActivity"></activity>
+        <activity android:name=".CareManager.ValueProposalModule.ValueProposalActivity"></activity>
+        <activity android:name=".Companies.MyCustomersActivity" />
+        <activity android:name=".CareManager.BusinessOportunitiesModule.BusinessOportunitiesActivity" />
         <activity android:name=".CareManager.IntructionModule.IntroductionModuleActivity" />
         <activity android:name=".CareManager.CareManagerActivity" />
         <activity android:name=".Companies.OliverAppForBusinessActivity" />
