@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessModelModule.BusinessModelActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessOportunitiesModule.BusinessOportunitiesActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.IntroductionModuleActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ValueProposalModule.ValueProposalActivity;
@@ -18,7 +19,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class CareToolsFragment extends Fragment {
 
-    CardView cardViewModule1,cardViewModule2,cardViewModule3;
+    CardView cardViewModule1,cardViewModule2,cardViewModule3,cardViewModule4;
     String post_key;
 
 
@@ -33,6 +34,7 @@ public class CareToolsFragment extends Fragment {
         cardViewModule1 = view.findViewById(R.id.cardViewModule1);
         cardViewModule2 = view.findViewById(R.id.cardViewModule2);
         cardViewModule3 = view.findViewById(R.id.cardViewModule3);
+        cardViewModule4 = view.findViewById(R.id.cardViewModule4);
 
         cardViewModule1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +57,15 @@ public class CareToolsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), ValueProposalActivity.class);
+                intent.putExtra("post_key",post_key);
+                startActivity(intent);
+            }
+        });
+
+        cardViewModule4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), BusinessModelActivity.class);
                 intent.putExtra("post_key",post_key);
                 startActivity(intent);
             }

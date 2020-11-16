@@ -17,6 +17,9 @@ import com.google.firebase.database.ValueEventListener;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 import com.squareup.picasso.Picasso;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
@@ -40,6 +43,15 @@ public class CareManagerSumaryFragment extends Fragment {
         myCompanyRef = FirebaseDatabase.getInstance().getReference().child("My Companies");
 
         post_key = getActivity().getIntent().getExtras().getString("post_key");
+
+        Calendar c = Calendar.getInstance();
+        int year = c.get(Calendar.YEAR);
+        int month = c.get(Calendar.MONTH);
+
+        SimpleDateFormat month_date = new SimpleDateFormat("MMMM");
+        String month_name = month_date.format(c.getTime());
+
+        txtCurrentMonth.setText(month_name.toUpperCase()+" "+year);
 
         myCompanyRef.child(post_key).addValueEventListener(new ValueEventListener() {
             @Override

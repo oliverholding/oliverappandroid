@@ -21,7 +21,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CareManager.ValueProposalModule.ValueProposalActivity"></activity>
+        <activity android:name=".CareManager.BusinessModelModule.BusinessModelActivity"></activity>
+        <activity android:name=".CareManager.ValueProposalModule.ValueProposalActivity" />
         <activity android:name=".Companies.MyCustomersActivity" />
         <activity android:name=".CareManager.BusinessOportunitiesModule.BusinessOportunitiesActivity" />
         <activity android:name=".CareManager.IntructionModule.IntroductionModuleActivity" />

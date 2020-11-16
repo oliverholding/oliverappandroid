@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CareManager.ValueProposalModule.DataTestFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:layout_above="@id/btnTryAgain"
+        android:orientation="vertical"
+        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <TextView
+            android:textSize="22sp"
+            android:layout_margin="22dp"
+            android:textColor="@color/colorGradientStart"
+            android:text="RESULTADOS DEL TEST"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_margin="12dp"
+            android:src="@color/colorGradientStart"
+            android:layout_width="120dp"
+            android:layout_height="120dp"/>
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/txtMessage"
+            android:textSize="20sp"
+            android:layout_margin="22dp"
+            android:textColor="@android:color/black"
+            android:text="result_message"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnTryAgain"
+        android:layout_alignParentBottom="true"
+        android:textColor="@android:color/white"
+        android:background="@drawable/blue_button_style"
+        android:layout_margin="12dp"
+        android:layout_width="match_parent"
+        android:text="Realizar de nuevo el Test"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
