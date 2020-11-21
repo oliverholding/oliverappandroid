@@ -23,8 +23,8 @@
             android:layout_height="wrap_content"/>
 
         <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/imgGif"
             android:layout_margin="12dp"
-            android:src="@color/colorGradientStart"
             android:layout_width="120dp"
             android:layout_height="120dp"/>
 

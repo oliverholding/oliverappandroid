@@ -194,7 +194,7 @@ public class RegisterCompanyData2Fragment extends Fragment {
             }
         });
 
-        bthDayDialog = new SpinnerDialog(getActivity(),bthDay, "Selecciona tu Día de Nacimiento");
+        bthDayDialog = new SpinnerDialog(getActivity(),bthDay, "Selecciona el Día de Inscripción");
         bthDayDialog.bindOnSpinerListener(new OnSpinerItemClick() {
             @Override
             public void onClick(String item2, int position2) {
@@ -213,7 +213,7 @@ public class RegisterCompanyData2Fragment extends Fragment {
             }
         });
 
-        bthMonthDialog = new SpinnerDialog(getActivity(),bthMonth, "Selecciona tu Mes de Nacimiento");
+        bthMonthDialog = new SpinnerDialog(getActivity(),bthMonth, "Selecciona el Mes de Inscripción");
         bthMonthDialog.bindOnSpinerListener(new OnSpinerItemClick() {
             @Override
             public void onClick(String item2, int position2) {
@@ -239,7 +239,7 @@ public class RegisterCompanyData2Fragment extends Fragment {
             }
         });
 
-        bthYearDialog = new SpinnerDialog(getActivity(),bthYear, "Selecciona tu Año de Nacimiento");
+        bthYearDialog = new SpinnerDialog(getActivity(),bthYear, "Selecciona el Año de Inscripción");
         bthYearDialog.bindOnSpinerListener(new OnSpinerItemClick() {
             @Override
             public void onClick(String item2, int position2) {

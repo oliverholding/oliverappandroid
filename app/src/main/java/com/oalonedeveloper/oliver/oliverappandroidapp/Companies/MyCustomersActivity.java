@@ -180,10 +180,10 @@ public class MyCustomersActivity extends AppCompatActivity {
                 myCompanyRef.child(post_key).child("Customers").child(postRandomName).updateChildren(hashMap).addOnCompleteListener(new OnCompleteListener() {
                     @Override
                     public void onComplete(@NonNull Task task) {
-                        Toasty.success(MyCustomersActivity.this, "Registrado", Toast.LENGTH_LONG).show();
                         myCompanyRef.child(post_key).child("Achievements").child("Module2 Add Customer").child("score").setValue("50");
                         myCompanyRef.child(post_key).child("Achievements").child("Module2 Add Customer").child("message").setValue("Has registrado satisfactoriamente a tu primer cliente");
                         myCompanyRef.child(post_key).child("Achievements").child("Module2 Add Customer").child("timestamp").setValue(ServerValue.TIMESTAMP);
+                        Toasty.success(MyCustomersActivity.this, "Registrado", Toast.LENGTH_LONG).show();
                         dialog.dismiss();
                     }
                 });

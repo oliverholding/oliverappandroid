@@ -16,9 +16,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 import com.squareup.picasso.Picasso;
+import com.xw.repo.BubbleSeekBar;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -28,7 +30,8 @@ public class CareManagerSumaryFragment extends Fragment {
     CircleImageView imgCompanyProfile;
     DatabaseReference myCompanyRef;
     String company_image,company_social_reason, post_key;
-    TextView txtCompanyName,txtCurrentMonth;
+    TextView txtCompanyName,txtCurrentMonth,txtExp;
+    BubbleSeekBar expBar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,6 +42,8 @@ public class CareManagerSumaryFragment extends Fragment {
         imgCompanyProfile = view.findViewById(R.id.imgCompanyProfile);
         txtCompanyName = view.findViewById(R.id.txtCompanyName);
         txtCurrentMonth = view.findViewById(R.id.txtCurrentMonth);
+        txtExp = view.findViewById(R.id.txtExp);
+        expBar = view.findViewById(R.id.expBar);
 
         myCompanyRef = FirebaseDatabase.getInstance().getReference().child("My Companies");
 
@@ -60,6 +65,31 @@ public class CareManagerSumaryFragment extends Fragment {
                 company_social_reason = dataSnapshot.child("company_social_reason").getValue().toString();
                 Picasso.with(getActivity()).load(company_image).fit().into(imgCompanyProfile);
                 txtCompanyName.setText(company_social_reason);
+
+                if (dataSnapshot.hasChild("Achievements")) {
+                    myCompanyRef.child(post_key).child("Achievements").addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            int sum = 0;
+                            for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                                Map<String,Object> map = (Map<String,Object>) ds.getValue();
+                                Object score = map.get("score");
+                                int exp = Integer.parseInt(String.valueOf(score));
+                                sum += exp;
+
+                                txtExp.setText("EXP: "+sum);
+                                expBar.setProgress(sum);
+
+                            }
+
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
+                }
             }
 
             @Override

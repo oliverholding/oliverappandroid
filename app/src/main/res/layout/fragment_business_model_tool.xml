@@ -65,7 +65,7 @@
                     
                     <ImageView
                         android:layout_margin="8dp"
-                        android:src="@drawable/business_model_icon"
+                        android:src="@drawable/key_partners_icon"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="60dp"/>
@@ -115,7 +115,7 @@
 
                     <ImageView
                         android:layout_margin="8dp"
-                        android:src="@drawable/business_model_icon"
+                        android:src="@drawable/key_activities_icon"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="60dp"/>
@@ -165,7 +165,7 @@
 
                     <ImageView
                         android:layout_margin="8dp"
-                        android:src="@drawable/business_model_icon"
+                        android:src="@drawable/key_resources_icon"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="60dp"/>
@@ -215,7 +215,7 @@
 
                     <ImageView
                         android:layout_margin="8dp"
-                        android:src="@drawable/business_model_icon"
+                        android:src="@drawable/value_proposal_icon"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="60dp"/>
@@ -265,7 +265,7 @@
 
                     <ImageView
                         android:layout_margin="8dp"
-                        android:src="@drawable/business_model_icon"
+                        android:src="@drawable/customer_relationship_icon"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="60dp"/>
@@ -315,7 +315,7 @@
 
                     <ImageView
                         android:layout_margin="8dp"
-                        android:src="@drawable/business_model_icon"
+                        android:src="@drawable/customer_comunication_icon"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="60dp"/>
@@ -365,7 +365,7 @@
 
                     <ImageView
                         android:layout_margin="8dp"
-                        android:src="@drawable/business_model_icon"
+                        android:src="@drawable/customer_segmentation_icon"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="60dp"/>
@@ -415,7 +415,7 @@
 
                     <ImageView
                         android:layout_margin="8dp"
-                        android:src="@drawable/business_model_icon"
+                        android:src="@drawable/cost_structure_icon"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="60dp"/>
@@ -465,7 +465,7 @@
 
                     <ImageView
                         android:layout_margin="8dp"
-                        android:src="@drawable/business_model_icon"
+                        android:src="@drawable/inncome_flow_icon"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="60dp"/>
