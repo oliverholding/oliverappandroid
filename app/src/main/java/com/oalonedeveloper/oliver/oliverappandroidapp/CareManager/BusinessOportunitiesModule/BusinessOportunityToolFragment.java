@@ -15,6 +15,12 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.anychart.APIlib;
+import com.anychart.AnyChart;
+import com.anychart.AnyChartView;
+import com.anychart.chart.common.dataentry.DataEntry;
+import com.anychart.chart.common.dataentry.ValueDataEntry;
+import com.anychart.charts.Pie;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,6 +32,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.Companies.MyCustomersActiv
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import es.dmoral.toasty.Toasty;
 
@@ -40,6 +47,7 @@ public class BusinessOportunityToolFragment extends Fragment {
     int id001A,id001B,id001C,id001D,id002A,id002B,id003A,id003B,id004A,id004B,id004C,id004D,id004E,id004F,id004G,id004H,id004I,id004J,id004K,id004L,id004M,id004N,id004O,id004P,id004Q,id005A,id005B,id006A,id006B,id006C,id006D,id007A,id007B,id008A,id008B,id008C,id008D,id008E,id008F;
     TextView txt001A,txt001B,txt001C,txt001D,txt002A,txt002B,txt003A,txt003B,txt004A,txt004B,txt004C,txt004D,txt004E,txt004F,txt004G,txt004H,txt004I,txt004J,txt004K,txt004L,txt004M,txt004N,txt004O,txt004P,txt004Q,txt005A,txt005B,txt006A,
             txt006B,txt006C,txt006D,txt007A,txt007B,txt008A,txt008B,txt008C,txt008D,txt008E,txt008F;
+    AnyChartView anyChartView,anyChartView2,anyChartView3,anyChartView4,anyChartView5,anyChartView6,anyChartView7,anyChartView8;
 
 
     @Override
@@ -98,6 +106,15 @@ public class BusinessOportunityToolFragment extends Fragment {
         txt008E = view.findViewById(R.id.txt008E);
         txt008F = view.findViewById(R.id.txt008F);
 
+        anyChartView = view.findViewById(R.id.anyChartView);
+        anyChartView2 = view.findViewById(R.id.anyChartView2);
+        anyChartView3 = view.findViewById(R.id.anyChartView3);
+        anyChartView4 = view.findViewById(R.id.anyChartView4);
+        anyChartView5 = view.findViewById(R.id.anyChartView5);
+        anyChartView6 = view.findViewById(R.id.anyChartView6);
+        anyChartView7 = view.findViewById(R.id.anyChartView7);
+        anyChartView8 = view.findViewById(R.id.anyChartView8);
+
 
         myCompanyRef.child(post_key).addValueEventListener(new ValueEventListener() {
             @Override
@@ -118,15 +135,44 @@ public class BusinessOportunityToolFragment extends Fragment {
                             txt001C.setText(id001C+ " Personas piensan que tu servicio es REGULAR");
                             txt001D.setText(id001D+ " Personas piensan que tu servicio es MALO");
 
+                            APIlib.getInstance().setActiveAnyChartView(anyChartView);
+
+                            Pie pie = AnyChart.pie();
+                            List<DataEntry> data = new ArrayList<>();
+                            data.add(new ValueDataEntry("Muy Bueno", id001A));
+                            data.add(new ValueDataEntry("Bueno", id001B));
+                            data.add(new ValueDataEntry("Regular", id001C));
+                            data.add(new ValueDataEntry("Malo", id001D));
+                            pie.data(data);
+                            anyChartView.setChart(pie);
+
                             id002A = dataSnapshot.child("002").child("002A").getValue(Integer.class);
                             id002B = dataSnapshot.child("002").child("002B").getValue(Integer.class);
                             txt002A.setText(id002A+" Personas están satisfechas con tu producto o servicio");
                             txt002B.setText(id002B+" Personas NO están satisfechas con tu producto o servicio");
 
+                            APIlib.getInstance().setActiveAnyChartView(anyChartView2);
+
+                            Pie pie2 = AnyChart.pie();
+                            List<DataEntry> data2 = new ArrayList<>();
+                            data2.add(new ValueDataEntry("Satisfechos", id002A));
+                            data2.add(new ValueDataEntry("No Satisfechos", id002B));
+                            pie2.data(data2);
+                            anyChartView2.setChart(pie2);
+
                             id003A = dataSnapshot.child("003").child("003A").getValue(Integer.class);
                             id003B = dataSnapshot.child("003").child("003B").getValue(Integer.class);
                             txt003A.setText(id003A+" Personas recomendarían tu marca");
                             txt003B.setText(id003B+" Personas NO recomendarían tu marca");
+
+                            APIlib.getInstance().setActiveAnyChartView(anyChartView3);
+
+                            Pie pie3 = AnyChart.pie();
+                            List<DataEntry> data3 = new ArrayList<>();
+                            data3.add(new ValueDataEntry("Recomiendan", id003A));
+                            data3.add(new ValueDataEntry("No Recomiendan", id003B));
+                            pie3.data(data3);
+                            anyChartView3.setChart(pie3);
 
                             id004A = dataSnapshot.child("004").child("004A").getValue(Integer.class);
                             id004B = dataSnapshot.child("004").child("004B").getValue(Integer.class);
@@ -163,10 +209,44 @@ public class BusinessOportunityToolFragment extends Fragment {
                             txt004P.setText(id004P+ " Personas piensan que debes mejorar la página web");
                             txt004Q.setText(id004Q+ " Personas piensan que debes mejorar el número de atención al cliente");
 
+                            APIlib.getInstance().setActiveAnyChartView(anyChartView4);
+
+                            Pie pie4 = AnyChart.pie();
+                            List<DataEntry> data4 = new ArrayList<>();
+                            data4.add(new ValueDataEntry("Emapaque", id004A));
+                            data4.add(new ValueDataEntry("Precio", id004B));
+                            data4.add(new ValueDataEntry("Servicio de Venta", id004C));
+                            data4.add(new ValueDataEntry("Servicio de Postventa", id004D));
+                            data4.add(new ValueDataEntry("Productos más novedosos", id004E));
+                            data4.add(new ValueDataEntry("Más puntos de venta", id004F));
+                            data4.add(new ValueDataEntry("Tamaño del producto", id004G));
+                            data4.add(new ValueDataEntry("Tiempo de entrega del producto", id004H));
+                            data4.add(new ValueDataEntry("Productos ecológicos", id004I));
+                            data4.add(new ValueDataEntry("Variedad de productos", id004J));
+                            data4.add(new ValueDataEntry("Empaques ecológicos", id004K));
+                            data4.add(new ValueDataEntry("Zonas de reparto", id004L));
+                            data4.add(new ValueDataEntry("Tiendas físicas", id004M));
+                            data4.add(new ValueDataEntry("Canales de venta", id004N));
+                            data4.add(new ValueDataEntry("Comunicación de la marca", id004O));
+                            data4.add(new ValueDataEntry("Página web", id004P));
+                            data4.add(new ValueDataEntry("Atención al cliente", id004Q));
+
+                            pie4.data(data4);
+                            anyChartView4.setChart(pie4);
+
                             id005A = dataSnapshot.child("005").child("005A").getValue(Integer.class);
                             id005B = dataSnapshot.child("005").child("005B").getValue(Integer.class);
                             txt005A.setText(id005A+ " Personas piensan que el precio está relacionado con el producto o servicio brindado");
                             txt005B.setText(id005B+ " Personas piensan que el precio NO está relacionado con el producto o servicio brindado");
+
+                            APIlib.getInstance().setActiveAnyChartView(anyChartView5);
+
+                            Pie pie5 = AnyChart.pie();
+                            List<DataEntry> data5 = new ArrayList<>();
+                            data5.add(new ValueDataEntry("Tiene Relación", id005A));
+                            data5.add(new ValueDataEntry("No Tiene Relación", id005B));
+                            pie5.data(data5);
+                            anyChartView5.setChart(pie5);
 
                             id006A = dataSnapshot.child("006").child("006A").getValue(Integer.class);
                             id006B = dataSnapshot.child("006").child("006B").getValue(Integer.class);
@@ -177,10 +257,30 @@ public class BusinessOportunityToolFragment extends Fragment {
                             txt006C.setText(id006C+" Personas te compran entre 4 a 5 veces al mes");
                             txt006D.setText(id006D+" Personas te compran 6 veces al mes o más");
 
+                            APIlib.getInstance().setActiveAnyChartView(anyChartView6);
+
+                            Pie pie6 = AnyChart.pie();
+                            List<DataEntry> data6 = new ArrayList<>();
+                            data6.add(new ValueDataEntry("1 vez al mes", id006A));
+                            data6.add(new ValueDataEntry("2 a 3 veces al mes", id006B));
+                            data6.add(new ValueDataEntry("4 a 5 veces al mes", id006C));
+                            data6.add(new ValueDataEntry("6 veces al mes o más", id006D));
+                            pie6.data(data6);
+                            anyChartView6.setChart(pie6);
+
                             id007A = dataSnapshot.child("007").child("007A").getValue(Integer.class);
                             id007B = dataSnapshot.child("007").child("007B").getValue(Integer.class);
                             txt007A.setText(id007A+ " Personas piensan que la marca está acorde a las tendencias actuale");
                             txt007B.setText(id007B+ " Personas piensan que la marca NO está acorde a las tendencias actuales");
+
+                            APIlib.getInstance().setActiveAnyChartView(anyChartView7);
+
+                            Pie pie7 = AnyChart.pie();
+                            List<DataEntry> data7 = new ArrayList<>();
+                            data7.add(new ValueDataEntry("Sigue la Tendencia", id007A));
+                            data7.add(new ValueDataEntry("No Sigue la Tendencia", id007B));
+                            pie7.data(data7);
+                            anyChartView7.setChart(pie7);
 
                             id008A = dataSnapshot.child("008").child("008A").getValue(Integer.class);
                             id008B = dataSnapshot.child("008").child("008B").getValue(Integer.class);
@@ -193,7 +293,21 @@ public class BusinessOportunityToolFragment extends Fragment {
                             txt008C.setText(id008C+" Personas Perciben la marca como una Mujer Adulta");
                             txt008D.setText(id008D+" Personas Perciben la marca como un Hombre Adulto");
                             txt008E.setText(id008E+" Personas Perciben la marca como una Mujer Anciana");
-                            txt008F.setText(id008F+" Personas Perciben la marca como un Hombre Anciana");
+                            txt008F.setText(id008F+" Personas Perciben la marca como un Hombre Anciano");
+
+                            APIlib.getInstance().setActiveAnyChartView(anyChartView8);
+
+                            Pie pie8 = AnyChart.pie();
+                            List<DataEntry> data8 = new ArrayList<>();
+                            data8.add(new ValueDataEntry("Mujer Joven", id008A));
+                            data8.add(new ValueDataEntry("Hombre Joven", id008B));
+                            data8.add(new ValueDataEntry("Mujer Adulta", id008C));
+                            data8.add(new ValueDataEntry("Hombre Adulto", id008D));
+                            data8.add(new ValueDataEntry("Mujer Anciana", id008E));
+                            data8.add(new ValueDataEntry("Hombre Anciano", id008F));
+                            pie8.data(data8);
+                            anyChartView8.setChart(pie8);
+
 
                         }
 

@@ -61,6 +61,7 @@
 
                 <LinearLayout
                     android:padding="8dp"
+                    android:gravity="center"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -72,6 +73,12 @@
                         android:textColor="@color/colorGradientStart"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
+
+                  <com.anychart.AnyChartView
+                      android:id="@+id/anyChartView"
+                      android:layout_margin="8dp"
+                      android:layout_width="match_parent"
+                      android:layout_height="230dp"/>
 
                     <LinearLayout
                         android:layout_margin="4dp"
@@ -199,6 +206,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
+                    <com.anychart.AnyChartView
+                        android:id="@+id/anyChartView2"
+                        android:layout_margin="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="230dp"/>
+
                     <LinearLayout
                         android:layout_margin="4dp"
                         android:gravity="center"
@@ -275,6 +288,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
+                    <com.anychart.AnyChartView
+                        android:id="@+id/anyChartView3"
+                        android:layout_margin="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="230dp"/>
+
+
                     <LinearLayout
                         android:layout_margin="4dp"
                         android:gravity="center"
@@ -350,6 +370,13 @@
                         android:textColor="@color/colorGradientStart"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
+
+                    <com.anychart.AnyChartView
+                        android:id="@+id/anyChartView4"
+                        android:layout_margin="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="230dp"/>
+
 
                     <LinearLayout
                         android:layout_margin="4dp"
@@ -795,12 +822,18 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:text="Recomdanción de la Marca:"
+                        android:text="Relación Precio Producto:"
                         android:textSize="14sp"
                         android:layout_margin="4dp"
                         android:textColor="@color/colorGradientStart"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
+
+                    <com.anychart.AnyChartView
+                        android:id="@+id/anyChartView5"
+                        android:layout_margin="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="230dp"/>
 
                     <LinearLayout
                         android:layout_margin="4dp"
@@ -808,6 +841,7 @@
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
 
                         <ImageView
                             android:src="@drawable/hand_up_survey"
@@ -877,6 +911,12 @@
                         android:textColor="@color/colorGradientStart"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
+
+                    <com.anychart.AnyChartView
+                        android:id="@+id/anyChartView6"
+                        android:layout_margin="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="230dp"/>
 
                     <LinearLayout
                         android:layout_margin="4dp"
@@ -1004,6 +1044,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
+                    <com.anychart.AnyChartView
+                        android:id="@+id/anyChartView7"
+                        android:layout_margin="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="230dp"/>
+
                     <LinearLayout
                         android:layout_margin="4dp"
                         android:gravity="center"
@@ -1079,6 +1125,12 @@
                         android:textColor="@color/colorGradientStart"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
+
+                    <com.anychart.AnyChartView
+                        android:id="@+id/anyChartView8"
+                        android:layout_margin="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="230dp"/>
 
                     <LinearLayout
                         android:layout_margin="4dp"

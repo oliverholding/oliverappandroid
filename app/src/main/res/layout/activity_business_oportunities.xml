@@ -67,19 +67,19 @@
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab2"
-            android:icon="@drawable/play_white_icon"
+            android:icon="@drawable/business_oportunities_white_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab3"
-            android:icon="@drawable/play_white_icon"
+            android:icon="@drawable/business_oportunities_white_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab4"
-            android:icon="@drawable/play_white_icon"
+            android:icon="@drawable/business_oportunities_white_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 

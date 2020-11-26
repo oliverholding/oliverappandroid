@@ -69,7 +69,7 @@ public class DataTestFragment extends Fragment {
                 else if (answer >= 5 && answer <= 7) {
                     txtMessage.setText("¡Despierta! Hay algunas cosas por mejorar");
                     txtMessage.setTextColor(getResources().getColor(R.color.yellowColor));
-                    imgGif.setImageResource(R.drawable.company_building);
+                    imgGif.setImageResource(R.drawable.company_alert);
                 }
                 else if (answer >= 8) {
                     txtMessage.setText("¡Vamos por buen camino y siempre se puede mejorar!");

@@ -58,6 +58,8 @@ public class CareManagerSumaryFragment extends Fragment {
 
         txtCurrentMonth.setText(month_name.toUpperCase()+" "+year);
 
+        expBar.setEnabled(false);
+
         myCompanyRef.child(post_key).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -79,6 +81,22 @@ public class CareManagerSumaryFragment extends Fragment {
 
                                 txtExp.setText("EXP: "+sum);
                                 expBar.setProgress(sum);
+
+                                if (sum <= 199) {
+                                    myCompanyRef.child(post_key).child("company_level").setValue("1");
+                                    expBar.getConfigBuilder().min(0).max(199).build();
+                                    expBar.setProgress(sum);
+                                } else if (sum >= 200 && sum <= 399) {
+                                    myCompanyRef.child(post_key).child("company_level").setValue("2");
+                                    expBar.getConfigBuilder().min(200).max(399).build();
+                                    expBar.setProgress(sum);
+                                } else if (sum >= 400 && sum <= 600) {
+                                    myCompanyRef.child(post_key).child("company_level").setValue("3");
+                                    expBar.getConfigBuilder().min(400).max(600).build();
+                                    expBar.setProgress(sum);
+                                }
+
+
 
                             }
 

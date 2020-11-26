@@ -21,7 +21,8 @@
         android:roundIcon="@drawable/oliver_android_icon_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CareManager.BusinessModelModule.BusinessModelActivity"></activity>
+        <activity android:name=".WebViewActivity"></activity>
+        <activity android:name=".CareManager.BusinessModelModule.BusinessModelActivity" />
         <activity android:name=".CareManager.ValueProposalModule.ValueProposalActivity" />
         <activity android:name=".Companies.MyCustomersActivity" />
         <activity android:name=".CareManager.BusinessOportunitiesModule.BusinessOportunitiesActivity" />

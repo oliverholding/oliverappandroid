@@ -86,8 +86,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 
+                        <com.anychart.AnyChartView
+                            android:id="@+id/anyChartView"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"/>
+
                         <TextView
-                            android:justificationMode="inter_word"
+                            android:id="@+id/txtKeyPartners"
                             android:text="Sin información"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
@@ -95,6 +101,14 @@
                         </TextView>
                         
                     </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/btnAddKeyPartners"
+                        android:layout_margin="8dp"
+                        android:src="@drawable/paper_write_icon"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"/>
 
 
                 </LinearLayout>
@@ -136,8 +150,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 
+                        <com.anychart.AnyChartView
+                            android:id="@+id/anyChartView2"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"/>
+
                         <TextView
-                            android:justificationMode="inter_word"
+                            android:id="@+id/txtKeyActivities"
                             android:text="Sin información"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
@@ -146,6 +166,13 @@
 
                     </LinearLayout>
 
+                    <ImageView
+                        android:id="@+id/btnAddKeyActivities"
+                        android:layout_margin="8dp"
+                        android:src="@drawable/paper_write_icon"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"/>
 
                 </LinearLayout>
 
@@ -186,8 +213,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 
+                        <com.anychart.AnyChartView
+                            android:id="@+id/anyChartView3"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"/>
+
                         <TextView
-                            android:justificationMode="inter_word"
+                            android:id="@+id/txtKeyResources"
                             android:text="Sin información"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
@@ -196,6 +229,13 @@
 
                     </LinearLayout>
 
+                    <ImageView
+                        android:id="@+id/btnKeyResources"
+                        android:layout_margin="8dp"
+                        android:src="@drawable/paper_write_icon"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"/>
 
                 </LinearLayout>
 
@@ -236,8 +276,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 
+                        <com.anychart.AnyChartView
+                            android:id="@+id/anyChartView4"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"/>
+
                         <TextView
-                            android:justificationMode="inter_word"
+                           android:id="@+id/txtValueProposal"
                             android:text="Sin información"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
@@ -246,6 +292,13 @@
 
                     </LinearLayout>
 
+                    <ImageView
+                        android:id="@+id/btnAddValueProposal"
+                        android:layout_margin="8dp"
+                        android:src="@drawable/paper_write_icon"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"/>
 
                 </LinearLayout>
 
@@ -286,8 +339,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 
+                        <com.anychart.AnyChartView
+                            android:id="@+id/anyChartView5"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"/>
+
                         <TextView
-                            android:justificationMode="inter_word"
+                            android:id="@+id/txtCustomerRelationship"
                             android:text="Sin información"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
@@ -296,6 +355,13 @@
 
                     </LinearLayout>
 
+                    <ImageView
+                        android:id="@+id/btnCustomerRelationship"
+                        android:layout_margin="8dp"
+                        android:src="@drawable/paper_write_icon"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"/>
 
                 </LinearLayout>
 
@@ -336,8 +402,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 
+                        <com.anychart.AnyChartView
+                            android:id="@+id/anyChartView6"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"/>
+
                         <TextView
-                            android:justificationMode="inter_word"
+                            android:id="@+id/txtChannels"
                             android:text="Sin información"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
@@ -346,6 +418,13 @@
 
                     </LinearLayout>
 
+                    <ImageView
+                        android:id="@+id/btnAddChannels"
+                        android:layout_margin="8dp"
+                        android:src="@drawable/paper_write_icon"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"/>
 
                 </LinearLayout>
 
@@ -380,14 +459,20 @@
 
                         <TextView
                             android:textSize="16sp"
-                            android:text="Segmentso de Clientes"
+                            android:text="Segmento de Clientes"
                             android:textStyle="bold"
                             android:textColor="@color/colorGradientStart"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 
+                        <com.anychart.AnyChartView
+                            android:id="@+id/anyChartView7"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"/>
+
                         <TextView
-                            android:justificationMode="inter_word"
+                            android:id="@+id/txtCustomerSegment"
                             android:text="Sin información"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
@@ -396,6 +481,13 @@
 
                     </LinearLayout>
 
+                    <ImageView
+                        android:id="@+id/btnCustomerSegment"
+                        android:layout_margin="8dp"
+                        android:src="@drawable/paper_write_icon"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"/>
 
                 </LinearLayout>
 
@@ -436,8 +528,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 
+                        <com.anychart.AnyChartView
+                            android:id="@+id/anyChartView8"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"/>
+
                         <TextView
-                            android:justificationMode="inter_word"
+                            android:id="@+id/txtOutcomeFlow"
                             android:text="Sin información"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
@@ -446,6 +544,13 @@
 
                     </LinearLayout>
 
+                    <ImageView
+                        android:id="@+id/btnAddOutcomeFlow"
+                        android:layout_margin="8dp"
+                        android:src="@drawable/paper_write_icon"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"/>
 
                 </LinearLayout>
 
@@ -486,8 +591,26 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 
+                        <com.anychart.AnyChartView
+                            android:id="@+id/anyChartView9"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"/>
+
+                        <com.anychart.AnyChartView
+                            android:id="@+id/anyChartView10"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"/>
+
                         <TextView
-                            android:justificationMode="inter_word"
+                            android:id="@+id/txtIncomeFlow"
+                            android:text="Sin información"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtPaymentMethod"
                             android:text="Sin información"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
@@ -496,9 +619,43 @@
 
                     </LinearLayout>
 
+                    <ImageView
+                        android:id="@+id/btnAddIncomeFlow"
+                        android:layout_margin="8dp"
+                        android:src="@drawable/paper_write_icon"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"/>
+
+
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/btnAddPaymentMethod"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_margin="8dp"
+                    android:src="@drawable/paper_write_icon"
+                    android:layout_weight="0.2"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"/>
+
+                <TextView
+                    android:textSize="16sp"
+                    android:text="Agregar Información adicional a Flujo de Ingresos"
+                    android:textColor="@color/colorGradientStart"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 

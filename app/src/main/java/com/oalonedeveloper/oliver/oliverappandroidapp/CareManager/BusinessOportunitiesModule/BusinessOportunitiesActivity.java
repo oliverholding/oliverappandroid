@@ -65,19 +65,23 @@ public class BusinessOportunitiesActivity extends AppCompatActivity {
                 case 0:
                     return new BusinessOportunityToolFragment();
                 case 1:
-                    return new Video1Module2Fragment();
+                    return new BusinessOportunityTool2Fragment();
                 case 2:
-                    return new Video2Module2Fragment();
+                    return new BusinessOportunityTool3Fragment();
                 case 3:
-                    return new Video3Module2Fragment();
+                    return new BusinessOportunityTool4Fragment();
                 case 4:
-                    return new Video4Module2Fragment();
-                case 5:
-                    return new Video5Module2Fragment();
-                case 6:
-                    return new Video6Module2Fragment();
-                case 7:
                     return new Video1Module2Fragment();
+                case 5:
+                    return new Video2Module2Fragment();
+                case 6:
+                    return new Video3Module2Fragment();
+                case 7:
+                    return new Video4Module2Fragment();
+                case 8:
+                    return new Video5Module2Fragment();
+                case 9:
+                    return new Video6Module2Fragment();
 
 
                 default:

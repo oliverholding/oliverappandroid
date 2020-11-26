@@ -175,7 +175,7 @@
                             android:textColor="@color/colorGradientEnd"
                             android:gravity="center"
                             app:layout_constraintBottom_toBottomOf="@id/img4"
-                            android:text="Moodelos de Negocio"
+                            android:text="Modelos de Negocio"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 
