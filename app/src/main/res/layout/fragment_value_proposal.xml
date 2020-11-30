@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CareManager.ValueProposalModule.ValueProposalFragment">
+
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_weight="0.1"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/icono_evaluacion512"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Evaluación de Entrada"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageButton
+                        android:id="@+id/btnTest1"
+                        android:padding="8dp"
+                        android:src="@drawable/icono_evaluacion_white128"
+                        android:background="@drawable/blue_button_style"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_weight="0.1"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/icono_capacitacion512"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="“Cómo configurar Propuestas de Valor”"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageButton
+                        android:id="@+id/btnCap1"
+                        android:padding="8dp"
+                        android:src="@drawable/icono_capacitacion128"
+                        android:background="@drawable/blue_button_style"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:text="Enlace instantáneo a canal de CARE en Youtube para ver y escuchar:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_weight="0.1"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/play_video_icon"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Lo que usualmente pasa"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageButton
+                        android:id="@+id/btnVideo1"
+                        android:src="@drawable/play_white_icon"
+                        android:background="@drawable/blue_button_style"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_weight="0.1"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/play_video_icon"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Reflexión 1: Causas y Efectos"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageButton
+                        android:id="@+id/btnVideo2"
+                        android:src="@drawable/play_white_icon"
+                        android:background="@drawable/blue_button_style"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_weight="0.1"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/play_video_icon"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Cómo podría mejorarse"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageButton
+                        android:id="@+id/btnVideo3"
+                        android:src="@drawable/play_white_icon"
+                        android:background="@drawable/blue_button_style"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_weight="0.1"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/play_video_icon"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Reflexión 2: Causas y Efectos"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageButton
+                        android:id="@+id/btnVideo4"
+                        android:src="@drawable/play_white_icon"
+                        android:background="@drawable/blue_button_style"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_weight="0.1"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/play_video_icon"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Herramientas para mejorar"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageButton
+                        android:id="@+id/btnVideo5"
+                        android:src="@drawable/play_white_icon"
+                        android:background="@drawable/blue_button_style"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_weight="0.1"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/play_video_icon"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Motivación para utilizar la Herramienta"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageButton
+                        android:id="@+id/btnVideo6"
+                        android:src="@drawable/play_white_icon"
+                        android:background="@drawable/blue_button_style"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:text="Presentaciones y Lecturas complementarias:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_weight="0.1"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/upload_file1"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Presentaciones y Lecturas complementarias"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageButton
+                        android:id="@+id/btnFile1"
+                        android:src="@drawable/upload_file_white_icon"
+                        android:background="@drawable/blue_button_style"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_weight="0.1"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/icono_matriz512"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Herramienta para mejorar 64215.1"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageButton
+                        android:id="@+id/btnTool1"
+                        android:padding="8dp"
+                        android:src="@drawable/icono_matriz128"
+                        android:background="@drawable/blue_button_style"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_weight="0.1"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/icono_matriz512"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text=" Herramienta para mejorar 64215.2"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageButton
+                        android:id="@+id/btnTool2"
+                        android:padding="8dp"
+                        android:src="@drawable/icono_matriz128"
+                        android:background="@drawable/blue_button_style"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_weight="0.1"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/icono_matriz512"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text=" Herramienta para mejorar 64215.3"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageButton
+                        android:id="@+id/btnTool3"
+                        android:padding="8dp"
+                        android:src="@drawable/icono_matriz128"
+                        android:background="@drawable/blue_button_style"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_weight="0.1"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/icono_matriz512"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text=" Herramienta para mejorar 64215.4"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageButton
+                        android:id="@+id/btnTool4"
+                        android:padding="8dp"
+                        android:src="@drawable/icono_matriz128"
+                        android:background="@drawable/blue_button_style"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_weight="0.1"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/icono_matriz512"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text=" Herramienta para mejorar 64215.5"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageButton
+                        android:id="@+id/btnTool5"
+                        android:padding="8dp"
+                        android:src="@drawable/icono_matriz128"
+                        android:background="@drawable/blue_button_style"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_weight="0.1"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/icono_matriz512"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text=" Herramienta para mejorar 64215.6"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageButton
+                        android:id="@+id/btnTool6"
+                        android:padding="8dp"
+                        android:src="@drawable/icono_matriz128"
+                        android:background="@drawable/blue_button_style"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_weight="0.1"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/icono_evaluacion512"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Evaluación de Salida"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageButton
+                        android:id="@+id/btnTest2"
+                        android:padding="8dp"
+                        android:src="@drawable/icono_evaluacion_white128"
+                        android:background="@drawable/blue_button_style"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

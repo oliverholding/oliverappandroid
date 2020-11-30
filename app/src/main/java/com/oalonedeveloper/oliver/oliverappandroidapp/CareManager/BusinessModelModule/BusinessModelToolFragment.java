@@ -108,18 +108,21 @@ public class BusinessModelToolFragment extends Fragment {
                              id001C = dataSnapshot.child("001").child("001C").getValue(Integer.class);
                         }
 
-                        APIlib.getInstance().setActiveAnyChartView(anyChartView);
 
-                        Pie pie = AnyChart.pie();
-                        List<DataEntry> data = new ArrayList<>();
-                        data.add(new ValueDataEntry("Empresas Privadas", id001A));
-                        data.add(new ValueDataEntry("Entidades Estatales", id001B));
-                        data.add(new ValueDataEntry("ONG's y Fundaciones", id001C));
-                        pie.data(data);
-                        anyChartView.setChart(pie);
 
                         txtKeyPartners.setText("Mis socios clave están compuestos de la siguiente forma: "+id001A+"% por Empresas Privadas, "+id001B+"% por entidades estatales y "+id001C+"% por ONG's y Fundaciones");
                     }
+
+                    APIlib.getInstance().setActiveAnyChartView(anyChartView);
+
+                    Pie pie = AnyChart.pie();
+                    List<DataEntry> data = new ArrayList<>();
+                    data.add(new ValueDataEntry("Empresas Privadas", id001A));
+                    data.add(new ValueDataEntry("Entidades Estatales", id001B));
+                    data.add(new ValueDataEntry("ONG's y Fundaciones", id001C));
+                    data.add(new ValueDataEntry("Otross", 23));
+                    pie.data(data);
+                    anyChartView.setChart(pie);
 
                     if (dataSnapshot.hasChild("002")) {
                         if (dataSnapshot.child("002").hasChild("002A")) {

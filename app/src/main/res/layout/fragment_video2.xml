@@ -41,7 +41,7 @@
                     <TextView
                         android:textColor="@android:color/black"
                         android:layout_margin="4dp"
-                        android:text="Video 2"
+                        android:text="Reflexión 1: Causas y Efectos"
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>

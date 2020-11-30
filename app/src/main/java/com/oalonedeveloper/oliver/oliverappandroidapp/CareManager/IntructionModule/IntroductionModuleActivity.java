@@ -58,19 +58,21 @@ public class IntroductionModuleActivity extends AppCompatActivity {
             // Return a PlaceholderFragment (defined as a static inner class below).
             switch (position) {
                 case 0:
-                    return new Video1Fragment();
+                    return new IntroductionModuleFragment();
                 case 1:
-                    return new Video2Fragment();
+                    return new Video1Fragment();
                 case 2:
-                    return new Video3Fragment();
+                    return new Video2Fragment();
                 case 3:
-                    return new Video4Fragment();
+                    return new Video3Fragment();
                 case 4:
-                    return new Video5Fragment();
+                    return new Video4Fragment();
                 case 5:
-                    return new Video6Fragment();
+                    return new Video5Fragment();
                 case 6:
                     return new Video6Fragment();
+                case 7:
+                    return new Files1Fragment();
 
 
                 default:

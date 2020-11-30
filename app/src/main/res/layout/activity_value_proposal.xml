@@ -30,7 +30,7 @@
                 android:gravity="center_vertical"
                 android:textSize="18sp"
                 android:textColor="@android:color/white"
-                android:text="Propuesta de Valor"
+                android:text="Propuestas de Valor"
                 android:layout_weight="4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
@@ -67,7 +67,7 @@
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab2"
-            android:icon="@drawable/play_white_icon"
+            android:icon="@drawable/icono_capacitacion128"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -103,6 +103,12 @@
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab8"
+            android:icon="@drawable/play_white_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab9"
             android:icon="@drawable/upload_file_white_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>

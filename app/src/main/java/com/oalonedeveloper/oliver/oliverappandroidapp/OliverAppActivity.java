@@ -2,8 +2,11 @@ package com.oalonedeveloper.oliver.oliverappandroidapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -29,6 +32,25 @@ public class OliverAppActivity extends AppCompatActivity {
             }
         });
 
+        showWelcomeMessage();
 
+
+    }
+
+    private void showWelcomeMessage() {
+        final AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+
+        LayoutInflater inflater = LayoutInflater.from(this);
+        final View add_bank_account = inflater.inflate(R.layout.welcome_dialog,null);
+
+        dialog.setPositiveButton("Entendido", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        dialog.setView(add_bank_account);
+        dialog.show();
     }
 }

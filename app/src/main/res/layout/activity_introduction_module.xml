@@ -30,7 +30,7 @@
                 android:gravity="center_vertical"
                 android:textSize="18sp"
                 android:textColor="@android:color/white"
-                android:text="Introducción al Módulo de Gestión Mype"
+                android:text="Qué es un Modelo de Gestión y para qué sirve"
                 android:layout_weight="4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
@@ -58,6 +58,12 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab0"
+            android:icon="@drawable/introduction_module_white_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab1"

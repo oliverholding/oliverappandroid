@@ -10,20 +10,29 @@ import android.os.Bundle;
 
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessOportunitiesModule.Training1Fragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessOportunitiesModule.Video1Module2Fragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessOportunitiesModule.Video2Module2Fragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessOportunitiesModule.Video3Module2Fragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessOportunitiesModule.Video4Module2Fragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessOportunitiesModule.Video5Module2Fragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessOportunitiesModule.Video6Module2Fragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Files1Fragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Video1Fragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Video2Fragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Video3Fragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Video4Fragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Video5Fragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Video6Fragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ValueProposalModule.MainDataTestFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ValueProposalModule.ValueProposalActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ValueProposalModule.ValueProposalFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class BusinessModelActivity extends AppCompatActivity {
 
     ViewPager mViewPager;
-   SectionsPagerAdapter mSectionsPagerAdapter;
+    SectionsPagerAdapter mSectionsPagerAdapter;
     int fragmentId;
 
     @Override
@@ -63,21 +72,23 @@ public class BusinessModelActivity extends AppCompatActivity {
             // Return a PlaceholderFragment (defined as a static inner class below).
             switch (position) {
                 case 0:
-                    return new BusinessModelToolFragment();
+                    return new BusinessModelFragment();
                 case 1:
-                    return new Video1Module2Fragment();
+                    return new Training1Fragment();
                 case 2:
-                    return new Video2Module2Fragment();
+                    return new Video1Fragment();
                 case 3:
-                    return new Video3Module2Fragment();
+                    return new Video2Fragment();
                 case 4:
-                    return new Video4Module2Fragment();
+                    return new Video3Fragment();
                 case 5:
-                    return new Video5Module2Fragment();
+                    return new Video4Fragment();
                 case 6:
-                    return new Video6Module2Fragment();
+                    return new Video5Fragment();
                 case 7:
-                    return new Video1Module2Fragment();
+                    return new Video6Fragment();
+                case 8:
+                    return new Files1Fragment();
 
 
                 default:

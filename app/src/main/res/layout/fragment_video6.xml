@@ -41,7 +41,7 @@
                     <TextView
                         android:textColor="@android:color/black"
                         android:layout_margin="4dp"
-                        android:text="Video 6"
+                        android:text="Motivación para utilizar la Herramienta"
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
