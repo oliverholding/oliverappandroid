@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="12dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtContactData"
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Define a tu contacto:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="¿Le interesa tu producto/servicio?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rd1yes"
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="Sí"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/rd1no"
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="No"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/txtMessage2"
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="¿Disponen capacidad de pago?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rd2yes"
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="Sí"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/rd2no"
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="No"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/txtMessage3"
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="¿Ponen pretexto?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rd3yes"
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="Sí"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/rd3no"
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="No"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/txtMessage4"
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="¿Fijan fecha/hora y forma de pago?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rd4yes"
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="Sí"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/rd4no"
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="No"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/txtMessage5"
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="¿Acpetan condiciones y firman contrato?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rd5yes"
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="Sí"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/rd5no"
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="No"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btnFinish"
+                android:text="FINALIZAR"
+                android:layout_margin="8dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/blue_button_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".CareManager.Commercialization.ProductMarketMatrix.MatrizAnswerFragment">
+
+    <LinearLayout
+        android:layout_above="@id/btnTryAgain"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:src="@drawable/icono_matriz512"
+            android:layout_margin="8dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"/>
+
+        <TextView
+            android:id="@+id/txtMessage"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorGradientStart"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:text="statregy_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnMatrix"
+            android:layout_alignParentBottom="true"
+            android:text="VER MATRIZ"
+            android:textColor="@android:color/white"
+            android:layout_margin="12dp"
+            android:background="@drawable/blue_button_style"
+            android:padding="18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnTryAgain"
+        android:layout_alignParentBottom="true"
+        android:text="INTENTAR DE NUEVO"
+        android:textColor="@android:color/white"
+        android:layout_margin="12dp"
+        android:background="@drawable/blue_button_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

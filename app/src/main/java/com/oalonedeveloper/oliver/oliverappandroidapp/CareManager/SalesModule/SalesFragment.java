@@ -8,16 +8,22 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CommercializationActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CommercializationToolActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.ProductMarketMatrix.ProductMarketMatrixActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.SalesArgument.SalesArgumentActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.SalesFunnel.SalesFunnelActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 
 public class SalesFragment extends Fragment {
 
     ImageButton btnTest1,btnCap1,btnVideo1,btnVideo2,btnVideo3,btnVideo4,btnVideo5,btnVideo6,btnFile1,btnTool1,btnTool2,btnTool3,btnTool4,btnTool5,btnTool6,btnTest2;
+    Button btnSalesArgument,btnSalesFunnel,btnTutorial;
+    String post_key;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,6 +47,36 @@ public class SalesFragment extends Fragment {
         btnTool5 = view.findViewById(R.id.btnTool5);
         btnTool6 = view.findViewById(R.id.btnTool6);
         btnTest2 = view.findViewById(R.id.btnTest2);
+        btnSalesArgument = view.findViewById(R.id.btnSalesArgument);
+        btnSalesFunnel = view.findViewById(R.id.btnSalesFunnel);
+        btnTutorial = view.findViewById(R.id.btnTutorial);
+
+        post_key = getActivity().getIntent().getExtras().getString("post_key");
+
+        btnSalesArgument.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SalesArgumentActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+        btnSalesFunnel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SalesFunnelActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+        btnTutorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SalesTutorialActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
 
         btnTest1.setOnClickListener(new View.OnClickListener() {
             @Override

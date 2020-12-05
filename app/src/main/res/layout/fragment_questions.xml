@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CareManager.Commercialization.ProductMarketMatrix.QuestionsFragment">
+
+   <ScrollView
+       android:scrollbars="vertical"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+       <LinearLayout
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <androidx.cardview.widget.CardView
+               android:id="@+id/cardViewTitle"
+               app:cardCornerRadius="8dp"
+               app:cardElevation="8dp"
+               android:layout_margin="12dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+
+               <LinearLayout
+                   android:padding="8dp"
+                   android:orientation="vertical"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+
+                   <TextView
+                       android:text="Matriz Productos-Mercado"
+                       android:textSize="18sp"
+                       android:layout_margin="4dp"
+                       android:textColor="@android:color/black"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"/>
+
+                   <TextView
+                       android:text="En éste módulo te brindaremos una herramienta para que puedas determinar y visualizar tu estrategia en la introducción de tu producto/servicio a tu mercado actual o en uno distinto"
+                       android:layout_margin="4dp"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"/>
+
+
+               </LinearLayout>
+
+           </androidx.cardview.widget.CardView>
+
+           <TextView
+               android:text="Selecciona la afirmación que más se asemeje a tu negocio:"
+               android:textStyle="bold"
+               android:textSize="18sp"
+               android:layout_margin="12dp"
+               android:textColor="@android:color/black"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"/>
+
+           <RadioGroup
+               android:id="@+id/radioGroup"
+               android:padding="8dp"
+               android:orientation="vertical"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+
+               <RadioButton
+                   android:id="@+id/rd001"
+                   android:background="@drawable/edit_text_style"
+                   android:padding="8dp"
+                   android:text="Mi producto/servicio es muy similar al de mi competencia y sólo se diferencia porque lleva mi marca en el mercado actual. Ejm: Coca Cola vs Pepsi"
+                   android:layout_margin="4dp"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"/>
+
+               <RadioButton
+                   android:id="@+id/rd002"
+                   android:background="@drawable/edit_text_style"
+                   android:padding="8dp"
+                   android:text="Mi producto/servicio 'no existía' antes por que tiene nuevos usos/finalidades para mi mercado actual Ejm: Coca Cola Zero"
+                   android:layout_margin="4dp"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"/>
+
+               <RadioButton
+                   android:id="@+id/rd003"
+                   android:background="@drawable/edit_text_style"
+                   android:padding="8dp"
+                   android:text="Mi actual producto/servicio se comercializa en otras zonas geográficas Ejm: Inka Kola en Europa"
+                   android:layout_margin="4dp"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"/>
+
+               <RadioButton
+                   android:id="@+id/rd004"
+                   android:background="@drawable/edit_text_style"
+                   android:padding="8dp"
+                   android:text="Mi producto/servicio 'no existe' en un mercado distinto al actual. Ejm: si antes comercializaba bebidas ahora comercializo maderas."
+                   android:layout_margin="4dp"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"/>
+
+           </RadioGroup>
+
+           <Button
+               android:id="@+id/btnContinue"
+               android:text="CONTINUAR"
+               android:textColor="@android:color/white"
+               android:layout_margin="12dp"
+               android:background="@drawable/blue_button_style"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"/>
+
+       </LinearLayout>
+
+   </ScrollView>
+
+</RelativeLayout>

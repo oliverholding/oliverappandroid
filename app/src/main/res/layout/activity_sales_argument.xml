@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rootLayout"
+    tools:context=".CareManager.SalesModule.SalesArgument.SalesArgumentActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/appBar"
+        app:cardElevation="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:background="@drawable/gradient_start"
+            android:gravity="center"
+            android:padding="12dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/icono_ventas128"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="35dp"/>
+
+            <TextView
+                android:gravity="center_vertical"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:text="Argumentarios de Ventas"
+                android:layout_weight="4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:id="@+id/btnMenu"
+                android:src="@drawable/open_menu_icon"
+                android:scaleType="centerInside"
+                android:padding="4dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="35dp"/>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_below="@id/appBar"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="8dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewTitle"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Argumentarios de Ventas"
+                        android:textSize="18sp"
+                        android:layout_margin="4dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Con ésta herramienta podrás contar con un argumentario de ventas que te permitirá comercializar fácilmente tu producto/servicio"
+                        android:layout_margin="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:text="Puntos Clave:"
+                android:textSize="18sp"
+                android:layout_margin="4dp"
+                android:textColor="@android:color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="1. Presentación del vendedor."
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="2. Público Objetivo."
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="3. Presentación del Producto o Servicio."
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="4. El problema que resuelve mi producto."
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="5. Beneficio que ofrece mi producto."
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="6. Diferencia con la competencia."
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+            <TextView
+                android:text="FORMATO:"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_margin="8dp"
+                android:textColor="@android:color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Saludo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnGreeting"
+                android:padding="8dp"
+                android:gravity="start|center_vertical"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Saludo..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Nombre del Vendedor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtSellerName"
+                android:inputType="textCapWords"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Nombre del vendedor..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Nombre del Producto o Servicio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtProductName"
+                android:inputType="textCapWords"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Nombre del Producto o Servicio..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Diferenciación"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnCharacteristic"
+                android:padding="8dp"
+                android:gravity="start|center_vertical"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Diferenciación..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Formas de Pago"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/cb1"
+                android:layout_margin="4dp"
+                android:text="Efectivo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <CheckBox
+                android:id="@+id/cb2"
+                android:layout_margin="4dp"
+                android:text="Tarjetas de Debito y Crédito"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <CheckBox
+                android:id="@+id/cb3"
+                android:layout_margin="4dp"
+                android:text="Yape"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <CheckBox
+                android:id="@+id/cb4"
+                android:layout_margin="4dp"
+                android:text="Transferencias Bancarias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Teléfono de Contacto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtCompanyNumber"
+                android:inputType="number"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Teléfono de Contacto..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Horario de Atención"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnCompanySchedule"
+                android:padding="8dp"
+                android:gravity="start|center_vertical"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Horario de Atención..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnShowPhrase"
+                android:text="MOSTRAR FRASE"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:background="@drawable/blue_button_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

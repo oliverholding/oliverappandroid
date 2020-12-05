@@ -1,0 +1,978 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CareManager.Commercialization.CustomerSupport.QuestionCustomerSuportFragment">
+
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewTitle"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Soporte a Clientes y Fidelización:"
+                        android:textSize="18sp"
+                        android:layout_margin="4dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="En ésta parte te ayudamos a que tus clientes te compren de forman constante tu producto/servicio para que tu negocio crezca."
+                        android:layout_margin="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:src="@drawable/number_one"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"/>
+
+                        <TextView
+                            android:text="Conociendo a tu equipo comercial"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:text="Influencia y Negociación"
+                        android:layout_margin="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="¿Tu equipo comercial es persuasivo? (hace que tu cliente compre tu producto/servicio)"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Sí"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="No"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="¿Tu equipo comercial es convincente?  (conoce todo de tu producto/servicio)"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Sí"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="No"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="¿Tu equipo comercial es creíble? (usa ejemplos reales y muestra las ventajas y fortalezas de tu producto/servicio frente a la competencia)"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Sí"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="No"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:text="Conocimiento del producto/servicio"
+                        android:layout_margin="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="¿Cuándo contratas a nuevos vendedores o comerciales les das una formación introductoria de tus productos/servicios?"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Sí"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="No"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="¿Cuándo contratas a nuevos vendedores o comerciales les das una formación introductoria de tus productos/servicios?"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Sí"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="No"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Nunca, pero sé que debo hacerlo"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="¿Con qué frecuencia tienes reuniones de coordinación con tu equipo comercial?"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Diario"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Semanal"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Mensual"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Trimestral"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Semestral"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Nunca, pero sé que debo hacerlo"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="¿Qué conoce tu equipo comercial de tus productos/servicios?"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Uso"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Funcionalidad"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Es complemento de otro producto/servicio"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Es sustituto de otro producto/servicio"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="¿Conoces los costos que tienen tus productos/servicios? "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="Costos de diseño y elaboración "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Sí"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="No"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="Costos de producción/mano de obra "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Sí"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="No"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="Costos de envase "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Sí"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="No"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="Costos de empaquetado "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Sí"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="No"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="Costos de movilización "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Sí"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="No"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="¿Conozco quién es mi competencia y cuantos son?"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Sí"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="No"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="¿Crees firmemente que tus productos/servicios satisfacen las necesidades de tus clientes?"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Sí"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="No"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="No sé"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="¿Qué habilidades tiene tu equipo comercial?"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <CheckBox
+                        android:layout_margin="8dp"
+                        android:text="Escucha activa: comprendes lo que te comunica el cliente y le propones soluciones válidas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <CheckBox
+                        android:layout_margin="8dp"
+                        android:text="Conversación eficaz: comprendes y entiendes las necesidades a satisfacer del cliente"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <CheckBox
+                        android:layout_margin="8dp"
+                        android:text="Empatía y confianza: cuando el cliente se siente valorado ganándose su confianza"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <CheckBox
+                        android:layout_margin="8dp"
+                        android:text="Proactividad: se anticipan a satisfacer nuevas necesidades del cliente"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <CheckBox
+                        android:layout_margin="8dp"
+                        android:text="Paciencia y insistencia: tolerantes a la frustación, perseveran e insisten con energía para cerrar la venta"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <CheckBox
+                        android:layout_margin="8dp"
+                        android:text="Planificación y organización del trabajo: gestionan su agenda de forma efectiva programando sus reuniones y preparando informes sin retrasos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:src="@drawable/number_two"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"/>
+
+                        <TextView
+                            android:text="Conociendo a tu cliente"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="¿Quién es tu cliente?"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="Persona"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Menores de 25 años"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Entre 26 a 65 años"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Mayores a 66 años"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="Persona"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Persona natural con negocio"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Mype"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Mediana Empresa"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Gran Empres"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="¿Con qué frecuencia compra tu producto/servicio?"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Diario"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Semanal"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Mensual"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Trimestral"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Semestral"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="No sé"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="¿Dónde adquiere tu producto/servicio?"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <CheckBox
+                        android:layout_margin="8dp"
+                        android:text="Local principal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <CheckBox
+                        android:layout_margin="8dp"
+                        android:text="Sucursales"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <CheckBox
+                        android:layout_margin="8dp"
+                        android:text="Minoristas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <CheckBox
+                        android:layout_margin="8dp"
+                        android:text="Mayoristas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <CheckBox
+                        android:layout_margin="8dp"
+                        android:text="Intermediarios"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <CheckBox
+                        android:layout_margin="8dp"
+                        android:text="Exportaciones"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <CheckBox
+                        android:layout_margin="8dp"
+                        android:text="Página web"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <CheckBox
+                        android:layout_margin="8dp"
+                        android:text="Redes sociales y otras plataformas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="¿Por qué compra tu producto/servicio?"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RadioGroup
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Precio"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:background="@drawable/edit_text_style"
+                            android:padding="8dp"
+                            android:text="Calidad"
+                            android:layout_margin="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

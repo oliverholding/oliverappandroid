@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CareManager.SalesModule.SalesFunnel.ContactsFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_above="@id/buttonsLayout"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:id="@+id/buttonsLayout"
+        android:layout_margin="8dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <Button
+            android:id="@+id/btnAddCustomer"
+            android:textColor="@android:color/white"
+            android:background="@drawable/blue_button_style"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:layout_width="0dp"
+            android:text="Agregar nuevo CONTACTO"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

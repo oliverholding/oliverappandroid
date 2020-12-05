@@ -68,6 +68,45 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/optionsLayout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnDefine"
+                android:textColor="@android:color/white"
+                android:background="@drawable/blue_button_style"
+                android:layout_weight="1"
+                android:layout_margin="8dp"
+                android:layout_width="0dp"
+                android:text="Definir"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnMyCustomers"
+                android:textColor="@android:color/white"
+                android:background="@drawable/blue_button_style"
+                android:layout_weight="1"
+                android:layout_margin="8dp"
+                android:layout_width="0dp"
+                android:text="VER"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnProm"
+                android:textColor="@android:color/white"
+                android:background="@drawable/blue_button_style"
+                android:layout_weight="1"
+                android:layout_margin="8dp"
+                android:layout_width="0dp"
+                android:text="PROMO"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

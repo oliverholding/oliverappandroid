@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="12dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="8dp"
+                android:text="CREAR BOLETA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="¿Es una Boleta de Venta de Exportación / ¿haz vendido al extranjero? "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rdMan"
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="Sí"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/rdWoman"
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="No"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Selecciona el tipo de documento del cliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnDocumentType"
+                android:padding="8dp"
+                android:gravity="start|center_vertical"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Tipo de Documento..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Ingrese el número de documento del cliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtDocumentNumber"
+                android:inputType="number"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Número de Documento..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Apellidos y Nombres del cliente, Denominación o Razón Social"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtName"
+                android:inputType="textCapWords"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Nombre o Razón Social..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Indique si la boleta de venta se emite por un pago anticipado / ¿te han pagado una parte por adelantado?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="Sí"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="No"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Indique si consignará su dirección o indique si la venta es por emisor itinerante / ¿quieres ingresar tu dirección?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="Sí"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="No"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Indique si va a incluir la dirección de tu cliente en la Boleta de Venta donde se entrega el bien o se presta el servicio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="Sí"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="No"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Tipo de Moneda / ¿Con qué moneda te pago?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:padding="8dp"
+                android:gravity="start|center_vertical"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Divisa..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Es una boleta con descuentos o anticipos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="Sí"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="No"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Tiene Impuesto Selectivo al Consumo ISC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="Sí"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="No"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Tiene Operaciones gratuitas / Haz donado tu trabajo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="Sí"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="No"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Otros tributos que no son parte de la Base Imponible del IGV / ejm: impuestos prediales"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="Sí"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="No"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Indicar la Fecha de Vencimiento / ¿Cuándo te tiene que pagar?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:drawableStart="@drawable/calendar_icon"
+                    android:id="@+id/edtBthDay"
+                    android:inputType="number"
+                    android:padding="8dp"
+                    android:maxLength="2"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Día"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:drawableStart="@drawable/calendar_icon"
+                    android:id="@+id/edtBthMonth"
+                    android:inputType="number"
+                    android:padding="8dp"
+                    android:maxLength="2"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Mes"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:drawableStart="@drawable/calendar_icon"
+                    android:id="@+id/edtBthYear"
+                    android:inputType="number"
+                    android:padding="8dp"
+                    android:maxLength="4"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Año"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Indicar la Fecha de Emisión / ¿Cuándo te compró?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:drawableStart="@drawable/calendar_icon"
+                    android:inputType="number"
+                    android:padding="8dp"
+                    android:maxLength="2"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Día"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:drawableStart="@drawable/calendar_icon"
+                    android:inputType="number"
+                    android:padding="8dp"
+                    android:maxLength="2"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Mes"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:drawableStart="@drawable/calendar_icon"
+                    android:inputType="number"
+                    android:padding="8dp"
+                    android:maxLength="4"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Año"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

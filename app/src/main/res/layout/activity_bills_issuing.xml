@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CareManager.Commercialization.BillsIssuing.BillsIssuingActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/appBar"
+        app:cardElevation="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:background="@drawable/gradient_start"
+            android:gravity="center"
+            android:padding="12dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/icono_boleta128"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="35dp"/>
+
+            <TextView
+                android:gravity="center_vertical"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:text="Emisión de Boletas y Facturas"
+                android:layout_weight="4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:id="@+id/btnMenu"
+                android:src="@drawable/open_menu_icon"
+                android:scaleType="centerInside"
+                android:padding="4dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="35dp"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_below="@id/appBar"
+        android:id="@+id/topLayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_margin="12dp"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:text="MIS BOLETAS Y FACTURAS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:padding="8dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_margin="4dp"
+                android:text=""
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:layout_weight="0.3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtBillCode"
+                android:layout_margin="4dp"
+                android:text="CÓDIGO"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtCustomerName"
+                android:layout_margin="4dp"
+                android:text="CLIENTE"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtBillAmount"
+                android:layout_margin="4dp"
+                android:text="MONTO"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_margin="4dp"
+                android:text="ESTADO"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_below="@id/topLayout"
+        android:layout_above="@id/buttonsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:id="@+id/buttonsLayout"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnCreateBill"
+            android:text="CREAR BOLETA"
+            android:textColor="@android:color/white"
+            android:layout_margin="8dp"
+            android:background="@drawable/blue_button_style"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnCreateInvoice"
+            android:text="CREAR FACTURA"
+            android:textColor="@android:color/white"
+            android:layout_margin="8dp"
+            android:background="@drawable/blue_button_style"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

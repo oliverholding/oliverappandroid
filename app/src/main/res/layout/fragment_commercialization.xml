@@ -700,6 +700,7 @@
             </androidx.cardview.widget.CardView>
 
             <Button
+                android:id="@+id/btnTutorial"
                 android:padding="8dp"
                 android:text="Tutorial del Módulo"
                 android:textColor="@android:color/white"
@@ -710,6 +711,7 @@
                 android:layout_height="wrap_content"/>
 
             <Button
+                android:id="@+id/btnProductMarketMatrix"
                 android:padding="8dp"
                 android:text="Matriz Productos-Mercado"
                 android:textColor="@android:color/white"
@@ -720,6 +722,7 @@
                 android:layout_height="wrap_content"/>
 
             <Button
+                android:id="@+id/btnBillIssuing"
                 android:padding="8dp"
                 android:text="Emisión de Boletas y Facturas"
                 android:textColor="@android:color/white"
@@ -730,6 +733,7 @@
                 android:layout_height="wrap_content"/>
 
             <Button
+                android:id="@+id/btnCreditsAndTreasury"
                 android:padding="8dp"
                 android:text="Créditos y Cobranzas"
                 android:textColor="@android:color/white"
@@ -740,6 +744,7 @@
                 android:layout_height="wrap_content"/>
 
             <Button
+                android:id="@+id/btnCustomerSupport"
                 android:padding="8dp"
                 android:text="Soporte a Clientes y Fidelización"
                 android:textColor="@android:color/white"

@@ -700,6 +700,7 @@
             </androidx.cardview.widget.CardView>
 
             <Button
+                android:id="@+id/btnTutorial"
                 android:padding="8dp"
                 android:text="Tutorial del Módulo"
                 android:textColor="@android:color/white"
@@ -710,6 +711,7 @@
                 android:layout_height="wrap_content"/>
 
             <Button
+                android:id="@+id/btnSalesArgument"
                 android:padding="8dp"
                 android:text="Argumentarios de Ventas"
                 android:textColor="@android:color/white"
@@ -720,8 +722,9 @@
                 android:layout_height="wrap_content"/>
 
             <Button
+                android:id="@+id/btnSalesFunnel"
                 android:padding="8dp"
-                android:text="Emisión de Boletas y Facturas"
+                android:text="Embudos de Ventas"
                 android:textColor="@android:color/white"
                 android:layout_margin="8dp"
                 android:background="@drawable/blue_button_style"

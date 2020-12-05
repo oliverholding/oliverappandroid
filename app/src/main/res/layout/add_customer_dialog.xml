@@ -11,7 +11,7 @@
         android:layout_margin="8dp"
         android:textSize="16sp"
         android:textColor="@android:color/black"
-        android:text="Nombre del cliente:"
+        android:text="Nombre del contacto:"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -21,7 +21,7 @@
         android:padding="8dp"
         android:layout_margin="8dp"
         android:background="@drawable/edit_text_style"
-        android:hint="Nombre del cliente..."
+        android:hint="Nombre del contacto..."
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -29,7 +29,7 @@
         android:layout_margin="8dp"
         android:textSize="16sp"
         android:textColor="@android:color/black"
-        android:text="Correo del cliente:"
+        android:text="Correo del contacto:"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -39,7 +39,7 @@
         android:padding="8dp"
         android:layout_margin="8dp"
         android:background="@drawable/edit_text_style"
-        android:hint="Correo del cliente..."
+        android:hint="Correo del contacto..."
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -47,7 +47,7 @@
         android:layout_margin="8dp"
         android:textSize="16sp"
         android:textColor="@android:color/black"
-        android:text="Teléfono móvil del cliente:"
+        android:text="Teléfono móvil del contacto:"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -79,7 +79,7 @@
             android:padding="8dp"
             android:layout_margin="8dp"
             android:background="@drawable/edit_text_style"
-            android:hint="Teléfono móvil del cliente..."
+            android:hint="Teléfono móvil del contacto..."
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content" />
@@ -90,7 +90,7 @@
         android:layout_margin="8dp"
         android:textSize="16sp"
         android:textColor="@android:color/black"
-        android:text="Tipo de Cliente"
+        android:text="Tipo de contacto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -123,7 +123,7 @@
 
     <Button
         android:id="@+id/btnAddCustomer"
-        android:text="registrar cliente"
+        android:text="registrar contacto"
         android:layout_margin="12dp"
         android:textColor="@android:color/white"
         android:background="@drawable/blue_button_style"

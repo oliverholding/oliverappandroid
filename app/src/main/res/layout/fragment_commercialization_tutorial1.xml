@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".CareManager.Commercialization.CommercializationTutorial1Fragment">
+
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/avatarOliver"
+        android:src="@drawable/avatar_oliver"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"/>
+
+    <TextView
+        android:layout_margin="20dp"
+        android:layout_below="@id/avatarOliver"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:text="Hola, soy Oliver, a continuación te mostaré como funcionan las herramientas del Módulo Comercialización"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>
