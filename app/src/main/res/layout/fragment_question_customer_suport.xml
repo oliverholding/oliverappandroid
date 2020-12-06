@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/rootLayout"
     tools:context=".CareManager.Commercialization.CustomerSupport.QuestionCustomerSuportFragment">
 
     <ScrollView
@@ -110,6 +111,7 @@
                         android:layout_height="wrap_content">
 
                         <RadioButton
+                            android:id="@+id/rd001A"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Sí"
@@ -119,6 +121,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd001B"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="No"
@@ -143,6 +146,7 @@
                         android:layout_height="wrap_content">
 
                         <RadioButton
+                            android:id="@+id/rd002A"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Sí"
@@ -152,6 +156,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd002B"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="No"
@@ -176,6 +181,7 @@
                         android:layout_height="wrap_content">
 
                         <RadioButton
+                            android:id="@+id/rd003A"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Sí"
@@ -185,6 +191,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd003B"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="No"
@@ -218,6 +225,7 @@
                         android:layout_height="wrap_content">
 
                         <RadioButton
+                            android:id="@+id/rd004A"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Sí"
@@ -227,6 +235,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd004B"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="No"
@@ -251,6 +260,7 @@
                         android:layout_height="wrap_content">
 
                         <RadioButton
+                            android:id="@+id/rd005A"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Sí"
@@ -259,6 +269,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd005B"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="No"
@@ -267,6 +278,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd005C"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Nunca, pero sé que debo hacerlo"
@@ -290,6 +302,7 @@
                         android:layout_height="wrap_content">
 
                         <RadioButton
+                            android:id="@+id/rd006A"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Diario"
@@ -298,6 +311,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd006B"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Semanal"
@@ -306,6 +320,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd006C"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Mensual"
@@ -314,6 +329,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd006D"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Trimestral"
@@ -322,6 +338,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd006E"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Semestral"
@@ -330,6 +347,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd006F"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Nunca, pero sé que debo hacerlo"
@@ -353,6 +371,7 @@
                         android:layout_height="wrap_content">
 
                         <RadioButton
+                            android:id="@+id/rd007A"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Uso"
@@ -361,6 +380,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd007B"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Funcionalidad"
@@ -369,6 +389,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd007C"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Es complemento de otro producto/servicio"
@@ -377,6 +398,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd007D"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Es sustituto de otro producto/servicio"
@@ -409,6 +431,7 @@
                         android:layout_height="wrap_content">
 
                         <RadioButton
+                            android:id="@+id/rd008A"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Sí"
@@ -418,6 +441,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd008B"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="No"
@@ -442,6 +466,7 @@
                         android:layout_height="wrap_content">
 
                         <RadioButton
+                            android:id="@+id/rd009A"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Sí"
@@ -451,6 +476,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd009B"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="No"
@@ -475,6 +501,7 @@
                         android:layout_height="wrap_content">
 
                         <RadioButton
+                            android:id="@+id/rd010A"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Sí"
@@ -484,6 +511,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd010B"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="No"
@@ -508,6 +536,7 @@
                         android:layout_height="wrap_content">
 
                         <RadioButton
+                            android:id="@+id/rd011A"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Sí"
@@ -517,6 +546,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd011B"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="No"
@@ -541,6 +571,7 @@
                         android:layout_height="wrap_content">
 
                         <RadioButton
+                            android:id="@+id/rd012A"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Sí"
@@ -550,6 +581,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd012B"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="No"
@@ -574,6 +606,7 @@
                         android:layout_height="wrap_content">
 
                         <RadioButton
+                            android:id="@+id/rd013A"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Sí"
@@ -583,6 +616,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd013B"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="No"
@@ -608,6 +642,7 @@
                         android:layout_height="wrap_content">
 
                         <RadioButton
+                            android:id="@+id/rd014A"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Sí"
@@ -617,6 +652,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd014B"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="No"
@@ -626,6 +662,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd014C"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="No sé"
@@ -645,36 +682,42 @@
                         android:layout_height="wrap_content" />
 
                     <CheckBox
+                        android:id="@+id/rd015A"
                         android:layout_margin="8dp"
                         android:text="Escucha activa: comprendes lo que te comunica el cliente y le propones soluciones válidas"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
                     <CheckBox
+                        android:id="@+id/rd015B"
                         android:layout_margin="8dp"
                         android:text="Conversación eficaz: comprendes y entiendes las necesidades a satisfacer del cliente"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
                     <CheckBox
+                        android:id="@+id/rd015C"
                         android:layout_margin="8dp"
                         android:text="Empatía y confianza: cuando el cliente se siente valorado ganándose su confianza"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
                     <CheckBox
+                        android:id="@+id/rd015D"
                         android:layout_margin="8dp"
                         android:text="Proactividad: se anticipan a satisfacer nuevas necesidades del cliente"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
                     <CheckBox
+                        android:id="@+id/rd015E"
                         android:layout_margin="8dp"
                         android:text="Paciencia y insistencia: tolerantes a la frustación, perseveran e insisten con energía para cerrar la venta"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
                     <CheckBox
+                        android:id="@+id/rd015F"
                         android:layout_margin="8dp"
                         android:text="Planificación y organización del trabajo: gestionan su agenda de forma efectiva programando sus reuniones y preparando informes sin retrasos"
                         android:layout_width="match_parent"
@@ -743,6 +786,7 @@
                         android:layout_height="wrap_content">
 
                         <RadioButton
+                            android:id="@+id/rd016A"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Menores de 25 años"
@@ -751,6 +795,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd016B"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Entre 26 a 65 años"
@@ -759,6 +804,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd016C"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Mayores a 66 años"
@@ -782,6 +828,7 @@
                         android:layout_height="wrap_content">
 
                         <RadioButton
+                            android:id="@+id/rd017A"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Persona natural con negocio"
@@ -790,6 +837,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd017B"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Mype"
@@ -798,6 +846,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd017C"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Mediana Empresa"
@@ -806,6 +855,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd017D"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Gran Empres"
@@ -829,6 +879,7 @@
                         android:layout_height="wrap_content">
 
                         <RadioButton
+                            android:id="@+id/rd018A"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Diario"
@@ -837,6 +888,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd018B"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Semanal"
@@ -845,6 +897,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd018C"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Mensual"
@@ -853,6 +906,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd018D"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Trimestral"
@@ -861,6 +915,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd018E"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Semestral"
@@ -869,6 +924,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd018F"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="No sé"
@@ -887,48 +943,56 @@
                         android:layout_height="wrap_content" />
 
                     <CheckBox
+                        android:id="@+id/rd019A"
                         android:layout_margin="8dp"
                         android:text="Local principal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
                     <CheckBox
+                        android:id="@+id/rd019B"
                         android:layout_margin="8dp"
                         android:text="Sucursales"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
                     <CheckBox
+                        android:id="@+id/rd019C"
                         android:layout_margin="8dp"
                         android:text="Minoristas"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
                     <CheckBox
+                        android:id="@+id/rd019D"
                         android:layout_margin="8dp"
                         android:text="Mayoristas"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
                     <CheckBox
+                        android:id="@+id/rd019E"
                         android:layout_margin="8dp"
                         android:text="Intermediarios"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
                     <CheckBox
+                        android:id="@+id/rd019F"
                         android:layout_margin="8dp"
                         android:text="Exportaciones"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
                     <CheckBox
+                        android:id="@+id/rd019G"
                         android:layout_margin="8dp"
                         android:text="Página web"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
                     <CheckBox
+                        android:id="@+id/rd019H"
                         android:layout_margin="8dp"
                         android:text="Redes sociales y otras plataformas"
                         android:layout_width="match_parent"
@@ -948,6 +1012,7 @@
                         android:layout_height="wrap_content">
 
                         <RadioButton
+                            android:id="@+id/rd020A"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Precio"
@@ -956,6 +1021,7 @@
                             android:layout_height="wrap_content" />
 
                         <RadioButton
+                            android:id="@+id/rd020B"
                             android:background="@drawable/edit_text_style"
                             android:padding="8dp"
                             android:text="Calidad"
@@ -970,9 +1036,17 @@
 
             </androidx.cardview.widget.CardView>
 
+            <Button
+                android:id="@+id/btnFinish"
+                android:text="FINALIZAR"
+                android:layout_margin="12dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/blue_button_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
         </LinearLayout>
 
     </ScrollView>
 
-</FrameLayout>
+</RelativeLayout>
