@@ -21,7 +21,8 @@
         android:roundIcon="@drawable/oliver_android_icon_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CareManager.Commercialization.NewMatrix10.NewMatrix10Activity"></activity>
+        <activity android:name=".CareManager.Commercialization.Dashboards.DashboardsActivity"></activity>
+        <activity android:name=".CareManager.Commercialization.NewMatrix10.NewMatrix10Activity" />
         <activity android:name=".CareManager.SalesModule.SalesTutorialActivity" />
         <activity android:name=".CareManager.Commercialization.CommercializationToturialActivity" />
         <activity android:name=".CareManager.Commercialization.BillsIssuing.CreateInvoiceActivity" />

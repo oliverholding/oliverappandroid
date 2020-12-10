@@ -14,6 +14,7 @@ import android.widget.ImageButton;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.BillsIssuing.BillsIssuingActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CreditsAndTreasury.CreditAndTreasuryActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CustomerSupport.CustomerSuportActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.NewMatrix10.NewMatrix10Activity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.ProductMarketMatrix.ProductMarketMatrixActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.NewProductsOrServices.NewProductsOrServicesActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.NewProductsOrServices.NewProductsOrServicesToolsActivity;
@@ -60,7 +61,7 @@ public class CommercializationFragment extends Fragment {
         btnProductMarketMatrix.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), ProductMarketMatrixActivity.class);
+                Intent intent = new Intent(getActivity(), NewMatrix10Activity.class);
                 intent.putExtra("post_key", post_key);
                 startActivity(intent);
             }

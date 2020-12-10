@@ -140,30 +140,57 @@
     <LinearLayout
         android:id="@+id/buttonsLayout"
         android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/btnCreateBill"
-            android:text="CREAR BOLETA"
-            android:textColor="@android:color/white"
-            android:layout_margin="8dp"
-            android:background="@drawable/blue_button_style"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/btnCreateInvoice"
-            android:text="CREAR FACTURA"
-            android:textColor="@android:color/white"
-            android:layout_margin="8dp"
-            android:background="@drawable/blue_button_style"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/btnCreateBill"
+                android:text="CREAR BOLETA"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:background="@drawable/blue_button_style"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnCreateInvoice"
+                android:text="CREAR FACTURA"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:background="@drawable/blue_button_style"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnDashboards"
+                android:text="DASHBOARDS DE VENTAS"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:background="@drawable/blue_button_style"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
 
     </LinearLayout>
+
+
 
 </RelativeLayout>

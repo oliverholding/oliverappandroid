@@ -66,7 +66,7 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:background="@color/colorGradientStart"
+                android:background="@color/colorPrimaryDark"
                 android:orientation="vertical"
                 android:padding="4dp"
                 android:layout_width="match_parent"
@@ -112,7 +112,7 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:background="@color/colorAccent"
+                android:background="@color/greenColor"
                 android:orientation="vertical"
                 android:padding="4dp"
                 android:layout_width="match_parent"

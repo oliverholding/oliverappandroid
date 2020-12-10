@@ -1,6 +1,7 @@
 package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CustomerSupport;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -8,18 +9,21 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
@@ -91,6 +95,41 @@ public class CustomerSuportSendNotificationsFragment extends Fragment {
                 viewHolder.txtEmail.setText("Correo: "+viewHolder.email);
                 viewHolder.txtType.setText("Tipo: "+viewHolder.type);
 
+                viewHolder.btnProm.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        showSetPointsDialog();
+                    }
+
+                    private void showSetPointsDialog() {
+                        AlertDialog dialog = new AlertDialog.Builder(getActivity()).create();
+
+                        LayoutInflater inflater = LayoutInflater.from(getActivity());
+                        View finance_method = inflater.inflate(R.layout.my_product_list_dialog,null);
+
+                        final EditText edtPoints;
+                        Button btnRegister;
+                        final RelativeLayout rootLayout;
+
+                        edtPoints = finance_method.findViewById(R.id.edtPoints);
+                        btnRegister = finance_method.findViewById(R.id.btnRegister);
+                        rootLayout = finance_method.findViewById(R.id.rootLayout);
+
+                        btnRegister.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                if (TextUtils.isEmpty(edtPoints.getText().toString())) {
+                                    Snackbar.make(rootLayout,"Debes ingresar el numero de puntos",Snackbar.LENGTH_SHORT);
+                                } else {
+
+                                }
+                            }
+                        });
+
+                        dialog.setView(finance_method);
+                        dialog.show();
+                    }
+                });
 
             }
         };
@@ -101,6 +140,7 @@ public class CustomerSuportSendNotificationsFragment extends Fragment {
         View mView;
         TextView txtName,txtPhone,txtEmail,txtType;
         String email,name,phone,type;
+        Button btnProm;
 
         public CompanyCustomersViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -110,6 +150,7 @@ public class CustomerSuportSendNotificationsFragment extends Fragment {
             txtPhone = mView.findViewById(R.id.txtPhone);
             txtEmail = mView.findViewById(R.id.txtEmail);
             txtType = mView.findViewById(R.id.txtType);
+            btnProm = mView.findViewById(R.id.btnProm);
         }
         public void setCustomer_email(String customer_email) {
             email = customer_email;

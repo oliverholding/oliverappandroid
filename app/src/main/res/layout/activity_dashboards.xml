@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CareManager.Commercialization.Dashboards.DashboardsActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/appBar"
+        app:cardElevation="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:background="@drawable/gradient_start"
+            android:gravity="center"
+            android:padding="12dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/icono_boleta128"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="35dp"/>
+
+            <TextView
+                android:gravity="center_vertical"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:text="Dashboards de Ventas"
+                android:layout_weight="4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:id="@+id/btnMenu"
+                android:src="@drawable/open_menu_icon"
+                android:scaleType="centerInside"
+                android:padding="4dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="35dp"/>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_below="@+id/appBar"
+        android:id="@+id/tabLayout"
+        android:background="@drawable/gradient_start"
+        app:tabTextColor="@android:color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab1"
+            android:icon="@drawable/icono_boleta128"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab2"
+            android:icon="@drawable/icono_boleta128"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab3"
+            android:icon="@drawable/icono_boleta128"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_below="@id/tabLayout"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.viewpager.widget.ViewPager>
+
+</RelativeLayout>

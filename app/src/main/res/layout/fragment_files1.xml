@@ -50,7 +50,49 @@
 
             </androidx.cardview.widget.CardView>
 
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
+                <LinearLayout
+                    android:id="@+id/btnDownloadFile1"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:background="@drawable/edit_text_style"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_weight="0.1"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/upload_file_white_icon"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="TDR prueba.pdf"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:layout_weight="0.1"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/upload_file1"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
 

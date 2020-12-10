@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -18,13 +21,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.Dashboards.DashboardsActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 import java.util.Map;
 
 public class BillsIssuingActivity extends AppCompatActivity {
 
-    Button btnCreateBill,btnCreateInvoice;
+    Button btnCreateBill,btnCreateInvoice,btnDashboards;
     String post_key;
     RecyclerView recyclerView;
     DatabaseReference companyRef;
@@ -36,11 +40,12 @@ public class BillsIssuingActivity extends AppCompatActivity {
 
         btnCreateBill = findViewById(R.id.btnCreateBill);
         btnCreateInvoice = findViewById(R.id.btnCreateInvoice);
+        btnDashboards = findViewById(R.id.btnDashboards);
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setReverseLayout(false);
-        linearLayoutManager.setStackFromEnd(false);
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
         recyclerView.setLayoutManager(linearLayoutManager);
 
         post_key = getIntent().getExtras().getString("post_key");
@@ -49,16 +54,19 @@ public class BillsIssuingActivity extends AppCompatActivity {
         btnCreateBill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(BillsIssuingActivity.this, CreateBillActivity.class);
-                intent.putExtra("post_key", post_key);
-                startActivity(intent);
-                finish();
+                showOptionDialog();
             }
         });
         btnCreateInvoice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(BillsIssuingActivity.this, CreateInvoiceActivity.class);
+                showOptionDialog2();
+            }
+        });
+        btnDashboards.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BillsIssuingActivity.this, DashboardsActivity.class);
                 intent.putExtra("post_key", post_key);
                 startActivity(intent);
                 finish();
@@ -66,6 +74,80 @@ public class BillsIssuingActivity extends AppCompatActivity {
         });
 
         showMyBills();
+    }
+
+    private void showOptionDialog2() {
+        final AlertDialog dialog = new AlertDialog.Builder(BillsIssuingActivity.this).create();
+
+        LayoutInflater inflater = LayoutInflater.from(BillsIssuingActivity.this);
+        View finance_method = inflater.inflate(R.layout.sale_bill_type_dialog,null);
+
+        ImageButton btnCashNow,btnCredit;
+        btnCashNow = finance_method.findViewById(R.id.btnCashNow);
+        btnCredit = finance_method.findViewById(R.id.btnCredit);
+
+        btnCashNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BillsIssuingActivity.this, CreateInvoiceActivity.class);
+                intent.putExtra("post_key", post_key);
+                intent.putExtra("bill_sale_type", "cash_now");
+                dialog.dismiss();
+                startActivity(intent);
+                finish();
+            }
+        });
+        btnCredit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BillsIssuingActivity.this, CreateInvoiceActivity.class);
+                intent.putExtra("post_key", post_key);
+                intent.putExtra("bill_sale_type", "credit");
+                dialog.dismiss();
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        dialog.setView(finance_method);
+        dialog.show();
+    }
+
+    private void showOptionDialog() {
+        final AlertDialog dialog = new AlertDialog.Builder(BillsIssuingActivity.this).create();
+
+        LayoutInflater inflater = LayoutInflater.from(BillsIssuingActivity.this);
+        View finance_method = inflater.inflate(R.layout.sale_bill_type_dialog,null);
+
+        ImageButton btnCashNow,btnCredit;
+        btnCashNow = finance_method.findViewById(R.id.btnCashNow);
+        btnCredit = finance_method.findViewById(R.id.btnCredit);
+
+        btnCashNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BillsIssuingActivity.this, CreateBillActivity.class);
+                intent.putExtra("post_key", post_key);
+                intent.putExtra("bill_sale_type", "cash_now");
+                dialog.dismiss();
+                startActivity(intent);
+                finish();
+            }
+        });
+        btnCredit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BillsIssuingActivity.this, CreateBillActivity.class);
+                intent.putExtra("post_key", post_key);
+                intent.putExtra("bill_sale_type", "credit");
+                dialog.dismiss();
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        dialog.setView(finance_method);
+        dialog.show();
     }
 
     private void showMyBills() {

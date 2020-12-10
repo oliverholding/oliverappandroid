@@ -711,6 +711,17 @@
                 android:layout_height="wrap_content"/>
 
             <Button
+                android:id="@+id/btnBillIssuing"
+                android:padding="8dp"
+                android:text="Registro de Ventas"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:background="@drawable/blue_button_style"
+                android:drawableStart="@drawable/icono_boleta128"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
                 android:id="@+id/btnProductMarketMatrix"
                 android:padding="8dp"
                 android:text="Matriz Productos-Mercado"
@@ -721,16 +732,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-            <Button
-                android:id="@+id/btnBillIssuing"
-                android:padding="8dp"
-                android:text="Emisión de Boletas y Facturas"
-                android:textColor="@android:color/white"
-                android:layout_margin="8dp"
-                android:background="@drawable/blue_button_style"
-                android:drawableStart="@drawable/icono_boleta128"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+
 
             <Button
                 android:id="@+id/btnCreditsAndTreasury"

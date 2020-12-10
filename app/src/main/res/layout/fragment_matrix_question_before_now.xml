@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CareManager.Commercialization.NewMatrix10.MatrixQuestionBeforeNowFragment">
+
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewTitle"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Funcionalidad del Producto / Servicio:"
+                        android:textSize="18sp"
+                        android:layout_margin="4dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="¿Para satisfacer cuál necesidad el cliente utiliza el producto / servicio?"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Lo que suponemos:"
+                        android:textSize="16sp"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:gravity="start"
+                        android:hint="Respuesta..."
+                        android:layout_margin="8dp"
+                        android:inputType="textMultiLine"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"/>
+
+                    <TextView
+                        android:text="Lo que realmente pasa:"
+                        android:textSize="16sp"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:gravity="start"
+                        android:hint="Respuesta..."
+                        android:layout_margin="8dp"
+                        android:inputType="textMultiLine"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"/>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="¿Para solucionar cuál problema el cliente utiliza el producto / servicio?"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Lo que suponemos:"
+                        android:textSize="16sp"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:gravity="start"
+                        android:hint="Respuesta..."
+                        android:layout_margin="8dp"
+                        android:inputType="textMultiLine"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"/>
+
+                    <TextView
+                        android:text="Lo que realmente pasa:"
+                        android:textSize="16sp"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:gravity="start"
+                        android:hint="Respuesta..."
+                        android:layout_margin="8dp"
+                        android:inputType="textMultiLine"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"/>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="¿Para realizar cuál tarea el cliente utiliza el producto / servicio?"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Lo que suponemos:"
+                        android:textSize="16sp"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:gravity="start"
+                        android:hint="Respuesta..."
+                        android:layout_margin="8dp"
+                        android:inputType="textMultiLine"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"/>
+
+                    <TextView
+                        android:text="Lo que realmente pasa:"
+                        android:textSize="16sp"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:gravity="start"
+                        android:hint="Respuesta..."
+                        android:layout_margin="8dp"
+                        android:inputType="textMultiLine"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"/>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="¿Cómo este producto / servicio hace que el cliente o usuario se vea bien ante los demás?"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Lo que suponemos:"
+                        android:textSize="16sp"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:gravity="start"
+                        android:hint="Respuesta..."
+                        android:layout_margin="8dp"
+                        android:inputType="textMultiLine"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"/>
+
+                    <TextView
+                        android:text="Lo que realmente pasa:"
+                        android:textSize="16sp"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:gravity="start"
+                        android:hint="Respuesta..."
+                        android:layout_margin="8dp"
+                        android:inputType="textMultiLine"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"/>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="¿Cómo este producto / servicio hace que el cliente o usuario se sienta bien, con mayor autoestima, con mayor paz mental, con mayor seguridad en sí mismo?"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Lo que suponemos:"
+                        android:textSize="16sp"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:gravity="start"
+                        android:hint="Respuesta..."
+                        android:layout_margin="8dp"
+                        android:inputType="textMultiLine"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"/>
+
+                    <TextView
+                        android:text="Lo que realmente pasa:"
+                        android:textSize="16sp"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:gravity="start"
+                        android:hint="Respuesta..."
+                        android:layout_margin="8dp"
+                        android:inputType="textMultiLine"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"/>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="¿Cuáles son las incomodidades, molestias, fastidios, dolores, frustraciones, temores experimentados por el cliente, que este producto/servicio vendido por mi negocio le alivia?"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Lo que suponemos:"
+                        android:textSize="16sp"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:gravity="start"
+                        android:hint="Respuesta..."
+                        android:layout_margin="8dp"
+                        android:inputType="textMultiLine"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"/>
+
+                    <TextView
+                        android:text="Lo que realmente pasa:"
+                        android:textSize="16sp"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:gravity="start"
+                        android:hint="Respuesta..."
+                        android:layout_margin="8dp"
+                        android:inputType="textMultiLine"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"/>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="¿Cuáles son los beneficios; ganancias; alegrías; sentimientos de triunfo, éxito, y felicidad que experimenta el cliente con este producto/servicio vendido por mi negocio?"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Lo que suponemos:"
+                        android:textSize="16sp"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:gravity="start"
+                        android:hint="Respuesta..."
+                        android:layout_margin="8dp"
+                        android:inputType="textMultiLine"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"/>
+
+                    <TextView
+                        android:text="Lo que realmente pasa:"
+                        android:textSize="16sp"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:gravity="start"
+                        android:hint="Respuesta..."
+                        android:layout_margin="8dp"
+                        android:inputType="textMultiLine"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"/>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="¿Por qué me compran a mí y no a otro negocio similar o competidor?"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Lo que suponemos:"
+                        android:textSize="16sp"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:gravity="start"
+                        android:hint="Respuesta..."
+                        android:layout_margin="8dp"
+                        android:inputType="textMultiLine"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"/>
+
+                    <TextView
+                        android:text="Lo que realmente pasa:"
+                        android:textSize="16sp"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:gravity="start"
+                        android:hint="Respuesta..."
+                        android:layout_margin="8dp"
+                        android:inputType="textMultiLine"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"/>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
