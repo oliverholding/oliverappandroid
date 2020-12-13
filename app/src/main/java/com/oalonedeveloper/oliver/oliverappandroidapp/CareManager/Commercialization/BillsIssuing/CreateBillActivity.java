@@ -1395,9 +1395,9 @@ public class CreateBillActivity extends AppCompatActivity {
                             Toast.makeText(CreateBillActivity.this, "Hubo un Error", Toast.LENGTH_SHORT).show();
                         } else {
                             if (bill_sale_type.equals("cash_now")) {
-                                companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("expiration_day").setValue(day);
-                                companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("expiration_month").setValue(month);
-                                companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("expiration_year").setValue(year);
+                                companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("expiration_day").setValue(day+"");
+                                companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("expiration_month").setValue(month+"");
+                                companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("expiration_year").setValue(year+"");
                                 companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("state").setValue("paid");
 
                             } else if (bill_sale_type.equals("credit")) {
@@ -2145,7 +2145,7 @@ public class CreateBillActivity extends AppCompatActivity {
                 try {
                     Date date1 = myFormat.parse(inputString1);
                     Date date2 = myFormat.parse(inputString2);
-                     diff = date2.getTime() - date1.getTime();
+                    diff = date2.getTime() - date1.getTime();
 
                      expiration_days = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
 

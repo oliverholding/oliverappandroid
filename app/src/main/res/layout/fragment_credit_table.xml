@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".CareManager.Commercialization.Dashboards.GraphicsFragment">
+    tools:context=".CareManager.Commercialization.CreditsAndTreasury.CreditTableFragment">
 
     <ScrollView
         android:scrollbars="vertical"
@@ -15,7 +15,6 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardViewTitle"
@@ -32,7 +31,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:text="Evolución de Ingresos:"
+                        android:text="Tus créditos:"
                         android:textSize="18sp"
                         android:layout_margin="4dp"
                         android:textColor="@android:color/black"
@@ -40,7 +39,7 @@
                         android:layout_height="wrap_content"/>
 
                     <TextView
-                        android:text="Conoce la evolución de tus ingresos mes a mes en el presente año."
+                        android:text="Conoce tus créditos vigentes y vencidos en monto y porcentaje."
                         android:layout_margin="4dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
@@ -67,7 +66,7 @@
                         android:id="@+id/txtCurrentYear"
                         android:layout_margin="4dp"
                         android:textStyle="bold"
-                        android:text="CURRENT_YEAR"
+                        android:text="CRÉDITOS"
                         android:textColor="@android:color/black"
                         android:gravity="center"
                         android:layout_width="match_parent"
@@ -82,7 +81,7 @@
                             android:layout_margin="4dp"
                             android:textStyle="bold"
                             android:gravity="center"
-                            android:text="MES"
+                            android:text="VENCIMIENTO"
                             android:textColor="@android:color/black"
                             android:layout_weight="1"
                             android:layout_width="0dp"
@@ -92,7 +91,17 @@
                             android:layout_margin="4dp"
                             android:textStyle="bold"
                             android:gravity="center"
-                            android:text="TOTAL (S/)"
+                            android:text="MONTO"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:text="PORCENTAJE"
                             android:textColor="@android:color/black"
                             android:layout_weight="1"
                             android:layout_width="0dp"
@@ -108,17 +117,27 @@
                         <TextView
                             android:layout_margin="4dp"
                             android:gravity="center"
-                            android:text="ENERO"
+                            android:text="VIGENTE"
                             android:textColor="@android:color/black"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
                         <TextView
-                            android:id="@+id/txtMonth1"
+                            android:id="@+id/txtNoPaidAmount"
                             android:layout_margin="4dp"
                             android:gravity="center"
                             android:text="S/ 0.00"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtNoPaid"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00%"
                             android:textColor="@android:color/black"
                             android:layout_weight="1"
                             android:layout_width="0dp"
@@ -134,17 +153,27 @@
                         <TextView
                             android:layout_margin="4dp"
                             android:gravity="center"
-                            android:text="FEBRERO"
+                            android:text="1 - 8 días"
                             android:textColor="@android:color/black"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
                         <TextView
-                            android:id="@+id/txtMonth2"
+                            android:id="@+id/txtExpiredAmount1"
                             android:layout_margin="4dp"
                             android:gravity="center"
                             android:text="S/ 0.00"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtExpired1"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00%"
                             android:textColor="@android:color/black"
                             android:layout_weight="1"
                             android:layout_width="0dp"
@@ -160,17 +189,27 @@
                         <TextView
                             android:layout_margin="4dp"
                             android:gravity="center"
-                            android:text="MARZO"
+                            android:text="9 -15 días"
                             android:textColor="@android:color/black"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
                         <TextView
-                            android:id="@+id/txtMonth3"
+                            android:id="@+id/txtExpiredAmount2"
                             android:layout_margin="4dp"
                             android:gravity="center"
                             android:text="S/ 0.00"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtExpired2"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00%"
                             android:textColor="@android:color/black"
                             android:layout_weight="1"
                             android:layout_width="0dp"
@@ -186,17 +225,27 @@
                         <TextView
                             android:layout_margin="4dp"
                             android:gravity="center"
-                            android:text="ABRIL"
+                            android:text="16 - 30 días"
                             android:textColor="@android:color/black"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
                         <TextView
-                            android:id="@+id/txtMonth4"
+                            android:id="@+id/txtExpiredAmount3"
                             android:layout_margin="4dp"
                             android:gravity="center"
                             android:text="S/ 0.00"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtExpired3"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00%"
                             android:textColor="@android:color/black"
                             android:layout_weight="1"
                             android:layout_width="0dp"
@@ -212,17 +261,27 @@
                         <TextView
                             android:layout_margin="4dp"
                             android:gravity="center"
-                            android:text="MAYO"
+                            android:text="31 - 45 días"
                             android:textColor="@android:color/black"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
                         <TextView
-                            android:id="@+id/txtMonth5"
+                            android:id="@+id/txtExpiredAmount4"
                             android:layout_margin="4dp"
                             android:gravity="center"
                             android:text="S/ 0.00"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtExpired4"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00%"
                             android:textColor="@android:color/black"
                             android:layout_weight="1"
                             android:layout_width="0dp"
@@ -238,17 +297,27 @@
                         <TextView
                             android:layout_margin="4dp"
                             android:gravity="center"
-                            android:text="JUNIO"
+                            android:text="46 - 60 días"
                             android:textColor="@android:color/black"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
                         <TextView
-                            android:id="@+id/txtMonth6"
+                            android:id="@+id/txtExpiredAmount5"
                             android:layout_margin="4dp"
                             android:gravity="center"
                             android:text="S/ 0.00"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtExpired5"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00%"
                             android:textColor="@android:color/black"
                             android:layout_weight="1"
                             android:layout_width="0dp"
@@ -264,14 +333,14 @@
                         <TextView
                             android:layout_margin="4dp"
                             android:gravity="center"
-                            android:text="JULIO"
+                            android:text="Más de 61 días"
                             android:textColor="@android:color/black"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
                         <TextView
-                            android:id="@+id/txtMonth7"
+                            android:id="@+id/txtExpiredAmount6"
                             android:layout_margin="4dp"
                             android:gravity="center"
                             android:text="S/ 0.00"
@@ -280,186 +349,25 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
                         <TextView
+                            android:id="@+id/txtExpired6"
                             android:layout_margin="4dp"
                             android:gravity="center"
-                            android:text="AGOSTO"
-                            android:textColor="@android:color/black"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
-
-                        <TextView
-                            android:id="@+id/txtMonth8"
-                            android:layout_margin="4dp"
-                            android:gravity="center"
-                            android:text="S/ 0.00"
+                            android:text="0.00%"
                             android:textColor="@android:color/black"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_margin="4dp"
-                            android:gravity="center"
-                            android:text="SEPTIEMBRE"
-                            android:textColor="@android:color/black"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
-
-                        <TextView
-                            android:id="@+id/txtMonth9"
-                            android:layout_margin="4dp"
-                            android:gravity="center"
-                            android:text="S/ 0.00"
-                            android:textColor="@android:color/black"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_margin="4dp"
-                            android:gravity="center"
-                            android:text="OCTUBRE"
-                            android:textColor="@android:color/black"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
-
-                        <TextView
-                            android:id="@+id/txtMonth10"
-                            android:layout_margin="4dp"
-                            android:gravity="center"
-                            android:text="S/ 0.00"
-                            android:textColor="@android:color/black"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_margin="4dp"
-                            android:gravity="center"
-                            android:text="NOVIEMBRE"
-                            android:textColor="@android:color/black"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
-
-                        <TextView
-                            android:id="@+id/txtMonth11"
-                            android:layout_margin="4dp"
-                            android:gravity="center"
-                            android:text="S/ 0.00"
-                            android:textColor="@android:color/black"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_margin="4dp"
-                            android:gravity="center"
-                            android:text="DICIEMBRE"
-                            android:textColor="@android:color/black"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
-
-                        <TextView
-                            android:id="@+id/txtMonth12"
-                            android:layout_margin="4dp"
-                            android:gravity="center"
-                            android:text="S/ 0.00"
-                            android:textColor="@android:color/black"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
-                android:layout_margin="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:padding="8dp"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_margin="4dp"
-                        android:textStyle="bold"
-                        android:text="EVOLUCIÓN DE TUS INGRESOS"
-                        android:textColor="@android:color/black"
-                        android:gravity="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-
-                    <com.github.mikephil.charting.charts.LineChart
-                        android:id="@+id/linechart"
-                        android:layout_width="match_parent"
-                        android:layout_height="220dp"/>
 
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
-
-
 
         </LinearLayout>
 
     </ScrollView>
-
-
-
-
-
-
-
-
 
 </RelativeLayout>

@@ -14,17 +14,28 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.BillsIssuing.MyBillsModel;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class CurrentDebtFragment extends Fragment {
 
     String post_key;
     RecyclerView recyclerView;
     DatabaseReference companyRef;
+    int day,month,year;
+    long diff,expiration_days_ago;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,6 +52,13 @@ public class CurrentDebtFragment extends Fragment {
 
         post_key = getActivity().getIntent().getExtras().getString("post_key");
         companyRef = FirebaseDatabase.getInstance().getReference().child("My Companies");
+
+        Date date= new Date();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        day = cal.get(Calendar.DAY_OF_MONTH);
+        month = cal.get(Calendar.MONTH)+1;
+        year = cal.get(Calendar.YEAR);
 
         showMyBills();
 
@@ -62,6 +80,41 @@ public class CurrentDebtFragment extends Fragment {
                 viewHolder.txtBillAmount.setText("S/ "+viewHolder.my_bill_amount);
                 viewHolder.txtCustomerName.setText(viewHolder.my_customer_name);
                 viewHolder.txtBillCode.setText(viewHolder.my_bill_id);
+
+                companyRef.child(post_key).child("My Bills").child(postKey).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        String expiration_day = dataSnapshot.child("expiration_day").getValue().toString();
+                        String expiration_month = dataSnapshot.child("expiration_month").getValue().toString();
+                        String expiration_year = dataSnapshot.child("expiration_year").getValue().toString();
+                        String state = dataSnapshot.child("state").getValue().toString();
+
+                        SimpleDateFormat myFormat = new SimpleDateFormat("dd MM yyyy");
+                        String inputString1 = day+" "+month+" "+year;
+                        String inputString2 = expiration_day+" "+expiration_month+" "+expiration_year;
+
+                        try {
+                            Date date1 = myFormat.parse(inputString1);
+                            Date date2 = myFormat.parse(inputString2);
+                            diff = date2.getTime() - date1.getTime();
+
+                            expiration_days_ago = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+                            //Toast.makeText(BillsIssuingActivity.this, "EXPIRED "+expiration_days_ago, Toast.LENGTH_SHORT).show();
+
+                            if (diff < 0 && state.equals("no_paid"))  {
+                                companyRef.child(post_key).child("My Bills").child(postKey).child("state").setValue("expired");
+                            }
+
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
 
                 if (viewHolder.my_state.equals("no_paid")) {
                     viewHolder.txtDebtState.setText("VIGENTE");

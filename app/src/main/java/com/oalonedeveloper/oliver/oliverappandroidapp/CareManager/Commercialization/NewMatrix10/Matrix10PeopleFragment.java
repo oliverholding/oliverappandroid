@@ -89,7 +89,7 @@ public class Matrix10PeopleFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_matrix10_people, container, false);
+        final View view = inflater.inflate(R.layout.fragment_matrix10_people, container, false);
 
         loadingBar = new ProgressDialog(getActivity());
 
@@ -437,84 +437,97 @@ public class Matrix10PeopleFragment extends Fragment {
                             Picasso.with(getActivity()).load(product_image).fit().into(imgProduct3);
                             txtProduct3.setText(product_name);
 
-                            Query query = companyRef.child(post_key).child("My Products").child(product_id).child("Buyers").child("People").orderByChild("quantity_purchased").limitToLast(1);
-                            query.addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(DataSnapshot dataSnapshot) {
-                                    for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
-                                        customerKeyProduct1 = childSnapshot.getKey();
+                            if (dataSnapshot.child("Buyers").child("People").exists()) {
 
-                                    }
-                                    companyRef.child(post_key).child("Customers").child(customerKeyProduct1).addListenerForSingleValueEvent(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(DataSnapshot dataSnapshot) {
-                                            if (dataSnapshot.hasChild("customer_gender")) {
-                                                String customer_gender = dataSnapshot.child("customer_gender").getValue().toString();
-                                                String customer_bth_day = dataSnapshot.child("customer_bth_day").getValue().toString();
-                                                String customer_bth_month = dataSnapshot.child("customer_bth_month").getValue().toString();
-                                                String customer_bth_year = dataSnapshot.child("customer_bth_year").getValue().toString();
-                                                String customer_academic_degree = dataSnapshot.child("customer_academic_degree").getValue().toString();
-                                                String customer_occupation = dataSnapshot.child("customer_occupation").getValue().toString();
-                                                String customer_department = dataSnapshot.child("customer_department").getValue().toString();
-                                                String customer_province = dataSnapshot.child("customer_province").getValue().toString();
-                                                String customer_district = dataSnapshot.child("customer_district").getValue().toString();
-                                                String customer_work_department = dataSnapshot.child("customer_work_department").getValue().toString();
-                                                String customer_work_district = dataSnapshot.child("customer_work_district").getValue().toString();
-                                                String customer_work_province = dataSnapshot.child("customer_work_province").getValue().toString();
-                                                String customer_economic_level = dataSnapshot.child("customer_economic_level").getValue().toString();
+                                Query query = companyRef.child(post_key).child("My Products").child(product_id).child("Buyers").child("People").orderByChild("quantity_purchased").limitToLast(1);
+                                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+                                            customerKeyProduct1 = childSnapshot.getKey();
 
-                                                int customer_bth_day_int = Integer.parseInt(customer_bth_day);
-                                                int customer_bth_month_int = Integer.parseInt(customer_bth_month);
-                                                int customer_bth_year_int = Integer.parseInt(customer_bth_year);
+                                        }
+                                        companyRef.child(post_key).child("Customers").child(customerKeyProduct1).addListenerForSingleValueEvent(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                                if (dataSnapshot.hasChild("customer_gender")) {
+                                                    String customer_gender = dataSnapshot.child("customer_gender").getValue().toString();
+                                                    String customer_bth_day = dataSnapshot.child("customer_bth_day").getValue().toString();
+                                                    String customer_bth_month = dataSnapshot.child("customer_bth_month").getValue().toString();
+                                                    String customer_bth_year = dataSnapshot.child("customer_bth_year").getValue().toString();
+                                                    String customer_academic_degree = dataSnapshot.child("customer_academic_degree").getValue().toString();
+                                                    String customer_occupation = dataSnapshot.child("customer_occupation").getValue().toString();
+                                                    String customer_department = dataSnapshot.child("customer_department").getValue().toString();
+                                                    String customer_province = dataSnapshot.child("customer_province").getValue().toString();
+                                                    String customer_district = dataSnapshot.child("customer_district").getValue().toString();
+                                                    String customer_work_department = dataSnapshot.child("customer_work_department").getValue().toString();
+                                                    String customer_work_district = dataSnapshot.child("customer_work_district").getValue().toString();
+                                                    String customer_work_province = dataSnapshot.child("customer_work_province").getValue().toString();
+                                                    String customer_economic_level = dataSnapshot.child("customer_economic_level").getValue().toString();
 
-                                                Calendar dob = Calendar.getInstance();
-                                                Calendar today = Calendar.getInstance();
+                                                    int customer_bth_day_int = Integer.parseInt(customer_bth_day);
+                                                    int customer_bth_month_int = Integer.parseInt(customer_bth_month);
+                                                    int customer_bth_year_int = Integer.parseInt(customer_bth_year);
 
-                                                dob.set(customer_bth_year_int, customer_bth_month_int, customer_bth_day_int);
+                                                    Calendar dob = Calendar.getInstance();
+                                                    Calendar today = Calendar.getInstance();
 
-                                                int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+                                                    dob.set(customer_bth_year_int, customer_bth_month_int, customer_bth_day_int);
 
-                                                if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)) {
-                                                    age--;
+                                                    int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+
+                                                    if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)) {
+                                                        age--;
+                                                    }
+
+                                                    Integer ageInt = new Integer(age);
+                                                    String ageS = ageInt.toString();
+
+                                                    txtProduct3A.setText(customer_gender.toUpperCase());
+                                                    txtProduct3B.setText(ageS + " AÑOS");
+                                                    txtProduct3C.setText(customer_academic_degree.toUpperCase());
+                                                    txtProduct3D.setText(customer_occupation.toUpperCase());
+                                                    txtProduct3E.setText(customer_department.toUpperCase() + "/" + customer_province.toUpperCase() + "/" + customer_district.toUpperCase());
+                                                    txtProduct3F.setText(customer_work_department.toUpperCase() + "/" + customer_work_district.toUpperCase() + "/" + customer_work_province.toUpperCase());
+                                                    txtProduct3G.setText(customer_economic_level.toUpperCase());
+
+                                                } else {
+                                                    txtProduct3A.setText("DESCONOCIDO");
+                                                    txtProduct3B.setText("DESCONOCIDO");
+                                                    txtProduct3C.setText("DESCONOCIDO");
+                                                    txtProduct3D.setText("DESCONOCIDO");
+                                                    txtProduct3E.setText("DESCONOCIDO");
+                                                    txtProduct3F.setText("DESCONOCIDO");
+                                                    txtProduct3G.setText("DESCONOCIDO");
                                                 }
 
-                                                Integer ageInt = new Integer(age);
-                                                String ageS = ageInt.toString();
 
-                                                txtProduct3A.setText(customer_gender.toUpperCase());
-                                                txtProduct3B.setText(ageS + " AÑOS");
-                                                txtProduct3C.setText(customer_academic_degree.toUpperCase());
-                                                txtProduct3D.setText(customer_occupation.toUpperCase());
-                                                txtProduct3E.setText(customer_department.toUpperCase() + "/" + customer_province.toUpperCase() + "/" + customer_district.toUpperCase());
-                                                txtProduct3F.setText(customer_work_department.toUpperCase() + "/" + customer_work_district.toUpperCase() + "/" + customer_work_province.toUpperCase());
-                                                txtProduct3G.setText(customer_economic_level.toUpperCase());
-
-                                            } else {
-                                                txtProduct3A.setText("DESCONOCIDO");
-                                                txtProduct3B.setText("DESCONOCIDO");
-                                                txtProduct3C.setText("DESCONOCIDO");
-                                                txtProduct3D.setText("DESCONOCIDO");
-                                                txtProduct3E.setText("DESCONOCIDO");
-                                                txtProduct3F.setText("DESCONOCIDO");
-                                                txtProduct3G.setText("DESCONOCIDO");
                                             }
 
+                                            @Override
+                                            public void onCancelled(DatabaseError databaseError) {
 
-                                        }
+                                            }
+                                        });
 
-                                        @Override
-                                        public void onCancelled(DatabaseError databaseError) {
+                                    }
 
-                                        }
-                                    });
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
 
-                                }
+                                    }
+                                });
+                            } else {
+                                txtProduct3A.setText("DESCONOCIDO");
+                                txtProduct3B.setText("DESCONOCIDO");
+                                txtProduct3C.setText("DESCONOCIDO");
+                                txtProduct3D.setText("DESCONOCIDO");
+                                txtProduct3E.setText("DESCONOCIDO");
+                                txtProduct3F.setText("DESCONOCIDO");
+                                txtProduct3G.setText("DESCONOCIDO");
+                            }
 
-                                @Override
-                                public void onCancelled(DatabaseError databaseError) {
 
-                                }
-                            });
 
                         }
 
@@ -533,84 +546,97 @@ public class Matrix10PeopleFragment extends Fragment {
                             String product_name = dataSnapshot.child("product_name").getValue().toString();
                             Picasso.with(getActivity()).load(product_image).fit().into(imgProduct4);
                             txtProduct4.setText(product_name);
-                            Query query = companyRef.child(post_key).child("My Products").child(product_id).child("Buyers").child("People").orderByChild("quantity_purchased").limitToLast(1);
-                            query.addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(DataSnapshot dataSnapshot) {
-                                    for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
-                                        customerKeyProduct1 = childSnapshot.getKey();
 
-                                    }
-                                    companyRef.child(post_key).child("Customers").child(customerKeyProduct1).addListenerForSingleValueEvent(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(DataSnapshot dataSnapshot) {
-                                            if (dataSnapshot.hasChild("customer_gender")) {
-                                                String customer_gender = dataSnapshot.child("customer_gender").getValue().toString();
-                                                String customer_bth_day = dataSnapshot.child("customer_bth_day").getValue().toString();
-                                                String customer_bth_month = dataSnapshot.child("customer_bth_month").getValue().toString();
-                                                String customer_bth_year = dataSnapshot.child("customer_bth_year").getValue().toString();
-                                                String customer_academic_degree = dataSnapshot.child("customer_academic_degree").getValue().toString();
-                                                String customer_occupation = dataSnapshot.child("customer_occupation").getValue().toString();
-                                                String customer_department = dataSnapshot.child("customer_department").getValue().toString();
-                                                String customer_province = dataSnapshot.child("customer_province").getValue().toString();
-                                                String customer_district = dataSnapshot.child("customer_district").getValue().toString();
-                                                String customer_work_department = dataSnapshot.child("customer_work_department").getValue().toString();
-                                                String customer_work_district = dataSnapshot.child("customer_work_district").getValue().toString();
-                                                String customer_work_province = dataSnapshot.child("customer_work_province").getValue().toString();
-                                                String customer_economic_level = dataSnapshot.child("customer_economic_level").getValue().toString();
+                            if (dataSnapshot.child("Buyers").child("People").exists()) {
+                                Query query = companyRef.child(post_key).child("My Products").child(product_id).child("Buyers").child("People").orderByChild("quantity_purchased").limitToLast(1);
+                                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+                                            customerKeyProduct1 = childSnapshot.getKey();
 
-                                                int customer_bth_day_int = Integer.parseInt(customer_bth_day);
-                                                int customer_bth_month_int = Integer.parseInt(customer_bth_month);
-                                                int customer_bth_year_int = Integer.parseInt(customer_bth_year);
+                                        }
+                                        companyRef.child(post_key).child("Customers").child(customerKeyProduct1).addListenerForSingleValueEvent(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                                if (dataSnapshot.hasChild("customer_gender")) {
+                                                    String customer_gender = dataSnapshot.child("customer_gender").getValue().toString();
+                                                    String customer_bth_day = dataSnapshot.child("customer_bth_day").getValue().toString();
+                                                    String customer_bth_month = dataSnapshot.child("customer_bth_month").getValue().toString();
+                                                    String customer_bth_year = dataSnapshot.child("customer_bth_year").getValue().toString();
+                                                    String customer_academic_degree = dataSnapshot.child("customer_academic_degree").getValue().toString();
+                                                    String customer_occupation = dataSnapshot.child("customer_occupation").getValue().toString();
+                                                    String customer_department = dataSnapshot.child("customer_department").getValue().toString();
+                                                    String customer_province = dataSnapshot.child("customer_province").getValue().toString();
+                                                    String customer_district = dataSnapshot.child("customer_district").getValue().toString();
+                                                    String customer_work_department = dataSnapshot.child("customer_work_department").getValue().toString();
+                                                    String customer_work_district = dataSnapshot.child("customer_work_district").getValue().toString();
+                                                    String customer_work_province = dataSnapshot.child("customer_work_province").getValue().toString();
+                                                    String customer_economic_level = dataSnapshot.child("customer_economic_level").getValue().toString();
 
-                                                Calendar dob = Calendar.getInstance();
-                                                Calendar today = Calendar.getInstance();
+                                                    int customer_bth_day_int = Integer.parseInt(customer_bth_day);
+                                                    int customer_bth_month_int = Integer.parseInt(customer_bth_month);
+                                                    int customer_bth_year_int = Integer.parseInt(customer_bth_year);
 
-                                                dob.set(customer_bth_year_int, customer_bth_month_int, customer_bth_day_int);
+                                                    Calendar dob = Calendar.getInstance();
+                                                    Calendar today = Calendar.getInstance();
 
-                                                int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+                                                    dob.set(customer_bth_year_int, customer_bth_month_int, customer_bth_day_int);
 
-                                                if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)) {
-                                                    age--;
+                                                    int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+
+                                                    if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)) {
+                                                        age--;
+                                                    }
+
+                                                    Integer ageInt = new Integer(age);
+                                                    String ageS = ageInt.toString();
+
+                                                    txtProduct4A.setText(customer_gender.toUpperCase());
+                                                    txtProduct4B.setText(ageS + " AÑOS");
+                                                    txtProduct4C.setText(customer_academic_degree.toUpperCase());
+                                                    txtProduct4D.setText(customer_occupation.toUpperCase());
+                                                    txtProduct4E.setText(customer_department.toUpperCase() + "/" + customer_province.toUpperCase() + "/" + customer_district.toUpperCase());
+                                                    txtProduct4F.setText(customer_work_department.toUpperCase() + "/" + customer_work_district.toUpperCase() + "/" + customer_work_province.toUpperCase());
+                                                    txtProduct4G.setText(customer_economic_level.toUpperCase());
+
+                                                } else {
+                                                    txtProduct4A.setText("DESCONOCIDO");
+                                                    txtProduct4B.setText("DESCONOCIDO");
+                                                    txtProduct4C.setText("DESCONOCIDO");
+                                                    txtProduct4D.setText("DESCONOCIDO");
+                                                    txtProduct4E.setText("DESCONOCIDO");
+                                                    txtProduct4F.setText("DESCONOCIDO");
+                                                    txtProduct4G.setText("DESCONOCIDO");
                                                 }
 
-                                                Integer ageInt = new Integer(age);
-                                                String ageS = ageInt.toString();
 
-                                                txtProduct4A.setText(customer_gender.toUpperCase());
-                                                txtProduct4B.setText(ageS + " AÑOS");
-                                                txtProduct4C.setText(customer_academic_degree.toUpperCase());
-                                                txtProduct4D.setText(customer_occupation.toUpperCase());
-                                                txtProduct4E.setText(customer_department.toUpperCase() + "/" + customer_province.toUpperCase() + "/" + customer_district.toUpperCase());
-                                                txtProduct4F.setText(customer_work_department.toUpperCase() + "/" + customer_work_district.toUpperCase() + "/" + customer_work_province.toUpperCase());
-                                                txtProduct4G.setText(customer_economic_level.toUpperCase());
-
-                                            } else {
-                                                txtProduct4A.setText("DESCONOCIDO");
-                                                txtProduct4B.setText("DESCONOCIDO");
-                                                txtProduct4C.setText("DESCONOCIDO");
-                                                txtProduct4D.setText("DESCONOCIDO");
-                                                txtProduct4E.setText("DESCONOCIDO");
-                                                txtProduct4F.setText("DESCONOCIDO");
-                                                txtProduct4G.setText("DESCONOCIDO");
                                             }
 
+                                            @Override
+                                            public void onCancelled(DatabaseError databaseError) {
 
-                                        }
+                                            }
+                                        });
 
-                                        @Override
-                                        public void onCancelled(DatabaseError databaseError) {
+                                    }
 
-                                        }
-                                    });
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
 
-                                }
+                                    }
+                                });
+                            } else {
+                                txtProduct4A.setText("DESCONOCIDO");
+                                txtProduct4B.setText("DESCONOCIDO");
+                                txtProduct4C.setText("DESCONOCIDO");
+                                txtProduct4D.setText("DESCONOCIDO");
+                                txtProduct4E.setText("DESCONOCIDO");
+                                txtProduct4F.setText("DESCONOCIDO");
+                                txtProduct4G.setText("DESCONOCIDO");
+                            }
 
-                                @Override
-                                public void onCancelled(DatabaseError databaseError) {
 
-                                }
-                            });
                         }
 
                         @Override
@@ -629,84 +655,96 @@ public class Matrix10PeopleFragment extends Fragment {
                             Picasso.with(getActivity()).load(product_image).fit().into(imgProduct5);
                             txtProduct5.setText(product_name);
 
-                            Query query = companyRef.child(post_key).child("My Products").child(product_id).child("Buyers").child("People").orderByChild("quantity_purchased").limitToLast(1);
-                            query.addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(DataSnapshot dataSnapshot) {
-                                    for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
-                                        customerKeyProduct1 = childSnapshot.getKey();
+                            if (dataSnapshot.child("Buyers").child("People").exists()) {
+                                Query query = companyRef.child(post_key).child("My Products").child(product_id).child("Buyers").child("People").orderByChild("quantity_purchased").limitToLast(1);
+                                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+                                            customerKeyProduct1 = childSnapshot.getKey();
 
-                                    }
-                                    companyRef.child(post_key).child("Customers").child(customerKeyProduct1).addListenerForSingleValueEvent(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(DataSnapshot dataSnapshot) {
-                                            if (dataSnapshot.hasChild("customer_gender")) {
-                                                String customer_gender = dataSnapshot.child("customer_gender").getValue().toString();
-                                                String customer_bth_day = dataSnapshot.child("customer_bth_day").getValue().toString();
-                                                String customer_bth_month = dataSnapshot.child("customer_bth_month").getValue().toString();
-                                                String customer_bth_year = dataSnapshot.child("customer_bth_year").getValue().toString();
-                                                String customer_academic_degree = dataSnapshot.child("customer_academic_degree").getValue().toString();
-                                                String customer_occupation = dataSnapshot.child("customer_occupation").getValue().toString();
-                                                String customer_department = dataSnapshot.child("customer_department").getValue().toString();
-                                                String customer_province = dataSnapshot.child("customer_province").getValue().toString();
-                                                String customer_district = dataSnapshot.child("customer_district").getValue().toString();
-                                                String customer_work_department = dataSnapshot.child("customer_work_department").getValue().toString();
-                                                String customer_work_district = dataSnapshot.child("customer_work_district").getValue().toString();
-                                                String customer_work_province = dataSnapshot.child("customer_work_province").getValue().toString();
-                                                String customer_economic_level = dataSnapshot.child("customer_economic_level").getValue().toString();
+                                        }
+                                        companyRef.child(post_key).child("Customers").child(customerKeyProduct1).addListenerForSingleValueEvent(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                                if (dataSnapshot.hasChild("customer_gender")) {
+                                                    String customer_gender = dataSnapshot.child("customer_gender").getValue().toString();
+                                                    String customer_bth_day = dataSnapshot.child("customer_bth_day").getValue().toString();
+                                                    String customer_bth_month = dataSnapshot.child("customer_bth_month").getValue().toString();
+                                                    String customer_bth_year = dataSnapshot.child("customer_bth_year").getValue().toString();
+                                                    String customer_academic_degree = dataSnapshot.child("customer_academic_degree").getValue().toString();
+                                                    String customer_occupation = dataSnapshot.child("customer_occupation").getValue().toString();
+                                                    String customer_department = dataSnapshot.child("customer_department").getValue().toString();
+                                                    String customer_province = dataSnapshot.child("customer_province").getValue().toString();
+                                                    String customer_district = dataSnapshot.child("customer_district").getValue().toString();
+                                                    String customer_work_department = dataSnapshot.child("customer_work_department").getValue().toString();
+                                                    String customer_work_district = dataSnapshot.child("customer_work_district").getValue().toString();
+                                                    String customer_work_province = dataSnapshot.child("customer_work_province").getValue().toString();
+                                                    String customer_economic_level = dataSnapshot.child("customer_economic_level").getValue().toString();
 
-                                                int customer_bth_day_int = Integer.parseInt(customer_bth_day);
-                                                int customer_bth_month_int = Integer.parseInt(customer_bth_month);
-                                                int customer_bth_year_int = Integer.parseInt(customer_bth_year);
+                                                    int customer_bth_day_int = Integer.parseInt(customer_bth_day);
+                                                    int customer_bth_month_int = Integer.parseInt(customer_bth_month);
+                                                    int customer_bth_year_int = Integer.parseInt(customer_bth_year);
 
-                                                Calendar dob = Calendar.getInstance();
-                                                Calendar today = Calendar.getInstance();
+                                                    Calendar dob = Calendar.getInstance();
+                                                    Calendar today = Calendar.getInstance();
 
-                                                dob.set(customer_bth_year_int, customer_bth_month_int, customer_bth_day_int);
+                                                    dob.set(customer_bth_year_int, customer_bth_month_int, customer_bth_day_int);
 
-                                                int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+                                                    int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
 
-                                                if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)) {
-                                                    age--;
+                                                    if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)) {
+                                                        age--;
+                                                    }
+
+                                                    Integer ageInt = new Integer(age);
+                                                    String ageS = ageInt.toString();
+
+                                                    txtProduct5A.setText(customer_gender.toUpperCase());
+                                                    txtProduct5B.setText(ageS + " AÑOS");
+                                                    txtProduct5C.setText(customer_academic_degree.toUpperCase());
+                                                    txtProduct5D.setText(customer_occupation.toUpperCase());
+                                                    txtProduct5E.setText(customer_department.toUpperCase() + "/" + customer_province.toUpperCase() + "/" + customer_district.toUpperCase());
+                                                    txtProduct5F.setText(customer_work_department.toUpperCase() + "/" + customer_work_district.toUpperCase() + "/" + customer_work_province.toUpperCase());
+                                                    txtProduct5G.setText(customer_economic_level.toUpperCase());
+
+                                                } else {
+                                                    txtProduct5A.setText("DESCONOCIDO");
+                                                    txtProduct5B.setText("DESCONOCIDO");
+                                                    txtProduct5C.setText("DESCONOCIDO");
+                                                    txtProduct5D.setText("DESCONOCIDO");
+                                                    txtProduct5E.setText("DESCONOCIDO");
+                                                    txtProduct5F.setText("DESCONOCIDO");
+                                                    txtProduct5G.setText("DESCONOCIDO");
                                                 }
 
-                                                Integer ageInt = new Integer(age);
-                                                String ageS = ageInt.toString();
 
-                                                txtProduct5A.setText(customer_gender.toUpperCase());
-                                                txtProduct5B.setText(ageS + " AÑOS");
-                                                txtProduct5C.setText(customer_academic_degree.toUpperCase());
-                                                txtProduct5D.setText(customer_occupation.toUpperCase());
-                                                txtProduct5E.setText(customer_department.toUpperCase() + "/" + customer_province.toUpperCase() + "/" + customer_district.toUpperCase());
-                                                txtProduct5F.setText(customer_work_department.toUpperCase() + "/" + customer_work_district.toUpperCase() + "/" + customer_work_province.toUpperCase());
-                                                txtProduct5G.setText(customer_economic_level.toUpperCase());
-
-                                            } else {
-                                                txtProduct5A.setText("DESCONOCIDO");
-                                                txtProduct5B.setText("DESCONOCIDO");
-                                                txtProduct5C.setText("DESCONOCIDO");
-                                                txtProduct5D.setText("DESCONOCIDO");
-                                                txtProduct5E.setText("DESCONOCIDO");
-                                                txtProduct5F.setText("DESCONOCIDO");
-                                                txtProduct5G.setText("DESCONOCIDO");
                                             }
 
+                                            @Override
+                                            public void onCancelled(DatabaseError databaseError) {
 
-                                        }
+                                            }
+                                        });
 
-                                        @Override
-                                        public void onCancelled(DatabaseError databaseError) {
+                                    }
 
-                                        }
-                                    });
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
 
-                                }
+                                    }
+                                });
+                            } else {
+                                txtProduct5A.setText("DESCONOCIDO");
+                                txtProduct5B.setText("DESCONOCIDO");
+                                txtProduct5C.setText("DESCONOCIDO");
+                                txtProduct5D.setText("DESCONOCIDO");
+                                txtProduct5E.setText("DESCONOCIDO");
+                                txtProduct5F.setText("DESCONOCIDO");
+                                txtProduct5G.setText("DESCONOCIDO");
+                            }
 
-                                @Override
-                                public void onCancelled(DatabaseError databaseError) {
 
-                                }
-                            });
                         }
 
                         @Override
@@ -725,84 +763,97 @@ public class Matrix10PeopleFragment extends Fragment {
                             Picasso.with(getActivity()).load(product_image).fit().into(imgProduct6);
                             txtProduct6.setText(product_name);
 
-                            Query query = companyRef.child(post_key).child("My Products").child(product_id).child("Buyers").child("People").orderByChild("quantity_purchased").limitToLast(1);
-                            query.addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(DataSnapshot dataSnapshot) {
-                                    for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
-                                        customerKeyProduct1 = childSnapshot.getKey();
 
-                                    }
-                                    companyRef.child(post_key).child("Customers").child(customerKeyProduct1).addListenerForSingleValueEvent(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(DataSnapshot dataSnapshot) {
-                                            if (dataSnapshot.hasChild("customer_gender")) {
-                                                String customer_gender = dataSnapshot.child("customer_gender").getValue().toString();
-                                                String customer_bth_day = dataSnapshot.child("customer_bth_day").getValue().toString();
-                                                String customer_bth_month = dataSnapshot.child("customer_bth_month").getValue().toString();
-                                                String customer_bth_year = dataSnapshot.child("customer_bth_year").getValue().toString();
-                                                String customer_academic_degree = dataSnapshot.child("customer_academic_degree").getValue().toString();
-                                                String customer_occupation = dataSnapshot.child("customer_occupation").getValue().toString();
-                                                String customer_department = dataSnapshot.child("customer_department").getValue().toString();
-                                                String customer_province = dataSnapshot.child("customer_province").getValue().toString();
-                                                String customer_district = dataSnapshot.child("customer_district").getValue().toString();
-                                                String customer_work_department = dataSnapshot.child("customer_work_department").getValue().toString();
-                                                String customer_work_district = dataSnapshot.child("customer_work_district").getValue().toString();
-                                                String customer_work_province = dataSnapshot.child("customer_work_province").getValue().toString();
-                                                String customer_economic_level = dataSnapshot.child("customer_economic_level").getValue().toString();
+                            if (dataSnapshot.child("Buyers").child("People").exists()) {
+                                Query query = companyRef.child(post_key).child("My Products").child(product_id).child("Buyers").child("People").orderByChild("quantity_purchased").limitToLast(1);
+                                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+                                            customerKeyProduct1 = childSnapshot.getKey();
 
-                                                int customer_bth_day_int = Integer.parseInt(customer_bth_day);
-                                                int customer_bth_month_int = Integer.parseInt(customer_bth_month);
-                                                int customer_bth_year_int = Integer.parseInt(customer_bth_year);
+                                        }
+                                        companyRef.child(post_key).child("Customers").child(customerKeyProduct1).addListenerForSingleValueEvent(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                                if (dataSnapshot.hasChild("customer_gender")) {
+                                                    String customer_gender = dataSnapshot.child("customer_gender").getValue().toString();
+                                                    String customer_bth_day = dataSnapshot.child("customer_bth_day").getValue().toString();
+                                                    String customer_bth_month = dataSnapshot.child("customer_bth_month").getValue().toString();
+                                                    String customer_bth_year = dataSnapshot.child("customer_bth_year").getValue().toString();
+                                                    String customer_academic_degree = dataSnapshot.child("customer_academic_degree").getValue().toString();
+                                                    String customer_occupation = dataSnapshot.child("customer_occupation").getValue().toString();
+                                                    String customer_department = dataSnapshot.child("customer_department").getValue().toString();
+                                                    String customer_province = dataSnapshot.child("customer_province").getValue().toString();
+                                                    String customer_district = dataSnapshot.child("customer_district").getValue().toString();
+                                                    String customer_work_department = dataSnapshot.child("customer_work_department").getValue().toString();
+                                                    String customer_work_district = dataSnapshot.child("customer_work_district").getValue().toString();
+                                                    String customer_work_province = dataSnapshot.child("customer_work_province").getValue().toString();
+                                                    String customer_economic_level = dataSnapshot.child("customer_economic_level").getValue().toString();
 
-                                                Calendar dob = Calendar.getInstance();
-                                                Calendar today = Calendar.getInstance();
+                                                    int customer_bth_day_int = Integer.parseInt(customer_bth_day);
+                                                    int customer_bth_month_int = Integer.parseInt(customer_bth_month);
+                                                    int customer_bth_year_int = Integer.parseInt(customer_bth_year);
 
-                                                dob.set(customer_bth_year_int, customer_bth_month_int, customer_bth_day_int);
+                                                    Calendar dob = Calendar.getInstance();
+                                                    Calendar today = Calendar.getInstance();
 
-                                                int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+                                                    dob.set(customer_bth_year_int, customer_bth_month_int, customer_bth_day_int);
 
-                                                if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)) {
-                                                    age--;
+                                                    int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+
+                                                    if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)) {
+                                                        age--;
+                                                    }
+
+                                                    Integer ageInt = new Integer(age);
+                                                    String ageS = ageInt.toString();
+
+                                                    txtProduct6A.setText(customer_gender.toUpperCase());
+                                                    txtProduct6B.setText(ageS + " AÑOS");
+                                                    txtProduct6C.setText(customer_academic_degree.toUpperCase());
+                                                    txtProduct6D.setText(customer_occupation.toUpperCase());
+                                                    txtProduct6E.setText(customer_department.toUpperCase() + "/" + customer_province.toUpperCase() + "/" + customer_district.toUpperCase());
+                                                    txtProduct6F.setText(customer_work_department.toUpperCase() + "/" + customer_work_district.toUpperCase() + "/" + customer_work_province.toUpperCase());
+                                                    txtProduct6G.setText(customer_economic_level.toUpperCase());
+
+                                                } else {
+                                                    txtProduct6A.setText("DESCONOCIDO");
+                                                    txtProduct6B.setText("DESCONOCIDO");
+                                                    txtProduct6C.setText("DESCONOCIDO");
+                                                    txtProduct6D.setText("DESCONOCIDO");
+                                                    txtProduct6E.setText("DESCONOCIDO");
+                                                    txtProduct6F.setText("DESCONOCIDO");
+                                                    txtProduct6G.setText("DESCONOCIDO");
                                                 }
 
-                                                Integer ageInt = new Integer(age);
-                                                String ageS = ageInt.toString();
 
-                                                txtProduct6A.setText(customer_gender.toUpperCase());
-                                                txtProduct6B.setText(ageS + " AÑOS");
-                                                txtProduct6C.setText(customer_academic_degree.toUpperCase());
-                                                txtProduct6D.setText(customer_occupation.toUpperCase());
-                                                txtProduct6E.setText(customer_department.toUpperCase() + "/" + customer_province.toUpperCase() + "/" + customer_district.toUpperCase());
-                                                txtProduct6F.setText(customer_work_department.toUpperCase() + "/" + customer_work_district.toUpperCase() + "/" + customer_work_province.toUpperCase());
-                                                txtProduct6G.setText(customer_economic_level.toUpperCase());
-
-                                            } else {
-                                                txtProduct6A.setText("DESCONOCIDO");
-                                                txtProduct6B.setText("DESCONOCIDO");
-                                                txtProduct6C.setText("DESCONOCIDO");
-                                                txtProduct6D.setText("DESCONOCIDO");
-                                                txtProduct6E.setText("DESCONOCIDO");
-                                                txtProduct6F.setText("DESCONOCIDO");
-                                                txtProduct6G.setText("DESCONOCIDO");
                                             }
 
+                                            @Override
+                                            public void onCancelled(DatabaseError databaseError) {
 
-                                        }
+                                            }
+                                        });
 
-                                        @Override
-                                        public void onCancelled(DatabaseError databaseError) {
+                                    }
 
-                                        }
-                                    });
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
 
-                                }
+                                    }
+                                });
+                            } else {
+                                txtProduct6A.setText("DESCONOCIDO");
+                                txtProduct6B.setText("DESCONOCIDO");
+                                txtProduct6C.setText("DESCONOCIDO");
+                                txtProduct6D.setText("DESCONOCIDO");
+                                txtProduct6E.setText("DESCONOCIDO");
+                                txtProduct6F.setText("DESCONOCIDO");
+                                txtProduct6G.setText("DESCONOCIDO");
+                            }
 
-                                @Override
-                                public void onCancelled(DatabaseError databaseError) {
 
-                                }
-                            });
                         }
 
                         @Override
@@ -821,84 +872,95 @@ public class Matrix10PeopleFragment extends Fragment {
                             Picasso.with(getActivity()).load(product_image).fit().into(imgProduct7);
                             txtProduct7.setText(product_name);
 
-                            Query query = companyRef.child(post_key).child("My Products").child(product_id).child("Buyers").child("People").orderByChild("quantity_purchased").limitToLast(1);
-                            query.addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(DataSnapshot dataSnapshot) {
-                                    for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
-                                        customerKeyProduct1 = childSnapshot.getKey();
+                            if (dataSnapshot.child("Buyers").child("People").exists()) {
+                                Query query = companyRef.child(post_key).child("My Products").child(product_id).child("Buyers").child("People").orderByChild("quantity_purchased").limitToLast(1);
+                                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+                                            customerKeyProduct1 = childSnapshot.getKey();
 
-                                    }
-                                    companyRef.child(post_key).child("Customers").child(customerKeyProduct1).addListenerForSingleValueEvent(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(DataSnapshot dataSnapshot) {
-                                            if (dataSnapshot.hasChild("customer_gender")) {
-                                                String customer_gender = dataSnapshot.child("customer_gender").getValue().toString();
-                                                String customer_bth_day = dataSnapshot.child("customer_bth_day").getValue().toString();
-                                                String customer_bth_month = dataSnapshot.child("customer_bth_month").getValue().toString();
-                                                String customer_bth_year = dataSnapshot.child("customer_bth_year").getValue().toString();
-                                                String customer_academic_degree = dataSnapshot.child("customer_academic_degree").getValue().toString();
-                                                String customer_occupation = dataSnapshot.child("customer_occupation").getValue().toString();
-                                                String customer_department = dataSnapshot.child("customer_department").getValue().toString();
-                                                String customer_province = dataSnapshot.child("customer_province").getValue().toString();
-                                                String customer_district = dataSnapshot.child("customer_district").getValue().toString();
-                                                String customer_work_department = dataSnapshot.child("customer_work_department").getValue().toString();
-                                                String customer_work_district = dataSnapshot.child("customer_work_district").getValue().toString();
-                                                String customer_work_province = dataSnapshot.child("customer_work_province").getValue().toString();
-                                                String customer_economic_level = dataSnapshot.child("customer_economic_level").getValue().toString();
+                                        }
+                                        companyRef.child(post_key).child("Customers").child(customerKeyProduct1).addListenerForSingleValueEvent(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                                if (dataSnapshot.hasChild("customer_gender")) {
+                                                    String customer_gender = dataSnapshot.child("customer_gender").getValue().toString();
+                                                    String customer_bth_day = dataSnapshot.child("customer_bth_day").getValue().toString();
+                                                    String customer_bth_month = dataSnapshot.child("customer_bth_month").getValue().toString();
+                                                    String customer_bth_year = dataSnapshot.child("customer_bth_year").getValue().toString();
+                                                    String customer_academic_degree = dataSnapshot.child("customer_academic_degree").getValue().toString();
+                                                    String customer_occupation = dataSnapshot.child("customer_occupation").getValue().toString();
+                                                    String customer_department = dataSnapshot.child("customer_department").getValue().toString();
+                                                    String customer_province = dataSnapshot.child("customer_province").getValue().toString();
+                                                    String customer_district = dataSnapshot.child("customer_district").getValue().toString();
+                                                    String customer_work_department = dataSnapshot.child("customer_work_department").getValue().toString();
+                                                    String customer_work_district = dataSnapshot.child("customer_work_district").getValue().toString();
+                                                    String customer_work_province = dataSnapshot.child("customer_work_province").getValue().toString();
+                                                    String customer_economic_level = dataSnapshot.child("customer_economic_level").getValue().toString();
 
-                                                int customer_bth_day_int = Integer.parseInt(customer_bth_day);
-                                                int customer_bth_month_int = Integer.parseInt(customer_bth_month);
-                                                int customer_bth_year_int = Integer.parseInt(customer_bth_year);
+                                                    int customer_bth_day_int = Integer.parseInt(customer_bth_day);
+                                                    int customer_bth_month_int = Integer.parseInt(customer_bth_month);
+                                                    int customer_bth_year_int = Integer.parseInt(customer_bth_year);
 
-                                                Calendar dob = Calendar.getInstance();
-                                                Calendar today = Calendar.getInstance();
+                                                    Calendar dob = Calendar.getInstance();
+                                                    Calendar today = Calendar.getInstance();
 
-                                                dob.set(customer_bth_year_int, customer_bth_month_int, customer_bth_day_int);
+                                                    dob.set(customer_bth_year_int, customer_bth_month_int, customer_bth_day_int);
 
-                                                int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+                                                    int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
 
-                                                if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)) {
-                                                    age--;
+                                                    if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)) {
+                                                        age--;
+                                                    }
+
+                                                    Integer ageInt = new Integer(age);
+                                                    String ageS = ageInt.toString();
+
+                                                    txtProduct7A.setText(customer_gender.toUpperCase());
+                                                    txtProduct7B.setText(ageS + " AÑOS");
+                                                    txtProduct7C.setText(customer_academic_degree.toUpperCase());
+                                                    txtProduct7D.setText(customer_occupation.toUpperCase());
+                                                    txtProduct7E.setText(customer_department.toUpperCase() + "/" + customer_province.toUpperCase() + "/" + customer_district.toUpperCase());
+                                                    txtProduct7F.setText(customer_work_department.toUpperCase() + "/" + customer_work_district.toUpperCase() + "/" + customer_work_province.toUpperCase());
+                                                    txtProduct7G.setText(customer_economic_level.toUpperCase());
+
+                                                } else {
+                                                    txtProduct7A.setText("DESCONOCIDO");
+                                                    txtProduct7B.setText("DESCONOCIDO");
+                                                    txtProduct7C.setText("DESCONOCIDO");
+                                                    txtProduct7D.setText("DESCONOCIDO");
+                                                    txtProduct7E.setText("DESCONOCIDO");
+                                                    txtProduct7F.setText("DESCONOCIDO");
+                                                    txtProduct7G.setText("DESCONOCIDO");
                                                 }
 
-                                                Integer ageInt = new Integer(age);
-                                                String ageS = ageInt.toString();
 
-                                                txtProduct7A.setText(customer_gender.toUpperCase());
-                                                txtProduct7B.setText(ageS + " AÑOS");
-                                                txtProduct7C.setText(customer_academic_degree.toUpperCase());
-                                                txtProduct7D.setText(customer_occupation.toUpperCase());
-                                                txtProduct7E.setText(customer_department.toUpperCase() + "/" + customer_province.toUpperCase() + "/" + customer_district.toUpperCase());
-                                                txtProduct7F.setText(customer_work_department.toUpperCase() + "/" + customer_work_district.toUpperCase() + "/" + customer_work_province.toUpperCase());
-                                                txtProduct7G.setText(customer_economic_level.toUpperCase());
-
-                                            } else {
-                                                txtProduct7A.setText("DESCONOCIDO");
-                                                txtProduct7B.setText("DESCONOCIDO");
-                                                txtProduct7C.setText("DESCONOCIDO");
-                                                txtProduct7D.setText("DESCONOCIDO");
-                                                txtProduct7E.setText("DESCONOCIDO");
-                                                txtProduct7F.setText("DESCONOCIDO");
-                                                txtProduct7G.setText("DESCONOCIDO");
                                             }
 
+                                            @Override
+                                            public void onCancelled(DatabaseError databaseError) {
 
-                                        }
+                                            }
+                                        });
 
-                                        @Override
-                                        public void onCancelled(DatabaseError databaseError) {
+                                    }
 
-                                        }
-                                    });
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
 
-                                }
+                                    }
+                                });
+                            } else {
+                                txtProduct7A.setText("DESCONOCIDO");
+                                txtProduct7B.setText("DESCONOCIDO");
+                                txtProduct7C.setText("DESCONOCIDO");
+                                txtProduct7D.setText("DESCONOCIDO");
+                                txtProduct7E.setText("DESCONOCIDO");
+                                txtProduct7F.setText("DESCONOCIDO");
+                                txtProduct7G.setText("DESCONOCIDO");
+                            }
 
-                                @Override
-                                public void onCancelled(DatabaseError databaseError) {
-
-                                }
-                            });
                         }
 
                         @Override
@@ -916,84 +978,97 @@ public class Matrix10PeopleFragment extends Fragment {
                             String product_name = dataSnapshot.child("product_name").getValue().toString();
                             Picasso.with(getActivity()).load(product_image).fit().into(imgProduct8);
                             txtProduct8.setText(product_name);
-                            Query query = companyRef.child(post_key).child("My Products").child(product_id).child("Buyers").child("People").orderByChild("quantity_purchased").limitToLast(1);
-                            query.addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(DataSnapshot dataSnapshot) {
-                                    for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
-                                        customerKeyProduct1 = childSnapshot.getKey();
 
-                                    }
-                                    companyRef.child(post_key).child("Customers").child(customerKeyProduct1).addListenerForSingleValueEvent(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(DataSnapshot dataSnapshot) {
-                                            if (dataSnapshot.hasChild("customer_gender")) {
-                                                String customer_gender = dataSnapshot.child("customer_gender").getValue().toString();
-                                                String customer_bth_day = dataSnapshot.child("customer_bth_day").getValue().toString();
-                                                String customer_bth_month = dataSnapshot.child("customer_bth_month").getValue().toString();
-                                                String customer_bth_year = dataSnapshot.child("customer_bth_year").getValue().toString();
-                                                String customer_academic_degree = dataSnapshot.child("customer_academic_degree").getValue().toString();
-                                                String customer_occupation = dataSnapshot.child("customer_occupation").getValue().toString();
-                                                String customer_department = dataSnapshot.child("customer_department").getValue().toString();
-                                                String customer_province = dataSnapshot.child("customer_province").getValue().toString();
-                                                String customer_district = dataSnapshot.child("customer_district").getValue().toString();
-                                                String customer_work_department = dataSnapshot.child("customer_work_department").getValue().toString();
-                                                String customer_work_district = dataSnapshot.child("customer_work_district").getValue().toString();
-                                                String customer_work_province = dataSnapshot.child("customer_work_province").getValue().toString();
-                                                String customer_economic_level = dataSnapshot.child("customer_economic_level").getValue().toString();
+                            if (dataSnapshot.child("Buyers").child("People").exists()) {
+                                Query query = companyRef.child(post_key).child("My Products").child(product_id).child("Buyers").child("People").orderByChild("quantity_purchased").limitToLast(1);
+                                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+                                            customerKeyProduct1 = childSnapshot.getKey();
 
-                                                int customer_bth_day_int = Integer.parseInt(customer_bth_day);
-                                                int customer_bth_month_int = Integer.parseInt(customer_bth_month);
-                                                int customer_bth_year_int = Integer.parseInt(customer_bth_year);
+                                        }
+                                        companyRef.child(post_key).child("Customers").child(customerKeyProduct1).addListenerForSingleValueEvent(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                                if (dataSnapshot.hasChild("customer_gender")) {
+                                                    String customer_gender = dataSnapshot.child("customer_gender").getValue().toString();
+                                                    String customer_bth_day = dataSnapshot.child("customer_bth_day").getValue().toString();
+                                                    String customer_bth_month = dataSnapshot.child("customer_bth_month").getValue().toString();
+                                                    String customer_bth_year = dataSnapshot.child("customer_bth_year").getValue().toString();
+                                                    String customer_academic_degree = dataSnapshot.child("customer_academic_degree").getValue().toString();
+                                                    String customer_occupation = dataSnapshot.child("customer_occupation").getValue().toString();
+                                                    String customer_department = dataSnapshot.child("customer_department").getValue().toString();
+                                                    String customer_province = dataSnapshot.child("customer_province").getValue().toString();
+                                                    String customer_district = dataSnapshot.child("customer_district").getValue().toString();
+                                                    String customer_work_department = dataSnapshot.child("customer_work_department").getValue().toString();
+                                                    String customer_work_district = dataSnapshot.child("customer_work_district").getValue().toString();
+                                                    String customer_work_province = dataSnapshot.child("customer_work_province").getValue().toString();
+                                                    String customer_economic_level = dataSnapshot.child("customer_economic_level").getValue().toString();
 
-                                                Calendar dob = Calendar.getInstance();
-                                                Calendar today = Calendar.getInstance();
+                                                    int customer_bth_day_int = Integer.parseInt(customer_bth_day);
+                                                    int customer_bth_month_int = Integer.parseInt(customer_bth_month);
+                                                    int customer_bth_year_int = Integer.parseInt(customer_bth_year);
 
-                                                dob.set(customer_bth_year_int, customer_bth_month_int, customer_bth_day_int);
+                                                    Calendar dob = Calendar.getInstance();
+                                                    Calendar today = Calendar.getInstance();
 
-                                                int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+                                                    dob.set(customer_bth_year_int, customer_bth_month_int, customer_bth_day_int);
 
-                                                if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)) {
-                                                    age--;
+                                                    int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+
+                                                    if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)) {
+                                                        age--;
+                                                    }
+
+                                                    Integer ageInt = new Integer(age);
+                                                    String ageS = ageInt.toString();
+
+                                                    txtProduct8A.setText(customer_gender.toUpperCase());
+                                                    txtProduct8B.setText(ageS + " AÑOS");
+                                                    txtProduct8C.setText(customer_academic_degree.toUpperCase());
+                                                    txtProduct8D.setText(customer_occupation.toUpperCase());
+                                                    txtProduct8E.setText(customer_department.toUpperCase() + "/" + customer_province.toUpperCase() + "/" + customer_district.toUpperCase());
+                                                    txtProduct8F.setText(customer_work_department.toUpperCase() + "/" + customer_work_district.toUpperCase() + "/" + customer_work_province.toUpperCase());
+                                                    txtProduct8G.setText(customer_economic_level.toUpperCase());
+
+                                                } else {
+                                                    txtProduct8A.setText("DESCONOCIDO");
+                                                    txtProduct8B.setText("DESCONOCIDO");
+                                                    txtProduct8C.setText("DESCONOCIDO");
+                                                    txtProduct8D.setText("DESCONOCIDO");
+                                                    txtProduct8E.setText("DESCONOCIDO");
+                                                    txtProduct8F.setText("DESCONOCIDO");
+                                                    txtProduct8G.setText("DESCONOCIDO");
                                                 }
 
-                                                Integer ageInt = new Integer(age);
-                                                String ageS = ageInt.toString();
 
-                                                txtProduct8A.setText(customer_gender.toUpperCase());
-                                                txtProduct8B.setText(ageS + " AÑOS");
-                                                txtProduct8C.setText(customer_academic_degree.toUpperCase());
-                                                txtProduct8D.setText(customer_occupation.toUpperCase());
-                                                txtProduct8E.setText(customer_department.toUpperCase() + "/" + customer_province.toUpperCase() + "/" + customer_district.toUpperCase());
-                                                txtProduct8F.setText(customer_work_department.toUpperCase() + "/" + customer_work_district.toUpperCase() + "/" + customer_work_province.toUpperCase());
-                                                txtProduct8G.setText(customer_economic_level.toUpperCase());
-
-                                            } else {
-                                                txtProduct8A.setText("DESCONOCIDO");
-                                                txtProduct8B.setText("DESCONOCIDO");
-                                                txtProduct8C.setText("DESCONOCIDO");
-                                                txtProduct8D.setText("DESCONOCIDO");
-                                                txtProduct8E.setText("DESCONOCIDO");
-                                                txtProduct8F.setText("DESCONOCIDO");
-                                                txtProduct8G.setText("DESCONOCIDO");
                                             }
 
+                                            @Override
+                                            public void onCancelled(DatabaseError databaseError) {
 
-                                        }
+                                            }
+                                        });
 
-                                        @Override
-                                        public void onCancelled(DatabaseError databaseError) {
+                                    }
 
-                                        }
-                                    });
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
 
-                                }
+                                    }
+                                });
+                            } else {
+                                txtProduct8A.setText("DESCONOCIDO");
+                                txtProduct8B.setText("DESCONOCIDO");
+                                txtProduct8C.setText("DESCONOCIDO");
+                                txtProduct8D.setText("DESCONOCIDO");
+                                txtProduct8E.setText("DESCONOCIDO");
+                                txtProduct8F.setText("DESCONOCIDO");
+                                txtProduct8G.setText("DESCONOCIDO");
+                            }
 
-                                @Override
-                                public void onCancelled(DatabaseError databaseError) {
 
-                                }
-                            });
                         }
 
                         @Override
@@ -1012,84 +1087,96 @@ public class Matrix10PeopleFragment extends Fragment {
                             Picasso.with(getActivity()).load(product_image).fit().into(imgProduct9);
                             txtProduct9.setText(product_name);
 
-                            Query query = companyRef.child(post_key).child("My Products").child(product_id).child("Buyers").child("People").orderByChild("quantity_purchased").limitToLast(1);
-                            query.addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(DataSnapshot dataSnapshot) {
-                                    for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
-                                        customerKeyProduct1 = childSnapshot.getKey();
+                            if (dataSnapshot.child("Buyers").child("People").exists()) {
+                                Query query = companyRef.child(post_key).child("My Products").child(product_id).child("Buyers").child("People").orderByChild("quantity_purchased").limitToLast(1);
+                                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+                                            customerKeyProduct1 = childSnapshot.getKey();
 
-                                    }
-                                    companyRef.child(post_key).child("Customers").child(customerKeyProduct1).addListenerForSingleValueEvent(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(DataSnapshot dataSnapshot) {
-                                            if (dataSnapshot.hasChild("customer_gender")) {
-                                                String customer_gender = dataSnapshot.child("customer_gender").getValue().toString();
-                                                String customer_bth_day = dataSnapshot.child("customer_bth_day").getValue().toString();
-                                                String customer_bth_month = dataSnapshot.child("customer_bth_month").getValue().toString();
-                                                String customer_bth_year = dataSnapshot.child("customer_bth_year").getValue().toString();
-                                                String customer_academic_degree = dataSnapshot.child("customer_academic_degree").getValue().toString();
-                                                String customer_occupation = dataSnapshot.child("customer_occupation").getValue().toString();
-                                                String customer_department = dataSnapshot.child("customer_department").getValue().toString();
-                                                String customer_province = dataSnapshot.child("customer_province").getValue().toString();
-                                                String customer_district = dataSnapshot.child("customer_district").getValue().toString();
-                                                String customer_work_department = dataSnapshot.child("customer_work_department").getValue().toString();
-                                                String customer_work_district = dataSnapshot.child("customer_work_district").getValue().toString();
-                                                String customer_work_province = dataSnapshot.child("customer_work_province").getValue().toString();
-                                                String customer_economic_level = dataSnapshot.child("customer_economic_level").getValue().toString();
+                                        }
+                                        companyRef.child(post_key).child("Customers").child(customerKeyProduct1).addListenerForSingleValueEvent(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                                if (dataSnapshot.hasChild("customer_gender")) {
+                                                    String customer_gender = dataSnapshot.child("customer_gender").getValue().toString();
+                                                    String customer_bth_day = dataSnapshot.child("customer_bth_day").getValue().toString();
+                                                    String customer_bth_month = dataSnapshot.child("customer_bth_month").getValue().toString();
+                                                    String customer_bth_year = dataSnapshot.child("customer_bth_year").getValue().toString();
+                                                    String customer_academic_degree = dataSnapshot.child("customer_academic_degree").getValue().toString();
+                                                    String customer_occupation = dataSnapshot.child("customer_occupation").getValue().toString();
+                                                    String customer_department = dataSnapshot.child("customer_department").getValue().toString();
+                                                    String customer_province = dataSnapshot.child("customer_province").getValue().toString();
+                                                    String customer_district = dataSnapshot.child("customer_district").getValue().toString();
+                                                    String customer_work_department = dataSnapshot.child("customer_work_department").getValue().toString();
+                                                    String customer_work_district = dataSnapshot.child("customer_work_district").getValue().toString();
+                                                    String customer_work_province = dataSnapshot.child("customer_work_province").getValue().toString();
+                                                    String customer_economic_level = dataSnapshot.child("customer_economic_level").getValue().toString();
 
-                                                int customer_bth_day_int = Integer.parseInt(customer_bth_day);
-                                                int customer_bth_month_int = Integer.parseInt(customer_bth_month);
-                                                int customer_bth_year_int = Integer.parseInt(customer_bth_year);
+                                                    int customer_bth_day_int = Integer.parseInt(customer_bth_day);
+                                                    int customer_bth_month_int = Integer.parseInt(customer_bth_month);
+                                                    int customer_bth_year_int = Integer.parseInt(customer_bth_year);
 
-                                                Calendar dob = Calendar.getInstance();
-                                                Calendar today = Calendar.getInstance();
+                                                    Calendar dob = Calendar.getInstance();
+                                                    Calendar today = Calendar.getInstance();
 
-                                                dob.set(customer_bth_year_int, customer_bth_month_int, customer_bth_day_int);
+                                                    dob.set(customer_bth_year_int, customer_bth_month_int, customer_bth_day_int);
 
-                                                int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+                                                    int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
 
-                                                if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)) {
-                                                    age--;
+                                                    if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)) {
+                                                        age--;
+                                                    }
+
+                                                    Integer ageInt = new Integer(age);
+                                                    String ageS = ageInt.toString();
+
+                                                    txtProduct9A.setText(customer_gender.toUpperCase());
+                                                    txtProduct9B.setText(ageS + " AÑOS");
+                                                    txtProduct9C.setText(customer_academic_degree.toUpperCase());
+                                                    txtProduct9D.setText(customer_occupation.toUpperCase());
+                                                    txtProduct9E.setText(customer_department.toUpperCase() + "/" + customer_province.toUpperCase() + "/" + customer_district.toUpperCase());
+                                                    txtProduct9F.setText(customer_work_department.toUpperCase() + "/" + customer_work_district.toUpperCase() + "/" + customer_work_province.toUpperCase());
+                                                    txtProduct9G.setText(customer_economic_level.toUpperCase());
+
+                                                } else {
+                                                    txtProduct9A.setText("DESCONOCIDO");
+                                                    txtProduct9B.setText("DESCONOCIDO");
+                                                    txtProduct9C.setText("DESCONOCIDO");
+                                                    txtProduct9D.setText("DESCONOCIDO");
+                                                    txtProduct9E.setText("DESCONOCIDO");
+                                                    txtProduct9F.setText("DESCONOCIDO");
+                                                    txtProduct9G.setText("DESCONOCIDO");
                                                 }
 
-                                                Integer ageInt = new Integer(age);
-                                                String ageS = ageInt.toString();
 
-                                                txtProduct9A.setText(customer_gender.toUpperCase());
-                                                txtProduct9B.setText(ageS + " AÑOS");
-                                                txtProduct9C.setText(customer_academic_degree.toUpperCase());
-                                                txtProduct9D.setText(customer_occupation.toUpperCase());
-                                                txtProduct9E.setText(customer_department.toUpperCase() + "/" + customer_province.toUpperCase() + "/" + customer_district.toUpperCase());
-                                                txtProduct9F.setText(customer_work_department.toUpperCase() + "/" + customer_work_district.toUpperCase() + "/" + customer_work_province.toUpperCase());
-                                                txtProduct9G.setText(customer_economic_level.toUpperCase());
-
-                                            } else {
-                                                txtProduct9A.setText("DESCONOCIDO");
-                                                txtProduct9B.setText("DESCONOCIDO");
-                                                txtProduct9C.setText("DESCONOCIDO");
-                                                txtProduct9D.setText("DESCONOCIDO");
-                                                txtProduct9E.setText("DESCONOCIDO");
-                                                txtProduct9F.setText("DESCONOCIDO");
-                                                txtProduct9G.setText("DESCONOCIDO");
                                             }
 
+                                            @Override
+                                            public void onCancelled(DatabaseError databaseError) {
 
-                                        }
+                                            }
+                                        });
 
-                                        @Override
-                                        public void onCancelled(DatabaseError databaseError) {
+                                    }
 
-                                        }
-                                    });
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
 
-                                }
+                                    }
+                                });
+                            } else {
+                                txtProduct9A.setText("DESCONOCIDO");
+                                txtProduct9B.setText("DESCONOCIDO");
+                                txtProduct9C.setText("DESCONOCIDO");
+                                txtProduct9D.setText("DESCONOCIDO");
+                                txtProduct9E.setText("DESCONOCIDO");
+                                txtProduct9F.setText("DESCONOCIDO");
+                                txtProduct9G.setText("DESCONOCIDO");
+                            }
 
-                                @Override
-                                public void onCancelled(DatabaseError databaseError) {
 
-                                }
-                            });
                         }
 
                         @Override
@@ -1108,84 +1195,96 @@ public class Matrix10PeopleFragment extends Fragment {
                             Picasso.with(getActivity()).load(product_image).fit().into(imgProduct10);
                             txtProduct10.setText(product_name);
 
-                            Query query = companyRef.child(post_key).child("My Products").child(product_id).child("Buyers").child("People").orderByChild("quantity_purchased").limitToLast(1);
-                            query.addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(DataSnapshot dataSnapshot) {
-                                    for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
-                                        customerKeyProduct1 = childSnapshot.getKey();
+                            if (dataSnapshot.child("Buyers").child("People").exists()) {
 
-                                    }
-                                    companyRef.child(post_key).child("Customers").child(customerKeyProduct1).addListenerForSingleValueEvent(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(DataSnapshot dataSnapshot) {
-                                            if (dataSnapshot.hasChild("customer_gender")) {
-                                                String customer_gender = dataSnapshot.child("customer_gender").getValue().toString();
-                                                String customer_bth_day = dataSnapshot.child("customer_bth_day").getValue().toString();
-                                                String customer_bth_month = dataSnapshot.child("customer_bth_month").getValue().toString();
-                                                String customer_bth_year = dataSnapshot.child("customer_bth_year").getValue().toString();
-                                                String customer_academic_degree = dataSnapshot.child("customer_academic_degree").getValue().toString();
-                                                String customer_occupation = dataSnapshot.child("customer_occupation").getValue().toString();
-                                                String customer_department = dataSnapshot.child("customer_department").getValue().toString();
-                                                String customer_province = dataSnapshot.child("customer_province").getValue().toString();
-                                                String customer_district = dataSnapshot.child("customer_district").getValue().toString();
-                                                String customer_work_department = dataSnapshot.child("customer_work_department").getValue().toString();
-                                                String customer_work_district = dataSnapshot.child("customer_work_district").getValue().toString();
-                                                String customer_work_province = dataSnapshot.child("customer_work_province").getValue().toString();
-                                                String customer_economic_level = dataSnapshot.child("customer_economic_level").getValue().toString();
+                                Query query = companyRef.child(post_key).child("My Products").child(product_id).child("Buyers").child("People").orderByChild("quantity_purchased").limitToLast(1);
+                                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+                                            customerKeyProduct1 = childSnapshot.getKey();
 
-                                                int customer_bth_day_int = Integer.parseInt(customer_bth_day);
-                                                int customer_bth_month_int = Integer.parseInt(customer_bth_month);
-                                                int customer_bth_year_int = Integer.parseInt(customer_bth_year);
+                                        }
+                                        companyRef.child(post_key).child("Customers").child(customerKeyProduct1).addListenerForSingleValueEvent(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                                if (dataSnapshot.hasChild("customer_gender")) {
+                                                    String customer_gender = dataSnapshot.child("customer_gender").getValue().toString();
+                                                    String customer_bth_day = dataSnapshot.child("customer_bth_day").getValue().toString();
+                                                    String customer_bth_month = dataSnapshot.child("customer_bth_month").getValue().toString();
+                                                    String customer_bth_year = dataSnapshot.child("customer_bth_year").getValue().toString();
+                                                    String customer_academic_degree = dataSnapshot.child("customer_academic_degree").getValue().toString();
+                                                    String customer_occupation = dataSnapshot.child("customer_occupation").getValue().toString();
+                                                    String customer_department = dataSnapshot.child("customer_department").getValue().toString();
+                                                    String customer_province = dataSnapshot.child("customer_province").getValue().toString();
+                                                    String customer_district = dataSnapshot.child("customer_district").getValue().toString();
+                                                    String customer_work_department = dataSnapshot.child("customer_work_department").getValue().toString();
+                                                    String customer_work_district = dataSnapshot.child("customer_work_district").getValue().toString();
+                                                    String customer_work_province = dataSnapshot.child("customer_work_province").getValue().toString();
+                                                    String customer_economic_level = dataSnapshot.child("customer_economic_level").getValue().toString();
 
-                                                Calendar dob = Calendar.getInstance();
-                                                Calendar today = Calendar.getInstance();
+                                                    int customer_bth_day_int = Integer.parseInt(customer_bth_day);
+                                                    int customer_bth_month_int = Integer.parseInt(customer_bth_month);
+                                                    int customer_bth_year_int = Integer.parseInt(customer_bth_year);
 
-                                                dob.set(customer_bth_year_int, customer_bth_month_int, customer_bth_day_int);
+                                                    Calendar dob = Calendar.getInstance();
+                                                    Calendar today = Calendar.getInstance();
 
-                                                int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+                                                    dob.set(customer_bth_year_int, customer_bth_month_int, customer_bth_day_int);
 
-                                                if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)) {
-                                                    age--;
+                                                    int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+
+                                                    if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)) {
+                                                        age--;
+                                                    }
+
+                                                    Integer ageInt = new Integer(age);
+                                                    String ageS = ageInt.toString();
+
+                                                    txtProduct10A.setText(customer_gender.toUpperCase());
+                                                    txtProduct10B.setText(ageS + " AÑOS");
+                                                    txtProduct10C.setText(customer_academic_degree.toUpperCase());
+                                                    txtProduct10D.setText(customer_occupation.toUpperCase());
+                                                    txtProduct10E.setText(customer_department.toUpperCase() + "/" + customer_province.toUpperCase() + "/" + customer_district.toUpperCase());
+                                                    txtProduct10F.setText(customer_work_department.toUpperCase() + "/" + customer_work_district.toUpperCase() + "/" + customer_work_province.toUpperCase());
+                                                    txtProduct10G.setText(customer_economic_level.toUpperCase());
+
+                                                } else {
+                                                    txtProduct10A.setText("DESCONOCIDO");
+                                                    txtProduct10B.setText("DESCONOCIDO");
+                                                    txtProduct10C.setText("DESCONOCIDO");
+                                                    txtProduct10D.setText("DESCONOCIDO");
+                                                    txtProduct10E.setText("DESCONOCIDO");
+                                                    txtProduct10F.setText("DESCONOCIDO");
+                                                    txtProduct10G.setText("DESCONOCIDO");
                                                 }
 
-                                                Integer ageInt = new Integer(age);
-                                                String ageS = ageInt.toString();
 
-                                                txtProduct10A.setText(customer_gender.toUpperCase());
-                                                txtProduct10B.setText(ageS + " AÑOS");
-                                                txtProduct10C.setText(customer_academic_degree.toUpperCase());
-                                                txtProduct10D.setText(customer_occupation.toUpperCase());
-                                                txtProduct10E.setText(customer_department.toUpperCase() + "/" + customer_province.toUpperCase() + "/" + customer_district.toUpperCase());
-                                                txtProduct10F.setText(customer_work_department.toUpperCase() + "/" + customer_work_district.toUpperCase() + "/" + customer_work_province.toUpperCase());
-                                                txtProduct10G.setText(customer_economic_level.toUpperCase());
-
-                                            } else {
-                                                txtProduct10A.setText("DESCONOCIDO");
-                                                txtProduct10B.setText("DESCONOCIDO");
-                                                txtProduct10C.setText("DESCONOCIDO");
-                                                txtProduct10D.setText("DESCONOCIDO");
-                                                txtProduct10E.setText("DESCONOCIDO");
-                                                txtProduct10F.setText("DESCONOCIDO");
-                                                txtProduct10G.setText("DESCONOCIDO");
                                             }
 
+                                            @Override
+                                            public void onCancelled(DatabaseError databaseError) {
 
-                                        }
+                                            }
+                                        });
 
-                                        @Override
-                                        public void onCancelled(DatabaseError databaseError) {
+                                    }
 
-                                        }
-                                    });
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
 
-                                }
+                                    }
+                                });
+                            } else {
+                                txtProduct10A.setText("DESCONOCIDO");
+                                txtProduct10B.setText("DESCONOCIDO");
+                                txtProduct10C.setText("DESCONOCIDO");
+                                txtProduct10D.setText("DESCONOCIDO");
+                                txtProduct10E.setText("DESCONOCIDO");
+                                txtProduct10F.setText("DESCONOCIDO");
+                                txtProduct10G.setText("DESCONOCIDO");
+                            }
 
-                                @Override
-                                public void onCancelled(DatabaseError databaseError) {
-
-                                }
-                            });
                         }
 
                         @Override

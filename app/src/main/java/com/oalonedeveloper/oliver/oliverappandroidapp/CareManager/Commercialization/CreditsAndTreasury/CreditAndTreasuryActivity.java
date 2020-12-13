@@ -137,6 +137,8 @@ public class CreditAndTreasuryActivity extends AppCompatActivity {
                     return new CurrentDebtFragment();
                 case 1:
                     return new ExpiredDebtFragment();
+                case 2:
+                    return new CreditTableFragment();
 
                 default:
                     return null;
