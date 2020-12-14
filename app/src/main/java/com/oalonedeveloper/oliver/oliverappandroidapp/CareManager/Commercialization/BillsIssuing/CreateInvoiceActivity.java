@@ -1149,8 +1149,13 @@ public class CreateInvoiceActivity extends AppCompatActivity {
                                     for (DataSnapshot ds : dataSnapshot.getChildren()) {
                                         Map<String, Object> map = (Map<String, Object>) ds.getValue();
                                         Object quantity = map.get(year+""+ month + "quantity");
+                                        Object sales = map.get(year+""+ month + "sales");
 
                                         companyRef.child(post_key).child("My Products").child(ds.getKey()).child(year+""+ month + "quantity").setValue(quantity);
+                                        companyRef.child(post_key).child("My Products").child(ds.getKey()).child("Sales Quantity").child(year+""+ month + "quantity").setValue(quantity);
+
+                                        companyRef.child(post_key).child("My Products").child(ds.getKey()).child(year+""+ month + "sales").setValue(sales);
+                                        companyRef.child(post_key).child("My Products").child(ds.getKey()).child("Sales Period").child(year+""+ month + "sales").setValue(sales);
 
                                         Object stock = map.get("product_stock");
 
