@@ -1136,6 +1136,8 @@ public class CreateInvoiceActivity extends AppCompatActivity {
                             companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("bill_amount").setValue(total_amount_st);
                             companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("bill_igv_taxes").setValue(total_taxes_st);
 
+                            companyRef.child(post_key).child("Customers").child(customerPostKey).child("Purchased").child(day+month+year+current_time).child("bill_amount").setValue(total_amount_st);
+
                             companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("timestamp").setValue(ServerValue.TIMESTAMP);
 
 

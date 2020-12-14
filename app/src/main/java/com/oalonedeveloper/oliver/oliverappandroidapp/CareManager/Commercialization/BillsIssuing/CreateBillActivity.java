@@ -194,7 +194,7 @@ public class CreateBillActivity extends AppCompatActivity {
                     Snackbar.make(rootLayout, "Debes seleccionar a tu cliente primero", Snackbar.LENGTH_LONG).show();
 
                 } else {
-                    showDocumentNumnerDialog();
+                    showDocumentNumberDialog();
                 }
 
             }
@@ -1423,6 +1423,7 @@ public class CreateBillActivity extends AppCompatActivity {
 
                             companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("timestamp").setValue(ServerValue.TIMESTAMP);
 
+                            companyRef.child(post_key).child("Customers").child(customerPostKey).child("Purchased").child(day+month+year+current_time).child("bill_amount").setValue(total_amount_st);
 
                             companyRef.child(post_key).child("Sale Processing").addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
@@ -1432,8 +1433,13 @@ public class CreateBillActivity extends AppCompatActivity {
                                     for (DataSnapshot ds : dataSnapshot.getChildren()) {
                                         Map<String, Object> map = (Map<String, Object>) ds.getValue();
                                         Object quantity = map.get(year+""+ month + "quantity");
+                                        Object sales = map.get(year+""+ month + "sales");
 
                                         companyRef.child(post_key).child("My Products").child(ds.getKey()).child(year+""+ month + "quantity").setValue(quantity);
+                                        companyRef.child(post_key).child("My Products").child(ds.getKey()).child("Sales Quantity").child(year+""+ month + "quantity").setValue(quantity);
+
+                                        companyRef.child(post_key).child("My Products").child(ds.getKey()).child(year+""+ month + "sales").setValue(sales);
+                                        companyRef.child(post_key).child("My Products").child(ds.getKey()).child("Sales Period").child(year+""+ month + "sales").setValue(sales);
 
                                         Object stock = map.get("product_stock");
 
@@ -1442,6 +1448,8 @@ public class CreateBillActivity extends AppCompatActivity {
                                         Object quantity_purchased = map.get("quantity_purchased");
                                         companyRef.child(post_key).child("My Products").child(ds.getKey()).child("Buyers").child("People").child(customerPostKey).child("quantity_purchased").setValue(quantity_purchased);
                                     }
+
+
                                 }
 
                                 @Override
@@ -2001,7 +2009,7 @@ public class CreateBillActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    private void showDocumentNumnerDialog() {
+    private void showDocumentNumberDialog() {
         final AlertDialog dialog = new AlertDialog.Builder(this).create();
 
         LayoutInflater inflater = LayoutInflater.from(this);

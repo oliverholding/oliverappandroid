@@ -70,7 +70,7 @@ public class CreditTableFragment extends Fragment {
 
         decimalFormat = new DecimalFormat("0.00");
 
-        companyRef.child(post_key).child("My Bills").orderByChild("state").equalTo("no_paid").addValueEventListener(new ValueEventListener() {
+        companyRef.child(post_key).child("My Bills").orderByChild("state").equalTo("no_paid").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 sum1 = 0;
