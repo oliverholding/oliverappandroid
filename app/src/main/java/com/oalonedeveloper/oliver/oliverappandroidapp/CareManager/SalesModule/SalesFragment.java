@@ -14,6 +14,8 @@ import android.widget.ImageButton;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CommercializationActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CommercializationToolActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.ProductMarketMatrix.ProductMarketMatrixActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.CustomerSchedule.CustomerScheduleActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.MySellers.MySellersActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.SalesArgument.SalesArgumentActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.SalesFunnel.SalesFunnelActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
@@ -22,7 +24,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 public class SalesFragment extends Fragment {
 
     ImageButton btnTest1,btnCap1,btnVideo1,btnVideo2,btnVideo3,btnVideo4,btnVideo5,btnVideo6,btnFile1,btnTool1,btnTool2,btnTool3,btnTool4,btnTool5,btnTool6,btnTest2;
-    Button btnSalesArgument,btnSalesFunnel,btnTutorial;
+    Button btnSalesArgument,btnSalesFunnel,btnTutorial,btnScheduleDate,btnSellers;
     String post_key;
 
     @Override
@@ -50,6 +52,8 @@ public class SalesFragment extends Fragment {
         btnSalesArgument = view.findViewById(R.id.btnSalesArgument);
         btnSalesFunnel = view.findViewById(R.id.btnSalesFunnel);
         btnTutorial = view.findViewById(R.id.btnTutorial);
+        btnScheduleDate = view.findViewById(R.id.btnScheduleDate);
+        btnSellers = view.findViewById(R.id.btnSellers);
 
         post_key = getActivity().getIntent().getExtras().getString("post_key");
 
@@ -69,6 +73,26 @@ public class SalesFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        btnScheduleDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), CustomerScheduleActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+        btnSellers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MySellersActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+
+
+
+
         btnTutorial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

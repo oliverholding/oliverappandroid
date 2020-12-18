@@ -126,7 +126,7 @@
         android:text="registrar contacto"
         android:layout_margin="12dp"
         android:textColor="@android:color/white"
-        android:background="@drawable/blue_button_style"
+        android:background="@drawable/gray_button_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

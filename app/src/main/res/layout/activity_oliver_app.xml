@@ -6,9 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".OliverAppActivity">
 
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:id="@+id/appBar"
-        app:cardElevation="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -47,7 +46,7 @@
 
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
     <com.google.android.material.tabs.TabLayout
         android:layout_below="@+id/appBar"
@@ -67,6 +66,12 @@
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab2"
+            android:text="PRODUCTOS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab3"
             android:text="SOCIOS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -77,16 +82,15 @@
     <androidx.viewpager.widget.ViewPager
         android:layout_below="@id/tabLayout"
         android:layout_above="@id/bottomBar"
-        android:id="@+id/viewPager"
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     </androidx.viewpager.widget.ViewPager>
 
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:id="@+id/bottomBar"
         android:layout_alignParentBottom="true"
-        app:cardElevation="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -168,6 +172,6 @@
 
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
 </RelativeLayout>

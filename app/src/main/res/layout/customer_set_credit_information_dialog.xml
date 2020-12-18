@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
+    android:id="@+id/rootLayout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="8dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:orientation="vertical"
+        android:padding="12dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -18,6 +19,380 @@
             android:layout_margin="8dp"
             android:text="Definir parámetros de crédito para customer_name"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="¿Has verificado la identidad de este contacto?"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <RadioGroup
+            android:id="@+id/radioGroup1"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rdYes"
+                android:background="@drawable/edit_text_style"
+                android:padding="8dp"
+                android:text="Sí"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/rdNo"
+                android:background="@drawable/edit_text_style"
+                android:padding="8dp"
+                android:text="No"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/photoDniLayout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_margin="4dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/btnImageButton1"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/gray_button_style"
+                    android:src="@drawable/add_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"/>
+
+                <TextView
+                    android:gravity="center"
+                    android:text="FRONTAL"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="4dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/btnImageButton2"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/gray_button_style"
+                    android:src="@drawable/add_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"/>
+
+                <TextView
+                    android:gravity="center"
+                    android:text="DORSAL"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Selecciona la calificación crediticia de este usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <RadioGroup
+            android:id="@+id/radioGroup2"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rdNormal"
+                android:background="@drawable/edit_text_style"
+                android:padding="8dp"
+                android:text="Normal"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/rdCPP"
+                android:background="@drawable/edit_text_style"
+                android:padding="8dp"
+                android:text="Problemas Potenciales"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/rdDeficient"
+                android:background="@drawable/edit_text_style"
+                android:padding="8dp"
+                android:text="Deficiente"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/rdDoubtful"
+                android:background="@drawable/edit_text_style"
+                android:padding="8dp"
+                android:text="Dudoso"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/rdLost"
+                android:background="@drawable/edit_text_style"
+                android:padding="8dp"
+                android:text="Pérdida"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="¿Has comprobado el domicilio del cliente?"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <RadioGroup
+            android:id="@+id/radioGroup3"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rdYes2"
+                android:background="@drawable/edit_text_style"
+                android:padding="8dp"
+                android:text="Sí"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/rdNo2"
+                android:background="@drawable/edit_text_style"
+                android:padding="8dp"
+                android:text="No"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/photoServicesLayout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_margin="4dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/btnImageButton3"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/gray_button_style"
+                    android:src="@drawable/add_icon"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"/>
+
+                <TextView
+                    android:gravity="center"
+                    android:text="RECIBO DE AGUA O LUZ"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="¿De dónde provienen los ingresos de este cliente?"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <RadioGroup
+            android:id="@+id/radioGroup4"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rdOption1"
+                android:background="@drawable/edit_text_style"
+                android:padding="8dp"
+                android:text="Trabajador Dependiente"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/rdOption2"
+                android:background="@drawable/edit_text_style"
+                android:padding="8dp"
+                android:text="Trabajaddor Independiente"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/rdOption3"
+                android:background="@drawable/edit_text_style"
+                android:padding="8dp"
+                android:text="Rentista o Arrendador"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/rdOption4"
+                android:background="@drawable/edit_text_style"
+                android:padding="8dp"
+                android:text="Negocio Propio"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/rdOption5"
+                android:background="@drawable/edit_text_style"
+                android:padding="8dp"
+                android:text="Otros"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Ingresa el monto máximo del crédito a otorgar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edtMaxAmount"
+            android:inputType="number"
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Monto máximo..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Define el número de cuotas para este cliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <Button
+            android:id="@+id/btnQuotesNumber"
+            android:padding="8dp"
+            android:gravity="start|center_vertical"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Cuotas..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Define la frecuencia de pago de tu cliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <Button
+            android:id="@+id/btnPaymentFrequency"
+            android:padding="8dp"
+            android:gravity="start|center_vertical"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Frecuencia de Pago..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Cuota estimada"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edtQuoteAmount"
+            android:inputType="number"
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Monto de la Cuota del período..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnDefineCredit"
+            android:textColor="@android:color/white"
+            android:background="@drawable/gray_button_style"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:text="DEFINIR PARÁMTROS DE CRÉDITO"
             android:layout_height="wrap_content"/>
 
     </LinearLayout>

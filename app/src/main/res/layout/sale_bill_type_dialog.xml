@@ -29,7 +29,7 @@
             <ImageButton
                 android:id="@+id/btnCashNow"
                 android:layout_margin="8dp"
-                android:background="@drawable/blue_button_style"
+                android:background="@drawable/gray_button_style"
                 android:src="@drawable/icono_ventas128"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"/>
@@ -53,7 +53,7 @@
             <ImageButton
                 android:id="@+id/btnCredit"
                 android:layout_margin="8dp"
-                android:background="@drawable/blue_button_style"
+                android:background="@drawable/gray_button_style"
                 android:src="@drawable/icono_credito128"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"/>

@@ -100,7 +100,7 @@
     </LinearLayout>
 
     <View
-        android:background="@color/colorGradientStart"
+        android:background="@color/colorGradientStartRed"
         android:layout_width="match_parent"
         android:layout_height="1dp"/>
 

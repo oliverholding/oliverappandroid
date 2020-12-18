@@ -17,7 +17,7 @@
     <TextView
         android:gravity="center"
         android:layout_margin="20dp"
-        android:textColor="@color/colorGradientStart"
+        android:textColor="@color/colorGradientEndRed"
         android:textSize="18sp"
         android:textStyle="bold"
         android:text="BOLETA/FACTURA REGISTRADA CON ÉXITO"
@@ -38,7 +38,7 @@
         android:gravity="center"
         android:layout_margin="8dp"
         android:textColor="@android:color/black"
-        android:textSize="12sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:text="Recuerda oficializar esta factura en el portal de SUNAT con tu clave SOL, puedes hacerlo en : http://www.sunat.gob.pe/ "
         android:layout_width="match_parent"
@@ -47,7 +47,7 @@
     <Button
         android:text="ENVIAR POR CORREO"
         android:textColor="@android:color/white"
-        android:background="@drawable/blue_button_style"
+        android:background="@drawable/gray_button_style"
         android:layout_margin="12dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
@@ -56,7 +56,7 @@
         android:id="@+id/btnGoToMyBills"
         android:text="IR A MIS BOLETAS Y FACTURAS"
         android:textColor="@android:color/white"
-        android:background="@drawable/blue_button_style"
+        android:background="@drawable/gray_button_style"
         android:layout_margin="12dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

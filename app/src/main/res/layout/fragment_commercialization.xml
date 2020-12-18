@@ -49,7 +49,7 @@
                         android:id="@+id/btnTest1"
                         android:padding="8dp"
                         android:src="@drawable/icono_evaluacion_white128"
-                        android:background="@drawable/blue_button_style"
+                        android:background="@drawable/gray_button_style"
                         android:layout_weight="0.4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
@@ -91,7 +91,7 @@
                         android:id="@+id/btnCap1"
                         android:padding="8dp"
                         android:src="@drawable/icono_capacitacion128"
-                        android:background="@drawable/blue_button_style"
+                        android:background="@drawable/gray_button_style"
                         android:layout_weight="0.4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
@@ -141,7 +141,7 @@
                     <ImageButton
                         android:id="@+id/btnVideo1"
                         android:src="@drawable/play_white_icon"
-                        android:background="@drawable/blue_button_style"
+                        android:background="@drawable/gray_button_style"
                         android:layout_weight="0.4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
@@ -182,7 +182,7 @@
                     <ImageButton
                         android:id="@+id/btnVideo2"
                         android:src="@drawable/play_white_icon"
-                        android:background="@drawable/blue_button_style"
+                        android:background="@drawable/gray_button_style"
                         android:layout_weight="0.4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
@@ -223,7 +223,7 @@
                     <ImageButton
                         android:id="@+id/btnVideo3"
                         android:src="@drawable/play_white_icon"
-                        android:background="@drawable/blue_button_style"
+                        android:background="@drawable/gray_button_style"
                         android:layout_weight="0.4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
@@ -264,7 +264,7 @@
                     <ImageButton
                         android:id="@+id/btnVideo4"
                         android:src="@drawable/play_white_icon"
-                        android:background="@drawable/blue_button_style"
+                        android:background="@drawable/gray_button_style"
                         android:layout_weight="0.4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
@@ -305,7 +305,7 @@
                     <ImageButton
                         android:id="@+id/btnVideo5"
                         android:src="@drawable/play_white_icon"
-                        android:background="@drawable/blue_button_style"
+                        android:background="@drawable/gray_button_style"
                         android:layout_weight="0.4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
@@ -346,7 +346,7 @@
                     <ImageButton
                         android:id="@+id/btnVideo6"
                         android:src="@drawable/play_white_icon"
-                        android:background="@drawable/blue_button_style"
+                        android:background="@drawable/gray_button_style"
                         android:layout_weight="0.4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
@@ -396,7 +396,7 @@
                     <ImageButton
                         android:id="@+id/btnFile1"
                         android:src="@drawable/upload_file_white_icon"
-                        android:background="@drawable/blue_button_style"
+                        android:background="@drawable/gray_button_style"
                         android:layout_weight="0.4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
@@ -438,7 +438,7 @@
                         android:id="@+id/btnTool1"
                         android:padding="8dp"
                         android:src="@drawable/icono_matriz128"
-                        android:background="@drawable/blue_button_style"
+                        android:background="@drawable/gray_button_style"
                         android:layout_weight="0.4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
@@ -480,7 +480,7 @@
                         android:id="@+id/btnTool2"
                         android:padding="8dp"
                         android:src="@drawable/icono_matriz128"
-                        android:background="@drawable/blue_button_style"
+                        android:background="@drawable/gray_button_style"
                         android:layout_weight="0.4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
@@ -522,7 +522,7 @@
                         android:id="@+id/btnTool3"
                         android:padding="8dp"
                         android:src="@drawable/icono_matriz128"
-                        android:background="@drawable/blue_button_style"
+                        android:background="@drawable/gray_button_style"
                         android:layout_weight="0.4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
@@ -564,7 +564,7 @@
                         android:id="@+id/btnTool4"
                         android:padding="8dp"
                         android:src="@drawable/icono_matriz128"
-                        android:background="@drawable/blue_button_style"
+                        android:background="@drawable/gray_button_style"
                         android:layout_weight="0.4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
@@ -606,7 +606,7 @@
                         android:id="@+id/btnTool5"
                         android:padding="8dp"
                         android:src="@drawable/icono_matriz128"
-                        android:background="@drawable/blue_button_style"
+                        android:background="@drawable/gray_button_style"
                         android:layout_weight="0.4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
@@ -648,7 +648,7 @@
                         android:id="@+id/btnTool6"
                         android:padding="8dp"
                         android:src="@drawable/icono_matriz128"
-                        android:background="@drawable/blue_button_style"
+                        android:background="@drawable/gray_button_style"
                         android:layout_weight="0.4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
@@ -690,7 +690,7 @@
                         android:id="@+id/btnTest2"
                         android:padding="8dp"
                         android:src="@drawable/icono_evaluacion_white128"
-                        android:background="@drawable/blue_button_style"
+                        android:background="@drawable/gray_button_style"
                         android:layout_weight="0.4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
@@ -705,7 +705,7 @@
                 android:text="Tutorial del Módulo"
                 android:textColor="@android:color/white"
                 android:layout_margin="8dp"
-                android:background="@drawable/blue_button_style"
+                android:background="@drawable/gray_button_style"
                 android:drawableStart="@drawable/icono_tutorial128"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -716,7 +716,7 @@
                 android:text="Registro de Ventas"
                 android:textColor="@android:color/white"
                 android:layout_margin="8dp"
-                android:background="@drawable/blue_button_style"
+                android:background="@drawable/gray_button_style"
                 android:drawableStart="@drawable/icono_boleta128"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -727,7 +727,7 @@
                 android:text="Matriz Productos-Mercado"
                 android:textColor="@android:color/white"
                 android:layout_margin="8dp"
-                android:background="@drawable/blue_button_style"
+                android:background="@drawable/gray_button_style"
                 android:drawableStart="@drawable/icono_matriz128"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -740,7 +740,7 @@
                 android:text="Créditos y Cobranzas"
                 android:textColor="@android:color/white"
                 android:layout_margin="8dp"
-                android:background="@drawable/blue_button_style"
+                android:background="@drawable/gray_button_style"
                 android:drawableStart="@drawable/icono_credito128"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -751,7 +751,7 @@
                 android:text="Soporte a Clientes y Fidelización"
                 android:textColor="@android:color/white"
                 android:layout_margin="8dp"
-                android:background="@drawable/blue_button_style"
+                android:background="@drawable/gray_button_style"
                 android:drawableStart="@drawable/icono_soporte128"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>

@@ -90,7 +90,7 @@
                     <ImageButton
                         android:id="@+id/btnVideo1"
                         android:src="@drawable/play_white_icon"
-                        android:background="@drawable/blue_button_style"
+                        android:background="@drawable/gray_button_style"
                         android:layout_weight="0.4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
@@ -131,7 +131,7 @@
                     <ImageButton
                         android:id="@+id/btnVideo2"
                         android:src="@drawable/play_white_icon"
-                        android:background="@drawable/blue_button_style"
+                        android:background="@drawable/gray_button_style"
                         android:layout_weight="0.4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
@@ -172,7 +172,7 @@
                     <ImageButton
                         android:id="@+id/btnVideo3"
                         android:src="@drawable/play_white_icon"
-                        android:background="@drawable/blue_button_style"
+                        android:background="@drawable/gray_button_style"
                         android:layout_weight="0.4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
@@ -213,7 +213,7 @@
                     <ImageButton
                         android:id="@+id/btnVideo4"
                         android:src="@drawable/play_white_icon"
-                        android:background="@drawable/blue_button_style"
+                        android:background="@drawable/gray_button_style"
                         android:layout_weight="0.4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
@@ -254,7 +254,7 @@
                     <ImageButton
                         android:id="@+id/btnVideo5"
                         android:src="@drawable/play_white_icon"
-                        android:background="@drawable/blue_button_style"
+                        android:background="@drawable/gray_button_style"
                         android:layout_weight="0.4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
@@ -295,7 +295,7 @@
                     <ImageButton
                         android:id="@+id/btnVideo6"
                         android:src="@drawable/play_white_icon"
-                        android:background="@drawable/blue_button_style"
+                        android:background="@drawable/gray_button_style"
                         android:layout_weight="0.4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
@@ -345,7 +345,7 @@
                     <ImageButton
                         android:id="@+id/btnFile1"
                         android:src="@drawable/upload_file_white_icon"
-                        android:background="@drawable/blue_button_style"
+                        android:background="@drawable/gray_button_style"
                         android:layout_weight="0.4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>

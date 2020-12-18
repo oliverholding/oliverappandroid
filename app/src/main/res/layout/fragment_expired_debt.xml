@@ -101,7 +101,7 @@
         android:padding="8dp"
         android:drawableStart="@drawable/sms_message_icon"
         android:textColor="@android:color/white"
-        android:background="@drawable/blue_button_style"
+        android:background="@drawable/gray_button_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

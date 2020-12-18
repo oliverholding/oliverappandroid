@@ -36,7 +36,7 @@
             android:text="VER MATRIZ"
             android:textColor="@android:color/white"
             android:layout_margin="12dp"
-            android:background="@drawable/blue_button_style"
+            android:background="@drawable/gray_button_style"
             android:padding="18dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -50,7 +50,7 @@
         android:text="INTENTAR DE NUEVO"
         android:textColor="@android:color/white"
         android:layout_margin="12dp"
-        android:background="@drawable/blue_button_style"
+        android:background="@drawable/gray_button_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

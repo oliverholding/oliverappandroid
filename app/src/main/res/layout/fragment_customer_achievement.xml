@@ -69,6 +69,13 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
 
+                    <ImageView
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="25dp"/>
+
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -81,6 +88,8 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -115,6 +124,15 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
 
+                    <ImageView
+                        android:id="@+id/btnShowCustomers1"
+                        android:src="@drawable/search_icon"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="25dp"/>
+
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -127,6 +145,8 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -161,6 +181,15 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
 
+                    <ImageView
+                        android:id="@+id/btnShowCustomers2"
+                        android:src="@drawable/search_icon"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="25dp"/>
+
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -173,6 +202,8 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -207,6 +238,15 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
 
+                    <ImageView
+                        android:id="@+id/btnShowCustomers3"
+                        android:src="@drawable/search_icon"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="25dp"/>
+
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -219,6 +259,8 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -253,6 +295,15 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
 
+                    <ImageView
+                        android:id="@+id/btnShowCustomers4"
+                        android:src="@drawable/search_icon"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="25dp"/>
+
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -265,6 +316,8 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -299,6 +352,15 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
 
+                    <ImageView
+                        android:id="@+id/btnShowCustomers5"
+                        android:src="@drawable/search_icon"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="25dp"/>
+
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -311,6 +373,8 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -344,6 +408,15 @@
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:id="@+id/btnShowCustomers6"
+                        android:src="@drawable/search_icon"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="25dp"/>
 
                 </LinearLayout>
 

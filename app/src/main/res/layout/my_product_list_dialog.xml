@@ -50,7 +50,7 @@
         android:textColor="@android:color/white"
         android:layout_margin="8dp"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/blue_button_style"
+        android:background="@drawable/gray_button_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
