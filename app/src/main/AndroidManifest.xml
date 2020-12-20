@@ -21,7 +21,8 @@
         android:roundIcon="@drawable/oliver_android_icon_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FinancialManagement.FinancialInstitutionDetailActivity"></activity>
+        <activity android:name=".CareManager.SalesModule.SalesProjection.SalesProjectionActivity"></activity>
+        <activity android:name=".FinancialManagement.FinancialInstitutionDetailActivity" />
         <activity android:name=".CareManager.SalesModule.MySellers.MySellersActivity" />
         <activity android:name=".CareManager.SalesModule.CustomerSchedule.CustomerScheduleActivity" />
         <activity android:name=".CareManager.Commercialization.Dashboards.DashboardsActivity" />

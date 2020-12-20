@@ -185,6 +185,7 @@ public class CustomerCreditFragment extends Fragment {
                         final ScrollView rootLayout;
                         RadioButton rdYes,rdNo,rdYes2,rdNo2;
                         final LinearLayout photoDniLayout,photoServicesLayout;
+                        TextView txtMessage;
 
                         radioGroup1 = finance_method.findViewById(R.id.radioGroup1);
                         radioGroup2 = finance_method.findViewById(R.id.radioGroup2);
@@ -205,6 +206,7 @@ public class CustomerCreditFragment extends Fragment {
                         rdNo2 = finance_method.findViewById(R.id.rdNo2);
                         photoServicesLayout = finance_method.findViewById(R.id.photoServicesLayout);
                         btnImageButton3 = finance_method.findViewById(R.id.btnImageButton3);
+                        txtMessage = finance_method.findViewById(R.id.txtMessage);
 
                         btnImageButton1.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -235,6 +237,8 @@ public class CustomerCreditFragment extends Fragment {
                                 startActivityForResult(galleryIntent, Gallery_Pick3);
                             }
                         });
+
+                        txtMessage.setText("Evaluación interna para "+viewHolder.name.toUpperCase());
 
                         photoDniLayout.setVisibility(View.GONE);
 

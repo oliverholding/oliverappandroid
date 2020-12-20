@@ -287,17 +287,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/btnAddProduct"
-            android:text="AGREGAR PRODUCTO"
-            android:drawableStart="@drawable/add_icon"
-            android:textColor="@android:color/white"
-            android:layout_margin="8dp"
-            android:padding="8dp"
-            android:background="@drawable/gray_button_style"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnAddProduct"
+                android:text="AGREGAR PRODUCTO"
+                android:drawableStart="@drawable/add_icon"
+                android:textColor="@android:color/white"
+                android:layout_margin="4dp"
+                android:padding="8dp"
+                android:background="@drawable/gray_button_style"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"/>
+
+            <Button
+                android:id="@+id/btnAddSeller"
+                android:text="AGREGAR VENDEDOR"
+                android:textColor="@android:color/white"
+                android:layout_margin="4dp"
+                android:padding="8dp"
+                android:background="@drawable/gray_button_style"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"/>
+
+        </LinearLayout>
+
+
+
 
         <LinearLayout
             android:layout_weight="1"

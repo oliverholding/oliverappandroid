@@ -88,7 +88,7 @@
                 android:layout_weight="1"
                 android:layout_margin="8dp"
                 android:layout_width="0dp"
-                android:text="DEFINIR INFORMACIÓN CREDITICIA"
+                android:text="EVALUACIÓN CREDITICIA INTERNA"
                 android:layout_height="wrap_content"/>
 
 

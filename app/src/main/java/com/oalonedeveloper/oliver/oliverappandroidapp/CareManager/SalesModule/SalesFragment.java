@@ -18,13 +18,14 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.Cu
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.MySellers.MySellersActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.SalesArgument.SalesArgumentActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.SalesFunnel.SalesFunnelActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.SalesProjection.SalesProjectionActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 
 public class SalesFragment extends Fragment {
 
     ImageButton btnTest1,btnCap1,btnVideo1,btnVideo2,btnVideo3,btnVideo4,btnVideo5,btnVideo6,btnFile1,btnTool1,btnTool2,btnTool3,btnTool4,btnTool5,btnTool6,btnTest2;
-    Button btnSalesArgument,btnSalesFunnel,btnTutorial,btnScheduleDate,btnSellers;
+    Button btnSalesArgument,btnSalesFunnel,btnTutorial,btnScheduleDate,btnSellers,btnSalesProjection;
     String post_key;
 
     @Override
@@ -54,6 +55,7 @@ public class SalesFragment extends Fragment {
         btnTutorial = view.findViewById(R.id.btnTutorial);
         btnScheduleDate = view.findViewById(R.id.btnScheduleDate);
         btnSellers = view.findViewById(R.id.btnSellers);
+        btnSalesProjection = view.findViewById(R.id.btnSalesProjection);
 
         post_key = getActivity().getIntent().getExtras().getString("post_key");
 
@@ -85,6 +87,14 @@ public class SalesFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), MySellersActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+        btnSalesProjection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SalesProjectionActivity.class);
                 intent.putExtra("post_key", post_key);
                 startActivity(intent);
             }

@@ -45,6 +45,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.hbb20.CountryCodePicker;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.MySellers.MySellersModel;
 import com.oalonedeveloper.oliver.oliverappandroidapp.Companies.CompanyCustomersModel;
 import com.oalonedeveloper.oliver.oliverappandroidapp.Companies.EconomicActivitiesModel;
 import com.oalonedeveloper.oliver.oliverappandroidapp.Companies.ProductsModel;
@@ -74,7 +75,7 @@ public class CreateInvoiceActivity extends AppCompatActivity {
     TextView txtSocialReason,txtCompanyAddress,txtRuc,txtExpirationDate,txtIssueDate,txtCustomerName,txtDocumentNumber,txtObservation,txtTotalAmount,txtTaxes,txtSaleValue;
     String post_key;
     DatabaseReference companyRef, fromPath,fromPath2, toPath,toPath2,peruLocations,economic_activities;
-    String company_social_reason,company_address,company_ruc,currentPhotoPath,downloadUrl,image_verification,current_time,currentUid,customerPostKey,province_code,customer_info_exist,product_stock,current_product_stock;
+    String company_social_reason,company_address,company_ruc,currentPhotoPath,downloadUrl,image_verification,current_time,currentUid,customerPostKey,province_code,customer_info_exist,product_stock,current_product_stock,sellerPostKey;
     ArrayList<String> bthDay =new ArrayList<>();
     SpinnerDialog bthDayDialog;
     Uri imageUri;
@@ -87,8 +88,8 @@ public class CreateInvoiceActivity extends AppCompatActivity {
     AlertDialog dialog_list;
     String expiration_day,expiration_month,expiration_year,customer_name,customer_document_number,observations,total_amount_st,total_taxes_st,bill_sale_type,exp_validation,current_customer_purchase;
     RelativeLayout rootLayout;
-    RecyclerView recyclerView2;
-    AlertDialog dialog_customers,departmentDialog;
+    RecyclerView recyclerView2,recyclerView3;
+    AlertDialog dialog_customers,departmentDialog,sellerDialog;
     EditText edtSearch;
 
     double current_mont_year_sales,current_product_stock_db;
@@ -103,7 +104,7 @@ public class CreateInvoiceActivity extends AppCompatActivity {
     ArrayList<String> bthYear =new ArrayList<>();
     SpinnerDialog bthYearDialog;
 
-    Button btnAddProduct,btnRegisterSale,btnDepartment,btnProvince,btnDistrict,btnEconomicActivities;
+    Button btnAddProduct,btnRegisterSale,btnDepartment,btnProvince,btnDistrict,btnEconomicActivities,btnAddSeller;
 
     ImageView imgProduct;
 
@@ -133,6 +134,7 @@ public class CreateInvoiceActivity extends AppCompatActivity {
         observations = "";
         total_amount_st = "";
         total_taxes_st = "";
+        sellerPostKey = "";
 
 
         customer_info_exist = "false";
@@ -150,6 +152,7 @@ public class CreateInvoiceActivity extends AppCompatActivity {
         txtTaxes = findViewById(R.id.txtTaxes);
         btnRegisterSale = findViewById(R.id.btnRegisterSale);
         txtSaleValue = findViewById(R.id.txtSaleValue);
+        btnAddSeller = findViewById(R.id.btnAddSeller);
         rootLayout = findViewById(R.id.rootLayout);
 
         loadingBar = new ProgressDialog(this);
@@ -237,6 +240,13 @@ public class CreateInvoiceActivity extends AppCompatActivity {
             }
         });
 
+        btnAddSeller.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showAddSellersDialog();
+            }
+        });
+
 
 
         Date date= new Date();
@@ -307,6 +317,9 @@ public class CreateInvoiceActivity extends AppCompatActivity {
                 } else if (total_amount_st.equals("")) {
                     Snackbar.make(rootLayout, "Debes registrar un item en la boleta", Snackbar.LENGTH_LONG).show();
                     return;
+                } else if (sellerPostKey.equals("")) {
+                    Snackbar.make(rootLayout, "Debes registrar al vendedor de esta venta", Snackbar.LENGTH_LONG).show();
+                    return;
                 } else {
                     if (customer_info_exist.equals("true")) {
                         registerBill();
@@ -319,6 +332,156 @@ public class CreateInvoiceActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void showAddSellersDialog() {
+        sellerDialog = new AlertDialog.Builder(CreateInvoiceActivity.this).create();
+
+        LayoutInflater inflater = LayoutInflater.from(CreateInvoiceActivity.this);
+        View finance_method = inflater.inflate(R.layout.add_seller_bill_dialog,null);
+
+        Button btnRegisterSeller;
+
+        btnRegisterSeller = finance_method.findViewById(R.id.btnRegisterSeller);
+
+        recyclerView3 = finance_method.findViewById(R.id.recyclerView);
+        recyclerView3.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
+        recyclerView3.setLayoutManager(linearLayoutManager);
+
+        showMySellers();
+
+        btnRegisterSeller.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showRegisterSellerDialog();
+            }
+
+            private void showRegisterSellerDialog() {
+                final AlertDialog dialog = new AlertDialog.Builder(CreateInvoiceActivity.this).create();
+
+                LayoutInflater inflater = LayoutInflater.from(CreateInvoiceActivity.this);
+                View finance_method = inflater.inflate(R.layout.register_seller_dialog,null);
+
+                final EditText edtName,edtDocumentNumber,edtEmail,edtPhoneNumber;
+                final CountryCodePicker ccpPhoneCode;
+                Button btnAddSeller;
+
+                edtName = finance_method.findViewById(R.id.edtName);
+                edtDocumentNumber = finance_method.findViewById(R.id.edtDocumentNumber);
+                edtEmail = finance_method.findViewById(R.id.edtEmail);
+                edtPhoneNumber = finance_method.findViewById(R.id.edtPhoneNumber);
+                ccpPhoneCode = finance_method.findViewById(R.id.ccpPhoneCode);
+                btnAddSeller = finance_method.findViewById(R.id.btnAddSeller);
+
+                btnAddSeller.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        Calendar calForDate = Calendar.getInstance();
+                        SimpleDateFormat currentDate = new SimpleDateFormat("dd-MM-yyyy");
+                        String saveCurrentDate = currentDate.format(calForDate.getTime());
+
+                        Calendar calForTime = Calendar.getInstance();
+                        SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss");
+                        String saveCurrentTime = currentTime.format(calForTime.getTime());
+
+                        HashMap hashMap = new HashMap();
+                        hashMap.put("seller_name", edtName.getText().toString());
+                        hashMap.put("seller_email", edtEmail.getText().toString());
+                        hashMap.put("seller_document_number", edtDocumentNumber.getText().toString());
+                        hashMap.put("seller_phone", ccpPhoneCode.getSelectedCountryCode()+edtPhoneNumber.getText().toString());
+                        hashMap.put("register_date", saveCurrentDate);
+                        hashMap.put("register_time", saveCurrentTime);
+                        hashMap.put("timestamp", ServerValue.TIMESTAMP);
+
+                        companyRef.child(post_key).child("Sellers").child(edtDocumentNumber.getText().toString()).updateChildren(hashMap).addOnCompleteListener(new OnCompleteListener() {
+                            @Override
+                            public void onComplete(@NonNull Task task) {
+                                Toasty.success(CreateInvoiceActivity.this, "Registrado", Toast.LENGTH_LONG).show();
+                                dialog.dismiss();
+                            }
+                        });
+
+                    }
+                });
+
+                dialog.setView(finance_method);
+                dialog.show();
+            }
+        });
+
+        sellerDialog.setView(finance_method);
+        sellerDialog.show();
+    }
+
+    private void showMySellers() {
+        Query query = companyRef.child(post_key).child("Sellers").orderByChild("timestamp");
+        FirebaseRecyclerAdapter<MySellersModel, MySellersViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<MySellersModel, MySellersViewHolder>
+                (MySellersModel.class, R.layout.seller_item, MySellersViewHolder.class,query) {
+            @Override
+            protected void populateViewHolder(final MySellersViewHolder viewHolder, MySellersModel model, int position) {
+                final String postKey = getRef(position).getKey();
+                viewHolder.setSeller_document_number(model.getSeller_document_number());
+                viewHolder.setSeller_email(model.getSeller_email());
+                viewHolder.setSeller_name(model.getSeller_name());
+                viewHolder.setSeller_phone(model.getSeller_phone());
+
+                viewHolder.txtName.setText(viewHolder.name);
+                viewHolder.txtPhone.setText(viewHolder.phone);
+                viewHolder.txtEmail.setText(viewHolder.email);
+                viewHolder.txtDocumentNumber.setText(viewHolder.document_number);
+
+                viewHolder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        sellerPostKey = postKey;
+                        btnAddSeller.setText(viewHolder.name);
+                        sellerDialog.dismiss();
+                        Toasty.success(CreateInvoiceActivity.this, "Registrado", Toast.LENGTH_LONG).show();
+                    }
+                });
+
+            }
+        };
+        recyclerView3.setAdapter(firebaseRecyclerAdapter);
+    }
+
+    public static class MySellersViewHolder extends RecyclerView.ViewHolder {
+
+        View mView;
+        TextView txtName,txtPhone,txtEmail,txtDocumentNumber;
+        String email,name,phone,document_number;
+
+        public MySellersViewHolder(@NonNull View itemView) {
+            super(itemView);
+            mView = itemView;
+
+            txtName = mView.findViewById(R.id.txtName);
+            txtPhone = mView.findViewById(R.id.txtPhone);
+            txtEmail = mView.findViewById(R.id.txtEmail);
+            txtDocumentNumber = mView.findViewById(R.id.txtDocumentNumber);
+        }
+
+        public void setSeller_name(String seller_name) {
+            name = seller_name;
+        }
+
+        public void setSeller_email(String seller_email) {
+            email = seller_email;
+        }
+
+
+        public void setSeller_document_number(String seller_document_number) {
+            document_number = seller_document_number;
+        }
+
+
+        public void setSeller_phone(String seller_phone) {
+            phone = seller_phone;
+        }
     }
 
     private void showDistrictDialog() {
@@ -1094,9 +1257,10 @@ public class CreateInvoiceActivity extends AppCompatActivity {
         loadingBar.setCancelable(false);
 
         current_time = new SimpleDateFormat("HHmmss").format(Calendar.getInstance().getTime());
+        final String billId = day+""+month+""+year+""+current_time;
         fromPath = FirebaseDatabase.getInstance().getReference().child("My Companies").child(post_key).child("Product Bill");
         fromPath2 = FirebaseDatabase.getInstance().getReference().child("My Companies").child(post_key).child("Sale Processing");
-        toPath = FirebaseDatabase.getInstance().getReference().child("My Companies").child(post_key).child("My Bills").child(day+month+year+current_time).child("Product List");
+        toPath = FirebaseDatabase.getInstance().getReference().child("My Companies").child(post_key).child("My Bills").child(billId).child("Product List");
         toPath2 = FirebaseDatabase.getInstance().getReference().child("My Companies").child(post_key).child("My Products");
 
         fromPath.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -1110,35 +1274,36 @@ public class CreateInvoiceActivity extends AppCompatActivity {
                             Toast.makeText(CreateInvoiceActivity.this, "Hubo un Error", Toast.LENGTH_SHORT).show();
                         } else {
                             if (bill_sale_type.equals("cash_now")) {
-                                companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("expiration_day").setValue(day);
-                                companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("expiration_month").setValue(month);
-                                companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("expiration_year").setValue(year);
-                                companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("state").setValue("paid");
+                                companyRef.child(post_key).child("My Bills").child(billId).child("expiration_day").setValue(day);
+                                companyRef.child(post_key).child("My Bills").child(billId).child("expiration_month").setValue(month);
+                                companyRef.child(post_key).child("My Bills").child(billId).child("expiration_year").setValue(year);
+                                companyRef.child(post_key).child("My Bills").child(billId).child("state").setValue("paid");
 
                             } else if (bill_sale_type.equals("credit")) {
-                                companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("expiration_day").setValue(expiration_day);
-                                companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("expiration_month").setValue(expiration_month);
-                                companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("expiration_year").setValue(expiration_year);
-                                companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("state").setValue("no_paid");
+                                companyRef.child(post_key).child("My Bills").child(billId).child("expiration_day").setValue(expiration_day);
+                                companyRef.child(post_key).child("My Bills").child(billId).child("expiration_month").setValue(expiration_month);
+                                companyRef.child(post_key).child("My Bills").child(billId).child("expiration_year").setValue(expiration_year);
+                                companyRef.child(post_key).child("My Bills").child(billId).child("state").setValue("no_paid");
                             }
-                            companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("type").setValue("invoice");
-                            companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("company_id").setValue(post_key);
-                            companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("bill_currency").setValue("PEN");
-                            companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("bill_id").setValue(day+month+year+current_time);
+                            companyRef.child(post_key).child("My Bills").child(billId).child("type").setValue("invoice");
+                            companyRef.child(post_key).child("My Bills").child(billId).child("company_id").setValue(post_key);
+                            companyRef.child(post_key).child("My Bills").child(billId).child("bill_currency").setValue("PEN");
+                            companyRef.child(post_key).child("My Bills").child(billId).child("bill_id").setValue(billId);
 
-                            companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("issuing_day").setValue(day);
-                            companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("issuing_month").setValue(month);
-                            companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("issuing_year").setValue(year);
-                            companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("customer_id").setValue(customerPostKey);
-                            companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("customer_name").setValue(customer_name);
-                            companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("customer_document_number").setValue(customer_document_number);
-                            companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("bill_observations").setValue(observations);
-                            companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("bill_amount").setValue(total_amount_st);
-                            companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("bill_igv_taxes").setValue(total_taxes_st);
+                            companyRef.child(post_key).child("My Bills").child(billId).child("issuing_day").setValue(day);
+                            companyRef.child(post_key).child("My Bills").child(billId).child("issuing_month").setValue(month);
+                            companyRef.child(post_key).child("My Bills").child(billId).child("issuing_year").setValue(year);
+                            companyRef.child(post_key).child("My Bills").child(billId).child("customer_id").setValue(customerPostKey);
+                            companyRef.child(post_key).child("My Bills").child(billId).child("customer_name").setValue(customer_name);
+                            companyRef.child(post_key).child("My Bills").child(billId).child("customer_document_number").setValue(customer_document_number);
+                            companyRef.child(post_key).child("My Bills").child(billId).child("bill_observations").setValue(observations);
+                            companyRef.child(post_key).child("My Bills").child(billId).child("bill_amount").setValue(total_amount_st);
+                            companyRef.child(post_key).child("My Bills").child(billId).child("bill_igv_taxes").setValue(total_taxes_st);
+                            companyRef.child(post_key).child("My Bills").child(billId).child("seller_id").setValue(sellerPostKey);
 
-                            companyRef.child(post_key).child("Customers").child(customerPostKey).child("Purchased").child(day+month+year+current_time).child("bill_amount").setValue(total_amount_st);
+                            companyRef.child(post_key).child("Customers").child(customerPostKey).child("Purchased").child(billId).child("bill_amount").setValue(total_amount_st);
 
-                            companyRef.child(post_key).child("My Bills").child(day+month+year+current_time).child("timestamp").setValue(ServerValue.TIMESTAMP);
+                            companyRef.child(post_key).child("My Bills").child(billId).child("timestamp").setValue(ServerValue.TIMESTAMP);
 
 
                             companyRef.child(post_key).child("Sale Processing").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -1354,12 +1519,12 @@ public class CreateInvoiceActivity extends AppCompatActivity {
                             hashMap.put("product_description","");
                             hashMap.put("product_measure","quantity");
                             hashMap.put("company_id",post_key);
-                            hashMap.put("code",day+month+year+current_time);
+                            hashMap.put("code",day+""+month+""+year+""+current_time);
                             hashMap.put("product_name",edtProductName.getText().toString().toUpperCase());
                             hashMap.put("product_price",edtPrice.getText().toString());
                             hashMap.put("product_stock",edtStock.getText().toString());
                             hashMap.put("timestamp", ServerValue.TIMESTAMP);
-                            companyRef.child(post_key).child("My Products").child(post_key+day+month+year+current_time).updateChildren(hashMap).addOnCompleteListener(new OnCompleteListener() {
+                            companyRef.child(post_key).child("My Products").child(post_key+day+""+month+""+year+""+current_time).updateChildren(hashMap).addOnCompleteListener(new OnCompleteListener() {
                                 @Override
                                 public void onComplete(@NonNull Task task) {
                                     Toasty.success(CreateInvoiceActivity.this, "Producto Registrado", Toast.LENGTH_LONG).show();

@@ -64,10 +64,8 @@ public class CustomerSuportActivity extends AppCompatActivity {
             // Return a PlaceholderFragment (defined as a static inner class below).
             switch (position) {
                 case 0:
-                    return new ShowCustomerSupportFragment();
-                case 1:
                     return new CustomerSuportTableFragment();
-                case 2:
+                case 1:
                     return new CustomerSuportSendNotificationsFragment();
 
                 default:

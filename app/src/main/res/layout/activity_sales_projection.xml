@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CareManager.SalesModule.SalesProjection.SalesProjectionActivity">
+
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewTitle"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Proyección de Ventas:"
+                        android:textSize="18sp"
+                        android:layout_margin="4dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Crea un pronóstico para las ventas del próximo año."
+                        android:layout_margin="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_margin="4dp"
+                        android:textStyle="bold"
+                        android:text="VENTAS REALES Y PROYECTADAS"
+                        android:textColor="@android:color/black"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:text="MES"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtCurrentYear"
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:text="TOTAL --"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtCurrentYear2"
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:text="TOTAL --"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:text="Var (%)"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="ENERO"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:background="@drawable/edit_text_style"
+                            android:id="@+id/txtMonth1"
+                            android:layout_margin="4dp"
+                            android:padding="8dp"
+                            android:gravity="center"
+                            android:text="0.00"
+                            android:inputType="numberDecimal"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:id="@+id/txtMonth1t2"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00 "
+                            android:inputType="numberDecimal"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtVar1"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00%"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="FEBRERO"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:id="@+id/txtMonth2"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00"
+                            android:inputType="numberDecimal"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:id="@+id/txtMonth2t2"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00"
+                            android:inputType="numberDecimal"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtVar2"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00%"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="MARZO"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:id="@+id/txtMonth3"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00"
+                            android:inputType="numberDecimal"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:id="@+id/txtMonth3t2"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00"
+                            android:inputType="numberDecimal"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtVar3"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00%"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="ABRIL"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:id="@+id/txtMonth4"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:inputType="numberDecimal"
+                            android:text="0.00"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:id="@+id/txtMonth4t2"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:inputType="numberDecimal"
+                            android:text="0.00"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtVar4"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00%"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="MAYO"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:id="@+id/txtMonth5"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00"
+                            android:inputType="numberDecimal"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:id="@+id/txtMonth5t2"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:inputType="numberDecimal"
+                            android:text="0.00"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtVar5"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00%"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="JUNIO"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:id="@+id/txtMonth6"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:inputType="numberDecimal"
+                            android:text="0.00"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:id="@+id/txtMonth6t2"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:inputType="numberDecimal"
+                            android:text="0.00"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtVar6"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00%"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="JULIO"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:id="@+id/txtMonth7"
+                            android:layout_margin="4dp"
+                            android:inputType="numberDecimal"
+                            android:gravity="center"
+                            android:text="0.00"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:id="@+id/txtMonth7t2"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:inputType="numberDecimal"
+                            android:text="0.00"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtVar7"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00%"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="AGOSTO"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:id="@+id/txtMonth8"
+                            android:inputType="numberDecimal"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:id="@+id/txtMonth8t2"
+                            android:inputType="numberDecimal"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtVar8"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00%"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="SETIEMBRE"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:inputType="numberDecimal"
+                            android:id="@+id/txtMonth9"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:inputType="numberDecimal"
+                            android:id="@+id/txtMonth9t2"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtVar9"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00%"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="OCTUBRE"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:inputType="numberDecimal"
+                            android:id="@+id/txtMonth10"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:inputType="numberDecimal"
+                            android:id="@+id/txtMonth10t2"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtVar10"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00%"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="NOVIEMBRE"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:inputType="numberDecimal"
+                            android:id="@+id/txtMonth11"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:inputType="numberDecimal"
+                            android:id="@+id/txtMonth11t2"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtVar11"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00%"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="DICIEMBRE"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:inputType="numberDecimal"
+                            android:id="@+id/txtMonth12"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style"
+                            android:inputType="numberDecimal"
+                            android:id="@+id/txtMonth12t2"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtVar12"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="0.00%"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+</RelativeLayout>
