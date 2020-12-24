@@ -1,5 +1,6 @@
 package com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -22,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.LendingProduct.FinancialProductModel;
+import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.LendingProduct.LendingDetailActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 import com.squareup.picasso.Picasso;
 
@@ -74,7 +76,7 @@ public class FinancialProductLendingsListFragment extends Fragment {
                 (FinancialProductModel.class,R.layout.financial_institution_lending_product_item,FinancialProductViewHolder.class,query) {
             @Override
             protected void populateViewHolder(FinancialProductViewHolder viewHolder, FinancialProductModel model, int position) {
-
+                final String postKey = getRef(position).getKey();
                 viewHolder.setProduct(model.getProduct());
                 viewHolder.setProduct_img(model.getProduct_img());
                 viewHolder.setProduct_name(model.getProduct_name());
@@ -88,7 +90,10 @@ public class FinancialProductLendingsListFragment extends Fragment {
                 viewHolder.btnProductDetail.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        Intent intent = new Intent(getActivity(), LendingDetailActivity.class);
+                        intent.putExtra("product_key",postKey);
+                        intent.putExtra("institution_key",post_key);
+                        startActivity(intent);
                     }
                 });
 

@@ -68,7 +68,7 @@ public class CreditAndTreasuryActivity extends AppCompatActivity {
         txtExpiredDebts = findViewById(R.id.txtExpiredDebts);
         txtTotalDebt = findViewById(R.id.txtTotalDebt);
 
-        companyRef.child(post_key).child("My Bills").orderByChild("state").equalTo("no_paid").addValueEventListener(new ValueEventListener() {
+        companyRef.child(post_key).child("My Bills").orderByChild("state").equalTo("no_paid").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 sum1 = 0;
@@ -82,7 +82,7 @@ public class CreditAndTreasuryActivity extends AppCompatActivity {
                     txtCurrentDebt.setText("S/ "+sum1);
                 }
 
-                companyRef.child(post_key).child("My Bills").orderByChild("state").equalTo("expired").addValueEventListener(new ValueEventListener() {
+                companyRef.child(post_key).child("My Bills").orderByChild("state").equalTo("expired").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         sum2 = 0;

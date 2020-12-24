@@ -16,6 +16,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.NewMatrix10.NewMatrix10Activity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class MatrizAnswerFragment extends Fragment {
@@ -43,9 +44,9 @@ public class MatrizAnswerFragment extends Fragment {
         btnMatrix.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), ProductMarketMatrixActivity.class);
+                Intent intent = new Intent(getActivity(), NewMatrix10Activity.class);
                 intent.putExtra("post_key",post_key);
-                intent.putExtra("FRAGMENT_ID", 1);
+                intent.putExtra("FRAGMENT_ID", 3);
                 startActivity(intent);
                 getActivity().finish();
             }
@@ -86,8 +87,9 @@ public class MatrizAnswerFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 companyRef.child(post_key).child("Module 6").child("Product Matrix").removeValue();
-                Intent intent = new Intent(getActivity(), ProductMarketMatrixActivity.class);
+                Intent intent = new Intent(getActivity(), NewMatrix10Activity.class);
                 intent.putExtra("post_key",post_key);
+                intent.putExtra("FRAGMENT_ID",2);
                 startActivity(intent);
                 getActivity().finish();
             }

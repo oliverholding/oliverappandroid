@@ -927,7 +927,7 @@ public class CreateInvoiceActivity extends AppCompatActivity {
                     Snackbar.make(rootLayout, "Debes seleccionar el distrito donde vive tu cliente", Snackbar.LENGTH_LONG);
                 } else {
                     companyRef.child(post_key).child("Customers").child(customerPostKey).child("customer_workers_number").setValue(edtWorkerNumber.getText().toString());
-                    companyRef.child(post_key).child("Customers").child(customerPostKey).child("customer_bth_day").setValue(btnEconomicActivities.getText().toString());
+                    companyRef.child(post_key).child("Customers").child(customerPostKey).child("customer_economic_activity").setValue(btnEconomicActivities.getText().toString());
                     companyRef.child(post_key).child("Customers").child(customerPostKey).child("customer_bth_day").setValue(edtBthDay.getText().toString());
                     companyRef.child(post_key).child("Customers").child(customerPostKey).child("customer_bth_month").setValue(edtBthMonth.getText().toString());
                     companyRef.child(post_key).child("Customers").child(customerPostKey).child("customer_bth_year").setValue(edtBthYear.getText().toString());
@@ -1084,7 +1084,7 @@ public class CreateInvoiceActivity extends AppCompatActivity {
                 final AlertDialog dialog = new AlertDialog.Builder(CreateInvoiceActivity.this).create();
 
                 LayoutInflater inflater = LayoutInflater.from(CreateInvoiceActivity.this);
-                View finance_method = inflater.inflate(R.layout.add_ruc_number_dialog,null);
+                View finance_method = inflater.inflate(R.layout.add_customer_dialog,null);
 
 
                 Button btnAddCustomer;
@@ -1690,8 +1690,8 @@ public class CreateInvoiceActivity extends AppCompatActivity {
 
                                             companyRef.child(post_key).child("Sale Processing").child(postKey).child("product_stock").setValue(current_stock);
 
-                                            if (dataSnapshot.child("Buyers").hasChild(customerPostKey)) {
-                                                current_customer_purchase = dataSnapshot.child("Buyers").child(customerPostKey).getValue().toString();
+                                            if (dataSnapshot.child("Buyers").child("Companies").hasChild(customerPostKey)) {
+                                                current_customer_purchase = dataSnapshot.child("Buyers").child("Companies").child(customerPostKey).child("quantity_purchased").getValue().toString();
                                                 double current_customer_purchase_db = Double.parseDouble(current_customer_purchase);
                                                 double new_customer_purchase = current_customer_purchase_db + q;
                                                 companyRef.child(post_key).child("Sale Processing").child(postKey).child("quantity_purchased").setValue(new_customer_purchase+"");

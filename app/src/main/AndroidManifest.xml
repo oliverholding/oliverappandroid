@@ -21,7 +21,13 @@
         android:roundIcon="@drawable/oliver_android_icon_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CareManager.SalesModule.SalesProjection.SalesProjectionActivity"></activity>
+        <activity android:name=".CareManager.Logistic.DemandPlanningActivity"></activity>
+        <activity android:name=".CareManager.Logistic.LogisticActivity" />
+        <activity android:name=".FinancialManagement.LendingProduct.LoanSimulationActivity" />
+        <activity android:name=".FinancialManagement.LendingProduct.UploadDocumentationActivity" />
+        <activity android:name=".FinancialManagement.LendingProduct.LoanRequestActivity" />
+        <activity android:name=".FinancialManagement.LendingProduct.LendingDetailActivity" />
+        <activity android:name=".CareManager.SalesModule.SalesProjection.SalesProjectionActivity" />
         <activity android:name=".FinancialManagement.FinancialInstitutionDetailActivity" />
         <activity android:name=".CareManager.SalesModule.MySellers.MySellersActivity" />
         <activity android:name=".CareManager.SalesModule.CustomerSchedule.CustomerScheduleActivity" />

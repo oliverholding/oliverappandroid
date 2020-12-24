@@ -13,12 +13,17 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class FinancialProductsFragment extends Fragment {
 
+    Fragment nonProductsFragment;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_financial_products, container, false);
 
+        nonProductsFragment = new NonProductsFragment();
+
+        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.contentFragment,nonProductsFragment).commit();
 
         return view;
     }

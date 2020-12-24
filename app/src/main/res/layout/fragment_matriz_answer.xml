@@ -14,7 +14,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:src="@drawable/icono_matriz512"
+            android:src="@color/colorGradientStartRed"
             android:layout_margin="8dp"
             android:layout_width="150dp"
             android:layout_height="150dp"/>
@@ -23,7 +23,7 @@
             android:id="@+id/txtMessage"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="@color/colorGradientStart"
+            android:textColor="@color/colorGradientStartRed"
             android:layout_margin="8dp"
             android:gravity="center"
             android:text="statregy_message"

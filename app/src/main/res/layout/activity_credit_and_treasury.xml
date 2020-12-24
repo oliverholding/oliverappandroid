@@ -21,7 +21,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:src="@drawable/icono_credito128"
+                android:src="@drawable/icono_creditos"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="35dp"/>
@@ -73,7 +73,7 @@
 
                 <ImageView
                     android:layout_margin="12dp"
-                    android:src="@drawable/icono_credito128"
+                    android:src="@drawable/icono_creditos"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
@@ -119,7 +119,7 @@
 
                 <ImageView
                     android:layout_margin="12dp"
-                    android:src="@drawable/icono_credito128"
+                    android:src="@drawable/icono_creditos"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
@@ -165,7 +165,7 @@
 
                 <ImageView
                     android:layout_margin="12dp"
-                    android:src="@drawable/icono_credito128"
+                    android:src="@drawable/icono_creditos"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
@@ -220,13 +220,13 @@
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab3"
-            android:icon="@drawable/icono_credito128"
+            android:icon="@drawable/icono_creditos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab4"
-            android:icon="@drawable/icono_credito128"
+            android:icon="@drawable/icono_creditos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 

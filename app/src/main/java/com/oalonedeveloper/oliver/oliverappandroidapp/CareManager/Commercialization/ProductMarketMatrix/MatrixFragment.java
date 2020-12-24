@@ -49,22 +49,22 @@ public class MatrixFragment extends Fragment {
 
                     if (matrix_id == 1) {
                         txtMatrix1.setTextColor(Color.WHITE);
-                        txtMatrix1.setBackgroundResource(R.drawable.blue_button_style);
+                        txtMatrix1.setBackgroundResource(R.drawable.gray_button_style);
                         txtMessage.setText("Estás en el cuadrante: PENETRACIÓN DE MERCADO (BAJO RIESGO)");
                     }
                     if (matrix_id == 2) {
                         txtMatrix2.setTextColor(Color.WHITE);
-                        txtMatrix2.setBackgroundResource(R.drawable.blue_button_style);
+                        txtMatrix2.setBackgroundResource(R.drawable.gray_button_style);
                         txtMessage.setText("Estás en el cuadrante: DESARROLLO DE NUEVOS PRODUCTOS (RIESGO MEDIO)");
                     }
                     if (matrix_id == 3) {
                         txtMatrix3.setTextColor(Color.WHITE);
-                        txtMatrix3.setBackgroundResource(R.drawable.blue_button_style);
+                        txtMatrix3.setBackgroundResource(R.drawable.gray_button_style);
                         txtMessage.setText("Estás en el cuadrante: DESARROLLO DE NUEVOS MERCIADOS (RIESGO MEDIO)");
                     }
                     if (matrix_id == 4) {
                         txtMatrix4.setTextColor(Color.WHITE);
-                        txtMatrix4.setBackgroundResource(R.drawable.blue_button_style);
+                        txtMatrix4.setBackgroundResource(R.drawable.gray_button_style);
                         txtMessage.setText("Estás en el cuadrante: \"DIVERSIFICACIÓN (ALTO RIESGO)");
                     }
                 }

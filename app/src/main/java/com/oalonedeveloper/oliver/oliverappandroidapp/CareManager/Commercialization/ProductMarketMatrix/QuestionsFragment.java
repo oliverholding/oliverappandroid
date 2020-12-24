@@ -20,6 +20,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.NewMatrix10.NewMatrix10Activity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 
@@ -71,8 +72,9 @@ public class QuestionsFragment extends Fragment {
                     else if (rd004.isChecked()) {
                         companyRef.child(post_key).child("Module 6").child("Product Matrix").child("matrix_id").setValue(4);
                     }
-                    Intent intent = new Intent(getActivity(), ProductMarketMatrixActivity.class);
+                    Intent intent = new Intent(getActivity(), NewMatrix10Activity.class);
                     intent.putExtra("post_key",post_key);
+                    intent.putExtra("FRAGMENT_ID",2);
                     startActivity(intent);
                     getActivity().finish();
                 }

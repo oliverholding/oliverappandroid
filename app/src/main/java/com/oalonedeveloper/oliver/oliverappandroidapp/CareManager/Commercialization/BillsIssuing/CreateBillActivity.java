@@ -1979,8 +1979,8 @@ public class CreateBillActivity extends AppCompatActivity {
 
                                             companyRef.child(post_key).child("Sale Processing").child(postKey).child("product_stock").setValue(current_stock);
 
-                                            if (dataSnapshot.child("Buyers").hasChild(customerPostKey)) {
-                                                current_customer_purchase = dataSnapshot.child("Buyers").child(customerPostKey).getValue().toString();
+                                            if (dataSnapshot.child("Buyers").child("People").hasChild(customerPostKey)) {
+                                                current_customer_purchase = dataSnapshot.child("Buyers").child("People").child(customerPostKey).child("quantity_purchased").getValue().toString();
                                                 double current_customer_purchase_db = Double.parseDouble(current_customer_purchase);
                                                 double new_customer_purchase = current_customer_purchase_db + q;
                                                 companyRef.child(post_key).child("Sale Processing").child(postKey).child("quantity_purchased").setValue(new_customer_purchase+"");

@@ -116,10 +116,8 @@ public class NewMatrix10Activity extends AppCompatActivity {
                 case 1:
                     return new Matrix10CompanyFragment();
                 case 2:
-                    return new MatrixQuestionBeforeNowFragment();
-                case 3:
                     return new QuestionsMatrixFragment();
-                case 4:
+                case 3:
                     return new MatrixFragment();
 
                 default:

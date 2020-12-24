@@ -14,7 +14,7 @@
 
         <ImageView
             android:layout_margin="8dp"
-            android:src="@drawable/icono_matriz512"
+            android:src="@drawable/icono_herramientas"
             android:layout_above="@id/avatarOliver"
             android:layout_width="120dp"
             android:layout_height="120dp"/>

@@ -84,10 +84,13 @@ public class ProductRankingFragment extends Fragment {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 sumq = 0;
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
-                    Map<String, Object> map = (Map<String, Object>) ds.getValue();
-                    Object bill_amount = map.get(year+""+month+"quantity");
-                    double total_value = Double.parseDouble(String.valueOf(bill_amount));
-                    sumq += total_value;
+                    if (ds.hasChild(year + "" + month + "quantity")) {
+                        Map<String, Object> map = (Map<String, Object>) ds.getValue();
+                        Object bill_amount = map.get(year+""+month+"quantity");
+                        double total_value = Double.parseDouble(String.valueOf(bill_amount));
+                        sumq += total_value;
+                    }
+
 
                 }
 
@@ -128,15 +131,18 @@ public class ProductRankingFragment extends Fragment {
                 companyRef.child(post_key).child("My Products").child(postKey).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        int current_year_month_quantity = dataSnapshot.child(year+""+month+"quantity").getValue(Integer.class);
-                        viewHolder.txtQuantity.setText(current_year_month_quantity+"");
+                        if (dataSnapshot.hasChild(year+""+month+"quantity")) {
+                            int current_year_month_quantity = dataSnapshot.child(year+""+month+"quantity").getValue(Integer.class);
+                            viewHolder.txtQuantity.setText(current_year_month_quantity+"");
 
-                        double new_q = current_year_month_quantity;
+                            double new_q = current_year_month_quantity;
 
-                        double percent_db = (new_q/sumq)*100;
-                        //Toast.makeText(getActivity(), "asdas "+sumq, Toast.LENGTH_SHORT).show();
-                        String percent_st = decimalFormat.format(percent_db);
-                        viewHolder.txtPercent.setText(percent_st+"%");
+                            double percent_db = (new_q/sumq)*100;
+                            //Toast.makeText(getActivity(), "asdas "+sumq, Toast.LENGTH_SHORT).show();
+                            String percent_st = decimalFormat.format(percent_db);
+                            viewHolder.txtPercent.setText(percent_st+"%");
+                        }
+
                     }
 
                     @Override

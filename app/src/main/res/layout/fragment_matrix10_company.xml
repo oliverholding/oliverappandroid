@@ -169,40 +169,48 @@
                             </LinearLayout>
 
                             <TextView
+                                android:id="@+id/txtProduct1A"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct1B"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct1C"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct1D"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
+                                android:textSize="12sp"
                                 android:textColor="@android:color/black"
                                 android:text="-"
                                 android:layout_width="match_parent"
@@ -245,40 +253,48 @@
                             </LinearLayout>
 
                             <TextView
+                                android:id="@+id/txtProduct2A"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct2B"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct2C"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct2D"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
+                                android:textSize="12sp"
                                 android:textColor="@android:color/black"
                                 android:text="-"
                                 android:layout_width="match_parent"
@@ -320,40 +336,48 @@
                             </LinearLayout>
 
                             <TextView
+                                android:id="@+id/txtProduct3A"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct3B"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct3C"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct3D"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
+                                android:textSize="12sp"
                                 android:textColor="@android:color/black"
                                 android:text="-"
                                 android:layout_width="match_parent"
@@ -396,40 +420,48 @@
                             </LinearLayout>
 
                             <TextView
+                                android:id="@+id/txtProduct4A"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct4B"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct4C"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct4D"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
+                                android:textSize="12sp"
                                 android:textColor="@android:color/black"
                                 android:text="-"
                                 android:layout_width="match_parent"
@@ -471,40 +503,48 @@
                             </LinearLayout>
 
                             <TextView
+                                android:id="@+id/txtProduct5A"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct5B"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct5C"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct5D"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
+                                android:textSize="12sp"
                                 android:textColor="@android:color/black"
                                 android:text="-"
                                 android:layout_width="match_parent"
@@ -547,40 +587,48 @@
                             </LinearLayout>
 
                             <TextView
+                                android:id="@+id/txtProduct6A"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct6B"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct6C"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct6D"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
+                                android:textSize="12sp"
                                 android:textColor="@android:color/black"
                                 android:text="-"
                                 android:layout_width="match_parent"
@@ -623,40 +671,48 @@
                             </LinearLayout>
 
                             <TextView
+                                android:id="@+id/txtProduct7A"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct7B"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct7C"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct7D"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
+                                android:textSize="12sp"
                                 android:textColor="@android:color/black"
                                 android:text="-"
                                 android:layout_width="match_parent"
@@ -698,40 +754,48 @@
                             </LinearLayout>
 
                             <TextView
+                                android:id="@+id/txtProduct8A"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct8B"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct8C"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct8D"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
+                                android:textSize="12sp"
                                 android:textColor="@android:color/black"
                                 android:text="-"
                                 android:layout_width="match_parent"
@@ -773,40 +837,48 @@
                             </LinearLayout>
 
                             <TextView
+                                android:id="@+id/txtProduct9A"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct9B"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct9C"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct9D"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
+                                android:textSize="12sp"
                                 android:textColor="@android:color/black"
                                 android:text="-"
                                 android:layout_width="match_parent"
@@ -848,40 +920,48 @@
                             </LinearLayout>
 
                             <TextView
+                                android:id="@+id/txtProduct10A"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct10B"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct10C"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
                                 android:textColor="@android:color/black"
                                 android:text="-"
+                                android:textSize="12sp"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"/>
 
                             <TextView
+                                android:id="@+id/txtProduct10D"
                                 android:layout_margin="8dp"
                                 android:padding="8dp"
                                 android:background="@drawable/edit_text_style"
                                 android:gravity="center"
+                                android:textSize="12sp"
                                 android:textColor="@android:color/black"
                                 android:text="-"
                                 android:layout_width="match_parent"

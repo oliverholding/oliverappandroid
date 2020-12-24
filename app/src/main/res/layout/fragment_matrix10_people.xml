@@ -88,7 +88,7 @@
                         android:background="@drawable/edit_text_style"
                         android:gravity="center"
                         android:textStyle="bold"
-                        android:textColor="@color/colorGradientCenter"
+                        android:textColor="@android:color/black"
                         android:text="GÉNERO"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"/>
@@ -99,7 +99,7 @@
                         android:background="@drawable/edit_text_style"
                         android:gravity="center"
                         android:textStyle="bold"
-                        android:textColor="@color/colorGradientCenter"
+                        android:textColor="@android:color/black"
                         android:text="GRUPO DE EDAD"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"/>
@@ -110,7 +110,7 @@
                         android:background="@drawable/edit_text_style"
                         android:gravity="center"
                         android:textStyle="bold"
-                        android:textColor="@color/colorGradientCenter"
+                        android:textColor="@android:color/black"
                         android:text="NIVEL EDUCATIVO"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"/>
@@ -121,7 +121,7 @@
                         android:background="@drawable/edit_text_style"
                         android:gravity="center"
                         android:textStyle="bold"
-                        android:textColor="@color/colorGradientCenter"
+                        android:textColor="@android:color/black"
                         android:text="OCUPACIÓN"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"/>
@@ -132,7 +132,7 @@
                         android:background="@drawable/edit_text_style"
                         android:gravity="center"
                         android:textStyle="bold"
-                        android:textColor="@color/colorGradientCenter"
+                        android:textColor="@android:color/black"
                         android:text="ZONA DONDE VIVE"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"/>
@@ -143,7 +143,7 @@
                         android:background="@drawable/edit_text_style"
                         android:gravity="center"
                         android:textStyle="bold"
-                        android:textColor="@color/colorGradientCenter"
+                        android:textColor="@android:color/black"
                         android:text="ZONA DONDE TRABAJA"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"/>
@@ -154,7 +154,7 @@
                         android:background="@drawable/edit_text_style"
                         android:gravity="center"
                         android:textStyle="bold"
-                        android:textColor="@color/colorGradientCenter"
+                        android:textColor="@android:color/black"
                         android:text="NIVEL DE INGRESOS"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"/>

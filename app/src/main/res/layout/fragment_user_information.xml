@@ -282,7 +282,7 @@
                             <ImageView
                                 android:layout_weight="0.1"
                                 android:layout_margin="4dp"
-                                android:src="@drawable/icono_evaluacion512"
+                                android:src="@drawable/icono_evaluacion"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
 
@@ -324,7 +324,7 @@
                             <ImageView
                                 android:layout_weight="0.1"
                                 android:layout_margin="4dp"
-                                android:src="@drawable/icono_evaluacion512"
+                                android:src="@drawable/icono_evaluacion"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
 
@@ -366,7 +366,7 @@
                             <ImageView
                                 android:layout_weight="0.1"
                                 android:layout_margin="4dp"
-                                android:src="@drawable/icono_evaluacion512"
+                                android:src="@drawable/icono_evaluacion"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
 
@@ -408,7 +408,7 @@
                             <ImageView
                                 android:layout_weight="0.1"
                                 android:layout_margin="4dp"
-                                android:src="@drawable/icono_evaluacion512"
+                                android:src="@drawable/icono_evaluacion"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
 
@@ -450,7 +450,7 @@
                             <ImageView
                                 android:layout_weight="0.1"
                                 android:layout_margin="4dp"
-                                android:src="@drawable/icono_evaluacion512"
+                                android:src="@drawable/icono_evaluacion"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
 
@@ -492,7 +492,7 @@
                             <ImageView
                                 android:layout_weight="0.1"
                                 android:layout_margin="4dp"
-                                android:src="@drawable/icono_evaluacion512"
+                                android:src="@drawable/icono_evaluacion"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
 
@@ -534,7 +534,7 @@
                             <ImageView
                                 android:layout_weight="0.1"
                                 android:layout_margin="4dp"
-                                android:src="@drawable/icono_evaluacion512"
+                                android:src="@drawable/icono_evaluacion"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
 
@@ -576,7 +576,7 @@
                             <ImageView
                                 android:layout_weight="0.1"
                                 android:layout_margin="4dp"
-                                android:src="@drawable/icono_evaluacion512"
+                                android:src="@drawable/icono_evaluacion"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
 
