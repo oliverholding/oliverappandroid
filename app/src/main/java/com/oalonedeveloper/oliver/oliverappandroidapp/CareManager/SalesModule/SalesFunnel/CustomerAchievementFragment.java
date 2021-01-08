@@ -330,6 +330,7 @@ public class CustomerAchievementFragment extends Fragment {
                         else if (rdCompany.isChecked()) {
                             hashMap.put("customer_type", rdCompany.getText().toString());
                         }
+                        hashMap.put("customer_define","contact");
                         hashMap.put("register_date", saveCurrentDate);
                         hashMap.put("register_time", saveCurrentTime);
                         myCompanyRef.child(post_key).child("Customers").child(postRandomName).updateChildren(hashMap).addOnCompleteListener(new OnCompleteListener() {

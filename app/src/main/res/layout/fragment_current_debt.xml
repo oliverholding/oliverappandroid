@@ -87,22 +87,11 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_below="@id/topLayout"
-        android:layout_above="@id/btnNotify"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     </androidx.recyclerview.widget.RecyclerView>
 
-    <Button
-        android:layout_alignParentBottom="true"
-        android:id="@+id/btnNotify"
-        android:layout_margin="4dp"
-        android:text="NOTIFICAR PRONTO PAGO"
-        android:padding="8dp"
-        android:drawableStart="@drawable/sms_message_icon"
-        android:textColor="@android:color/white"
-        android:background="@drawable/gray_button_style"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+
 
 </RelativeLayout>

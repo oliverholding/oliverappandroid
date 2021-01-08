@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:gravity="center"
+        android:padding="8dp"
+        android:id="@+id/layoutTitle"
+        android:layout_below="@id/cardViewTitle"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgProduct"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_margin="4dp"
+            android:src="@color/colorGradientStart"
+            android:layout_weight="0.3"
+            android:layout_width="0dp"
+            android:layout_height="30dp"/>
+
+        <TextView
+            android:id="@+id/txtProductName"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_margin="4dp"
+            android:text="PRODUCTO"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txtProductStock"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_margin="4dp"
+            android:text="STOCK"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/btnActionButton"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_margin="4dp"
+            android:src="@drawable/icono_logistica512"
+            android:layout_weight="0.3"
+            android:layout_width="0dp"
+            android:layout_height="30dp"/>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

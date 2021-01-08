@@ -27,7 +27,7 @@ public class RegisterCompanyData4Fragment extends Fragment {
     String currentUserID;
     RelativeLayout rootLayout;
     ProgressDialog loadingBar;
-    RadioButton rdProducts,rdServices,rdPrice,rdQuality,rdSaleService;
+    RadioButton rdProducts,rdProduction,rdServices,rdPrice,rdQuality,rdSaleService;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,6 +48,7 @@ public class RegisterCompanyData4Fragment extends Fragment {
         loadingBar.setCancelable(false);
 
         rdProducts = view.findViewById(R.id.rdProducts);
+        rdProduction = view.findViewById(R.id.rdProduction);
         rdServices = view.findViewById(R.id.rdServices);
         rdPrice = view.findViewById(R.id.rdPrice);
         rdQuality = view.findViewById(R.id.rdQuality);
@@ -99,6 +100,12 @@ public class RegisterCompanyData4Fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 userRef.child("customer_output").setValue(rdServices.getText().toString());
+            }
+        });
+        rdProduction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                userRef.child("customer_output").setValue(rdProduction.getText().toString());
             }
         });
 

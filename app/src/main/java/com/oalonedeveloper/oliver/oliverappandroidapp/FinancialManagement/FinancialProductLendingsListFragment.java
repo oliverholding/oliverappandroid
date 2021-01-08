@@ -24,6 +24,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.LendingProduct.FinancialProductModel;
 import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.LendingProduct.LendingDetailActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.LendingProduct.LoanRequestSentSuccessfullyActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 import com.squareup.picasso.Picasso;
 
@@ -35,6 +36,7 @@ public class FinancialProductLendingsListFragment extends Fragment {
     String post_key,financial_institution_background_image;
     DatabaseReference financialInstitutionsRef;
     RecyclerView recyclerView;
+    ImageView imgBackgroundButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,10 +46,13 @@ public class FinancialProductLendingsListFragment extends Fragment {
         financialInstitutionsRef = FirebaseDatabase.getInstance().getReference().child("Financial Institutions");
         post_key = getActivity().getIntent().getExtras().getString("post_key");
 
+        imgBackgroundButton = view.findViewById(R.id.imgBackgroundButton);
+
         financialInstitutionsRef.child(post_key).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 financial_institution_background_image = dataSnapshot.child("financial_institution_background_image").getValue().toString();
+                Picasso.with(getActivity()).load(financial_institution_background_image).fit().into(imgBackgroundButton);
             }
 
             @Override

@@ -2,6 +2,7 @@ package com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.Lendi
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -9,13 +10,18 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 import java.math.RoundingMode;
@@ -40,6 +46,8 @@ public class LoanSimulationActivity extends AppCompatActivity {
     SpinnerDialog spinnerGrace;
     FirebaseAuth mAuth;
     RelativeLayout rootLayout;
+    LinearLayout btnRequestLoan;
+    double product_tea,product_min_capital;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +61,7 @@ public class LoanSimulationActivity extends AppCompatActivity {
         btnGrace = findViewById(R.id.btnGrace);
         txtQuoteAmount = findViewById(R.id.txtQuoteAmount);
         btnContinue = findViewById(R.id.btnContinue);
+        btnRequestLoan = findViewById(R.id.btnRequestLoan);
         rootLayout = findViewById(R.id.rootLayout);
 
         mAuth = FirebaseAuth.getInstance();
@@ -76,6 +85,25 @@ public class LoanSimulationActivity extends AppCompatActivity {
         quotes.add("41");quotes.add("42");quotes.add("43");quotes.add("44");quotes.add("45");quotes.add("46");quotes.add("47");quotes.add("48");
 
         gracesPeriod.add("0");gracesPeriod.add("1");gracesPeriod.add("2");
+
+        financialInstitutionsRef.child(institution_key).child("Products").child(product_key).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                product_tea = dataSnapshot.child("product_tea").getValue(Double.class);
+                product_min_capital = dataSnapshot.child("product_min_capital").getValue(Double.class);
+
+                edtAmount.setText(product_min_capital+"");
+                rdSoles.setChecked(true);
+                btnMonths.setText("12");
+                btnGrace.setText("0");
+                simulateQuote();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
         edtAmount.addTextChangedListener(new TextWatcher() {
             @Override
@@ -147,19 +175,42 @@ public class LoanSimulationActivity extends AppCompatActivity {
             }
         });
 
+        btnRequestLoan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoanSimulationActivity.this, LoanRequestActivity.class);
+                intent.putExtra("product_key",product_key);
+                intent.putExtra("institution_key",institution_key);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
 
     private void simulateQuote() {
+        double amount = Double.parseDouble(edtAmount.getText().toString());
+        double months = Double.parseDouble(btnMonths.getText().toString());
+        double tea_decimal = product_tea/100;
+        double rate = Math.pow((1+tea_decimal),(1/12.00))-1;
+
+        double factor_top = Math.pow((1+rate),months)*rate;
+        double factor_up = Math.pow((1+rate),months)-1;
+        double quote = (factor_top/factor_up)*amount;
+        String quote_st = decimalFormat.format(quote);
+
         expressLoanRef.child("requested_amount").setValue(edtAmount.getText().toString());
         if (rdSoles.isChecked()) {
             expressLoanRef.child("requested_currency").setValue("PEN");
+            txtQuoteAmount.setText("S/ "+quote_st);
         } else if (rdDollars.isChecked()) {
             expressLoanRef.child("requested_currency").setValue("USD");
+            txtQuoteAmount.setText("$ "+quote_st);
         }
 
         expressLoanRef.child("requested_month").setValue(btnMonths.getText().toString());
         expressLoanRef.child("requested_grace").setValue(btnGrace.getText().toString());
-        expressLoanRef.child("expected_quote").setValue("100.00");
+        expressLoanRef.child("expected_quote").setValue(quote_st);
 
     }
 }

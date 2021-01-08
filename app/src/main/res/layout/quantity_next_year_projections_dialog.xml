@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:padding="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewTitle"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="8dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtProjectionPeriod"
+                android:text="PROYECCIÓN 0000 :"
+                android:textSize="18sp"
+                android:layout_margin="4dp"
+                android:textColor="@android:color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="Actualiza tus proyecciones en unidades y en precio para el proximo año de este producto."
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/middleCardView"
+        android:layout_below="@id/cardViewTitle"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="8dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgProduct"
+                android:layout_margin="4dp"
+                android:src="@color/colorGradientStart"
+                android:layout_weight="0.2"
+                android:layout_width="0dp"
+                android:layout_height="40dp"/>
+
+            <TextView
+                android:id="@+id/txtProductName"
+                android:text="product_mame"
+                android:textSize="18sp"
+                android:layout_margin="4dp"
+                android:textColor="@android:color/black"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_below="@id/middleCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="MES"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="CANTIDAD PROYECTADA"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="PRECIO UNITARIO"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="ENERO"
+                    android:textSize="12sp"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/edtQuantity1"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Proyección..."
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/edtPrice1"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Precio..."
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="FEBRERO"
+                    android:textSize="12sp"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/edtQuantity2"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Proyección..."
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/edtPrice2"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Precio..."
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="MARZO"
+                    android:textSize="12sp"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/edtQuantity3"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Proyección..."
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/edtPrice3"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Precio..."
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="ABRIL"
+                    android:textSize="12sp"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/edtQuantity4"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Proyección..."
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/edtPrice4"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Precio..."
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="MAYO"
+                    android:textSize="12sp"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/edtQuantity5"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Proyección..."
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/edtPrice5"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Precio..."
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="JUNIO"
+                    android:textSize="12sp"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/edtQuantity6"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Proyección..."
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/edtPrice6"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Precio..."
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="JULIO"
+                    android:textSize="12sp"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/edtQuantity7"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Proyección..."
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/edtPrice7"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Precio..."
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="AGOSTO"
+                    android:textSize="12sp"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/edtQuantity8"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Proyección..."
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/edtPrice8"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Precio..."
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="SEPTIEMBRE"
+                    android:textSize="12sp"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/edtQuantity9"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Proyección..."
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/edtPrice9"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Precio..."
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="OCTUBRE"
+                    android:textSize="12sp"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/edtQuantity10"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Proyección..."
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/edtPrice10"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Precio..."
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="NOVIEMBRE"
+                    android:textSize="12sp"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/edtQuantity11"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Proyección..."
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/edtPrice11"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Precio..."
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="DICIEMBRE"
+                    android:textSize="12sp"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/edtQuantity12"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Proyección..."
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/edtPrice12"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Precio..."
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnRegisterProjection"
+                android:layout_margin="8dp"
+                android:text="REGISTRAR PROYECCIÓN"
+                android:textColor="@android:color/white"
+                android:background="@drawable/gray_button_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -1413,6 +1413,7 @@ public class CreateBillActivity extends AppCompatActivity {
                         else if (rdCompany.isChecked()) {
                             hashMap.put("customer_type", rdCompany.getText().toString());
                         }
+                        hashMap.put("customer_define","contact");
                         hashMap.put("register_date", saveCurrentDate);
                         hashMap.put("register_time", saveCurrentTime);
                         companyRef.child(post_key).child("Customers").child(postRandomName).updateChildren(hashMap).addOnCompleteListener(new OnCompleteListener() {
@@ -1600,7 +1601,7 @@ public class CreateBillActivity extends AppCompatActivity {
 
 
                                     for (DataSnapshot ds : dataSnapshot.getChildren()) {
-                                        Map<String, Object> map = (Map<String, Object>) ds.getValue();
+                                        Map<Double, Object> map = (Map<Double, Object>) ds.getValue();
                                         Object quantity = map.get(year+""+ month + "quantity");
                                         Object sales = map.get(year+""+ month + "sales");
 
@@ -1931,6 +1932,8 @@ public class CreateBillActivity extends AppCompatActivity {
                                     String total_st = decimalFormat.format(total_round);
 
                                     final double q = Double.parseDouble(edtQuantity.getText().toString());
+
+
 
                                     companyRef.child(post_key).child("Product Bill").child(postKey).child("quantity").setValue(edtQuantity.getText().toString());
                                     companyRef.child(post_key).child("Product Bill").child(postKey).child("measure").setValue("quantity");
@@ -2390,7 +2393,10 @@ public class CreateBillActivity extends AppCompatActivity {
         Bitmap bitmap = BitmapFactory.decodeFile(currentPhotoPath, bmOptions);
         imgProduct.setImageBitmap(bitmap);
 
-        String path = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, "Title", null);
+        Long tsLong = System.currentTimeMillis()/1000;
+        String timestamp = tsLong.toString();
+
+        String path = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, "Title"+timestamp, null);
         imageUri = imageUri.parse(path);
 
 

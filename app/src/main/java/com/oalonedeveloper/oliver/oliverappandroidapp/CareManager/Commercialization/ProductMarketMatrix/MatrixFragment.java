@@ -65,7 +65,7 @@ public class MatrixFragment extends Fragment {
                     if (matrix_id == 4) {
                         txtMatrix4.setTextColor(Color.WHITE);
                         txtMatrix4.setBackgroundResource(R.drawable.gray_button_style);
-                        txtMessage.setText("Estás en el cuadrante: \"DIVERSIFICACIÓN (ALTO RIESGO)");
+                        txtMessage.setText("Estás en el cuadrante: DIVERSIFICACIÓN (ALTO RIESGO)");
                     }
                 }
             }

@@ -21,10 +21,10 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:src="@drawable/profile_image_blue"
+                android:src="@drawable/icono_perfil_foto"
                 android:layout_weight="0.3"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
+                android:layout_height="80dp"/>
 
             <LinearLayout
                 android:orientation="vertical"
@@ -77,32 +77,13 @@
             <Button
                 android:id="@+id/btnDefine"
                 android:textColor="@android:color/white"
-                android:background="@drawable/blue_button_style"
+                android:background="@drawable/gray_button_style"
                 android:layout_weight="1"
                 android:layout_margin="8dp"
                 android:layout_width="0dp"
                 android:text="Definir"
                 android:layout_height="wrap_content"/>
 
-            <Button
-                android:id="@+id/btnMyCustomers"
-                android:textColor="@android:color/white"
-                android:background="@drawable/blue_button_style"
-                android:layout_weight="1"
-                android:layout_margin="8dp"
-                android:layout_width="0dp"
-                android:text="VER"
-                android:layout_height="wrap_content"/>
-
-            <Button
-                android:id="@+id/btnProm"
-                android:textColor="@android:color/white"
-                android:background="@drawable/blue_button_style"
-                android:layout_weight="1"
-                android:layout_margin="8dp"
-                android:layout_width="0dp"
-                android:text="PROMO"
-                android:layout_height="wrap_content"/>
 
 
         </LinearLayout>

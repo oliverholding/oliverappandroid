@@ -32,6 +32,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.Random;
 
@@ -40,14 +41,17 @@ import es.dmoral.toasty.Toasty;
 
 public class UploadDocumentationActivity extends AppCompatActivity {
 
-    LinearLayout btnUploadFiles;
+    CircleImageView btnUploadFiles;
     static final int RESULT_LOAD_IMAGE = 1;
     StorageReference mStorage;
-    String downloadUrl, currentUid,product_key,institution_key,doc_key;
+    String downloadUrl, currentUid,product_key,institution_key,doc_key,financial_institution_background_image;
     FirebaseAuth mAuth;
     DatabaseReference expressLoanRef,financialInstitutionsRef;
     ProgressDialog loadingBar;
     RecyclerView recyclerView;
+    TextView txtDocName,txtDocDescription;
+    ImageView imgBackgroundButton;
+    LinearLayout btnActionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +62,11 @@ public class UploadDocumentationActivity extends AppCompatActivity {
         mStorage = FirebaseStorage.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
         loadingBar = new ProgressDialog(this);
+
+        txtDocName = findViewById(R.id.txtDocName);
+        txtDocDescription = findViewById(R.id.txtDocDescription);
+        imgBackgroundButton = findViewById(R.id.imgBackgroundButton);
+        btnActionButton = findViewById(R.id.btnActionButton);
 
         currentUid = mAuth.getCurrentUser().getUid();
 
@@ -77,15 +86,42 @@ public class UploadDocumentationActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
         showFiles();
 
-        financialInstitutionsRef.child(institution_key).addValueEventListener(new ValueEventListener() {
+        financialInstitutionsRef.child(institution_key).child("Products").child(product_key).child("Required Documentation").child(doc_key).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                String doc_tittle = dataSnapshot.child("doc_tittle").getValue().toString();
+                String doc_description = dataSnapshot.child("doc_description").getValue().toString();
 
+                txtDocName.setText(doc_tittle);
+                txtDocDescription.setText(doc_description);
+
+                financialInstitutionsRef.child(institution_key).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        financial_institution_background_image = dataSnapshot.child("financial_institution_background_image").getValue().toString();
+                        Picasso.with(UploadDocumentationActivity.this).load(financial_institution_background_image).fit().into(imgBackgroundButton);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
+            }
+        });
+
+        btnActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UploadDocumentationActivity.this, LoanRequestActivity.class);
+                intent.putExtra("product_key",product_key);
+                intent.putExtra("institution_key",institution_key);
+                startActivity(intent);
             }
         });
 

@@ -64,6 +64,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Random;
 
 import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
@@ -371,7 +372,11 @@ public class CompanyDataSumaryFragment extends Fragment {
     private void sendQrCodeToDatabase() {
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-        String path = MediaStore.Images.Media.insertImage(getActivity().getContentResolver(), bitmap, "Title", null);
+        Random rand = new Random(); //instance of random class
+        int upperbound = 9999;
+        //generate random values from 0-24
+        int int_random = rand.nextInt(upperbound);
+        String path = MediaStore.Images.Media.insertImage(getActivity().getContentResolver(), bitmap, "qr"+int_random, null);
         uri = Uri.parse(path);
 
         StorageReference filePath = userProfileImageRef.child(uri.getLastPathSegment()+postRandomName+".jpg");

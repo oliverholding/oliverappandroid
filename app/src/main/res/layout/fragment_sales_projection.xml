@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CareManager.Logistic.DemmandQuantity.SalesProjectionFragment">
+
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtLastPeriod"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:layout_margin="8dp"
+                android:textColor="@android:color/black"
+                android:text="PERÍODO 0000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:gravity="center"
+                android:padding="4dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="MES"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="REAL"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="PROYECTADO"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="VARIACIÓN"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:padding="4dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="ENERO"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtReal1"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtProjection1"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtVar1"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:padding="4dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="FEBRERO"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtReal2"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtProjection2"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtVar2"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:padding="4dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="MARZO"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtReal3"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtProjection3"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtVar3"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:padding="4dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="ABRIL"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtReal4"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtProjection4"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtVar4"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:padding="4dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="MAYO"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtReal5"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtProjection5"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtVar5"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:padding="4dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="JUNIO"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtReal6"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtProjection6"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtVar6"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:padding="4dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="JULIO"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtReal7"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtProjection7"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtVar7"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:padding="4dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="AGOSTO"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtReal8"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtProjection8"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtVar8"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:padding="4dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="SEPTIEMBRE"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtReal9"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtProjection9"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtVar9"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:padding="4dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="OCTUBRE"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtReal10"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtProjection10"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtVar10"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:padding="4dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="NOVIEMBRE"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtReal11"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtProjection11"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtVar11"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:padding="4dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="DICIEMBRE"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtReal12"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtProjection12"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtVar12"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="-"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

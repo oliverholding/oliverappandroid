@@ -88,6 +88,7 @@
             android:background="@drawable/edit_text_style"
             app:ccp_showFlag="true"
             app:ccp_autoDetectLanguage="true"
+            app:ccp_autoDetectCountry="true"
             app:ccp_showPhoneCode="true"
             app:ccp_showNameCode="false"
             android:layout_margin="4dp"

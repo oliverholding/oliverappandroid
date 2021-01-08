@@ -40,7 +40,7 @@
             </LinearLayout>
 
             <TextView
-                android:text="Haz click en el botón PROMO para enviar una promoción a tu cliente."
+                android:text="Envía una promoción a tu cliente."
                 android:layout_margin="4dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>

@@ -319,13 +319,37 @@ public class GraphicsFragment extends Fragment {
         return dataVals;
     }
 
+    private ArrayList<Entry> dataValues2()
+    {
+
+
+        ArrayList<Entry> dataVals = new ArrayList<Entry>();
+        dataVals.add(new Entry(1, 14));
+        dataVals.add(new Entry(2, 15));
+        dataVals.add(new Entry(3, 45));
+        dataVals.add(new Entry(4, 56));
+        dataVals.add(new Entry(5, 54));
+        dataVals.add(new Entry(6,  56));
+        dataVals.add(new Entry(7, 67));
+        dataVals.add(new Entry(8, 45));
+        dataVals.add(new Entry(9, 24));
+        dataVals.add(new Entry(10, 56));
+        dataVals.add(new Entry(11, 24));
+        dataVals.add(new Entry(12, 56));
+        return dataVals;
+    }
+
     private void setValueOnGraph() {
         LineDataSet lineDataSet1 = new LineDataSet(dataValues1(),"Ingresos");
+
         lineDataSet1.setLineWidth(2);
-        lineDataSet1.setCircleColor(R.color.colorGradientCenter);
-        lineDataSet1.setCircleColorHole(Color.BLACK);
+        lineDataSet1.setColor(R.color.colorGradientCenterRed);
+        lineDataSet1.setCircleColor(R.color.colorGradientCenterRed);
+        lineDataSet1.setCircleColorHole(R.color.colorGradientCenterRed);
         ArrayList<ILineDataSet> dataSets = new ArrayList<>();
         dataSets.add(lineDataSet1);
+
+
 
         LineData data = new LineData(dataSets);
         mLineChart.setData(data);

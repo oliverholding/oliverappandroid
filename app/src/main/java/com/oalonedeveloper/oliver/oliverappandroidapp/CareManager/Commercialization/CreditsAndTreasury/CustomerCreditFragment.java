@@ -56,6 +56,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercializat
 import com.oalonedeveloper.oliver.oliverappandroidapp.Companies.CompanyCustomersModel;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -85,6 +86,7 @@ public class CustomerCreditFragment extends Fragment {
     SpinnerDialog bthQFrequencyDialog;
 
     ImageButton btnImageButton1,btnImageButton2,btnImageButton3;
+    DecimalFormat decimalFormat;
 
     final static int Gallery_Pick = 2;
     final static int Gallery_Pick2 = 3;
@@ -109,6 +111,8 @@ public class CustomerCreditFragment extends Fragment {
         myCompanyRef = FirebaseDatabase.getInstance().getReference().child("My Companies");
 
         userProfileImageRef = FirebaseStorage.getInstance().getReference().child("Customer DNI");
+
+        decimalFormat = new DecimalFormat("0.00");
 
         recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
@@ -296,8 +300,8 @@ public class CustomerCreditFragment extends Fragment {
                                 double quote_number = Double.parseDouble(item2);
                                 double max_amount = Double.parseDouble(edtMaxAmount.getText().toString());
                                 double quote_amount = max_amount/quote_number;
-                                double quote_amount_st = Math.round(quote_amount);
-                                edtQuoteAmount.setText(quote_amount_st+"");
+                                String quote_amount_st = decimalFormat.format(quote_amount);
+                                edtQuoteAmount.setText(quote_amount_st);
 
                             }
                         });
@@ -483,6 +487,7 @@ public class CustomerCreditFragment extends Fragment {
                 else if (rdCompany.isChecked()) {
                     hashMap.put("customer_type", rdCompany.getText().toString());
                 }
+                hashMap.put("customer_define","contact");
                 hashMap.put("register_date", saveCurrentDate);
                 hashMap.put("register_time", saveCurrentTime);
                 myCompanyRef.child(post_key).child("Customers").child(postRandomName).updateChildren(hashMap).addOnCompleteListener(new OnCompleteListener() {

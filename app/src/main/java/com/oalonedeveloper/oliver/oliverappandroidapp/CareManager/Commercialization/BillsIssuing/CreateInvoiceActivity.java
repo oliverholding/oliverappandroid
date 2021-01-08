@@ -1126,6 +1126,7 @@ public class CreateInvoiceActivity extends AppCompatActivity {
                         else if (rdCompany.isChecked()) {
                             hashMap.put("customer_type", rdCompany.getText().toString());
                         }
+                        hashMap.put("customer_define","contact");
                         hashMap.put("register_date", saveCurrentDate);
                         hashMap.put("register_time", saveCurrentTime);
                         companyRef.child(post_key).child("Customers").child(postRandomName).updateChildren(hashMap).addOnCompleteListener(new OnCompleteListener() {
@@ -1312,7 +1313,7 @@ public class CreateInvoiceActivity extends AppCompatActivity {
 
 
                                     for (DataSnapshot ds : dataSnapshot.getChildren()) {
-                                        Map<String, Object> map = (Map<String, Object>) ds.getValue();
+                                        Map<Double, Object> map = (Map<Double, Object>) ds.getValue();
                                         Object quantity = map.get(year+""+ month + "quantity");
                                         Object sales = map.get(year+""+ month + "sales");
 

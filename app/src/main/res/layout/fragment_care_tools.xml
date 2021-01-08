@@ -411,7 +411,6 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:visibility="invisible"
                     android:id="@+id/cardViewModule10"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="8dp"
@@ -430,7 +429,7 @@
                             android:layout_width="0dp"
                             android:layout_height="0dp"
                             android:padding="40dp"
-                            android:src="@drawable/icono_ventas_1"
+                            android:src="@drawable/icono_produccion_1"
                             app:layout_constraintDimensionRatio="H,1:1"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintLeft_toLeftOf="parent"
@@ -442,7 +441,94 @@
                             android:textColor="@color/colorAccent"
                             android:gravity="center"
                             app:layout_constraintBottom_toBottomOf="@id/img10"
-                            android:text="Ventas"
+                            android:text="Producción/Operaciones"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewModule11"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/img11"
+                            android:scaleType="centerCrop"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:padding="40dp"
+                            android:src="@drawable/icono_gestion_personas"
+                            app:layout_constraintDimensionRatio="H,1:1"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorAccent"
+                            android:gravity="center"
+                            app:layout_constraintBottom_toBottomOf="@id/img11"
+                            android:text="Gestión de Personas"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewModule12"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/img12"
+                            android:scaleType="centerCrop"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:padding="40dp"
+                            android:src="@drawable/icono_normativa_responsabilidad"
+                            app:layout_constraintDimensionRatio="H,1:1"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorAccent"
+                            android:gravity="center"
+                            app:layout_constraintBottom_toBottomOf="@id/img12"
+                            android:text="Normatividad y Responsabilidad Social"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 

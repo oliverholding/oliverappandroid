@@ -3,6 +3,9 @@ package com.oalonedeveloper.oliver.oliverappandroidapp;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.widget.Toast;
+
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.BillsIssuing.CreateBillActivity;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Properties;
@@ -14,6 +17,8 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+
+import es.dmoral.toasty.Toasty;
 
 public class JavaMailAPI extends AsyncTask<Void, Void, Void> {
 
@@ -31,8 +36,10 @@ public class JavaMailAPI extends AsyncTask<Void, Void, Void> {
     private String mEmail;
     private String mSubject;
     private String mMessage;
+    String customer_name;
 
     private ProgressDialog mProgressDialog;
+
 
     //Constructor
     public JavaMailAPI(Context mContext, String mEmail, String mSubject, String mMessage) {
@@ -40,23 +47,24 @@ public class JavaMailAPI extends AsyncTask<Void, Void, Void> {
         this.mEmail = mEmail;
         this.mSubject = mSubject;
         this.mMessage = mMessage;
+
     }
 
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
         //Show progress dialog while sending email
-        //mProgressDialog = ProgressDialog.show(mContext,"Sending message", "Please wait...",false,false);
+        mProgressDialog = ProgressDialog.show(mContext,"Enviando mensaje", "por favor espera...",false,false);
     }
 
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
         //Dismiss progress dialog when message successfully send
-        //mProgressDialog.dismiss();
+        mProgressDialog.dismiss();
 
         //Show success toast
-        //Toast.makeText(mContext,"Message Sent",Toast.LENGTH_SHORT).show();
+        Toasty.success(mContext, "Enviado", Toast.LENGTH_LONG).show();
     }
 
     @Override

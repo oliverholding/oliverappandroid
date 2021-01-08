@@ -37,11 +37,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <ImageView
-                            android:src="@drawable/number_3"
-                            android:layout_weight="0.2"
-                            android:layout_width="0dp"
-                            android:layout_height="40dp"/>
 
                         <TextView
                             android:text="Proceso de Fidelización"
@@ -137,18 +132,20 @@
                             android:layout_height="wrap_content"/>
 
                         <TextView
+                            android:id="@+id/txtPoints1"
                             android:layout_margin="4dp"
                             android:gravity="center"
                             android:textColor="@android:color/black"
-                            android:text="1"
+                            android:text="0"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
                         <ImageView
+                            android:id="@+id/btnPoints1"
                             android:layout_margin="4dp"
                             android:gravity="center"
-                           android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/edit_pencil_vector_asset"
                             android:layout_weight="0.3"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
@@ -171,15 +168,17 @@
                             android:layout_height="wrap_content"/>
 
                         <TextView
+                            android:id="@+id/txtPoints2"
                             android:layout_margin="4dp"
                             android:gravity="center"
                             android:textColor="@android:color/black"
-                            android:text="2"
+                            android:text="0"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
                         <ImageView
+                            android:id="@+id/btnPoints2"
                             android:layout_margin="4dp"
                             android:gravity="center"
                             android:src="@drawable/edit_pencil_vector_asset"
@@ -205,15 +204,17 @@
                             android:layout_height="wrap_content"/>
 
                         <TextView
+                            android:id="@+id/txtPoints3"
                             android:layout_margin="4dp"
                             android:gravity="center"
                             android:textColor="@android:color/black"
-                            android:text="3"
+                            android:text="0"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
                         <ImageView
+                            android:id="@+id/btnPoints3"
                             android:layout_margin="4dp"
                             android:gravity="center"
                             android:src="@drawable/edit_pencil_vector_asset"
@@ -238,15 +239,17 @@
                             android:layout_height="wrap_content"/>
 
                         <TextView
+                            android:id="@+id/txtPoints4"
                             android:layout_margin="4dp"
                             android:gravity="center"
                             android:textColor="@android:color/black"
-                            android:text="4"
+                            android:text="0"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
                         <ImageView
+                            android:id="@+id/btnPoints4"
                             android:layout_margin="4dp"
                             android:gravity="center"
                             android:src="@drawable/edit_pencil_vector_asset"
@@ -271,15 +274,17 @@
                             android:layout_height="wrap_content"/>
 
                         <TextView
+                            android:id="@+id/txtPoints5"
                             android:layout_margin="4dp"
                             android:gravity="center"
                             android:textColor="@android:color/black"
-                            android:text="5"
+                            android:text="0"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
                         <ImageView
+                            android:id="@+id/btnPoints5"
                             android:layout_margin="4dp"
                             android:gravity="center"
                             android:src="@drawable/edit_pencil_vector_asset"
@@ -305,15 +310,17 @@
                             android:layout_height="wrap_content"/>
 
                         <TextView
+                            android:id="@+id/txtPoints6"
                             android:layout_margin="4dp"
                             android:gravity="center"
                             android:textColor="@android:color/black"
-                            android:text="6"
+                            android:text="0"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
                         <ImageView
+                            android:id="@+id/btnPoints6"
                             android:layout_margin="4dp"
                             android:gravity="center"
                             android:src="@drawable/edit_pencil_vector_asset"
@@ -402,7 +409,7 @@
                             android:layout_margin="4dp"
                             android:gravity="center"
                             android:textColor="@android:color/black"
-                            android:text="5%"
+                            android:text="0%"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
@@ -438,7 +445,7 @@
                             android:layout_margin="4dp"
                             android:gravity="center"
                             android:textColor="@android:color/black"
-                            android:text="10%"
+                            android:text="0%"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
@@ -464,7 +471,7 @@
                             android:layout_margin="4dp"
                             android:gravity="center"
                             android:textColor="@android:color/black"
-                            android:text="10 puntos a 50 puntos"
+                            android:text="11 puntos a 50 puntos"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
@@ -474,7 +481,7 @@
                             android:layout_margin="4dp"
                             android:gravity="center"
                             android:textColor="@android:color/black"
-                            android:text="15%"
+                            android:text="0%"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
@@ -510,7 +517,7 @@
                             android:layout_margin="4dp"
                             android:gravity="center"
                             android:textColor="@android:color/black"
-                            android:text="10%"
+                            android:text="0%"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
@@ -546,7 +553,7 @@
                             android:layout_margin="4dp"
                             android:gravity="center"
                             android:textColor="@android:color/black"
-                            android:text="25%"
+                            android:text="0%"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>

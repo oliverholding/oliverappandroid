@@ -711,7 +711,7 @@
                 android:layout_height="wrap_content"/>
 
             <Button
-                android:id="@+id/btnSellers"
+                android:id="@+id/btnDemandPlanning"
                 android:padding="8dp"
                 android:text="Planeamiento de la Demanda"
                 android:textColor="@android:color/white"
@@ -722,7 +722,7 @@
                 android:layout_height="wrap_content"/>
 
             <Button
-                android:id="@+id/btnSalesArgument"
+                android:id="@+id/btnSupplyPlanning"
                 android:padding="8dp"
                 android:text="Planeamiento del Abastecimiento"
                 android:textColor="@android:color/white"
@@ -733,7 +733,7 @@
                 android:layout_height="wrap_content"/>
 
             <Button
-                android:id="@+id/btnSalesFunnel"
+                android:id="@+id/btnAcquisitions"
                 android:padding="8dp"
                 android:text="Adquisición de Bienes y Servicios"
                 android:textColor="@android:color/white"
@@ -766,6 +766,7 @@
                 android:layout_height="wrap_content"/>
 
             <Button
+                android:id="@+id/btnStorage"
                 android:padding="8dp"
                 android:text="Almacenamiento"
                 android:textColor="@android:color/white"
@@ -776,6 +777,7 @@
                 android:layout_height="wrap_content"/>
 
             <Button
+                android:id="@+id/btnInventoryControl"
                 android:padding="8dp"
                 android:text="Control de Inventarios"
                 android:textColor="@android:color/white"

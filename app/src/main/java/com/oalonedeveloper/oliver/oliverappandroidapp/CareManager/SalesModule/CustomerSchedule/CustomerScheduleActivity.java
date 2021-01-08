@@ -145,7 +145,6 @@ public class CustomerScheduleActivity extends AppCompatActivity {
                 LayoutInflater inflater = LayoutInflater.from(CustomerScheduleActivity.this);
                 View finance_method = inflater.inflate(R.layout.add_customer_dialog,null);
 
-
                 Button btnAddCustomer;
                 TextView txtCancel;
                 final EditText edtName,edtEmail,edtPhoneNumber;
@@ -185,6 +184,7 @@ public class CustomerScheduleActivity extends AppCompatActivity {
                         else if (rdCompany.isChecked()) {
                             hashMap.put("customer_type", rdCompany.getText().toString());
                         }
+                        hashMap.put("customer_define","contact");
                         hashMap.put("register_date", saveCurrentDate);
                         hashMap.put("register_time", saveCurrentTime);
                         companyRef.child(post_key).child("Customers").child(postRandomName).updateChildren(hashMap).addOnCompleteListener(new OnCompleteListener() {

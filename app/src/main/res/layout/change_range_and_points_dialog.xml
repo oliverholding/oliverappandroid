@@ -21,7 +21,7 @@
                 android:textColor="@android:color/black"
                 android:textStyle="bold"
                 android:textSize="16sp"
-                android:text="RANGOS Y DESCUENTOS:"
+                android:text="DESCUENTO:"
                 android:layout_margin="4dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
