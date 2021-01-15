@@ -58,6 +58,7 @@
             android:layout_height="wrap_content"/>
 
         <ImageView
+            android:id="@+id/btnActionButton"
             android:layout_margin="4dp"
             android:text=""
             android:src="@drawable/icono_logistica512"

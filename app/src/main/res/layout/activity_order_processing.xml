@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rootLayout"
+    tools:context=".CareManager.Logistic.OrderProcessing.OrderProcessingActivity">
+
+    <LinearLayout
+        android:id="@+id/topLayout"
+        android:padding="8dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="8dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/imgCompanyProfile"
+                        android:src="@color/colorGradientStart"
+                        android:layout_margin="4dp"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:id="@+id/txtCompanyName"
+                        android:textStyle="bold"
+                        android:layout_margin="4dp"
+                        android:textColor="@android:color/black"
+                        android:text="company_name"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtCompanyAddress"
+                    android:layout_margin="4dp"
+                    android:textSize="10sp"
+                    android:textColor="@android:color/black"
+                    android:text="company_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="8dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/txtCurrentDate"
+                    android:textSize="12sp"
+                    android:layout_margin="8dp"
+                    android:textColor="@android:color/black"
+                    android:text="Fecha de Emisión: dd/mm/yyyy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtOrderCode"
+                    android:textSize="12sp"
+                    android:layout_margin="8dp"
+                    android:textColor="@android:color/black"
+                    android:text="Nº: 000000000 "
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtCustomerName"
+            android:textColor="@android:color/black"
+            android:gravity="start"
+            android:padding="8dp"
+            android:textStyle="bold"
+            android:layout_margin="4dp"
+            android:textSize="11sp"
+            android:background="@drawable/edit_text_style"
+            android:text="CLIENTE: COMPLETAR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtPhone"
+                android:textColor="@android:color/black"
+                android:gravity="start"
+                android:padding="8dp"
+                android:enabled="false"
+                android:textStyle="bold"
+                android:layout_margin="4dp"
+                android:textSize="11sp"
+                android:background="@drawable/edit_text_style"
+                android:text="TELÉFONO: COMPLETAR"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtEmail"
+                android:textColor="@android:color/black"
+                android:gravity="start"
+                android:padding="8dp"
+                android:enabled="false"
+                android:textStyle="bold"
+                android:layout_margin="4dp"
+                android:textSize="11sp"
+                android:background="@drawable/edit_text_style"
+                android:text="CORREO: COMPLETAR"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtAddress"
+            android:textColor="@android:color/black"
+            android:gravity="start"
+            android:padding="8dp"
+            android:textStyle="bold"
+            android:layout_margin="4dp"
+            android:textSize="11sp"
+            android:background="@drawable/edit_text_style"
+            android:text="DIRECCIÓN DE ENTREGA: COMPLETAR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/middleLayout"
+        android:gravity="center"
+        android:layout_below="@id/topLayout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:gravity="center"
+            android:layout_margin="4dp"
+            android:textSize="11sp"
+            android:text="ARTÍCULO"
+            android:textColor="@android:color/black"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:gravity="center"
+            android:layout_margin="4dp"
+            android:textSize="11sp"
+            android:text="PRECIO UNITARIO"
+            android:textColor="@android:color/black"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:gravity="center"
+            android:layout_margin="4dp"
+            android:textSize="11sp"
+            android:text="CANTIDAD"
+            android:textColor="@android:color/black"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:gravity="center"
+            android:layout_margin="4dp"
+            android:textSize="11sp"
+            android:text="TOTAL"
+            android:textColor="@android:color/black"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/middleLayout"
+        android:id="@+id/recyclerView"
+        android:layout_above="@id/summaryLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:id="@+id/summaryLayout"
+        android:gravity="center"
+        android:layout_above="@id/btnRegisterPurchaseOrder"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnAddProduct"
+                android:text="AGREGAR PRODUCTO"
+                android:drawableStart="@drawable/add_icon"
+                android:textColor="@android:color/white"
+                android:layout_margin="4dp"
+                android:padding="8dp"
+                android:background="@drawable/gray_button_style"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:padding="4dp"
+            android:layout_margin="8dp"
+            android:orientation="vertical"
+            android:background="@drawable/table_background"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtSaleValue"
+                android:textColor="@android:color/black"
+                android:gravity="start"
+                android:padding="2dp"
+                android:text="VALOR VENTA: S/ 0.00"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtTaxes"
+                android:textColor="@android:color/black"
+                android:gravity="start"
+                android:padding="2dp"
+                android:text="IGV: S/ 0.00"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtTotalAmount"
+                android:textColor="@android:color/black"
+                android:gravity="start"
+                android:padding="2dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="TOTAL: S/ 0.00"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnRegisterPurchaseOrder"
+        android:text="REGISTRAR NOTA DE PEDIDO"
+        android:textColor="@android:color/white"
+        android:layout_margin="8dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/gray_button_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

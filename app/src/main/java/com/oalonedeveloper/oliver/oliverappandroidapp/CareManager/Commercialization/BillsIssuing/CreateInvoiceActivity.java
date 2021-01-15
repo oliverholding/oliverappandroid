@@ -1275,9 +1275,9 @@ public class CreateInvoiceActivity extends AppCompatActivity {
                             Toast.makeText(CreateInvoiceActivity.this, "Hubo un Error", Toast.LENGTH_SHORT).show();
                         } else {
                             if (bill_sale_type.equals("cash_now")) {
-                                companyRef.child(post_key).child("My Bills").child(billId).child("expiration_day").setValue(day);
-                                companyRef.child(post_key).child("My Bills").child(billId).child("expiration_month").setValue(month);
-                                companyRef.child(post_key).child("My Bills").child(billId).child("expiration_year").setValue(year);
+                                companyRef.child(post_key).child("My Bills").child(billId).child("expiration_day").setValue(day+"");
+                                companyRef.child(post_key).child("My Bills").child(billId).child("expiration_month").setValue(month+"");
+                                companyRef.child(post_key).child("My Bills").child(billId).child("expiration_year").setValue(year+"");
                                 companyRef.child(post_key).child("My Bills").child(billId).child("state").setValue("paid");
 
                             } else if (bill_sale_type.equals("credit")) {

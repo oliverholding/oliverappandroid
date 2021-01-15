@@ -744,7 +744,7 @@
                 android:layout_height="wrap_content"/>
 
             <Button
-                android:id="@+id/btnScheduleDate"
+                android:id="@+id/btnSupplierEvaluation"
                 android:padding="8dp"
                 android:text="Búsqueda y Evaluación de Proveedores"
                 android:textColor="@android:color/white"
@@ -755,7 +755,7 @@
                 android:layout_height="wrap_content"/>
 
             <Button
-                android:id="@+id/btnSalesProjection"
+                android:id="@+id/btnOutsourcing"
                 android:padding="8dp"
                 android:text="Tercerización de la Producción / Operaciones"
                 android:textColor="@android:color/white"
@@ -788,6 +788,7 @@
                 android:layout_height="wrap_content"/>
 
             <Button
+                android:id="@+id/btnOderProcessing"
                 android:padding="8dp"
                 android:text="Procesamiento de Pedidos"
                 android:textColor="@android:color/white"
@@ -798,6 +799,7 @@
                 android:layout_height="wrap_content"/>
 
             <Button
+                android:id="@+id/btnDispatch"
                 android:padding="8dp"
                 android:text="Despacho y Entrega"
                 android:textColor="@android:color/white"

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="12dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtMessage"
+                android:textSize="14sp"
+                android:text="Detalles de la órden de compra"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:gravity="center"
+                android:padding="8dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgProduct"
+                    android:src="@drawable/icono_gestion_personas"
+                    android:layout_weight="0.2"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"/>
+
+                <TextView
+                    android:id="@+id/txtSupplierName"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:text="supplier_name"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:text="Califica el tiempo de entrega:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rdLate"
+                    android:text="Tarde"
+                    android:layout_margin="4dp"
+                    android:padding="8dp"
+                    android:background="@drawable/edit_text_style"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <RadioButton
+                    android:id="@+id/rdOnTime"
+                    android:text="A Tiempo"
+                    android:layout_margin="4dp"
+                    android:padding="8dp"
+                    android:background="@drawable/edit_text_style"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:text="Asigna el Almacén para cada producto comprado:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/middleLayout"
+        android:padding="8dp"
+        android:layout_below="@+id/scrollView"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textSize="10sp"
+            android:layout_margin="4dp"
+            android:text="Cantidad"
+            android:layout_weight="0.7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:textSize="10sp"
+            android:layout_margin="4dp"
+            android:maxLines="1"
+            android:text="Producto"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:textSize="10sp"
+            android:layout_margin="4dp"
+            android:text="Precio"
+            android:layout_weight="0.7"
+            android:maxLines="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:textSize="10sp"
+            android:layout_margin="4dp"
+            android:text="Total"
+            android:maxLines="1"
+            android:layout_weight="0.7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:textSize="10sp"
+            android:layout_margin="4dp"
+            android:text="Almacén"
+            android:maxLines="1"
+            android:layout_weight="0.7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:textSize="10sp"
+            android:layout_margin="4dp"
+            android:text=""
+            android:layout_weight="0.5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView2"
+        android:layout_above="@id/btnRegister"
+       android:layout_below="@id/middleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <Button
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btnRegister"
+        android:text="REGISTRAR"
+        android:textColor="@android:color/white"
+        android:background="@drawable/gradient_start2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

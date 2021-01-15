@@ -2,12 +2,12 @@ package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Logistic.Purc
 
 public class PurchaseOrdersModel {
 
-    String operation_date,operation_day,operation_month,operation_time,operation_year,purchase_order_id,purchase_order_supplier_id,purchase_order_total_amount;
+    String operation_date,operation_day,operation_month,operation_time,operation_year,purchase_order_id,purchase_order_supplier_id,purchase_order_total_amount,purchase_order_state;
 
     public PurchaseOrdersModel() {
     }
 
-    public PurchaseOrdersModel(String operation_date, String operation_day, String operation_month, String operation_time, String operation_year, String purchase_order_id, String purchase_order_supplier_id, String purchase_order_total_amount) {
+    public PurchaseOrdersModel(String operation_date, String operation_day, String operation_month, String operation_time, String operation_year, String purchase_order_id, String purchase_order_supplier_id, String purchase_order_total_amount, String purchase_order_state) {
         this.operation_date = operation_date;
         this.operation_day = operation_day;
         this.operation_month = operation_month;
@@ -16,6 +16,7 @@ public class PurchaseOrdersModel {
         this.purchase_order_id = purchase_order_id;
         this.purchase_order_supplier_id = purchase_order_supplier_id;
         this.purchase_order_total_amount = purchase_order_total_amount;
+        this.purchase_order_state = purchase_order_state;
     }
 
     public String getOperation_date() {
@@ -81,4 +82,14 @@ public class PurchaseOrdersModel {
     public void setPurchase_order_total_amount(String purchase_order_total_amount) {
         this.purchase_order_total_amount = purchase_order_total_amount;
     }
+
+    public String getPurchase_order_state() {
+        return purchase_order_state;
+    }
+
+    public void setPurchase_order_state(String purchase_order_state) {
+        this.purchase_order_state = purchase_order_state;
+    }
+
+
 }

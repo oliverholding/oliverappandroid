@@ -196,7 +196,7 @@ public class ProductionOrderChainFragment extends Fragment {
                                             viewHolder.txtWarehouseDestination.setText("Destino: Productos Terminados");
                                         }
                                         if (viewHolder.ware_destiny.equals("materials")) {
-                                            viewHolder.txtWarehouseDestination.setText("Destino: Materiales Terminados");
+                                            viewHolder.txtWarehouseDestination.setText("Destino: Materiales e Insumos");
                                         }
 
 
@@ -269,6 +269,7 @@ public class ProductionOrderChainFragment extends Fragment {
                                                             companyRef.child(post_key).child("Warehouses").child(postKey).child("Products").child(product_key).child("product_stock").setValue(item_quantity);
                                                             companyRef.child(post_key).child("Warehouses").child(postKey).child("Products").child(product_key).child("timestamp").setValue(ServerValue.TIMESTAMP);
 
+                                                            companyRef.child(post_key).child("Production Chain").child(chain_id).child("state").setValue("ready");
 
                                                             //Kardex
 

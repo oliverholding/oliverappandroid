@@ -603,6 +603,8 @@ public class DataSumaryFragment extends Fragment {
                     apellido_paterno = response.getString("apellido_paterno");
                     apellido_materno = response.getString("apellido_materno");
 
+                    Toast.makeText(getActivity(), ""+nombres, Toast.LENGTH_SHORT).show();
+
                     String proces_names = Normalizer.normalize(name.toUpperCase(), Normalizer.Form.NFD);
                     final String normal_name = proces_names.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
                     final String real_name = normal_name.replaceAll("\\s+","");

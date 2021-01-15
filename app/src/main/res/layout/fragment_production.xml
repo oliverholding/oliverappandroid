@@ -711,6 +711,7 @@
                 android:layout_height="wrap_content"/>
 
             <Button
+                android:id="@+id/btnDataSheets"
                 android:padding="8dp"
                 android:text="Fichas Técnicas de Productos y Servicios"
                 android:textColor="@android:color/white"
@@ -721,6 +722,7 @@
                 android:layout_height="wrap_content"/>
 
             <Button
+                android:id="@+id/btnProductionCost"
                 android:padding="8dp"
                 android:text="Costeo de Productos y Servicios"
                 android:textColor="@android:color/white"
@@ -731,6 +733,7 @@
                 android:layout_height="wrap_content"/>
 
             <Button
+                android:id="@+id/btnProductionCapacity"
                 android:padding="8dp"
                 android:text="Capacidad de Producción"
                 android:textColor="@android:color/white"
@@ -752,6 +755,7 @@
                 android:layout_height="wrap_content"/>
 
             <Button
+                android:id="@+id/btnCriticalInventory"
                 android:padding="8dp"
                 android:text="Stock de Materiales e Insumos críticos"
                 android:textColor="@android:color/white"
@@ -762,6 +766,7 @@
                 android:layout_height="wrap_content"/>
 
             <Button
+                android:id="@+id/btnQualityControl"
                 android:padding="8dp"
                 android:text="Control de Calidad y Trazabilidad"
                 android:textColor="@android:color/white"
@@ -772,6 +777,7 @@
                 android:layout_height="wrap_content"/>
 
             <Button
+                android:id="@+id/btnMachineryMaintenance"
                 android:padding="8dp"
                 android:text="Mantenimiento de Herramientas, Maquinaria y Equipos"
                 android:textColor="@android:color/white"
@@ -782,6 +788,7 @@
                 android:layout_height="wrap_content"/>
 
             <Button
+                android:id="@+id/btnLeanManufacturing"
                 android:padding="8dp"
                 android:text="Lean Manufacturing"
                 android:textColor="@android:color/white"

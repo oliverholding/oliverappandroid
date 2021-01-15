@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView app:cardElevation="8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    app:cardCornerRadius="8dp"
+    android:layout_margin="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:padding="8dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtProductionLineName"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:text="production_line_name"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:background="@color/colorGradientCenterRed"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <TextView
+            android:id="@+id/txtTheoreticalCapacity"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:text="Capacidad teórica de proucción al mes: "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txtManTime"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:text="Horas hombre necesarias: "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txtPeople"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:text="Personas: "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txtRealProduction"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:text="Producción Real Actual: "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txtRealCapacity"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:text="Capacidad Utilizada: "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnManage"
+            android:text="GESTIONAR"
+            android:textColor="@android:color/white"
+            android:layout_margin="4dp"
+            android:background="@drawable/gray_button_style"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

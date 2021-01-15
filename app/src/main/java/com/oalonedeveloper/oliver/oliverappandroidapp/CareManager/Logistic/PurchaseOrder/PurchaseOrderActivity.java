@@ -1,24 +1,35 @@
 package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Logistic.PurchaseOrder;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,16 +38,23 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.hbb20.CountryCodePicker;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.BillsIssuing.CreateBillActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Production.ProductionOrders.ProductionOrderProductDetailActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.Companies.ProductsModel;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 import com.squareup.picasso.Picasso;
 
+import java.io.File;
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -49,12 +67,18 @@ public class PurchaseOrderActivity extends AppCompatActivity {
     CircleImageView imgCompanyProfile;
     TextView txtCompanyName,txtCompanyAddress,txtCurrentDate,txtOrderCode,txtSupplier,txtContact,txtPhone,txtEmail,txtAddress,txtSalesConditions,txtTaxes,txtTotalAmount;
     DatabaseReference companyRef;
-    String post_key,company_image,company_social_reason,company_address,timestamp,supplier_id,address_value,sales_conditions_value,total_amount_st,total_taxes_st;
+    String post_key,company_image,company_social_reason,company_address,timestamp,supplier_id,address_value,sales_conditions_value,total_amount_st,total_taxes_st,image_verification,current_time,currentPhotoPath,downloadUrl;
     DecimalFormat decimalFormat;
     int day,month,year;
-    RecyclerView recyclerView,recyclerView2;
+    RecyclerView recyclerView,recyclerView2,recyclerView3;
     AlertDialog dialog;
     Button btnAddProduct,btnRegisterPurchaseOrder;
+    ImageView imgProduct;
+    ProgressDialog loadingBar;
+    Uri imageUri;
+    StorageReference userProfileImageRef;
+    final static int Gallery_Pick = 2;
+    RelativeLayout rootLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,10 +100,17 @@ public class PurchaseOrderActivity extends AppCompatActivity {
         txtTaxes = findViewById(R.id.txtTaxes);
         txtTotalAmount = findViewById(R.id.txtTotalAmount);
         btnRegisterPurchaseOrder = findViewById(R.id.btnRegisterPurchaseOrder);
+        rootLayout = findViewById(R.id.rootLayout);
+
+        image_verification = "";
+        supplier_id = "";
 
         post_key = getIntent().getExtras().getString("post_key");
         companyRef = FirebaseDatabase.getInstance().getReference().child("My Companies");
+        userProfileImageRef = FirebaseStorage.getInstance().getReference().child("Product Images");
         decimalFormat = new DecimalFormat("0.00");
+
+        loadingBar = new ProgressDialog(this);
 
         recyclerView2 = findViewById(R.id.recyclerView2);
         recyclerView2.setHasFixedSize(true);
@@ -107,6 +138,8 @@ public class PurchaseOrderActivity extends AppCompatActivity {
 
         txtCurrentDate.setText("Fecha de emisión: "+day+"/"+month+"/"+year);
         txtOrderCode.setText("Nº: "+timestamp);
+
+        companyRef.child(post_key).child("Purchased Order Items").removeValue();
 
         companyRef.child(post_key).addValueEventListener(new ValueEventListener() {
             @Override
@@ -166,7 +199,12 @@ public class PurchaseOrderActivity extends AppCompatActivity {
         btnAddProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showAddProductDialog();
+                if (supplier_id.equals("")) {
+                    Snackbar.make(rootLayout,"Debes seleccionar primero al Proveedor", Snackbar.LENGTH_LONG).show();
+                } else {
+                    showAddProductDialog();
+                }
+
             }
         });
 
@@ -191,6 +229,7 @@ public class PurchaseOrderActivity extends AppCompatActivity {
                 year = cal.get(Calendar.YEAR);
 
                 companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("purchase_order_id").setValue(timestamp);
+                companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("purchase_order_state").setValue("pending");
                 companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("purchase_order_supplier_id").setValue(supplier_id);
                 companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("purchase_order_destination_address").setValue(address_value);
                 companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("purchase_order_sales_conditions").setValue(sales_conditions_value);
@@ -202,6 +241,7 @@ public class PurchaseOrderActivity extends AppCompatActivity {
                 companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("operation_month").setValue(month+"");
                 companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("operation_year").setValue(year+"");
                 companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("purchase_order_currency").setValue("PEN");
+
 
                 companyRef.child(post_key).child("Purchased Order Items").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -275,7 +315,6 @@ public class PurchaseOrderActivity extends AppCompatActivity {
                 viewHolder.setItem_quantity(model.getItem_quantity());
                 viewHolder.setItem_total(model.getItem_total());
 
-                viewHolder.txtDescription.setText(viewHolder.my_item_description);
                 viewHolder.txtItemName.setText(viewHolder.my_item_name);
                 viewHolder.txtPrice.setText("S/ "+viewHolder.my_item_price);
                 viewHolder.txtQuantity.setText(viewHolder.my_item_quantity);
@@ -291,54 +330,206 @@ public class PurchaseOrderActivity extends AppCompatActivity {
         LayoutInflater inflater = LayoutInflater.from(PurchaseOrderActivity.this);
         View finance_method = inflater.inflate(R.layout.add_purchase_product_dialog,null);
 
-        final EditText edtProductName,edtDescription,edtPrice,edtQuantity;
         Button btnRegisterNewProduct;
-        final RelativeLayout rootLayout;
 
-        edtProductName = finance_method.findViewById(R.id.edtProductName);
-        edtDescription = finance_method.findViewById(R.id.edtDescription);
-        edtPrice = finance_method.findViewById(R.id.edtPrice);
-        edtQuantity = finance_method.findViewById(R.id.edtQuantity);
         btnRegisterNewProduct = finance_method.findViewById(R.id.btnRegisterNewProduct);
-        rootLayout = finance_method.findViewById(R.id.rootLayout);
 
         btnRegisterNewProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (TextUtils.isEmpty(edtProductName.getText().toString())) {
-                    Snackbar.make(rootLayout,"Debes completar todos los datos",Snackbar.LENGTH_SHORT);
-                }
-                else if (TextUtils.isEmpty(edtDescription.getText().toString())) {
-                    Snackbar.make(rootLayout,"Debes completar todos los datos",Snackbar.LENGTH_SHORT);
-                }
-                else if (TextUtils.isEmpty(edtPrice.getText().toString())) {
-                    Snackbar.make(rootLayout,"Debes completar todos los datos",Snackbar.LENGTH_SHORT);
-                } else if (TextUtils.isEmpty(edtQuantity.getText().toString())) {
-                    Snackbar.make(rootLayout, "Debes completar todos los datos", Snackbar.LENGTH_SHORT);
-                } else {
-                    double price = Double.parseDouble(edtPrice.getText().toString());
-                    double quantity = Double.parseDouble(edtQuantity.getText().toString());
-                    double total = price*quantity;
-                    String total_st = decimalFormat.format(total);
 
-                    Long tsLong = System.currentTimeMillis()/1000;
-                    final String timestamp = tsLong.toString();
+                final AlertDialog dialog = new AlertDialog.Builder(PurchaseOrderActivity.this).create();
 
-                    companyRef.child(post_key).child("Purchased Order Items").child(timestamp).child("item_name").setValue(edtProductName.getText().toString());
-                    companyRef.child(post_key).child("Purchased Order Items").child(timestamp).child("item_description").setValue(edtDescription.getText().toString());
-                    companyRef.child(post_key).child("Purchased Order Items").child(timestamp).child("item_price").setValue(edtPrice.getText().toString());
-                    companyRef.child(post_key).child("Purchased Order Items").child(timestamp).child("item_quantity").setValue(edtQuantity.getText().toString());
-                    companyRef.child(post_key).child("Purchased Order Items").child(timestamp).child("item_total").setValue(total_st);
-                    companyRef.child(post_key).child("Purchased Order Items").child(timestamp).child("timestamp").setValue(ServerValue.TIMESTAMP);
-                    Toasty.success(PurchaseOrderActivity.this, edtProductName.getText().toString()+" Registrado con éxito", Toast.LENGTH_LONG).show();
-                    dialog.dismiss();
+                LayoutInflater inflater = LayoutInflater.from(PurchaseOrderActivity.this);
+                View finance_method = inflater.inflate(R.layout.add_new_item_purchase_dialog,null);
 
-                }
+                Button btnCamera,btnGallery,btnRegisterNewProduct;
+                final EditText edtProductName,edtPrice;
+                final RelativeLayout rootLayout;
+
+                imgProduct = finance_method.findViewById(R.id.imgProduct);
+                btnCamera = finance_method.findViewById(R.id.btnCamera);
+                btnGallery = finance_method.findViewById(R.id.btnGallery);
+                edtProductName = finance_method.findViewById(R.id.edtProductName);
+                edtPrice = finance_method.findViewById(R.id.edtPrice);
+                btnRegisterNewProduct = finance_method.findViewById(R.id.btnRegisterNewProduct);
+                rootLayout = finance_method.findViewById(R.id.rootLayout);
+
+                btnCamera.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dispatchTakePictureIntent();
+                    }
+                });
+
+                btnGallery.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent galleryIntent = new Intent();
+                        galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
+                        galleryIntent.setType("image/*");
+                        startActivityForResult(galleryIntent, Gallery_Pick);
+                    }
+                });
+
+                btnRegisterNewProduct.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (!image_verification.equals("true")) {
+                            Snackbar.make(rootLayout, "Debes subir una foto de perfil", Snackbar.LENGTH_LONG).show();
+                            return;
+                        }
+                        else if (TextUtils.isEmpty(edtProductName.getText().toString())) {
+                            Snackbar.make(rootLayout, "Debes ingresar el nombre de tu producto", Snackbar.LENGTH_LONG).show();
+                            return;
+                        } else if (TextUtils.isEmpty(edtPrice.getText().toString())) {
+                            Snackbar.make(rootLayout, "Debes ingresar el precio de tu producto", Snackbar.LENGTH_LONG).show();
+                            return;
+                        } else {
+                            loadingBar.setTitle("Registrando de tu Producto...");
+                            loadingBar.setMessage("Cargando...");
+                            loadingBar.show();
+                            loadingBar.setCanceledOnTouchOutside(false);
+                            loadingBar.setCancelable(false);
+
+                            current_time = new SimpleDateFormat("HHmmss").format(Calendar.getInstance().getTime());
+
+                            HashMap hashMap = new HashMap();
+                            hashMap.put("product_image",downloadUrl);
+                            hashMap.put("product_currency","PEN");
+                            hashMap.put("product_description","");
+                            hashMap.put("product_measure","quantity");
+                            hashMap.put("company_id",post_key);
+                            hashMap.put("code",day+""+month+""+year+""+current_time);
+                            hashMap.put("product_name",edtProductName.getText().toString().toUpperCase());
+                            hashMap.put("product_price",edtPrice.getText().toString());
+                            hashMap.put("timestamp", ServerValue.TIMESTAMP);
+                            companyRef.child(post_key).child("Purchased Items").child(post_key+day+""+month+""+year+""+current_time).updateChildren(hashMap).addOnCompleteListener(new OnCompleteListener() {
+                                @Override
+                                public void onComplete(@NonNull Task task) {
+                                    Toasty.success(PurchaseOrderActivity.this, "Artículo Registrado", Toast.LENGTH_LONG).show();
+                                    dialog.dismiss();
+                                    loadingBar.dismiss();
+                                    showPurchaseProducts();
+                                }
+                            });
+                        }
+                    }
+                });
+
+
+                dialog.setView(finance_method);
+                dialog.show();
             }
         });
 
+        recyclerView3 = finance_method.findViewById(R.id.recyclerView3);
+
+        recyclerView3.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setReverseLayout(false);
+        linearLayoutManager.setStackFromEnd(false);
+        recyclerView3.setLayoutManager(linearLayoutManager);
+
+        showPurchaseProducts();
+
         dialog.setView(finance_method);
         dialog.show();
+    }
+
+    private void showPurchaseProducts() {
+        Query query = companyRef.child(post_key).child("Purchased Items").orderByChild("timestamp");
+        FirebaseRecyclerAdapter<ProductsModel, CompanyProductsViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<ProductsModel, CompanyProductsViewHolder>
+                (ProductsModel.class,R.layout.product_bill_item, CompanyProductsViewHolder.class,query) {
+            @Override
+            protected void populateViewHolder(final CompanyProductsViewHolder viewHolder, ProductsModel model, int position) {
+                final String postKey = getRef(position).getKey();
+                viewHolder.setProduct_image(model.getProduct_image());
+                viewHolder.setProduct_currency(model.getProduct_currency());
+                viewHolder.setProduct_description(model.getProduct_description());
+                viewHolder.setProduct_measure(model.getProduct_measure());
+                viewHolder.setUid(model.getUid());
+                viewHolder.setCode(model.getCode());
+                viewHolder.setProduct_name(model.getProduct_name());
+                viewHolder.setProduct_price(model.getProduct_price());
+                viewHolder.setProduct_stock(model.getProduct_stock());
+
+                viewHolder.txtProductName.setText(viewHolder.my_product_name);
+                viewHolder.txtProductPrice.setText("S/ "+viewHolder.my_product_price);
+                Picasso.with(PurchaseOrderActivity.this).load(viewHolder.my_product_image).fit().into(viewHolder.imgProduct);
+
+                viewHolder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        final AlertDialog dialog = new AlertDialog.Builder(PurchaseOrderActivity.this).create();
+
+                        LayoutInflater inflater = LayoutInflater.from(PurchaseOrderActivity.this);
+                        View finance_method = inflater.inflate(R.layout.set_quantity_price_item_purchase_dialog,null);
+
+                        CircleImageView imgProduct;
+                        TextView txtProductName,txtMessage;
+                        final EditText edtQuantity,edtPrice;
+                        Button btnRegister;
+                        final RelativeLayout rootLayout;
+
+                        imgProduct = finance_method.findViewById(R.id.imgProduct);
+                        txtProductName = finance_method.findViewById(R.id.txtProductName);
+                        txtMessage = finance_method.findViewById(R.id.txtMessage);
+                        edtQuantity = finance_method.findViewById(R.id.edtQuantity);
+                        edtPrice = finance_method.findViewById(R.id.edtPrice);
+                        btnRegister = finance_method.findViewById(R.id.btnRegister);
+                        rootLayout = finance_method.findViewById(R.id.rootLayout);
+
+                        Picasso.with(PurchaseOrderActivity.this).load(viewHolder.my_product_image).fit().into(imgProduct);
+                        txtProductName.setText(viewHolder.my_product_name);
+                        txtMessage.setText("Ingresa la cantidad a comprar de "+viewHolder.my_product_name+" y su precio actual");
+                        edtPrice.setText(viewHolder.my_product_price);
+
+
+                        btnRegister.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                if (TextUtils.isEmpty(edtPrice.getText().toString())) {
+                                    Snackbar.make(rootLayout,"Debes registrar el precio de "+viewHolder.my_product_name,Snackbar.LENGTH_LONG);
+                                } else if (TextUtils.isEmpty(edtQuantity.getText().toString())) {
+                                    Snackbar.make(rootLayout, "Debes registrar la cantidad de " + viewHolder.my_product_name, Snackbar.LENGTH_LONG);
+                                } else {
+                                    Long tsLong = System.currentTimeMillis()/1000;
+                                    final String timestamp = tsLong.toString();
+
+                                    double quantity = Double.parseDouble(edtQuantity.getText().toString());
+                                    double price = Double.parseDouble(edtPrice.getText().toString());
+                                    double total = quantity*price;
+                                    String total_st = decimalFormat.format(total);
+
+                                    companyRef.child(post_key).child("Purchased Order Items").child(postKey).child("item_image").setValue(viewHolder.my_product_image);
+                                    companyRef.child(post_key).child("Purchased Order Items").child(postKey).child("item_measure").setValue("quantity");
+                                    companyRef.child(post_key).child("Purchased Order Items").child(postKey).child("item_currency").setValue("PEN");
+                                    companyRef.child(post_key).child("Purchased Order Items").child(postKey).child("item_description").setValue(viewHolder.my_product_description);
+                                    companyRef.child(post_key).child("Purchased Order Items").child(postKey).child("item_name").setValue(viewHolder.my_product_name);
+                                    companyRef.child(post_key).child("Purchased Order Items").child(postKey).child("item_price").setValue(edtPrice.getText().toString());
+                                    companyRef.child(post_key).child("Purchased Order Items").child(postKey).child("item_quantity").setValue(edtQuantity.getText().toString());
+                                    companyRef.child(post_key).child("Purchased Order Items").child(postKey).child("item_total").setValue(total_st);
+                                    companyRef.child(post_key).child("Purchased Order Items").child(postKey).child("timestamp").setValue(ServerValue.TIMESTAMP);
+
+                                    companyRef.child(post_key).child("Purchased Items").child(postKey).child("product_price").setValue(edtPrice.getText().toString());
+
+                                    companyRef.child(post_key).child("Purchased Items").child(postKey).child("Suppliers").child(supplier_id).child("supplier_id").setValue(supplier_id);
+                                    companyRef.child(post_key).child("Purchased Items").child(postKey).child("Suppliers").child(supplier_id).child("Prices").child(year+"").child(year+""+month).child("price").setValue(edtPrice.getText().toString());
+
+                                    Toasty.success(PurchaseOrderActivity.this, viewHolder.my_product_name+ "Registrado", Toast.LENGTH_LONG).show();
+                                    dialog.dismiss();
+                                }
+                            }
+                        });
+
+                        dialog.setView(finance_method);
+                        dialog.show();
+                    }
+                });
+            }
+        };
+        recyclerView3.setAdapter(firebaseRecyclerAdapter);
     }
 
     private void showAddAddressDialog() {
@@ -365,7 +556,6 @@ public class PurchaseOrderActivity extends AppCompatActivity {
         dialog.setView(finance_method);
         dialog.show();
     }
-
 
     private void showSupplierDialog() {
         dialog = new AlertDialog.Builder(PurchaseOrderActivity.this).create();
@@ -543,14 +733,13 @@ public class PurchaseOrderActivity extends AppCompatActivity {
 
         View mView;
         String my_item_description,my_item_name,my_item_price,my_item_quantity,my_item_total;
-        TextView txtItemName,txtDescription,txtPrice,txtQuantity,txtTotal;
+        TextView txtItemName,txtPrice,txtQuantity,txtTotal;
 
         public SupplierProductsViewHolder(@NonNull View itemView) {
             super(itemView);
             mView = itemView;
 
             txtItemName = mView.findViewById(R.id.txtItemName);
-            txtDescription = mView.findViewById(R.id.txtDescription);
             txtPrice = mView.findViewById(R.id.txtPrice);
             txtQuantity = mView.findViewById(R.id.txtQuantity);
             txtTotal = mView.findViewById(R.id.txtTotal);
@@ -572,6 +761,207 @@ public class PurchaseOrderActivity extends AppCompatActivity {
 
         public void setItem_total(String item_total) {
             my_item_total = item_total;
+        }
+    }
+
+    private File createImageFile() throws IOException {
+        // Create an image file name
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String imageFileName = "JPEG_" + timeStamp + "_";
+        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File image = File.createTempFile(
+                imageFileName,  /* prefix */
+                ".jpg",         /* suffix */
+                storageDir      /* directory */
+        );
+
+        // Save a file: path for use with ACTION_VIEW intents
+        currentPhotoPath = image.getAbsolutePath();
+        return image;
+    }
+
+    static final int REQUEST_TAKE_PHOTO = 1;
+
+    private void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        // Ensure that there's a camera activity to handle the intent
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            // Create the File where the photo should go
+            File photoFile = null;
+            try {
+                photoFile = createImageFile();
+            } catch (IOException ex) {
+                // Error occurred while creating the File...
+            }
+            // Continue only if the File was successfully created
+            if (photoFile != null) {
+                Uri photoURI = FileProvider.getUriForFile(this,
+                        "com.oalonedeveloper.oliver.oliverappandroidapp.fileprovider",
+                        photoFile);
+                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+                startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
+            }
+        }
+    }
+
+    private void setPic() {
+        // Get the dimensions of the View
+        int targetW = imgProduct.getWidth();
+        int targetH = imgProduct.getHeight();
+
+        // Get the dimensions of the bitmap
+        BitmapFactory.Options bmOptions = new BitmapFactory.Options();
+        bmOptions.inJustDecodeBounds = true;
+
+        int photoW = bmOptions.outWidth;
+        int photoH = bmOptions.outHeight;
+
+        // Determine how much to scale down the image
+        int scaleFactor = Math.min(photoW/targetW, photoH/targetH);
+
+        // Decode the image file into a Bitmap sized to fill the View
+        bmOptions.inJustDecodeBounds = false;
+        bmOptions.inSampleSize = scaleFactor;
+        bmOptions.inPurgeable = true;
+
+        Bitmap bitmap = BitmapFactory.decodeFile(currentPhotoPath, bmOptions);
+        imgProduct.setImageBitmap(bitmap);
+
+        Long tsLong = System.currentTimeMillis()/1000;
+        String timestamp = tsLong.toString();
+
+        String path = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, "Title"+timestamp, null);
+        imageUri = imageUri.parse(path);
+
+
+        savePhotoOnDatabase();
+
+    }
+
+    private void savePhotoOnDatabase() {
+        loadingBar.setTitle("Subiendo la imágen de tu Producto...");
+        loadingBar.setMessage("Cargando...");
+        loadingBar.show();
+        loadingBar.setCanceledOnTouchOutside(false);
+        loadingBar.setCancelable(false);
+
+        StorageReference filePath = userProfileImageRef.child(imageUri.getLastPathSegment()+post_key+".jpg");
+        filePath.putFile(imageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                if (task.isSuccessful()) {
+                    downloadUrl = task.getResult().getDownloadUrl().toString();
+                    image_verification = "true";
+                    loadingBar.dismiss();
+                }
+            }
+        });
+
+    }
+
+    private void galleryAddPic() {
+        Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+        File f = new File(currentPhotoPath);
+        Uri contentUri = Uri.fromFile(f);
+        mediaScanIntent.setData(contentUri);
+        sendBroadcast(mediaScanIntent);
+    }
+
+    public static class CompanyProductsViewHolder extends RecyclerView.ViewHolder {
+        View mView;
+        String my_product_image,my_product_currency,my_product_description,my_product_measure,my_uid, my_code,my_product_name,my_product_price,my_product_stock;
+        CircleImageView imgProduct;
+        TextView txtProductName,txtProductPrice;
+
+        public CompanyProductsViewHolder(@NonNull View itemView) {
+            super(itemView);
+            mView = itemView;
+
+            imgProduct = mView.findViewById(R.id.imgProduct);
+            txtProductName = mView.findViewById(R.id.txtProductName);
+            txtProductPrice = mView.findViewById(R.id.txtProductPrice);
+        }
+        public void setProduct_image(String product_image) {
+            my_product_image = product_image;
+        }
+        public void setProduct_currency(String product_currency) {
+            my_product_currency = product_currency;
+        }
+        public void setProduct_description(String product_description) {
+            my_product_description = product_description;
+        }
+        public void setProduct_measure(String product_measure) {
+            my_product_measure = product_measure;
+        }
+        public void setUid(String uid) {
+            my_uid = uid;
+        }
+        public void setCode(String code) {
+            my_code = code;
+        }
+        public void setProduct_name(String product_name) {
+            my_product_name = product_name;
+        }
+        public void setProduct_price(String product_price) {
+            my_product_price = product_price;
+        }
+        public void setProduct_stock(String product_stock) {
+            my_product_stock = product_stock;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_TAKE_PHOTO && resultCode == RESULT_OK) {
+            galleryAddPic();
+            setPic();
+
+            /*Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            profileImage.setImageBitmap(imageBitmap);*/
+        }
+        if (requestCode == Gallery_Pick && resultCode == RESULT_OK && data != null) {
+
+            imageUri = data.getData();
+            try {
+                Bitmap imageBitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
+                imgProduct.setImageBitmap(imageBitmap);
+                // Get the dimensions of the View
+                int targetW = imgProduct.getWidth();
+                int targetH = imgProduct.getHeight();
+
+                // Get the dimensions of the bitmap
+                BitmapFactory.Options bmOptions = new BitmapFactory.Options();
+                bmOptions.inJustDecodeBounds = true;
+
+                int photoW = bmOptions.outWidth;
+                int photoH = bmOptions.outHeight;
+
+                // Determine how much to scale down the image
+                int scaleFactor = Math.min(photoW / targetW, photoH / targetH);
+
+                // Decode the image file into a Bitmap sized to fill the View
+                bmOptions.inJustDecodeBounds = false;
+                bmOptions.inSampleSize = scaleFactor;
+                bmOptions.inPurgeable = true;
+
+                //imageBitmap = BitmapFactory.decodeFile(currentPhotoPath, bmOptions);
+
+
+                imgProduct.setImageBitmap(imageBitmap);
+
+                /*ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+                imageBitmap.compress(Bitmap.CompressFormat.PNG, 100, bytes);
+                String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), imageBitmap, "Title", null);
+                imageUri = imageUri.parse(path);*/
+                //txtImageVerification.setText("Imágen cargada con éxito");
+                savePhotoOnDatabase();
+
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 }

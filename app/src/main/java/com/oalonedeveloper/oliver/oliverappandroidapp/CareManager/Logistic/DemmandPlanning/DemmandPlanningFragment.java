@@ -55,6 +55,8 @@ public class DemmandPlanningFragment extends Fragment {
         month = cal.get(Calendar.MONTH)+1;
         year = cal.get(Calendar.YEAR);
 
+        frequency_factor = 12;
+
         recyclerView = view.findViewById(R.id.recyclerView);
 
         recyclerView.setHasFixedSize(true);

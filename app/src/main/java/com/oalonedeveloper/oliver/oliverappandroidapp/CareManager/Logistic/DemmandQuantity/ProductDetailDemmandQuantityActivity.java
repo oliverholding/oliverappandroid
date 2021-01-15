@@ -118,7 +118,7 @@ public class ProductDetailDemmandQuantityActivity extends AppCompatActivity {
                 case 1:
                     return new SalesProjectionFragment();
                 case 2:
-                    return new QuantityProjectionFragment();
+                    return new ComparisonDemmandFragment();
 
                 default:
                     return null;

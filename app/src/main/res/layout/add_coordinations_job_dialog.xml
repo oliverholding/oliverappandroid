@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/rootLayout"
+        android:padding="12dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_margin="8dp"
+            android:text="REGISTRAR COORDINACIÓN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textColor="@android:color/black"
+            android:text="Selecciona el tipo de Coordinación:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RadioGroup
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rdInternal"
+                android:text="INTERNA"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rdExternal"
+                android:text="EXTERNA"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/internalLayout"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textColor="@android:color/black"
+                android:text="Nombre del Jefe Inmediato:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtName"
+                android:inputType="textCapWords"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Nombre del Jefe Inmediato..."
+                android:layout_width="match_parent"
+                android:layout_height="38dp" />
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textColor="@android:color/black"
+                android:text="Cargo del Jefe Inmediato:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnDenomination"
+                android:gravity="start"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Cargo..."
+                android:layout_width="match_parent"
+                android:layout_height="38dp" />
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textColor="@android:color/black"
+                android:text="Área del Jefe Inmediato"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnArea"
+                android:gravity="start"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Área..."
+                android:layout_width="match_parent"
+                android:layout_height="38dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/externalLayout"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textColor="@android:color/black"
+                android:text="Nombre de la persona Externa:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtName2"
+                android:inputType="textCapWords"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Nombre de la persona Externa..."
+                android:layout_width="match_parent"
+                android:layout_height="38dp" />
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textColor="@android:color/black"
+                android:text="Cargo de la persona Externa:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnDenomination2"
+                android:gravity="start"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Cargo de la Persona Externa..."
+                android:layout_width="match_parent"
+                android:layout_height="38dp" />
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textColor="@android:color/black"
+                android:text="Nombre de la Empresa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtCompanyName"
+                android:inputType="textCapWords"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Nombre de la Empresa..."
+                android:layout_width="match_parent"
+                android:layout_height="38dp" />
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textColor="@android:color/black"
+                android:text="Correo de la persona Externa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtEmail"
+                android:inputType="textEmailAddress"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Correo de la Persona Externa..."
+                android:layout_width="match_parent"
+                android:layout_height="38dp" />
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textColor="@android:color/black"
+                android:text="Teléfono de la persona Externa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtPhone"
+                android:inputType="phone"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Teléfono de la Persona Externa..."
+                android:layout_width="match_parent"
+                android:layout_height="38dp" />
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:text="REGISTRAR COODINACIÓN"
+            android:layout_margin="8dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/gray_button_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</ScrollView>

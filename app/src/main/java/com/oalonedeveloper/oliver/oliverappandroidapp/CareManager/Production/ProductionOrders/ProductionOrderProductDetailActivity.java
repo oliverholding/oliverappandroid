@@ -334,9 +334,9 @@ public class ProductionOrderProductDetailActivity extends AppCompatActivity {
                                             btnProduce.setBackgroundColor(Color.RED);
                                             btnProduce.setEnabled(false);
                                         } else {
-                                            btnProduce.setText("EVNIAR A CADENA DE PRODUCCIÓN");
-                                            btnProduce.setEnabled(true);
-                                            btnProduce.setBackgroundResource(R.drawable.gradient_start2);
+                                            //btnProduce.setText("EVNIAR A CADENA DE PRODUCCIÓN");
+                                            //btnProduce.setEnabled(true);
+                                            //btnProduce.setBackgroundResource(R.drawable.gradient_start2);
                                         }
 
 
