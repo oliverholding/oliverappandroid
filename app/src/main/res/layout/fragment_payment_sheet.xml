@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CareManager.PeopleManagement.PersonalFiles.PaymentSheetFragment">
+
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="12dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:layout_margin="8dp"
+                android:text="CARTA DE AUTORIZACIÓN PARA EL PAGO CON ABONOS EN CUENTA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="4dp"
+                android:text="Señores"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="4dp"
+                android:text="Oficina de Recursos Humanos / Contable / Gerencia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtCompanyName"
+                android:textColor="@android:color/black"
+                android:layout_margin="4dp"
+                android:text="Empresa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="4dp"
+                android:text="Presente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:text="Asunto: Autorización para el pago con abonos en cuenta."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:text="Por medio de la presente, comunico a usted, mi número de cuenta bancaria en moneda nacional, así como mi número de cuenta interbancaria (CCI)."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:text="DATOS BANCARIOS"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <ImageView
+                            android:id="@+id/btnAdd1"
+                            android:layout_weight="0.1"
+                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtFinancialInstitutionName"
+                        android:layout_margin="4dp"
+                        android:text="Entidad Bancaria: Sin Información"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/txtAccountType"
+                        android:layout_margin="4dp"
+                        android:text="Tipo de Cuenta: Sin Información"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/txtCurrency"
+                        android:layout_margin="4dp"
+                        android:text="Moneda: Sin Información"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/txtAccountNumber"
+                        android:layout_margin="4dp"
+                        android:text="Número de Cuenta: Sin Información"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/txtInterbankAccount"
+                        android:layout_margin="4dp"
+                        android:text="Número de Cuenta Interbancario: Sin Información"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:text="Agradeciéndole, se sirva disponer lo conveniente, para que los pagos por contraprestaciones realizadas, sean abonadas en la cuenta antes indicada hasta ala finalización de mi contrato."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:text="Atentamente."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

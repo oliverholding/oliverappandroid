@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CareManager.PeopleManagement.PersonalFiles.PersonalFilesActivity">
+    tools:context=".CareManager.PeopleManagement.WorkersPayroll.WorkersPayrollActivity">
 
     <LinearLayout
         android:id="@+id/appBar"
@@ -30,7 +30,7 @@
                 android:gravity="center_vertical"
                 android:textSize="18sp"
                 android:textColor="@android:color/white"
-                android:text="Files de personal"
+                android:text="Planillas"
                 android:layout_weight="4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
@@ -51,19 +51,19 @@
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab1"
-            android:text="FICHA DEL TRABAJADOR"
+            android:text="BOLETA DE PAGO"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab2"
-            android:text="CARTA ABONO CUENTA"
+            android:text="OBLIGACIONES FORMALES"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab3"
-            android:text="DECLARACIÓN JURADA"
+            android:text="CÁLCULO 5TA CATEGORÍA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/rootLayout"
+        android:padding="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_margin="8dp"
+            android:text="SITUACIÓN EDUCATIVA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Grado Académico: "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnAcademicDegree"
+            android:padding="8dp"
+            android:gravity="start|center_vertical"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Grado Académico..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Tipo de Institutción: "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnInstitutionType"
+            android:padding="8dp"
+            android:gravity="start|center_vertical"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Tipo de Institutción..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Nombre de la institución:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edtInstitutionName"
+            android:inputType="textCapCharacters"
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Nombre de la institución..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Carrera:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edtDegree"
+            android:inputType="textCapCharacters"
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Carrera..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Año de Egreso:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edtOutYear"
+            android:inputType="number"
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Año de Egreso..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:text="REGISTRAR INFORMACIÓN"
+            android:layout_margin="8dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/gray_button_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</ScrollView>

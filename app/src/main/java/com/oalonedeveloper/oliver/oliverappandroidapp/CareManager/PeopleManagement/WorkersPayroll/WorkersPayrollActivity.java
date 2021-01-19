@@ -1,4 +1,4 @@
-package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.PersonalFiles;
+package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.WorkersPayroll;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -10,13 +10,13 @@ import android.os.Bundle;
 
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
-import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.FinancialInstitutionsFragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.FinancialProductsFragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.MyProductsFragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.OliverAppActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.PersonalFiles.PaymentSheetFragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.PersonalFiles.PersonalFilesActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.PersonalFiles.SwornDeclarationFragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.PersonalFiles.WorkerSheetFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
-public class PersonalFilesActivity extends AppCompatActivity {
+public class WorkersPayrollActivity extends AppCompatActivity {
 
     ViewPager mViewPager;
     SectionsPagerAdapter mSectionsPagerAdapter;
@@ -25,7 +25,7 @@ public class PersonalFilesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_personal_files);
+        setContentView(R.layout.activity_workers_payroll);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         TabItem tabItem = findViewById(R.id.tabItem);
@@ -44,7 +44,6 @@ public class PersonalFilesActivity extends AppCompatActivity {
         mViewPager.setCurrentItem(fragmentId);
     }
 
-
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         private int numOfTabs;
@@ -60,11 +59,11 @@ public class PersonalFilesActivity extends AppCompatActivity {
             // Return a PlaceholderFragment (defined as a static inner class below).
             switch (position) {
                 case 0:
-                    return new WorkerSheetFragment();
+                    return new PersonalPaymentBillFragment();
                 case 1:
-                    return new PaymentSheetFragment();
+                    return new PersonalPaymentBillFragment();
                 case 2:
-                    return new SwornDeclarationFragment();
+                    return new PersonalPaymentBillFragment();
 
                 default:
                     return null;

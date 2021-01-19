@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/rootLayout"
+        android:padding="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_margin="8dp"
+            android:text="AGREGAR DATOS PROPORCIONADOS POR EL EMPLEADOR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Fecha de Ingreso a Planilla"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:drawableStart="@drawable/calendar_icon"
+                android:id="@+id/edtBthDay"
+                android:inputType="number"
+                android:padding="8dp"
+                android:maxLength="2"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Día"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:drawableStart="@drawable/calendar_icon"
+                android:id="@+id/edtBthMonth"
+                android:inputType="number"
+                android:padding="8dp"
+                android:maxLength="2"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Mes"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:drawableStart="@drawable/calendar_icon"
+                android:id="@+id/edtBthYear"
+                android:inputType="number"
+                android:padding="8dp"
+                android:maxLength="4"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Año"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Remuneración Bruta:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edtPaymentAmount"
+            android:inputType="numberDecimal"
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Remuneración Bruta..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Moneda de la Remuneración Bruta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RadioGroup
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rdPen"
+                android:background="@drawable/edit_text_style"
+                android:padding="8dp"
+                android:text="Soles"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/rdUsd"
+                android:background="@drawable/edit_text_style"
+                android:padding="8dp"
+                android:text="Dólares"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Subvención Económica"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edtSubvention"
+            android:inputType="numberDecimal"
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Subvención Económica..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Hora de Inicio de Jornada Laboral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:drawableStart="@drawable/calendar_icon"
+                android:id="@+id/btnHourStart"
+                android:inputType="number"
+                android:padding="8dp"
+                android:maxLength="2"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Hora"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:drawableStart="@drawable/calendar_icon"
+                android:id="@+id/btnMinuteStart"
+                android:inputType="number"
+                android:padding="8dp"
+                android:maxLength="2"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Minutos"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Hora de Finalización de Jornada Laboral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:drawableStart="@drawable/calendar_icon"
+                android:id="@+id/btnHourEnd"
+                android:inputType="number"
+                android:padding="8dp"
+                android:maxLength="2"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Hora"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:drawableStart="@drawable/calendar_icon"
+                android:id="@+id/btnMinuteEnd"
+                android:inputType="number"
+                android:padding="8dp"
+                android:maxLength="2"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Minutos"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Hora de Inicio del Refrigerio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:drawableStart="@drawable/calendar_icon"
+                android:id="@+id/btnHourLunchStart"
+                android:inputType="number"
+                android:padding="8dp"
+                android:maxLength="2"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Hora"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:drawableStart="@drawable/calendar_icon"
+                android:id="@+id/btnMinuteLunchStart"
+                android:inputType="number"
+                android:padding="8dp"
+                android:maxLength="2"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Minutos"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Hora de Finalización del refrigerio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:drawableStart="@drawable/calendar_icon"
+                android:id="@+id/btnHourLunchEnd"
+                android:inputType="number"
+                android:padding="8dp"
+                android:maxLength="2"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Hora"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:drawableStart="@drawable/calendar_icon"
+                android:id="@+id/btnMinuteLunchEnd"
+                android:inputType="number"
+                android:padding="8dp"
+                android:maxLength="2"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Minutos"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Total Horas Semanales"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edtTotalWeekHours"
+            android:inputType="numberDecimal"
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Total Horas Semanales..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Régimen Laboral: "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnLabourType"
+            android:padding="8dp"
+            android:gravity="start|center_vertical"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Régimen Laboral..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Tipo o Modalidad de trabajo: "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnWorkerType"
+            android:padding="8dp"
+            android:gravity="start|center_vertical"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Tipo o Modalidad de trabajo..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Tipo de Contrato: "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnContract"
+            android:padding="8dp"
+            android:gravity="start|center_vertical"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Tipo de Contrato..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Periodicidad de la Remuneración: "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnPaymentFrequency"
+            android:padding="8dp"
+            android:gravity="start|center_vertical"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Periodicidad de la Remuneración..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Tipo de Pago: "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnPaymentType"
+            android:padding="8dp"
+            android:gravity="start|center_vertical"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Tipo de Pago..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:text="REGISTRAR INFORMACIÓN"
+            android:layout_margin="8dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/gray_button_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CareManager.PeopleManagement.WorkersPayroll.PersonalPaymentBillFragment">
+
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="12dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtBillPeriod"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:layout_margin="8dp"
+                android:text="BOLETA DE PAGO"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:layout_margin="2dp"
+                android:text="D.S. Nº 017-2001-TR DEL 07-06-01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtPeriods"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:layout_margin="8dp"
+                android:text="BOLETA DE PAGO"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:background="@color/colorGradientCenterRed"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:id="@+id/txtCompanyName"
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="company_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtCompanyRuc"
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="company_ruc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtCompanyAddress"
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="company_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+            <View
+                android:background="@color/colorGradientCenterRed"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="DATOS DEL TRABAJADOR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:background="@color/colorGradientCenterRed"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:id="@+id/txtWorkerName"
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="worker_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtWorkerDocument"
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Documento: -"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtPensionDate"
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Régimen Pensionario: 01/12/2020"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="CUSPP: 588251TGTCL1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="EsSalud: -"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Categoría: Empleado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtCharge"
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Cargo:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtBeginDate"
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Fecha de Ingreso:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

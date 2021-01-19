@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/rootLayout"
+        android:padding="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_margin="8dp"
+            android:text="AGREGAR FAMILIAR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Familiar: "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnFamiliar"
+            android:padding="8dp"
+            android:gravity="start|center_vertical"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Familiar..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Nombre del Familiar:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edtFamiliarName"
+            android:inputType="textCapCharacters"
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Nombre del Familiar..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Fecha de Nacimiento del Familiar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:drawableStart="@drawable/calendar_icon"
+                android:id="@+id/edtBthDay"
+                android:inputType="number"
+                android:padding="8dp"
+                android:maxLength="2"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Día"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:drawableStart="@drawable/calendar_icon"
+                android:id="@+id/edtBthMonth"
+                android:inputType="number"
+                android:padding="8dp"
+                android:maxLength="2"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Mes"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:drawableStart="@drawable/calendar_icon"
+                android:id="@+id/edtBthYear"
+                android:inputType="number"
+                android:padding="8dp"
+                android:maxLength="4"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Año"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Estado Civil del Familiar: "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnCivilState"
+            android:padding="8dp"
+            android:gravity="start|center_vertical"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Estado Civil del Familiar..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="DNI del Familiar:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edtDocumentNumber"
+            android:inputType="number"
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="DNI del Familiar..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="¿Este familiar comparte el mismo domicilio que el trabajador?"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RadioGroup
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rdYes"
+                android:background="@drawable/edit_text_style"
+                android:padding="8dp"
+                android:text="Sí"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/rdNo"
+                android:background="@drawable/edit_text_style"
+                android:padding="8dp"
+                android:text="No"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:text="REGISTRAR INFORMACIÓN"
+            android:layout_margin="8dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/gray_button_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</ScrollView>

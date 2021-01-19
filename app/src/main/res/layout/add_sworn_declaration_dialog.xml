@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/rootLayout"
+        android:padding="12dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_margin="8dp"
+            android:text="DATOS DE RÉGIMEN PENSIONARIO"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textColor="@android:color/black"
+            android:text="Tipo de Régimen Pensionario:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RadioGroup
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rdPrivate"
+                android:textSize="11dp"
+                android:background="@drawable/edit_text_style"
+                android:padding="8dp"
+                android:text="Privado"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/rdNational"
+                android:background="@drawable/edit_text_style"
+                android:padding="8dp"
+                android:textSize="11dp"
+                android:text="Nacional"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/rdOther"
+                android:textSize="11dp"
+                android:background="@drawable/edit_text_style"
+                android:padding="8dp"
+                android:text="Otro"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/privateLayout"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textColor="@android:color/black"
+                android:text="Declara:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rdPrivateOption1"
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="Afiliarse al Sistema Privado de Pensiones"
+                    android:layout_margin="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/rdPrivateOption2"
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="Estar actualmente Afiliado al sistema privado de pensiones"
+                    android:layout_margin="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/rdPrivateOption3"
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="Ser actualmente pensionista del sistema privado de pensiones"
+                    android:layout_margin="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textColor="@android:color/black"
+                android:text="Seleccionar el Administrado de Fondo de Pensiones:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rdPrivateOptionName1"
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="AFP Hábitat"
+                    android:layout_margin="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/rdPrivateOptionName2"
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="AFP Integra"
+                    android:layout_margin="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/rdPrivateOptionName3"
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="AFP Prima"
+                    android:layout_margin="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/rdPrivateOptionName4"
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="AFP Profuturo"
+                    android:layout_margin="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/rdPrivateOptionName5"
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="Otro"
+                    android:layout_margin="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nationalLayout"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textColor="@android:color/black"
+                android:text="Declara:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rdNationalOption1"
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="Afiliarse al Sistema Nacional de Pensiones"
+                    android:layout_margin="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/rdNationalOption2"
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="Estar actualmente Afiliado al sistema nacional de pensiones"
+                    android:layout_margin="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/rdNationalOption3"
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="Ser actualmente pensionista del sistema nacional de pensiones"
+                    android:layout_margin="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/otherLayout"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textColor="@android:color/black"
+                android:text="Declara:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rdOtherOption1"
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="Es pensionista de la Caja de pensión Militar / Caja Policial"
+                    android:layout_margin="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/rdOtherOption2"
+                    android:background="@drawable/edit_text_style"
+                    android:padding="8dp"
+                    android:text="Es pensionista del Régimen Pensionario del D.L. 20530"
+                    android:layout_margin="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:text="REGISTRAR INFORMACIÓN"
+            android:layout_margin="8dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/gray_button_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</ScrollView>

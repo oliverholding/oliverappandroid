@@ -11,11 +11,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.JobProfiles.JobProfilesActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.PersonalFiles.JobProfileFilesActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.PersonalFiles.PersonalFilesActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.WorkersPayroll.WorkerPayrollProfilesActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.WorkersPayroll.WorkersPayrollActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class PeopleManagementFragment extends Fragment {
 
-    Button btnJobProfile;
+    Button btnJobProfile,btnPersonalFiles,btnPayRoll;
     String post_key;
 
     @Override
@@ -27,11 +31,29 @@ public class PeopleManagementFragment extends Fragment {
         post_key = getActivity().getIntent().getExtras().getString("post_key");
 
         btnJobProfile = view.findViewById(R.id.btnJobProfile);
+        btnPersonalFiles = view.findViewById(R.id.btnPersonalFiles);
+        btnPayRoll = view.findViewById(R.id.btnPayRoll);
 
         btnJobProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), JobProfilesActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+        btnPersonalFiles.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), JobProfileFilesActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+        btnPayRoll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), WorkerPayrollProfilesActivity.class);
                 intent.putExtra("post_key", post_key);
                 startActivity(intent);
             }

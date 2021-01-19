@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/rootLayout"
+        android:padding="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_margin="8dp"
+            android:text="AGREGAR OTROS INGRESOS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="¿El trabajador informó de otros ingresos de renta de 5ta categoría?"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RadioGroup
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rdYes"
+                android:background="@drawable/edit_text_style"
+                android:padding="8dp"
+                android:text="Sí"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/rdNo"
+                android:background="@drawable/edit_text_style"
+                android:padding="8dp"
+                android:text="No"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:id="@+id/incomesLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Importe de Ingresos:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtAmount"
+                android:inputType="numberDecimal"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Importe de Ingresos..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Razón Social del Otro Empleador:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtCompanyName"
+                android:inputType="textCapWords"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Razón Social..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="RUC del otro Empleador:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtRuc"
+                android:inputType="number"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="RUC del otro Empleador..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:text="REGISTRAR INFORMACIÓN"
+            android:layout_margin="8dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/gray_button_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</ScrollView>

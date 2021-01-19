@@ -722,7 +722,7 @@
                 android:layout_height="wrap_content"/>
 
             <Button
-                android:id="@+id/btnProductionCost"
+                android:id="@+id/btnPersonalFiles"
                 android:padding="8dp"
                 android:text="Files de personal"
                 android:textColor="@android:color/white"
@@ -733,7 +733,7 @@
                 android:layout_height="wrap_content"/>
 
             <Button
-                android:id="@+id/btnProductionCapacity"
+                android:id="@+id/btnPayRoll"
                 android:padding="8dp"
                 android:text="Planillas"
                 android:textColor="@android:color/white"
