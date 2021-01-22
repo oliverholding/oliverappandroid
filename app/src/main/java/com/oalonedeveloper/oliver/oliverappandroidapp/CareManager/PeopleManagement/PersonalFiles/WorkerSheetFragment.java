@@ -47,7 +47,8 @@ import in.galaxyofandroid.spinerdialog.SpinnerDialog;
 public class WorkerSheetFragment extends Fragment {
 
     TextView txtName,txtCharge,txtNationality,txtDepartment,txtProvince,txtDistrict,txtDateOfBirth,txtDocumentType,txtDocumentNumber,txtAddress,txtAddressReference,txtPhone,txtMobilePhone,txtEmail,txtEmergencyContact,txtAcademicDegree,txtInstitutionType,
-            txtInstitutionName,txtDegreeName,txtDegreeYear,txtOtherIncome,txtOtherIncomeAmount,txtOtherIncomeCompany,txtOtherIncomeCompanyRuc,txtHealth1,txtHealth2,txtHealth3,txtHealth4,txtHealth5,txtHealth6,txtHealth7;
+            txtInstitutionName,txtDegreeName,txtDegreeYear,txtOtherIncome,txtOtherIncomeAmount,txtOtherIncomeCompany,txtOtherIncomeCompanyRuc,txtHealth1,txtHealth2,txtHealth3,txtHealth4,txtHealth5,txtHealth6,txtHealth7,txtCompanyWorkData1,txtCompanyWorkData2,
+            txtCompanyWorkData3,txtCompanyWorkData4,txtCompanyWorkData5,txtCompanyWorkData6,txtCompanyWorkData7,txtCompanyWorkData8,txtCompanyWorkData9,txtCompanyWorkData10,txtCompanyWorkData11;
     DatabaseReference companyRef,peruLocations;
     String post_key,profile_id,job_profile_name,job_profile_surname,job_profile_job_name,province_code;
     ImageView btnAdd1,btnAdd2,btnAdd3,btnAdd4,btnAdd5,btnAdd7;
@@ -91,6 +92,22 @@ public class WorkerSheetFragment extends Fragment {
     SpinnerDialog bthMinuterDialog2;
     SpinnerDialog bthMinuterDialog3;
     SpinnerDialog bthMinuterDialog4;
+
+    ArrayList<String> arr_labourRegimen =new ArrayList<>();
+    SpinnerDialog labourRegimenDialog;
+
+    ArrayList<String> arr_workerType =new ArrayList<>();
+    SpinnerDialog workerTypeDialog;
+
+    ArrayList<String> arr_contract =new ArrayList<>();
+    SpinnerDialog contractDialog;
+
+    ArrayList<String> arr_paymentFreq =new ArrayList<>();
+    SpinnerDialog paymentFreqDialog;
+
+
+    ArrayList<String> arr_paymentType =new ArrayList<>();
+    SpinnerDialog paymentTypeDialog;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -138,7 +155,7 @@ public class WorkerSheetFragment extends Fragment {
         txtOtherIncomeCompanyRuc = view.findViewById(R.id.txtOtherIncomeCompanyRuc);
 
         btnAdd5 = view.findViewById(R.id.btnAdd5);
-        btnAdd6 = view.findViewById(R.id.btnAdd6);
+        //btnAdd6 = view.findViewById(R.id.btnAdd6);
         btnAdd7 = view.findViewById(R.id.btnAdd7);
 
         txtHealth1 = view.findViewById(R.id.txtHealth1);
@@ -147,6 +164,18 @@ public class WorkerSheetFragment extends Fragment {
         txtHealth4 = view.findViewById(R.id.txtHealth4);
         txtHealth5 = view.findViewById(R.id.txtHealth5);
         txtHealth6 = view.findViewById(R.id.txtHealth6);
+
+        txtCompanyWorkData1 = view.findViewById(R.id.txtCompanyWorkData1);
+        txtCompanyWorkData2 = view.findViewById(R.id.txtCompanyWorkData2);
+        txtCompanyWorkData3 = view.findViewById(R.id.txtCompanyWorkData3);
+        txtCompanyWorkData4 = view.findViewById(R.id.txtCompanyWorkData4);
+        txtCompanyWorkData5 = view.findViewById(R.id.txtCompanyWorkData5);
+        txtCompanyWorkData6 = view.findViewById(R.id.txtCompanyWorkData6);
+        txtCompanyWorkData7 = view.findViewById(R.id.txtCompanyWorkData7);
+        txtCompanyWorkData8 = view.findViewById(R.id.txtCompanyWorkData8);
+        txtCompanyWorkData9 = view.findViewById(R.id.txtCompanyWorkData9);
+        txtCompanyWorkData10 = view.findViewById(R.id.txtCompanyWorkData10);
+        txtCompanyWorkData11 = view.findViewById(R.id.txtCompanyWorkData11);
 
         recyclerView2 = view.findViewById(R.id.recyclerView2);
 
@@ -304,6 +333,71 @@ public class WorkerSheetFragment extends Fragment {
                             }
                         }
 
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
+                companyRef.child(post_key).child("Job Profile").child(profile_id).child("Personal File").child("Company Worker Data").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            if (dataSnapshot.hasChild("begin_working_day") && dataSnapshot.hasChild("begin_working_month") && dataSnapshot.hasChild("begin_working_year")) {
+                                String begin_working_day = dataSnapshot.child("begin_working_day").getValue().toString();
+                                String begin_working_month = dataSnapshot.child("begin_working_month").getValue().toString();
+                                String begin_working_year = dataSnapshot.child("begin_working_year").getValue().toString();
+                                txtCompanyWorkData1.setText("Fecha de Ingreso a Planilla: "+begin_working_day+"/"+begin_working_month+"/"+begin_working_year);
+                            }
+                            if (dataSnapshot.hasChild("payment_amount") && dataSnapshot.hasChild("payment_amount_currency")) {
+                                String payment_amount = dataSnapshot.child("payment_amount").getValue().toString();
+                                String payment_amount_currency = dataSnapshot.child("payment_amount_currency").getValue().toString();
+                                txtCompanyWorkData2.setText("Remuneración Bruta: "+payment_amount+" "+payment_amount_currency);
+                            }
+                            if (dataSnapshot.hasChild("subvention") && dataSnapshot.hasChild("payment_amount_currency")) {
+                                String subvention = dataSnapshot.child("subvention").getValue().toString();
+                                String payment_amount_currency = dataSnapshot.child("payment_amount_currency").getValue().toString();
+                                txtCompanyWorkData3.setText("Subvención Económica: "+subvention +" "+payment_amount_currency);
+                            }
+                            if (dataSnapshot.hasChild("labour_time_start") && dataSnapshot.hasChild("labour_time_end")) {
+                                String labour_time_start = dataSnapshot.child("labour_time_start").getValue().toString();
+                                String labour_time_end = dataSnapshot.child("labour_time_end").getValue().toString();
+
+                                txtCompanyWorkData4.setText("Horario de Trabajo: Desde "+labour_time_start+" Hasta "+labour_time_end);
+                            }
+                            if (dataSnapshot.hasChild("lunch_time_start") && dataSnapshot.hasChild("lunch_time_end")) {
+                                String lunch_time_start = dataSnapshot.child("lunch_time_start").getValue().toString();
+                                String lunch_time_end = dataSnapshot.child("lunch_time_end").getValue().toString();
+
+                                txtCompanyWorkData5.setText("Horario de Refrigerio: Desde "+lunch_time_start+" Hasta "+lunch_time_end);
+                            }
+                            if (dataSnapshot.hasChild("hours_per_week")) {
+                                String hours_per_week = dataSnapshot.child("hours_per_week").getValue().toString();
+                                txtCompanyWorkData6.setText("Total Horas Semanales: "+hours_per_week);
+                            }
+                            if (dataSnapshot.hasChild("labour_regimen")) {
+                                String labour_regimen = dataSnapshot.child("labour_regimen").getValue().toString();
+                                txtCompanyWorkData7.setText("Régimen Laboral: "+labour_regimen);
+                            }
+                            if (dataSnapshot.hasChild("working_type")) {
+                                String working_type = dataSnapshot.child("working_type").getValue().toString();
+                                txtCompanyWorkData8.setText("Tipo o Modalidad de Trabajo: "+working_type);
+                            }
+                            if (dataSnapshot.hasChild("contract_type")) {
+                                String contract_type = dataSnapshot.child("contract_type").getValue().toString();
+                                txtCompanyWorkData9.setText("Tipo de Contrato: "+contract_type);
+                            }
+                            if (dataSnapshot.hasChild("payment_frequency")) {
+                                String payment_frequency = dataSnapshot.child("payment_frequency").getValue().toString();
+                                txtCompanyWorkData10.setText("Periodicidad de la Remuneración: "+payment_frequency);
+                            }
+                            if (dataSnapshot.hasChild("payment_type")) {
+                                String payment_type = dataSnapshot.child("payment_type").getValue().toString();
+                                txtCompanyWorkData11.setText("Tipo de Pago: "+payment_type);
+                            }
+                        }
                     }
 
                     @Override
@@ -937,8 +1031,9 @@ public class WorkerSheetFragment extends Fragment {
 
                 final Button edtBthDay,edtBthMonth,edtBthYear,btnHourStart,btnMinuteStart,btnHourEnd,btnMinuteEnd,btnHourLunchStart,btnMinuteLunchStart,btnHourLunchEnd,btnMinuteLunchEnd,btnLabourType,btnWorkerType,btnContract,btnPaymentFrequency,
                         btnPaymentType,btnRegister;
-                EditText edtPaymentAmount,edtSubvention,edtTotalWeekHours;
-                RadioButton rdPen,rdUsd;
+                final EditText edtPaymentAmount,edtSubvention,edtTotalWeekHours;
+                final RadioButton rdPen,rdUsd;
+                final LinearLayout rootLayout;
 
                 edtBthDay = finance_method.findViewById(R.id.edtBthDay);
                 edtBthMonth = finance_method.findViewById(R.id.edtBthMonth);
@@ -963,6 +1058,7 @@ public class WorkerSheetFragment extends Fragment {
                 edtTotalWeekHours = finance_method.findViewById(R.id.edtTotalWeekHours);
                 rdPen = finance_method.findViewById(R.id.rdPen);
                 rdUsd = finance_method.findViewById(R.id.rdUsd);
+                rootLayout = finance_method.findViewById(R.id.rootLayout);
 
 
                 bthDay.add("1"); bthDay.add("2"); bthDay.add("3"); bthDay.add("4"); bthDay.add("5"); bthDay.add("6"); bthDay.add("7"); bthDay.add("8"); bthDay.add("9"); bthDay.add("10");
@@ -1083,6 +1179,203 @@ public class WorkerSheetFragment extends Fragment {
                     @Override
                     public void onClick(String item2, int position2) {
                         btnHourEnd.setText(item2);
+                    }
+                });
+
+                btnMinuteEnd.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        bthMinuterDialog2.showSpinerDialog();
+                    }
+                });
+
+                bthMinuterDialog2 = new SpinnerDialog(getActivity(),bthMinute, "Selecciona el minuto");
+                bthMinuterDialog2.bindOnSpinerListener(new OnSpinerItemClick() {
+                    @Override
+                    public void onClick(String item2, int position2) {
+                        btnMinuteEnd.setText(item2);
+                    }
+                });
+
+
+                btnHourLunchStart.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        bthHourDialog3.showSpinerDialog();
+                    }
+                });
+
+                bthHourDialog3 = new SpinnerDialog(getActivity(),bthHour, "Selecciona la hora ");
+                bthHourDialog3.bindOnSpinerListener(new OnSpinerItemClick() {
+                    @Override
+                    public void onClick(String item2, int position2) {
+                        btnHourLunchStart.setText(item2);
+                    }
+                });
+
+                btnMinuteLunchStart.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        bthMinuterDialog3.showSpinerDialog();
+                    }
+                });
+
+                bthMinuterDialog3 = new SpinnerDialog(getActivity(),bthMinute, "Selecciona el minuto");
+                bthMinuterDialog3.bindOnSpinerListener(new OnSpinerItemClick() {
+                    @Override
+                    public void onClick(String item2, int position2) {
+                        btnMinuteLunchStart.setText(item2);
+                    }
+                });
+
+                btnHourLunchEnd.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        bthHourDialog4.showSpinerDialog();
+                    }
+                });
+
+                bthHourDialog4 = new SpinnerDialog(getActivity(),bthHour, "Selecciona la hora ");
+                bthHourDialog4.bindOnSpinerListener(new OnSpinerItemClick() {
+                    @Override
+                    public void onClick(String item2, int position2) {
+                        btnHourLunchEnd.setText(item2);
+                    }
+                });
+
+                btnMinuteLunchEnd.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        bthMinuterDialog4.showSpinerDialog();
+                    }
+                });
+
+                bthMinuterDialog4 = new SpinnerDialog(getActivity(),bthMinute, "Selecciona el minuto");
+                bthMinuterDialog4.bindOnSpinerListener(new OnSpinerItemClick() {
+                    @Override
+                    public void onClick(String item2, int position2) {
+                        btnMinuteLunchEnd.setText(item2);
+                    }
+                });
+
+                arr_labourRegimen.add("DECRETO LEGISLATIVO Nº 728"); arr_labourRegimen.add("MICROEMPRESA D.L. 1086"); arr_labourRegimen.add("PERSONAL EN FORMACIÓN LABORAL"); arr_labourRegimen.add("OTROS");
+
+
+                btnLabourType.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        labourRegimenDialog.showSpinerDialog();
+                    }
+                });
+
+                labourRegimenDialog = new SpinnerDialog(getActivity(),arr_labourRegimen, "Selecciona el régimen laboral");
+                labourRegimenDialog.bindOnSpinerListener(new OnSpinerItemClick() {
+                    @Override
+                    public void onClick(String item2, int position2) {
+                        btnLabourType.setText(item2);
+                    }
+                });
+
+
+                arr_workerType.add("EJECUTIVO");arr_workerType.add("OBRERO");arr_workerType.add("EMPLEADO");arr_workerType.add("CUARTA - QUINTA CATEGORÍA");arr_workerType.add("PRACTICANTE PRE-PROFESIONAL");arr_workerType.add("PRACTICANTE PROFESIONAL");
+
+                btnWorkerType.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        workerTypeDialog.showSpinerDialog();
+                    }
+                });
+
+                workerTypeDialog = new SpinnerDialog(getActivity(),arr_workerType, "Selecciona el la modalidad");
+                workerTypeDialog.bindOnSpinerListener(new OnSpinerItemClick() {
+                    @Override
+                    public void onClick(String item2, int position2) {
+                        btnWorkerType.setText(item2);
+                    }
+                });
+
+                arr_contract.add("A PLAZO INDETERMINADO"); arr_contract.add("A TIEMPO PARCIAL"); arr_contract.add("POR INICIO O INCREMENTO DE ACTIVIDAD"); arr_contract.add("POR NECESIDAD DEL MERCADO"); arr_contract.add("POR RECONVERSIÓN EMPRESARIAL"); arr_contract.add("OCASIONAL "); arr_contract.add("DE SUPLENCIA"); arr_contract.add("DE EMERGENCIA"); arr_contract.add("PARA OBRA DETERMINADA O SERVICIO ESPECÍFICO"); arr_contract.add("INTERMITENTE");
+                arr_contract.add("DE TEMPORADA"); arr_contract.add("DE EXPORTACIÓN NO TRADICIONAL"); arr_contract.add("EXTRANJERO"); arr_contract.add("A DOMICILIO"); arr_contract.add("MIGRANTE ANDINO DECISIÓN 545"); arr_contract.add("CONVENIO DE PRÁCTICAS");
+
+                btnContract.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        contractDialog.showSpinerDialog();
+                    }
+                });
+
+                contractDialog = new SpinnerDialog(getActivity(),arr_contract, "Selecciona el tipo de contrato");
+                contractDialog.bindOnSpinerListener(new OnSpinerItemClick() {
+                    @Override
+                    public void onClick(String item2, int position2) {
+                        btnContract.setText(item2);
+                    }
+                });
+
+                arr_paymentFreq.add("MENSUAL");arr_paymentFreq.add("QUINCENAL");arr_paymentFreq.add("SEMANAL");arr_paymentFreq.add("OTROS");
+
+                btnPaymentFrequency.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        paymentFreqDialog.showSpinerDialog();
+                    }
+                });
+
+                paymentFreqDialog = new SpinnerDialog(getActivity(),arr_paymentFreq, "Selecciona la frecuencia de pago");
+                paymentFreqDialog.bindOnSpinerListener(new OnSpinerItemClick() {
+                    @Override
+                    public void onClick(String item2, int position2) {
+                        btnPaymentFrequency.setText(item2);
+                    }
+                });
+
+                arr_paymentType.add("EFECTIVO"); arr_paymentType.add("DEPOSITO EN CUENTA"); arr_paymentType.add("OTROS");
+
+                btnPaymentType.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        paymentTypeDialog.showSpinerDialog();
+                    }
+                });
+
+                paymentTypeDialog = new SpinnerDialog(getActivity(),arr_paymentType, "Selecciona el tipo de pago");
+                paymentTypeDialog.bindOnSpinerListener(new OnSpinerItemClick() {
+                    @Override
+                    public void onClick(String item2, int position2) {
+                        btnPaymentType.setText(item2);
+                    }
+                });
+
+                btnRegister.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (TextUtils.isEmpty(edtPaymentAmount.getText().toString())) {
+                            Snackbar.make(rootLayout, "Debes completar todos los datos", Snackbar.LENGTH_SHORT).show();
+                        } else {
+                            companyRef.child(post_key).child("Job Profile").child(profile_id).child("Personal File").child("Company Worker Data").child("begin_working_day").setValue(edtBthDay.getText().toString());
+                            companyRef.child(post_key).child("Job Profile").child(profile_id).child("Personal File").child("Company Worker Data").child("begin_working_month").setValue(edtBthMonth.getText().toString());
+                            companyRef.child(post_key).child("Job Profile").child(profile_id).child("Personal File").child("Company Worker Data").child("begin_working_year").setValue(edtBthYear.getText().toString());
+                            companyRef.child(post_key).child("Job Profile").child(profile_id).child("Personal File").child("Company Worker Data").child("payment_amount").setValue(edtPaymentAmount.getText().toString());
+                            if (rdPen.isChecked()) {
+                                companyRef.child(post_key).child("Job Profile").child(profile_id).child("Personal File").child("Company Worker Data").child("payment_amount_currency").setValue(rdPen.getText().toString());
+                            }
+                            if (rdUsd.isChecked()) {
+                                companyRef.child(post_key).child("Job Profile").child(profile_id).child("Personal File").child("Company Worker Data").child("payment_amount_currency").setValue(rdUsd.getText().toString());
+                            }
+                            companyRef.child(post_key).child("Job Profile").child(profile_id).child("Personal File").child("Company Worker Data").child("subvention").setValue(edtSubvention.getText().toString());
+                            companyRef.child(post_key).child("Job Profile").child(profile_id).child("Personal File").child("Company Worker Data").child("labour_time_start").setValue(btnHourStart.getText().toString()+":"+btnMinuteStart.getText().toString());
+                            companyRef.child(post_key).child("Job Profile").child(profile_id).child("Personal File").child("Company Worker Data").child("labour_time_end").setValue(btnHourEnd.getText().toString()+":"+btnMinuteEnd.getText().toString());
+                            companyRef.child(post_key).child("Job Profile").child(profile_id).child("Personal File").child("Company Worker Data").child("lunch_time_start").setValue(btnHourLunchStart.getText().toString()+":"+btnMinuteLunchStart.getText().toString());
+                            companyRef.child(post_key).child("Job Profile").child(profile_id).child("Personal File").child("Company Worker Data").child("lunch_time_end").setValue(btnHourLunchEnd.getText().toString()+":"+btnMinuteLunchEnd.getText().toString());
+                            companyRef.child(post_key).child("Job Profile").child(profile_id).child("Personal File").child("Company Worker Data").child("hours_per_week").setValue(edtTotalWeekHours.getText().toString());
+                            companyRef.child(post_key).child("Job Profile").child(profile_id).child("Personal File").child("Company Worker Data").child("labour_regimen").setValue(btnLabourType.getText().toString());
+                            companyRef.child(post_key).child("Job Profile").child(profile_id).child("Personal File").child("Company Worker Data").child("working_type").setValue(btnWorkerType.getText().toString());
+                            companyRef.child(post_key).child("Job Profile").child(profile_id).child("Personal File").child("Company Worker Data").child("contract_type").setValue(btnContract.getText().toString());
+                            companyRef.child(post_key).child("Job Profile").child(profile_id).child("Personal File").child("Company Worker Data").child("payment_frequency").setValue(btnPaymentFrequency.getText().toString());
+                            companyRef.child(post_key).child("Job Profile").child(profile_id).child("Personal File").child("Company Worker Data").child("payment_type").setValue(btnPaymentType.getText().toString());
+                            Toasty.success(getActivity(), "Registrado", Toast.LENGTH_LONG).show();
+                            dialog.dismiss();
+                        }
                     }
                 });
 

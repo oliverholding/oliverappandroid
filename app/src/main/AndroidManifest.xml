@@ -21,7 +21,9 @@
         android:roundIcon="@drawable/oliver_android_icon_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CareManager.PeopleManagement.WorkersPayroll.WorkerPayrollProfilesActivity"></activity>
+        <activity android:name=".CareManager.PeopleManagement.RoasterAndPerfomance.JobProfileRoasterActivity"></activity>
+        <activity android:name=".CareManager.PeopleManagement.RoasterAndPerfomance.RoasterAndPerfomanceActivity" />
+        <activity android:name=".CareManager.PeopleManagement.WorkersPayroll.WorkerPayrollProfilesActivity" />
         <activity android:name=".CareManager.PeopleManagement.WorkersPayroll.WorkersPayrollActivity" />
         <activity android:name=".CareManager.PeopleManagement.PersonalFiles.JobProfileFilesActivity" />
         <activity android:name=".CareManager.PeopleManagement.PersonalFiles.PersonalFilesActivity" />

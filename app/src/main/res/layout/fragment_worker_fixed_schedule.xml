@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CareManager.PeopleManagement.RoasterAndPerfomance.WorkerFixedScheduleFragment">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtTittle"
+            android:layout_margin="4dp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="HORARIO FIJO"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:padding="8dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:text="DÍA"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:text="INICIO"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:text="FIN"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="8dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:text="LUNES"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnMondayStart"
+                android:background="@drawable/edit_text_style"
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:hint="00:00"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnMondayEnd"
+                android:background="@drawable/edit_text_style"
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:hint="00:00"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="8dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:text="MARTES"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnTuesdayStart"
+                android:background="@drawable/edit_text_style"
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:hint="00:00"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnTuesdayEnd"
+                android:background="@drawable/edit_text_style"
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:hint="00:00"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="8dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:text="MIÉRCOLES"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnWednesdayStart"
+                android:background="@drawable/edit_text_style"
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:hint="00:00"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnWednesdayEnd"
+                android:background="@drawable/edit_text_style"
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:hint="00:00"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:padding="8dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:text="JUEVES"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnThursdayStart"
+                android:background="@drawable/edit_text_style"
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:hint="00:00"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnThursdayEnd"
+                android:background="@drawable/edit_text_style"
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:hint="00:00"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="8dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:text="VIERNES"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnFridayStart"
+                android:background="@drawable/edit_text_style"
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:hint="00:00"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnFridayEnd"
+                android:background="@drawable/edit_text_style"
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:hint="00:00"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="8dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:text="SÁBADO"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnSaturdayStart"
+                android:background="@drawable/edit_text_style"
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:hint="00:00"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnSaturdayEnd"
+                android:background="@drawable/edit_text_style"
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:hint="00:00"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="8dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:text="DOMINGO"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnSundayStart"
+                android:background="@drawable/edit_text_style"
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:hint="00:00"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnSundayEnd"
+                android:background="@drawable/edit_text_style"
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:hint="00:00"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -152,6 +152,371 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Fecha de Cese:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Mot Cese:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Básico: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Efectivo: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Horas Ord: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Horas Extras: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Situación Especial: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Correo: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Días Subsidio: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Días no Laborables: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Inicio Subsidio: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Fin Subsidio: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="C. Costos: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Vaciones: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Fecha Inicio: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Fecha Fin: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Descanso Médico: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Área: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:background="@color/colorGradientCenterRed"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="INGRESOS"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:background="@color/colorGradientCenterRed"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="N Días Sueldo: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginStart="16dp"
+                android:text="Asignación Familiar: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginStart="16dp"
+                android:text="Horas Extras: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="N Días Descanso: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginStart="16dp"
+                android:text="Bonificación por Productividad: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginStart="16dp"
+                android:text="Remuneración Vacacional: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginStart="16dp"
+                android:text="Movilidad: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+            <TextView
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Total Ingresos: S/ 0.00"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:background="@color/colorGradientCenterRed"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+
+            <TextView
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="DESCUENTOS"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:background="@color/colorGradientCenterRed"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="AFP Ley 0.00%: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="AFP Seguro 0.00%: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="AFP Comisión 0.00%: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Adelanto: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="ONP: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Quincena: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Impuesto Renta 5ta Categoría: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Retencion Judicial: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Total Descuentos: S/ 0.00"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:background="@color/colorGradientCenterRed"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="APORTACIONES"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:background="@color/colorGradientCenterRed"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="EsSalud: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="SCTR - Salud: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="SCTR - Pensión: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Total Aportes: S/ 0.00"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:background="@color/colorGradientCenterRed"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+
+            <TextView
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="NETO A PAGAR: S/ 0.00"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:background="@color/colorGradientCenterRed"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
         </LinearLayout>
 
     </ScrollView>

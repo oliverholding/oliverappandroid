@@ -1,4 +1,4 @@
-package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.WorkersPayroll;
+package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.RoasterAndPerfomance;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -16,7 +16,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManageme
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.PersonalFiles.WorkerSheetFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
-public class WorkersPayrollActivity extends AppCompatActivity {
+public class RoasterAndPerfomanceActivity extends AppCompatActivity {
 
     ViewPager mViewPager;
     SectionsPagerAdapter mSectionsPagerAdapter;
@@ -25,7 +25,7 @@ public class WorkersPayrollActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_workers_payroll);
+        setContentView(R.layout.activity_roaster_and_perfomance);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         TabItem tabItem = findViewById(R.id.tabItem);
@@ -59,13 +59,11 @@ public class WorkersPayrollActivity extends AppCompatActivity {
             // Return a PlaceholderFragment (defined as a static inner class below).
             switch (position) {
                 case 0:
-                    return new PersonalPaymentBillFragment();
+                    return new WorkerFixedScheduleFragment();
                 case 1:
-                    return new FormalObligationFragment();
+                    return new WorkerFixedScheduleFragment();
                 case 2:
-                    return new ProfitFifhtCategoryFragment();
-                case 3:
-                    return new ProfitFourthRentFragment();
+                    return new WorkerFixedScheduleFragment();
 
                 default:
                     return null;

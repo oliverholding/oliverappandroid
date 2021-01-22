@@ -550,74 +550,79 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/txtCompanyWorkData1"
                         android:layout_margin="4dp"
                         android:text="Fecha de Ingreso a Planilla: Sin Información"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
                     <TextView
+                        android:id="@+id/txtCompanyWorkData2"
                         android:layout_margin="4dp"
                         android:text="Remuneración Bruta: Sin Información"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
                     <TextView
+                        android:id="@+id/txtCompanyWorkData3"
                         android:layout_margin="4dp"
                         android:text="Subvención Económica: Sin Información"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
                     <TextView
+                        android:id="@+id/txtCompanyWorkData4"
                         android:layout_margin="4dp"
                         android:text="Horario de Trabajo: Sin Información"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
                     <TextView
+                        android:id="@+id/txtCompanyWorkData5"
                         android:layout_margin="4dp"
-                        android:text="Horario de Refirgerio: Sin Información"
+                        android:text="Horario de Refrigerio: Sin Información"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
                     <TextView
+                        android:id="@+id/txtCompanyWorkData6"
                         android:layout_margin="4dp"
                         android:text="Total Horas Semanales: Sin Información"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
                     <TextView
+                        android:id="@+id/txtCompanyWorkData7"
                         android:layout_margin="4dp"
                         android:text="Régimen Laboral: Sin Información"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
                     <TextView
+                        android:id="@+id/txtCompanyWorkData8"
                         android:layout_margin="4dp"
                         android:text="Tipo o Modalidad de Trabajo: Sin Información"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
                     <TextView
+                        android:id="@+id/txtCompanyWorkData9"
                         android:layout_margin="4dp"
                         android:text="Tipo de Contrato: Sin Información"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
                     <TextView
+                        android:id="@+id/txtCompanyWorkData10"
                         android:layout_margin="4dp"
                         android:text="Periodicidad de la Remuneración: Sin Información"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
                     <TextView
+                        android:id="@+id/txtCompanyWorkData11"
                         android:layout_margin="4dp"
                         android:text="Tipo de Pago: Sin Información"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:layout_margin="4dp"
-                        android:text="Situación especial del Trabajador: Sin Información"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 

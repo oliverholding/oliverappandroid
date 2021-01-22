@@ -13,13 +13,15 @@ import android.widget.Button;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.JobProfiles.JobProfilesActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.PersonalFiles.JobProfileFilesActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.PersonalFiles.PersonalFilesActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.RoasterAndPerfomance.JobProfileRoasterActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.RoasterAndPerfomance.RoasterAndPerfomanceActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.WorkersPayroll.WorkerPayrollProfilesActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.WorkersPayroll.WorkersPayrollActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class PeopleManagementFragment extends Fragment {
 
-    Button btnJobProfile,btnPersonalFiles,btnPayRoll;
+    Button btnJobProfile,btnPersonalFiles,btnPayRoll,btnRoasterAndPerfomance;
     String post_key;
 
     @Override
@@ -33,6 +35,7 @@ public class PeopleManagementFragment extends Fragment {
         btnJobProfile = view.findViewById(R.id.btnJobProfile);
         btnPersonalFiles = view.findViewById(R.id.btnPersonalFiles);
         btnPayRoll = view.findViewById(R.id.btnPayRoll);
+        btnRoasterAndPerfomance = view.findViewById(R.id.btnRoasterAndPerfomance);
 
         btnJobProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +57,14 @@ public class PeopleManagementFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), WorkerPayrollProfilesActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+        btnRoasterAndPerfomance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), JobProfileRoasterActivity.class);
                 intent.putExtra("post_key", post_key);
                 startActivity(intent);
             }

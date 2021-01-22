@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CareManager.PeopleManagement.WorkersPayroll.ProfitFifhtCategoryFragment">
+
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="12dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewTitle"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Renta de 5ta Categoría:"
+                        android:textSize="18sp"
+                        android:layout_margin="4dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Calcula las retenciones de renta de 5ta categoría."
+                        android:layout_margin="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Sueldo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtSalary"
+                android:inputType="numberDecimal"
+                android:padding="8dp"
+                android:text="0.00"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Sueldo..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Meses restantes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtMonths"
+                android:inputType="number"
+                android:padding="8dp"
+                android:text="12"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Meses restantes..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Gratificación Julio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtGratification1"
+                android:inputType="numberDecimal"
+                android:padding="8dp"
+                android:text="0.00"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Gratificación Julio..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text="Gratificación Diciembre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtGratification2"
+                android:inputType="numberDecimal"
+                android:padding="8dp"
+                android:text="0.00"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Gratificación Diciembre..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:id="@+id/txtTaxUnit"
+                android:layout_margin="8dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:text="Valor UIT: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txtMonthlyRetention"
+                android:layout_margin="12dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:text="RETENSIÓN MENSUAL: S/ 0.00"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</FrameLayout>

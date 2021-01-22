@@ -44,7 +44,7 @@ public class UploadDocumentationActivity extends AppCompatActivity {
     CircleImageView btnUploadFiles;
     static final int RESULT_LOAD_IMAGE = 1;
     StorageReference mStorage;
-    String downloadUrl, currentUid,product_key,institution_key,doc_key,financial_institution_background_image;
+    String downloadUrl, currentUid,product_key,institution_key,doc_key,financial_institution_background_image,doc_tittle;
     FirebaseAuth mAuth;
     DatabaseReference expressLoanRef,financialInstitutionsRef;
     ProgressDialog loadingBar;
@@ -89,7 +89,7 @@ public class UploadDocumentationActivity extends AppCompatActivity {
         financialInstitutionsRef.child(institution_key).child("Products").child(product_key).child("Required Documentation").child(doc_key).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String doc_tittle = dataSnapshot.child("doc_tittle").getValue().toString();
+                    doc_tittle = dataSnapshot.child("doc_tittle").getValue().toString();
                 String doc_description = dataSnapshot.child("doc_description").getValue().toString();
 
                 txtDocName.setText(doc_tittle);
@@ -235,6 +235,7 @@ public class UploadDocumentationActivity extends AppCompatActivity {
 
                                 expressLoanRef.child("file"+value).child("url").setValue(downloadUrl);
                                 expressLoanRef.child("file"+value).child("file_name").setValue(filename);
+                                expressLoanRef.child("file"+value).child("doc_tittle").setValue(doc_tittle);
                                 Toasty.success(UploadDocumentationActivity.this, "Archivo "+filename+" cargado con éxito", Toast.LENGTH_LONG).show();
 
                                 if (finalI == (countSelection-1)) {
@@ -271,6 +272,7 @@ public class UploadDocumentationActivity extends AppCompatActivity {
 
                                 expressLoanRef.child("file"+value).child("url").setValue(downloadUrl);
                                 expressLoanRef.child("file"+value).child("file_name").setValue(filename);
+                                expressLoanRef.child("file"+value).child("doc_tittle").setValue(doc_tittle);
                                 Toasty.success(UploadDocumentationActivity.this, "Archivo "+filename+" cargado con éxito", Toast.LENGTH_LONG).show();
                                 loadingBar.dismiss();
                             }
