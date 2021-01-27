@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="8dp"
-    tools:context=".CareManager.PeopleManagement.RoasterAndPerfomance.WorkerScheduleFragment">
+    tools:context=".CareManager.PeopleManagement.RoasterAndPerfomance.IncentivesFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewTitle"
@@ -22,7 +21,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:text="Horarios:"
+                android:text="INCENTIVOS:"
                 android:textSize="18sp"
                 android:layout_margin="4dp"
                 android:textColor="@android:color/black"
@@ -30,7 +29,7 @@
                 android:layout_height="wrap_content"/>
 
             <TextView
-                android:text="Selecciona el trabajador a quién gestionarás el horario."
+                android:text="Crea un programa de incentivos para animar a tu personal a cumplir sus objetivos."
                 android:layout_margin="4dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -42,7 +41,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_below="@id/cardViewTitle"
-        android:layout_above="@id/btnRegister"
+        android:layout_above="@+id/btnRegister"
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -51,12 +50,13 @@
 
     <Button
         android:id="@+id/btnRegister"
-        android:text="REGISTRAR NUEVO PERFIL"
-        android:layout_margin="8dp"
+        android:text="AGREGAR NUEVO INCENTIVO"
         android:textColor="@android:color/white"
+        android:layout_margin="8dp"
         android:layout_alignParentBottom="true"
         android:background="@drawable/gray_button_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
 
 </RelativeLayout>

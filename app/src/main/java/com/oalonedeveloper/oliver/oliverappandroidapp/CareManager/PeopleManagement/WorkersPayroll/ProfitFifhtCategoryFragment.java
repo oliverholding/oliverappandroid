@@ -29,7 +29,7 @@ import java.util.Date;
 public class ProfitFifhtCategoryFragment extends Fragment {
 
     DatabaseReference ratesRef,companyRef;
-    double tax_unit_value,retention1,retention2,retention3,retention4,uit5,uit20,uit35,uit45,uit50;
+    double tax_unit_value,retention1,retention2,retention3,retention4,uit5,uit20,uit35,uit45,uit50,monthly_retention;
     TextView txtTaxUnit,txtMonthlyRetention;
     EditText edtSalary,edtMonths,edtGratification1,edtGratification2;
     String post_key,profile_id,payment_amount;
@@ -65,6 +65,11 @@ public class ProfitFifhtCategoryFragment extends Fragment {
         day = cal.get(Calendar.DAY_OF_MONTH);
         month = cal.get(Calendar.MONTH)+1;
         year = cal.get(Calendar.YEAR);
+
+        retention1 = 0.00;
+        retention2 = 0.00;
+        retention3 = 0.00;
+        retention4 = 0.00;
 
         edtSalary.addTextChangedListener(new TextWatcher() {
             @Override
@@ -213,7 +218,54 @@ public class ProfitFifhtCategoryFragment extends Fragment {
 
             if (real_annual_salary <= uit5) {
                 retention1 = real_annual_salary*0.08;
-                txtMonthlyRetention.setText("IMPUESTO PROYECTADO: "+retention1);
+
+                if (month == 1) {
+                    monthly_retention = retention1/12;
+                }
+                if (month == 2) {
+                    monthly_retention = retention1/12;
+                }
+                if (month == 3) {
+                    monthly_retention = retention1/12;
+                }
+                if (month == 4) {
+                    monthly_retention = retention1/9;
+                }
+                if (month == 5) {
+                    monthly_retention = retention1/8;
+                }
+                if (month == 6) {
+                    monthly_retention = retention1/8;
+                }
+                if (month == 7) {
+                    monthly_retention = retention1/8;
+                }
+                if (month == 8) {
+                    monthly_retention = retention1/5;
+                }
+                if (month == 9) {
+                    monthly_retention = retention1/4;
+                }
+                if (month == 10) {
+                    monthly_retention = retention1/4;
+                }
+                if (month == 11) {
+                    monthly_retention = retention1/4;
+                }
+                if (month == 12) {
+
+                    double month_ret1 = ((retention1/12)*3);
+                    double month_ret2 = ((retention1/9));
+                    double month_ret3 = ((retention1/8)*3);
+                    double month_ret4 = ((retention1/5));
+                    double month_ret5 = ((retention1/4)*3);
+
+                    monthly_retention = retention1-month_ret1-month_ret2-month_ret3-month_ret4-month_ret5;
+                }
+
+                String monthly_retention_st = decimalFormat.format(monthly_retention);
+
+                txtMonthlyRetention.setText("RETENCIÓN MENSUAL: S/"+monthly_retention_st);
 
             } else if (real_annual_salary > uit5) {
                 retention1 = uit5*0.08;
@@ -234,9 +286,12 @@ public class ProfitFifhtCategoryFragment extends Fragment {
                     retention4 = uit45*0.20;
                 }
 
-                double total_annual_retention = retention1+retention2;
+                double total_annual_retention = retention1+retention2+retention3+retention4;
 
-                txtMonthlyRetention.setText("IMPUESTO PROYECTADO: "+total_annual_retention);
+                double monthly_retention = total_annual_retention/12;
+                String monthly_retention_st = decimalFormat.format(monthly_retention);
+
+                txtMonthlyRetention.setText("RETENCIÓN MENSUAL: S/"+monthly_retention_st);
 
             }
 

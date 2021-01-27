@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/rootLayout"
+        android:padding="8dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtTittle"
+            android:layout_margin="8dp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="ASIGNAR COMPETENCIA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RadioGroup
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rdCompetence1"
+                android:layout_margin="8dp"
+                android:text="Innovación: Capacidad para ofrecer creatividad y originalidad. Un estilo innovador permite pensar de qué manera se puede mejorar en el futuro."
+                android:padding="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rdCompetence2"
+                android:layout_margin="8dp"
+                android:text="Rigurosidad en el Trabajo: Capacidad para trabajar con calidad y meticulosidad."
+                android:padding="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rdCompetence3"
+                android:layout_margin="8dp"
+                android:text="Análisis: Capacidad de entender y analizar de forma profunda la información."
+                android:padding="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rdCompetence4"
+                android:layout_margin="8dp"
+                android:text="Dirección: Capacidad de inspirar e integrar a otros para desarrollarse en un puesto de trabajo, influyendo en los demás y generando autoridad."
+                android:padding="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rdCompetence5"
+                android:layout_margin="8dp"
+                android:text="Comunicación: Capacidad para transmitir información eficazmente y comunicar opiniones con seguridad, confianza y convicción."
+                android:padding="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rdCompetence6"
+                android:layout_margin="8dp"
+                android:text="Interacción: Capacidad para desarrollar relaciones con otros, interactuar y ser más visible que otras personas."
+                android:padding="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rdCompetence7"
+                android:layout_margin="8dp"
+                android:text="Trabajo en equipo: capacidad para empatizar y ofrecer colaboración. Una gran actitud de atención y apoyo hacia los compañeros que también hace que se prioricen las necesidades de las otras personas sobre las de uno mismo."
+                android:padding="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rdCompetence8"
+                android:layout_margin="8dp"
+                android:text="Gestión del estrés: Capacidad para trabajar con alto nivel de presión y responsabilidad con tendencia a aguantar retos y demandas que impone el trabajo."
+                android:padding="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rdCompetence9"
+                android:layout_margin="8dp"
+                android:text="Adaptación: Capacidad para aceptar cambios de forma positiva."
+                android:padding="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rdCompetence10"
+                android:layout_margin="8dp"
+                android:text="Organización: Capacidad para coordinar y estructurar actividades, además de tener las cosas bien organizadas."
+                android:padding="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rdCompetence11"
+                android:layout_margin="8dp"
+                android:text="Orientación al Logro: Capacidad de contribuir a la consecución de resultados y a conseguir objetivos."
+                android:padding="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rdCompetence12"
+                android:layout_margin="8dp"
+                android:text="Especialización: Capacidad de volcar su ampia experiencia en el trabajo, focalizándose en los detalles y en los procedimientos."
+                android:padding="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnRegisterCompetence"
+                android:text="ASIGNAR COMPETENCIA"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:background="@drawable/gray_button_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CareManager.PeopleManagement.RoasterAndPerfomance.JobProfileRoasterActivity">
+    tools:context=".CareManager.FinancialManagement.FinanacialManagementActivity">
 
     <LinearLayout
         android:id="@+id/appBar"
@@ -20,20 +20,29 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:src="@drawable/icono_almacen128"
+                android:src="@drawable/icono_produccion128"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="35dp"/>
 
             <TextView
-                android:id="@+id/txtWarehouseName"
                 android:gravity="center_vertical"
                 android:textSize="18sp"
                 android:textColor="@android:color/white"
-                android:text="Roster y Performance"
+                android:text="Gestión Financiera"
                 android:layout_weight="4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:id="@+id/btnMenu"
+                android:src="@drawable/open_menu_icon"
+                android:scaleType="centerInside"
+                android:padding="4dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="35dp"/>
+
 
         </LinearLayout>
 
@@ -51,24 +60,60 @@
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab1"
-            android:text="HORARIO"
+            android:icon="@drawable/icono_produccion128"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab2"
-            android:text="DESEMPEÑO"
+            android:icon="@drawable/icono_capacitacion128"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab3"
-            android:text="INCENTIVOS"
+            android:icon="@drawable/play_white_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-    </com.google.android.material.tabs.TabLayout>
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab4"
+            android:icon="@drawable/play_white_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab5"
+            android:icon="@drawable/play_white_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab6"
+            android:icon="@drawable/play_white_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab7"
+            android:icon="@drawable/play_white_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab8"
+            android:icon="@drawable/play_white_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab9"
+            android:icon="@drawable/upload_file_white_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:layout_below="@id/tabLayout"
@@ -77,6 +122,5 @@
         android:layout_height="match_parent">
 
     </androidx.viewpager.widget.ViewPager>
-
 
 </RelativeLayout>

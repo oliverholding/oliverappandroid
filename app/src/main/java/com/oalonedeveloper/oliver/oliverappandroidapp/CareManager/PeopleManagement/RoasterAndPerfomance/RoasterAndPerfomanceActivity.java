@@ -61,9 +61,7 @@ public class RoasterAndPerfomanceActivity extends AppCompatActivity {
                 case 0:
                     return new WorkerFixedScheduleFragment();
                 case 1:
-                    return new WorkerFixedScheduleFragment();
-                case 2:
-                    return new WorkerFixedScheduleFragment();
+                    return new WorkerRotativeScheduleFragment();
 
                 default:
                     return null;

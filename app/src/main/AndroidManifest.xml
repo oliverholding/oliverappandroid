@@ -21,7 +21,16 @@
         android:roundIcon="@drawable/oliver_android_icon_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CareManager.PeopleManagement.RoasterAndPerfomance.JobProfileRoasterActivity"></activity>
+        <activity android:name=".CareManager.FinancialManagement.FinanacialManagementActivity"></activity>
+        <activity android:name=".CareManager.Normativity.NormativitySumaryActivity" />
+        <activity android:name=".CareManager.Normativity.CivilResponsabilityActivity" />
+        <activity android:name=".CareManager.Normativity.EnviromentalNormativityActivity" />
+        <activity android:name=".CareManager.Normativity.SanitaryNormativityActivity" />
+        <activity android:name=".CareManager.Normativity.LabourNormativityActivity" />
+        <activity android:name=".CareManager.Normativity.TaxesNormativityActivity" />
+        <activity android:name=".CareManager.Normativity.NormativityIntroductionActivity" />
+        <activity android:name=".CareManager.Normativity.NormativityActivity" />
+        <activity android:name=".CareManager.PeopleManagement.RoasterAndPerfomance.JobProfileRoasterActivity" />
         <activity android:name=".CareManager.PeopleManagement.RoasterAndPerfomance.RoasterAndPerfomanceActivity" />
         <activity android:name=".CareManager.PeopleManagement.WorkersPayroll.WorkerPayrollProfilesActivity" />
         <activity android:name=".CareManager.PeopleManagement.WorkersPayroll.WorkersPayrollActivity" />

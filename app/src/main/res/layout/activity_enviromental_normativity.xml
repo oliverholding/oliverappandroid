@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CareManager.Normativity.EnviromentalNormativityActivity">
+
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="8dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewTitle"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Normatividad Ambiental"
+                        android:textSize="18sp"
+                        android:layout_margin="4dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Lo que debes de tener en cuenta para cumplir tus obligaciones ambientales o las de tu comercio/negocio/empresa"
+                        android:layout_margin="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Política Nacional de Salud Ambiental"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="Establecer la Política Nacional de Salud Ambiental que fortalezca la prevención y el control de riesgos sanitarios ambientales relacionados a los daños a la salud de los ciudadanos, en el marco del proceso de descentralización de la salud, así como su gestión."
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textStyle="italic"
+                            android:layout_margin="4dp"
+                            android:text="RM 258-2011 / MINSA"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="¿Lo Comples?"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <RadioGroup
+                                android:orientation="horizontal"
+                                android:layout_weight="2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rdYes1"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="Sí"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <RadioButton
+                                    android:id="@+id/rdNo1"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="No"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:text="MÁS DETALLES"
+                            android:textColor="@android:color/white"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/gray_button_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Impacto Ambiental"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="Establecimiento de un proceso uniforme que comprenda los requerimientos, etapas, y alcances de las evaluaciones del impacto ambiental de proyectos de inversión y establecimiento de los mecanismos que aseguren la participación ciudadana en el proceso de evaluación de impacto ambiental."
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textStyle="italic"
+                            android:layout_margin="4dp"
+                            android:text="Ley 27446"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="¿Lo Comples?"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <RadioGroup
+                                android:orientation="horizontal"
+                                android:layout_weight="2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rdYes2"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="Sí"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <RadioButton
+                                    android:id="@+id/rdNo2"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="No"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:text="MÁS DETALLES"
+                            android:textColor="@android:color/white"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/gray_button_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Calidad Ambiental - Ruido"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="Estándares nacionales de calidad ambiental para el ruido y los lineamientos para no excederlos, con el objetivo de proteger la salud, mejorar la calidad de vida de la población, y promover el desarrollo sostenoble."
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textStyle="italic"
+                            android:layout_margin="4dp"
+                            android:text="DS 085-2003-PCM"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="¿Lo Comples?"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <RadioGroup
+                                android:orientation="horizontal"
+                                android:layout_weight="2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rdYes3"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="Sí"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <RadioButton
+                                    android:id="@+id/rdNo3"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="No"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:text="MÁS DETALLES"
+                            android:textColor="@android:color/white"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/gray_button_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Calidad Ambiental - Aire"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="Establece los estándares nacionales de calidad ambiental del aire y los lineamientos de estrategia para alcanzarlos progresivamente. "
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textStyle="italic"
+                            android:layout_margin="4dp"
+                            android:text="DS 074-2001 - PCM"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="¿Lo Comples?"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <RadioGroup
+                                android:orientation="horizontal"
+                                android:layout_weight="2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rdYes4"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="Sí"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <RadioButton
+                                    android:id="@+id/rdNo4"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="No"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:text="MÁS DETALLES"
+                            android:textColor="@android:color/white"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/gray_button_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Industria Manufacturera y Comercio Interno (intermediarios sin transformación del producto final)"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="Promover y regular la gestión ambiental, la conservación y aprovechamiento sostenible de recursos naturales en el desarrollo de las actividades de la industria manufacturera y de comercio interno, así como regular los instrumentos de gestión ambiental, los procedimientos y medidas de protección ambiental aplicables a éstas. "
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textStyle="italic"
+                            android:layout_margin="4dp"
+                            android:text="DS 017-2015-PRODUCE"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="¿Lo Comples?"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <RadioGroup
+                                android:orientation="horizontal"
+                                android:layout_weight="2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rdYes5"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="Sí"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <RadioButton
+                                    android:id="@+id/rdNo5"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="No"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:text="MÁS DETALLES"
+                            android:textColor="@android:color/white"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/gray_button_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Panificación, Galletería y Pastelería"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="Norma sanitaria tiene como propósito proteger la salud de los consumidores, disponiendo los requisitos sanitarios que deben cumplir los productos de panificación, galletería y pastelería y los establecimientos que los fabrican, elaboran y expenden. "
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textStyle="italic"
+                            android:layout_margin="4dp"
+                            android:text="RM 1020-2010/MINSA"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="¿Lo Comples?"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <RadioGroup
+                                android:orientation="horizontal"
+                                android:layout_weight="2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rdYes6"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="Sí"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <RadioButton
+                                    android:id="@+id/rdNo6"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="No"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:text="MÁS DETALLES"
+                            android:textColor="@android:color/white"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/gray_button_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"/>
+
+                    <TextView
+                        android:id="@+id/txtTotal"
+                        android:layout_margin="4dp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:text="TOTAL CUMPLIMIENTO: 0.00%"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

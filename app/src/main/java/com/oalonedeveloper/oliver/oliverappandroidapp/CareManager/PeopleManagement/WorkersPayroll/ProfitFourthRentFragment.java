@@ -92,8 +92,10 @@ public class ProfitFourthRentFragment extends Fragment {
 
         if (salary > four_category_max) {
             double retention = salary * 0.08;
+            double monthly_retention = retention/12;
             String retention_st = decimalFormat.format(retention);
-            txtMonthlyRetention.setText("RETENCIÓN MENSUAL: S/ " + retention_st);
+            String monthly_retention_st = decimalFormat.format(monthly_retention);
+            txtMonthlyRetention.setText("RETENCIÓN MENSUAL: S/ " + monthly_retention_st);
         } else {
             txtMonthlyRetention.setText("RETENCIÓN MENSUAL: S/ 0.00");
         }

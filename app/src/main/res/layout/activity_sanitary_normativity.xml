@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CareManager.Normativity.SanitaryNormativityActivity">
+
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="8dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewTitle"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Normatividad Sanitaria"
+                        android:textSize="18sp"
+                        android:layout_margin="4dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Lo que debes de tener en cuenta para cumplir tus obligaciones sanitarias o las de tu comercio/negocio/empresa"
+                        android:layout_margin="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Salud de los Trabajadores"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="Lineamientos para la Vigilancia, Prevención y Control de la salud de los trabajadores con riesgo de exposición a COVID-19"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textStyle="italic"
+                            android:layout_margin="4dp"
+                            android:text="RM 448-2020-MINSA"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="¿Lo Comples?"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <RadioGroup
+                                android:orientation="horizontal"
+                                android:layout_weight="2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rdYes1"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="Sí"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <RadioButton
+                                    android:id="@+id/rdNo1"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="No"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:text="MÁS DETALLES"
+                            android:textColor="@android:color/white"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/gray_button_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Protección al Consumidor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="Normas de protección al consumidor, ya sea que se encuentre directa ó indirectamente, expuesto o comprendido por una relación de consumo o en una etapa preliminar a ésta."
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textStyle="italic"
+                            android:layout_margin="4dp"
+                            android:text="Ley 29571"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="¿Lo Comples?"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <RadioGroup
+                                android:orientation="horizontal"
+                                android:layout_weight="2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rdYes2"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="Sí"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <RadioButton
+                                    android:id="@+id/rdNo2"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="No"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:text="MÁS DETALLES"
+                            android:textColor="@android:color/white"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/gray_button_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Mercados de Abastos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="El presente reglamento establece las condiciones y re- quisitos sanitarios a los que debe sujetarse el funciona- miento de los mercados de abasto sean públicos o priva- dos, en las diferentes etapas de la cadena alimentaria, con la finalidad de asegurar la calidad sanitaria e inocuidad de los alimentos y bebidas. "
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textStyle="italic"
+                            android:layout_margin="4dp"
+                            android:text="RM 282-2003-SA/DM"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="¿Lo Comples?"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <RadioGroup
+                                android:orientation="horizontal"
+                                android:layout_weight="2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rdYes3"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="Sí"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <RadioButton
+                                    android:id="@+id/rdNo3"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="No"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:text="MÁS DETALLES"
+                            android:textColor="@android:color/white"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/gray_button_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Fabricación, Elaboración y Exopendio de productos de Panificación, Galletería y Pastelería"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="Norma sanitaria tiene como propósito proteger la salud de los consumidores, disponiendo los requisitos sanitarios que deben cumplir los productos de panificación, galletería y pastelería y los establecimientos que los fabrican, elaboran y expenden. "
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textStyle="italic"
+                            android:layout_margin="4dp"
+                            android:text="RM 1020-2010/MINSA"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="¿Lo Comples?"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <RadioGroup
+                                android:orientation="horizontal"
+                                android:layout_weight="2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rdYes4"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="Sí"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <RadioButton
+                                    android:id="@+id/rdNo4"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="No"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:text="MÁS DETALLES"
+                            android:textColor="@android:color/white"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/gray_button_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Alimentos y Bebidas"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="Funcionamiento de restaurantes y servicios afines, vigilancia sanitaria de los alimentos y bebidas que se comercializan en los restaurantes y servicios afines, definida en infarestructuras e instalaciones, preparación de alimentos, manipulación de alimentos. Ver ficha sanitaria que se adjunta (que debe de estar en formato descargable)"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textStyle="italic"
+                            android:layout_margin="4dp"
+                            android:text="DS 007-98-SA y RM 363-2005/Minsa"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="¿Lo Comples?"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <RadioGroup
+                                android:orientation="horizontal"
+                                android:layout_weight="2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rdYes5"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="Sí"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <RadioButton
+                                    android:id="@+id/rdNo5"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="No"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:text="MÁS DETALLES"
+                            android:textColor="@android:color/white"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/gray_button_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Preparación y Venta de Alimentos en la Vía Pública"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="Contiene pautas higiénicos sanitarias que deben cumplirse en la preparación y  venta de alimentos en la via pública"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textStyle="italic"
+                            android:layout_margin="4dp"
+                            android:text="RM 0014-92-SA/DM"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="¿Lo Comples?"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <RadioGroup
+                                android:orientation="horizontal"
+                                android:layout_weight="2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rdYes6"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="Sí"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <RadioButton
+                                    android:id="@+id/rdNo6"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="No"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:text="MÁS DETALLES"
+                            android:textColor="@android:color/white"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/gray_button_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"/>
+
+                    <TextView
+                        android:id="@+id/txtTotal"
+                        android:layout_margin="4dp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:text="TOTAL CUMPLIMIENTO: 0.00%"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</RelativeLayout>

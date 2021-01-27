@@ -16,37 +16,59 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/txtBillPeriod"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
+            <LinearLayout
                 android:gravity="center"
-                android:layout_margin="8dp"
-                android:text="BOLETA DE PAGO"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:textColor="@android:color/black"
-                android:gravity="center"
-                android:layout_margin="2dp"
-                android:text="D.S. Nº 017-2001-TR DEL 07-06-01"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgCompanyProfile"
+                    android:layout_weight="0.2"
+                    android:layout_margin="4dp"
+                    android:src="@color/colorGradientCenterRed"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"/>
 
-            <TextView
-                android:id="@+id/txtPeriods"
-                android:textColor="@android:color/black"
-                android:gravity="center"
-                android:layout_margin="8dp"
-                android:text="BOLETA DE PAGO"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:layout_margin="8dp"
+                    android:background="@drawable/table_background"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
 
-            <View
-                android:background="@color/colorGradientCenterRed"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"/>
+                    <TextView
+                        android:id="@+id/txtBillPeriod"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:gravity="center"
+                        android:layout_margin="8dp"
+                        android:text="BOLETA DE PAGO"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:gravity="center"
+                        android:layout_margin="2dp"
+                        android:text="D.S. Nº 017-2001-TR DEL 07-06-01"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtPeriods"
+                        android:textColor="@android:color/black"
+                        android:gravity="center"
+                        android:layout_margin="8dp"
+                        android:text="BOLETA DE PAGO"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
 
             <TextView
                 android:id="@+id/txtCompanyName"
@@ -73,23 +95,18 @@
                 android:layout_height="wrap_content"/>
 
 
-            <View
-                android:background="@color/colorGradientCenterRed"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"/>
+
 
             <TextView
                 android:textStyle="bold"
-                android:textColor="@android:color/black"
+                android:padding="4dp"
+                android:background="@drawable/gray_button_style"
+                android:textColor="@android:color/white"
                 android:layout_margin="2dp"
                 android:text="DATOS DEL TRABAJADOR"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-            <View
-                android:background="@color/colorGradientCenterRed"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"/>
 
             <TextView
                 android:id="@+id/txtWorkerName"
@@ -125,13 +142,6 @@
             <TextView
                 android:textColor="@android:color/black"
                 android:layout_margin="2dp"
-                android:text="EsSalud: -"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
                 android:text="Categoría: Empleado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -155,209 +165,96 @@
             <TextView
                 android:textColor="@android:color/black"
                 android:layout_margin="2dp"
-                android:text="Fecha de Cese:"
+                android:text="Fecha de Cese: Indefinido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+            <TextView
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="Días Laborados: 25"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <TextView
                 android:textColor="@android:color/black"
                 android:layout_margin="2dp"
-                android:text="Mot Cese:"
+                android:text="Total Horas Laboradas: "
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <TextView
                 android:textColor="@android:color/black"
                 android:layout_margin="2dp"
-                android:text="Básico: "
+                android:text="Días no Laborados: "
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <TextView
                 android:textColor="@android:color/black"
                 android:layout_margin="2dp"
-                android:text="Efectivo: "
+                android:text="Horas Extra: "
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Horas Ord: "
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
 
             <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Horas Extras: "
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Situación Especial: "
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Correo: "
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Días Subsidio: "
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Días no Laborables: "
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Inicio Subsidio: "
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Fin Subsidio: "
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="C. Costos: "
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Vaciones: "
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Fecha Inicio: "
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Fecha Fin: "
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Descanso Médico: "
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
+                android:id="@+id/txtWorkerArea"
                 android:textColor="@android:color/black"
                 android:layout_margin="2dp"
                 android:text="Área: "
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-            <View
-                android:background="@color/colorGradientCenterRed"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"/>
-
             <TextView
                 android:textStyle="bold"
-                android:textColor="@android:color/black"
+                android:background="@drawable/gray_button_style"
+                android:textColor="@android:color/white"
+                android:padding="4dp"
                 android:layout_margin="2dp"
                 android:text="INGRESOS"
-                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-            <View
-                android:background="@color/colorGradientCenterRed"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"/>
-
             <TextView
+                android:id="@+id/txtWorkerSalary"
                 android:textColor="@android:color/black"
                 android:layout_margin="2dp"
-                android:text="N Días Sueldo: "
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="2dp"
-                android:layout_marginStart="16dp"
-                android:text="Asignación Familiar: "
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="2dp"
-                android:layout_marginStart="16dp"
-                android:text="Horas Extras: "
+                android:text="Sueldo Computable: S/ 0.00"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <TextView
                 android:textColor="@android:color/black"
                 android:layout_margin="2dp"
-                android:text="N Días Descanso: "
+                android:text="Asignación Familiar: S/ 0.00"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <TextView
                 android:textColor="@android:color/black"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="2dp"
-                android:layout_marginStart="16dp"
-                android:text="Bonificación por Productividad: "
+                android:layout_margin="2dp"
+                android:text="Remuneración Vacacional: S/ 0.00"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <TextView
                 android:textColor="@android:color/black"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="2dp"
-                android:layout_marginStart="16dp"
-                android:text="Remuneración Vacacional: "
+                android:layout_margin="2dp"
+                android:text="Mov. Sub. Asistencia: S/ 0.00"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <TextView
                 android:textColor="@android:color/black"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="2dp"
-                android:layout_marginStart="16dp"
-                android:text="Movilidad: "
+                android:layout_margin="2dp"
+                android:text="C.T.S: S/ 0.00"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-
             <TextView
+                android:id="@+id/txtTotalIncomes"
                 android:textStyle="bold"
                 android:textColor="@android:color/black"
                 android:layout_margin="2dp"
@@ -365,83 +262,75 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-            <View
-                android:background="@color/colorGradientCenterRed"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"/>
-
-
             <TextView
                 android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
+                android:background="@drawable/gray_button_style"
+                android:textColor="@android:color/white"
+                android:padding="4dp"
                 android:text="DESCUENTOS"
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <View
-                android:background="@color/colorGradientCenterRed"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="AFP Ley 0.00%: "
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <TextView
+                android:id="@+id/txtAfpFund"
                 android:textColor="@android:color/black"
                 android:layout_margin="2dp"
-                android:text="AFP Seguro 0.00%: "
+                android:text="AFP Fondo 10.00%: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtAfpFee"
+                android:textColor="@android:color/black"
+                android:layout_margin="2dp"
+                android:text="AFP Comisión 1.60%: "
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <TextView
                 android:textColor="@android:color/black"
                 android:layout_margin="2dp"
-                android:text="AFP Comisión 0.00%: "
+                android:text="ONP 13%: S/ 0.00"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <TextView
                 android:textColor="@android:color/black"
                 android:layout_margin="2dp"
-                android:text="Adelanto: "
+                android:text="Faltas: 0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <TextView
                 android:textColor="@android:color/black"
                 android:layout_margin="2dp"
-                android:text="ONP: "
+                android:text="Retenciones 4ta Categoría: S/ 0.00"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <TextView
                 android:textColor="@android:color/black"
                 android:layout_margin="2dp"
-                android:text="Quincena: "
+                android:text="Retenciones 5ta Categoría: S/ 0.00"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <TextView
                 android:textColor="@android:color/black"
                 android:layout_margin="2dp"
-                android:text="Impuesto Renta 5ta Categoría: "
+                android:text="Retenciones Judiciales: S/ 0.00"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <TextView
                 android:textColor="@android:color/black"
                 android:layout_margin="2dp"
-                android:text="Retencion Judicial: "
+                android:text="Adelantos: S/ 0.00"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <TextView
+                android:id="@+id/txtTotalDiscount"
                 android:textStyle="bold"
                 android:textColor="@android:color/black"
                 android:layout_margin="2dp"
@@ -449,47 +338,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-            <View
-                android:background="@color/colorGradientCenterRed"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"/>
 
             <TextView
                 android:textStyle="bold"
-                android:textColor="@android:color/black"
+                android:background="@drawable/gray_button_style"
+                android:textColor="@android:color/white"
+                android:padding="4dp"
                 android:layout_margin="2dp"
                 android:text="APORTACIONES"
-                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-            <View
-                android:background="@color/colorGradientCenterRed"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"/>
 
             <TextView
+                android:id="@+id/txtEssalud"
                 android:textColor="@android:color/black"
                 android:layout_margin="2dp"
-                android:text="EsSalud: "
+                android:text="EsSalud 9%: "
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="SCTR - Salud: "
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
 
             <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="SCTR - Pensión: "
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
+                android:id="@+id/txtTotalAportation"
                 android:textStyle="bold"
                 android:textColor="@android:color/black"
                 android:layout_margin="2dp"
@@ -497,25 +368,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-            <View
-                android:background="@color/colorGradientCenterRed"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"/>
-
 
             <TextView
+                android:id="@+id/txtNetPayment"
                 android:textStyle="bold"
-                android:textColor="@android:color/black"
+                android:background="@drawable/gray_button_style"
+                android:textColor="@android:color/white"
+                android:padding="4dp"
                 android:layout_margin="2dp"
                 android:text="NETO A PAGAR: S/ 0.00"
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
-
-            <View
-                android:background="@color/colorGradientCenterRed"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"/>
 
         </LinearLayout>
 

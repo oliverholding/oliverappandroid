@@ -1,0 +1,1072 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CareManager.Normativity.LabourNormativityActivity">
+
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="8dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewTitle"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Normatividad Laboral"
+                        android:textSize="18sp"
+                        android:layout_margin="4dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Lo que  debes de tener en cuenta para cumplir tus obligaciones laborales o las de tu comercio/negocio/empresa"
+                        android:layout_margin="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Seguridad y Salud"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="Los empleadores deben garantizar la adecuada protección de los trabajadores. En el caso de accidentes de trabajo, seguido de muerte del trabajador, las actuaciones de investigación a empresarios deben culminar en un plazo máximo de diez días hábiles, prorrogables -por única vez- por un plazo igual. "
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textStyle="italic"
+                            android:layout_margin="4dp"
+                            android:text="D.S. 020-2019-TR del 24 de diciembre de 2019"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="¿Lo Comples?"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <RadioGroup
+                                android:orientation="horizontal"
+                                android:layout_weight="2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rdYes1"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="Sí"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <RadioButton
+                                    android:id="@+id/rdNo1"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="No"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:text="MÁS DETALLES"
+                            android:textColor="@android:color/white"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/gray_button_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Inspecciones Laborales"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="La Superintendencia Nacional de Fiscalización Laboral (Sunafil) podrá programar más de una orden de trabajo, cuando se trate de inspecciones en materia de seguridad y salud en el trabajo, derechos fundamentales, registro de trabajadores, así como en los casos de denuncias por incumplimiento de obligaciones socio laborales"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textStyle="italic"
+                            android:layout_margin="4dp"
+                            android:text=" D.S. 020-2019-TR publicado el 24 de diciembre de 2019"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="¿Lo Comples?"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <RadioGroup
+                                android:orientation="horizontal"
+                                android:layout_weight="2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rdYes2"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="Sí"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <RadioButton
+                                    android:id="@+id/rdNo2"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="No"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:text="MÁS DETALLES"
+                            android:textColor="@android:color/white"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/gray_button_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Cierre de Locales por Accidentes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="Los inspectores de trabajo están facultados para disponer la paralización o prohibición inmediata de trabajos, y ordenar el cierre temporal del área de una unidad económica en caso se produzca un accidente mortal en el centro de trabajo, hasta por un plazo de 30 días calendario."
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textStyle="italic"
+                            android:layout_margin="4dp"
+                            android:text="D.S. 044-2019-TR del 30 de diciembre de 2019"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="¿Lo Comples?"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <RadioGroup
+                                android:orientation="horizontal"
+                                android:layout_weight="2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rdYes3"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="Sí"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <RadioButton
+                                    android:id="@+id/rdNo3"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="No"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:text="MÁS DETALLES"
+                            android:textColor="@android:color/white"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/gray_button_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Seguro de Vida Ley"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="Los empleadores estarán obligados a contratar una póliza de seguro de vida a sus empleados y obreros a partir del inicio de la relación laboral. Su aplicación será progresiva (D.U. 044-2019 del 30 de diciembre de 2019). Esta norma está vigente desde el 11 de febrero de 2020, según el reglamento aprobado por el Decreto Supremo 009-2020-TR publicado el 10 de febrero de este año en el diario oficial El Peruano."
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textStyle="italic"
+                            android:layout_margin="4dp"
+                            android:text="D.U. 044-2019 del 30 de diciembre de 2019 y Decreto Supremo 009-2020-TR"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="¿Lo Comples?"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <RadioGroup
+                                android:orientation="horizontal"
+                                android:layout_weight="2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rdYes4"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="Sí"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <RadioButton
+                                    android:id="@+id/rdNo4"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="No"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:text="MÁS DETALLES"
+                            android:textColor="@android:color/white"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/gray_button_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Atentado contra las condiciones de Seguridad en el Trabajo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="Se modifica el Art. 168-A del Código Penal, sancionando hasta con cuatro años de prisión, a quien deliberadamente (delito doloso), infringiendo las normas de la Seguridad y Salud en el Trabajo (SST) y estando legalmente obligado, aun cuando no haya sido previamente notificado por la autoridad, ponga en peligro inminente la vida, salud o integridad física del trabajador. La pena se extenderá hasta ocho años en caso de muerte del trabajador. Del nuevo texto del artículo 168-A del Código Penal se elimina el párrafo que disponía: “Se excluye de responsabilidad penal cuando la muerte o lesiones graves son producto de la inobservancia de las normas SST por parte del trabajador” (D.U. 044-2019 del 30 diciembre de 2019)."
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textStyle="italic"
+                            android:layout_margin="4dp"
+                            android:text="Art. 168-A del Código Penal y D.U. 044-2019 del 30 diciembre de 2019"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="¿Lo Comples?"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <RadioGroup
+                                android:orientation="horizontal"
+                                android:layout_weight="2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rdYes5"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="Sí"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <RadioButton
+                                    android:id="@+id/rdNo5"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="No"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:text="MÁS DETALLES"
+                            android:textColor="@android:color/white"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/gray_button_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Constancia de cese del Trabajador"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="Ante la negativa o demora del empleador en otorgar la constancia de cese, la Autoridad Administrativa de Trabajo tendrá 15 días hábiles para expedirle la referida constancia, que sirve para el retiro de la CTS depositada en el banco"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textStyle="italic"
+                            android:layout_margin="4dp"
+                            android:text="D.S.05-2019-TR del 11 de agosto de 2019"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="¿Lo Comples?"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <RadioGroup
+                                android:orientation="horizontal"
+                                android:layout_weight="2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rdYes6"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="Sí"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <RadioButton
+                                    android:id="@+id/rdNo6"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="No"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:text="MÁS DETALLES"
+                            android:textColor="@android:color/white"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/gray_button_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Formatos de Essalud"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="Se modificó el reglamento de inscripción, baja y modificación de datos del titular y de los derechohabientes del asegurado. Para tal efecto, se aprobó el formulario 1010 “Formulario Único de Seguros” y el Formato de Declaración Jurada para la inscripción y baja de los asegurados al Es Salud"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textStyle="italic"
+                            android:layout_margin="4dp"
+                            android:text="D-S- 012-2019-TR del 11 de octubre de 2019"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="¿Lo Comples?"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <RadioGroup
+                                android:orientation="horizontal"
+                                android:layout_weight="2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rdYes7"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="Sí"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <RadioButton
+                                    android:id="@+id/rdNo7"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="No"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:text="MÁS DETALLES"
+                            android:textColor="@android:color/white"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/gray_button_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Casilla electrónica de Sunafil"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="La Sunafil asignará a los usuarios una casilla electrónica, la que será el domicilio digital obligatorio para la notificación de los actos administrativos y/o actuaciones en las fiscalizaciones laborales "
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textStyle="italic"
+                            android:layout_margin="4dp"
+                            android:text="D.S. 03-2020-TR del 14 de enero de 2020"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="¿Lo Comples?"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <RadioGroup
+                                android:orientation="horizontal"
+                                android:layout_weight="2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rdYes8"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="Sí"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <RadioButton
+                                    android:id="@+id/rdNo8"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="No"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:text="MÁS DETALLES"
+                            android:textColor="@android:color/white"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/gray_button_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Días no Laborables compensables"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="Cabe resaltar que aún el Gobierno peruano no ha definido si habrá días no laborables compensables este año 2021"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textStyle="italic"
+                            android:layout_margin="4dp"
+                            android:text="'---"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="¿Lo Comples?"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <RadioGroup
+                                android:orientation="horizontal"
+                                android:layout_weight="2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/rdYes9"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="Sí"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <RadioButton
+                                    android:id="@+id/rdNo9"
+                                    android:padding="8dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:text="No"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <Button
+                            android:text="MÁS DETALLES"
+                            android:textColor="@android:color/white"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/gray_button_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"/>
+
+                    <TextView
+                        android:id="@+id/txtTotal"
+                        android:layout_margin="4dp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:text="TOTAL CUMPLIMIENTO: 0.00%"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
