@@ -1,4 +1,4 @@
-package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement;
+package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.FixedAssets;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -10,18 +10,9 @@ import android.os.Bundle;
 
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessOportunitiesModule.Training1Fragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Files1Fragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Video1Fragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Video2Fragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Video3Fragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Video4Fragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Video5Fragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Video6Fragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.PeopleManagementFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
-public class FinanacialManagementActivity extends AppCompatActivity {
+public class FixedAssetsActivity extends AppCompatActivity {
 
     ViewPager mViewPager;
     SectionsPagerAdapter mSectionsPagerAdapter;
@@ -30,7 +21,7 @@ public class FinanacialManagementActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_finanacial_management);
+        setContentView(R.layout.activity_fixed_assets);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         TabItem tabItem = findViewById(R.id.tabItem);
@@ -47,7 +38,6 @@ public class FinanacialManagementActivity extends AppCompatActivity {
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
         mViewPager.setCurrentItem(fragmentId);
-
     }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
@@ -65,25 +55,11 @@ public class FinanacialManagementActivity extends AppCompatActivity {
             // Return a PlaceholderFragment (defined as a static inner class below).
             switch (position) {
                 case 0:
-                    return new FinancialManagementFragment();
+                    return new TangibleAssetFragment();
                 case 1:
-                    return new Training1Fragment();
+                    return new TangibleAssetFragment();
                 case 2:
-                    return new Video1Fragment();
-                case 3:
-                    return new Video2Fragment();
-                case 4:
-                    return new Video3Fragment();
-                case 5:
-                    return new Video4Fragment();
-                case 6:
-                    return new Video5Fragment();
-                case 7:
-                    return new Video6Fragment();
-                case 8:
-                    return new Files1Fragment();
-
-
+                    return new TangibleAssetFragment();
                 default:
                     return null;
             }

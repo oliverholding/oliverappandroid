@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:padding="12dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtDate"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_margin="8dp"
+            android:text="VALOR NETO AL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txtAssetName"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_margin="8dp"
+            android:text="Activo: "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txtDeprecationRate"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_margin="8dp"
+            android:text="Tasa Anual de Depreciación: "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txtDeprecationPeriod"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_margin="8dp"
+            android:text="Depreciación Acumulada: "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_margin="8dp"
+            android:text="VALOR NETO: "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txtNetValue"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:layout_margin="8dp"
+            android:text="S/ 0.00"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</ScrollView>

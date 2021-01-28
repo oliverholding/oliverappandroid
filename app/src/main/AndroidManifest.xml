@@ -21,7 +21,8 @@
         android:roundIcon="@drawable/oliver_android_icon_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CareManager.FinancialManagement.FinanacialManagementActivity"></activity>
+        <activity android:name=".CareManager.FinancialManagement.FixedAssets.FixedAssetsActivity"></activity>
+        <activity android:name=".CareManager.FinancialManagement.FinanacialManagementActivity" />
         <activity android:name=".CareManager.Normativity.NormativitySumaryActivity" />
         <activity android:name=".CareManager.Normativity.CivilResponsabilityActivity" />
         <activity android:name=".CareManager.Normativity.EnviromentalNormativityActivity" />
