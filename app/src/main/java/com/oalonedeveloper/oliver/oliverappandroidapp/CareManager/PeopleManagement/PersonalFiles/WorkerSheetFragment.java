@@ -1073,7 +1073,7 @@ public class WorkerSheetFragment extends Fragment {
                     }
                 });
 
-                bthDayDialog = new SpinnerDialog(getActivity(),bthDay, "Selecciona tu Día de Nacimiento");
+                bthDayDialog = new SpinnerDialog(getActivity(),bthDay, "Selecciona tu Día de Ingreso");
                 bthDayDialog.bindOnSpinerListener(new OnSpinerItemClick() {
                     @Override
                     public void onClick(String item2, int position2) {
@@ -1092,7 +1092,7 @@ public class WorkerSheetFragment extends Fragment {
                     }
                 });
 
-                bthMonthDialog = new SpinnerDialog(getActivity(),bthMonth, "Selecciona tu Mes de Nacimiento");
+                bthMonthDialog = new SpinnerDialog(getActivity(),bthMonth, "Selecciona tu Mes de Ingreso");
                 bthMonthDialog.bindOnSpinerListener(new OnSpinerItemClick() {
                     @Override
                     public void onClick(String item2, int position2) {
@@ -1100,7 +1100,7 @@ public class WorkerSheetFragment extends Fragment {
                     }
                 });
 
-                bthYear.add("2019");bthYear.add("2018");bthYear.add("2017");bthYear.add("2016");bthYear.add("2015");bthYear.add("2014");bthYear.add("2013");bthYear.add("2012");bthYear.add("2011");bthYear.add("2010");
+                bthYear.add("2021");bthYear.add("2020");bthYear.add("2019");bthYear.add("2018");bthYear.add("2017");bthYear.add("2016");bthYear.add("2015");bthYear.add("2014");bthYear.add("2013");bthYear.add("2012");bthYear.add("2011");bthYear.add("2010");
                 bthYear.add("2009");bthYear.add("2008");bthYear.add("2007");bthYear.add("2006");bthYear.add("2005");bthYear.add("2004");bthYear.add("2003");bthYear.add("2002");bthYear.add("2001");bthYear.add("2000");
                 bthYear.add("1999");bthYear.add("1998");bthYear.add("1997");bthYear.add("1996");bthYear.add("1995");bthYear.add("1994");bthYear.add("1993");bthYear.add("1992");bthYear.add("1991");bthYear.add("1990");
                 bthYear.add("1989");bthYear.add("1988");bthYear.add("1987");bthYear.add("1986");bthYear.add("1985");bthYear.add("1984");bthYear.add("1983");bthYear.add("1982");bthYear.add("1981");bthYear.add("1980");
@@ -1117,7 +1117,7 @@ public class WorkerSheetFragment extends Fragment {
                     }
                 });
 
-                bthYearDialog = new SpinnerDialog(getActivity(),bthYear, "Selecciona tu Año de Nacimiento");
+                bthYearDialog = new SpinnerDialog(getActivity(),bthYear, "Selecciona tu Año de Ingreso");
                 bthYearDialog.bindOnSpinerListener(new OnSpinerItemClick() {
                     @Override
                     public void onClick(String item2, int position2) {

@@ -51,23 +51,29 @@ import com.squareup.picasso.Picasso;
 import java.io.File;
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import es.dmoral.toasty.Toasty;
+import in.galaxyofandroid.spinerdialog.OnSpinerItemClick;
+import in.galaxyofandroid.spinerdialog.SpinnerDialog;
 
 import static com.oalonedeveloper.oliver.oliverappandroidapp.R.layout.activity_purchase_order;
 
 public class PurchaseOrderActivity extends AppCompatActivity {
 
     CircleImageView imgCompanyProfile;
-    TextView txtCompanyName,txtCompanyAddress,txtCurrentDate,txtOrderCode,txtSupplier,txtContact,txtPhone,txtEmail,txtAddress,txtSalesConditions,txtTaxes,txtTotalAmount;
+    TextView txtCompanyName,txtCompanyAddress,txtCurrentDate,txtOrderCode,txtSupplier,txtContact,txtPhone,txtEmail,txtAddress,txtSalesConditions,txtTaxes,txtTotalAmount,txtExpirationDate;
     DatabaseReference companyRef;
-    String post_key,company_image,company_social_reason,company_address,timestamp,supplier_id,address_value,sales_conditions_value,total_amount_st,total_taxes_st,image_verification,current_time,currentPhotoPath,downloadUrl;
+    String post_key,company_image,company_social_reason,company_address,timestamp,supplier_id,address_value,sales_conditions_value,total_amount_st,total_taxes_st,image_verification,current_time,currentPhotoPath,downloadUrl,expiration_day,expiration_month,expiration_year,
+            exp_validation;
     DecimalFormat decimalFormat;
     int day,month,year;
     RecyclerView recyclerView,recyclerView2,recyclerView3;
@@ -79,6 +85,17 @@ public class PurchaseOrderActivity extends AppCompatActivity {
     StorageReference userProfileImageRef;
     final static int Gallery_Pick = 2;
     RelativeLayout rootLayout;
+
+    ArrayList<String> bthDay =new ArrayList<>();
+    SpinnerDialog bthDayDialog;
+
+    ArrayList<String> bthMonth =new ArrayList<>();
+    SpinnerDialog bthMonthDialog;
+
+    ArrayList<String> bthYear =new ArrayList<>();
+    SpinnerDialog bthYearDialog;
+
+    long diff,expiration_days;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,6 +118,7 @@ public class PurchaseOrderActivity extends AppCompatActivity {
         txtTotalAmount = findViewById(R.id.txtTotalAmount);
         btnRegisterPurchaseOrder = findViewById(R.id.btnRegisterPurchaseOrder);
         rootLayout = findViewById(R.id.rootLayout);
+        txtExpirationDate = findViewById(R.id.txtExpirationDate);
 
         image_verification = "";
         supplier_id = "";
@@ -126,6 +144,12 @@ public class PurchaseOrderActivity extends AppCompatActivity {
         month = cal.get(Calendar.MONTH)+1;
         year = cal.get(Calendar.YEAR);
 
+        expiration_day = day+"";
+        expiration_month = month+"";
+        expiration_year = year+"";
+
+        txtExpirationDate.setText("VENCIMIENTO: "+expiration_day+"/"+expiration_month+"/"+expiration_year);
+
         Long tsLong = System.currentTimeMillis()/1000;
         timestamp = tsLong.toString();
 
@@ -138,6 +162,13 @@ public class PurchaseOrderActivity extends AppCompatActivity {
 
         txtCurrentDate.setText("Fecha de emisión: "+day+"/"+month+"/"+year);
         txtOrderCode.setText("Nº: "+timestamp);
+
+        txtExpirationDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showExpirationDateDialog();
+            }
+        });
 
         companyRef.child(post_key).child("Purchased Order Items").removeValue();
 
@@ -240,6 +271,10 @@ public class PurchaseOrderActivity extends AppCompatActivity {
                 companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("operation_day").setValue(day+"");
                 companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("operation_month").setValue(month+"");
                 companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("operation_year").setValue(year+"");
+                companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("expiration_day").setValue(expiration_day);
+                companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("expiration_month").setValue(expiration_month);
+                companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("expiration_year").setValue(expiration_year);
+                companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("purchase_payment_state").setValue("no_paid");
                 companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("purchase_order_currency").setValue("PEN");
 
 
@@ -270,6 +305,131 @@ public class PurchaseOrderActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void showExpirationDateDialog() {
+        final AlertDialog dialog = new AlertDialog.Builder(this).create();
+
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View finance_method = inflater.inflate(R.layout.add_expiration_date_dialog,null);
+
+        final Button edtBthDay,edtBthMonth,edtBthYear,btnRegister;
+        final RelativeLayout rootLayout;
+
+        edtBthDay = finance_method.findViewById(R.id.edtBthDay);
+        edtBthMonth = finance_method.findViewById(R.id.edtBthMonth);
+        edtBthYear = finance_method.findViewById(R.id.edtBthYear);
+        btnRegister = finance_method.findViewById(R.id.btnRegister);
+        rootLayout = finance_method.findViewById(R.id.rootLayout);
+
+        bthDay.add("1"); bthDay.add("2"); bthDay.add("3"); bthDay.add("4"); bthDay.add("5"); bthDay.add("6"); bthDay.add("7"); bthDay.add("8"); bthDay.add("9"); bthDay.add("10");
+        bthDay.add("11"); bthDay.add("12"); bthDay.add("13"); bthDay.add("14"); bthDay.add("15"); bthDay.add("16"); bthDay.add("17"); bthDay.add("18"); bthDay.add("19"); bthDay.add("20");
+        bthDay.add("21"); bthDay.add("22"); bthDay.add("23"); bthDay.add("24"); bthDay.add("25"); bthDay.add("26"); bthDay.add("27"); bthDay.add("28"); bthDay.add("29"); bthDay.add("30");
+        bthDay.add("31");
+
+        edtBthDay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bthDayDialog.showSpinerDialog();
+            }
+        });
+
+        bthDayDialog = new SpinnerDialog(this,bthDay, "Selecciona el Día de Vencimiento");
+        bthDayDialog.bindOnSpinerListener(new OnSpinerItemClick() {
+            @Override
+            public void onClick(String item2, int position2) {
+                edtBthDay.setText(item2);
+            }
+        });
+
+        bthMonth.add("1");bthMonth.add("2");bthMonth.add("3");bthMonth.add("4");bthMonth.add("5");bthMonth.add("6");bthMonth.add("7");bthMonth.add("8");bthMonth.add("9");bthMonth.add("10");
+        bthMonth.add("11");bthMonth.add("12");
+
+        edtBthMonth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bthMonthDialog.showSpinerDialog();
+            }
+        });
+
+        bthMonthDialog = new SpinnerDialog(this,bthMonth, "Selecciona el Mes de Vencimiento");
+        bthMonthDialog.bindOnSpinerListener(new OnSpinerItemClick() {
+            @Override
+            public void onClick(String item2, int position2) {
+                edtBthMonth.setText(item2);
+            }
+        });
+
+        bthYear.add("2021");bthYear.add("2022");bthYear.add("2023");bthYear.add("2024");bthYear.add("2025");bthYear.add("2026");bthYear.add("2027");bthYear.add("2028");bthYear.add("2029");
+        bthYear.add("2030");
+
+        edtBthYear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bthYearDialog.showSpinerDialog();
+            }
+        });
+
+        bthYearDialog = new SpinnerDialog(this,bthYear, "Selecciona el Año de Vencimiento");
+        bthYearDialog.bindOnSpinerListener(new OnSpinerItemClick() {
+            @Override
+            public void onClick(String item2, int position2) {
+                edtBthYear.setText(item2);
+            }
+        });
+
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SimpleDateFormat myFormat = new SimpleDateFormat("dd MM yyyy");
+                String inputString1 = day+" "+month+" "+year;
+                String inputString2 = edtBthDay.getText().toString()+" "+edtBthMonth.getText().toString()+" "+edtBthYear.getText().toString();
+                try {
+                    Date date1 = myFormat.parse(inputString1);
+                    Date date2 = myFormat.parse(inputString2);
+                    diff = date2.getTime() - date1.getTime();
+
+                    expiration_days = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+
+                    if (diff <= 0) {
+                        exp_validation = "false";
+                    } else {
+                        exp_validation = "true";
+                    }
+
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+                if (exp_validation.equals("false")) {
+                    Snackbar.make(rootLayout, "La fecha de vencimiento no puede ser menor a la fecha actual", Snackbar.LENGTH_LONG).show();
+                    return;
+                }
+                else if (TextUtils.isEmpty(edtBthDay.getText().toString())) {
+                    Snackbar.make(rootLayout, "Debes ingresar el día de vencimiento", Snackbar.LENGTH_LONG).show();
+                    return;
+                }
+                else if (TextUtils.isEmpty(edtBthMonth.getText().toString())) {
+                    Snackbar.make(rootLayout, "Debes ingresar el mes de vencimiento", Snackbar.LENGTH_LONG).show();
+                    return;
+                } else if (TextUtils.isEmpty(edtBthYear.getText().toString())) {
+                    Snackbar.make(rootLayout, "Debes ingresar el año de vencimiento", Snackbar.LENGTH_LONG).show();
+                    return;
+                } else {
+                    expiration_day = edtBthDay.getText().toString();
+                    expiration_month = edtBthMonth.getText().toString();
+                    expiration_year = edtBthYear.getText().toString();
+                    txtExpirationDate.setText("VENCIMIENTO: "+edtBthDay.getText().toString()+"/"+edtBthMonth.getText().toString()+"/"+edtBthYear.getText().toString()+" ("+expiration_days+" días)");
+                    dialog.dismiss();
+                }
+
+
+            }
+        });
+
+
+        dialog.setView(finance_method);
+        dialog.show();
     }
 
     private void showTotalAmount() {

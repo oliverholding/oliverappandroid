@@ -711,6 +711,50 @@
                 android:layout_height="wrap_content"/>
 
             <Button
+                android:id="@+id/btnCashAndBanks"
+                android:padding="8dp"
+                android:text="Caja y Bancos"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:background="@drawable/gray_button_style"
+                android:drawableStart="@drawable/icono_ventas128"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnAccountsNoPaid"
+                android:padding="8dp"
+                android:text="Cuentas por Cobrar"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:background="@drawable/gray_button_style"
+                android:drawableStart="@drawable/icono_ventas128"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnAccountsToPaid"
+                android:padding="8dp"
+                android:text="Cuentas por Pagar"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:background="@drawable/gray_button_style"
+                android:drawableStart="@drawable/icono_ventas128"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnBudget"
+                android:padding="8dp"
+                android:text="Ejecución Presupuestal"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:background="@drawable/gray_button_style"
+                android:drawableStart="@drawable/icono_ventas128"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
                 android:id="@+id/btnFixedAssets"
                 android:padding="8dp"
                 android:text="Activo Fijo"

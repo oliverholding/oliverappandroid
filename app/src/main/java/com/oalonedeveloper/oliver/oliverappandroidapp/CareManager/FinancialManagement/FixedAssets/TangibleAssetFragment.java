@@ -20,10 +20,13 @@ import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ServerValue;
+import com.google.firebase.database.ValueEventListener;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.PersonalFiles.JobProfileFilesActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
@@ -39,6 +42,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Map;
 
 import es.dmoral.toasty.Toasty;
 import in.galaxyofandroid.spinerdialog.OnSpinerItemClick;
@@ -60,13 +64,17 @@ public class TangibleAssetFragment extends Fragment {
     SpinnerDialog assetTypeDialog;
 
     DatabaseReference companyRef;
-    String post_key;
+    String post_key, total_assets_value;
 
     DecimalFormat decimalFormat;
 
     RecyclerView recyclerView;
 
     int day,month,year;
+
+    double sum,deprecation_rate,total;
+
+    TextView txtTotalAssetsAmount;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -80,6 +88,7 @@ public class TangibleAssetFragment extends Fragment {
         decimalFormat = new DecimalFormat("0.00");
 
         btnRegister = view.findViewById(R.id.btnRegister);
+        txtTotalAssetsAmount = view.findViewById(R.id.txtTotalAssetsAmount);
 
         recyclerView = view.findViewById(R.id.recyclerView);
 
@@ -95,6 +104,8 @@ public class TangibleAssetFragment extends Fragment {
         day = cal.get(Calendar.DAY_OF_MONTH);
         month = cal.get(Calendar.MONTH)+1;
         year = cal.get(Calendar.YEAR);
+
+        calculateTotalSum();
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -256,6 +267,8 @@ public class TangibleAssetFragment extends Fragment {
                             Toasty.success(getActivity(), "Activo Registrado", Toast.LENGTH_LONG).show();
                             dialog.dismiss();
 
+                            calculateTotalSum();
+
                         }
                     }
                 });
@@ -269,6 +282,33 @@ public class TangibleAssetFragment extends Fragment {
         showFixedAssets();
 
         return view;
+    }
+
+    private void calculateTotalSum() {
+        companyRef.child(post_key).child("Fixed Assets").child("Tangible").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                sum = 0;
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    Map<String, Object> map = (Map<String, Object>) ds.getValue();
+                    Object asset_price = map.get("asset_price");
+                    Object asset_quantity = map.get("asset_quantity");
+                    double asset_price_db = Double.parseDouble((String) asset_price);
+                    double asset_quantity_db = Double.parseDouble((String) asset_quantity);
+                    double total = asset_price_db*asset_quantity_db;
+                    sum += total;
+                    total_assets_value = decimalFormat.format(sum);
+                    txtTotalAssetsAmount.setText("Total Activos Fijos Tangibles: S/ "+total_assets_value);
+
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
     }
 
     private void showFixedAssets() {
@@ -290,12 +330,16 @@ public class TangibleAssetFragment extends Fragment {
                 viewHolder.txtUnitCost.setText("S/ "+viewHolder.my_asset_price);
                 viewHolder.txtQuantity.setText(viewHolder.my_asset_quantity);
 
-                double price = Double.parseDouble(viewHolder.my_asset_price);
-                double quantity = Double.parseDouble(viewHolder.my_asset_quantity);
-                final double deprecation_rate = (Double.parseDouble(viewHolder.my_asset_depreciation_rate))/100;
-                final double total = price*quantity;
-                String total_st = decimalFormat.format(total);
-                viewHolder.txtTotal.setText("S/ "+total_st);
+                if (viewHolder.my_asset_price != null && viewHolder.my_asset_quantity != null) {
+                    double price = Double.parseDouble(viewHolder.my_asset_price);
+                    double quantity = Double.parseDouble(viewHolder.my_asset_quantity);
+                    deprecation_rate = (Double.parseDouble(viewHolder.my_asset_depreciation_rate))/100;
+                    total = price*quantity;
+                    String total_st = decimalFormat.format(total);
+                    viewHolder.txtTotal.setText("S/ "+total_st);
+                }
+
+
 
                 viewHolder.txtShowDeprecation.setOnClickListener(new View.OnClickListener() {
                     @Override

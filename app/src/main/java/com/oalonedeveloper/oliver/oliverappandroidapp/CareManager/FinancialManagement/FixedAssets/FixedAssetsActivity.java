@@ -57,9 +57,9 @@ public class FixedAssetsActivity extends AppCompatActivity {
                 case 0:
                     return new TangibleAssetFragment();
                 case 1:
-                    return new TangibleAssetFragment();
+                    return new IntangibleAssetFragment();
                 case 2:
-                    return new TangibleAssetFragment();
+                    return new FixedAssetTotalFragment();
                 default:
                     return null;
             }

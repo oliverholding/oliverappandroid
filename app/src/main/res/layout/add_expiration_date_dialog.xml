@@ -28,7 +28,7 @@
 
             <TextView
                 android:textSize="14sp"
-                android:text="Ingresa la fecha límite que tu cliente tiene para pagarte"
+                android:text="Ingresa la fecha límite de pago"
                 android:layout_margin="4dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>

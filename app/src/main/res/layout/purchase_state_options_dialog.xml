@@ -27,7 +27,7 @@
             android:layout_height="wrap_content">
 
             <ImageButton
-                android:id="@+id/btnSendToStore"
+                android:id="@+id/btnCancel"
                 android:layout_margin="8dp"
                 android:background="@drawable/gray_button_style"
                 android:src="@drawable/icono_logistica128"
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content">
 
             <ImageButton
-                android:id="@+id/btnSendToWarehouse"
+                android:id="@+id/btnRejected"
                 android:layout_margin="8dp"
                 android:background="@drawable/gray_button_style"
                 android:src="@drawable/icono_logistica128"

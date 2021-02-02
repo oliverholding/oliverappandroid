@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".CareManager.PeopleManagement.WorkersPayroll.PersonalPaymentBillFragment">
 
     <ScrollView
@@ -30,352 +32,599 @@
                     android:layout_width="0dp"
                     android:layout_height="60dp"/>
 
-                <LinearLayout
-                    android:layout_margin="8dp"
-                    android:background="@drawable/table_background"
+                <androidx.cardview.widget.CardView
+                    app:cardElevation="4dp"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="8dp"
                     android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content">
 
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtBillPeriod"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:gravity="center"
+                            android:layout_margin="8dp"
+                            android:text="BOLETA DE PAGO"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textColor="@android:color/black"
+                            android:gravity="center"
+                            android:layout_margin="2dp"
+                            android:text="D.S. Nº 017-2001-TR DEL 07-06-01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtPeriods"
+                            android:textColor="@android:color/black"
+                            android:gravity="center"
+                            android:layout_margin="8dp"
+                            android:text="BOLETA DE PAGO"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txtCompanyName"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="2dp"
+                    android:text="company_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtCompanyRuc"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="2dp"
+                    android:text="company_ruc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtCompanyAddress"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="2dp"
+                    android:text="company_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="8dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="8dp"
+                    android:layout_margin="4dp"
+                    app:cardElevation="4dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_margin="4dp"
+                            android:src="@color/colorGradientCenterRed"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"/>
+
+                        <TextView
+                            android:textColor="@android:color/black"
+                            android:gravity="center"
+                            android:layout_margin="4dp"
+                            android:text="REGIMEN GENERAL"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <RadioButton
+                            android:id="@+id/rdGeneral"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="8dp"
+                    android:layout_margin="4dp"
+                    app:cardElevation="4dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_margin="4dp"
+                            android:src="@color/colorGradientCenterRed"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"/>
+
+                        <TextView
+                            android:textColor="@android:color/black"
+                            android:gravity="center"
+                            android:layout_margin="4dp"
+                            android:text="PEQUEÑA EMPRESA"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <RadioButton
+                            android:id="@+id/rdLittle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="8dp"
+                    android:layout_margin="4dp"
+                    app:cardElevation="4dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_margin="4dp"
+                            android:src="@color/colorGradientCenterRed"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"/>
+
+                        <TextView
+                            android:textColor="@android:color/black"
+                            android:gravity="center"
+                            android:layout_margin="4dp"
+                            android:text="MICRO EMPRESA"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <RadioButton
+                            android:id="@+id/rdMicro"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
                     <TextView
-                        android:id="@+id/txtBillPeriod"
                         android:textStyle="bold"
-                        android:textColor="@android:color/black"
-                        android:gravity="center"
-                        android:layout_margin="8dp"
-                        android:text="BOLETA DE PAGO"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-
-                    <TextView
-                        android:textColor="@android:color/black"
-                        android:gravity="center"
+                        android:padding="4dp"
+                        android:background="@drawable/gray_button_style"
+                        android:textColor="@android:color/white"
                         android:layout_margin="2dp"
-                        android:text="D.S. Nº 017-2001-TR DEL 07-06-01"
+                        android:text="DATOS DEL TRABAJADOR"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                    <TextView
+                        android:id="@+id/txtWorkerName"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="worker_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
                     <TextView
-                        android:id="@+id/txtPeriods"
+                        android:id="@+id/txtWorkerDocument"
                         android:textColor="@android:color/black"
-                        android:gravity="center"
-                        android:layout_margin="8dp"
-                        android:text="BOLETA DE PAGO"
+                        android:layout_margin="4dp"
+                        android:text="Documento: -"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtPensionDate"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Régimen Pensionario: 01/12/2020"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="CUSPP: 588251TGTCL1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Categoría: Empleado"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtCharge"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Cargo:"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtBeginDate"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Fecha de Ingreso:"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Fecha de Cese: Indefinido"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Días Laborados: 25"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Total Horas Laboradas: 200"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Días no Laborados: 5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtWorkerArea"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Área: "
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
                 </LinearLayout>
 
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-
-            <TextView
-                android:id="@+id/txtCompanyName"
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="company_name"
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="4dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/txtCompanyRuc"
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="company_ruc"
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_margin="4dp"
+                        android:background="@drawable/gray_button_style"
+                        android:padding="8dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"
+                            android:text="INGRESOS"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:id="@+id/btnAddIncomes"
+                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:layout_weight="0.1"
+                            android:layout_width="0dp"
+                            android:layout_height="20dp"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtWorkerSalary"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Sueldo: S/ 0.00"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtExtraTime"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Horas Extra: S/ 0.00"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtFamiliarBonus"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Asignación Familiar: S/ 0.00"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtHolidays"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Remuneración Vacacional: S/ 0.00"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtTransport"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Mov. Sub. Asistencia: S/ 0.00"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtCts"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="C.T.S: S/ 0.00"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtTotalIncomes"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Total Ingresos: S/ 0.00"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="4dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/txtCompanyAddress"
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="company_address"
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_margin="4dp"
+                        android:background="@drawable/gray_button_style"
+                        android:padding="8dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"
+                            android:text="DESCUENTOS"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:id="@+id/btnAddDiscounts"
+                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:layout_weight="0.1"
+                            android:layout_width="0dp"
+                            android:layout_height="20dp"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtAfpFund"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="AFP Fondo 10.00%: "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtAfpFee"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="AFP Comisión 1.60%: "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtOnp"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="ONP 13%: S/ 0.00"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtFaults"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Faltas: S/ 0.00"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtRetentions4"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Retenciones 4ta Categoría: S/ 0.00"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtRetentions5"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Retenciones 5ta Categoría: S/ 0.00"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtJudicialRetentions"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Retenciones Judiciales: S/ 0.00"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtAdvancedPayments"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Adelantos: S/ 0.00"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtTotalDiscount"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Total Descuentos: S/ 0.00"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="4dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:background="@drawable/gray_button_style"
+                        android:textColor="@android:color/white"
+                        android:padding="4dp"
+                        android:layout_margin="2dp"
+                        android:text="APORTACIONES"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
 
 
+                    <TextView
+                        android:id="@+id/txtEssalud"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="EsSalud 9%: "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
 
 
-            <TextView
-                android:textStyle="bold"
-                android:padding="4dp"
-                android:background="@drawable/gray_button_style"
-                android:textColor="@android:color/white"
-                android:layout_margin="2dp"
-                android:text="DATOS DEL TRABAJADOR"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/txtTotalAportation"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="4dp"
+                        android:text="Total Aportes: S/ 0.00"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
 
+                </LinearLayout>
 
-            <TextView
-                android:id="@+id/txtWorkerName"
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="worker_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:id="@+id/txtWorkerDocument"
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Documento: -"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:id="@+id/txtPensionDate"
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Régimen Pensionario: 01/12/2020"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="CUSPP: 588251TGTCL1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Categoría: Empleado"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:id="@+id/txtCharge"
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Cargo:"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:id="@+id/txtBeginDate"
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Fecha de Ingreso:"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Fecha de Cese: Indefinido"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Días Laborados: 25"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Total Horas Laboradas: "
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Días no Laborados: "
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Horas Extra: "
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-
-            <TextView
-                android:id="@+id/txtWorkerArea"
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Área: "
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textStyle="bold"
-                android:background="@drawable/gray_button_style"
-                android:textColor="@android:color/white"
-                android:padding="4dp"
-                android:layout_margin="2dp"
-                android:text="INGRESOS"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:id="@+id/txtWorkerSalary"
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Sueldo Computable: S/ 0.00"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Asignación Familiar: S/ 0.00"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Remuneración Vacacional: S/ 0.00"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Mov. Sub. Asistencia: S/ 0.00"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="C.T.S: S/ 0.00"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:id="@+id/txtTotalIncomes"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Total Ingresos: S/ 0.00"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textStyle="bold"
-                android:background="@drawable/gray_button_style"
-                android:textColor="@android:color/white"
-                android:padding="4dp"
-                android:text="DESCUENTOS"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:id="@+id/txtAfpFund"
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="AFP Fondo 10.00%: "
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:id="@+id/txtAfpFee"
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="AFP Comisión 1.60%: "
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="ONP 13%: S/ 0.00"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Faltas: 0"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Retenciones 4ta Categoría: S/ 0.00"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Retenciones 5ta Categoría: S/ 0.00"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Retenciones Judiciales: S/ 0.00"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Adelantos: S/ 0.00"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:id="@+id/txtTotalDiscount"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Total Descuentos: S/ 0.00"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-
-            <TextView
-                android:textStyle="bold"
-                android:background="@drawable/gray_button_style"
-                android:textColor="@android:color/white"
-                android:padding="4dp"
-                android:layout_margin="2dp"
-                android:text="APORTACIONES"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-
-            <TextView
-                android:id="@+id/txtEssalud"
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="EsSalud 9%: "
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-
-            <TextView
-                android:id="@+id/txtTotalAportation"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:layout_margin="2dp"
-                android:text="Total Aportes: S/ 0.00"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
+            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/txtNetPayment"
                 android:textStyle="bold"
                 android:background="@drawable/gray_button_style"
                 android:textColor="@android:color/white"
-                android:padding="4dp"
-                android:layout_margin="2dp"
+                android:padding="8dp"
+                android:layout_margin="4dp"
                 android:text="NETO A PAGAR: S/ 0.00"
                 android:gravity="center"
                 android:layout_width="match_parent"

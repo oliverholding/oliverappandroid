@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CareManager.PeopleManagement.Evaluation360.ResultsEvaluationFragment">
+
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="8dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewTitle"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Resultados de la Evaluación"
+                        android:textSize="18sp"
+                        android:layout_margin="4dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Descubre la califación del trabajador."
+                        android:layout_margin="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="8dp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Evaluador"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:layout_margin="8dp"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:text=""
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:layout_margin="8dp"
+                            android:gravity="end"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Calificación"
+                            android:layout_weight="0.8"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textStyle="bold"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:gravity="center"
+                            android:text="Gerente o Dueño"
+                            android:layout_weight="0.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <com.xw.repo.BubbleSeekBar
+                            android:id="@+id/taxesSeekBar"
+                            android:clickable="false"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:bsb_track_color="@color/colorGradientCenterRed"
+                            app:bsb_bubble_color="@color/colorAccent"
+                            app:bsb_bubble_text_color="@android:color/white"
+                            app:bsb_second_track_color="@color/colorPrimary"
+                            app:bsb_thumb_color="@android:color/transparent"
+                            app:bsb_max="100"
+                            app:bsb_min="0"
+                            app:bsb_second_track_size="14dp"
+                            app:bsb_progress="0"
+                            app:bsb_section_count="0"
+                            app:bsb_track_size="14dp"
+                            app:bsb_show_progress_in_float="false"
+                            app:bsb_show_section_mark="false"
+                            app:bsb_show_section_text="false"
+                            app:bsb_show_thumb_text="false"
+                            app:bsb_always_show_bubble="false"
+                            />
+
+                        <TextView
+                            android:id="@+id/txtTaxesNormativity"
+                            android:textStyle="bold"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:gravity="center"
+                            android:text="-"
+                            android:layout_weight="0.3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textStyle="bold"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:gravity="center"
+                            android:text="Jefe o Líder"
+                            android:layout_weight="0.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <com.xw.repo.BubbleSeekBar
+                            android:id="@+id/labourSeekBar"
+                            android:clickable="false"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:bsb_track_color="@color/colorGradientCenterRed"
+                            app:bsb_bubble_color="@color/colorAccent"
+                            app:bsb_bubble_text_color="@android:color/white"
+                            app:bsb_second_track_color="@color/colorPrimary"
+                            app:bsb_thumb_color="@android:color/transparent"
+                            app:bsb_max="100"
+                            app:bsb_min="0"
+                            app:bsb_second_track_size="14dp"
+                            app:bsb_progress="0"
+                            app:bsb_section_count="0"
+                            app:bsb_track_size="14dp"
+                            app:bsb_show_progress_in_float="false"
+                            app:bsb_show_section_mark="false"
+                            app:bsb_show_section_text="false"
+                            app:bsb_show_thumb_text="false"
+                            app:bsb_always_show_bubble="false"
+                            />
+
+                        <TextView
+                            android:id="@+id/txtLabourNormantivity"
+                            android:textStyle="bold"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:gravity="center"
+                            android:text="-"
+                            android:layout_weight="0.3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textStyle="bold"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:gravity="center"
+                            android:text="Compañero"
+                            android:layout_weight="0.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <com.xw.repo.BubbleSeekBar
+                            android:id="@+id/sanitarySeekBar"
+                            android:clickable="false"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:bsb_track_color="@color/colorGradientCenterRed"
+                            app:bsb_bubble_color="@color/colorAccent"
+                            app:bsb_bubble_text_color="@android:color/white"
+                            app:bsb_second_track_color="@color/colorPrimary"
+                            app:bsb_thumb_color="@android:color/transparent"
+                            app:bsb_max="100"
+                            app:bsb_min="0"
+                            app:bsb_second_track_size="14dp"
+                            app:bsb_progress="0"
+                            app:bsb_section_count="0"
+                            app:bsb_track_size="14dp"
+                            app:bsb_show_progress_in_float="false"
+                            app:bsb_show_section_mark="false"
+                            app:bsb_show_section_text="false"
+                            app:bsb_show_thumb_text="false"
+                            app:bsb_always_show_bubble="false"
+                            />
+
+                        <TextView
+                            android:id="@+id/txtSanitaryNormativity"
+                            android:textStyle="bold"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:gravity="center"
+                            android:text="-"
+                            android:layout_weight="0.3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textStyle="bold"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:gravity="center"
+                            android:text="Promedio"
+                            android:layout_weight="0.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <com.xw.repo.BubbleSeekBar
+                            android:id="@+id/environmentalSeekBar"
+                            android:clickable="false"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:bsb_track_color="@color/colorGradientCenterRed"
+                            app:bsb_bubble_color="@color/colorAccent"
+                            app:bsb_bubble_text_color="@android:color/white"
+                            app:bsb_second_track_color="@color/colorPrimary"
+                            app:bsb_thumb_color="@android:color/transparent"
+                            app:bsb_max="100"
+                            app:bsb_min="0"
+                            app:bsb_second_track_size="14dp"
+                            app:bsb_progress="0"
+                            app:bsb_section_count="0"
+                            app:bsb_track_size="14dp"
+                            app:bsb_show_progress_in_float="false"
+                            app:bsb_show_section_mark="false"
+                            app:bsb_show_section_text="false"
+                            app:bsb_show_thumb_text="false"
+                            app:bsb_always_show_bubble="false"
+                            />
+
+                        <TextView
+                            android:id="@+id/txtEnvironmentalNormativity"
+                            android:textStyle="bold"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:gravity="center"
+                            android:text="-"
+                            android:layout_weight="0.3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

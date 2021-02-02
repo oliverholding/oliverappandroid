@@ -145,10 +145,12 @@ public class PurchaseOrdersListActivity extends AppCompatActivity {
                         LayoutInflater inflater = LayoutInflater.from(PurchaseOrdersListActivity.this);
                         View finance_method = inflater.inflate(R.layout.purchase_state_options_dialog,null);
 
-                        ImageButton btnReady,btnReturned;
+                        ImageButton btnReady,btnReturned,btnCancel,btnRejected;
 
                         btnReady = finance_method.findViewById(R.id.btnReady);
                         btnReturned = finance_method.findViewById(R.id.btnReturned);
+                        btnCancel = finance_method.findViewById(R.id.btnCancel);
+                        btnRejected = finance_method.findViewById(R.id.btnRejected);
 
                         purchase_order_id = postKey;
 
@@ -217,6 +219,8 @@ public class PurchaseOrdersListActivity extends AppCompatActivity {
                                                                     companyRef.child(post_key).child("Purchased Items").child(ds.getKey()).child("Suppliers").child(viewHolder.my_purchase_order_supplier_id).child("Delivery on Time").child(postKey).setValue(item_quantity_st);
                                                                 }
 
+                                                                companyRef.child(post_key).child("Purchased Orders").child(postKey).child("purchase_payment_state").setValue("paid");
+
                                                                 companyRef.child(post_key).child("Warehouses").child(warehouse_destination_id_st).child("Products").child(ds.getKey()).child("product_stock").setValue(total_stock_st);
 
 
@@ -265,10 +269,14 @@ public class PurchaseOrdersListActivity extends AppCompatActivity {
 
                                                                 if (rdLate.isChecked()) {
                                                                     companyRef.child(post_key).child("Purchased Orders").child(postKey).child("purchase_order_state").setValue("ready_delayed");
+                                                                    companyRef.child(post_key).child("Purchased Items").child(ds.getKey()).child("Suppliers").child(viewHolder.my_purchase_order_supplier_id).child("Delivery Delayed").child(postKey).setValue(item_quantity_st);
                                                                 }
                                                                 if (rdOnTime.isChecked()) {
                                                                     companyRef.child(post_key).child("Purchased Orders").child(postKey).child("purchase_order_state").setValue("ready");
+                                                                    companyRef.child(post_key).child("Purchased Items").child(ds.getKey()).child("Suppliers").child(viewHolder.my_purchase_order_supplier_id).child("Delivery on Time").child(postKey).setValue(item_quantity_st);
                                                                 }
+
+                                                                companyRef.child(post_key).child("Purchased Orders").child(postKey).child("purchase_payment_state").setValue("paid");
 
                                                                 companyRef.child(post_key).child("Warehouses").child(warehouse_destination_id_st).child("Products").child(ds.getKey()).child("product_stock").setValue(item_quantity);
                                                                 companyRef.child(post_key).child("Warehouses").child(warehouse_destination_id_st).child("Products").child(ds.getKey()).child("company_id").setValue(post_key);
@@ -331,8 +339,6 @@ public class PurchaseOrdersListActivity extends AppCompatActivity {
 
                                                         }
                                                     });
-
-                                                    Toast.makeText(PurchaseOrdersListActivity.this, "warehouse_id: "+warehouse_destination_id, Toast.LENGTH_SHORT).show();
                                                 }
 
 
@@ -506,6 +512,24 @@ public class PurchaseOrdersListActivity extends AppCompatActivity {
                                 });
 
 
+                            }
+                        });
+
+                        btnCancel.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                companyRef.child(post_key).child("Purchased Orders").child(postKey).child("purchase_order_state").setValue("canceled");
+                                Toasty.success(PurchaseOrdersListActivity.this, "Actualizado", Toast.LENGTH_LONG).show();
+                                dialog.dismiss();
+                            }
+                        });
+
+                        btnRejected.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                companyRef.child(post_key).child("Purchased Orders").child(postKey).child("purchase_order_state").setValue("supplier_rejected");
+                                Toasty.success(PurchaseOrdersListActivity.this, "Actualizado", Toast.LENGTH_LONG).show();
+                                dialog.dismiss();
                             }
                         });
 

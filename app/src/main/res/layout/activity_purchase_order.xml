@@ -75,12 +75,29 @@
                 android:layout_height="wrap_content">
 
 
+
                 <TextView
                     android:id="@+id/txtCurrentDate"
-                    android:textSize="12sp"
-                    android:layout_margin="8dp"
                     android:textColor="@android:color/black"
-                    android:text="Fecha de Emisión: dd/mm/yyyy"
+                    android:padding="8dp"
+                    android:textStyle="bold"
+                    android:layout_margin="4dp"
+                    android:textSize="11sp"
+                    android:background="@drawable/edit_text_style"
+                    android:text="EMISIÓN: COMPLETAR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtExpirationDate"
+                    android:textColor="@android:color/black"
+                    android:gravity="start"
+                    android:padding="8dp"
+                    android:textStyle="bold"
+                    android:layout_margin="4dp"
+                    android:textSize="11sp"
+                    android:background="@drawable/edit_text_style"
+                    android:text="VENCIMIENTO: COMPLETAR"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 

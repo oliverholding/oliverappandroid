@@ -40,7 +40,7 @@
                         android:layout_height="wrap_content"/>
 
                     <TextView
-                        android:text="Calcula las retenciones de renta de 4ta categoría."
+                        android:text="Aprende cómo funcionan los recibos por honorarios y las retenciones de 4ta categría."
                         android:layout_margin="4dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
@@ -49,35 +49,215 @@
 
             </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:layout_margin="8dp"
-                android:textSize="16sp"
-                android:textColor="@android:color/black"
-                android:text="Ingresos Anuales de 4ta Categoría"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <EditText
-                android:id="@+id/edtSalary"
-                android:inputType="numberDecimal"
+            <LinearLayout
                 android:padding="8dp"
-                android:text="0.00"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:padding="8dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtWorkerName"
+                        android:textColor="@android:color/black"
+                        android:gravity="start"
+                        android:layout_margin="2dp"
+                        android:text=""
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtWorkerAddress"
+                        android:gravity="start"
+                        android:layout_margin="2dp"
+                        android:text=""
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:background="@drawable/table_background"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtRuc"
+                        android:background="@drawable/edit_text_style"
+                        android:textColor="@android:color/black"
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:textStyle="bold"
+                        android:layout_margin="4dp"
+                        android:text="RUC: Completar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:gravity="center"
+                        android:textSize="11sp"
+                        android:text="RECIBO POR HONORARIOS ELECTRONICO"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:gravity="center"
+                        android:text="E001-001"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtCompanySocialReason"
+                android:layout_margin="8dp"
+                android:textColor="@android:color/black"
+                android:text="Recbí de: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtCompanyRuc"
+                android:layout_margin="8dp"
+                android:textColor="@android:color/black"
+                android:text="Identificado con RUC número: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtCompanyAddress"
+                android:layout_margin="8dp"
+                android:textColor="@android:color/black"
+                android:text="Domiciliado en: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtConcept"
+                android:textColor="@android:color/black"
+                android:gravity="start"
+                android:padding="8dp"
+                android:textStyle="bold"
                 android:layout_margin="8dp"
                 android:background="@drawable/edit_text_style"
-                android:hint="Ingresos Anuales de 4ta Categoría..."
+                android:text="Concepto: Completar"
+                android:layout_weight="1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"/>
 
             <TextView
-                android:id="@+id/txtMonthlyRetention"
-                android:layout_margin="12dp"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:gravity="center"
+                android:id="@+id/txtObservation"
                 android:textColor="@android:color/black"
-                android:text="RETENSIÓN MENSUAL: S/ 0.00"
+                android:gravity="start"
+                android:padding="8dp"
+                android:textStyle="bold"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:text="Observaciones: Completar"
+                android:layout_weight="1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_margin="8dp"
+                android:textColor="@android:color/black"
+                android:text="Fecha de Emisión: "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+            <LinearLayout
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_weight="0.3"
+                    android:padding="8dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:gravity="start"
+                        android:textSize="10sp"
+                        android:layout_margin="2dp"
+                        android:text=""
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_margin="2dp"
+                        android:textSize="10sp"
+                        android:text=""
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:background="@drawable/table_background"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/txtPayment"
+                        android:textColor="@android:color/black"
+                        android:gravity="start"
+                        android:padding="8dp"
+                        android:textStyle="bold"
+                        android:layout_margin="4dp"
+                        android:background="@drawable/edit_text_style"
+                        android:text="TOTAL POR HONORARIOS: COMPLETAR"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtRetention"
+                        android:textColor="@android:color/black"
+                        android:gravity="start"
+                        android:padding="8dp"
+                        android:textStyle="bold"
+                        android:layout_margin="4dp"
+                        android:background="@drawable/edit_text_style"
+                        android:text="RETENCIÓN (8%) IR: COMPLETAR"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtTotalPayment"
+                        android:textStyle="bold"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:text="TOTAL NETO RECIBIDO: S/ 0.00"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
