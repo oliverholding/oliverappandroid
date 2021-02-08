@@ -187,6 +187,9 @@ public class ProductionOrderProductDetailActivity extends AppCompatActivity {
                 companyRef.child(post_key).child("Production Chain").child(timestamp).child("product_name").setValue(product_name);
                 companyRef.child(post_key).child("Production Chain").child(timestamp).child("product_image").setValue(product_image);
                 companyRef.child(post_key).child("Production Chain").child(timestamp).child("code").setValue(code);
+                companyRef.child(post_key).child("Production Chain").child(timestamp).child("production_year").setValue(year+"");
+                companyRef.child(post_key).child("Production Chain").child(timestamp).child("production_month").setValue(month+"");
+                companyRef.child(post_key).child("Production Chain").child(timestamp).child("production_day").setValue(day+"");
                 companyRef.child(post_key).child("Production Chain").child(timestamp).child("product_currency").setValue(product_currency);
                 companyRef.child(post_key).child("Production Chain").child(timestamp).child("product_description").setValue(product_description);
                 companyRef.child(post_key).child("Production Chain").child(timestamp).child("product_measure").setValue(product_measure);

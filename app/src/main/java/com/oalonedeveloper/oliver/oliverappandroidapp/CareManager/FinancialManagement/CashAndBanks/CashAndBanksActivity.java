@@ -228,6 +228,12 @@ public class CashAndBanksActivity extends AppCompatActivity {
                             total_salary_1 += period_salary;
                             String total_salary_1_st = decimalFormat.format(total_salary_1);
                             txtWorkerPayment1.setText("S/ "+total_salary_1_st);
+
+                            int diff2 = month-1;
+                            double period_salary2 = payment*diff2;
+                            total_salary_2 += period_salary2;
+                            String total_salary_2_st = decimalFormat.format(total_salary_2);
+                            txtWorkerPayment2.setText("S/ "+total_salary_2_st);
                         }
 
                     }

@@ -10,17 +10,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.AccountsNoPaid.AccountsNoPaidMonthlyActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.AccountsToPaid.AccountsToPaidActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.AccountsToPaid.AccountsToPaidMonthlyActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.Budget.BudgetActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.CashAndBanks.CashAndBanksActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.AccountsNoPaid.AccountsNoPaidActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.CashAndBanks.CashAndBanksMonthlyActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.FinancialStatements.FinancialStatementsActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.FixedAssets.FixedAssetsActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class FinancialManagementFragment extends Fragment {
 
     String post_key;
-    Button btnFixedAssets,btnCashAndBanks,btnAccountsNoPaid,btnAccountsToPaid,btnBudget;
+    Button btnFixedAssets,btnCashAndBanks,btnAccountsNoPaid,btnAccountsToPaid,btnBudget,btnFinancialStatements;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,6 +39,7 @@ public class FinancialManagementFragment extends Fragment {
         btnAccountsNoPaid = view.findViewById(R.id.btnAccountsNoPaid);
         btnAccountsToPaid = view.findViewById(R.id.btnAccountsToPaid);
         btnBudget = view.findViewById(R.id.btnBudget);
+        btnFinancialStatements = view.findViewById(R.id.btnFinancialStatements);
 
         btnFixedAssets.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,7 +53,7 @@ public class FinancialManagementFragment extends Fragment {
         btnCashAndBanks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), CashAndBanksActivity.class);
+                Intent intent = new Intent(getActivity(), CashAndBanksMonthlyActivity.class);
                 intent.putExtra("post_key", post_key);
                 startActivity(intent);
             }
@@ -57,7 +62,7 @@ public class FinancialManagementFragment extends Fragment {
         btnAccountsNoPaid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), AccountsNoPaidActivity.class);
+                Intent intent = new Intent(getActivity(), AccountsNoPaidMonthlyActivity.class);
                 intent.putExtra("post_key", post_key);
                 startActivity(intent);
             }
@@ -66,7 +71,7 @@ public class FinancialManagementFragment extends Fragment {
         btnAccountsToPaid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), AccountsToPaidActivity.class);
+                Intent intent = new Intent(getActivity(), AccountsToPaidMonthlyActivity.class);
                 intent.putExtra("post_key", post_key);
                 startActivity(intent);
             }
@@ -76,6 +81,15 @@ public class FinancialManagementFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), BudgetActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+
+        btnFinancialStatements.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), FinancialStatementsActivity.class);
                 intent.putExtra("post_key", post_key);
                 startActivity(intent);
             }

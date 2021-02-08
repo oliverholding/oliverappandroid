@@ -1,6 +1,7 @@
 package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.WorkersPayroll;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -21,8 +22,10 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.BillsIssuing.CreateBillActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Production.ProductionCapacity.WorkerBillSuccessfullActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 import com.squareup.picasso.Picasso;
 
@@ -47,6 +50,7 @@ public class PersonalPaymentBillFragment extends Fragment {
     double total_incomes,total_discount,salary,rmv_db,sis_db;
     RadioButton rdGeneral,rdLittle,rdMicro;
     RelativeLayout rootLayout;
+    Button btnRegisterWorkerBill;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -90,6 +94,7 @@ public class PersonalPaymentBillFragment extends Fragment {
         rdLittle = view.findViewById(R.id.rdLittle);
         rdMicro = view.findViewById(R.id.rdMicro);
         rootLayout = view.findViewById(R.id.rootLayout);
+        btnRegisterWorkerBill = view.findViewById(R.id.btnRegisterWorkerBill);
 
 
         post_key = getActivity().getIntent().getExtras().getString("post_key");
@@ -279,6 +284,27 @@ public class PersonalPaymentBillFragment extends Fragment {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        btnRegisterWorkerBill.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Long tsLong = System.currentTimeMillis()/1000;
+                String timestamp = tsLong.toString();
+                companyRef.child(post_key).child("Worker Bills").child(timestamp).child("total_payment").setValue(salary+"");
+                companyRef.child(post_key).child("Worker Bills").child(timestamp).child("bill_id").setValue(timestamp);
+                companyRef.child(post_key).child("Worker Bills").child(timestamp).child("worker_id").setValue(profile_id);
+                companyRef.child(post_key).child("Worker Bills").child(timestamp).child("bill_type").setValue("work_sheet");
+                companyRef.child(post_key).child("Worker Bills").child(timestamp).child("operation_day").setValue(day+"");
+                companyRef.child(post_key).child("Worker Bills").child(timestamp).child("operation_month").setValue(month+"");
+                companyRef.child(post_key).child("Worker Bills").child(timestamp).child("operation_year").setValue(year+"");
+                companyRef.child(post_key).child("Worker Bills").child(timestamp).child("timestamp").setValue(ServerValue.TIMESTAMP);
+
+                Intent intent = new Intent(getActivity(), WorkerBillSuccessfullActivity.class);
+                startActivity(intent);
+                getActivity().finish();
 
             }
         });

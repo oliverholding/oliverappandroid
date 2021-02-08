@@ -630,6 +630,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
+            <Button
+                android:id="@+id/btnRegisterWorkerBill"
+                android:layout_margin="8dp"
+                android:text="REGISTRAR BOLETA DE PAGO"
+                android:textColor="@android:color/white"
+                android:background="@drawable/gray_button_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
         </LinearLayout>
 
     </ScrollView>

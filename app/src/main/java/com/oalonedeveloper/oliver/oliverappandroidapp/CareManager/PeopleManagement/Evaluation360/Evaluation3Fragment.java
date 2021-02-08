@@ -53,9 +53,12 @@ public class Evaluation3Fragment extends Fragment {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    date_last_update = dataSnapshot.child("date_last_update").getValue().toString();
-                    time_last_update = dataSnapshot.child("time_last_update").getValue().toString();
-                    txtLastEvaluation.setText("Última Evaluación: "+date_last_update+" a las "+time_last_update);
+                    if (dataSnapshot.hasChild("date_last_update")&& dataSnapshot.hasChild("time_last_update")) {
+                        date_last_update = dataSnapshot.child("date_last_update").getValue().toString();
+                        time_last_update = dataSnapshot.child("time_last_update").getValue().toString();
+                        txtLastEvaluation.setText("Última Evaluación: "+date_last_update+" a las "+time_last_update);
+                    }
+
                 }
 
             }
@@ -305,26 +308,25 @@ public class Evaluation3Fragment extends Fragment {
                     String saveCurrentTime = currentTime.format(calForTime.getTime());
 
                     companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_1").child("score").setValue(rating1);
-                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_2").child("score").setValue(rating1);
-                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_3").child("score").setValue(rating1);
-                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_4").child("score").setValue(rating1);
-                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_5").child("score").setValue(rating1);
-                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_6").child("score").setValue(rating1);
-                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_7").child("score").setValue(rating1);
-                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_8").child("score").setValue(rating1);
-                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_9").child("score").setValue(rating1);
-                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_10").child("score").setValue(rating1);
-                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_11").child("score").setValue(rating1);
-                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_12").child("score").setValue(rating1);
-                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_13").child("score").setValue(rating1);
-                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_14").child("score").setValue(rating1);
-                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_15").child("score").setValue(rating1);
-                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_16").child("score").setValue(rating1);
-                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_17").child("score").setValue(rating1);
-                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_18").child("score").setValue(rating1);
-                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_19").child("score").setValue(rating1);
-                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_20").child("score").setValue(rating1);
-                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_20").child("score").setValue(rating1);
+                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_2").child("score").setValue(rating2);
+                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_3").child("score").setValue(rating3);
+                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_4").child("score").setValue(rating4);
+                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_5").child("score").setValue(rating5);
+                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_6").child("score").setValue(rating6);
+                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_7").child("score").setValue(rating7);
+                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_8").child("score").setValue(rating8);
+                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_9").child("score").setValue(rating9);
+                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_10").child("score").setValue(rating10);
+                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_11").child("score").setValue(rating11);
+                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_12").child("score").setValue(rating12);
+                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_13").child("score").setValue(rating13);
+                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_14").child("score").setValue(rating14);
+                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_15").child("score").setValue(rating15);
+                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_16").child("score").setValue(rating16);
+                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_17").child("score").setValue(rating17);
+                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_18").child("score").setValue(rating18);
+                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_19").child("score").setValue(rating19);
+                    companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner").child("test_20").child("score").setValue(rating20);
                     companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner Update").child("date_last_update").setValue(saveCurrentDate);
                     companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Partner Update").child("time_last_update").setValue(saveCurrentTime);
 

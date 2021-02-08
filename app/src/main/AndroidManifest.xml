@@ -21,7 +21,14 @@
         android:roundIcon="@drawable/oliver_android_icon_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CareManager.PeopleManagement.Evaluation360.JobProfilesEvaluationsActivity"></activity>
+        <activity android:name=".CareManager.FinancialManagement.FinancialStatements.StatementOfIncomes.StatementOfIncomesActivity"></activity>
+        <activity android:name=".CareManager.FinancialManagement.AccountsToPaid.AccountsToPaidMonthlyActivity" />
+        <activity android:name=".CareManager.FinancialManagement.AccountsNoPaid.AccountsNoPaidMonthlyActivity" />
+        <activity android:name=".CareManager.Production.ProductionCapacity.WorkerBillSuccessfullActivity" />
+        <activity android:name=".CareManager.FinancialManagement.CashAndBanks.CashAndBanksMonthlyActivity" />
+        <activity android:name=".CareManager.FinancialManagement.FinancialStatements.FinancialSituation.FinancialSituationActivity" />
+        <activity android:name=".CareManager.FinancialManagement.FinancialStatements.FinancialStatementsActivity" />
+        <activity android:name=".CareManager.PeopleManagement.Evaluation360.JobProfilesEvaluationsActivity" />
         <activity android:name=".CareManager.PeopleManagement.Evaluation360.Evaluation360Activity" />
         <activity android:name=".CareManager.FinancialManagement.Budget.BudgetActivity" />
         <activity android:name=".CareManager.FinancialManagement.AccountsToPaid.AccountsToPaidActivity" />
