@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CareManager.FinancialManagement.RiskManagement.RiskSumaryFragment">
+
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewTitle"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Resumen de Riesgos:"
+                        android:textSize="18sp"
+                        android:layout_margin="4dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Visualiza de forma general la estructura de tus riesgos."
+                        android:layout_margin="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:gravity="center"
+                            android:text="ÁREA"
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:gravity="center"
+                            android:text="RIESGO ALTO"
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:gravity="center"
+                            android:text="RIESGO MEDIO"
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:gravity="center"
+                            android:text="TOTAL"
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Gerencia General"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtHighRisk1"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtMiddleRisk1"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtTotalRisk1"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Gestión de Cadena De Suministro"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtHighRisk2"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtMiddleRisk2"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtTotalRisk2"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Gestión de Contabilidad"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtHighRisk3"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtMiddleRisk3"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtTotalRisk3"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Gestión de Distribución"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtHighRisk4"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtMiddleRisk4"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtTotalRisk4"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Gestión de Finanzas"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtHighRisk5"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtMiddleRisk5"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtTotalRisk5"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Gestión de producción"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtHighRisk6"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtMiddleRisk6"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtTotalRisk6"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Gestión de Recursos Humanos"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtHighRisk7"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtMiddleRisk7"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtTotalRisk7"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Gestión de TI"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtHighRisk8"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtMiddleRisk8"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtTotalRisk8"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Gestión de Ventas"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtHighRisk9"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtMiddleRisk9"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtTotalRisk9"
+                            android:gravity="center"
+                            android:text="0"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:gravity="center"
+                            android:text="TOTAL"
+                            android:textStyle="bold"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtTotalHigh"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textStyle="bold"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtTotalMiddle"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textStyle="bold"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtTotal"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textStyle="bold"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

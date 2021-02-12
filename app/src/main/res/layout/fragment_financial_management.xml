@@ -744,6 +744,17 @@
                 android:layout_height="wrap_content"/>
 
             <Button
+                android:id="@+id/btnCashFlow"
+                android:padding="8dp"
+                android:text="Flujo de Caja"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:background="@drawable/gray_button_style"
+                android:drawableStart="@drawable/icono_ventas128"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
                 android:id="@+id/btnBudget"
                 android:padding="8dp"
                 android:text="Ejecución Presupuestal"
@@ -776,6 +787,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
+
+            <Button
+                android:id="@+id/btnRiskManagement"
+                android:padding="8dp"
+                android:text="Gestión del Riesgo"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:background="@drawable/gray_button_style"
+                android:drawableStart="@drawable/icono_ventas128"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
 
         </LinearLayout>

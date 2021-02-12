@@ -1,4 +1,4 @@
-package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.Budget;
+package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.RiskManagement;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -10,12 +10,11 @@ import android.os.Bundle;
 
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
-import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.FinancialInstitutionsFragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.FinancialProductsFragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.MyProductsFragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.FixedAssets.FixedAssetTotalFragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.FixedAssets.IntangibleAssetFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
-public class BudgetActivity extends AppCompatActivity {
+public class RiskManagementActivity extends AppCompatActivity {
 
     ViewPager mViewPager;
     SectionsPagerAdapter mSectionsPagerAdapter;
@@ -24,7 +23,7 @@ public class BudgetActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_budget);
+        setContentView(R.layout.activity_risk_management);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         TabItem tabItem = findViewById(R.id.tabItem);
@@ -58,9 +57,9 @@ public class BudgetActivity extends AppCompatActivity {
             // Return a PlaceholderFragment (defined as a static inner class below).
             switch (position) {
                 case 0:
-                    return new CreateBudgetFragment();
+                    return new RegisterRiskFragment();
                 case 1:
-                    return new BudgetVsRealFragment();
+                    return new RiskSumaryFragment();
 
                 default:
                     return null;

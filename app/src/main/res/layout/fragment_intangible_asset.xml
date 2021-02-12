@@ -131,7 +131,7 @@
 
     <Button
         android:id="@+id/btnRegister"
-        android:text="REGISTRAR NUEVO ACTIVO TANGIBLE"
+        android:text="REGISTRAR NUEVO ACTIVO INTANGIBLE"
         android:textColor="@android:color/white"
         android:layout_margin="8dp"
         android:layout_alignParentBottom="true"

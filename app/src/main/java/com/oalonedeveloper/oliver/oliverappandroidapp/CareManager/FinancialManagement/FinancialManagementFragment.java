@@ -17,14 +17,16 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManag
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.CashAndBanks.CashAndBanksActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.AccountsNoPaid.AccountsNoPaidActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.CashAndBanks.CashAndBanksMonthlyActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.CashFlow.CashFlowActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.FinancialStatements.FinancialStatementsActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.FixedAssets.FixedAssetsActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.RiskManagement.RiskManagementActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class FinancialManagementFragment extends Fragment {
 
     String post_key;
-    Button btnFixedAssets,btnCashAndBanks,btnAccountsNoPaid,btnAccountsToPaid,btnBudget,btnFinancialStatements;
+    Button btnFixedAssets,btnCashAndBanks,btnAccountsNoPaid,btnAccountsToPaid,btnBudget,btnFinancialStatements,btnCashFlow,btnRiskManagement;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,6 +42,8 @@ public class FinancialManagementFragment extends Fragment {
         btnAccountsToPaid = view.findViewById(R.id.btnAccountsToPaid);
         btnBudget = view.findViewById(R.id.btnBudget);
         btnFinancialStatements = view.findViewById(R.id.btnFinancialStatements);
+        btnCashFlow = view.findViewById(R.id.btnCashFlow);
+        btnRiskManagement = view.findViewById(R.id.btnRiskManagement);
 
         btnFixedAssets.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,6 +94,24 @@ public class FinancialManagementFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), FinancialStatementsActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+
+        btnCashFlow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), CashFlowActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+
+        btnRiskManagement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), RiskManagementActivity.class);
                 intent.putExtra("post_key", post_key);
                 startActivity(intent);
             }

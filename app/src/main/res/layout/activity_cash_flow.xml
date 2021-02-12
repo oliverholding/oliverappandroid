@@ -1,0 +1,2212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CareManager.FinancialManagement.CashFlow.CashFlowActivity">
+
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="FLUJO DE CAJA HISTÓRICO"
+                android:layout_margin="16dp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtPeriod"
+                        android:layout_margin="4dp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:text="PERÍODO: 0000"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <Button
+                        android:id="@+id/btnChangePeriod"
+                        android:textColor="@android:color/white"
+                        android:text="MODIFICAR PERIODO"
+                        android:background="@drawable/gray_button_style"
+                        android:layout_margin="4dp"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <HorizontalScrollView
+                android:scrollbars="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="8dp"
+                        android:layout_margin="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:padding="8dp"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_margin="4dp"
+                                    android:text=""
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:gravity="center"
+                                    android:layout_margin="4dp"
+                                    android:text="ENERO"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:gravity="center"
+                                    android:layout_margin="4dp"
+                                    android:text="FEBRERO"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:gravity="center"
+                                    android:layout_margin="4dp"
+                                    android:text="MARZO"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:gravity="center"
+                                    android:layout_margin="4dp"
+                                    android:text="ABRIL"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:gravity="center"
+                                    android:layout_margin="4dp"
+                                    android:text="MAYO"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:gravity="center"
+                                    android:layout_margin="4dp"
+                                    android:text="JUNIO"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:gravity="center"
+                                    android:layout_margin="4dp"
+                                    android:text="JULIO"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:gravity="center"
+                                    android:layout_margin="4dp"
+                                    android:text="AGOSTO"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:gravity="center"
+                                    android:layout_margin="4dp"
+                                    android:text="SEPTIEMBRE"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:gravity="center"
+                                    android:layout_margin="4dp"
+                                    android:text="OCTUBRE"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:gravity="center"
+                                    android:layout_margin="4dp"
+                                    android:text="NOVIEMBRE"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:gravity="center"
+                                    android:layout_margin="4dp"
+                                    android:text="DICIEMBRE"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="8dp"
+                        android:layout_margin="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:padding="8dp"
+                            android:background="@color/greenColor"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_margin="4dp"
+                                    android:text="Ingreso por ventas contado:"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:layout_margin="4dp"
+                                    android:text="Ingreso por ventas al credito:"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:layout_margin="4dp"
+                                    android:text="Ingresos Financieros:"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:layout_margin="4dp"
+                                    android:text="Otros Ingresos:"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <View
+                                    android:layout_margin="4dp"
+                                    android:background="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+
+                                <TextView
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:text="INGRESOS:"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtCashSales1"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtCreditSales1"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtFinancialIncomes1"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtOtherIncomes1"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <View
+                                    android:layout_margin="4dp"
+                                    android:background="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtTotalIncomes1"
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtCashSales2"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtCreditSales2"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtFinancialIncomes2"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtOtherIncomes2"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <View
+                                    android:layout_margin="4dp"
+                                    android:background="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtTotalIncomes2"
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtCashSales3"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtCreditSales3"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtFinancialIncomes3"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtOtherIncomes3"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <View
+                                    android:layout_margin="4dp"
+                                    android:background="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtTotalIncomes3"
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtCashSales4"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtCreditSales4"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtFinancialIncomes4"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtOtherIncomes4"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <View
+                                    android:layout_margin="4dp"
+                                    android:background="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtTotalIncomes4"
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtCashSales5"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtCreditSales5"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtFinancialIncomes5"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtOtherIncomes5"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <View
+                                    android:layout_margin="4dp"
+                                    android:background="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtTotalIncomes5"
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtCashSales6"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtCreditSales6"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtFinancialIncomes6"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtOtherIncomes6"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <View
+                                    android:layout_margin="4dp"
+                                    android:background="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtTotalIncomes6"
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtCashSales7"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtCreditSales7"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtFinancialIncomes7"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtOtherIncomes7"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <View
+                                    android:layout_margin="4dp"
+                                    android:background="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtTotalIncomes7"
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtCashSales8"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtCreditSales8"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtFinancialIncomes8"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtOtherIncomes8"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <View
+                                    android:layout_margin="4dp"
+                                    android:background="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtTotalIncomes8"
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtCashSales9"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtCreditSales9"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtFinancialIncomes9"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtOtherIncomes9"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <View
+                                    android:layout_margin="4dp"
+                                    android:background="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtTotalIncomes9"
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtCashSales10"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtCreditSales10"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtFinancialIncomes10"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtOtherIncomes10"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <View
+                                    android:layout_margin="4dp"
+                                    android:background="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtTotalIncomes10"
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtCashSales11"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtCreditSales11"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtFinancialIncomes11"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtOtherIncomes11"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <View
+                                    android:layout_margin="4dp"
+                                    android:background="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtTotalIncomes11"
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtCashSales12"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtCreditSales12"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtFinancialIncomes12"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtOtherIncomes12"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <View
+                                    android:layout_margin="4dp"
+                                    android:background="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtTotalIncomes12"
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="8dp"
+                        android:layout_margin="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:padding="8dp"
+                            android:background="@color/redColor"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_margin="4dp"
+                                    android:text="Pago de Remuneraciones:"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:layout_margin="4dp"
+                                    android:text="Pago de IGV:"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:layout_margin="4dp"
+                                    android:text="Pago a Proveedores:"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:layout_margin="4dp"
+                                    android:text="Egresos Financieros:"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:layout_margin="4dp"
+                                    android:text="Otros Egresos:"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <View
+                                    android:layout_margin="4dp"
+                                    android:background="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+
+                                <TextView
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:text="EGRESOS:"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtWorkerPayment1"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtIgv1"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtPurchases1"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtFinancialOutcomes"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtOtherOutcomes"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <View
+                                    android:layout_margin="4dp"
+                                    android:background="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtTotalOutcomes1"
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtWorkerPayment2"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtIgv2"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtPurchases2"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtFinancialOutcomes2"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtOtherOutcomes2"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <View
+                                    android:layout_margin="4dp"
+                                    android:background="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtTotalOutcomes2"
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtWorkerPayment3"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtIgv3"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtPurchases3"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtFinancialOutcomes3"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtOtherOutcomes3"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <View
+                                    android:layout_margin="4dp"
+                                    android:background="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtTotalOutcomes3"
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtWorkerPayment4"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtIgv4"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtPurchases4"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtFinancialOutcomes4"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtOtherOutcomes4"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <View
+                                    android:layout_margin="4dp"
+                                    android:background="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtTotalOutcomes4"
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtWorkerPayment5"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtIgv5"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtPurchases5"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtFinancialOutcomes5"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtOtherOutcomes5"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <View
+                                    android:layout_margin="4dp"
+                                    android:background="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtTotalOutcomes5"
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtWorkerPayment6"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtIgv6"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtPurchases6"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtFinancialOutcomes6"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtOtherOutcomes6"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <View
+                                    android:layout_margin="4dp"
+                                    android:background="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtTotalOutcomes6"
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtWorkerPayment7"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtIgv7"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtPurchases7"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtFinancialOutcomes7"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtOtherOutcomes7"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <View
+                                    android:layout_margin="4dp"
+                                    android:background="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtTotalOutcomes7"
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtWorkerPayment8"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtIgv8"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtPurchases8"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtFinancialOutcomes8"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtOtherOutcomes8"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <View
+                                    android:layout_margin="4dp"
+                                    android:background="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtTotalOutcomes8"
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtWorkerPayment9"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtIgv9"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtPurchases9"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtFinancialOutcomes9"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtOtherOutcomes9"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <View
+                                    android:layout_margin="4dp"
+                                    android:background="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtTotalOutcomes9"
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtWorkerPayment10"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtIgv10"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtPurchases10"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtFinancialOutcomes10"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtOtherOutcomes10"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <View
+                                    android:layout_margin="4dp"
+                                    android:background="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtTotalOutcomes10"
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtWorkerPayment11"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtIgv11"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtPurchases11"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtFinancialOutcomes11"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtOtherOutcomes11"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <View
+                                    android:layout_margin="4dp"
+                                    android:background="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtTotalOutcomes11"
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtWorkerPayment12"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtIgv12"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtPurchases12"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtFinancialOutcomes12"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/txtOtherOutcomes12"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                                <View
+                                    android:layout_margin="4dp"
+                                    android:background="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtTotalOutcomes12"
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:gravity="end"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="8dp"
+                        android:layout_margin="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:padding="8dp"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_margin="4dp"
+                                    android:text="FLUJO DE CAJA"
+                                    android:textColor="@android:color/black"
+                                    android:textStyle="bold"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtFinalCash1"
+                                    android:gravity="end"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtFinalCash2"
+                                    android:gravity="end"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtFinalCash3"
+                                    android:gravity="end"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtFinalCash4"
+                                    android:gravity="end"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtFinalCash5"
+                                    android:gravity="end"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtFinalCash6"
+                                    android:gravity="end"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtFinalCash7"
+                                    android:gravity="end"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtFinalCash8"
+                                    android:gravity="end"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtFinalCash9"
+                                    android:gravity="end"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtFinalCash10"
+                                    android:gravity="end"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtFinalCash11"
+                                    android:gravity="end"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtFinalCash12"
+                                    android:gravity="end"
+                                    android:layout_margin="4dp"
+                                    android:text="0.00"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

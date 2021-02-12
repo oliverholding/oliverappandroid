@@ -279,7 +279,7 @@ public class IntangibleAssetFragment extends Fragment {
                     double total = asset_price_db*asset_quantity_db;
                     sum += total;
                     total_assets_value = decimalFormat.format(sum);
-                    txtTotalAssetsAmount.setText("Total Activos Fijos Tangibles: S/ "+total_assets_value);
+                    txtTotalAssetsAmount.setText("Total Activos Fijos Intangibles: S/ "+total_assets_value);
 
                 }
             }

@@ -1,4 +1,4 @@
-package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.CashAndBanks;
+package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.CashFlow;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,8 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
@@ -22,22 +22,26 @@ import com.google.firebase.database.ValueEventListener;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Map;
 
-public class CashAndBanksMonthlyActivity extends AppCompatActivity {
+import in.galaxyofandroid.spinerdialog.OnSpinerItemClick;
+import in.galaxyofandroid.spinerdialog.SpinnerDialog;
 
-    TextView txtCashSales1,txtCreditSales1,txtFinancialIncomes1,txtOtherIncomes1,txtTotalIncomes1,txtStartCash1,txtWorkerPayment1,txtPurchases1,txtIgv1,txtFinancialOutcomes,txtOtherOutcomes,txtTotalOutcomes1,txtFinalCash1,
-            txtCashSales2,txtCreditSales2,txtFinancialIncomes2,txtOtherIncomes2,txtTotalIncomes2,txtWorkerPayment2,txtPurchases2,txtIgv2,txtFinancialOutcomes2,txtOtherOutcomes2,txtTotalOutcomes2,txtFinalCash2,txtStartCash2,
+public class CashFlowActivity extends AppCompatActivity {
+
+    TextView txtCashSales1,txtCreditSales1,txtFinancialIncomes1,txtOtherIncomes1,txtTotalIncomes1,txtWorkerPayment1,txtPurchases1,txtIgv1,txtFinancialOutcomes,txtOtherOutcomes,txtTotalOutcomes1,txtFinalCash1,
+            txtCashSales2,txtCreditSales2,txtFinancialIncomes2,txtOtherIncomes2,txtTotalIncomes2,txtWorkerPayment2,txtPurchases2,txtIgv2,txtFinancialOutcomes2,txtOtherOutcomes2,txtTotalOutcomes2,txtFinalCash2,
             txtCashSales3,txtCreditSales3,txtFinancialIncomes3,txtOtherIncomes3,txtTotalIncomes3,txtCashSales4,txtCreditSales4,txtFinancialIncomes4,txtOtherIncomes4,txtTotalIncomes4,txtCashSales5,txtCreditSales5,txtFinancialIncomes5,txtOtherIncomes5,txtTotalIncomes5,
             txtCashSales6,txtCreditSales6,txtFinancialIncomes6,txtOtherIncomes6,txtTotalIncomes6,txtCashSales7,txtCreditSales7,txtFinancialIncomes7,txtOtherIncomes7,txtTotalIncomes7,txtCashSales8,txtCreditSales8,txtFinancialIncomes8,txtOtherIncomes8,txtTotalIncomes8,
             txtCashSales9,txtCreditSales9,txtFinancialIncomes9,txtOtherIncomes9,txtTotalIncomes9,txtCashSales10,txtCreditSales10,txtFinancialIncomes10,txtOtherIncomes10,txtTotalIncomes10,txtCashSales11,txtCreditSales11,txtFinancialIncomes11,txtOtherIncomes11,txtTotalIncomes11,
             txtCashSales12,txtCreditSales12,txtFinancialIncomes12,txtOtherIncomes12,txtTotalIncomes12,txtWorkerPayment3,txtPurchases3,txtIgv3,txtFinancialOutcomes3,txtOtherOutcomes3,txtTotalOutcomes3,txtWorkerPayment4,txtPurchases4,txtIgv4,txtFinancialOutcomes4,txtOtherOutcomes4,txtTotalOutcomes4,
             txtWorkerPayment5,txtPurchases5,txtIgv5,txtFinancialOutcomes5,txtOtherOutcomes5,txtTotalOutcomes5,txtWorkerPayment6,txtPurchases6,txtIgv6,txtFinancialOutcomes6,txtOtherOutcomes6,txtTotalOutcomes6,txtWorkerPayment7,txtPurchases7,txtIgv7,txtFinancialOutcomes7,txtOtherOutcomes7,txtTotalOutcomes7,
             txtWorkerPayment8,txtPurchases8,txtIgv8,txtFinancialOutcomes8,txtOtherOutcomes8,txtTotalOutcomes8,txtWorkerPayment9,txtPurchases9,txtIgv9,txtFinancialOutcomes9,txtOtherOutcomes9,txtTotalOutcomes9,txtWorkerPayment10,txtPurchases10,txtIgv10,txtFinancialOutcomes10,txtOtherOutcomes10,txtTotalOutcomes10,
-            txtWorkerPayment11,txtPurchases11,txtIgv11,txtFinancialOutcomes11,txtOtherOutcomes11,txtTotalOutcomes11,txtWorkerPayment12,txtPurchases12,txtIgv12,txtFinancialOutcomes12,txtOtherOutcomes12,txtTotalOutcomes12,txtStartCash3,txtStartCash4,txtStartCash5,txtStartCash6,
-            txtStartCash7,txtStartCash8,txtStartCash9,txtStartCash10,txtStartCash11,txtStartCash12,txtFinalCash3,txtFinalCash4,txtFinalCash5,txtFinalCash6,txtFinalCash7,txtFinalCash8,txtFinalCash9,txtFinalCash10,txtFinalCash11,txtFinalCash12;
+            txtWorkerPayment11,txtPurchases11,txtIgv11,txtFinancialOutcomes11,txtOtherOutcomes11,txtTotalOutcomes11,txtWorkerPayment12,txtPurchases12,txtIgv12,txtFinancialOutcomes12,txtOtherOutcomes12,txtTotalOutcomes12,txtFinalCash3,txtFinalCash4,txtFinalCash5,txtFinalCash6,txtFinalCash7,txtFinalCash8,txtFinalCash9,txtFinalCash10,txtFinalCash11,txtFinalCash12,
+            txtPeriod;
     int day,month,year,last_year,before_last_year;
     DatabaseReference companyRef;
     DecimalFormat decimalFormat;
@@ -55,11 +59,15 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
             total_outcomes_5,total_outcomes_6,total_outcomes_7,total_outcomes_8,total_outcomes_9,total_outcomes_10,total_outcomes_11,total_outcomes_12,financial_outcomes_3,financial_outcomes_4,financial_outcomes_5,financial_outcomes_6,financial_outcomes_7,financial_outcomes_8,
             financial_outcomes_9,financial_outcomes_10,financial_outcomes_11,financial_outcomes_12,other_outcomes_3,other_outcomes_4,other_outcomes_5,other_outcomes_6,other_outcomes_7,other_outcomes_8,other_outcomes_9,other_outcomes_10,other_outcomes_11,other_outcomes_12,
             cash_flow_3_month,cash_flow_4_month,cash_flow_5_month,cash_flow_6_month,cash_flow_7_month,cash_flow_8_month,cash_flow_9_month,cash_flow_10_month,cash_flow_11_month,cash_flow_12_month;
+    Button btnChangePeriod;
+
+    ArrayList<String> periods =new ArrayList<>();
+    SpinnerDialog spinnerPeriods;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cash_and_banks_monthly);
+        setContentView(R.layout.activity_cash_flow);
 
         txtCashSales1 = findViewById(R.id.txtCashSales1);
         txtCreditSales1 = findViewById(R.id.txtCreditSales1);
@@ -195,44 +203,228 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
         txtOtherOutcomes12 = findViewById(R.id.txtOtherOutcomes12);
         txtTotalOutcomes12 = findViewById(R.id.txtTotalOutcomes12);
 
-        txtStartCash1 = findViewById(R.id.txtStartCash1);
         txtFinalCash1 = findViewById(R.id.txtFinalCash1);
-        txtStartCash2 = findViewById(R.id.txtStartCash2);
         txtFinalCash2 = findViewById(R.id.txtFinalCash2);
-        txtStartCash3 = findViewById(R.id.txtStartCash3);
         txtFinalCash3 = findViewById(R.id.txtFinalCash3);
-        txtStartCash4 = findViewById(R.id.txtStartCash4);
         txtFinalCash4 = findViewById(R.id.txtFinalCash4);
-        txtStartCash5 = findViewById(R.id.txtStartCash5);
         txtFinalCash5 = findViewById(R.id.txtFinalCash5);
-        txtStartCash6 = findViewById(R.id.txtStartCash6);
         txtFinalCash6 = findViewById(R.id.txtFinalCash6);
-        txtStartCash7 = findViewById(R.id.txtStartCash7);
         txtFinalCash7 = findViewById(R.id.txtFinalCash7);
-        txtStartCash8 = findViewById(R.id.txtStartCash8);
         txtFinalCash8 = findViewById(R.id.txtFinalCash8);
-        txtStartCash9 = findViewById(R.id.txtStartCash9);
         txtFinalCash9 = findViewById(R.id.txtFinalCash9);
-        txtStartCash10 = findViewById(R.id.txtStartCash10);
         txtFinalCash10 = findViewById(R.id.txtFinalCash10);
-        txtStartCash11 = findViewById(R.id.txtStartCash11);
         txtFinalCash11 = findViewById(R.id.txtFinalCash11);
-        txtStartCash12 = findViewById(R.id.txtStartCash12);
         txtFinalCash12 = findViewById(R.id.txtFinalCash12);
+
+        txtPeriod = findViewById(R.id.txtPeriod);
+        btnChangePeriod = findViewById(R.id.btnChangePeriod);
 
         post_key = getIntent().getExtras().getString("post_key");
         companyRef = FirebaseDatabase.getInstance().getReference().child("My Companies");
 
         decimalFormat = new DecimalFormat("0.00");
 
+
         Date date= new Date();
         Calendar cal = Calendar.getInstance();
         cal.setTime(date);
         day = cal.get(Calendar.DAY_OF_MONTH);
         month = cal.get(Calendar.MONTH)+1;
-        year = cal.get(Calendar.YEAR);
+        year = cal.get(Calendar.YEAR)-1;
         last_year = year-1;
         before_last_year = last_year-1;
+
+        txtPeriod.setText("PERIODO: "+year);
+
+        startToShowData();
+
+        btnChangePeriod.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                periods.add(year+"");periods.add(year-1+"");periods.add(year-2+"");periods.add(year-3+"");periods.add(year-4+"");periods.add(year-5+"");periods.add(year-6+"");periods.add(year-7+"");periods.add(year-8+"");periods.add(year-9+"");periods.add(year-10+"");
+
+                spinnerPeriods.showSpinerDialog();
+
+            }
+        });
+
+        spinnerPeriods = new SpinnerDialog(CashFlowActivity.this,periods, "Selecciona el Período");
+        spinnerPeriods.bindOnSpinerListener(new OnSpinerItemClick() {
+            @Override
+            public void onClick(String item2, int position2) {
+
+                year = Integer.parseInt(item2);
+                last_year = year-1;
+                before_last_year = last_year-1;
+                txtPeriod.setText("PERIODO: "+year);
+
+                txtCashSales1.setText("0.00");
+                txtCashSales2.setText("0.00");
+                txtCashSales3.setText("0.00");
+                txtCashSales4.setText("0.00");
+                txtCashSales5.setText("0.00");
+                txtCashSales6.setText("0.00");
+                txtCashSales7.setText("0.00");
+                txtCashSales8.setText("0.00");
+                txtCashSales9.setText("0.00");
+                txtCashSales10.setText("0.00");
+                txtCashSales11.setText("0.00");
+                txtCashSales12.setText("0.00");
+
+                txtCreditSales1.setText("0.00");
+                txtCreditSales2.setText("0.00");
+                txtCreditSales3.setText("0.00");
+                txtCreditSales4.setText("0.00");
+                txtCreditSales5.setText("0.00");
+                txtCreditSales6.setText("0.00");
+                txtCreditSales7.setText("0.00");
+                txtCreditSales8.setText("0.00");
+                txtCreditSales9.setText("0.00");
+                txtCreditSales10.setText("0.00");
+                txtCreditSales11.setText("0.00");
+                txtCreditSales12.setText("0.00");
+
+                txtFinancialIncomes1.setText("0.00");
+                txtFinancialIncomes2.setText("0.00");
+                txtFinancialIncomes3.setText("0.00");
+                txtFinancialIncomes4.setText("0.00");
+                txtFinancialIncomes5.setText("0.00");
+                txtFinancialIncomes6.setText("0.00");
+                txtFinancialIncomes7.setText("0.00");
+                txtFinancialIncomes8.setText("0.00");
+                txtFinancialIncomes9.setText("0.00");
+                txtFinancialIncomes10.setText("0.00");
+                txtFinancialIncomes11.setText("0.00");
+                txtFinancialIncomes12.setText("0.00");
+
+                txtOtherIncomes1.setText("0.00");
+                txtOtherIncomes2.setText("0.00");
+                txtOtherIncomes3.setText("0.00");
+                txtOtherIncomes4.setText("0.00");
+                txtOtherIncomes5.setText("0.00");
+                txtOtherIncomes6.setText("0.00");
+                txtOtherIncomes7.setText("0.00");
+                txtOtherIncomes8.setText("0.00");
+                txtOtherIncomes9.setText("0.00");
+                txtOtherIncomes10.setText("0.00");
+                txtOtherIncomes11.setText("0.00");
+                txtOtherIncomes12.setText("0.00");
+
+                txtTotalIncomes1.setText("0.00");
+                txtTotalIncomes2.setText("0.00");
+                txtTotalIncomes3.setText("0.00");
+                txtTotalIncomes4.setText("0.00");
+                txtTotalIncomes5.setText("0.00");
+                txtTotalIncomes6.setText("0.00");
+                txtTotalIncomes7.setText("0.00");
+                txtTotalIncomes8.setText("0.00");
+                txtTotalIncomes9.setText("0.00");
+                txtTotalIncomes10.setText("0.00");
+                txtTotalIncomes11.setText("0.00");
+                txtTotalIncomes12.setText("0.00");
+
+                txtWorkerPayment1.setText("0.00");
+                txtWorkerPayment2.setText("0.00");
+                txtWorkerPayment3.setText("0.00");
+                txtWorkerPayment4.setText("0.00");
+                txtWorkerPayment5.setText("0.00");
+                txtWorkerPayment6.setText("0.00");
+                txtWorkerPayment7.setText("0.00");
+                txtWorkerPayment8.setText("0.00");
+                txtWorkerPayment9.setText("0.00");
+                txtWorkerPayment10.setText("0.00");
+                txtWorkerPayment11.setText("0.00");
+                txtWorkerPayment12.setText("0.00");
+
+                txtIgv1.setText("0.00");
+                txtIgv2.setText("0.00");
+                txtIgv3.setText("0.00");
+                txtIgv4.setText("0.00");
+                txtIgv5.setText("0.00");
+                txtIgv6.setText("0.00");
+                txtIgv7.setText("0.00");
+                txtIgv8.setText("0.00");
+                txtIgv9.setText("0.00");
+                txtIgv10.setText("0.00");
+                txtIgv11.setText("0.00");
+                txtIgv12.setText("0.00");
+
+                txtPurchases1.setText("0.00");
+                txtPurchases2.setText("0.00");
+                txtPurchases3.setText("0.00");
+                txtPurchases4.setText("0.00");
+                txtPurchases5.setText("0.00");
+                txtPurchases6.setText("0.00");
+                txtPurchases7.setText("0.00");
+                txtPurchases8.setText("0.00");
+                txtPurchases9.setText("0.00");
+                txtPurchases10.setText("0.00");
+                txtPurchases11.setText("0.00");
+                txtPurchases12.setText("0.00");
+
+                txtFinancialOutcomes.setText("0.00");
+                txtFinancialOutcomes2.setText("0.00");
+                txtFinancialOutcomes3.setText("0.00");
+                txtFinancialOutcomes4.setText("0.00");
+                txtFinancialOutcomes5.setText("0.00");
+                txtFinancialOutcomes6.setText("0.00");
+                txtFinancialOutcomes7.setText("0.00");
+                txtFinancialOutcomes8.setText("0.00");
+                txtFinancialOutcomes9.setText("0.00");
+                txtFinancialOutcomes10.setText("0.00");
+                txtFinancialOutcomes11.setText("0.00");
+                txtFinancialOutcomes12.setText("0.00");
+
+                txtOtherOutcomes.setText("0.00");
+                txtOtherOutcomes2.setText("0.00");
+                txtOtherOutcomes3.setText("0.00");
+                txtOtherOutcomes4.setText("0.00");
+                txtOtherOutcomes5.setText("0.00");
+                txtOtherOutcomes6.setText("0.00");
+                txtOtherOutcomes7.setText("0.00");
+                txtOtherOutcomes8.setText("0.00");
+                txtOtherOutcomes9.setText("0.00");
+                txtOtherOutcomes10.setText("0.00");
+                txtOtherOutcomes11.setText("0.00");
+                txtOtherOutcomes12.setText("0.00");
+
+                txtTotalOutcomes1.setText("0.00");
+                txtTotalOutcomes2.setText("0.00");
+                txtTotalOutcomes3.setText("0.00");
+                txtTotalOutcomes4.setText("0.00");
+                txtTotalOutcomes5.setText("0.00");
+                txtTotalOutcomes6.setText("0.00");
+                txtTotalOutcomes7.setText("0.00");
+                txtTotalOutcomes8.setText("0.00");
+                txtTotalOutcomes9.setText("0.00");
+                txtTotalOutcomes10.setText("0.00");
+                txtTotalOutcomes11.setText("0.00");
+                txtTotalOutcomes12.setText("0.00");
+
+                txtFinalCash1.setText("0.00");
+                txtFinalCash2.setText("0.00");
+                txtFinalCash3.setText("0.00");
+                txtFinalCash4.setText("0.00");
+                txtFinalCash5.setText("0.00");
+                txtFinalCash6.setText("0.00");
+                txtFinalCash7.setText("0.00");
+                txtFinalCash8.setText("0.00");
+                txtFinalCash9.setText("0.00");
+                txtFinalCash10.setText("0.00");
+                txtFinalCash11.setText("0.00");
+                txtFinalCash12.setText("0.00");
+
+                startToShowData();
+
+            }
+        });
+
+
+
+    }
+
+    private void startToShowData() {
+
 
         companyRef.child(post_key).child("Cash Flow").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -241,12 +433,9 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
                     cash_flow_0 = dataSnapshot.child("cash_flow" + last_year).getValue().toString();
                     cash_flow_0_db = Double.parseDouble(cash_flow_0);
 
-                    txtStartCash1.setText(cash_flow_0);
 
                 } else {
-                    showSetInitialCashFlow();
                     cash_flow_0_db = 0.00;
-                    txtStartCash1.setText("0.00");
                 }
 
                 calculateMonth1();
@@ -257,47 +446,9 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-
     }
 
-    private void showSetInitialCashFlow() {
-        final AlertDialog dialog = new AlertDialog.Builder(this).create();
 
-        LayoutInflater inflater = LayoutInflater.from(this);
-        View finance_method = inflater.inflate(R.layout.set_initial_cash_flow_dialog,null);
-
-        final EditText edtInitialCashFlow;
-        Button btnRegister;
-        final LinearLayout rootLayout;
-
-        edtInitialCashFlow = finance_method.findViewById(R.id.edtInitialCashFlow);
-        btnRegister = finance_method.findViewById(R.id.btnRegister);
-        rootLayout = finance_method.findViewById(R.id.rootLayout);
-
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (TextUtils.isEmpty(edtInitialCashFlow.getText().toString())) {
-                    Snackbar.make(rootLayout, "Debes ingresar la caja inicial", Snackbar.LENGTH_SHORT).show();
-                } else {
-                    companyRef.child(post_key).child("Cash Flow").child("cash_flow" + last_year).setValue(edtInitialCashFlow.getText().toString());
-                    cash_flow_0_db = Double.parseDouble(edtInitialCashFlow.getText().toString());
-                    cash_flow_0 = decimalFormat.format(cash_flow_0_db);
-                    txtStartCash1.setText(cash_flow_0);
-                    calculateMonth1();
-                    dialog.dismiss();
-
-                }
-            }
-        });
-
-
-        dialog.setView(finance_method);
-        dialog.show();
-    }
 
     private void calculateMonth12() {
         companyRef.child(post_key).child("My Bills").orderByChild("issuing_year").equalTo(year).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -420,7 +571,6 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
                         cash_flow_12_month = total_incomes_12-total_outcomes_12+cash_flow_11_month;
                         String cash_flow_12_st = decimalFormat.format(cash_flow_12_month);
                         txtFinalCash12.setText(cash_flow_12_st);
-                        companyRef.child(post_key).child("Cash Flow").child("cash_flow"+year).setValue(cash_flow_12_st);
 
                     }
 
@@ -560,8 +710,6 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
                         cash_flow_11_month = total_incomes_11-total_outcomes_11+cash_flow_10_month;
                         String cash_flow_11_st = decimalFormat.format(cash_flow_11_month);
                         txtFinalCash11.setText(cash_flow_11_st);
-                        txtStartCash12.setText(cash_flow_11_st);
-                        companyRef.child(post_key).child("Cash Flow").child("cash_flow"+year).setValue(cash_flow_11_st);
 
                         calculateMonth12();
 
@@ -703,8 +851,6 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
                         cash_flow_10_month = total_incomes_10-total_outcomes_10+cash_flow_9_month;
                         String cash_flow_10_st = decimalFormat.format(cash_flow_10_month);
                         txtFinalCash10.setText(cash_flow_10_st);
-                        txtStartCash11.setText(cash_flow_10_st);
-                        companyRef.child(post_key).child("Cash Flow").child("cash_flow"+year).setValue(cash_flow_10_st);
 
                         calculateMonth11();
 
@@ -846,8 +992,6 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
                         cash_flow_9_month = total_incomes_9-total_outcomes_9+cash_flow_8_month;
                         String cash_flow_9_st = decimalFormat.format(cash_flow_9_month);
                         txtFinalCash9.setText(cash_flow_9_st);
-                        txtStartCash10.setText(cash_flow_9_st);
-                        companyRef.child(post_key).child("Cash Flow").child("cash_flow"+year).setValue(cash_flow_9_st);
 
                         calculateMonth10();
 
@@ -989,8 +1133,6 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
                         cash_flow_8_month = total_incomes_8-total_outcomes_8+cash_flow_7_month;
                         String cash_flow_8_st = decimalFormat.format(cash_flow_8_month);
                         txtFinalCash8.setText(cash_flow_8_st);
-                        txtStartCash9.setText(cash_flow_8_st);
-                        companyRef.child(post_key).child("Cash Flow").child("cash_flow"+year).setValue(cash_flow_8_st);
 
                         calculateMonth9();
 
@@ -1132,8 +1274,6 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
                         cash_flow_7_month = total_incomes_7-total_outcomes_7+cash_flow_6_month;
                         String cash_flow_7_st = decimalFormat.format(cash_flow_7_month);
                         txtFinalCash7.setText(cash_flow_7_st);
-                        txtStartCash8.setText(cash_flow_7_st);
-                        companyRef.child(post_key).child("Cash Flow").child("cash_flow"+year).setValue(cash_flow_7_st);
 
                         calculateMonth8();
 
@@ -1275,8 +1415,6 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
                         cash_flow_6_month = total_incomes_6-total_outcomes_6+cash_flow_5_month;
                         String cash_flow_6_st = decimalFormat.format(cash_flow_6_month);
                         txtFinalCash6.setText(cash_flow_6_st);
-                        txtStartCash7.setText(cash_flow_6_st);
-                        companyRef.child(post_key).child("Cash Flow").child("cash_flow"+year).setValue(cash_flow_6_st);
 
                         calculateMonth7();
 
@@ -1418,8 +1556,6 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
                         cash_flow_5_month = total_incomes_5-total_outcomes_5+cash_flow_4_month;
                         String cash_flow_5_st = decimalFormat.format(cash_flow_5_month);
                         txtFinalCash5.setText(cash_flow_5_st);
-                        txtStartCash6.setText(cash_flow_5_st);
-                        companyRef.child(post_key).child("Cash Flow").child("cash_flow"+year).setValue(cash_flow_5_st);
 
                         calculateMonth6();
 
@@ -1562,8 +1698,6 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
                         cash_flow_4_month = total_incomes_4-total_outcomes_4+cash_flow_3_month;
                         String cash_flow_4_st = decimalFormat.format(cash_flow_4_month);
                         txtFinalCash4.setText(cash_flow_4_st);
-                        txtStartCash5.setText(cash_flow_4_st);
-                        companyRef.child(post_key).child("Cash Flow").child("cash_flow"+year).setValue(cash_flow_4_st);
 
                         calculateMonth5();
 
@@ -1706,8 +1840,6 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
                         cash_flow_3_month = total_incomes_3-total_outcomes_3+cash_flow_2_month;
                         String cash_flow_3_st = decimalFormat.format(cash_flow_3_month);
                         txtFinalCash3.setText(cash_flow_3_st);
-                        txtStartCash4.setText(cash_flow_3_st);
-                        companyRef.child(post_key).child("Cash Flow").child("cash_flow"+year).setValue(cash_flow_3_st);
 
                         calculateMonth4();
 
@@ -1851,8 +1983,6 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
                         cash_flow_2_month = total_incomes_2-total_outcomes_2+cash_flow_1_month;
                         String cash_flow_2_st = decimalFormat.format(cash_flow_2_month);
                         txtFinalCash2.setText(cash_flow_2_st);
-                        txtStartCash3.setText(cash_flow_2_st);
-                        companyRef.child(post_key).child("Cash Flow").child("cash_flow"+year).setValue(cash_flow_2_st);
 
                         calculateMonth3();
 
@@ -2074,8 +2204,6 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
                                 cash_flow_1_month = total_incomes_1-total_outcomes_1+cash_flow_0_db;
                                 String cash_flow_1_st = decimalFormat.format(cash_flow_1_month);
                                 txtFinalCash1.setText(cash_flow_1_st);
-                                txtStartCash2.setText(cash_flow_1_st);
-                                companyRef.child(post_key).child("Cash Flow").child("cash_flow"+year).setValue(cash_flow_1_st);
 
                                 calculateMonth2();
                             }
