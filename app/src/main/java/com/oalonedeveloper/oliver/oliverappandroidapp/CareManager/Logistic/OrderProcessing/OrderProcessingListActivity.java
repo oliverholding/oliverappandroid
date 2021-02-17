@@ -42,6 +42,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Map;
 
+import es.dmoral.toasty.Toasty;
 import in.galaxyofandroid.spinerdialog.OnSpinerItemClick;
 import in.galaxyofandroid.spinerdialog.SpinnerDialog;
 
@@ -456,7 +457,7 @@ public class OrderProcessingListActivity extends AppCompatActivity {
                                                             companyRef.child(post_key).child("Dispatches").child(timestamp).child("dispatch_department").setValue(btnDepartment.getText().toString());
                                                             companyRef.child(post_key).child("Dispatches").child(timestamp).child("dispatch_province").setValue(btnProvince.getText().toString());
                                                             companyRef.child(post_key).child("Dispatches").child(timestamp).child("dispatch_district").setValue(btnDistrict.getText().toString());
-                                                            companyRef.child(post_key).child("Dispatches").child(timestamp).child("dispatch_address").setValue(btnDistrict.getText().toString());
+                                                            companyRef.child(post_key).child("Dispatches").child(timestamp).child("dispatch_address").setValue(edtAddress.getText().toString());
                                                             companyRef.child(post_key).child("Dispatches").child(timestamp).child("dispatch_bill_number").setValue(billId);
                                                             companyRef.child(post_key).child("Dispatches").child(timestamp).child("dispatch_state").setValue("pending");
                                                             companyRef.child(post_key).child("Dispatches").child(timestamp).child("timestamp").setValue(ServerValue.TIMESTAMP);
@@ -472,6 +473,7 @@ public class OrderProcessingListActivity extends AppCompatActivity {
 
                                                             //Update order processing state
                                                             companyRef.child(post_key).child("Orders Processing").child(postKey).child("order_processing_state").setValue("dispatch");
+                                                            dialog.dismiss();
 
                                                         }
                                                     }
@@ -514,6 +516,15 @@ public class OrderProcessingListActivity extends AppCompatActivity {
                                 };
                                 recyclerView2.setAdapter(firebaseRecyclerAdapter1);
 
+                            }
+                        });
+
+                        btnReturned.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                companyRef.child(post_key).child("Orders Processing").child(postKey).child("order_processing_state").setValue("canceled");
+                                Toasty.success(OrderProcessingListActivity.this, "Nota de Pedido Cancelada", Toast.LENGTH_LONG).show();
+                                dialog.dismiss();
                             }
                         });
 

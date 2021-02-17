@@ -60,12 +60,7 @@ public class ProductionCostActivity extends AppCompatActivity {
             switch (position) {
                 case 0:
                     return new ProductionMaterialsFragment();
-                case 1:
-                    return new ProductionMaterialsFragment();
-                case 2:
-                    return new ProductionMaterialsFragment();
-                case 3:
-                    return new ProductionMaterialsFragment();
+
 
                 default:
                     return null;

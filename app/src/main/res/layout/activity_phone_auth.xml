@@ -8,20 +8,7 @@
     android:id="@+id/rootLayout"
     tools:context=".PhoneAuthActivity">
 
-    <com.scwang.wave.MultiWaveHeader
-        android:id="@+id/waveHeader"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/phoneNumberLayout"
-        android:scaleY="1"
-        app:mwhVelocity="1"
-        app:mwhProgress="1"
-        app:mwhGradientAngle="180"
-        app:mwhWaveHeight="0dp"
-        app:mwhColorAlpha="0.90"
-        app:mwhStartColor="@color/colorGradientStart"
-        app:mwhCloseColor="@color/colorGradientEnd"
-        app:mwhWaves="PairWave"/>
+
 
     <LinearLayout
         android:id="@+id/titleLayout"

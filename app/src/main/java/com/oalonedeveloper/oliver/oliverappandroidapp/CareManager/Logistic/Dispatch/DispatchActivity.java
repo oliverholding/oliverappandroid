@@ -5,10 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DataSnapshot;
@@ -17,7 +21,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Logistic.OrderProcessing.OrderProcessingListActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
+
+import es.dmoral.toasty.Toasty;
 
 public class DispatchActivity extends AppCompatActivity {
 
@@ -49,6 +56,7 @@ public class DispatchActivity extends AppCompatActivity {
                 (DispatchModel.class,R.layout.purchase_order_item,DispatchesViewHolder.class,query) {
             @Override
             protected void populateViewHolder(final DispatchesViewHolder viewHolder, DispatchModel model, int position) {
+                final String postKey = getRef(position).getKey();
                 viewHolder.setDispatch_address(model.getDispatch_address());
                 viewHolder.setDispatch_bill_number(model.getDispatch_bill_number());
                 viewHolder.setDispatch_customer_id(model.getDispatch_customer_id());
@@ -60,6 +68,9 @@ public class DispatchActivity extends AppCompatActivity {
 
                 if (viewHolder.my_dispatch_state.equals("pending")) {
                     viewHolder.txtCode.setText("Despecho");
+                }
+                if (viewHolder.my_dispatch_state.equals("ready")) {
+                    viewHolder.txtCode.setText("Entregado");
                 }
 
                 companyRef.child(post_key).child("Customers").child(viewHolder.my_dispatch_customer_id).addValueEventListener(new ValueEventListener() {
@@ -77,6 +88,33 @@ public class DispatchActivity extends AppCompatActivity {
 
                 viewHolder.txtDate.setText(viewHolder.my_dispatch_district);
                 viewHolder.txtTotal.setText(viewHolder.my_dispatch_shift);
+
+                viewHolder.btnActionButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        final AlertDialog dialog = new AlertDialog.Builder(DispatchActivity.this).create();
+
+                        LayoutInflater inflater = LayoutInflater.from(DispatchActivity.this);
+                        View finance_method = inflater.inflate(R.layout.dispatch_state_dialog,null);
+
+                        ImageButton btnReady;
+
+                        btnReady = finance_method.findViewById(R.id.btnReady);
+
+                        btnReady.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                companyRef.child(post_key).child("Dispatches").child(postKey).child("dispatch_state").setValue("ready");
+                                Toasty.success(DispatchActivity.this, "Registrado con Entregado", Toast.LENGTH_LONG).show();
+                                dialog.dismiss();
+                            }
+                        });
+
+                        dialog.setView(finance_method);
+                        dialog.show();
+
+                    }
+                });
 
             }
         };

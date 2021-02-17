@@ -101,6 +101,7 @@ public class OliverAppActivity extends AppCompatActivity {
             }
         });
 
+
         showWelcomeMessage();
 
 

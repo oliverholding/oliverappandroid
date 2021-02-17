@@ -279,7 +279,7 @@ public class SendToStoreFragment extends Fragment {
                                                     year = cal.get(Calendar.YEAR);
 
                                                     companyRef.child(post_key).child("Kardex").child(timestamp).child("product_id").setValue(postKey);
-                                                    companyRef.child(post_key).child("Kardex").child(timestamp).child("product_price").setValue(product_price);
+                                                    companyRef.child(post_key).child("Kardex").child(timestamp).child("product_price").setValue(viewHolder.my_product_price);
                                                     companyRef.child(post_key).child("Kardex").child(timestamp).child("warehouse_origin_id").setValue(warehouse_id);
                                                     companyRef.child(post_key).child("Kardex").child(timestamp).child("warehouse_destination_id").setValue("store");
                                                     companyRef.child(post_key).child("Kardex").child(timestamp).child("stock").setValue(edtQuantity.getText().toString());

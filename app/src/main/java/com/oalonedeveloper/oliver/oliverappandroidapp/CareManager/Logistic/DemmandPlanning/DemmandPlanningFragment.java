@@ -200,33 +200,73 @@ public class DemmandPlanningFragment extends Fragment {
                         }
                         if (month == 2) {
                             viewHolder.txDemand.setText(q2+"");
+                            double purchase = (q2+prom_sum_q)-current_stock;
+                            viewHolder.txtPurchase.setText(purchase+"");
+                            double final_stock = (current_stock+purchase)-q2;
+                            viewHolder.txtFinalStock.setText(final_stock+"");
                         }
                         if (month == 3) {
                             viewHolder.txDemand.setText(q3+"");
+                            double purchase = (q3+prom_sum_q)-current_stock;
+                            viewHolder.txtPurchase.setText(purchase+"");
+                            double final_stock = (current_stock+purchase)-q3;
+                            viewHolder.txtFinalStock.setText(final_stock+"");
                         }
                         if (month == 4) {
                             viewHolder.txDemand.setText(q4+"");
+                            double purchase = (q4+prom_sum_q)-current_stock;
+                            viewHolder.txtPurchase.setText(purchase+"");
+                            double final_stock = (current_stock+purchase)-q4;
+                            viewHolder.txtFinalStock.setText(final_stock+"");
                         }
                         if (month == 5) {
                             viewHolder.txDemand.setText(q5+"");
+                            double purchase = (q5+prom_sum_q)-current_stock;
+                            viewHolder.txtPurchase.setText(purchase+"");
+                            double final_stock = (current_stock+purchase)-q5;
+                            viewHolder.txtFinalStock.setText(final_stock+"");
                         }
                         if (month == 6) {
                             viewHolder.txDemand.setText(q6+"");
+                            double purchase = (q6+prom_sum_q)-current_stock;
+                            viewHolder.txtPurchase.setText(purchase+"");
+                            double final_stock = (current_stock+purchase)-q6;
+                            viewHolder.txtFinalStock.setText(final_stock+"");
                         }
                         if (month == 7) {
                             viewHolder.txDemand.setText(q7+"");
+                            double purchase = (q7+prom_sum_q)-current_stock;
+                            viewHolder.txtPurchase.setText(purchase+"");
+                            double final_stock = (current_stock+purchase)-q7;
+                            viewHolder.txtFinalStock.setText(final_stock+"");
                         }
                         if (month == 8) {
                             viewHolder.txDemand.setText(q8+"");
+                            double purchase = (q8+prom_sum_q)-current_stock;
+                            viewHolder.txtPurchase.setText(purchase+"");
+                            double final_stock = (current_stock+purchase)-q8;
+                            viewHolder.txtFinalStock.setText(final_stock+"");
                         }
                         if (month == 9) {
                             viewHolder.txDemand.setText(q9+"");
+                            double purchase = (q9+prom_sum_q)-current_stock;
+                            viewHolder.txtPurchase.setText(purchase+"");
+                            double final_stock = (current_stock+purchase)-q9;
+                            viewHolder.txtFinalStock.setText(final_stock+"");
                         }
                         if (month == 10) {
                             viewHolder.txDemand.setText(q10+"");
+                            double purchase = (q10+prom_sum_q)-current_stock;
+                            viewHolder.txtPurchase.setText(purchase+"");
+                            double final_stock = (current_stock+purchase)-q10;
+                            viewHolder.txtFinalStock.setText(final_stock+"");
                         }
                         if (month == 11) {
                             viewHolder.txDemand.setText(q11+"");
+                            double purchase = (q11+prom_sum_q)-current_stock;
+                            viewHolder.txtPurchase.setText(purchase+"");
+                            double final_stock = (current_stock+purchase)-q11;
+                            viewHolder.txtFinalStock.setText(final_stock+"");
                         }
                         if (month == 12) {
                             viewHolder.txDemand.setText(q12+"");

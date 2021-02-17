@@ -73,6 +73,7 @@ public class PinActivity extends AppCompatActivity {
 
                     txtMessage.setText("Hola, " + username + "!");
 
+
                     loadingBar.dismiss();
                 } else {
                     Intent intent = new Intent(PinActivity.this, RegistrationDataActivity.class);

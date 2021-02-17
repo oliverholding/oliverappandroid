@@ -123,12 +123,13 @@ public class SupplierEvaluationSumaryFragment extends Fragment {
                 final String postKey = getRef(position).getKey();
                 viewHolder.setSupplier_id(model.getSupplier_id());
 
-                companyRef.child(post_key).child("Purchased Items").child(product_id).child("Suppliers").child(postKey).child("Prices").child(year+"").addListenerForSingleValueEvent(new ValueEventListener() {
+                companyRef.child(post_key).child("Purchased Items").child(product_id).child("Suppliers").child(postKey).child("Prices").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        long count = dataSnapshot.getChildrenCount();
+                        long count = dataSnapshot.child(year+"").getChildrenCount();
+                        long count_last_year = dataSnapshot.child(last_year+"").getChildrenCount();
                         sum = 0;
-                        for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                        for (DataSnapshot ds : dataSnapshot.child(year+"").getChildren()) {
                             Map<String, Object> map = (Map<String, Object>) ds.getValue();
                             Object price = map.get("price");
                             double price_db = Double.parseDouble(String.valueOf(price));
@@ -138,82 +139,68 @@ public class SupplierEvaluationSumaryFragment extends Fragment {
 
                         }
 
-                        companyRef.child(post_key).child("Purchased Items").child(product_id).child("Suppliers").child(postKey).child("Prices").child(last_year+"").addListenerForSingleValueEvent(new ValueEventListener() {
+                        sum1 = 0;
+                        for (DataSnapshot ds : dataSnapshot.child(last_year+"").getChildren()) {
+                            Map<String, Object> map = (Map<String, Object>) ds.getValue();
+                            Object price = map.get("price");
+                            double price_db = Double.parseDouble(String.valueOf(price));
+                            sum1 += price_db;
+                            double average = sum1/count_last_year;
+                            String final_price = decimalFormat.format(average);
+
+                        }
+
+                        double var = ((sum/sum1)-1)*100;
+                        String var_st = decimalFormat.format(var);
+                        viewHolder.txtPriceVar.setText(var_st+"%");
+
+                        companyRef.child(post_key).child("Purchased Items").child(product_id).child("Suppliers").child(postKey).child("Delivery Delayed").addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(DataSnapshot dataSnapshot) {
                                 long count = dataSnapshot.getChildrenCount();
-                                sum1 = 0;
-                                for (DataSnapshot ds : dataSnapshot.getChildren()) {
-                                    Map<String, Object> map = (Map<String, Object>) ds.getValue();
-                                    Object price = map.get("price");
-                                    double price_db = Double.parseDouble(String.valueOf(price));
-                                    sum1 += price_db;
-                                    double average = sum1/count;
-                                    String final_price = decimalFormat.format(average);
+                                deliver_delay = count;
 
-                                }
-
-                                double var = ((sum/sum1)-1)*100;
-                                String var_st = decimalFormat.format(var);
-                                viewHolder.txtPriceVar.setText(var_st+"%");
-
-                                price_var_weight = (price_weight/100)*(var/100);
-
-                                companyRef.child(post_key).child("Purchased Items").child(product_id).child("Suppliers").child(postKey).child("Delivery Delayed").addListenerForSingleValueEvent(new ValueEventListener() {
+                                companyRef.child(post_key).child("Purchased Items").child(product_id).child("Suppliers").child(postKey).child("Delivery on Time").addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         long count = dataSnapshot.getChildrenCount();
-                                        deliver_delay = count;
+                                        deliver_on_time = count;
 
-                                        companyRef.child(post_key).child("Purchased Items").child(product_id).child("Suppliers").child(postKey).child("Delivery on Time").addListenerForSingleValueEvent(new ValueEventListener() {
+                                        total_deliver = deliver_delay+deliver_on_time;
+                                        String total_st = decimalFormat.format(total_deliver);
+
+                                        double time_var = (deliver_delay/total_deliver)*100;
+                                        String time_var_st = decimalFormat.format(time_var);
+                                        viewHolder.txtTimeVar.setText(time_var_st+"%");
+
+                                        time_var_weight = (time_weight/100)*(time_var/100);
+
+                                        companyRef.child(post_key).child("Purchased Items").child(product_id).child("Suppliers").child(postKey).child("Returned").addListenerForSingleValueEvent(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(DataSnapshot dataSnapshot) {
                                                 long count = dataSnapshot.getChildrenCount();
-                                                deliver_on_time = count;
+                                                deliver_returned = count;
 
-                                                total_deliver = deliver_delay+deliver_on_time;
-                                                String total_st = decimalFormat.format(total_deliver);
+                                                double quality_var = (deliver_returned/total_deliver)*100;
+                                                String quality_var_st = decimalFormat.format(quality_var);
 
-                                                double time_var = (deliver_delay/total_deliver)*100;
-                                                String time_var_st = decimalFormat.format(time_var);
-                                                viewHolder.txtTimeVar.setText(time_var_st+"%");
+                                                viewHolder.txtQualityVar.setText(quality_var_st+"%");
 
-                                                time_var_weight = (time_weight/100)*(time_var/100);
+                                                quality_var_weight = (quality_weight/100)*(quality_var/100);
 
-                                                companyRef.child(post_key).child("Purchased Items").child(product_id).child("Suppliers").child(postKey).child("Returned").addListenerForSingleValueEvent(new ValueEventListener() {
-                                                    @Override
-                                                    public void onDataChange(DataSnapshot dataSnapshot) {
-                                                        long count = dataSnapshot.getChildrenCount();
-                                                        deliver_returned = count;
+                                                double weighted = (price_var_weight+time_var_weight+quality_var_weight)*100;
+                                                String weighted_st = decimalFormat.format(weighted);
 
-                                                        double quality_var = (deliver_returned/total_deliver)*100;
-                                                        String quality_var_st = decimalFormat.format(quality_var);
+                                                if (weighted > total_weight) {
+                                                    viewHolder.secondLayout.setBackgroundColor(Color.RED);
+                                                    viewHolder.txtPriceVar.setTextColor(Color.WHITE);
+                                                    viewHolder.txtSupplierName.setTextColor(Color.WHITE);
+                                                    viewHolder.txtQualityVar.setTextColor(Color.WHITE);
+                                                    viewHolder.txtTimeVar.setTextColor(Color.WHITE);
+                                                    viewHolder.txtWeighted.setTextColor(Color.WHITE);
+                                                }
 
-                                                        viewHolder.txtQualityVar.setText(quality_var_st+"%");
-
-                                                        quality_var_weight = (quality_weight/100)*(quality_var/100);
-
-                                                        double weighted = (price_var_weight+time_var_weight+quality_var_weight)*100;
-                                                        String weighted_st = decimalFormat.format(weighted);
-
-                                                        if (weighted > total_weight) {
-                                                            viewHolder.secondLayout.setBackgroundColor(Color.RED);
-                                                            viewHolder.txtPriceVar.setTextColor(Color.WHITE);
-                                                            viewHolder.txtSupplierName.setTextColor(Color.WHITE);
-                                                            viewHolder.txtQualityVar.setTextColor(Color.WHITE);
-                                                            viewHolder.txtTimeVar.setTextColor(Color.WHITE);
-                                                            viewHolder.txtWeighted.setTextColor(Color.WHITE);
-                                                        }
-
-                                                        viewHolder.txtWeighted.setText(weighted_st+"%");
-                                                    }
-
-                                                    @Override
-                                                    public void onCancelled(DatabaseError databaseError) {
-
-                                                    }
-                                                });
-
+                                                viewHolder.txtWeighted.setText(weighted_st+"%");
                                             }
 
                                             @Override
@@ -222,8 +209,6 @@ public class SupplierEvaluationSumaryFragment extends Fragment {
                                             }
                                         });
 
-
-
                                     }
 
                                     @Override
@@ -231,6 +216,7 @@ public class SupplierEvaluationSumaryFragment extends Fragment {
 
                                     }
                                 });
+
 
 
                             }

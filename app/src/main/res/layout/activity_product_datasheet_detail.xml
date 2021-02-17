@@ -101,6 +101,7 @@
                             android:layout_height="wrap_content"/>
 
                         <ImageView
+                            android:id="@+id/btnEditDescription"
                             android:src="@drawable/edit_pencil_vector_asset"
                             android:layout_weight="0.1"
                             android:layout_width="0dp"
@@ -109,6 +110,7 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/txtDescription"
                         android:layout_margin="4dp"
                         android:text="Sin información"
                         android:layout_width="match_parent"
@@ -147,6 +149,7 @@
                             android:layout_height="wrap_content"/>
 
                         <ImageView
+                            android:id="@+id/btnSpecifications"
                             android:src="@drawable/edit_pencil_vector_asset"
                             android:layout_weight="0.1"
                             android:layout_width="0dp"
@@ -155,6 +158,7 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/txtSpecifications"
                         android:layout_margin="4dp"
                         android:text="Sin información"
                         android:layout_width="match_parent"
@@ -193,6 +197,7 @@
                             android:layout_height="wrap_content"/>
 
                         <ImageView
+                            android:id="@+id/btnMeasurements"
                             android:src="@drawable/edit_pencil_vector_asset"
                             android:layout_weight="0.1"
                             android:layout_width="0dp"
@@ -201,6 +206,7 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/txtMeasurements"
                         android:layout_margin="4dp"
                         android:text="Sin información"
                         android:layout_width="match_parent"
@@ -239,6 +245,7 @@
                             android:layout_height="wrap_content"/>
 
                         <ImageView
+                            android:id="@+id/btnSecurityUsage"
                             android:src="@drawable/edit_pencil_vector_asset"
                             android:layout_weight="0.1"
                             android:layout_width="0dp"
@@ -247,6 +254,7 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/txtSecurityUsage"
                         android:layout_margin="4dp"
                         android:text="Sin información"
                         android:layout_width="match_parent"

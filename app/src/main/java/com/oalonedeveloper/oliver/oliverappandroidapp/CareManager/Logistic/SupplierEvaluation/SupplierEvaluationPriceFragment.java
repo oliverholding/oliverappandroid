@@ -85,12 +85,15 @@ public class SupplierEvaluationPriceFragment extends Fragment {
                 final String postKey = getRef(position).getKey();
                 viewHolder.setSupplier_id(model.getSupplier_id());
 
-                companyRef.child(post_key).child("Purchased Items").child(product_id).child("Suppliers").child(postKey).child("Prices").child(year+"").addListenerForSingleValueEvent(new ValueEventListener() {
+                companyRef.child(post_key).child("Purchased Items").child(product_id).child("Suppliers").child(postKey).child("Prices").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        long count = dataSnapshot.getChildrenCount();
+
+
+                        long count = dataSnapshot.child(year+"").getChildrenCount();
+                        long count_last_year = dataSnapshot.child(last_year+"").getChildrenCount();
                         sum = 0;
-                        for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                        for (DataSnapshot ds : dataSnapshot.child(year+"").getChildren()) {
                             Map<String, Object> map = (Map<String, Object>) ds.getValue();
                             Object price = map.get("price");
                             double price_db = Double.parseDouble(String.valueOf(price));
@@ -101,34 +104,22 @@ public class SupplierEvaluationPriceFragment extends Fragment {
                             viewHolder.txtCurrentPeriodPrice.setText("S/ "+final_price);
                         }
 
-                        companyRef.child(post_key).child("Purchased Items").child(product_id).child("Suppliers").child(postKey).child("Prices").child(last_year+"").addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(DataSnapshot dataSnapshot) {
-                                long count = dataSnapshot.getChildrenCount();
-                                sum1 = 0;
-                                for (DataSnapshot ds : dataSnapshot.getChildren()) {
-                                    Map<String, Object> map = (Map<String, Object>) ds.getValue();
-                                    Object price = map.get("price");
-                                    double price_db = Double.parseDouble(String.valueOf(price));
-                                    sum1 += price_db;
-                                    double average = sum1/count;
-                                    String final_price = decimalFormat.format(average);
+                        sum1 = 0;
+                        for (DataSnapshot ds : dataSnapshot.child(last_year+"").getChildren()) {
+                            Map<String, Object> map = (Map<String, Object>) ds.getValue();
+                            Object price = map.get("price");
+                            double price_db = Double.parseDouble(String.valueOf(price));
+                            sum1 += price_db;
+                            double average = sum1/count_last_year;
+                            String final_price = decimalFormat.format(average);
 
-                                    viewHolder.txtLastPeriodPrice.setText("S/ "+final_price);
-                                }
+                            viewHolder.txtLastPeriodPrice.setText("S/ "+final_price);
+                        }
 
-                                double var = ((sum/sum1)-1)*100;
-                                String var_st = decimalFormat.format(var);
-                                viewHolder.txtVariation.setText(var_st+"%");
+                        double var = ((sum/sum1)-1)*100;
+                        String var_st = decimalFormat.format(var);
+                        viewHolder.txtVariation.setText(var_st+"%");
 
-
-                            }
-
-                            @Override
-                            public void onCancelled(DatabaseError databaseError) {
-
-                            }
-                        });
 
                     }
 

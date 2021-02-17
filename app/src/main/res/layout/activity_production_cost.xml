@@ -55,23 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab2"
-            android:text="MATERIA PRIMA"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab3"
-            android:text="ACTIVOS"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab4"
-            android:text="PERSONAL"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 
     </com.google.android.material.tabs.TabLayout>
 
