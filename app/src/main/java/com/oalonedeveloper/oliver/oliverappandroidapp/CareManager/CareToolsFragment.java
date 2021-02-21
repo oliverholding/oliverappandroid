@@ -23,6 +23,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManageme
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.PeopleManagementActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Production.ProductionActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.SalesModuleActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirection.StrategicDirectionActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.UserInformationModule.UserInformationModuleActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ValueProposalModule.ValueProposalActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
@@ -30,7 +31,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class CareToolsFragment extends Fragment {
 
-    CardView cardViewModule1,cardViewModule2,cardViewModule3,cardViewModule4,cardViewModule5,cardViewModule6,cardViewModule7,cardViewModule8,cardViewModule9,cardViewModule10,cardViewModule11,cardViewModule12,cardViewModule13;
+    CardView cardViewModule1,cardViewModule2,cardViewModule3,cardViewModule4,cardViewModule5,cardViewModule6,cardViewModule7,cardViewModule8,cardViewModule9,cardViewModule10,cardViewModule11,cardViewModule12,cardViewModule13,cardViewModule14;
     String post_key;
 
 
@@ -55,6 +56,7 @@ public class CareToolsFragment extends Fragment {
         cardViewModule11 = view.findViewById(R.id.cardViewModule11);
         cardViewModule12 = view.findViewById(R.id.cardViewModule12);
         cardViewModule13 = view.findViewById(R.id.cardViewModule13);
+        cardViewModule14 = view.findViewById(R.id.cardViewModule14);
 
         cardViewModule1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -165,6 +167,15 @@ public class CareToolsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), FinanacialManagementActivity.class);
+                intent.putExtra("post_key",post_key);
+                startActivity(intent);
+            }
+        });
+
+        cardViewModule14.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), StrategicDirectionActivity.class);
                 intent.putExtra("post_key",post_key);
                 startActivity(intent);
             }

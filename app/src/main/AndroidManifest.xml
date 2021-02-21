@@ -21,7 +21,9 @@
         android:roundIcon="@drawable/oliver_android_icon_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CareManager.FinancialManagement.RiskManagement.RiskManagementActivity"></activity>
+        <activity android:name=".CareManager.StrategicDirection.Vision.VisionActivity"></activity>
+        <activity android:name=".CareManager.StrategicDirection.StrategicDirectionActivity" />
+        <activity android:name=".CareManager.FinancialManagement.RiskManagement.RiskManagementActivity" />
         <activity android:name=".CareManager.FinancialManagement.CashFlow.CashFlowActivity" />
         <activity android:name=".CareManager.FinancialManagement.FinancialStatements.StatementOfIncomes.StatementOfIncomesActivity" />
         <activity android:name=".CareManager.FinancialManagement.AccountsToPaid.AccountsToPaidMonthlyActivity" />

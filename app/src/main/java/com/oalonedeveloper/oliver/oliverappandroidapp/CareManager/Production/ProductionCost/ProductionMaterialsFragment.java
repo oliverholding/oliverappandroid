@@ -1,5 +1,6 @@
 package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Production.ProductionCost;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -37,8 +38,9 @@ public class ProductionMaterialsFragment extends Fragment {
     DatabaseReference companyRef;
     String post_key;
     RecyclerView recyclerView;
-    double sum1;
+    double sum1,total;
     DecimalFormat decimalFormat;
+    TextView txtTotal;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,6 +52,8 @@ public class ProductionMaterialsFragment extends Fragment {
         companyRef = FirebaseDatabase.getInstance().getReference().child("My Companies");
 
         decimalFormat = new DecimalFormat("0.00");
+
+        txtTotal = view.findViewById(R.id.txtTotal);
 
         recyclerView = view.findViewById(R.id.recyclerView);
 
@@ -105,6 +109,11 @@ public class ProductionMaterialsFragment extends Fragment {
                         double total_item_stock = sum1*product_stock_db;
                         String total_item_st = decimalFormat.format(total_item_stock);
                         viewHolder.txtCost.setText("S/ "+total_item_st);
+
+                        total += total_item_stock;
+                        String total_st = decimalFormat.format(total);
+
+                        txtTotal.setText("COSTO TOTAL: "+total_st);
                     }
 
                     @Override
@@ -117,6 +126,29 @@ public class ProductionMaterialsFragment extends Fragment {
                 viewHolder.btnActionButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        showProductionItems();
+                    }
+
+                    private void showProductionItems() {
+                        final AlertDialog dialog = new AlertDialog.Builder(getActivity()).create();
+
+                        LayoutInflater inflater = LayoutInflater.from(getActivity());
+                        View finance_method = inflater.inflate(R.layout.show_production_cost_items_dialog,null);
+
+                        TextView txtMessage,txtTotal;
+                        CircleImageView imgProduct;
+                        RecyclerView recyclerView;
+
+
+                        txtMessage = finance_method.findViewById(R.id.txtMessage);
+                        txtTotal = finance_method.findViewById(R.id.txtTotal);
+                        imgProduct = finance_method.findViewById(R.id.imgProduct);
+                        recyclerView = finance_method.findViewById(R.id.recyclerView);
+
+
+
+                        dialog.setView(finance_method);
+                        dialog.show();
 
                     }
                 });

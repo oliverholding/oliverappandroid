@@ -126,7 +126,7 @@ public class ProductionCapacityActivity extends AppCompatActivity {
                 viewHolder.setProduction_theoretical_capacity(model.getProduction_theoretical_capacity());
 
                 viewHolder.txtProductionLineName.setText(viewHolder.my_production_line_name);
-                viewHolder.txtTheoreticalCapacity.setText("Capacidad Teórica o Máxima"+viewHolder.my_production_theoretical_capacity);
+                viewHolder.txtTheoreticalCapacity.setText("Capacidad Teórica o Máxima: "+viewHolder.my_production_theoretical_capacity);
                 viewHolder.txtManTime.setText("Horas hombre necesarias: "+viewHolder.my_production_man_time+" horas mensuales");
 
                 double man_time = Double.parseDouble(viewHolder.my_production_man_time);
@@ -157,13 +157,14 @@ public class ProductionCapacityActivity extends AppCompatActivity {
             super(itemView);
             mView = itemView;
 
+
             txtProductionLineName = mView.findViewById(R.id.txtProductionLineName);
             txtTheoreticalCapacity = mView.findViewById(R.id.txtTheoreticalCapacity);
             txtManTime = mView.findViewById(R.id.txtManTime);
             txtPeople = mView.findViewById(R.id.txtPeople);
             txtRealProduction = mView.findViewById(R.id.txtRealProduction);
             txtRealCapacity = mView.findViewById(R.id.txtRealCapacity);
-            btnManage = mView.findViewById(R.id.btnManage);
+
         }
         public void setProduction_line_name(String production_line_name) {
             my_production_line_name = production_line_name;

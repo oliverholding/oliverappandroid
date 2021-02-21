@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CareManager.StrategicDirection.Vision.VisionActivity">
+
+    <LinearLayout
+        android:id="@+id/rootLayout"
+        android:padding="8dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewTitle"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="8dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Construyendo Mi Visión"
+                    android:textSize="18sp"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="Con ésta herramienta te ayudaremos a definir cómo deseas ver a tu negocio/comercio/empresa en un futuro de 5 años."
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="8dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Válido hasta que se cumpla la visión y las metas por lo que podrás modificarlo."
+                    android:textSize="12sp"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="8dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_margin="4dp"
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="4dp"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="1. Método Interactivo"
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:text="Inicie un debate entre sus colaboradores, registre las 5 visiones y luego elija la mejor."
+                            android:layout_margin="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:padding="4dp"
+                                    android:id="@+id/rdVision1"
+                                    android:text="1. "
+                                    android:layout_margin="4dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <ImageView
+                                    android:id="@+id/btnVision1"
+                                    android:src="@drawable/edit_pencil_vector_asset"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="0.2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="30dp"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:padding="4dp"
+                                    android:id="@+id/rdVision2"
+                                    android:text="2. "
+                                    android:layout_margin="4dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <ImageView
+                                    android:id="@+id/btnVision2"
+                                    android:src="@drawable/edit_pencil_vector_asset"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="0.2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="30dp"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:padding="4dp"
+                                    android:id="@+id/rdVision3"
+                                    android:text="3. "
+                                    android:layout_margin="4dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <ImageView
+                                    android:id="@+id/btnVision3"
+                                    android:src="@drawable/edit_pencil_vector_asset"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="0.2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="30dp"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:padding="4dp"
+                                    android:id="@+id/rdVision4"
+                                    android:text="4. "
+                                    android:layout_margin="4dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <ImageView
+                                    android:id="@+id/btnVision4"
+                                    android:src="@drawable/edit_pencil_vector_asset"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="0.2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="30dp"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:padding="4dp"
+                                    android:id="@+id/rdVision5"
+                                    android:text="5. "
+                                    android:layout_margin="4dp"
+                                    android:background="@drawable/edit_text_style"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <ImageView
+                                    android:id="@+id/btnVision5"
+                                    android:src="@drawable/edit_pencil_vector_asset"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="0.2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="30dp"/>
+
+                            </LinearLayout>
+
+
+
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="8dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_margin="4dp"
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="4dp"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="2. Establezca una Meta"
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:text=" Indique 5 metas que sean prioritarias para usted y su negocio/comercio/empresa y sómetala a votación entre sus colaboradores ó círculo más cercano"
+                            android:layout_margin="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RadioGroup
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <RadioButton
+                                        android:padding="4dp"
+                                        android:id="@+id/rdGoal1"
+                                        android:text="1. "
+                                        android:layout_margin="4dp"
+                                        android:background="@drawable/edit_text_style"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                    <ImageView
+                                        android:id="@+id/btnGoal1"
+                                        android:src="@drawable/edit_pencil_vector_asset"
+                                        android:layout_margin="4dp"
+                                        android:layout_weight="0.2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="30dp"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <RadioButton
+                                        android:padding="4dp"
+                                        android:id="@+id/rdGoal2"
+                                        android:text="2. "
+                                        android:layout_margin="4dp"
+                                        android:background="@drawable/edit_text_style"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                    <ImageView
+                                        android:id="@+id/btnGoal2"
+                                        android:src="@drawable/edit_pencil_vector_asset"
+                                        android:layout_margin="4dp"
+                                        android:layout_weight="0.2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="30dp"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <RadioButton
+                                        android:padding="4dp"
+                                        android:id="@+id/rdGoal3"
+                                        android:text="3. "
+                                        android:layout_margin="4dp"
+                                        android:background="@drawable/edit_text_style"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                    <ImageView
+                                        android:id="@+id/btnGoal3"
+                                        android:src="@drawable/edit_pencil_vector_asset"
+                                        android:layout_margin="4dp"
+                                        android:layout_weight="0.2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="30dp"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <RadioButton
+                                        android:padding="4dp"
+                                        android:id="@+id/rdGoal4"
+                                        android:text="4. "
+                                        android:layout_margin="4dp"
+                                        android:background="@drawable/edit_text_style"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                    <ImageView
+                                        android:id="@+id/btnGoal4"
+                                        android:src="@drawable/edit_pencil_vector_asset"
+                                        android:layout_margin="4dp"
+                                        android:layout_weight="0.2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="30dp"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <RadioButton
+                                        android:padding="4dp"
+                                        android:id="@+id/rdGoal5"
+                                        android:text="5. "
+                                        android:layout_margin="4dp"
+                                        android:background="@drawable/edit_text_style"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                    <ImageView
+                                        android:id="@+id/btnGoal5"
+                                        android:src="@drawable/edit_pencil_vector_asset"
+                                        android:layout_margin="4dp"
+                                        android:layout_weight="0.2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="30dp"/>
+
+                                </LinearLayout>
+
+
+                            </RadioGroup>
+
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="8dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_margin="4dp"
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="4dp"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="3. Ideología esencial: el cual debe de reflejar el alma de tu negocio/comercio/empresa"
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:text="Indique qué caracteriza a su empresa y por qué lo hace diferente"
+                            android:layout_margin="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RadioGroup
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:padding="4dp"
+                                        android:id="@+id/txtIdeology1"
+                                        android:text="1. "
+                                        android:textColor="@android:color/black"
+                                        android:layout_margin="8dp"
+                                        android:background="@drawable/edit_text_style"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                    <ImageView
+                                        android:id="@+id/btnIdeology1"
+                                        android:src="@drawable/edit_pencil_vector_asset"
+                                        android:layout_margin="4dp"
+                                        android:layout_weight="0.2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="30dp"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:padding="4dp"
+                                        android:id="@+id/txtIdeology2"
+                                        android:text="2. "
+                                        android:textColor="@android:color/black"
+                                        android:layout_margin="8dp"
+                                        android:background="@drawable/edit_text_style"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                    <ImageView
+                                        android:id="@+id/btnIdeology2"
+                                        android:src="@drawable/edit_pencil_vector_asset"
+                                        android:layout_margin="4dp"
+                                        android:layout_weight="0.2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="30dp"/>
+
+                                </LinearLayout>
+
+
+
+
+                            </RadioGroup>
+
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:text="MOSTRAR MI VISIÓN"
+            android:textColor="@android:color/white"
+            android:layout_margin="8dp"
+            android:id="@+id/btnShowVision"
+            android:background="@drawable/gray_button_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</ScrollView>

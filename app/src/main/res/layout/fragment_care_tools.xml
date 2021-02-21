@@ -586,7 +586,6 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardViewModule14"
-                    android:visibility="invisible"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="8dp"
                     android:layout_margin="8dp"
@@ -616,7 +615,7 @@
                             android:textColor="@color/colorAccent"
                             android:gravity="center"
                             app:layout_constraintBottom_toBottomOf="@id/img14"
-                            android:text="Normatividad y Responsabilidad Social"
+                            android:text="Dirección Estratégica y Operativa del Negocio"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 

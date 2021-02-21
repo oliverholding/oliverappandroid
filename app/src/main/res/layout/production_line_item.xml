@@ -74,14 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <Button
-            android:id="@+id/btnManage"
-            android:text="GESTIONAR"
-            android:textColor="@android:color/white"
-            android:layout_margin="4dp"
-            android:background="@drawable/gray_button_style"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"/>
+
 
     </LinearLayout>
 
