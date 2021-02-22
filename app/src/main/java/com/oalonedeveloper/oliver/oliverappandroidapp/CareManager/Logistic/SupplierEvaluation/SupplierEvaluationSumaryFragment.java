@@ -240,8 +240,11 @@ public class SupplierEvaluationSumaryFragment extends Fragment {
                 companyRef.child(post_key).child("My Suppliers").child(postKey).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        String supplier_name = dataSnapshot.child("supplier_name").getValue().toString();
-                        viewHolder.txtSupplierName.setText(supplier_name);
+                        if (dataSnapshot.hasChild("supplier_name")) {
+                            String supplier_name = dataSnapshot.child("supplier_name").getValue().toString();
+                            viewHolder.txtSupplierName.setText(supplier_name);
+                        }
+
                     }
 
                     @Override
