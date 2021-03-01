@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="12dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:gravity="center"
+                android:padding="8dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgImage"
+                    android:src="@color/colorGradientStart"
+                    android:layout_weight="0.2"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"/>
+
+                <TextView
+                    android:id="@+id/txtMessage"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:text="¿Cuál es la actividad y relación de tu empresa hacia tus colaboradores?"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rdWorkerRelation1"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    android:text="Conciliar"
+                    android:background="@drawable/edit_text_style"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:id="@+id/btnWorkerRelationInfo1"
+                    android:src="@drawable/information_vector_asset"
+                    android:layout_weight="0.2"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rdWorkerRelation2"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    android:text="Motivar al Personal"
+                    android:background="@drawable/edit_text_style"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:id="@+id/btnWorkerRelationInfo2"
+                    android:src="@drawable/information_vector_asset"
+                    android:layout_weight="0.2"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rdWorkerRelation3"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    android:text="Valorar al personal más veterano y animar al más reciente"
+                    android:background="@drawable/edit_text_style"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:id="@+id/btnWorkerRelationInfo3"
+                    android:src="@drawable/information_vector_asset"
+                    android:layout_weight="0.2"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rdWorkerRelation4"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    android:text="Desarrollar el espíritu emprendedor del personal"
+                    android:background="@drawable/edit_text_style"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:id="@+id/btnWorkerRelationInfo4"
+                    android:src="@drawable/information_vector_asset"
+                    android:layout_weight="0.2"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rdWorkerRelation5"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    android:text="Prestar atención a la salud del personal"
+                    android:background="@drawable/edit_text_style"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:id="@+id/btnWorkerRelationInfo5"
+                    android:src="@drawable/information_vector_asset"
+                    android:layout_weight="0.2"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rdWorkerRelation6"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    android:text="Fomentar la equidad"
+                    android:background="@drawable/edit_text_style"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:id="@+id/btnWorkerRelationInfo6"
+                    android:src="@drawable/information_vector_asset"
+                    android:layout_weight="0.2"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rdWorkerRelation7"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    android:text="Promover la formación continua del personal"
+                    android:background="@drawable/edit_text_style"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:id="@+id/btnWorkerRelationInfo7"
+                    android:src="@drawable/information_vector_asset"
+                    android:layout_weight="0.2"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rdWorkerRelation8"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    android:text="Aplicar nuevas metodologías de trabajo"
+                    android:background="@drawable/edit_text_style"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:id="@+id/btnWorkerRelationInfo8"
+                    android:src="@drawable/information_vector_asset"
+                    android:layout_weight="0.2"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rdWorkerRelation9"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    android:text="Dar valor a los tiempos de descanso"
+                    android:background="@drawable/edit_text_style"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:id="@+id/btnWorkerRelationInfo9"
+                    android:src="@drawable/information_vector_asset"
+                    android:layout_weight="0.2"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rdWorkerRelation10"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    android:text="Realizar actividades fuera del trabajo"
+                    android:background="@drawable/edit_text_style"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:id="@+id/btnWorkerRelationInfo10"
+                    android:src="@drawable/information_vector_asset"
+                    android:layout_weight="0.2"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnRegister"
+                android:text="ESTABLECER"
+                android:textColor="@android:color/white"
+                android:layout_margin="20dp"
+                android:background="@drawable/gray_button_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+</RelativeLayout>

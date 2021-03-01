@@ -34,7 +34,7 @@ public class SupplierEvaluationPriceFragment extends Fragment {
     String post_key,product_id;
     RecyclerView recyclerView;
     int day,month,year,last_year;
-    double sum,sum1;
+    double sum,sum1,average_current_year,average_last_year;
     DecimalFormat decimalFormat;
     TextView txtLastPeriod,txtCurrentPeriod;
 
@@ -98,8 +98,8 @@ public class SupplierEvaluationPriceFragment extends Fragment {
                             Object price = map.get("price");
                             double price_db = Double.parseDouble(String.valueOf(price));
                             sum += price_db;
-                            double average = sum/count;
-                            String final_price = decimalFormat.format(average);
+                            average_current_year = sum/count;
+                            String final_price = decimalFormat.format(average_current_year);
 
                             viewHolder.txtCurrentPeriodPrice.setText("S/ "+final_price);
                         }
@@ -110,13 +110,13 @@ public class SupplierEvaluationPriceFragment extends Fragment {
                             Object price = map.get("price");
                             double price_db = Double.parseDouble(String.valueOf(price));
                             sum1 += price_db;
-                            double average = sum1/count_last_year;
-                            String final_price = decimalFormat.format(average);
+                            average_last_year = sum1/count_last_year;
+                            String final_price = decimalFormat.format(average_last_year);
 
                             viewHolder.txtLastPeriodPrice.setText("S/ "+final_price);
                         }
 
-                        double var = ((sum/sum1)-1)*100;
+                        double var = ((average_current_year/average_last_year)-1)*100;
                         String var_st = decimalFormat.format(var);
                         viewHolder.txtVariation.setText(var_st+"%");
 

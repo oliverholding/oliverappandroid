@@ -733,6 +733,62 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
+            <Button
+                android:id="@+id/btnValues"
+                android:padding="8dp"
+                android:text="Valores"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:background="@drawable/gray_button_style"
+                android:drawableStart="@drawable/icono_ventas128"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+            <Button
+                android:id="@+id/btnLeanCanvas"
+                android:padding="8dp"
+                android:text="Propuesta de Valor del Negocio en general"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:background="@drawable/gray_button_style"
+                android:drawableStart="@drawable/icono_ventas128"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnIndustryInformation"
+                android:padding="8dp"
+                android:text="Información del Sector o Industria"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:background="@drawable/gray_button_style"
+                android:drawableStart="@drawable/icono_ventas128"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+            <Button
+                android:id="@+id/btnMarketInformation"
+                android:padding="8dp"
+                android:text="Información del Mercado"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:background="@drawable/gray_button_style"
+                android:drawableStart="@drawable/icono_ventas128"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnFoda"
+                android:padding="8dp"
+                android:text="Análisis FODA"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:background="@drawable/gray_button_style"
+                android:drawableStart="@drawable/icono_ventas128"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
         </LinearLayout>
 

@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/rootLayout"
+        android:padding="12dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_margin="4dp"
+                android:src="@color/colorGradientCenterRed"
+                android:layout_weight="0.2"
+                android:layout_width="0dp"
+                android:layout_height="30dp"/>
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:textColor="@android:color/black"
+                android:layout_weight="1"
+                android:layout_margin="4dp"
+                android:text="title"
+                android:textStyle="bold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+
+
+        <androidx.cardview.widget.CardView
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="8dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/txtQuestion1"
+                        android:textColor="@android:color/black"
+                        android:layout_weight="1"
+                        android:layout_margin="8dp"
+                        android:text="question_1"
+                        android:textStyle="bold"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+                <RadioGroup
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer1_1"
+                        android:text="Nada Atractivo"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer1_2"
+                        android:text="Poco Atractivo"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer1_3"
+                        android:text="Neutral"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer1_4"
+                        android:text="Atractivo"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer1_5"
+                        android:text="Muy Atractivo"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="8dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/txtQuestion2"
+                        android:textColor="@android:color/black"
+                        android:layout_weight="1"
+                        android:layout_margin="8dp"
+                        android:text="question_1"
+                        android:textStyle="bold"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+                <RadioGroup
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer2_1"
+                        android:text="Nada Atractivo"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer2_2"
+                        android:text="Poco Atractivo"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer2_3"
+                        android:text="Neutral"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer2_4"
+                        android:text="Atractivo"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer2_5"
+                        android:text="Muy Atractivo"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="8dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/txtQuestion3"
+                        android:textColor="@android:color/black"
+                        android:layout_weight="1"
+                        android:layout_margin="8dp"
+                        android:text="question_1"
+                        android:textStyle="bold"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+                <RadioGroup
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer3_1"
+                        android:text="Nada Atractivo"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer3_2"
+                        android:text="Poco Atractivo"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer3_3"
+                        android:text="Neutral"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer3_4"
+                        android:text="Atractivo"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer3_5"
+                        android:text="Muy Atractivo"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="8dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/txtQuestion4"
+                        android:textColor="@android:color/black"
+                        android:layout_weight="1"
+                        android:layout_margin="8dp"
+                        android:text="question_1"
+                        android:textStyle="bold"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+                <RadioGroup
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer4_1"
+                        android:text="Nada Atractivo"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer4_2"
+                        android:text="Poco Atractivo"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer4_3"
+                        android:text="Neutral"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer4_4"
+                        android:text="Atractivo"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer4_5"
+                        android:text="Muy Atractivo"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="8dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/txtQuestion5"
+                        android:textColor="@android:color/black"
+                        android:layout_weight="1"
+                        android:layout_margin="8dp"
+                        android:text="question_1"
+                        android:textStyle="bold"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+                <RadioGroup
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer5_1"
+                        android:text="Nada Atractivo"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer5_2"
+                        android:text="Poco Atractivo"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer5_3"
+                        android:text="Neutral"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer5_4"
+                        android:text="Atractivo"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer5_5"
+                        android:text="Muy Atractivo"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="8dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/txtQuestion6"
+                        android:textColor="@android:color/black"
+                        android:layout_weight="1"
+                        android:layout_margin="8dp"
+                        android:text="question_1"
+                        android:textStyle="bold"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+                <RadioGroup
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer6_1"
+                        android:text="Nada Atractivo"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer6_2"
+                        android:text="Poco Atractivo"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer6_3"
+                        android:text="Neutral"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer6_4"
+                        android:text="Atractivo"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RadioButton
+                        android:id="@+id/rdAnswer6_5"
+                        android:text="Muy Atractivo"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <Button
+            android:id="@+id/btnFinish"
+            android:text="FINALIZAR"
+            android:layout_margin="12dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/gray_button_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</ScrollView>
