@@ -331,7 +331,8 @@ public class VisionActivity extends AppCompatActivity {
         txtVision = finance_method.findViewById(R.id.txtVision);
 
 
-        txtVision.setText("Ser una empresa de "+customer_output+" líder en "+company_economic_activity+" cuya visión sea "+vision_message+" y que nos lleve al cumplimiento de nuestra meta principal a largo plazo que es la de "+goal_message+" sin perder nuestra esencia en "+txtIdeology1.getText().toString()+" y "+txtIdeology2.getText().toString()+" para nuestro crecimiento sólido y sostenible a lo largo de los años");
+        txtVision.setText("Identificarnos como una empresa de "+customer_output+" líder en "+company_economic_activity+" cuya visión sea "+vision_message+" y que nos lleve al cumplimiento de nuestra meta principal a largo plazo que es la de "+goal_message+" sin perder nuestra esencia en "+txtIdeology1.getText().toString()+" y "+txtIdeology2.getText().toString()+" para nuestro crecimiento sólido y sostenible a lo largo de los años");
+
 
         dialog.setView(finance_method);
         dialog.show();

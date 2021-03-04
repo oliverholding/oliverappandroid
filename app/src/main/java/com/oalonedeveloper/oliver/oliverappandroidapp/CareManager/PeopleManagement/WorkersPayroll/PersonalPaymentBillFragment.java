@@ -42,7 +42,7 @@ public class PersonalPaymentBillFragment extends Fragment {
             txtExtraTime,txtFamiliarBonus,txtHolidays,txtTransport,txtCts,txtOnp,txtFaults,txtRetentions4,txtRetentions5,txtJudicialRetentions,txtAdvancedPayments;
     int day,month,year,first_day,last_day;
     String post_key,profile_id,company_social_reason,company_ruc,company_address,job_profile_name,job_profile_surname,job_profile_job_name,company_image,document_number,begin_working_day,begin_working_month,begin_working_year,job_profile_area,payment_amount,
-            rmv;
+            rmv,net_payment_st;
     DatabaseReference companyRef,ratesRef;
     CircleImageView imgCompanyProfile;
     DecimalFormat decimalFormat;
@@ -243,7 +243,7 @@ public class PersonalPaymentBillFragment extends Fragment {
                                             String afp_fee_st = decimalFormat.format(afp_fee);
                                             String total_discount_st = decimalFormat.format(total_discount);
                                             String essalud_st = decimalFormat.format(essalud);
-                                            String net_payment_st = decimalFormat.format(net_payment);
+                                            net_payment_st = decimalFormat.format(net_payment);
 
                                             txtAfpFund.setText("AFP Fondo 10.00%: S/ " + afp_fund_st);
                                             txtAfpFee.setText("AFP Comisión 1.60%: S/ " + afp_fee_st);
@@ -293,7 +293,7 @@ public class PersonalPaymentBillFragment extends Fragment {
             public void onClick(View v) {
                 Long tsLong = System.currentTimeMillis()/1000;
                 String timestamp = tsLong.toString();
-                companyRef.child(post_key).child("Worker Bills").child(timestamp).child("total_payment").setValue(salary+"");
+                companyRef.child(post_key).child("Worker Bills").child(timestamp).child("total_payment").setValue(net_payment_st);
                 companyRef.child(post_key).child("Worker Bills").child(timestamp).child("bill_id").setValue(timestamp);
                 companyRef.child(post_key).child("Worker Bills").child(timestamp).child("worker_id").setValue(profile_id);
                 companyRef.child(post_key).child("Worker Bills").child(timestamp).child("bill_type").setValue("work_sheet");

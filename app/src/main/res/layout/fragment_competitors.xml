@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CareManager.StrategicDirection.StrategicMatrix.CompetitorsFragment">
+
+    <LinearLayout
+        android:padding="8dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewTitle"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            android:layout_margin="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="8dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Matriz Estratégica"
+                    android:textSize="18sp"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="Antes de armar la matriz estratégica, es necesario que proporciones información básica de tus 3 principales competidores."
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="8dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_weight="0.2"
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:id="@+id/txtCompetitorName1"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:text="Competidor 1: Sin Especificar"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:id="@+id/btnItem1"
+                        android:layout_weight="0.1"
+                        android:src="@drawable/edit_pencil_vector_asset"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_margin="12dp"
+                    android:background="@color/colorGradientCenterRed"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <TextView
+                    android:id="@+id/txtAnswer1_1"
+                    android:layout_margin="8dp"
+                    android:text="Ubicación Estratégica: Sin Especificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtAnswer1_2"
+                    android:layout_margin="8dp"
+                    android:text="Cantidad de Clientes: Sin Especificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtAnswer1_3"
+                    android:layout_margin="8dp"
+                    android:text="Incentivos para los clientes: Sin Especificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtAnswer1_4"
+                    android:layout_margin="8dp"
+                    android:text="Infraestructura: Sin Especificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtAnswer1_5"
+                    android:layout_margin="8dp"
+                    android:text="Fuerte presencia en Imagen y Marca: Sin Especificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtAnswer1_6"
+                    android:layout_margin="8dp"
+                    android:text="Estrategia de Promociones y Publicidad: Sin Especificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <View
+                    android:layout_margin="12dp"
+                    android:background="@color/colorGradientCenterRed"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <TextView
+                    android:id="@+id/txtResult1"
+                    android:layout_margin="8dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:text="Resultado: -"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="8dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_weight="0.2"
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:id="@+id/txtCompetitorName2"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:text="Competidor 2: Sin Especificar"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:id="@+id/btnItem2"
+                        android:layout_weight="0.1"
+                        android:src="@drawable/edit_pencil_vector_asset"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_margin="12dp"
+                    android:background="@color/colorGradientCenterRed"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <TextView
+                    android:id="@+id/txtAnswer2_1"
+                    android:layout_margin="8dp"
+                    android:text="Ubicación Estratégica: Sin Especificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtAnswer2_2"
+                    android:layout_margin="8dp"
+                    android:text="Cantidad de Clientes: Sin Especificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtAnswer2_3"
+                    android:layout_margin="8dp"
+                    android:text="Incentivos para los clientes: Sin Especificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtAnswer2_4"
+                    android:layout_margin="8dp"
+                    android:text="Infraestructura: Sin Especificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtAnswer2_5"
+                    android:layout_margin="8dp"
+                    android:text="Fuerte presencia en Imagen y Marca: Sin Especificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtAnswer2_6"
+                    android:layout_margin="8dp"
+                    android:text="Estrategia de Promociones y Publicidad: Sin Especificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <View
+                    android:layout_margin="12dp"
+                    android:background="@color/colorGradientCenterRed"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <TextView
+                    android:id="@+id/txtResult2"
+                    android:layout_margin="8dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:text="Resultado: -"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="8dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_weight="0.2"
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:id="@+id/txtCompetitorName3"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:text="Competidor 3: Sin Especificar"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:id="@+id/btnItem3"
+                        android:layout_weight="0.1"
+                        android:src="@drawable/edit_pencil_vector_asset"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_margin="12dp"
+                    android:background="@color/colorGradientCenterRed"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <TextView
+                    android:id="@+id/txtAnswer3_1"
+                    android:layout_margin="8dp"
+                    android:text="Ubicación Estratégica: Sin Especificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtAnswer3_2"
+                    android:layout_margin="8dp"
+                    android:text="Cantidad de Clientes: Sin Especificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtAnswer3_3"
+                    android:layout_margin="8dp"
+                    android:text="Incentivos para los clientes: Sin Especificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtAnswer3_4"
+                    android:layout_margin="8dp"
+                    android:text="Infraestructura: Sin Especificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtAnswer3_5"
+                    android:layout_margin="8dp"
+                    android:text="Fuerte presencia en Imagen y Marca: Sin Especificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtAnswer3_6"
+                    android:layout_margin="8dp"
+                    android:text="Estrategia de Promociones y Publicidad: Sin Especificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <View
+                    android:layout_margin="12dp"
+                    android:background="@color/colorGradientCenterRed"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <TextView
+                    android:id="@+id/txtResult3"
+                    android:layout_margin="8dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:text="Resultado: -"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="8dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/imgCompanyProfile"
+                        android:layout_weight="0.2"
+                        android:src="@color/colorGradientCenterRed"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:id="@+id/txtCompetitorName4"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:text="Mi Empresa: Sin Especificar"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:id="@+id/btnItem4"
+                        android:layout_weight="0.1"
+                        android:src="@drawable/edit_pencil_vector_asset"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_margin="12dp"
+                    android:background="@color/colorGradientCenterRed"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <TextView
+                    android:id="@+id/txtAnswer4_1"
+                    android:layout_margin="8dp"
+                    android:text="Ubicación Estratégica: Sin Especificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtAnswer4_2"
+                    android:layout_margin="8dp"
+                    android:text="Cantidad de Clientes: Sin Especificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtAnswer4_3"
+                    android:layout_margin="8dp"
+                    android:text="Incentivos para los clientes: Sin Especificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtAnswer4_4"
+                    android:layout_margin="8dp"
+                    android:text="Infraestructura: Sin Especificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtAnswer4_5"
+                    android:layout_margin="8dp"
+                    android:text="Fuerte presencia en Imagen y Marca: Sin Especificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtAnswer4_6"
+                    android:layout_margin="8dp"
+                    android:text="Estrategia de Promociones y Publicidad: Sin Especificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <View
+                    android:layout_margin="12dp"
+                    android:background="@color/colorGradientCenterRed"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <TextView
+                    android:id="@+id/txtResult4"
+                    android:layout_margin="8dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:text="Resultado: -"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+
+</ScrollView>

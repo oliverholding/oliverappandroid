@@ -21,7 +21,9 @@
         android:roundIcon="@drawable/oliver_android_icon_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CareManager.StrategicDirection.FODA.FodaActivity"></activity>
+        <activity android:name=".CareManager.StrategicDirection.OrganizationalLearning.OrganizationLearningActivity"></activity>
+        <activity android:name=".CareManager.StrategicDirection.StrategicMatrix.StrategicMatrixActivity" />
+        <activity android:name=".CareManager.StrategicDirection.FODA.FodaActivity" />
         <activity android:name=".CareManager.StrategicDirection.MarketInformation.MarketInformationActivity" />
         <activity android:name=".CareManager.StrategicDirection.IndustryInformation.IndustryInformationActivity" />
         <activity android:name=".CareManager.StrategicDirection.LeanCanvas.LeanCanvasActivity" />

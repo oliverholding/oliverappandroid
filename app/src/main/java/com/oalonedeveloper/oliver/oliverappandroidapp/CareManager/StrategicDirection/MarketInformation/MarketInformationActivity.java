@@ -31,9 +31,10 @@ import in.galaxyofandroid.spinerdialog.SpinnerDialog;
 public class MarketInformationActivity extends AppCompatActivity {
 
     ImageView btnItem1,btnItem2,btnItem3,btnItem4,btnItem5;
-    TextView txtItem1,txtItem2,txtItem3,txtItem4,txtItem5;
+    TextView txtItem1,txtItem2,txtItem3,txtItem4,txtItem5,txtResult;
     DatabaseReference companyRef;
     String post_key,answer_message;
+    int factor_1,factor_2,factor_3,factor_4,factor_5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +55,7 @@ public class MarketInformationActivity extends AppCompatActivity {
         txtItem3 = findViewById(R.id.txtItem3);
         txtItem4 = findViewById(R.id.txtItem4);
         txtItem5 = findViewById(R.id.txtItem5);
+        txtResult = findViewById(R.id.txtResult);
 
         companyRef.child(post_key).child("Market Information").child("item_1").addValueEventListener(new ValueEventListener() {
             @Override
@@ -61,6 +63,16 @@ public class MarketInformationActivity extends AppCompatActivity {
                 if (dataSnapshot.hasChild("question_2")) {
                     String value = dataSnapshot.child("question_2").getValue().toString();
                     txtItem1.setText(value);
+                    if (value.equals("Alta")) {
+                        factor_1 = 3;
+                    }
+                    if (value.equals("Media")) {
+                        factor_1 = 2;
+                    }
+                    if (value.equals("Débil")) {
+                        factor_1 = 1;
+                    }
+
                 }
 
                 companyRef.child(post_key).child("Market Information").child("item_2").addValueEventListener(new ValueEventListener() {
@@ -69,6 +81,15 @@ public class MarketInformationActivity extends AppCompatActivity {
                         if (dataSnapshot.hasChild("question_2")) {
                             String value = dataSnapshot.child("question_2").getValue().toString();
                             txtItem2.setText(value);
+                            if (value.equals("Alta")) {
+                                factor_2 = 3;
+                            }
+                            if (value.equals("Media")) {
+                                factor_2 = 2;
+                            }
+                            if (value.equals("Débil")) {
+                                factor_2 = 1;
+                            }
                         }
                         companyRef.child(post_key).child("Market Information").child("item_3").addValueEventListener(new ValueEventListener() {
                             @Override
@@ -76,6 +97,15 @@ public class MarketInformationActivity extends AppCompatActivity {
                                 if (dataSnapshot.hasChild("question_2")) {
                                     String value = dataSnapshot.child("question_2").getValue().toString();
                                     txtItem3.setText(value);
+                                    if (value.equals("Alta")) {
+                                        factor_3 = 3;
+                                    }
+                                    if (value.equals("Media")) {
+                                        factor_3 = 2;
+                                    }
+                                    if (value.equals("Débil")) {
+                                        factor_3 = 1;
+                                    }
                                 }
 
 
@@ -92,6 +122,16 @@ public class MarketInformationActivity extends AppCompatActivity {
                                 if (dataSnapshot.hasChild("question_2")) {
                                     String value = dataSnapshot.child("question_2").getValue().toString();
                                     txtItem4.setText(value);
+
+                                    if (value.equals("Alta")) {
+                                        factor_4 = 3;
+                                    }
+                                    if (value.equals("Media")) {
+                                        factor_4 = 2;
+                                    }
+                                    if (value.equals("Débil")) {
+                                        factor_4 = 1;
+                                    }
                                 }
 
 
@@ -109,6 +149,27 @@ public class MarketInformationActivity extends AppCompatActivity {
                                 if (dataSnapshot.hasChild("question_2")) {
                                     String value = dataSnapshot.child("question_2").getValue().toString();
                                     txtItem5.setText(value);
+                                    if (value.equals("Alta")) {
+                                        factor_5 = 3;
+                                    }
+                                    if (value.equals("Media")) {
+                                        factor_5 = 2;
+                                    }
+                                    if (value.equals("Débil")) {
+                                        factor_5 = 1;
+                                    }
+
+                                    int average = (factor_1+factor_2+factor_3+factor_4+factor_5)/5;
+                                    if (average == 1) {
+                                        txtResult.setText("Resultado: Débil");
+                                    }
+                                    if (average == 2) {
+                                        txtResult.setText("Resultado: Media");
+                                    }
+                                    if (average == 3) {
+                                        txtResult.setText("Resultado: Alta");
+                                    }
+
                                 }
 
 

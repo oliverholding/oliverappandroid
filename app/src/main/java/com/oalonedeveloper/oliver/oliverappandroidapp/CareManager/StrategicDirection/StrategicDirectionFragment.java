@@ -16,6 +16,8 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirec
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirection.LeanCanvas.LeanCanvasActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirection.MarketInformation.MarketInformationActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirection.Mission.MissionActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirection.OrganizationalLearning.OrganizationLearningActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirection.StrategicMatrix.StrategicMatrixActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirection.Values.OrganizationalValuesActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirection.Vision.VisionActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
@@ -23,7 +25,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class StrategicDirectionFragment extends Fragment {
 
-    Button btnVision,btnMission,btnValues,btnLeanCanvas,btnIndustryInformation,btnMarketInformation,btnFoda;
+    Button btnVision,btnMission,btnValues,btnLeanCanvas,btnIndustryInformation,btnMarketInformation,btnFoda,btnStrategicMatrix,btnOrganizationalLearning;
     String post_key;
 
     @Override
@@ -41,6 +43,8 @@ public class StrategicDirectionFragment extends Fragment {
         btnIndustryInformation = view.findViewById(R.id.btnIndustryInformation);
         btnMarketInformation = view.findViewById(R.id.btnMarketInformation);
         btnFoda = view.findViewById(R.id.btnFoda);
+        btnStrategicMatrix = view.findViewById(R.id.btnStrategicMatrix);
+        btnOrganizationalLearning = view.findViewById(R.id.btnOrganizationalLearning);
 
         btnVision.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,6 +103,23 @@ public class StrategicDirectionFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), FodaActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+        btnStrategicMatrix.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), StrategicMatrixActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+
+        btnOrganizationalLearning.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), OrganizationLearningActivity.class);
                 intent.putExtra("post_key", post_key);
                 startActivity(intent);
             }

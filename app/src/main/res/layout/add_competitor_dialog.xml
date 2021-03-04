@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="8dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardCompetitorName"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="8dp"
+                        android:text="Ingresa el nombre de tu competidor:"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:id="@+id/edtCompetitorName"
+                        android:hint="Nombre del competidor"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="8dp"
+                        android:text="Califica la ubicación estratégica de tu competidor:"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <Button
+                        android:id="@+id/btnQuestion1"
+                        android:gravity="center|start"
+                        android:hint="Seleccionar"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="8dp"
+                        android:text="Califica la cantidad de clientes de tu competidor:"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <Button
+                        android:id="@+id/btnQuestion2"
+                        android:gravity="center|start"
+                        android:hint="Seleccionar"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="8dp"
+                        android:text="Califica la incentivos para clientes de tu competidor:"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <Button
+                        android:id="@+id/btnQuestion3"
+                        android:gravity="center|start"
+                        android:hint="Seleccionar"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="8dp"
+                        android:text="Califica la infraestructura de tu competidor:"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <Button
+                        android:id="@+id/btnQuestion4"
+                        android:gravity="center|start"
+                        android:hint="Seleccionar"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="8dp"
+                        android:text="Califica la fuerte presencia en Imágen y Marca de tu competidor:"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <Button
+                        android:id="@+id/btnQuestion5"
+                        android:gravity="center|start"
+                        android:hint="Seleccionar"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:textColor="@android:color/black"
+                        android:layout_margin="8dp"
+                        android:text="Califica la estrategia de promociones y publicidad de tu competidor:"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <Button
+                        android:id="@+id/btnQuestion6"
+                        android:gravity="center|start"
+                        android:hint="Seleccionar"
+                        android:layout_margin="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btnFinish"
+                android:text="Finalizar"
+                android:layout_margin="12dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/gray_button_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

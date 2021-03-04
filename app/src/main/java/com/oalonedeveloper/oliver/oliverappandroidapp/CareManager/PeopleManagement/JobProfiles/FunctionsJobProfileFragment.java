@@ -73,13 +73,6 @@ public class FunctionsJobProfileFragment extends Fragment {
 
         decimalFormat = new DecimalFormat("0.00");
 
-        arr_frequency.add("Todos los días");arr_frequency.add("Al menos una vez por semana");arr_frequency.add("Al menos una vez cada quince días");arr_frequency.add("Al menos una vez al mes");arr_frequency.add("Otros (Bimestral, Trimestral, Semestral, Anual)");
-        arr_consequence.add("Consecuencias muy graves: pueden afectar a toda la organización en múltiples aspectos."); arr_consequence.add("Consecuencias graves: pueden afectar resultados, procesos o áreas funcionales de la organización.");
-        arr_consequence.add("Consecuencias considerables: repercuten negativamente en los resultados o trabajos de otros."); arr_consequence.add("Consecuencias menores: cierta incidencia en resultados o actividades que pertenecen al mismo puesto.");
-        arr_consequence.add("Consecuencias mínimas: poca o ninguna incidencia en resultados o actividades.");
-        arr_complex.add("Máxima complejidad: la actividad demanda el mayor grado de esfuerzo, conocimientos, habilidades."); arr_complex.add("Alta complejidad: la actividad demanda un considerable nivel de esfuerzo, conocimientos, habilidades.");
-        arr_complex.add("Complejidad moderada: la actividad requiere un grado medio de esfuerzo, conocimientos, habilidades."); arr_complex.add("Baja complejidad: la actividad requiere un bajo nivel de esfuerzo, conocimientos, habilidades.");
-        arr_complex.add("Mínima complejidad: la actividad requiere un minimo nivel de esfuerzo, conocimientos o habilidades.");
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,6 +100,10 @@ public class FunctionsJobProfileFragment extends Fragment {
                         frequencyDialog.showSpinerDialog();
                     }
                 });
+
+                arr_frequency.add("Todos los días");arr_frequency.add("Al menos una vez por semana");arr_frequency.add("Al menos una vez cada quince días");arr_frequency.add("Al menos una vez al mes");arr_frequency.add("Otros (Bimestral, Trimestral, Semestral, Anual)");
+
+
 
                 frequencyDialog = new SpinnerDialog(getActivity(),arr_frequency, "Selecciona la frecuencia");
                 frequencyDialog.bindOnSpinerListener(new OnSpinerItemClick() {
@@ -139,6 +136,11 @@ public class FunctionsJobProfileFragment extends Fragment {
                     }
                 });
 
+                arr_consequence.add("Consecuencias muy graves: pueden afectar a toda la organización en múltiples aspectos."); arr_consequence.add("Consecuencias graves: pueden afectar resultados, procesos o áreas funcionales de la organización.");
+                arr_consequence.add("Consecuencias considerables: repercuten negativamente en los resultados o trabajos de otros."); arr_consequence.add("Consecuencias menores: cierta incidencia en resultados o actividades que pertenecen al mismo puesto.");
+                arr_consequence.add("Consecuencias mínimas: poca o ninguna incidencia en resultados o actividades.");
+
+
                 consequenceDialog = new SpinnerDialog(getActivity(),arr_consequence, "Selecciona la consecuencia");
                 consequenceDialog.bindOnSpinerListener(new OnSpinerItemClick() {
                     @Override
@@ -169,6 +171,11 @@ public class FunctionsJobProfileFragment extends Fragment {
                         complexDialog.showSpinerDialog();
                     }
                 });
+
+
+                arr_complex.add("Máxima complejidad: la actividad demanda el mayor grado de esfuerzo, conocimientos, habilidades."); arr_complex.add("Alta complejidad: la actividad demanda un considerable nivel de esfuerzo, conocimientos, habilidades.");
+                arr_complex.add("Complejidad moderada: la actividad requiere un grado medio de esfuerzo, conocimientos, habilidades."); arr_complex.add("Baja complejidad: la actividad requiere un bajo nivel de esfuerzo, conocimientos, habilidades.");
+                arr_complex.add("Mínima complejidad: la actividad requiere un minimo nivel de esfuerzo, conocimientos o habilidades.");
 
                 complexDialog = new SpinnerDialog(getActivity(),arr_complex, "Selecciona la consecuencia");
                 complexDialog.bindOnSpinerListener(new OnSpinerItemClick() {

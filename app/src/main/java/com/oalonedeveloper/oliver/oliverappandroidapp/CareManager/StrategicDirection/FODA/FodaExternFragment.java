@@ -28,7 +28,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirection.MarketInformation.MarketInformationActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 import com.xw.repo.BubbleSeekBar;
 
@@ -41,7 +40,7 @@ import in.galaxyofandroid.spinerdialog.OnSpinerItemClick;
 import in.galaxyofandroid.spinerdialog.SpinnerDialog;
 
 
-public class FodaInternFragment extends Fragment {
+public class FodaExternFragment extends Fragment {
 
     ImageView btnAddItem1,btnAddItem2;
     RecyclerView recyclerView1,recyclerView2;
@@ -55,7 +54,7 @@ public class FodaInternFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_foda_intern, container, false);
+        View view = inflater.inflate(R.layout.fragment_foda_extern, container, false);
 
         post_key = getActivity().getIntent().getExtras().getString("post_key");
         companyRef = FirebaseDatabase.getInstance().getReference().child("My Companies");
@@ -71,11 +70,11 @@ public class FodaInternFragment extends Fragment {
         btnAddItem1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String title = "Mis Fortalezas";
-                String question_1 = "Ingresa la fortaleza de tu empresa (Ejemplos de Fotalezas: Logística; Servicio al Cliente; Medio Ambiente;  Personal; Inversión e Innovación; etc)";
-                String question_2 = "¿Qué tan importante es esta fortaleza? (0 = Menos Importante, 100 = Muy Importante) ";
-                String question_3 = "Selecciona una característica para tu Fortaleza";
-                String path = "fortaleza";
+                String title = "Mis Oportunidades";
+                String question_1 = "Ingresa la oportunidad de tu empresa (Ejemplo: nuevas leyes; ventas por redes sociales; nuevas necesidades del cliente; etc)";
+                String question_2 = "¿Qué tan importante es esta oportunidad? (0 = Menos Importante, 100 = Muy Importante) ";
+                String question_3 = "Selecciona una característica para tu Oportunidad";
+                String path = "oportunidad";
 
                 showAddFodaDataDialog(title,question_1,question_2,question_3,path);
             }
@@ -84,11 +83,11 @@ public class FodaInternFragment extends Fragment {
         btnAddItem2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String title = "Mis Debilidades";
-                String question_1 = "Ingresa la debilidad de tu empresa (Ejemplo: Falta de Liderazgo del dueño, socios o gerente; poco capital para re-invertir, personal mal capacitado, etc)";
-                String question_2 = "¿Qué tan importante es esta debilidad? (0 = Menos Importante, 100 = Muy Importante)";
-                String question_3 = "Selecciona una característica para tu Debilidad";
-                String path = "debilidad";
+                String title = "Mis Amenazas";
+                String question_1 = "Ingresa la amenaza de tu empresa ( Ejemplo: nuevas marcas; productos innovadores; crisis económica; etc.)";
+                String question_2 = "¿Qué tan importante es esta amenaza? (0 = Menos Importante, 100 = Muy Importante)";
+                String question_3 = "Selecciona una característica para tu Amenaza";
+                String path = "amenaza";
 
                 showAddFodaDataDialog(title,question_1,question_2,question_3,path);
             }
@@ -114,7 +113,7 @@ public class FodaInternFragment extends Fragment {
     }
 
     private void getResult() {
-        companyRef.child(post_key).child("FODA").orderByChild("item_type").equalTo("fortaleza").addValueEventListener(new ValueEventListener() {
+        companyRef.child(post_key).child("FODA").orderByChild("item_type").equalTo("oportunidad").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 sum1 = 0;
@@ -126,7 +125,7 @@ public class FodaInternFragment extends Fragment {
 
                 }
 
-                companyRef.child(post_key).child("FODA").orderByChild("item_type").equalTo("debilidad").addValueEventListener(new ValueEventListener() {
+                companyRef.child(post_key).child("FODA").orderByChild("item_type").equalTo("amenaza").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         sum2 = 0;
@@ -141,34 +140,34 @@ public class FodaInternFragment extends Fragment {
                             txtResult.setText("Resultado "+result_st);
 
                             if (result <= 0.99) {
-                                txtResult.setText("Los factores internos revelan que es debilidad catastrófica");
+                                txtResult.setText("Los factores externos revelan que es una amenaza catastrófica");
                             }
                             if (result >=1 && result <= 1.49) {
-                                txtResult.setText("Los factores internos revelan que es debilidad muy grave");
+                                txtResult.setText("Los factores externos revelan que es una amenaza muy grave");
                             }
                             if (result >=1.50 && result <= 1.99) {
-                                txtResult.setText("Los factores internos revelan que es es grave");
+                                txtResult.setText("Los factores externos revelan que es es grave");
                             }
                             if (result >=2.00 && result <= 2.49) {
-                                txtResult.setText("Los factores internos revelan que es debilidad subsanable");
+                                txtResult.setText("Los factores externos revelan que es una amenaza subsanable");
                             }
                             if (result >=2.50 && result <= 2.99) {
-                                txtResult.setText("Los factores internos revelan que es debilidad en proceso de mejora");
+                                txtResult.setText("Los factores externos revelan que es una amenaza en proceso de mejora");
                             }
                             if (result >=3.00 && result <= 3.49) {
-                                txtResult.setText("Los factores internos revelan que es fortaleza débil");
+                                txtResult.setText("Los factores externos revelan que es una oportunidad débil");
                             }
                             if (result >=3.50 && result <= 3.99) {
-                                txtResult.setText("Los factores internos revelan que es fortaleza normal");
+                                txtResult.setText("Los factores externos revelan que es una oportunidad normal");
                             }
                             if (result >=4.00 && result <= 4.49) {
-                                txtResult.setText("Los factores internos revelan que es fortaleza importante");
+                                txtResult.setText("Los factores externos revelan que es una oportunidad importante");
                             }
                             if (result >=4.50 && result <= 4.99) {
-                                txtResult.setText("Los factores internos revelan que es fortaleza sólida");
+                                txtResult.setText("Los factores externos revelan que es una oportunidad sólida");
                             }
                             if (result >= 5.00) {
-                                txtResult.setText("Los factores internos revelan que es fortaleza única y valiosa");
+                                txtResult.setText("Los factores externos revelan que es una oportunidad única y valiosa");
                             }
                         }
                     }
@@ -188,9 +187,9 @@ public class FodaInternFragment extends Fragment {
     }
 
     private void showFodaItems() {
-        Query query = companyRef.child(post_key).child("FODA").orderByChild("item_type").equalTo("fortaleza");
-        FirebaseRecyclerAdapter<FodaModel,FodaViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<FodaModel, FodaViewHolder>
-                (FodaModel.class, R.layout.foda_item,FodaViewHolder.class,query) {
+        Query query = companyRef.child(post_key).child("FODA").orderByChild("item_type").equalTo("oportunidad");
+        FirebaseRecyclerAdapter<FodaModel, FodaViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<FodaModel, FodaViewHolder>
+                (FodaModel.class, R.layout.foda_item, FodaViewHolder.class,query) {
             @Override
             protected void populateViewHolder(FodaViewHolder viewHolder, FodaModel model, int position) {
                 viewHolder.setItem_name(model.getItem_name());
@@ -204,9 +203,9 @@ public class FodaInternFragment extends Fragment {
         };
         recyclerView1.setAdapter(firebaseRecyclerAdapter);
 
-        Query query2 = companyRef.child(post_key).child("FODA").orderByChild("item_type").equalTo("debilidad");
-        FirebaseRecyclerAdapter<FodaModel,FodaViewHolder> firebaseRecyclerAdapter2 = new FirebaseRecyclerAdapter<FodaModel, FodaViewHolder>
-                (FodaModel.class, R.layout.foda_item,FodaViewHolder.class,query2) {
+        Query query2 = companyRef.child(post_key).child("FODA").orderByChild("item_type").equalTo("amenaza");
+        FirebaseRecyclerAdapter<FodaModel, FodaViewHolder> firebaseRecyclerAdapter2 = new FirebaseRecyclerAdapter<FodaModel, FodaViewHolder>
+                (FodaModel.class, R.layout.foda_item, FodaViewHolder.class,query2) {
             @Override
             protected void populateViewHolder(FodaViewHolder viewHolder, FodaModel model, int position) {
                 viewHolder.setItem_name(model.getItem_name());
@@ -250,8 +249,8 @@ public class FodaInternFragment extends Fragment {
         txtQuestion2.setText(question_2);
         txtQuestion3.setText(question_3);
 
-        arr.add("es debilidad catastrófica");arr.add("es debilidad muy grave");arr.add("es grave");arr.add("es debilidad subsanable");arr.add("es debilidad en proceso de mejora");
-        arr.add("es fortaleza débil");arr.add("es fortaleza normal");arr.add("es fortaleza importante");arr.add("es fortaleza sólida");arr.add("es fortaleza única y valiosa");
+        arr.add("es una amenaza catastrófica");arr.add("es una amenaza muy grave");arr.add("es grave");arr.add("es una amenaza subsanable");arr.add("es una amenaza en proceso de mejora");
+        arr.add("es una oportunidad débil");arr.add("es una oportunidad normal");arr.add("es una oportunidad importante");arr.add("es una oportunidad sólida");arr.add("es una oportunidad única y valiosa");
 
 
         spinnerDialog = new SpinnerDialog(getActivity(),arr, "Selecciona una de las alternativas");
@@ -266,25 +265,25 @@ public class FodaInternFragment extends Fragment {
             @Override
             public void onClick(String item2, int position2) {
                 btnSelection.setText(item2);
-                if (item2.equals("es debilidad catastrófica")) {
+                if (item2.equals("es una amenaza catastrófica")) {
                     factor = 0.5;
-                }if (item2.equals("es debilidad muy grave")) {
+                }if (item2.equals("es una amenaza muy grave")) {
                     factor = 1.0;
                 }if (item2.equals("es grave")) {
                     factor = 1.5;
-                }if (item2.equals("es debilidad subsanable")) {
+                }if (item2.equals("es una amenaza subsanablee")) {
                     factor = 2.0;
-                }if (item2.equals("es debilidad en proceso de mejora")) {
+                }if (item2.equals("es una amenaza en proceso de mejora")) {
                     factor = 2.5;
-                }if (item2.equals("es fortaleza débil")) {
+                }if (item2.equals("es una oportunidad débil")) {
                     factor = 3.0;
-                }if (item2.equals("es fortaleza normal")) {
+                }if (item2.equals("es una oportunidad normal")) {
                     factor = 3.5;
-                }if (item2.equals("es fortaleza importante")) {
+                }if (item2.equals("es una oportunidad importante")) {
                     factor = 4.0;
-                }if (item2.equals("es fortaleza sólida")) {
+                }if (item2.equals("es una oportunidad sólida")) {
                     factor = 4.5;
-                }if (item2.equals("es fortaleza única y valiosa")) {
+                }if (item2.equals("es una oportunidad única y valiosa")) {
                     factor = 5.0;
                 }
 

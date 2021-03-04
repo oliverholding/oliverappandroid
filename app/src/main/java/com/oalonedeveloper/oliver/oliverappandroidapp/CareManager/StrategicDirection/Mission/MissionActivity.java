@@ -348,7 +348,7 @@ public class MissionActivity extends AppCompatActivity {
         txtVision = finance_method.findViewById(R.id.txtVision);
 
 
-        txtVision.setText("Ser una empresa que se enfoca en el "+txtIdeology1.getText().toString()+" brindando servicios de"+vision_message+" para "+goal_message+" con el fin de "+worker_relation_message+" siguiendo las sinergias comprendidas en colaboración con sus colaboradores y aliados");
+        txtVision.setText("Ser una empresa que se enfoca en el "+txtIdeology1.getText().toString()+" brindando servicios de "+vision_message+" para "+goal_message+" con el fin de "+worker_relation_message+" siguiendo las sinergias comprendidas con el soporte de sus colaboradores y aliados");
         dialog.setView(finance_method);
         dialog.show();
     }

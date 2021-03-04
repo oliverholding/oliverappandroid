@@ -1,4 +1,4 @@
-package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirection.FODA;
+package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirection.StrategicMatrix;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -12,7 +12,7 @@ import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
-public class FodaActivity extends AppCompatActivity {
+public class StrategicMatrixActivity extends AppCompatActivity {
 
     ViewPager mViewPager;
     SectionsPagerAdapter mSectionsPagerAdapter;
@@ -21,8 +21,7 @@ public class FodaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_foda);
-
+        setContentView(R.layout.activity_strategic_matrix);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         TabItem tabItem = findViewById(R.id.tabItem);
@@ -56,10 +55,13 @@ public class FodaActivity extends AppCompatActivity {
             // Return a PlaceholderFragment (defined as a static inner class below).
             switch (position) {
                 case 0:
-                    return new FodaInternFragment();
+                    return new CompetitorsFragment();
                 case 1:
-                    return new FodaExternFragment();
-
+                    return new InvestmentMatrixFragment();
+                case 2:
+                    return new CompetitiveMatrixFragment();
+                case 3:
+                    return new IndustryAtractiveFragment();
 
                 default:
                     return null;
