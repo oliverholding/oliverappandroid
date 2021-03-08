@@ -119,6 +119,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 
+                        <ImageView
+                            android:id="@+id/btnShow1"
+                            android:layout_margin="4dp"
+                            android:src="@drawable/information_vector_asset"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"/>
+
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -211,6 +218,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 
+                        <ImageView
+                            android:id="@+id/btnShow2"
+                            android:layout_margin="4dp"
+                            android:src="@drawable/information_vector_asset"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"/>
+
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -261,6 +275,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 
+                        <ImageView
+                            android:id="@+id/btnShow3"
+                            android:layout_margin="4dp"
+                            android:src="@drawable/information_vector_asset"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"/>
+
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -310,6 +331,13 @@
                             android:text="-"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:id="@+id/btnShow4"
+                            android:layout_margin="4dp"
+                            android:src="@drawable/information_vector_asset"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"/>
 
                     </LinearLayout>
 
@@ -400,6 +428,13 @@
                             android:text="-"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:id="@+id/btnShow5"
+                            android:layout_margin="4dp"
+                            android:src="@drawable/information_vector_asset"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"/>
 
                     </LinearLayout>
 

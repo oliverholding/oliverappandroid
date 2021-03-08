@@ -251,7 +251,7 @@ public class AccountsNoPaidMonthlyActivity extends AppCompatActivity {
 
 
     private void setValueOnGraph() {
-        LineDataSet lineDataSet1 = new LineDataSet(dataValues1(),"Ingresos");
+        LineDataSet lineDataSet1 = new LineDataSet(dataValues1(),"Cuentas por Cobrar");
 
         lineDataSet1.setLineWidth(2);
         lineDataSet1.setColor(R.color.colorGradientCenterRed);

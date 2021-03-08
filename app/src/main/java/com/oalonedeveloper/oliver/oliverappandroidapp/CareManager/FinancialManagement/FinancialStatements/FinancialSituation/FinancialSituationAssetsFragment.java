@@ -108,15 +108,15 @@ public class FinancialSituationAssetsFragment extends Fragment {
                 future_bills = 0;
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     String state = ds.child("state").getValue().toString();
-                    int issuing_day = ds.child("issuing_day").getValue(Integer.class);
-                    int issuing_month = ds.child("issuing_month").getValue(Integer.class);
+                    //int issuing_day = ds.child("issuing_day").getValue(Integer.class);
+                    //int issuing_month = ds.child("issuing_month").getValue(Integer.class);
                     int issuing_year = ds.child("issuing_year").getValue(Integer.class);
                     String expiration_day = ds.child("expiration_day").getValue().toString();
                     String expiration_month = ds.child("expiration_month").getValue().toString();
                     String expiration_year = ds.child("expiration_year").getValue().toString();
                     int expiration_year_int = Integer.parseInt(expiration_year);
 
-                    String issuing_date = issuing_day+"/"+issuing_month+"/"+issuing_year;
+                    //String issuing_date = issuing_day+"/"+issuing_month+"/"+issuing_year;
                     String expiration_date = expiration_day+"/"+expiration_month+"/"+expiration_year;
 
                     if (state.equals("no_paid")) {

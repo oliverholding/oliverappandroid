@@ -19,4 +19,8 @@
 
     <color name="yellowColor">#B3B02C</color>
 
+    <color name="balancedScoreCard1">#E91E63</color>
+    <color name="balancedScoreCard2">#FFC107</color>
+    <color name="balancedScoreCard3">#009688</color>
+
 </resources>

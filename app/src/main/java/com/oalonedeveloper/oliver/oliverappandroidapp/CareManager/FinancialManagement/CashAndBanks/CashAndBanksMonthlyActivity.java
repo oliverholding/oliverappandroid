@@ -3,6 +3,7 @@ package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialMana
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -26,6 +27,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Map;
 
+import pl.droidsonroids.gif.GifImageView;
+
 public class CashAndBanksMonthlyActivity extends AppCompatActivity {
 
     TextView txtCashSales1,txtCreditSales1,txtFinancialIncomes1,txtOtherIncomes1,txtTotalIncomes1,txtStartCash1,txtWorkerPayment1,txtPurchases1,txtIgv1,txtFinancialOutcomes,txtOtherOutcomes,txtTotalOutcomes1,txtFinalCash1,
@@ -37,7 +40,8 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
             txtWorkerPayment5,txtPurchases5,txtIgv5,txtFinancialOutcomes5,txtOtherOutcomes5,txtTotalOutcomes5,txtWorkerPayment6,txtPurchases6,txtIgv6,txtFinancialOutcomes6,txtOtherOutcomes6,txtTotalOutcomes6,txtWorkerPayment7,txtPurchases7,txtIgv7,txtFinancialOutcomes7,txtOtherOutcomes7,txtTotalOutcomes7,
             txtWorkerPayment8,txtPurchases8,txtIgv8,txtFinancialOutcomes8,txtOtherOutcomes8,txtTotalOutcomes8,txtWorkerPayment9,txtPurchases9,txtIgv9,txtFinancialOutcomes9,txtOtherOutcomes9,txtTotalOutcomes9,txtWorkerPayment10,txtPurchases10,txtIgv10,txtFinancialOutcomes10,txtOtherOutcomes10,txtTotalOutcomes10,
             txtWorkerPayment11,txtPurchases11,txtIgv11,txtFinancialOutcomes11,txtOtherOutcomes11,txtTotalOutcomes11,txtWorkerPayment12,txtPurchases12,txtIgv12,txtFinancialOutcomes12,txtOtherOutcomes12,txtTotalOutcomes12,txtStartCash3,txtStartCash4,txtStartCash5,txtStartCash6,
-            txtStartCash7,txtStartCash8,txtStartCash9,txtStartCash10,txtStartCash11,txtStartCash12,txtFinalCash3,txtFinalCash4,txtFinalCash5,txtFinalCash6,txtFinalCash7,txtFinalCash8,txtFinalCash9,txtFinalCash10,txtFinalCash11,txtFinalCash12;
+            txtStartCash7,txtStartCash8,txtStartCash9,txtStartCash10,txtStartCash11,txtStartCash12,txtFinalCash3,txtFinalCash4,txtFinalCash5,txtFinalCash6,txtFinalCash7,txtFinalCash8,txtFinalCash9,txtFinalCash10,txtFinalCash11,txtFinalCash12,txtSituation1,txtSituation2,txtSituation3,txtSituation4,txtSituation5,
+            txtSituation6,txtSituation7,txtSituation8,txtSituation9,txtSituation10,txtSituation11,txtSituation12;
     int day,month,year,last_year,before_last_year;
     DatabaseReference companyRef;
     DecimalFormat decimalFormat;
@@ -55,6 +59,8 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
             total_outcomes_5,total_outcomes_6,total_outcomes_7,total_outcomes_8,total_outcomes_9,total_outcomes_10,total_outcomes_11,total_outcomes_12,financial_outcomes_3,financial_outcomes_4,financial_outcomes_5,financial_outcomes_6,financial_outcomes_7,financial_outcomes_8,
             financial_outcomes_9,financial_outcomes_10,financial_outcomes_11,financial_outcomes_12,other_outcomes_3,other_outcomes_4,other_outcomes_5,other_outcomes_6,other_outcomes_7,other_outcomes_8,other_outcomes_9,other_outcomes_10,other_outcomes_11,other_outcomes_12,
             cash_flow_3_month,cash_flow_4_month,cash_flow_5_month,cash_flow_6_month,cash_flow_7_month,cash_flow_8_month,cash_flow_9_month,cash_flow_10_month,cash_flow_11_month,cash_flow_12_month;
+
+    GifImageView imgSituation1,imgSituation2,imgSituation3,imgSituation4,imgSituation5,imgSituation6,imgSituation7,imgSituation8,imgSituation9,imgSituation10,imgSituation11,imgSituation12;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -219,6 +225,32 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
         txtFinalCash11 = findViewById(R.id.txtFinalCash11);
         txtStartCash12 = findViewById(R.id.txtStartCash12);
         txtFinalCash12 = findViewById(R.id.txtFinalCash12);
+
+        imgSituation1 = findViewById(R.id.imgSituation1);
+        imgSituation2 = findViewById(R.id.imgSituation2);
+        imgSituation3 = findViewById(R.id.imgSituation3);
+        imgSituation4 = findViewById(R.id.imgSituation4);
+        imgSituation5 = findViewById(R.id.imgSituation5);
+        imgSituation6 = findViewById(R.id.imgSituation6);
+        imgSituation7 = findViewById(R.id.imgSituation7);
+        imgSituation8 = findViewById(R.id.imgSituation8);
+        imgSituation9 = findViewById(R.id.imgSituation9);
+        imgSituation10 = findViewById(R.id.imgSituation10);
+        imgSituation11 = findViewById(R.id.imgSituation11);
+        imgSituation12 = findViewById(R.id.imgSituation12);
+
+        txtSituation1 = findViewById(R.id.txtSituation1);
+        txtSituation2 = findViewById(R.id.txtSituation2);
+        txtSituation3 = findViewById(R.id.txtSituation3);
+        txtSituation4 = findViewById(R.id.txtSituation4);
+        txtSituation5 = findViewById(R.id.txtSituation5);
+        txtSituation6 = findViewById(R.id.txtSituation6);
+        txtSituation7 = findViewById(R.id.txtSituation7);
+        txtSituation8 = findViewById(R.id.txtSituation8);
+        txtSituation9 = findViewById(R.id.txtSituation9);
+        txtSituation10 = findViewById(R.id.txtSituation10);
+        txtSituation11 = findViewById(R.id.txtSituation11);
+        txtSituation12 = findViewById(R.id.txtSituation12);
 
         post_key = getIntent().getExtras().getString("post_key");
         companyRef = FirebaseDatabase.getInstance().getReference().child("My Companies");
@@ -422,6 +454,17 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
                         txtFinalCash12.setText(cash_flow_12_st);
                         companyRef.child(post_key).child("Cash Flow").child("cash_flow"+year).setValue(cash_flow_12_st);
 
+                        if (cash_flow_12_month < cash_flow_11_month) {
+                            imgSituation12.setImageResource(R.drawable.perdida_gif);
+                            txtSituation12.setTextColor(Color.RED);
+                            txtSituation12.setText("PÉRDIDA");
+                        }
+                        else if (cash_flow_12_month > cash_flow_11_month) {
+                            imgSituation12.setImageResource(R.drawable.ganancia_gif);
+                            txtSituation12.setTextColor(Color.GREEN);
+                            txtSituation12.setText("GANANCIA");
+                        }
+
                     }
 
                     @Override
@@ -562,6 +605,17 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
                         txtFinalCash11.setText(cash_flow_11_st);
                         txtStartCash12.setText(cash_flow_11_st);
                         companyRef.child(post_key).child("Cash Flow").child("cash_flow"+year).setValue(cash_flow_11_st);
+
+                        if (cash_flow_11_month < cash_flow_10_month) {
+                            imgSituation11.setImageResource(R.drawable.perdida_gif);
+                            txtSituation11.setTextColor(Color.RED);
+                            txtSituation11.setText("PÉRDIDA");
+                        }
+                        else if (cash_flow_11_month > cash_flow_10_month) {
+                            imgSituation11.setImageResource(R.drawable.ganancia_gif);
+                            txtSituation11.setTextColor(Color.GREEN);
+                            txtSituation11.setText("GANANCIA");
+                        }
 
                         calculateMonth12();
 
@@ -706,6 +760,17 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
                         txtStartCash11.setText(cash_flow_10_st);
                         companyRef.child(post_key).child("Cash Flow").child("cash_flow"+year).setValue(cash_flow_10_st);
 
+                        if (cash_flow_10_month < cash_flow_9_month) {
+                            imgSituation10.setImageResource(R.drawable.perdida_gif);
+                            txtSituation10.setTextColor(Color.RED);
+                            txtSituation10.setText("PÉRDIDA");
+                        }
+                        else if (cash_flow_10_month > cash_flow_9_month) {
+                            imgSituation10.setImageResource(R.drawable.ganancia_gif);
+                            txtSituation10.setTextColor(Color.GREEN);
+                            txtSituation10.setText("GANANCIA");
+                        }
+
                         calculateMonth11();
 
                     }
@@ -848,6 +913,17 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
                         txtFinalCash9.setText(cash_flow_9_st);
                         txtStartCash10.setText(cash_flow_9_st);
                         companyRef.child(post_key).child("Cash Flow").child("cash_flow"+year).setValue(cash_flow_9_st);
+
+                        if (cash_flow_9_month < cash_flow_8_month) {
+                            imgSituation9.setImageResource(R.drawable.perdida_gif);
+                            txtSituation9.setTextColor(Color.RED);
+                            txtSituation9.setText("PÉRDIDA");
+                        }
+                        else if (cash_flow_9_month > cash_flow_8_month) {
+                            imgSituation9.setImageResource(R.drawable.ganancia_gif);
+                            txtSituation9.setTextColor(Color.GREEN);
+                            txtSituation9.setText("GANANCIA");
+                        }
 
                         calculateMonth10();
 
@@ -992,6 +1068,17 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
                         txtStartCash9.setText(cash_flow_8_st);
                         companyRef.child(post_key).child("Cash Flow").child("cash_flow"+year).setValue(cash_flow_8_st);
 
+                        if (cash_flow_8_month < cash_flow_7_month) {
+                            imgSituation8.setImageResource(R.drawable.perdida_gif);
+                            txtSituation8.setTextColor(Color.RED);
+                            txtSituation8.setText("PÉRDIDA");
+                        }
+                        else if (cash_flow_8_month > cash_flow_7_month) {
+                            imgSituation8.setImageResource(R.drawable.ganancia_gif);
+                            txtSituation8.setTextColor(Color.GREEN);
+                            txtSituation8.setText("GANANCIA");
+                        }
+
                         calculateMonth9();
 
                     }
@@ -1134,6 +1221,17 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
                         txtFinalCash7.setText(cash_flow_7_st);
                         txtStartCash8.setText(cash_flow_7_st);
                         companyRef.child(post_key).child("Cash Flow").child("cash_flow"+year).setValue(cash_flow_7_st);
+
+                        if (cash_flow_7_month < cash_flow_6_month) {
+                            imgSituation7.setImageResource(R.drawable.perdida_gif);
+                            txtSituation7.setTextColor(Color.RED);
+                            txtSituation7.setText("PÉRDIDA");
+                        }
+                        else if (cash_flow_7_month > cash_flow_6_month) {
+                            imgSituation7.setImageResource(R.drawable.ganancia_gif);
+                            txtSituation7.setTextColor(Color.GREEN);
+                            txtSituation7.setText("GANANCIA");
+                        }
 
                         calculateMonth8();
 
@@ -1278,6 +1376,17 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
                         txtStartCash7.setText(cash_flow_6_st);
                         companyRef.child(post_key).child("Cash Flow").child("cash_flow"+year).setValue(cash_flow_6_st);
 
+                        if (cash_flow_6_month < cash_flow_5_month) {
+                            imgSituation6.setImageResource(R.drawable.perdida_gif);
+                            txtSituation6.setTextColor(Color.RED);
+                            txtSituation6.setText("PÉRDIDA");
+                        }
+                        else if (cash_flow_6_month > cash_flow_5_month) {
+                            imgSituation6.setImageResource(R.drawable.ganancia_gif);
+                            txtSituation6.setTextColor(Color.GREEN);
+                            txtSituation6.setText("GANANCIA");
+                        }
+
                         calculateMonth7();
 
                     }
@@ -1420,6 +1529,17 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
                         txtFinalCash5.setText(cash_flow_5_st);
                         txtStartCash6.setText(cash_flow_5_st);
                         companyRef.child(post_key).child("Cash Flow").child("cash_flow"+year).setValue(cash_flow_5_st);
+
+                        if (cash_flow_5_month < cash_flow_4_month) {
+                            imgSituation5.setImageResource(R.drawable.perdida_gif);
+                            txtSituation5.setTextColor(Color.RED);
+                            txtSituation5.setText("PÉRDIDA");
+                        }
+                        else if (cash_flow_5_month > cash_flow_4_month) {
+                            imgSituation5.setImageResource(R.drawable.ganancia_gif);
+                            txtSituation5.setTextColor(Color.GREEN);
+                            txtSituation5.setText("GANANCIA");
+                        }
 
                         calculateMonth6();
 
@@ -1565,6 +1685,17 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
                         txtStartCash5.setText(cash_flow_4_st);
                         companyRef.child(post_key).child("Cash Flow").child("cash_flow"+year).setValue(cash_flow_4_st);
 
+                        if (cash_flow_4_month < cash_flow_3_month) {
+                            imgSituation4.setImageResource(R.drawable.perdida_gif);
+                            txtSituation4.setTextColor(Color.RED);
+                            txtSituation4.setText("PÉRDIDA");
+                        }
+                        else if (cash_flow_4_month > cash_flow_3_month) {
+                            imgSituation4.setImageResource(R.drawable.ganancia_gif);
+                            txtSituation4.setTextColor(Color.GREEN);
+                            txtSituation4.setText("GANANCIA");
+                        }
+
                         calculateMonth5();
 
                     }
@@ -1708,6 +1839,17 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
                         txtFinalCash3.setText(cash_flow_3_st);
                         txtStartCash4.setText(cash_flow_3_st);
                         companyRef.child(post_key).child("Cash Flow").child("cash_flow"+year).setValue(cash_flow_3_st);
+
+                        if (cash_flow_3_month < cash_flow_2_month) {
+                            imgSituation3.setImageResource(R.drawable.perdida_gif);
+                            txtSituation3.setTextColor(Color.RED);
+                            txtSituation3.setText("PÉRDIDA");
+                        }
+                        else if (cash_flow_3_month > cash_flow_2_month) {
+                            imgSituation3.setImageResource(R.drawable.ganancia_gif);
+                            txtSituation3.setTextColor(Color.GREEN);
+                            txtSituation3.setText("GANANCIA");
+                        }
 
                         calculateMonth4();
 
@@ -1853,6 +1995,17 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
                         txtFinalCash2.setText(cash_flow_2_st);
                         txtStartCash3.setText(cash_flow_2_st);
                         companyRef.child(post_key).child("Cash Flow").child("cash_flow"+year).setValue(cash_flow_2_st);
+
+                        if (cash_flow_2_month < cash_flow_1_month) {
+                            imgSituation2.setImageResource(R.drawable.perdida_gif);
+                            txtSituation2.setTextColor(Color.RED);
+                            txtSituation2.setText("PÉRDIDA");
+                        }
+                        else if (cash_flow_2_month > cash_flow_1_month) {
+                            imgSituation2.setImageResource(R.drawable.ganancia_gif);
+                            txtSituation2.setTextColor(Color.GREEN);
+                            txtSituation2.setText("GANANCIA");
+                        }
 
                         calculateMonth3();
 
@@ -2076,6 +2229,18 @@ public class CashAndBanksMonthlyActivity extends AppCompatActivity {
                                 txtFinalCash1.setText(cash_flow_1_st);
                                 txtStartCash2.setText(cash_flow_1_st);
                                 companyRef.child(post_key).child("Cash Flow").child("cash_flow"+year).setValue(cash_flow_1_st);
+
+
+                                if (cash_flow_1_month < cash_flow_0_db) {
+                                    imgSituation1.setImageResource(R.drawable.perdida_gif);
+                                    txtSituation1.setTextColor(Color.RED);
+                                    txtSituation1.setText("PÉRDIDA");
+                                }
+                                else if (cash_flow_1_month > cash_flow_0_db) {
+                                    imgSituation1.setImageResource(R.drawable.ganancia_gif);
+                                    txtSituation1.setTextColor(Color.GREEN);
+                                    txtSituation1.setText("GANANCIA");
+                                }
 
                                 calculateMonth2();
                             }

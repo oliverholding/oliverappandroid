@@ -69,8 +69,8 @@ public class FixedAssetTotalFragment extends Fragment {
 
         //initializing data
         Map<String, Integer> typeAmountMap = new HashMap<>();
-        typeAmountMap.put("Intangibles",sum_tangible_int);
-        typeAmountMap.put("Tangibles",sum_intangible_int);
+        typeAmountMap.put("Tangibles",sum_tangible_int);
+        typeAmountMap.put("Inangibles",sum_intangible_int);
 
         //initializing colors for the entries
         ArrayList<Integer> colors = new ArrayList<>();

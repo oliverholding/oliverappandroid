@@ -191,8 +191,13 @@ public class StatementOfIncomesFragment extends Fragment {
 
     private void calculateTaxes() {
         taxes = profit_before_taxes*(rent_tax/100);
-        taxes_st = decimalFormat.format(taxes);
-        txtTaxes.setText(taxes_st);
+        if (taxes <= 0.00) {
+            txtTaxes.setText("0.00");
+        } else {
+            taxes_st = decimalFormat.format(taxes);
+            txtTaxes.setText(taxes_st);
+        }
+
 
         calculateNetProfit();
     }

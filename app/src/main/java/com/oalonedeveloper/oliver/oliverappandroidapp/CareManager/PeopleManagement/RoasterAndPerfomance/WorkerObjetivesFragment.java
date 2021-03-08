@@ -126,7 +126,7 @@ public class WorkerObjetivesFragment extends Fragment {
                             if (objective_progress <= 25) {
                                 viewHolder.txtProgress.setText("Progreso: "+objective_progress+"% Necesita tomar medidas de mejora urgente así como acompañamiento frecuente de un superior");
                             }
-                            if (objective_progress >= 25 && objective_progress < 50) {
+                            if (objective_progress > 25 && objective_progress < 50) {
                                 viewHolder.txtProgress.setText("Progreso: "+objective_progress+"% Necesitas detectar tus debilidades para convertirlas en fortalezas");
                             }
                             if (objective_progress >= 50 && objective_progress < 95) {

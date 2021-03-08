@@ -1,4 +1,4 @@
-package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.FinancialStatements.StatementOfIncomes;
+package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BlancedScoreCard;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -10,11 +10,17 @@ import android.os.Bundle;
 
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.FinancialStatements.FinancialSituation.FinancialSituationAssetsFragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.FinancialStatements.FinancialSituation.FinancialSituationLiabilitiesFragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessOportunitiesModule.Training1Fragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Files1Fragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Video1Fragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Video2Fragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Video3Fragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Video4Fragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Video5Fragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Video6Fragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
-public class StatementOfIncomesActivity extends AppCompatActivity {
+public class BalancedScoreCardActivity extends AppCompatActivity {
 
     ViewPager mViewPager;
     SectionsPagerAdapter mSectionsPagerAdapter;
@@ -23,7 +29,7 @@ public class StatementOfIncomesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_statement_of_incomes);
+        setContentView(R.layout.activity_balanced_score_card);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         TabItem tabItem = findViewById(R.id.tabItem);
@@ -57,7 +63,23 @@ public class StatementOfIncomesActivity extends AppCompatActivity {
             // Return a PlaceholderFragment (defined as a static inner class below).
             switch (position) {
                 case 0:
-                    return new StatementOfIncomesFragment();
+                    return new BalancedScoreCardFragment();
+                case 1:
+                    return new Training1Fragment();
+                case 2:
+                    return new Video1Fragment();
+                case 3:
+                    return new Video2Fragment();
+                case 4:
+                    return new Video3Fragment();
+                case 5:
+                    return new Video4Fragment();
+                case 6:
+                    return new Video5Fragment();
+                case 7:
+                    return new Video6Fragment();
+                case 8:
+                    return new Files1Fragment();
 
 
                 default:

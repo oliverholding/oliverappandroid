@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BlancedScoreCard.BalancedScoreCardActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessModelModule.BusinessModelActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessOportunitiesModule.BusinessOportunitiesActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CommercializationActivity;
@@ -31,7 +32,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class CareToolsFragment extends Fragment {
 
-    CardView cardViewModule1,cardViewModule2,cardViewModule3,cardViewModule4,cardViewModule5,cardViewModule6,cardViewModule7,cardViewModule8,cardViewModule9,cardViewModule10,cardViewModule11,cardViewModule12,cardViewModule13,cardViewModule14;
+    CardView cardViewModule1,cardViewModule2,cardViewModule3,cardViewModule4,cardViewModule5,cardViewModule6,cardViewModule7,cardViewModule8,cardViewModule9,cardViewModule10,cardViewModule11,cardViewModule12,cardViewModule13,cardViewModule14,cardViewModule15;
     String post_key;
 
 
@@ -57,6 +58,7 @@ public class CareToolsFragment extends Fragment {
         cardViewModule12 = view.findViewById(R.id.cardViewModule12);
         cardViewModule13 = view.findViewById(R.id.cardViewModule13);
         cardViewModule14 = view.findViewById(R.id.cardViewModule14);
+        cardViewModule15 = view.findViewById(R.id.cardViewModule15);
 
         cardViewModule1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -176,6 +178,15 @@ public class CareToolsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), StrategicDirectionActivity.class);
+                intent.putExtra("post_key",post_key);
+                startActivity(intent);
+            }
+        });
+
+        cardViewModule15.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), BalancedScoreCardActivity.class);
                 intent.putExtra("post_key",post_key);
                 startActivity(intent);
             }

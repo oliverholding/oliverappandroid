@@ -1,0 +1,1224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CareManager.BlancedScoreCard.StrategicMapActivity">
+
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <HorizontalScrollView
+                android:scrollbars="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="8dp"
+                        android:layout_margin="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:padding="8dp"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:layout_margin="4dp"
+                                    android:src="@color/colorGradientCenterRed"
+                                    android:layout_width="60dp"
+                                    android:layout_height="60dp"/>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_margin="8dp"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:padding="8dp"
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:textColor="@android:color/black"
+                                            android:layout_margin="4dp"
+                                            android:gravity="center"
+                                            android:text="APRENDIZAJE Y CRECIMIENTO"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <TextView
+                                    android:textSize="12sp"
+                                    android:textColor="@android:color/black"
+                                    android:layout_margin="4dp"
+                                    android:gravity="center"
+                                    android:text="¿Qué conocimientos y habilidades necesitas cubrir?"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_margin="8dp"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:background="@color/balancedScoreCard1"
+                                        android:id="@+id/layout1_1"
+                                        android:padding="8dp"
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <LinearLayout
+                                            android:gravity="center"
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
+
+                                            <TextView
+                                                android:id="@+id/txtObjectiveLearning1"
+                                                android:textStyle="bold"
+                                                android:textColor="@android:color/white"
+                                                android:layout_margin="4dp"
+                                                android:text="Objetivo 1"
+                                                android:layout_weight="1"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"/>
+
+                                            <ImageView
+                                                android:id="@+id/btnObjective1"
+                                                android:src="@drawable/edit_pencil_vector_asset"
+                                                android:layout_weight="0.2"
+                                                android:layout_width="0dp"
+                                                android:layout_height="20dp"/>
+
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:id="@+id/txtKpiLearning1_1"
+                                            android:text="KPI 1: Sin Información"
+                                            android:textColor="@android:color/white"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:id="@+id/txtKpiLearning1_2"
+                                            android:textColor="@android:color/white"
+                                            android:text="KPI 2: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <View
+                                            android:layout_margin="4dp"
+                                            android:background="@android:color/white"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"/>
+
+                                        <TextView
+                                            android:id="@+id/txtInitiativeLearning1_1"
+                                            android:textColor="@android:color/white"
+                                            android:text="Iniciativa 1: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:id="@+id/txtInitiativeLearning1_2"
+                                            android:textColor="@android:color/white"
+                                            android:text="Iniciativa 2: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_margin="8dp"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:background="@color/balancedScoreCard2"
+                                        android:id="@+id/layout1_2"
+                                        android:padding="8dp"
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <LinearLayout
+                                            android:gravity="center"
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
+
+                                            <TextView
+                                                android:id="@+id/txtObjectiveLearning2"
+                                                android:textStyle="bold"
+                                                android:textColor="@android:color/white"
+                                                android:layout_margin="4dp"
+                                                android:text="Objetivo 2"
+                                                android:layout_weight="1"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"/>
+
+                                            <ImageView
+                                                android:id="@+id/btnObjective2"
+                                                android:src="@drawable/edit_pencil_vector_asset"
+                                                android:layout_weight="0.2"
+                                                android:layout_width="0dp"
+                                                android:layout_height="20dp"/>
+
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:id="@+id/txtKpiLearning2_1"
+                                            android:textColor="@android:color/white"
+                                            android:text="KPI 1: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:id="@+id/txtKpiLearning2_2"
+                                            android:textColor="@android:color/white"
+                                            android:text="KPI 2: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <View
+                                            android:layout_margin="4dp"
+                                            android:background="@android:color/white"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"/>
+
+                                        <TextView
+                                            android:id="@+id/txtInitiativeLearning2_1"
+                                            android:textColor="@android:color/white"
+                                            android:text="Iniciativa 1: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:id="@+id/txtInitiativeLearning2_2"
+                                            android:textColor="@android:color/white"
+                                            android:text="Iniciativa 2: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_margin="8dp"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:id="@+id/layout1_3"
+                                        android:background="@color/balancedScoreCard3"
+                                        android:padding="8dp"
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <LinearLayout
+                                            android:gravity="center"
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
+
+                                            <TextView
+                                                android:id="@+id/txtObjectiveLearning3"
+                                                android:textStyle="bold"
+                                                android:textColor="@android:color/white"
+                                                android:layout_margin="4dp"
+                                                android:text="Objetivo 3"
+                                                android:layout_weight="1"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"/>
+
+                                            <ImageView
+                                                android:id="@+id/btnObjective3"
+                                                android:src="@drawable/edit_pencil_vector_asset"
+                                                android:layout_weight="0.2"
+                                                android:layout_width="0dp"
+                                                android:layout_height="20dp"/>
+
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:id="@+id/txtKpiLearning3_1"
+                                            android:textColor="@android:color/white"
+                                            android:text="KPI 1: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:id="@+id/txtKpiLearning3_2"
+                                            android:textColor="@android:color/white"
+                                            android:text="KPI 2: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <View
+                                            android:layout_margin="4dp"
+                                            android:background="@android:color/white"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"/>
+
+                                        <TextView
+                                            android:id="@+id/txtInitiativeLearning3_1"
+                                            android:textColor="@android:color/white"
+                                            android:text="Iniciativa 1: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:id="@+id/txtInitiativeLearning3_2"
+                                            android:textColor="@android:color/white"
+                                            android:text="Iniciativa 2: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="8dp"
+                        android:layout_margin="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:padding="8dp"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:layout_margin="4dp"
+                                    android:src="@color/colorGradientCenterRed"
+                                    android:layout_width="60dp"
+                                    android:layout_height="60dp"/>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_margin="8dp"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:padding="8dp"
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:textColor="@android:color/black"
+                                            android:layout_margin="4dp"
+                                            android:gravity="center"
+                                            android:text="PROCESOS INTERNOS"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <TextView
+                                    android:textSize="12sp"
+                                    android:textColor="@android:color/black"
+                                    android:layout_margin="4dp"
+                                    android:gravity="center"
+                                    android:text="¿Cómo crearás beneficios adcionales de tu producto/servicio para tus clientes?"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_margin="8dp"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:id="@+id/layout2_1"
+                                        android:padding="8dp"
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <LinearLayout
+                                            android:gravity="center"
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
+
+                                            <TextView
+                                                android:id="@+id/txtObjectiveProcess1"
+                                                android:textStyle="bold"
+                                                android:textColor="@android:color/black"
+                                                android:layout_margin="4dp"
+                                                android:text="Objetivo 1"
+                                                android:layout_weight="1"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"/>
+
+                                            <ImageView
+                                                android:id="@+id/btnProcess1"
+                                                android:src="@drawable/edit_pencil_vector_asset"
+                                                android:layout_weight="0.2"
+                                                android:layout_width="0dp"
+                                                android:layout_height="20dp"/>
+
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:id="@+id/txtKpiProcess1_1"
+                                            android:text="KPI 1: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:id="@+id/txtKpiProcess1_2"
+                                            android:text="KPI 2: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <View
+                                            android:layout_margin="4dp"
+                                            android:background="@android:color/white"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"/>
+
+                                        <TextView
+                                            android:id="@+id/txtInitiativeProcess1_1"
+                                            android:text="Iniciativa 1: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:id="@+id/txtInitiativeProcess1_2"
+                                            android:text="Iniciativa 2: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_margin="8dp"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:id="@+id/layout2_2"
+                                        android:padding="8dp"
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <LinearLayout
+                                            android:gravity="center"
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
+
+                                            <TextView
+                                                android:id="@+id/txtObjectiveProcess2"
+                                                android:textStyle="bold"
+                                                android:textColor="@android:color/black"
+                                                android:layout_margin="4dp"
+                                                android:text="Objetivo 2"
+                                                android:layout_weight="1"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"/>
+
+                                            <ImageView
+                                                android:id="@+id/btnProcess2"
+                                                android:src="@drawable/edit_pencil_vector_asset"
+                                                android:layout_weight="0.2"
+                                                android:layout_width="0dp"
+                                                android:layout_height="20dp"/>
+
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:id="@+id/txtKpiProcess2_1"
+                                            android:text="KPI 1: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:id="@+id/txtKpiProcess2_2"
+                                            android:text="KPI 2: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <View
+                                            android:layout_margin="4dp"
+                                            android:background="@android:color/white"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"/>
+
+                                        <TextView
+                                            android:id="@+id/txtInitiativeProcess2_1"
+                                            android:text="Iniciativa 1: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:id="@+id/txtInitiativeProcess2_2"
+                                            android:text="Iniciativa 2: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_margin="8dp"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:id="@+id/layout2_3"
+                                        android:padding="8dp"
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <LinearLayout
+                                            android:gravity="center"
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
+
+                                            <TextView
+                                                android:id="@+id/txtObjectiveProcess3"
+                                                android:textStyle="bold"
+                                                android:textColor="@android:color/black"
+                                                android:layout_margin="4dp"
+                                                android:text="Objetivo 3"
+                                                android:layout_weight="1"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"/>
+
+                                            <ImageView
+                                                android:id="@+id/btnProcess3"
+                                                android:src="@drawable/edit_pencil_vector_asset"
+                                                android:layout_weight="0.2"
+                                                android:layout_width="0dp"
+                                                android:layout_height="20dp"/>
+
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:id="@+id/txtKpiProcess3_1"
+                                            android:text="KPI 1: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:id="@+id/txtKpiProcess3_2"
+                                            android:text="KPI 2: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <View
+                                            android:layout_margin="4dp"
+                                            android:background="@android:color/white"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"/>
+
+                                        <TextView
+                                            android:id="@+id/txtInitiativeProcess3_1"
+                                            android:text="Iniciativa 1: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:id="@+id/txtInitiativeProcess3_2"
+                                            android:text="Iniciativa 2: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="8dp"
+                        android:layout_margin="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:padding="8dp"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:layout_margin="4dp"
+                                    android:src="@color/colorGradientCenterRed"
+                                    android:layout_width="60dp"
+                                    android:layout_height="60dp"/>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_margin="8dp"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:padding="8dp"
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:textColor="@android:color/black"
+                                            android:layout_margin="4dp"
+                                            android:gravity="center"
+                                            android:text="CLIENTES"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <TextView
+                                    android:textSize="12sp"
+                                    android:textColor="@android:color/black"
+                                    android:layout_margin="4dp"
+                                    android:gravity="center"
+                                    android:text="¿Qué beneficios adicionales creastes para tus clientes?"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_margin="8dp"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:id="@+id/layout3_1"
+                                        android:padding="8dp"
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <LinearLayout
+                                            android:gravity="center"
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
+
+                                            <TextView
+                                                android:id="@+id/txtObjectiveCustomers1"
+                                                android:textStyle="bold"
+                                                android:textColor="@android:color/black"
+                                                android:layout_margin="4dp"
+                                                android:text="Objetivo 1"
+                                                android:layout_weight="1"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"/>
+
+                                            <ImageView
+                                                android:id="@+id/btnCustomers1"
+                                                android:src="@drawable/edit_pencil_vector_asset"
+                                                android:layout_weight="0.2"
+                                                android:layout_width="0dp"
+                                                android:layout_height="20dp"/>
+
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:id="@+id/txtKpiCustomers1_1"
+                                            android:text="KPI 1: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:id="@+id/txtKpiCustomers1_2"
+                                            android:text="KPI 2: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <View
+                                            android:layout_margin="4dp"
+                                            android:background="@android:color/white"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"/>
+
+                                        <TextView
+                                            android:id="@+id/txtInitiativeCustomers1_1"
+                                            android:text="Iniciativa 1: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:id="@+id/txtInitiativeCustomers1_2"
+                                            android:text="Iniciativa 2: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_margin="8dp"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:id="@+id/layout3_2"
+                                        android:padding="8dp"
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <LinearLayout
+                                            android:gravity="center"
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
+
+                                            <TextView
+                                                android:id="@+id/txtObjectiveCustomers2"
+                                                android:textStyle="bold"
+                                                android:textColor="@android:color/black"
+                                                android:layout_margin="4dp"
+                                                android:text="Objetivo 2"
+                                                android:layout_weight="1"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"/>
+
+                                            <ImageView
+                                                android:id="@+id/btnCustomers2"
+                                                android:src="@drawable/edit_pencil_vector_asset"
+                                                android:layout_weight="0.2"
+                                                android:layout_width="0dp"
+                                                android:layout_height="20dp"/>
+
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:id="@+id/txtKpiCustomers2_1"
+                                            android:text="KPI 1: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:id="@+id/txtKpiCustomers2_2"
+                                            android:text="KPI 2: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <View
+                                            android:layout_margin="4dp"
+                                            android:background="@android:color/white"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"/>
+
+                                        <TextView
+                                            android:id="@+id/txtInitiativeCustomers2_1"
+                                            android:text="Iniciativa 1: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:id="@+id/txtInitiativeCustomers2_2"
+                                            android:text="Iniciativa 2: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_margin="8dp"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:id="@+id/layout3_3"
+                                        android:padding="8dp"
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <LinearLayout
+                                            android:gravity="center"
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
+
+                                            <TextView
+                                                android:id="@+id/txtObjectiveCustomers3"
+                                                android:textStyle="bold"
+                                                android:textColor="@android:color/black"
+                                                android:layout_margin="4dp"
+                                                android:text="Objetivo 3"
+                                                android:layout_weight="1"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"/>
+
+                                            <ImageView
+                                                android:id="@+id/btnCustomers3"
+                                                android:src="@drawable/edit_pencil_vector_asset"
+                                                android:layout_weight="0.2"
+                                                android:layout_width="0dp"
+                                                android:layout_height="20dp"/>
+
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:id="@+id/txtKpiCustomers3_1"
+                                            android:text="KPI 1: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:id="@+id/txtKpiCustomers3_2"
+                                            android:text="KPI 2: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <View
+                                            android:layout_margin="4dp"
+                                            android:background="@android:color/white"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"/>
+
+                                        <TextView
+                                            android:id="@+id/txtInitiativeCustomers3_1"
+                                            android:text="Iniciativa 1: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:id="@+id/txtInitiativeCustomers3_2"
+                                            android:text="Iniciativa 2: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="8dp"
+                        android:layout_margin="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:padding="8dp"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:layout_margin="4dp"
+                                    android:src="@color/colorGradientCenterRed"
+                                    android:layout_width="60dp"
+                                    android:layout_height="60dp"/>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_margin="8dp"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:padding="8dp"
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:textColor="@android:color/black"
+                                            android:layout_margin="4dp"
+                                            android:gravity="center"
+                                            android:text="FINANZAS"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <TextView
+                                    android:textSize="12sp"
+                                    android:textColor="@android:color/black"
+                                    android:layout_margin="4dp"
+                                    android:gravity="center"
+                                    android:text="¿Cómo conviertes en ingresos y en ganancias dichos beneficios adiconales para tus clientes?"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_margin="8dp"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:id="@+id/layout4_1"
+                                        android:padding="8dp"
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <LinearLayout
+                                            android:gravity="center"
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
+
+                                            <TextView
+                                                android:id="@+id/txtObjectiveFinance1"
+                                                android:textStyle="bold"
+                                                android:textColor="@android:color/black"
+                                                android:layout_margin="4dp"
+                                                android:text="Objetivo 1"
+                                                android:layout_weight="1"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"/>
+
+                                            <ImageView
+                                                android:id="@+id/btnFinance1"
+                                                android:src="@drawable/edit_pencil_vector_asset"
+                                                android:layout_weight="0.2"
+                                                android:layout_width="0dp"
+                                                android:layout_height="20dp"/>
+
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:id="@+id/txtKpiFinance1_1"
+                                            android:text="KPI 1: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:id="@+id/txtKpiFinance1_2"
+                                            android:text="KPI 2: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <View
+                                            android:layout_margin="4dp"
+                                            android:background="@android:color/white"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"/>
+
+                                        <TextView
+                                            android:id="@+id/txtInitiativeFinance1_1"
+                                            android:text="Iniciativa 1: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:id="@+id/txtInitiativeFinance1_2"
+                                            android:text="Iniciativa 2: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_margin="8dp"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:id="@+id/layout4_2"
+                                        android:padding="8dp"
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <LinearLayout
+                                            android:gravity="center"
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
+
+                                            <TextView
+                                                android:id="@+id/txtObjectiveFinance2"
+                                                android:textStyle="bold"
+                                                android:textColor="@android:color/black"
+                                                android:layout_margin="4dp"
+                                                android:text="Objetivo 2"
+                                                android:layout_weight="1"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"/>
+
+                                            <ImageView
+                                                android:id="@+id/btnFinance2"
+                                                android:src="@drawable/edit_pencil_vector_asset"
+                                                android:layout_weight="0.2"
+                                                android:layout_width="0dp"
+                                                android:layout_height="20dp"/>
+
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:id="@+id/txtKpiFinance2_1"
+                                            android:text="KPI 1: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:id="@+id/txtKpiFinance2_2"
+                                            android:text="KPI 2: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <View
+                                            android:layout_margin="4dp"
+                                            android:background="@android:color/white"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"/>
+
+                                        <TextView
+                                            android:id="@+id/txtInitiativeFinance2_1"
+                                            android:text="Iniciativa 1: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:id="@+id/txtInitiativeFinance2_2"
+                                            android:text="Iniciativa 2: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_margin="8dp"
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:id="@+id/layout4_3"
+                                        android:padding="8dp"
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <LinearLayout
+                                            android:gravity="center"
+                                            android:orientation="horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
+
+                                            <TextView
+                                                android:id="@+id/txtObjectiveFinance3"
+                                                android:textStyle="bold"
+                                                android:textColor="@android:color/black"
+                                                android:layout_margin="4dp"
+                                                android:text="Objetivo 3"
+                                                android:layout_weight="1"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"/>
+
+                                            <ImageView
+                                                android:id="@+id/btnFinance3"
+                                                android:src="@drawable/edit_pencil_vector_asset"
+                                                android:layout_weight="0.2"
+                                                android:layout_width="0dp"
+                                                android:layout_height="20dp"/>
+
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:id="@+id/txtKpiFinance3_1"
+                                            android:text="KPI 1: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:id="@+id/txtKpiFinance3_2"
+                                            android:text="KPI 2: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <View
+                                            android:layout_margin="4dp"
+                                            android:background="@android:color/white"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1dp"/>
+
+                                        <TextView
+                                            android:id="@+id/txtInitiativeFinance3_1"
+                                            android:text="Iniciativa 1: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+                                        <TextView
+                                            android:id="@+id/txtInitiativeFinance3_2"
+                                            android:text="Iniciativa 2: Sin Información"
+                                            android:layout_margin="4dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+
+
+            </HorizontalScrollView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

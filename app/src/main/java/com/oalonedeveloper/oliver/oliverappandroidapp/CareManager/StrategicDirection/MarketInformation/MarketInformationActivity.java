@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -30,7 +31,7 @@ import in.galaxyofandroid.spinerdialog.SpinnerDialog;
 
 public class MarketInformationActivity extends AppCompatActivity {
 
-    ImageView btnItem1,btnItem2,btnItem3,btnItem4,btnItem5;
+    ImageView btnItem1,btnItem2,btnItem3,btnItem4,btnItem5,btnShow1,btnShow2,btnShow3,btnShow4,btnShow5;
     TextView txtItem1,txtItem2,txtItem3,txtItem4,txtItem5,txtResult;
     DatabaseReference companyRef;
     String post_key,answer_message;
@@ -56,6 +57,58 @@ public class MarketInformationActivity extends AppCompatActivity {
         txtItem4 = findViewById(R.id.txtItem4);
         txtItem5 = findViewById(R.id.txtItem5);
         txtResult = findViewById(R.id.txtResult);
+
+        btnShow1 = findViewById(R.id.btnShow1);
+        btnShow2 = findViewById(R.id.btnShow2);
+        btnShow3 = findViewById(R.id.btnShow3);
+        btnShow4 = findViewById(R.id.btnShow4);
+        btnShow5 = findViewById(R.id.btnShow5);
+
+        btnShow1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String title = "Competidores Potenciales";
+                String answer = "item_1";
+
+                showAnswerDialog(title,answer);
+            }
+        });
+        btnShow2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String title = "Proveedores";
+                String answer = "item_2";
+
+                showAnswerDialog(title,answer);
+            }
+        });
+        btnShow3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String title = "Competidores del Mercado";
+                String answer = "item_3";
+
+                showAnswerDialog(title,answer);
+            }
+        });
+        btnShow4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String title = "Compradores";
+                String answer = "item_4";
+
+                showAnswerDialog(title,answer);
+            }
+        });
+        btnShow5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String title = "Productos Sustitutos";
+                String answer = "item_5";
+
+                showAnswerDialog(title,answer);
+            }
+        });
 
         companyRef.child(post_key).child("Market Information").child("item_1").addValueEventListener(new ValueEventListener() {
             @Override
@@ -208,6 +261,7 @@ public class MarketInformationActivity extends AppCompatActivity {
 
                 arr.add("Proveedores de nuestros insumos");arr.add("Distribuidores de nuestros productos/servicios");
                 arr.add("Intermediarios comerciales");arr.add("Competencia indirecta que ofece un producto/servicio complementario al nuestro");
+                arr.add("Otro");
 
                 showMarketinInformationDialog(title,question_1,question_2,arr,path);
             }
@@ -222,7 +276,7 @@ public class MarketInformationActivity extends AppCompatActivity {
                 String path = "item_2";
 
                 arr.add("Proveedores de mi actividad principal"); arr.add("Proveedores complementarios a mi actividad principal");
-                arr.add("Controlan el mercado por precio y/o producto/servicio"); arr.add("Organizados"); arr.add("Desorganizados");
+                arr.add("Controlan el mercado por precio y/o producto/servicio"); arr.add("Organizados"); arr.add("Desorganizados"); arr.add("Otro");
 
                 showMarketinInformationDialog(title,question_1,question_2,arr,path);
             }
@@ -239,6 +293,7 @@ public class MarketInformationActivity extends AppCompatActivity {
 
                 arr.add("Precios sensibles (subidas y bajadas)"); arr.add("Campañas continuas de publicidad"); arr.add("Intensidad de tus comeptidores por ganar mayor presencia en el mercado");
                 arr.add("Concentración de competidores (pocas empresas pero especializadas) que dominan el mercado"); arr.add("Barreras de entrada (inversión alta para entrar a competir)"); arr.add("Barreras de salida (por los altos costos complementarios a la liquidación o salida del producto)");
+                arr.add("Otro");
 
                 showMarketinInformationDialog(title,question_1,question_2,arr,path);
             }
@@ -253,7 +308,7 @@ public class MarketInformationActivity extends AppCompatActivity {
                 ArrayList<String> arr =new ArrayList<>();
                 String path = "item_4";
 
-                arr.add("Capacidad de ponernos bajo presión para bajar nuestros precios"); arr.add("Preferencias variables o cambiantes, que hacen rediseñar tu producto/servicio");
+                arr.add("Capacidad de ponernos bajo presión para bajar nuestros precios"); arr.add("Preferencias variables o cambiantes, que hacen rediseñar tu producto/servicio"); arr.add("Otro");
 
                 showMarketinInformationDialog(title,question_1,question_2,arr,path);
             }
@@ -268,12 +323,42 @@ public class MarketInformationActivity extends AppCompatActivity {
                 ArrayList<String> arr =new ArrayList<>();
                 String path = "item_5";
 
-                arr.add("Muy alta probabilidad de sustitución");   arr.add("Alta probabilidad de sustitución");   arr.add("Sustitución probable");   arr.add("Poca probabilidad de sustitución");   arr.add("Muy baja probabilidad de sustitución");
+                arr.add("Muy alta probabilidad de sustitución");   arr.add("Alta probabilidad de sustitución");   arr.add("Sustitución probable");   arr.add("Poca probabilidad de sustitución");   arr.add("Muy baja probabilidad de sustitución"); arr.add("Otro");
 
                 showMarketinInformationDialog(title,question_1,question_2,arr,path);
             }
         });
 
+    }
+
+    private void showAnswerDialog(String title, String answer) {
+        final AlertDialog dialog = new AlertDialog.Builder(this).create();
+
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View finance_method = inflater.inflate(R.layout.market_information_answer_dialog,null);
+
+        final TextView txtTitle,txtAnswer;
+
+        txtTitle = finance_method.findViewById(R.id.txtTitle);
+        txtAnswer = finance_method.findViewById(R.id.txtAnswer);
+
+        txtTitle.setText(title);
+
+        companyRef.child(post_key).child("Market Information").child(answer).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String value = dataSnapshot.child("question_1").getValue().toString();
+                txtAnswer.setText(value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        dialog.setView(finance_method);
+        dialog.show();
     }
 
     private void showMarketinInformationDialog(String title, String question_1, String question_2, ArrayList<String> arr, final String path) {
@@ -287,6 +372,7 @@ public class MarketInformationActivity extends AppCompatActivity {
         final RadioButton rdAnswer1,rdAnswer2,rdAnswer3;
         final SpinnerDialog spinnerDialog;
         final LinearLayout rootLayout;
+        final EditText edtInput;
 
         txtTitle = finance_method.findViewById(R.id.txtTitle);
         txtQuestion1 = finance_method.findViewById(R.id.txtQuestion1);
@@ -297,6 +383,9 @@ public class MarketInformationActivity extends AppCompatActivity {
         rdAnswer3 = finance_method.findViewById(R.id.rdAnswer3);
         btnFinish =finance_method.findViewById(R.id.btnFinish);
         rootLayout = finance_method.findViewById(R.id.rootLayout);
+        edtInput = finance_method.findViewById(R.id.edtInput);
+
+        edtInput.setVisibility(View.GONE);
 
         txtTitle.setText(title);
         txtQuestion1.setText(question_1);
@@ -314,6 +403,13 @@ public class MarketInformationActivity extends AppCompatActivity {
             @Override
             public void onClick(String item2, int position2) {
                 btnAnswer.setText(item2);
+                edtInput.setText(item2);
+                if (item2.equals("Otro")) {
+                    edtInput.setText("");
+                    edtInput.setVisibility(View.VISIBLE);
+                } else {
+                    edtInput.setVisibility(View.GONE);
+                }
 
             }
         });
@@ -345,7 +441,7 @@ public class MarketInformationActivity extends AppCompatActivity {
                 } else if (TextUtils.isEmpty(btnAnswer.getText().toString())) {
                     Snackbar.make(rootLayout,"Debes seleccionar una alterantiva",Snackbar.LENGTH_SHORT).show();
                 } else {
-                    companyRef.child(post_key).child("Market Information").child(path).child("question_1").setValue(btnAnswer.getText().toString());
+                    companyRef.child(post_key).child("Market Information").child(path).child("question_1").setValue(edtInput.getText().toString());
                     companyRef.child(post_key).child("Market Information").child(path).child("question_2").setValue(answer_message);
                     Toasty.success(MarketInformationActivity.this, "Actualizado", Toast.LENGTH_LONG).show();
                     dialog.dismiss();
