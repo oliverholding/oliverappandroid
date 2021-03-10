@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CareManager.BlancedScoreCard.StrategicMapActivity">
+    tools:context=".CareManager.BlancedScoreCard.StrategicMap.StrategicMapActivity">
 
     <ScrollView
         android:scrollbars="vertical"
@@ -1202,6 +1202,50 @@
                                     </LinearLayout>
 
                                 </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="8dp"
+                        android:layout_margin="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:padding="8dp"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtMainObjective"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="20sp"
+                                    android:layout_margin="8dp"
+                                    android:text="OBJETIVO ESTRATÉGICO E INSPIRACIONAL: SIN DEFINIR"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                                <ImageView
+                                    android:id="@+id/btnMainObjective"
+                                    android:src="@drawable/edit_pencil_vector_asset"
+                                    android:layout_weight="0.2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="20dp"/>
 
                             </LinearLayout>
 

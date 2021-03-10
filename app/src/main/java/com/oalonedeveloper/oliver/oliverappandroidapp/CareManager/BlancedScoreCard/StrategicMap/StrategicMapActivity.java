@@ -1,4 +1,4 @@
-package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BlancedScoreCard;
+package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BlancedScoreCard.StrategicMap;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -23,7 +23,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirection.MarketInformation.MarketInformationActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 import java.util.ArrayList;
@@ -53,6 +52,9 @@ public class StrategicMapActivity extends AppCompatActivity {
     LinearLayout layout4_1,layout4_2,layout4_3;
 
     String last_objective2_1,last_objective2_2,last_objective2_3,last_objective3_1,last_objective3_2,last_objective3_3;
+
+    ImageView btnMainObjective;
+    TextView txtMainObjective;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -153,6 +155,9 @@ public class StrategicMapActivity extends AppCompatActivity {
         layout4_1 = findViewById(R.id.layout4_1);
         layout4_2 = findViewById(R.id.layout4_2);
         layout4_3 = findViewById(R.id.layout4_3);
+
+        btnMainObjective = findViewById(R.id.btnMainObjective);
+        txtMainObjective = findViewById(R.id.txtMainObjective);
 
         companyRef.child(post_key).child("Balanced Scorecard").child("item1_1").addValueEventListener(new ValueEventListener() {
             @Override
@@ -1300,6 +1305,22 @@ public class StrategicMapActivity extends AppCompatActivity {
                                                                                                             txtInitiativeFinance3_2.setTextColor(Color.WHITE);
 
                                                                                                         }
+
+                                                                                                        companyRef.child(post_key).child("Balanced Scorecard").addValueEventListener(new ValueEventListener() {
+                                                                                                            @Override
+                                                                                                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                                                                                                if (dataSnapshot.hasChild("main_objective")) {
+                                                                                                                    String main_objective = dataSnapshot.child("main_objective").getValue().toString();
+                                                                                                                    txtMainObjective.setText("OBJETIVO ESTRATÉGICO E INSPIRACIONAL: "+main_objective.toUpperCase());
+                                                                                                                }
+
+                                                                                                            }
+
+                                                                                                            @Override
+                                                                                                            public void onCancelled(DatabaseError databaseError) {
+
+                                                                                                            }
+                                                                                                        });
                                                                                                     }
 
                                                                                                     @Override
@@ -1488,7 +1509,57 @@ public class StrategicMapActivity extends AppCompatActivity {
             }
         });
 
+        btnMainObjective.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setMainObjectiveDialog();
+            }
+        });
 
+
+    }
+
+    private void setMainObjectiveDialog() {
+        final AlertDialog dialog = new AlertDialog.Builder(this).create();
+
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View finance_method = inflater.inflate(R.layout.set_main_objective_dialog, null);
+
+        Button  btnMainObjective1,btnMainObjective2,btnMainObjective3;
+
+        btnMainObjective1 = finance_method.findViewById(R.id.btnMainObjective1);
+        btnMainObjective2 = finance_method.findViewById(R.id.btnMainObjective2);
+        btnMainObjective3 = finance_method.findViewById(R.id.btnMainObjective3);
+
+        btnMainObjective1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                companyRef.child(post_key).child("Balanced Scorecard").child("main_objective").setValue("Servir mejor a los clientes");
+                Toasty.success(StrategicMapActivity.this, "Actualizado", Toast.LENGTH_LONG).show();
+                dialog.dismiss();
+            }
+        });
+
+        btnMainObjective2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                companyRef.child(post_key).child("Balanced Scorecard").child("main_objective").setValue("Mejorar las operaciones");
+                Toasty.success(StrategicMapActivity.this, "Actualizado", Toast.LENGTH_LONG).show();
+                dialog.dismiss();
+            }
+        });
+
+        btnMainObjective3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                companyRef.child(post_key).child("Balanced Scorecard").child("main_objective").setValue("Mejorar el producto");
+                Toasty.success(StrategicMapActivity.this, "Actualizado", Toast.LENGTH_LONG).show();
+                dialog.dismiss();
+            }
+        });
+
+        dialog.setView(finance_method);
+        dialog.show();
     }
 
     private void showObjectiveDialog(final String path) {

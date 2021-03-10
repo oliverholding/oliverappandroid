@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/rootLayout"
+        android:padding="12dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_margin="8dp"
+            android:text="REGISTRAR NUEVA META ANUAL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Área de Gestión"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnArea"
+            android:gravity="start"
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Área..."
+            android:layout_width="match_parent"
+            android:layout_height="38dp" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Tipo de Gestión"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnAreaType"
+            android:gravity="start"
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Typo de Gestión..."
+            android:layout_width="match_parent"
+            android:layout_height="38dp" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textColor="@android:color/black"
+            android:text="Descripción de la Gestión:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edtManagementDescription"
+            android:inputType="textMultiLine"
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Descripción de la Gestión..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Objetivo Estratégico e Inspiracional"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnMainObjective"
+            android:gravity="start"
+            android:enabled="false"
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="..."
+            android:layout_width="match_parent"
+            android:layout_height="38dp" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Objetivos de Enlace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnLinkedObjectives"
+            android:gravity="start"
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Objetivos de Enlace..."
+            android:layout_width="match_parent"
+            android:layout_height="38dp" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Inciativias:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txtInitiative1"
+            android:layout_margin="8dp"
+            android:textColor="@android:color/black"
+            android:text="-"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txtInitiative2"
+            android:layout_margin="8dp"
+            android:textColor="@android:color/black"
+            android:text="-"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Recursos a utilizarse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnResources"
+            android:gravity="start"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Recursos a utilizarse..."
+            android:layout_width="match_parent"
+            android:layout_height="38dp" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Resultados Esperados:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edtResults"
+            android:inputType="textMultiLine"
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Resultados Esperados..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Persona Responsable:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edtResponsable"
+            android:inputType="textMultiLine"
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:hint="Persona Responsable..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textSize="16sp"
+            android:layout_margin="8dp"
+            android:textColor="@android:color/black"
+            android:text="Inicio de Actividades:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:drawableStart="@drawable/calendar_icon"
+                android:id="@+id/edtBthDay"
+                android:inputType="number"
+                android:padding="8dp"
+                android:maxLength="2"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Día"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:drawableStart="@drawable/calendar_icon"
+                android:id="@+id/edtBthMonth"
+                android:inputType="number"
+                android:padding="8dp"
+                android:maxLength="2"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Mes"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:drawableStart="@drawable/calendar_icon"
+                android:id="@+id/edtBthYear"
+                android:inputType="number"
+                android:padding="8dp"
+                android:maxLength="4"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Año"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Fin de Actividades:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:drawableStart="@drawable/calendar_icon"
+                android:id="@+id/edtEndBthDay"
+                android:inputType="number"
+                android:padding="8dp"
+                android:maxLength="2"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Día"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:drawableStart="@drawable/calendar_icon"
+                android:id="@+id/edtEndBthMonth"
+                android:inputType="number"
+                android:padding="8dp"
+                android:maxLength="2"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Mes"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:drawableStart="@drawable/calendar_icon"
+                android:id="@+id/edtEndBthYear"
+                android:inputType="number"
+                android:padding="8dp"
+                android:maxLength="4"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Año"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Control / Evaluación / Seguimiento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txtKpi1"
+            android:layout_margin="8dp"
+            android:textColor="@android:color/black"
+            android:text="KPI 1: -"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textColor="@android:color/black"
+            android:text="Progreso de KPI 1: "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.xw.repo.BubbleSeekBar
+            android:id="@+id/seekBar1"
+            app:bsb_second_track_color="@color/colorGradientStart"
+            app:bsb_section_count="10"
+            app:bsb_second_track_size="6dp"
+            app:bsb_track_size="4dp"
+            app:bsb_section_text_position="bottom_sides"
+            app:bsb_show_progress_in_float="true"
+            app:bsb_show_section_mark="true"
+            app:bsb_show_section_text="true"
+            app:bsb_show_thumb_text="true"
+            app:bsb_track_color="@color/colorAccent"
+            app:bsb_max="100"
+            app:bsb_min="0"
+            app:bsb_progress="0"
+            android:layout_margin="8dp"
+            app:bsb_bubble_color="@color/colorGradientCenterRed"
+            app:bsb_bubble_text_color="@color/colorPrimaryDark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:id="@+id/txtKpi2"
+            android:layout_margin="8dp"
+            android:textColor="@android:color/black"
+            android:text="KPI 2: -"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textColor="@android:color/black"
+            android:text="Progreso de KPI 2: "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.xw.repo.BubbleSeekBar
+            android:id="@+id/seekBar2"
+            app:bsb_second_track_color="@color/colorGradientStart"
+            app:bsb_section_count="10"
+            app:bsb_second_track_size="6dp"
+            app:bsb_track_size="4dp"
+            app:bsb_section_text_position="bottom_sides"
+            app:bsb_show_progress_in_float="true"
+            app:bsb_show_section_mark="true"
+            app:bsb_show_section_text="true"
+            app:bsb_show_thumb_text="true"
+            app:bsb_track_color="@color/colorAccent"
+            app:bsb_max="100"
+            app:bsb_min="0"
+            app:bsb_progress="0"
+            android:layout_margin="8dp"
+            app:bsb_bubble_color="@color/colorGradientCenterRed"
+            app:bsb_bubble_text_color="@color/colorPrimaryDark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:text="Meta Alcanzada"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RadioGroup
+            android:padding="8dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rdYes"
+                android:text="Sí"
+                android:layout_margin="4dp"
+                android:padding="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rdNo"
+                android:text="No"
+                android:layout_margin="4dp"
+                android:padding="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnFinish"
+            android:text="REGISTRAR NUEVA META"
+            android:textColor="@android:color/white"
+            android:layout_margin="8dp"
+            android:background="@drawable/gray_button_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -10,14 +10,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirection.Vision.VisionActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BlancedScoreCard.AnnualOperativePlan.AnnualOperativePlanActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BlancedScoreCard.KeyIndex.KeyIndexActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BlancedScoreCard.StrategicMap.StrategicMapActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 
 public class BalancedScoreCardFragment extends Fragment {
 
     String post_key;
-    Button btnStrategicMap;
+    Button btnStrategicMap,btnKeyIndex,btnAnnualOperativePlan;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -28,11 +30,31 @@ public class BalancedScoreCardFragment extends Fragment {
         post_key = getActivity().getIntent().getExtras().getString("post_key");
 
         btnStrategicMap = view.findViewById(R.id.btnStrategicMap);
+        btnKeyIndex = view.findViewById(R.id.btnKeyIndex);
+        btnAnnualOperativePlan = view.findViewById(R.id.btnAnnualOperativePlan);
 
         btnStrategicMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), StrategicMapActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+
+        btnKeyIndex.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), KeyIndexActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+
+        btnAnnualOperativePlan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AnnualOperativePlanActivity.class);
                 intent.putExtra("post_key", post_key);
                 startActivity(intent);
             }

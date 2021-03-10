@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/rootLayout"
+        android:padding="12dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:text="¿Cómo son tus clientes?"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textColor="@android:color/black"
+            android:text="Sexo:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <RadioGroup
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rdMan"
+                android:text="Masculino"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rdWoman"
+                android:text="Femenino"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textColor="@android:color/black"
+            android:text="Rango de edades:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <RadioGroup
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rdRange1"
+                android:text="0-10"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rdRange2"
+                android:text="11-20"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rdRange3"
+                android:text="21-30"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rdRange4"
+                android:text="31-40"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rdRange5"
+                android:text="41-60"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rdRange6"
+                android:text="60 o más"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textColor="@android:color/black"
+            android:text="Condición socioeconómica:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <RadioGroup
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rdHigh"
+                android:text="Alto"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rdMiddle"
+                android:text="Medio"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rdLow"
+                android:text="Bajo"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textColor="@android:color/black"
+            android:text="Actividad económica del cliente:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <RadioGroup
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rdProduction"
+                android:text="Producción"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rdDistribution"
+                android:text="Distribución"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rdConsuming"
+                android:text="Consumo"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textColor="@android:color/black"
+            android:text="Zona Geográfica:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/edtLocation"
+            android:hint="Zona Geográfica"
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/edit_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnFinish"
+            android:text="FINALIZAR"
+            android:layout_margin="8dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/gray_button_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</ScrollView>

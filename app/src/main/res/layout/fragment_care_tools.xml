@@ -672,7 +672,6 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:visibility="invisible"
                     android:id="@+id/cardViewModule16"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="8dp"
@@ -703,7 +702,7 @@
                             android:textColor="@color/colorAccent"
                             android:gravity="center"
                             app:layout_constraintBottom_toBottomOf="@id/img16"
-                            android:text="Dirección Estratégica y Operativa del Negocio"
+                            android:text="Plan de Negocios"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 

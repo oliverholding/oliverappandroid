@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Production.ProductionOrders.ProductionOrdersManagementActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirection.BusinessModel.BusinessModelActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirection.FODA.FodaActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirection.IndustryInformation.IndustryInformationActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirection.LeanCanvas.LeanCanvasActivity;
@@ -25,7 +26,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class StrategicDirectionFragment extends Fragment {
 
-    Button btnVision,btnMission,btnValues,btnLeanCanvas,btnIndustryInformation,btnMarketInformation,btnFoda,btnStrategicMatrix,btnOrganizationalLearning;
+    Button btnVision,btnMission,btnValues,btnLeanCanvas,btnIndustryInformation,btnMarketInformation,btnFoda,btnStrategicMatrix,btnOrganizationalLearning,btnBusinessModel;
     String post_key;
 
     @Override
@@ -45,6 +46,7 @@ public class StrategicDirectionFragment extends Fragment {
         btnFoda = view.findViewById(R.id.btnFoda);
         btnStrategicMatrix = view.findViewById(R.id.btnStrategicMatrix);
         btnOrganizationalLearning = view.findViewById(R.id.btnOrganizationalLearning);
+        btnBusinessModel = view.findViewById(R.id.btnBusinessModel);
 
         btnVision.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,6 +122,15 @@ public class StrategicDirectionFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), OrganizationLearningActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+
+        btnBusinessModel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), BusinessModelActivity.class);
                 intent.putExtra("post_key", post_key);
                 startActivity(intent);
             }

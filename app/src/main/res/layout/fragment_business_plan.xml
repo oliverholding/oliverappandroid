@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".CareManager.BlancedScoreCard.BalancedScoreCardFragment">
+    tools:context=".CareManager.BusinessPlan.BusinessPlanFragment">
 
     <ScrollView
         android:scrollbars="vertical"
@@ -711,9 +711,9 @@
                 android:layout_height="wrap_content"/>
 
             <Button
-                android:id="@+id/btnStrategicMap"
+                android:id="@+id/btnCommercialPlan"
                 android:padding="8dp"
-                android:text="Mapa Estratégico"
+                android:text="Sub-Plan Comercial"
                 android:textColor="@android:color/white"
                 android:layout_margin="8dp"
                 android:background="@drawable/gray_button_style"
@@ -721,31 +721,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-            <Button
-                android:id="@+id/btnKeyIndex"
-                android:padding="8dp"
-                android:text="Indicadores Clave"
-                android:textColor="@android:color/white"
-                android:layout_margin="8dp"
-                android:background="@drawable/gray_button_style"
-                android:drawableStart="@drawable/icono_ventas128"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <Button
-                android:id="@+id/btnAnnualOperativePlan"
-                android:padding="8dp"
-                android:text="Plan Operativo Anual"
-                android:textColor="@android:color/white"
-                android:layout_margin="8dp"
-                android:background="@drawable/gray_button_style"
-                android:drawableStart="@drawable/icono_ventas128"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
 
 
         </LinearLayout>
 
     </ScrollView>
 
-</FrameLayout>
+
+</RelativeLayout>

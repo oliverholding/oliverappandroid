@@ -244,9 +244,6 @@ public class Evaluation1Fragment extends Fragment {
                 else if (rating2 == -1) {
                     Snackbar.make(rootLayout,"Debes completar toda la evaluación",Snackbar.LENGTH_SHORT).show();
                 }
-                else if (rating2 == -1) {
-                    Snackbar.make(rootLayout,"Debes completar toda la evaluación",Snackbar.LENGTH_SHORT).show();
-                }
                 else if (rating3 == -1) {
                     Snackbar.make(rootLayout,"Debes completar toda la evaluación",Snackbar.LENGTH_SHORT).show();
                 }
@@ -333,7 +330,6 @@ public class Evaluation1Fragment extends Fragment {
                     companyRef.child(post_key).child("Job Profile").child(profile_id).child("Evaluation").child("Manager Update").child("time_last_update").setValue(saveCurrentTime);
 
                     Toasty.success(getActivity(), "Registrado", Toast.LENGTH_LONG).show();
-
 
                 }
 

@@ -757,6 +757,17 @@
                 android:layout_height="wrap_content"/>
 
             <Button
+                android:id="@+id/btnBusinessModel"
+                android:padding="8dp"
+                android:text="Modelo del Negocio"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:background="@drawable/gray_button_style"
+                android:drawableStart="@drawable/icono_ventas128"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
                 android:id="@+id/btnIndustryInformation"
                 android:padding="8dp"
                 android:text="Información del Sector o Industria"

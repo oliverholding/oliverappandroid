@@ -1,0 +1,1154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CareManager.BlancedScoreCard.KeyIndex.KeyIndexActivity">
+
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewTitle"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Indicadores Clave:"
+                        android:textSize="18sp"
+                        android:layout_margin="4dp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Te mostramos un resumen de los indicadores clave o KPI que estableciste para cada objectivo."
+                        android:layout_margin="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:src="@color/colorGradientCenterRed"
+                            android:layout_margin="4dp"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"/>
+
+                        <TextView
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold"
+                            android:layout_weight="1"
+                            android:text="Aprendizaje y Crecimiento"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Indicador"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Fórmula"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtIndexName1"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:text="-"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtIndexFormula1"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_margin="0dp"
+                        android:background="@color/colorGradientCenterRed"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtIndexName2"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtIndexFormula2"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_margin="0dp"
+                        android:background="@color/colorGradientCenterRed"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtIndexName3"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtIndexFormula3"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_margin="0dp"
+                        android:background="@color/colorGradientCenterRed"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtIndexName4"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtIndexFormula4"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_margin="0dp"
+                        android:background="@color/colorGradientCenterRed"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtIndexName5"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtIndexFormula5"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_margin="0dp"
+                        android:background="@color/colorGradientCenterRed"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtIndexName6"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtIndexFormula6"
+                            android:text="-"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:src="@color/colorGradientCenterRed"
+                            android:layout_margin="4dp"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"/>
+
+                        <TextView
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold"
+                            android:layout_weight="1"
+                            android:text="Procesos Internos"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Indicador"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Fórmula"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtIndexName7"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:text="-"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtIndexFormula7"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_margin="0dp"
+                        android:background="@color/colorGradientCenterRed"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtIndexName8"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtIndexFormula8"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_margin="0dp"
+                        android:background="@color/colorGradientCenterRed"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtIndexName9"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtIndexFormula9"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_margin="0dp"
+                        android:background="@color/colorGradientCenterRed"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtIndexName10"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtIndexFormula10"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_margin="0dp"
+                        android:background="@color/colorGradientCenterRed"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtIndexName11"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtIndexFormula11"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_margin="0dp"
+                        android:background="@color/colorGradientCenterRed"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtIndexName12"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtIndexFormula12"
+                            android:text="-"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:src="@color/colorGradientCenterRed"
+                            android:layout_margin="4dp"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"/>
+
+                        <TextView
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold"
+                            android:layout_weight="1"
+                            android:text="Clientes"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Indicador"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Fórmula"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtIndexName13"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:text="-"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtIndexFormula13"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_margin="0dp"
+                        android:background="@color/colorGradientCenterRed"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtIndexName14"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtIndexFormula14"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_margin="0dp"
+                        android:background="@color/colorGradientCenterRed"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtIndexName15"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtIndexFormula15"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_margin="0dp"
+                        android:background="@color/colorGradientCenterRed"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtIndexName16"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtIndexFormula16"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_margin="0dp"
+                        android:background="@color/colorGradientCenterRed"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtIndexName17"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtIndexFormula17"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_margin="0dp"
+                        android:background="@color/colorGradientCenterRed"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtIndexName18"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtIndexFormula18"
+                            android:text="-"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:src="@color/colorGradientCenterRed"
+                            android:layout_margin="4dp"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"/>
+
+                        <TextView
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold"
+                            android:layout_weight="1"
+                            android:text="Clientes"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Indicador"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Fórmula"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtIndexName19"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:text="-"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtIndexFormula19"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_margin="0dp"
+                        android:background="@color/colorGradientCenterRed"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtIndexName20"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtIndexFormula20"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_margin="0dp"
+                        android:background="@color/colorGradientCenterRed"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtIndexName21"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtIndexFormula21"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_margin="0dp"
+                        android:background="@color/colorGradientCenterRed"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtIndexName22"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtIndexFormula22"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_margin="0dp"
+                        android:background="@color/colorGradientCenterRed"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtIndexName23"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtIndexFormula23"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_margin="0dp"
+                        android:background="@color/colorGradientCenterRed"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtIndexName24"
+                            android:layout_margin="4dp"
+                            android:text="-"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtIndexFormula24"
+                            android:text="-"
+                            android:layout_margin="4dp"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:layout_weight="1.5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

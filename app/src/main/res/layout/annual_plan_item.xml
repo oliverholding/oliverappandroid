@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView app:cardElevation="8dp"
+    app:cardCornerRadius="8dp"
+    android:layout_margin="8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_margin="8dp"
+                android:src="@color/colorGradientCenterRed"
+                android:layout_weight="0.2"
+                android:layout_width="0dp"
+                android:layout_height="50dp"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txtManagementArea"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:text="Área de Gestión: "
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <View
+                    android:layout_margin="4dp"
+                    android:background="@color/colorGradientCenterRed"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <TextView
+                    android:id="@+id/txtManagementType"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="Tipo de Gestión: "
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtDescription"
+                    android:layout_margin="4dp"
+                    android:text="Descripción: "
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <View
+                    android:layout_margin="4dp"
+                    android:background="@color/colorGradientCenterRed"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <TextView
+                    android:id="@+id/txtGoal"
+                    android:layout_margin="4dp"
+                    android:textColor="@android:color/black"
+                    android:text="Meta Alcanzada: "
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <Button
+                    android:id="@+id/btnDetails"
+                    android:textColor="@android:color/white"
+                    android:text="VER MÁS DETALLES"
+                    android:background="@drawable/gray_button_style"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
