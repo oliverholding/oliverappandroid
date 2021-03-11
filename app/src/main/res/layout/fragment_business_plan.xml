@@ -722,6 +722,39 @@
                 android:layout_height="wrap_content"/>
 
 
+            <Button
+                android:id="@+id/btnOperationPlan"
+                android:padding="8dp"
+                android:text="Sub-Plan de Producción / Operaciones"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:background="@drawable/gray_button_style"
+                android:drawableStart="@drawable/icono_ventas128"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnHumanResourcesPlan"
+                android:padding="8dp"
+                android:text="Sub-Plan de Recursos Humanos y Administración"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:background="@drawable/gray_button_style"
+                android:drawableStart="@drawable/icono_ventas128"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnFinancialPlan"
+                android:padding="8dp"
+                android:text="Sub-Plan Financiero"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:background="@drawable/gray_button_style"
+                android:drawableStart="@drawable/icono_ventas128"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
 
         </LinearLayout>
 

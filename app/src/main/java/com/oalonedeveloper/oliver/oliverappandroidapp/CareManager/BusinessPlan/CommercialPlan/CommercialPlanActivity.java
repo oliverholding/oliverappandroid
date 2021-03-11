@@ -3,6 +3,7 @@ package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessPlan.
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -22,6 +23,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.hsalf.smileyrating.SmileyRating;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessPlan.OperationPlan.OperationPlanActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirection.Vision.VisionActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
@@ -33,10 +35,11 @@ public class CommercialPlanActivity extends AppCompatActivity {
 
     DatabaseReference companyRef;
     String post_key;
-    TextView txtSegment1,txtSegment2,txtSegment3,txtProfileSegment1,txtProfileSegment2,txtProfileSegment3;
-    ImageView btnSegment1,btnSegment2,btnSegment3,btnCompany1,btnCompany2,btnCompany3,btnCompany4;
+    TextView txtSegment1,txtSegment2,txtSegment3,txtProfileSegment1,txtProfileSegment2,txtProfileSegment3,txtStrategy;
+    ImageView btnSegment1,btnSegment2,btnSegment3,btnCompany1,btnCompany2,btnCompany3,btnCompany4,btnStrategy;
     TextView item1_1,item1_2,item1_3,item1_4,item2_1,item2_2,item2_3,item2_4,item3_1,item3_2,item3_3,item3_4,item4_1,item4_2,item4_3,item4_4,item5_1,item5_2,item5_3,item5_4,item6_1,item6_2,item6_3,item6_4,item7_1,item7_2,item7_3,item7_4;
     int sum1,sum2,sum3,sum4,points_db_1,points_db_2,points_db_3,points_db_4;
+    Button btnNext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +99,11 @@ public class CommercialPlanActivity extends AppCompatActivity {
         item7_3 = findViewById(R.id.item7_3);
         item7_4 = findViewById(R.id.item7_4);
 
+        btnStrategy = findViewById(R.id.btnStrategy);
+        txtStrategy = findViewById(R.id.txtStrategy);
+
+        btnNext = findViewById(R.id.btnNext);
+
 
         companyRef.child(post_key).child("Business Plan").child("Commercial Plan").child("item_1").addValueEventListener(new ValueEventListener() {
             @Override
@@ -152,7 +160,6 @@ public class CommercialPlanActivity extends AppCompatActivity {
 
             }
         });
-
 
         companyRef.child(post_key).child("Business Plan").child("Commercial Plan").child("Evaluation").child("company_1").addValueEventListener(new ValueEventListener() {
             @Override
@@ -758,6 +765,21 @@ public class CommercialPlanActivity extends AppCompatActivity {
             }
         });
 
+        companyRef.child(post_key).child("Business Plan").child("Commercial Plan").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.hasChild("strategy")) {
+                    String strategy = dataSnapshot.child("strategy").getValue().toString();
+                    txtStrategy.setText(strategy);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
 
         btnSegment1.setOnClickListener(new View.OnClickListener() {
@@ -795,7 +817,7 @@ public class CommercialPlanActivity extends AppCompatActivity {
                 
             }
         });
-        btnCompany1.setOnClickListener(new View.OnClickListener() {
+        btnCompany2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String path = "company_2";
@@ -804,7 +826,7 @@ public class CommercialPlanActivity extends AppCompatActivity {
 
             }
         });
-        btnCompany1.setOnClickListener(new View.OnClickListener() {
+        btnCompany3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String path = "company_3";
@@ -813,7 +835,7 @@ public class CommercialPlanActivity extends AppCompatActivity {
 
             }
         });
-        btnCompany1.setOnClickListener(new View.OnClickListener() {
+        btnCompany4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String path = "company_4";
@@ -822,6 +844,56 @@ public class CommercialPlanActivity extends AppCompatActivity {
 
             }
         });
+
+        btnStrategy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showSetStrategyDialog();
+            }
+        });
+
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CommercialPlanActivity.this, OperationPlanActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void showSetStrategyDialog() {
+        final AlertDialog dialog = new AlertDialog.Builder(this).create();
+
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View finance_method = inflater.inflate(R.layout.strategy_commercial_plan_dialog,null);
+
+        final EditText edtStrategy;
+        Button btnFinish;
+        final LinearLayout rootLayout;
+
+        edtStrategy = finance_method.findViewById(R.id.edtStrategy);
+        btnFinish = finance_method.findViewById(R.id.btnFinish);
+        rootLayout = finance_method.findViewById(R.id.rootLayout);
+
+        btnFinish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (TextUtils.isEmpty(edtStrategy.getText().toString())) {
+                    Snackbar.make(rootLayout, "Debes ingresar una estrategia", Snackbar.LENGTH_SHORT).show();
+                } else {
+                    companyRef.child(post_key).child("Business Plan").child("Commercial Plan").child("strategy").setValue(edtStrategy.getText().toString());
+                    Toasty.success(CommercialPlanActivity.this, "Registrado", Toast.LENGTH_LONG).show();
+                    dialog.dismiss();
+                }
+
+            }
+        });
+
+
+
+        dialog.setView(finance_method);
+        dialog.show();
     }
 
     private void showCompanyScoreDialog(final String path) {

@@ -773,6 +773,64 @@
 
             </androidx.cardview.widget.CardView>
 
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold"
+                            android:text="Estrategia"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:id="@+id/btnStrategy"
+                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="20dp"/>
+
+                    </LinearLayout>
+
+                   <TextView
+                       android:id="@+id/txtStrategy"
+                       android:layout_margin="8dp"
+                       android:textColor="@android:color/black"
+                       android:text="Sin Información"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btnNext"
+                android:text="IR A Sub-Plan de Producción / Operaciones ->"
+                android:textColor="@android:color/white"
+                android:background="@drawable/gray_button_style"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
         </LinearLayout>
 
     </ScrollView>
