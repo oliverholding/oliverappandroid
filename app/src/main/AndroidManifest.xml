@@ -21,7 +21,9 @@
         android:roundIcon="@drawable/oliver_android_icon_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CareManager.BusinessPlan.FinancialPlan.FinancialPlanActivity"></activity>
+        <activity android:name=".CareManager.BusinessPlan.ContingencyPlan.ContingencyPlanActivity"></activity>
+        <activity android:name=".CareManager.BusinessPlan.ExecutiveSumary.ExecutiveSumaryActivity" />
+        <activity android:name=".CareManager.BusinessPlan.FinancialPlan.FinancialPlanActivity" />
         <activity android:name=".CareManager.BusinessPlan.HumanResourcesPlan.HumanResourcesPlanActivity" />
         <activity android:name=".CareManager.BusinessPlan.OperationPlan.OperationPlanActivity" />
         <activity android:name=".CareManager.BlancedScoreCard.AnnualOperativePlan.AnnualOperativePlanActivity" />

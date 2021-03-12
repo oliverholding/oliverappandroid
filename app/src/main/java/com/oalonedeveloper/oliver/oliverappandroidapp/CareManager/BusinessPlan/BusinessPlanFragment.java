@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessPlan.CommercialPlan.CommercialPlanActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessPlan.ContingencyPlan.ContingencyPlanActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessPlan.ExecutiveSumary.ExecutiveSumaryActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessPlan.FinancialPlan.FinancialPlanActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessPlan.HumanResourcesPlan.HumanResourcesPlanActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessPlan.OperationPlan.OperationPlanActivity;
@@ -20,7 +22,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class BusinessPlanFragment extends Fragment {
 
-    Button btnCommercialPlan,btnOperationPlan,btnHumanResourcesPlan,btnFinancialPlan;
+    Button btnCommercialPlan,btnOperationPlan,btnHumanResourcesPlan,btnFinancialPlan,btnExecutivePlan,btnContingencyPlan;
     String post_key;
 
 
@@ -37,6 +39,8 @@ public class BusinessPlanFragment extends Fragment {
         btnOperationPlan = view.findViewById(R.id.btnOperationPlan);
         btnHumanResourcesPlan = view.findViewById(R.id.btnHumanResourcesPlan);
         btnFinancialPlan = view.findViewById(R.id.btnFinancialPlan);
+        btnExecutivePlan = view.findViewById(R.id.btnExecutivePlan);
+        btnContingencyPlan = view.findViewById(R.id.btnContingencyPlan);
         btnCommercialPlan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,6 +69,22 @@ public class BusinessPlanFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), FinancialPlanActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+        btnExecutivePlan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ExecutiveSumaryActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+        btnContingencyPlan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ContingencyPlanActivity.class);
                 intent.putExtra("post_key", post_key);
                 startActivity(intent);
             }

@@ -4,10 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:id="@+id/rootLayout"
     tools:context=".PhoneAuthActivity">
 
+
+    <com.scwang.wave.MultiWaveHeader
+        android:id="@+id/waveHeader"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:mwhWaves="
+            70,25,1.4,1.4,-26
+            100,5,1.4,1.2,15
+            420,0,1.15,1,-10
+            520,10,1.7,1.5,20
+            220,0,1,1,-15"/>
 
 
     <LinearLayout

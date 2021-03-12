@@ -755,6 +755,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
+            <Button
+                android:id="@+id/btnExecutivePlan"
+                android:padding="8dp"
+                android:text="Resumen Ejecutivo"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:background="@drawable/gray_button_style"
+                android:drawableStart="@drawable/icono_ventas128"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnContingencyPlan"
+                android:padding="8dp"
+                android:text="Plan de Contingencia y de Continuidad del Negocio"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:background="@drawable/gray_button_style"
+                android:drawableStart="@drawable/icono_ventas128"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
 
         </LinearLayout>
 

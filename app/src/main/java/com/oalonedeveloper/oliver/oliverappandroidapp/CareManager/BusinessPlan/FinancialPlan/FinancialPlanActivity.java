@@ -2525,9 +2525,9 @@ public class FinancialPlanActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                companyRef.child(post_key).child("Business Plan").child("Financial Plan").child("Index").child(path).child("index_name").child(edtName.getText().toString());
-                companyRef.child(post_key).child("Business Plan").child("Financial Plan").child("Index").child(path).child("index_formula").child(edFormula.getText().toString());
-                companyRef.child(post_key).child("Business Plan").child("Financial Plan").child("Index").child(path).child("index_result").child(edtResult.getText().toString());
+                companyRef.child(post_key).child("Business Plan").child("Financial Plan").child("Index").child(path).child("index_name").setValue(edtName.getText().toString());
+                companyRef.child(post_key).child("Business Plan").child("Financial Plan").child("Index").child(path).child("index_formula").setValue(edFormula.getText().toString());
+                companyRef.child(post_key).child("Business Plan").child("Financial Plan").child("Index").child(path).child("index_result").setValue(edtResult.getText().toString());
                 Toasty.success(FinancialPlanActivity.this, "Registrado", Toast.LENGTH_LONG).show();
                 dialog.dismiss();
             }
