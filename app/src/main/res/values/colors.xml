@@ -23,7 +23,9 @@
     <color name="balancedScoreCard2">#FFC107</color>
     <color name="balancedScoreCard3">#009688</color>
 
-    <color name="blue1">#0000ff</color>
-    <color name="blue2">#0093ff</color>
+    <color name="blue1">#001de9</color>
+    <color name="blue2">#00b1f7</color>
+
+    <color name="orange1">#FF6E2C</color>
 
 </resources>

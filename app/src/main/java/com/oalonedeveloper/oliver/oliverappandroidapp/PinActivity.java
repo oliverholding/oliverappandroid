@@ -114,7 +114,8 @@ public class PinActivity extends AppCompatActivity {
                 if (edtPin.getText().toString().equals(pin))
                 {
                     btnConfirmPin.setEnabled(false);
-                    Intent intent = new Intent(PinActivity.this, OliverAppActivity.class);
+                    //Intent intent = new Intent(PinActivity.this, OliverAppActivity.class);
+                    Intent intent = new Intent(PinActivity.this, PlatformSelectionActivity.class);
                     startActivity(intent);
                     finish();
                 }

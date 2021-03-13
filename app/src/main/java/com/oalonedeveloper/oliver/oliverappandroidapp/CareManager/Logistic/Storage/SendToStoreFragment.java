@@ -191,7 +191,7 @@ public class SendToStoreFragment extends Fragment {
                                         final double stock_to_transfer = Double.parseDouble(edtQuantity.getText().toString());
 
                                         if (current_stock < stock_to_transfer) {
-                                            Snackbar.make(rootLayout, "Este monto sobrepasa tu stock actual", Snackbar.LENGTH_LONG).show();
+                                            Snackbar.make(rootLayout, "Este monto sobrepasa tu stock", Snackbar.LENGTH_LONG).show();
                                         } else {
 
                                             companyRef.child(post_key).child("My Products").child(postKey).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -429,7 +429,7 @@ public class SendToStoreFragment extends Fragment {
                                 final double stock_to_transfer = Double.parseDouble(edtQuantity.getText().toString());
 
                                 if (current_stock < stock_to_transfer) {
-                                    Snackbar.make(rootLayout, "Este monto sobrepasa tu stock actual", Snackbar.LENGTH_LONG).show();
+                                    Snackbar.make(rootLayout, "Este monto sobrepasa tu stock", Snackbar.LENGTH_LONG).show();
                                 } else {
 
                                     companyRef.child(post_key).child("Warehouses").child(postKey).child("Products").child(product_key).addListenerForSingleValueEvent(new ValueEventListener() {

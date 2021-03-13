@@ -16,12 +16,15 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/oliver_android_icon_app"
+        android:icon="@drawable/oliver_app_white_title"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/oliver_android_icon_app"
+        android:roundIcon="@drawable/oliver_app_white_title"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CareManager.BusinessPlan.ContingencyPlan.ContingencyPlanActivity"></activity>
+        <activity android:name=".CareManager.Simulators.CostPriceSimulator.CostPriceSimulatorActivity"></activity>
+        <activity android:name=".CareManager.Simulators.SimulatorsActivity" />
+        <activity android:name=".PlatformSelectionActivity" />
+        <activity android:name=".CareManager.BusinessPlan.ContingencyPlan.ContingencyPlanActivity" />
         <activity android:name=".CareManager.BusinessPlan.ExecutiveSumary.ExecutiveSumaryActivity" />
         <activity android:name=".CareManager.BusinessPlan.FinancialPlan.FinancialPlanActivity" />
         <activity android:name=".CareManager.BusinessPlan.HumanResourcesPlan.HumanResourcesPlanActivity" />

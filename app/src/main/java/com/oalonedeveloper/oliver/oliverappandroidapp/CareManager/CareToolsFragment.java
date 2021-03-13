@@ -33,7 +33,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class CareToolsFragment extends Fragment {
 
-    CardView cardViewModule1,cardViewModule2,cardViewModule3,cardViewModule4,cardViewModule5,cardViewModule6,cardViewModule7,cardViewModule8,cardViewModule9,cardViewModule10,cardViewModule11,cardViewModule12,cardViewModule13,cardViewModule14,cardViewModule15,cardViewModule16;
+    CardView cardViewModule1,cardViewModule2,cardViewModule3,cardViewModule4,cardViewModule5,cardViewModule6,cardViewModule7,cardViewModule8,cardViewModule9,cardViewModule10,cardViewModule11,cardViewModule12,cardViewModule13,cardViewModule14,cardViewModule15,cardViewModule16,cardViewModule18;
     String post_key;
 
 
@@ -61,6 +61,7 @@ public class CareToolsFragment extends Fragment {
         cardViewModule14 = view.findViewById(R.id.cardViewModule14);
         cardViewModule15 = view.findViewById(R.id.cardViewModule15);
         cardViewModule16 = view.findViewById(R.id.cardViewModule16);
+        cardViewModule18 = view.findViewById(R.id.cardViewModule18);
 
         cardViewModule1.setOnClickListener(new View.OnClickListener() {
             @Override
