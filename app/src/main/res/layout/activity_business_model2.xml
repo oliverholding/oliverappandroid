@@ -18,36 +18,61 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardViewTitle"
-                app:cardCornerRadius="8dp"
                 app:cardElevation="8dp"
-                android:layout_margin="16dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="12dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:padding="8dp"
                     android:orientation="vertical"
+                    android:padding="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <TextView
-                        android:text="Modelo del Negocio"
-                        android:textSize="18sp"
-                        android:layout_margin="4dp"
-                        android:textColor="@android:color/black"
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content">
 
-                    <TextView
-                        android:text="Completa las siguientes preguntas para armar tu modelo de negocio"
-                        android:layout_margin="4dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/modelos_negocios"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"/>
 
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:textSize="16sp"
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="Modelo del Negocio"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:textSize="12sp"
+                                android:layout_margin="4dp"
+                                android:text="Completa las siguientes preguntas para armar tu modelo de negocio"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
 
             <androidx.cardview.widget.CardView
                 app:cardElevation="8dp"
@@ -62,10 +87,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_margin="4dp"
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/penetracion_mercado"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
 
@@ -94,7 +119,7 @@
                             <ImageView
                                 android:id="@+id/btnQuestion1"
                                 android:layout_margin="8dp"
-                                android:src="@drawable/edit_pencil_vector_asset"
+                                android:src="@drawable/editar"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="20dp"/>
@@ -128,10 +153,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_margin="4dp"
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/caracteristicas_producto"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
 
@@ -160,7 +185,7 @@
                             <ImageView
                                 android:id="@+id/btnQuestion2"
                                 android:layout_margin="8dp"
-                                android:src="@drawable/edit_pencil_vector_asset"
+                                android:src="@drawable/editar"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="20dp"/>
@@ -194,10 +219,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_margin="4dp"
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/mis_clientes"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
 
@@ -226,7 +251,7 @@
                             <ImageView
                                 android:id="@+id/btnQuestion3"
                                 android:layout_margin="8dp"
-                                android:src="@drawable/edit_pencil_vector_asset"
+                                android:src="@drawable/editar"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="20dp"/>
@@ -291,10 +316,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_margin="4dp"
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/agregar_cliente"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
 
@@ -323,7 +348,7 @@
                             <ImageView
                                 android:id="@+id/btnQuestion4"
                                 android:layout_margin="8dp"
-                                android:src="@drawable/edit_pencil_vector_asset"
+                                android:src="@drawable/editar"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="20dp"/>
@@ -360,7 +385,7 @@
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_margin="4dp"
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/cliente_potencial"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
 
@@ -389,7 +414,7 @@
                             <ImageView
                                 android:id="@+id/btnQuestion5"
                                 android:layout_margin="8dp"
-                                android:src="@drawable/edit_pencil_vector_asset"
+                                android:src="@drawable/editar"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="20dp"/>
@@ -423,10 +448,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_margin="4dp"
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/satisfaccion_cliente"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
 
@@ -455,7 +480,7 @@
                             <ImageView
                                 android:id="@+id/btnQuestion6"
                                 android:layout_margin="8dp"
-                                android:src="@drawable/edit_pencil_vector_asset"
+                                android:src="@drawable/editar"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="20dp"/>
@@ -489,10 +514,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_margin="4dp"
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/desarrollo_nuevos_mercados"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
 
@@ -521,7 +546,7 @@
                             <ImageView
                                 android:id="@+id/btnQuestion7"
                                 android:layout_margin="8dp"
-                                android:src="@drawable/edit_pencil_vector_asset"
+                                android:src="@drawable/editar"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="20dp"/>
@@ -555,10 +580,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_margin="4dp"
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/ingresos"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
 
@@ -587,7 +612,7 @@
                             <ImageView
                                 android:id="@+id/btnQuestion8"
                                 android:layout_margin="8dp"
-                                android:src="@drawable/edit_pencil_vector_asset"
+                                android:src="@drawable/editar"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="20dp"/>
@@ -621,10 +646,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_margin="4dp"
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/responsabilidad_social"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
 
@@ -653,7 +678,7 @@
                             <ImageView
                                 android:id="@+id/btnQuestion9"
                                 android:layout_margin="8dp"
-                                android:src="@drawable/edit_pencil_vector_asset"
+                                android:src="@drawable/editar"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="20dp"/>

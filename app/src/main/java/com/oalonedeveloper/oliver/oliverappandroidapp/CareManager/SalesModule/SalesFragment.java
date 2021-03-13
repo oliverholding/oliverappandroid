@@ -11,9 +11,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CommercializationActivity;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CommercializationToolActivity;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.ProductMarketMatrix.ProductMarketMatrixActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.CustomerSchedule.CustomerScheduleActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.MySellers.MySellersActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.SalesArgument.SalesArgumentActivity;

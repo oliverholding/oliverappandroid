@@ -59,7 +59,6 @@
         <activity android:name=".CareManager.PeopleManagement.Evaluation360.Evaluation360Activity" />
         <activity android:name=".CareManager.FinancialManagement.Budget.BudgetActivity" />
         <activity android:name=".CareManager.FinancialManagement.AccountsToPaid.AccountsToPaidActivity" />
-        <activity android:name=".CareManager.FinancialManagement.AccountsNoPaid.AccountsNoPaidActivity" />
         <activity android:name=".CareManager.FinancialManagement.CashAndBanks.CashAndBanksActivity" />
         <activity android:name=".CareManager.FinancialManagement.FixedAssets.FixedAssetsActivity" />
         <activity android:name=".CareManager.FinancialManagement.FinanacialManagementActivity" />
@@ -121,7 +120,6 @@
         <activity android:name=".CareManager.Commercialization.Dashboards.DashboardsActivity" />
         <activity android:name=".CareManager.Commercialization.NewMatrix10.NewMatrix10Activity" />
         <activity android:name=".CareManager.SalesModule.SalesTutorialActivity" />
-        <activity android:name=".CareManager.Commercialization.CommercializationToturialActivity" />
         <activity android:name=".CareManager.Commercialization.BillsIssuing.CreateInvoiceActivity" />
         <activity android:name=".CareManager.Commercialization.CustomerSupport.CustomerSuportActivity" />
         <activity android:name=".CareManager.Commercialization.CreditsAndTreasury.CreditAndTreasuryActivity" />
@@ -134,7 +132,6 @@
         <activity android:name=".CareManager.Commercialization.ProductMarketMatrix.ProductMarketMatrixActivity" />
         <activity android:name=".CareManager.SalesModule.SalesToolsActivity" />
         <activity android:name=".CareManager.SalesModule.SalesModuleActivity" />
-        <activity android:name=".CareManager.Commercialization.CommercializationToolActivity" />
         <activity android:name=".CareManager.Commercialization.CommercializationActivity" />
         <activity android:name=".CareManager.NewProductsOrServices.NewProductsOrServicesToolsActivity" />
         <activity android:name=".CareManager.NewProductsOrServices.NewProductsOrServicesActivity" />

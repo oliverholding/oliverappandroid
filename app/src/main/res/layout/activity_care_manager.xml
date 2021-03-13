@@ -6,88 +6,218 @@
     android:layout_height="match_parent"
     tools:context=".CareManager.CareManagerActivity">
 
-    <LinearLayout
-        android:id="@+id/appBar"
+    <RelativeLayout
+        android:id="@+id/topLayout"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="170dp">
+
+        <ImageView
+            android:src="@drawable/gray_gradient_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
         <LinearLayout
-            android:background="@drawable/gradient_start2"
+            android:padding="16dp"
             android:gravity="center"
-            android:padding="12dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:src="@drawable/care_peru"
+                android:layout_margin="8dp"
+                android:src="@color/colorGradientCenterRed"
+                android:layout_weight="0.4"
+                android:layout_width="0dp"
+                android:layout_height="80dp"/>
+
+            <LinearLayout
+                android:padding="8dp"
                 android:layout_weight="1"
+                android:layout_marginEnd="20dp"
+                android:orientation="vertical"
                 android:layout_width="0dp"
-                android:layout_height="35dp"/>
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:gravity="center_vertical"
-                android:textSize="18sp"
-                android:textColor="@android:color/white"
-                android:text="Oliver Negocios - CARE"
-                android:layout_weight="4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_margin="8dp"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:gravity="end"
+                    android:text="OLIVER BANK"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
-            <ImageView
-                android:id="@+id/btnMenu"
-                android:src="@drawable/open_menu_icon"
-                android:scaleType="centerInside"
-                android:padding="4dp"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="35dp"/>
+                <TextView
+                    android:gravity="end"
+                    android:layout_margin="8dp"
+                    android:textColor="@android:color/white"
+                    android:text="100123123"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_marginEnd="4dp"
+                        android:text="Exp: "
+                        android:textColor="@android:color/white"
+                        android:layout_weight="0.6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginEnd="4dp"
+                        android:text="1"
+                        android:gravity="center"
+                        android:textColor="@android:color/white"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <com.xw.repo.BubbleSeekBar
+                        android:clickable="false"
+                        android:id="@+id/seekBarPen"
+                        android:layout_weight="3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:bsb_track_color="@color/gray2"
+                        app:bsb_bubble_color="@color/gray1"
+                        app:bsb_bubble_text_color="@android:color/white"
+                        app:bsb_second_track_color="@color/orange1"
+                        app:bsb_thumb_color="@android:color/transparent"
+                        app:bsb_max="100"
+                        app:bsb_min="0"
+                        app:bsb_second_track_size="8dp"
+                        app:bsb_progress="60"
+                        app:bsb_section_count="0"
+                        app:bsb_track_size="8dp"
+                        app:bsb_show_progress_in_float="false"
+                        app:bsb_show_section_mark="false"
+                        app:bsb_show_section_text="false"
+                        app:bsb_show_thumb_text="false"
+                        app:bsb_always_show_bubble="false"
+                        />
+
+                    <TextView
+                        android:layout_marginEnd="4dp"
+                        android:text="2"
+                        android:gravity="center"
+                        android:textColor="@android:color/white"
+                        android:layout_weight="0.3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
+    </RelativeLayout>
 
-    <com.google.android.material.tabs.TabLayout
-        android:layout_below="@+id/appBar"
-        android:id="@+id/tabLayout"
-        android:background="@drawable/gradient_start2"
-        app:tabTextColor="@android:color/white"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab1"
-            android:text="RESUMEN"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab2"
-            android:text="HERRAMIENTAS"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab3"
-            android:text="MIS LOGROS"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-
-    </com.google.android.material.tabs.TabLayout>
-
-    <androidx.viewpager.widget.ViewPager
-        android:layout_below="@id/tabLayout"
-        android:id="@+id/container"
+    <androidx.cardview.widget.CardView
+        android:layout_below="@+id/topLayout"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp"
+        android:layout_margin="18dp"
+        android:layout_centerInParent="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </androidx.viewpager.widget.ViewPager>
+        <LinearLayout
+            android:padding="16dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <HorizontalScrollView
+                android:scrollbars="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_margin="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:padding="4dp"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:textColor="@color/orange1"
+                                android:gravity="center"
+                                android:layout_margin="4dp"
+                                android:text="Resumen"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <View
+                                android:layout_margin="4dp"
+                                android:background="@color/orange1"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"/>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_margin="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:padding="4dp"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:gravity="center"
+                                android:layout_margin="4dp"
+                                android:text="Módulos"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <View
+                                android:layout_margin="4dp"
+                                android:background="@color/gray2"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"/>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <FrameLayout
+                android:id="@+id/contentFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
 
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
 
 </RelativeLayout>

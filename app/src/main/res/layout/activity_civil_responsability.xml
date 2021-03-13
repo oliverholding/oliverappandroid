@@ -19,36 +19,61 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardViewTitle"
-                app:cardCornerRadius="8dp"
                 app:cardElevation="8dp"
-                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="12dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:padding="8dp"
                     android:orientation="vertical"
+                    android:padding="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <TextView
-                        android:text="Responsabilidad Civil y Penal"
-                        android:textSize="18sp"
-                        android:layout_margin="4dp"
-                        android:textColor="@android:color/black"
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content">
 
-                    <TextView
-                        android:text="Lo que debes de tener en cuenta para cumplir tus oblogaciones civiles y penales o las de tu comercio/negocio/empresa"
-                        android:layout_margin="4dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/responsabilidad_civil_penal"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"/>
 
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:textSize="16sp"
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="Responsabilidad Civil y Penal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:textSize="12sp"
+                                android:layout_margin="4dp"
+                                android:text="Lo que debes de tener en cuenta para cumplir tus oblogaciones civiles y penales o las de tu comercio/negocio/empresa"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
 
             <androidx.cardview.widget.CardView
                 app:cardCornerRadius="8dp"
@@ -64,8 +89,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:src="@color/colorGradientCenterRed"
+                    <ImageView
+                        android:src="@drawable/responsabilidad_civil_penal"
                         android:layout_weight="0.3"
                         android:layout_width="0dp"
                         android:layout_height="40dp"/>
@@ -147,7 +172,7 @@
                             android:text="MÁS DETALLES"
                             android:textColor="@android:color/white"
                             android:layout_margin="8dp"
-                            android:background="@drawable/gray_button_style"
+                            android:background="@drawable/orange_button_style_ripple"
                             android:layout_width="match_parent"
                             android:layout_height="35dp"/>
 
@@ -174,7 +199,7 @@
                     android:layout_height="wrap_content">
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/responsabilidad_civil_penal"
                         android:layout_weight="0.3"
                         android:layout_width="0dp"
                         android:layout_height="40dp"/>
@@ -256,7 +281,7 @@
                             android:text="MÁS DETALLES"
                             android:textColor="@android:color/white"
                             android:layout_margin="8dp"
-                            android:background="@drawable/gray_button_style"
+                            android:background="@drawable/orange_button_style_ripple"
                             android:layout_width="match_parent"
                             android:layout_height="35dp"/>
 
@@ -283,7 +308,7 @@
                     android:layout_height="wrap_content">
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/responsabilidad_civil_penal"
                         android:layout_weight="0.3"
                         android:layout_width="0dp"
                         android:layout_height="40dp"/>
@@ -365,7 +390,7 @@
                             android:text="MÁS DETALLES"
                             android:textColor="@android:color/white"
                             android:layout_margin="8dp"
-                            android:background="@drawable/gray_button_style"
+                            android:background="@drawable/orange_button_style_ripple"
                             android:layout_width="match_parent"
                             android:layout_height="35dp"/>
 
@@ -392,7 +417,7 @@
                     android:layout_height="wrap_content">
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/responsabilidad_civil_penal"
                         android:layout_weight="0.3"
                         android:layout_width="0dp"
                         android:layout_height="40dp"/>
@@ -474,7 +499,7 @@
                             android:text="MÁS DETALLES"
                             android:textColor="@android:color/white"
                             android:layout_margin="8dp"
-                            android:background="@drawable/gray_button_style"
+                            android:background="@drawable/orange_button_style_ripple"
                             android:layout_width="match_parent"
                             android:layout_height="35dp"/>
 
@@ -501,7 +526,7 @@
                     android:layout_height="wrap_content">
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/responsabilidad_civil_penal"
                         android:layout_weight="0.3"
                         android:layout_width="0dp"
                         android:layout_height="40dp"/>
@@ -583,7 +608,7 @@
                             android:text="MÁS DETALLES"
                             android:textColor="@android:color/white"
                             android:layout_margin="8dp"
-                            android:background="@drawable/gray_button_style"
+                            android:background="@drawable/orange_button_style_ripple"
                             android:layout_width="match_parent"
                             android:layout_height="35dp"/>
 
@@ -610,7 +635,7 @@
                     android:layout_height="wrap_content">
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/responsabilidad_civil_penal"
                         android:layout_weight="0.3"
                         android:layout_width="0dp"
                         android:layout_height="40dp"/>
@@ -692,7 +717,7 @@
                             android:text="MÁS DETALLES"
                             android:textColor="@android:color/white"
                             android:layout_margin="8dp"
-                            android:background="@drawable/gray_button_style"
+                            android:background="@drawable/orange_button_style_ripple"
                             android:layout_width="match_parent"
                             android:layout_height="35dp"/>
 
@@ -719,7 +744,7 @@
                     android:layout_height="wrap_content">
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/responsabilidad_civil_penal"
                         android:layout_weight="0.3"
                         android:layout_width="0dp"
                         android:layout_height="40dp"/>
@@ -801,7 +826,7 @@
                             android:text="MÁS DETALLES"
                             android:textColor="@android:color/white"
                             android:layout_margin="8dp"
-                            android:background="@drawable/gray_button_style"
+                            android:background="@drawable/orange_button_style_ripple"
                             android:layout_width="match_parent"
                             android:layout_height="35dp"/>
 
@@ -828,7 +853,7 @@
                     android:layout_height="wrap_content">
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/responsabilidad_civil_penal"
                         android:layout_weight="0.3"
                         android:layout_width="0dp"
                         android:layout_height="40dp"/>
@@ -910,7 +935,7 @@
                             android:text="MÁS DETALLES"
                             android:textColor="@android:color/white"
                             android:layout_margin="8dp"
-                            android:background="@drawable/gray_button_style"
+                            android:background="@drawable/orange_button_style_ripple"
                             android:layout_width="match_parent"
                             android:layout_height="35dp"/>
 
@@ -937,7 +962,7 @@
                     android:layout_height="wrap_content">
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/responsabilidad_civil_penal"
                         android:layout_weight="0.3"
                         android:layout_width="0dp"
                         android:layout_height="40dp"/>

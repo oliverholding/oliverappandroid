@@ -18,36 +18,62 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardViewTitle"
-                app:cardCornerRadius="8dp"
                 app:cardElevation="8dp"
-                android:layout_margin="16dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="12dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:padding="8dp"
                     android:orientation="vertical"
+                    android:padding="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <TextView
-                        android:text="Sub-Plan Comercial:"
-                        android:textSize="18sp"
-                        android:layout_margin="4dp"
-                        android:textColor="@android:color/black"
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content">
 
-                    <TextView
-                        android:text="Crear el Sub Plan Comercial para tu plan de negocios."
-                        android:layout_margin="4dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@color/gray2"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"/>
 
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:textSize="16sp"
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="Sub-Plan Comercial"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:textSize="12sp"
+                                android:layout_margin="4dp"
+                                android:text="Crear el Sub Plan Comercial para tu plan de negocios."
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
+
 
             <androidx.cardview.widget.CardView
                 app:cardCornerRadius="8dp"
@@ -157,12 +183,12 @@
 
                         <ImageView
                             android:id="@+id/btnSegment1"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:gravity="center"
                             android:layout_margin="4dp"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="25dp"/>
 
                     </LinearLayout>
 
@@ -204,12 +230,12 @@
 
                         <ImageView
                             android:id="@+id/btnSegment2"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:gravity="center"
                             android:layout_margin="4dp"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="25dp"/>
 
                     </LinearLayout>
 
@@ -251,12 +277,12 @@
 
                         <ImageView
                             android:id="@+id/btnSegment3"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:gravity="center"
                             android:layout_margin="4dp"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="25dp"/>
 
                     </LinearLayout>
 
@@ -313,7 +339,7 @@
 
                                 <ImageView
                                     android:id="@+id/btnCompany1"
-                                    android:src="@drawable/edit_pencil_vector_asset"
+                                    android:src="@drawable/editar"
                                     android:gravity="center"
                                     android:layout_margin="4dp"
                                     android:layout_width="100dp"
@@ -321,7 +347,7 @@
 
                                 <ImageView
                                     android:id="@+id/btnCompany2"
-                                    android:src="@drawable/edit_pencil_vector_asset"
+                                    android:src="@drawable/editar"
                                     android:gravity="center"
                                     android:layout_margin="4dp"
                                     android:layout_width="100dp"
@@ -329,7 +355,7 @@
 
                                 <ImageView
                                     android:id="@+id/btnCompany3"
-                                    android:src="@drawable/edit_pencil_vector_asset"
+                                    android:src="@drawable/editar"
                                     android:gravity="center"
                                     android:layout_margin="4dp"
                                     android:layout_width="100dp"
@@ -337,7 +363,7 @@
 
                                 <ImageView
                                     android:id="@+id/btnCompany4"
-                                    android:src="@drawable/edit_pencil_vector_asset"
+                                    android:src="@drawable/editar"
                                     android:gravity="center"
                                     android:layout_margin="4dp"
                                     android:layout_width="100dp"
@@ -803,7 +829,7 @@
 
                         <ImageView
                             android:id="@+id/btnStrategy"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
                             android:layout_height="20dp"/>
@@ -824,9 +850,9 @@
 
             <Button
                 android:id="@+id/btnNext"
-                android:text="IR A Sub-Plan de Producción / Operaciones ->"
+                android:text="IR A Sub-Plan de Producción / Operaciones"
                 android:textColor="@android:color/white"
-                android:background="@drawable/gray_button_style"
+                android:background="@drawable/orange_button_style_ripple"
                 android:layout_margin="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>

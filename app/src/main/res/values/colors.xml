@@ -28,4 +28,7 @@
 
     <color name="orange1">#FF6E2C</color>
 
+    <color name="gray1">#47484D</color>
+    <color name="gray2">#B8BEC0</color>
+
 </resources>

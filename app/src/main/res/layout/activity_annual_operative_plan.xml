@@ -8,37 +8,61 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewTitle"
-        app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
-        android:layout_margin="16dp"
+        app:cardCornerRadius="8dp"
+        android:layout_margin="12dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:padding="8dp"
             android:orientation="vertical"
+            android:padding="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:text="Plan Operativo Anual:"
-                android:textSize="18sp"
-                android:layout_margin="4dp"
-                android:textColor="@android:color/black"
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:justificationMode="inter_word"
-                android:text="Con ésta herramienta lograrás realizar las actividades para lograr los resultados que te haz propuesto alcanzar en un año. Con él, tu negocio / empresa / comercio se asegurará que tus proyectos se están ejecutando de acuerdo con los tiempos y los objetivos a cumplir"
-                android:layout_margin="4dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_margin="4dp"
+                    android:src="@color/colorGradientCenterRed"
+                    android:layout_weight="0.2"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"/>
 
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:layout_margin="4dp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:text="Plan Operativo Anual"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:textSize="12sp"
+                        android:layout_margin="4dp"
+                        android:text="Con ésta herramienta lograrás realizar las actividades para lograr los resultados que te haz propuesto alcanzar en un año. Con él, tu negocio / empresa / comercio se asegurará que tus proyectos se están ejecutando de acuerdo con los tiempos y los objetivos a cumplir"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
 
    <androidx.recyclerview.widget.RecyclerView
        android:id="@+id/recyclerView"
@@ -55,7 +79,7 @@
         android:text="REGISTRAR NUEVA META"
         android:textColor="@android:color/white"
         android:layout_margin="8dp"
-        android:background="@drawable/gray_button_style"
+        android:background="@drawable/orange_button_style_ripple"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

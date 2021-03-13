@@ -13,35 +13,62 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardViewTitle"
-            app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
-            android:layout_margin="16dp"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:padding="8dp"
                 android:orientation="vertical"
+                android:padding="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:text="Plan de Contingencia y de Continuidad del Negocio:"
-                    android:textSize="18sp"
-                    android:layout_margin="4dp"
-                    android:textColor="@android:color/black"
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    android:text="Crea estrategias para afrontar las peores situaciones debido a los factores externos."
-                    android:layout_margin="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    <ImageView
+                        android:layout_margin="4dp"
+                        android:src="@color/gray2"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"/>
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textSize="16sp"
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Plan de Contingencia y de Continuidad del Negocio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:layout_margin="4dp"
+                            android:text="Crea estrategias para afrontar las peores situaciones debido a los factores externos."
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
 
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
+
+
 
         <androidx.cardview.widget.CardView
             app:cardCornerRadius="8dp"
@@ -92,7 +119,7 @@
 
                             <ImageView
                                 android:id="@+id/btnEdit1"
-                                android:src="@drawable/edit_pencil_vector_asset"
+                                android:src="@drawable/editar"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="20dp"/>
@@ -165,7 +192,7 @@
 
                             <ImageView
                                 android:id="@+id/btnEdit2"
-                                android:src="@drawable/edit_pencil_vector_asset"
+                                android:src="@drawable/editar"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="20dp"/>
@@ -238,7 +265,7 @@
 
                             <ImageView
                                 android:id="@+id/btnEdit3"
-                                android:src="@drawable/edit_pencil_vector_asset"
+                                android:src="@drawable/editar"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="20dp"/>
@@ -311,7 +338,7 @@
 
                             <ImageView
                                 android:id="@+id/btnEdit4"
-                                android:src="@drawable/edit_pencil_vector_asset"
+                                android:src="@drawable/editar"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="20dp"/>
@@ -384,7 +411,7 @@
 
                             <ImageView
                                 android:id="@+id/btnEdit5"
-                                android:src="@drawable/edit_pencil_vector_asset"
+                                android:src="@drawable/editar"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="20dp"/>
@@ -457,7 +484,7 @@
 
                             <ImageView
                                 android:id="@+id/btnEdit6"
-                                android:src="@drawable/edit_pencil_vector_asset"
+                                android:src="@drawable/editar"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="20dp"/>

@@ -10,9 +10,6 @@ import android.os.Bundle;
 
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.AccountsNoPaid.ExpiredDebtsFragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.AccountsNoPaid.LongTermDebtsFragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.AccountsNoPaid.ShortTermDebtsFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class AccountsToPaidActivity extends AppCompatActivity {
