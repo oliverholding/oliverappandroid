@@ -50,7 +50,7 @@ public class BudgetActivity extends AppCompatActivity {
         tab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getSupportFragmentManager().beginTransaction().add(R.id.contentFragment,fragment1).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
 
                 linearLayout1.setBackgroundResource(R.drawable.orange_button_style_ripple);
                 txtText1.setTextColor(Color.WHITE);
@@ -63,7 +63,7 @@ public class BudgetActivity extends AppCompatActivity {
         tab2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getSupportFragmentManager().beginTransaction().add(R.id.contentFragment,fragment2).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment2).commit();
 
                 linearLayout2.setBackgroundResource(R.drawable.orange_button_style_ripple);
                 txtText2.setTextColor(Color.WHITE);

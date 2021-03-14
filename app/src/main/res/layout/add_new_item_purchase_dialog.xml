@@ -53,7 +53,7 @@
 
                 <ImageView
                     android:id="@+id/imgProduct"
-                    android:src="@drawable/icono_nuevo_prod512"
+                    android:src="@drawable/producto"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>
 
@@ -68,7 +68,7 @@
                     android:id="@+id/btnCamera"
                     android:text="CÁMARA"
                     android:padding="8dp"
-                    android:drawableStart="@drawable/camera_white_icon"
+                    android:drawableStart="@drawable/camara"
                     android:textColor="@android:color/white"
                     android:layout_margin="8dp"
                     android:layout_alignParentBottom="true"
@@ -81,7 +81,7 @@
                     android:id="@+id/btnGallery"
                     android:text="GALERÍA"
                     android:padding="8dp"
-                    android:drawableStart="@drawable/gallery_white_icon"
+                    android:drawableStart="@drawable/galeria"
                     android:textColor="@android:color/white"
                     android:layout_margin="8dp"
                     android:layout_alignParentBottom="true"

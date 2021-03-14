@@ -19,7 +19,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:src="@drawable/icono_boleta512"
+                android:src="@drawable/boletas_facturas"
                 android:layout_weight="0.3"
                 android:layout_width="0dp"
                 android:layout_height="30dp"/>

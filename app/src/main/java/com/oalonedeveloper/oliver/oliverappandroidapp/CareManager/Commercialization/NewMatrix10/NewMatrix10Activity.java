@@ -3,6 +3,7 @@ package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercializa
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -16,6 +17,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -49,6 +51,10 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.BillsIssuing.CreateBillActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CreditsAndTreasury.CreditTableFragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CreditsAndTreasury.CurrentDebtFragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CreditsAndTreasury.CustomerCreditFragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CreditsAndTreasury.ExpiredDebtFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.ProductMarketMatrix.MatrixFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.ProductMarketMatrix.ProductMarketMatrixActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.ProductMarketMatrix.QuestionsMatrixFragment;
@@ -68,9 +74,11 @@ import es.dmoral.toasty.Toasty;
 
 public class NewMatrix10Activity extends AppCompatActivity {
 
-    ViewPager mViewPager;
-    SectionsPagerAdapter mSectionsPagerAdapter;
-    int fragmentId;
+
+    CardView tab1,tab2,tab3,tab4;
+    LinearLayout linearLayout1,linearLayout2,linearLayout3,linearLayout4;
+    TextView txtText1,txtText2,txtText3,txtText4;
+    Fragment fragment1,fragment2,fragment3,fragment4;
 
 
     @Override
@@ -82,17 +90,103 @@ public class NewMatrix10Activity extends AppCompatActivity {
         TabItem tabItem = findViewById(R.id.tabItem);
         TabItem tabItem2 = findViewById(R.id.tabItem2);
 
-        fragmentId = getIntent().getIntExtra("FRAGMENT_ID",0);
+        tab1 = findViewById(R.id.tab1);
+        tab2 = findViewById(R.id.tab2);
+        tab3 = findViewById(R.id.tab3);
+        tab4 = findViewById(R.id.tab4);
+        linearLayout1 = findViewById(R.id.linearLayout1);
+        linearLayout2 = findViewById(R.id.linearLayout2);
+        linearLayout3 = findViewById(R.id.linearLayout3);
+        linearLayout4 = findViewById(R.id.linearLayout4);
+        txtText1 = findViewById(R.id.txtText1);
+        txtText2 = findViewById(R.id.txtText2);
+        txtText3 = findViewById(R.id.txtText3);
+        txtText4 = findViewById(R.id.txtText4);
 
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
+        fragment1 = new Matrix10PeopleFragment();
+        fragment2 = new Matrix10CompanyFragment();
+        fragment3 = new QuestionsMatrixFragment();
+        fragment4 = new MatrixFragment();
 
-        mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
+        getSupportFragmentManager().beginTransaction().add(R.id.contentFragment,fragment1).commit();
+        linearLayout1.setBackgroundResource(R.drawable.orange_button_style_ripple);
+        txtText1.setTextColor(Color.WHITE);
 
-        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+        tab1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
 
-        mViewPager.setCurrentItem(fragmentId);
+                linearLayout1.setBackgroundResource(R.drawable.orange_button_style_ripple);
+                txtText1.setTextColor(Color.WHITE);
+
+                linearLayout2.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText2.setTextColor(Color.GRAY);
+
+                linearLayout3.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText3.setTextColor(Color.GRAY);
+
+                linearLayout4.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText4.setTextColor(Color.GRAY);
+            }
+        });
+
+        tab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment2).commit();
+
+                linearLayout2.setBackgroundResource(R.drawable.orange_button_style_ripple);
+                txtText2.setTextColor(Color.WHITE);
+
+                linearLayout1.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText1.setTextColor(Color.GRAY);
+
+                linearLayout3.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText3.setTextColor(Color.GRAY);
+
+                linearLayout4.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText4.setTextColor(Color.GRAY);
+            }
+        });
+
+        tab3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment3).commit();
+
+                linearLayout3.setBackgroundResource(R.drawable.orange_button_style_ripple);
+                txtText3.setTextColor(Color.WHITE);
+
+                linearLayout1.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText1.setTextColor(Color.GRAY);
+
+                linearLayout2.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText2.setTextColor(Color.GRAY);
+
+                linearLayout4.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText4.setTextColor(Color.GRAY);
+            }
+        });
+
+        tab4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment4).commit();
+
+                linearLayout4.setBackgroundResource(R.drawable.orange_button_style_ripple);
+                txtText4.setTextColor(Color.WHITE);
+
+                linearLayout1.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText1.setTextColor(Color.GRAY);
+
+                linearLayout2.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText2.setTextColor(Color.GRAY);
+
+                linearLayout3.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText3.setTextColor(Color.GRAY);
+            }
+        });
 
 
     }

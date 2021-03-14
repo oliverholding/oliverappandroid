@@ -36,7 +36,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@drawable/email_color_icon"
+                            android:src="@drawable/correo_electronico"
                             android:layout_margin="8dp"
                             android:layout_width="60dp"
                             android:layout_height="60dp"/>
@@ -79,7 +79,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@drawable/maps_icon"
+                            android:src="@drawable/ubicacion"
                             android:layout_margin="8dp"
                             android:layout_width="60dp"
                             android:layout_height="60dp"/>
@@ -171,7 +171,7 @@
             android:layout_alignParentBottom="true"
             android:text="CONTINUAR"
             android:textColor="@android:color/white"
-            android:background="@drawable/rectabgle_red_button"
+            android:background="@drawable/blue_button_style_ripple"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

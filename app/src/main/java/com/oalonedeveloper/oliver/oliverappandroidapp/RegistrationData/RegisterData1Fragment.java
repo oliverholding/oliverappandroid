@@ -105,7 +105,7 @@ public class RegisterData1Fragment extends Fragment {
                     image_verification = "true";
                     txtImageVerification.setText("Esta foto es adecuada para tu perfil");
                     txtImageVerification.setTextColor(Color.GREEN);
-                    profileImageState.setImageResource(R.drawable.transaction_completed);
+                    profileImageState.setImageResource(R.drawable.check);
                     loadingBar.dismiss();
                 } else {
                     loadingBar.dismiss();
@@ -210,17 +210,17 @@ public class RegisterData1Fragment extends Fragment {
         if (sparseArray.size() < 1) {
             txtImageVerification.setText("En esta foto no se ha detectado tu rostro.");
             txtImageVerification.setTextColor(Color.RED);
-            profileImageState.setImageResource(R.drawable.error_icon);
+            profileImageState.setImageResource(R.drawable.error);
         }
         if (sparseArray.size() > 1) {
             txtImageVerification.setText("Esta foto contiene dos o más rostros.");
             txtImageVerification.setTextColor(Color.RED);
-            profileImageState.setImageResource(R.drawable.error_icon);
+            profileImageState.setImageResource(R.drawable.error);
         }
         if (sparseArray.size() == 1) {
             txtImageVerification.setText("Esta foto es adecuada para tu perfil");
             txtImageVerification.setTextColor(Color.GREEN);
-            profileImageState.setImageResource(R.drawable.transaction_completed);
+            profileImageState.setImageResource(R.drawable.check);
             savePhotoOnDatabase();
         }
 
@@ -379,17 +379,17 @@ public class RegisterData1Fragment extends Fragment {
                 if (sparseArray.size() < 1) {
                     txtImageVerification.setText("En esta foto no se ha detectado tu rostro.");
                     txtImageVerification.setTextColor(Color.RED);
-                    profileImageState.setImageResource(R.drawable.error_icon);
+                    profileImageState.setImageResource(R.drawable.error);
                 }
                 if (sparseArray.size() > 1) {
                     txtImageVerification.setText("Esta foto contiene dos o más rostros.");
                     txtImageVerification.setTextColor(Color.RED);
-                    profileImageState.setImageResource(R.drawable.error_icon);
+                    profileImageState.setImageResource(R.drawable.error);
                 }
                 if (sparseArray.size() == 1) {
                     txtImageVerification.setText("Esta foto es adecuada para tu perfil");
                     txtImageVerification.setTextColor(Color.GREEN);
-                    profileImageState.setImageResource(R.drawable.transaction_completed);
+                    profileImageState.setImageResource(R.drawable.check);
                     savePhotoOnDatabase();
                 }
 

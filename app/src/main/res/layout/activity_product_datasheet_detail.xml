@@ -102,7 +102,7 @@
 
                         <ImageView
                             android:id="@+id/btnEditDescription"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_weight="0.1"
                             android:layout_width="0dp"
                             android:layout_height="25dp"/>
@@ -150,7 +150,7 @@
 
                         <ImageView
                             android:id="@+id/btnSpecifications"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_weight="0.1"
                             android:layout_width="0dp"
                             android:layout_height="25dp"/>
@@ -198,7 +198,7 @@
 
                         <ImageView
                             android:id="@+id/btnMeasurements"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_weight="0.1"
                             android:layout_width="0dp"
                             android:layout_height="25dp"/>
@@ -246,7 +246,7 @@
 
                         <ImageView
                             android:id="@+id/btnSecurityUsage"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_weight="0.1"
                             android:layout_width="0dp"
                             android:layout_height="25dp"/>

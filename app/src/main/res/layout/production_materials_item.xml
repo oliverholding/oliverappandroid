@@ -47,7 +47,7 @@
 
         <ImageView
             android:id="@+id/btnActionButton"
-            android:src="@drawable/icono_logistica512"
+            android:src="@drawable/logistica"
             android:layout_margin="4dp"
             android:gravity="center"
             android:textColor="@android:color/black"

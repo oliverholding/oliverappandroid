@@ -21,7 +21,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:src="@drawable/icono_perfil_foto"
+                android:src="@drawable/proveedor"
                 android:layout_weight="0.3"
                 android:layout_width="0dp"
                 android:layout_height="80dp"/>

@@ -14,37 +14,63 @@
         android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardViewTitle"
-            app:cardCornerRadius="8dp"
+            android:id="@+id/cardTitle"
             app:cardElevation="8dp"
-            android:layout_margin="8dp"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:padding="8dp"
                 android:orientation="vertical"
+                android:padding="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:text="Construyendo Mi Visión"
-                    android:textSize="18sp"
-                    android:layout_margin="4dp"
-                    android:textColor="@android:color/black"
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    android:text="Con ésta herramienta te ayudaremos a definir cómo deseas ver a tu negocio/comercio/empresa en un futuro de 5 años."
-                    android:layout_margin="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    <ImageView
+                        android:layout_margin="4dp"
+                        android:src="@color/gray2"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"/>
 
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textSize="16sp"
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Construyendo Mi Visión"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:layout_margin="4dp"
+                            android:text="Con ésta herramienta te ayudaremos a definir cómo deseas ver a tu negocio/comercio/empresa en un futuro de 5 años."
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
 
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
+
+
 
         <androidx.cardview.widget.CardView
             app:cardCornerRadius="8dp"
@@ -142,7 +168,7 @@
 
                                 <ImageView
                                     android:id="@+id/btnVision1"
-                                    android:src="@drawable/edit_pencil_vector_asset"
+                                    android:src="@drawable/editar"
                                     android:layout_margin="4dp"
                                     android:layout_weight="0.2"
                                     android:layout_width="0dp"
@@ -168,7 +194,7 @@
 
                                 <ImageView
                                     android:id="@+id/btnVision2"
-                                    android:src="@drawable/edit_pencil_vector_asset"
+                                    android:src="@drawable/editar"
                                     android:layout_margin="4dp"
                                     android:layout_weight="0.2"
                                     android:layout_width="0dp"
@@ -194,7 +220,7 @@
 
                                 <ImageView
                                     android:id="@+id/btnVision3"
-                                    android:src="@drawable/edit_pencil_vector_asset"
+                                    android:src="@drawable/editar"
                                     android:layout_margin="4dp"
                                     android:layout_weight="0.2"
                                     android:layout_width="0dp"
@@ -220,7 +246,7 @@
 
                                 <ImageView
                                     android:id="@+id/btnVision4"
-                                    android:src="@drawable/edit_pencil_vector_asset"
+                                    android:src="@drawable/editar"
                                     android:layout_margin="4dp"
                                     android:layout_weight="0.2"
                                     android:layout_width="0dp"
@@ -246,7 +272,7 @@
 
                                 <ImageView
                                     android:id="@+id/btnVision5"
-                                    android:src="@drawable/edit_pencil_vector_asset"
+                                    android:src="@drawable/editar"
                                     android:layout_margin="4dp"
                                     android:layout_weight="0.2"
                                     android:layout_width="0dp"
@@ -348,7 +374,7 @@
 
                                     <ImageView
                                         android:id="@+id/btnGoal1"
-                                        android:src="@drawable/edit_pencil_vector_asset"
+                                        android:src="@drawable/editar"
                                         android:layout_margin="4dp"
                                         android:layout_weight="0.2"
                                         android:layout_width="0dp"
@@ -374,7 +400,7 @@
 
                                     <ImageView
                                         android:id="@+id/btnGoal2"
-                                        android:src="@drawable/edit_pencil_vector_asset"
+                                        android:src="@drawable/editar"
                                         android:layout_margin="4dp"
                                         android:layout_weight="0.2"
                                         android:layout_width="0dp"
@@ -400,7 +426,7 @@
 
                                     <ImageView
                                         android:id="@+id/btnGoal3"
-                                        android:src="@drawable/edit_pencil_vector_asset"
+                                        android:src="@drawable/editar"
                                         android:layout_margin="4dp"
                                         android:layout_weight="0.2"
                                         android:layout_width="0dp"
@@ -426,7 +452,7 @@
 
                                     <ImageView
                                         android:id="@+id/btnGoal4"
-                                        android:src="@drawable/edit_pencil_vector_asset"
+                                        android:src="@drawable/editar"
                                         android:layout_margin="4dp"
                                         android:layout_weight="0.2"
                                         android:layout_width="0dp"
@@ -452,7 +478,7 @@
 
                                     <ImageView
                                         android:id="@+id/btnGoal5"
-                                        android:src="@drawable/edit_pencil_vector_asset"
+                                        android:src="@drawable/editar"
                                         android:layout_margin="4dp"
                                         android:layout_weight="0.2"
                                         android:layout_width="0dp"
@@ -556,7 +582,7 @@
 
                                     <ImageView
                                         android:id="@+id/btnIdeology1"
-                                        android:src="@drawable/edit_pencil_vector_asset"
+                                        android:src="@drawable/editar"
                                         android:layout_margin="4dp"
                                         android:layout_weight="0.2"
                                         android:layout_width="0dp"
@@ -583,7 +609,7 @@
 
                                     <ImageView
                                         android:id="@+id/btnIdeology2"
-                                        android:src="@drawable/edit_pencil_vector_asset"
+                                        android:src="@drawable/editar"
                                         android:layout_margin="4dp"
                                         android:layout_weight="0.2"
                                         android:layout_width="0dp"
@@ -616,7 +642,7 @@
             android:textColor="@android:color/white"
             android:layout_margin="8dp"
             android:id="@+id/btnShowVision"
-            android:background="@drawable/gray_button_style"
+            android:background="@drawable/orange_button_style_ripple"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

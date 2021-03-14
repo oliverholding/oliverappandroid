@@ -6,121 +6,333 @@
     android:layout_height="match_parent"
     tools:context=".CareManager.FinancialManagement.FinanacialManagementActivity">
 
-    <LinearLayout
-        android:id="@+id/appBar"
+    <ScrollView
+        android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:background="@drawable/gradient_start2"
-            android:gravity="center"
-            android:padding="12dp"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:src="@drawable/icono_produccion128"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="35dp"/>
+            <LinearLayout
+                android:gravity="center"
+                android:padding="8dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:gravity="center_vertical"
-                android:textSize="18sp"
-                android:textColor="@android:color/white"
-                android:text="Gestión Financiera"
-                android:layout_weight="4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
+                <ImageView
+                    android:src="@drawable/gestion_financiera"
+                    android:layout_weight="0.2"
+                    android:layout_margin="4dp"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"/>
 
-            <ImageView
-                android:id="@+id/btnMenu"
-                android:src="@drawable/open_menu_icon"
-                android:scaleType="centerInside"
-                android:padding="4dp"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="35dp"/>
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/orange1"
+                    android:textSize="18sp"
+                    android:layout_margin="4dp"
+                    android:text="Gestión Financiera"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
 
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnTool1"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@drawable/orange_button_style_ripple"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:src="@drawable/caja_inicial"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="Caja y Bancos"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnTool2"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@drawable/orange_button_style_ripple"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:src="@drawable/cobranzas"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="Cuentas por Cobrar"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnTool3"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@drawable/orange_button_style_ripple"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:src="@drawable/pagos"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="Cuentas por Pagar"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnTool4"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@drawable/orange_button_style_ripple"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:src="@drawable/flujo_caja"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="Flujo de Caja"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnTool5"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@drawable/orange_button_style_ripple"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:src="@drawable/presupuestos"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="Ejecución Presupuestal"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnTool6"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@drawable/orange_button_style_ripple"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:src="@drawable/activos_tangibles"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="Activo Fijo"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnTool7"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@drawable/orange_button_style_ripple"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:src="@drawable/estados_financieros"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="Estados Financieros"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnTool8"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@drawable/orange_button_style_ripple"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:src="@drawable/riesgos_financieros"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="Gestión del Riesgo"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
 
-    <com.google.android.material.tabs.TabLayout
-        android:layout_below="@+id/appBar"
-        android:id="@+id/tabLayout"
-        android:background="@drawable/gradient_start2"
-        app:tabTextColor="@android:color/white"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab1"
-            android:icon="@drawable/icono_produccion128"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab2"
-            android:icon="@drawable/icono_capacitacion128"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab3"
-            android:icon="@drawable/play_white_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab4"
-            android:icon="@drawable/play_white_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab5"
-            android:icon="@drawable/play_white_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab6"
-            android:icon="@drawable/play_white_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab7"
-            android:icon="@drawable/play_white_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab8"
-            android:icon="@drawable/play_white_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab9"
-            android:icon="@drawable/upload_file_white_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-
-    </com.google.android.material.tabs.TabLayout>
-
-    <androidx.viewpager.widget.ViewPager
-        android:layout_below="@id/tabLayout"
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </androidx.viewpager.widget.ViewPager>
 
 </RelativeLayout>

@@ -14,8 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:src="@color/colorGradientCenterRed"
+        <ImageView
+            android:src="@drawable/boleta_pago_trabajador"
             android:layout_width="100dp"
             android:layout_height="100dp"/>
 
@@ -34,7 +34,7 @@
             android:layout_margin="8dp"
             android:text="REGRESAR"
             android:textColor="@android:color/white"
-            android:background="@drawable/gray_button_style"
+            android:background="@drawable/orange_button_style_ripple"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

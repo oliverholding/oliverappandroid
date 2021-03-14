@@ -6,54 +6,67 @@
     android:layout_height="match_parent"
     tools:context=".Companies.MyCustomersActivity">
 
-    <LinearLayout
-        android:id="@+id/appBar"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardTitle"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp"
+        android:layout_margin="12dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:background="@drawable/gradient_start2"
-            android:gravity="center"
-            android:padding="12dp"
-            android:orientation="horizontal"
+            android:orientation="vertical"
+            android:padding="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/imgCompanyProfile"
-                android:src="@drawable/oliver_app_iconv2"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="35dp"/>
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:gravity="center_vertical"
-                android:textSize="18sp"
-                android:textColor="@android:color/white"
-                android:text="Mis Clientes "
-                android:layout_weight="4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
+                <ImageView
+                    android:layout_margin="4dp"
+                    android:src="@drawable/mis_clientes"
+                    android:layout_weight="0.2"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"/>
 
-            <ImageView
-                android:id="@+id/btnMenu"
-                android:src="@drawable/open_menu_icon"
-                android:scaleType="centerInside"
-                android:padding="4dp"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="35dp"/>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
 
+                    <TextView
+                        android:textSize="16sp"
+                        android:layout_margin="4dp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:text="Mis Clientes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:textSize="12sp"
+                        android:layout_margin="4dp"
+                        android:text="Visualiza y agrega a tus clientes."
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
-
+    </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_above="@id/buttonsLayout"
-        android:layout_below="@id/appBar"
+        android:layout_below="@id/cardTitle"
         android:layout_margin="8dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -73,7 +86,7 @@
         <Button
             android:id="@+id/btnAddCustomer"
             android:textColor="@android:color/white"
-            android:background="@drawable/gray_button_style"
+            android:background="@drawable/orange_button_style_ripple"
             android:layout_weight="1"
             android:layout_margin="8dp"
             android:layout_width="0dp"

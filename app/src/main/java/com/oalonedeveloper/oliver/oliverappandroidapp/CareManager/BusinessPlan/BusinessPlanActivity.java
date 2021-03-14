@@ -15,13 +15,6 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessPlan.E
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessPlan.FinancialPlan.FinancialPlanActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessPlan.HumanResourcesPlan.HumanResourcesPlanActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessPlan.OperationPlan.OperationPlanActivity;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Files1Fragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Video1Fragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Video2Fragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Video3Fragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Video4Fragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Video5Fragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.Video6Fragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class BusinessPlanActivity extends AppCompatActivity {

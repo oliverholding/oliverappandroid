@@ -22,7 +22,7 @@
 
             <ImageView
                 android:layout_margin="8dp"
-                android:src="@drawable/icono_almacen512"
+                android:src="@drawable/almacen"
                 android:layout_weight="0.3"
                 android:layout_width="0dp"
                 android:layout_height="70dp"/>

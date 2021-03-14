@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content">
 
                 <Button
-                    android:drawableStart="@drawable/calendar_icon"
+                    android:drawableStart="@drawable/calendario"
                     android:id="@+id/edtBthDay"
                     android:inputType="number"
                     android:padding="8dp"
@@ -52,7 +52,7 @@
                     android:layout_height="wrap_content" />
 
                 <Button
-                    android:drawableStart="@drawable/calendar_icon"
+                    android:drawableStart="@drawable/calendario"
                     android:id="@+id/edtBthMonth"
                     android:inputType="number"
                     android:padding="8dp"
@@ -65,7 +65,7 @@
                     android:layout_height="wrap_content" />
 
                 <Button
-                    android:drawableStart="@drawable/calendar_icon"
+                    android:drawableStart="@drawable/calendario"
                     android:id="@+id/edtBthYear"
                     android:inputType="number"
                     android:padding="8dp"

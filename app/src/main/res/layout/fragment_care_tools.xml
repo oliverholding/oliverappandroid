@@ -31,6 +31,8 @@
                     android:layout_height="wrap_content">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:background="@drawable/orange_strokes_style"
+                        android:padding="4dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -40,7 +42,7 @@
                             android:layout_width="0dp"
                             android:layout_height="0dp"
                             android:padding="40dp"
-                            android:src="@drawable/icono_modulo_gestion"
+                            android:src="@drawable/modulo_gestion"
                             app:layout_constraintDimensionRatio="H,1:1"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintLeft_toLeftOf="parent"
@@ -49,6 +51,7 @@
                         <TextView
                             android:layout_margin="4dp"
                             android:textStyle="bold"
+                            android:textSize="11sp"
                             android:textColor="@color/colorAccent"
                             android:gravity="center"
                             app:layout_constraintBottom_toBottomOf="@id/img1"
@@ -71,6 +74,8 @@
                     android:layout_height="wrap_content">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:background="@drawable/orange_strokes_style"
+                        android:padding="4dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -80,7 +85,7 @@
                             android:layout_width="0dp"
                             android:layout_height="0dp"
                             android:padding="40dp"
-                            android:src="@drawable/icono_informacion_usuario"
+                            android:src="@drawable/informacion_usuario"
                             app:layout_constraintDimensionRatio="H,1:1"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintLeft_toLeftOf="parent"
@@ -91,6 +96,7 @@
                             android:textStyle="bold"
                             android:textColor="@color/colorAccent"
                             android:gravity="center"
+                            android:textSize="11sp"
                             app:layout_constraintBottom_toBottomOf="@id/img5"
                             android:text="Información del Usuario"
                             android:layout_width="match_parent"
@@ -118,6 +124,8 @@
                     android:layout_height="wrap_content">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:background="@drawable/orange_strokes_style"
+                        android:padding="4dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -127,7 +135,7 @@
                             android:layout_width="0dp"
                             android:layout_height="0dp"
                             android:padding="40dp"
-                            android:src="@drawable/icono_oportunidades_negocio"
+                            android:src="@drawable/identificacion_oportunidades"
                             app:layout_constraintDimensionRatio="H,1:1"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintLeft_toLeftOf="parent"
@@ -138,6 +146,7 @@
                             android:textStyle="bold"
                             android:textColor="@color/colorAccent"
                             android:gravity="center"
+                            android:textSize="11sp"
                             app:layout_constraintBottom_toBottomOf="@id/img2"
                             android:text="Identificación de Oportunidades de Negocios"
                             android:layout_width="match_parent"
@@ -158,6 +167,8 @@
                     android:layout_height="wrap_content">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:background="@drawable/orange_strokes_style"
+                        android:padding="4dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -167,7 +178,7 @@
                             android:layout_width="0dp"
                             android:layout_height="0dp"
                             android:padding="40dp"
-                            android:src="@drawable/icono_propuesta_valor"
+                            android:src="@drawable/propuesta_valor"
                             app:layout_constraintDimensionRatio="H,1:1"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintLeft_toLeftOf="parent"
@@ -178,6 +189,7 @@
                             android:textStyle="bold"
                             android:textColor="@color/colorAccent"
                             android:gravity="center"
+                            android:textSize="11sp"
                             app:layout_constraintBottom_toBottomOf="@id/img3"
                             android:text="Propuestas de Valor"
                             android:layout_width="match_parent"
@@ -206,6 +218,8 @@
                     android:layout_height="wrap_content">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:background="@drawable/orange_strokes_style"
+                        android:padding="4dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -215,7 +229,7 @@
                             android:layout_width="0dp"
                             android:layout_height="0dp"
                             android:padding="40dp"
-                            android:src="@drawable/icono_modelo_negocio_1"
+                            android:src="@drawable/modelos_negocios"
                             app:layout_constraintDimensionRatio="H,1:1"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintLeft_toLeftOf="parent"
@@ -226,6 +240,7 @@
                             android:textStyle="bold"
                             android:textColor="@color/colorAccent"
                             android:gravity="center"
+                            android:textSize="11sp"
                             app:layout_constraintBottom_toBottomOf="@id/img4"
                             android:text="Modelos de Negocio"
                             android:layout_width="match_parent"
@@ -246,6 +261,8 @@
                     android:layout_height="wrap_content">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:background="@drawable/orange_strokes_style"
+                        android:padding="4dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -255,7 +272,7 @@
                             android:layout_width="0dp"
                             android:layout_height="0dp"
                             android:padding="40dp"
-                            android:src="@drawable/icono_nuevo_producto_1"
+                            android:src="@drawable/nuevo_producto_servicio"
                             app:layout_constraintDimensionRatio="H,1:1"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintLeft_toLeftOf="parent"
@@ -264,6 +281,7 @@
                         <TextView
                             android:layout_margin="4dp"
                             android:textStyle="bold"
+                            android:textSize="11sp"
                             android:textColor="@color/colorAccent"
                             android:gravity="center"
                             app:layout_constraintBottom_toBottomOf="@id/img6"
@@ -293,6 +311,8 @@
                     android:layout_height="wrap_content">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:background="@drawable/orange_strokes_style"
+                        android:padding="4dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -302,7 +322,7 @@
                             android:layout_width="0dp"
                             android:layout_height="0dp"
                             android:padding="40dp"
-                            android:src="@drawable/icono_comercializacion_1"
+                            android:src="@drawable/comercializacion"
                             app:layout_constraintDimensionRatio="H,1:1"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintLeft_toLeftOf="parent"
@@ -311,6 +331,7 @@
                         <TextView
                             android:layout_margin="4dp"
                             android:textStyle="bold"
+                            android:textSize="11sp"
                             android:textColor="@color/colorAccent"
                             android:gravity="center"
                             app:layout_constraintBottom_toBottomOf="@id/img7"
@@ -333,6 +354,8 @@
                     android:layout_height="wrap_content">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:background="@drawable/orange_strokes_style"
+                        android:padding="4dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -342,7 +365,7 @@
                             android:layout_width="0dp"
                             android:layout_height="0dp"
                             android:padding="40dp"
-                            android:src="@drawable/icono_ventas_1"
+                            android:src="@drawable/ventas"
                             app:layout_constraintDimensionRatio="H,1:1"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintLeft_toLeftOf="parent"
@@ -353,6 +376,7 @@
                             android:textStyle="bold"
                             android:textColor="@color/colorAccent"
                             android:gravity="center"
+                            android:textSize="11sp"
                             app:layout_constraintBottom_toBottomOf="@id/img8"
                             android:text="Ventas"
                             android:layout_width="match_parent"
@@ -380,6 +404,8 @@
                     android:layout_height="wrap_content">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:background="@drawable/orange_strokes_style"
+                        android:padding="4dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -389,7 +415,7 @@
                             android:layout_width="0dp"
                             android:layout_height="0dp"
                             android:padding="40dp"
-                            android:src="@drawable/icono_logistica_1"
+                            android:src="@drawable/logistica_abastecimiento"
                             app:layout_constraintDimensionRatio="H,1:1"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintLeft_toLeftOf="parent"
@@ -400,6 +426,7 @@
                             android:textStyle="bold"
                             android:textColor="@color/colorAccent"
                             android:gravity="center"
+                            android:textSize="11sp"
                             app:layout_constraintBottom_toBottomOf="@id/img9"
                             android:text="Logística / Abastecimiento"
                             android:layout_width="match_parent"
@@ -420,6 +447,8 @@
                     android:layout_height="wrap_content">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:background="@drawable/orange_strokes_style"
+                        android:padding="4dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -429,7 +458,7 @@
                             android:layout_width="0dp"
                             android:layout_height="0dp"
                             android:padding="40dp"
-                            android:src="@drawable/icono_produccion_1"
+                            android:src="@drawable/produccion_operaciones"
                             app:layout_constraintDimensionRatio="H,1:1"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintLeft_toLeftOf="parent"
@@ -440,6 +469,7 @@
                             android:textStyle="bold"
                             android:textColor="@color/colorAccent"
                             android:gravity="center"
+                            android:textSize="11sp"
                             app:layout_constraintBottom_toBottomOf="@id/img10"
                             android:text="Producción/Operaciones"
                             android:layout_width="match_parent"
@@ -467,6 +497,8 @@
                     android:layout_height="wrap_content">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:background="@drawable/orange_strokes_style"
+                        android:padding="4dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -476,7 +508,7 @@
                             android:layout_width="0dp"
                             android:layout_height="0dp"
                             android:padding="40dp"
-                            android:src="@drawable/icono_gestion_personas"
+                            android:src="@drawable/gestion_personas"
                             app:layout_constraintDimensionRatio="H,1:1"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintLeft_toLeftOf="parent"
@@ -487,6 +519,7 @@
                             android:textStyle="bold"
                             android:textColor="@color/colorAccent"
                             android:gravity="center"
+                            android:textSize="11sp"
                             app:layout_constraintBottom_toBottomOf="@id/img11"
                             android:text="Gestión de Personas"
                             android:layout_width="match_parent"
@@ -507,6 +540,8 @@
                     android:layout_height="wrap_content">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:background="@drawable/orange_strokes_style"
+                        android:padding="4dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -516,7 +551,7 @@
                             android:layout_width="0dp"
                             android:layout_height="0dp"
                             android:padding="40dp"
-                            android:src="@drawable/icono_normativa_responsabilidad"
+                            android:src="@drawable/normas"
                             app:layout_constraintDimensionRatio="H,1:1"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintLeft_toLeftOf="parent"
@@ -525,6 +560,7 @@
                         <TextView
                             android:layout_margin="4dp"
                             android:textStyle="bold"
+                            android:textSize="11sp"
                             android:textColor="@color/colorAccent"
                             android:gravity="center"
                             app:layout_constraintBottom_toBottomOf="@id/img12"
@@ -554,6 +590,8 @@
                     android:layout_height="wrap_content">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:background="@drawable/orange_strokes_style"
+                        android:padding="4dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -563,7 +601,7 @@
                             android:layout_width="0dp"
                             android:layout_height="0dp"
                             android:padding="40dp"
-                            android:src="@drawable/icono_gestion_financiera_1"
+                            android:src="@drawable/gestion_financiera"
                             app:layout_constraintDimensionRatio="H,1:1"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintLeft_toLeftOf="parent"
@@ -574,6 +612,7 @@
                             android:textStyle="bold"
                             android:textColor="@color/colorAccent"
                             android:gravity="center"
+                            android:textSize="11sp"
                             app:layout_constraintBottom_toBottomOf="@id/img13"
                             android:text="Gestión Financiera"
                             android:layout_width="match_parent"
@@ -594,6 +633,8 @@
                     android:layout_height="wrap_content">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:background="@drawable/orange_strokes_style"
+                        android:padding="4dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -603,7 +644,7 @@
                             android:layout_width="0dp"
                             android:layout_height="0dp"
                             android:padding="40dp"
-                            android:src="@drawable/icono_normativa_responsabilidad"
+                            android:src="@drawable/direccion_estrategica_operativa_negocio"
                             app:layout_constraintDimensionRatio="H,1:1"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintLeft_toLeftOf="parent"
@@ -614,6 +655,7 @@
                             android:textStyle="bold"
                             android:textColor="@color/colorAccent"
                             android:gravity="center"
+                            android:textSize="11sp"
                             app:layout_constraintBottom_toBottomOf="@id/img14"
                             android:text="Dirección Estratégica y Operativa del Negocio"
                             android:layout_width="match_parent"
@@ -641,6 +683,8 @@
                     android:layout_height="wrap_content">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:background="@drawable/orange_strokes_style"
+                        android:padding="4dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -650,7 +694,7 @@
                             android:layout_width="0dp"
                             android:layout_height="0dp"
                             android:padding="40dp"
-                            android:src="@drawable/icono_gestion_financiera_1"
+                            android:src="@drawable/balanced_scored"
                             app:layout_constraintDimensionRatio="H,1:1"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintLeft_toLeftOf="parent"
@@ -661,6 +705,7 @@
                             android:textStyle="bold"
                             android:textColor="@color/colorAccent"
                             android:gravity="center"
+                            android:textSize="11sp"
                             app:layout_constraintBottom_toBottomOf="@id/img15"
                             android:text="Balanced Scorecard"
                             android:layout_width="match_parent"
@@ -681,6 +726,8 @@
                     android:layout_height="wrap_content">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:background="@drawable/orange_strokes_style"
+                        android:padding="4dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -690,7 +737,7 @@
                             android:layout_width="0dp"
                             android:layout_height="0dp"
                             android:padding="40dp"
-                            android:src="@drawable/icono_normativa_responsabilidad"
+                            android:src="@drawable/plan_negocios"
                             app:layout_constraintDimensionRatio="H,1:1"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintLeft_toLeftOf="parent"
@@ -701,6 +748,7 @@
                             android:textStyle="bold"
                             android:textColor="@color/colorAccent"
                             android:gravity="center"
+                            android:textSize="11sp"
                             app:layout_constraintBottom_toBottomOf="@id/img16"
                             android:text="Plan de Negocios"
                             android:layout_width="match_parent"
@@ -728,6 +776,8 @@
                     android:layout_height="wrap_content">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:background="@drawable/orange_strokes_style"
+                        android:padding="4dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -737,7 +787,7 @@
                             android:layout_width="0dp"
                             android:layout_height="0dp"
                             android:padding="40dp"
-                            android:src="@drawable/icono_gestion_financiera_1"
+                            android:src="@drawable/control_gestion_reportes"
                             app:layout_constraintDimensionRatio="H,1:1"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintLeft_toLeftOf="parent"
@@ -748,6 +798,7 @@
                             android:textStyle="bold"
                             android:textColor="@color/colorAccent"
                             android:gravity="center"
+                            android:textSize="11sp"
                             app:layout_constraintBottom_toBottomOf="@id/img17"
                             android:text="Control de Gestión y Reportes"
                             android:layout_width="match_parent"
@@ -768,6 +819,8 @@
                     android:layout_height="wrap_content">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:background="@drawable/orange_strokes_style"
+                        android:padding="4dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -777,7 +830,7 @@
                             android:layout_width="0dp"
                             android:layout_height="0dp"
                             android:padding="40dp"
-                            android:src="@drawable/icono_normativa_responsabilidad"
+                            android:src="@drawable/simulador_toma_deciciones"
                             app:layout_constraintDimensionRatio="H,1:1"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintLeft_toLeftOf="parent"
@@ -788,6 +841,7 @@
                             android:textStyle="bold"
                             android:textColor="@color/colorAccent"
                             android:gravity="center"
+                            android:textSize="11sp"
                             app:layout_constraintBottom_toBottomOf="@id/img18"
                             android:text="Simulador para toma de decisiones"
                             android:layout_width="match_parent"

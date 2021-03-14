@@ -30,7 +30,7 @@
                 android:id="@+id/btnRegisterNewProduct"
                 android:layout_margin="8dp"
                 android:background="@drawable/gray_button_style"
-                android:src="@drawable/icono_logistica128"
+                android:src="@drawable/registrar_nueva_existencia"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"/>
 
@@ -54,7 +54,7 @@
                 android:id="@+id/btnStoreProducts"
                 android:layout_margin="8dp"
                 android:background="@drawable/gray_button_style"
-                android:src="@drawable/icono_logistica128"
+                android:src="@drawable/transferir_mercancia_tienda"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"/>
 

@@ -63,7 +63,7 @@
             android:textColor="@android:color/white"
             android:layout_margin="8dp"
             android:background="@drawable/gray_button_style"
-            android:drawableStart="@drawable/add_icon"
+            android:drawableStart="@drawable/agregar_vendedor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

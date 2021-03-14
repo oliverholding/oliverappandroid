@@ -87,7 +87,7 @@
 
                         <ImageView
                             android:id="@+id/btnAddItem1"
-                            android:src="@drawable/add_vector_asset"
+                            android:src="@color/gray2"
                             android:layout_margin="4dp"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
@@ -144,7 +144,7 @@
 
                         <ImageView
                             android:id="@+id/btnAddItem2"
-                            android:src="@drawable/add_vector_asset"
+                            android:src="@color/gray2"
                             android:layout_margin="4dp"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"

@@ -7,7 +7,66 @@
     tools:context=".CareManager.Production.ProductionOrders.ProductionOrderProductDetailActivity">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewTitle"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp"
+        android:layout_margin="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_margin="4dp"
+                    android:src="@drawable/orden_produccion"
+                    android:layout_weight="0.2"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"/>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:layout_margin="4dp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:text="Producción de Productos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:textSize="12sp"
+                        android:layout_margin="4dp"
+                        android:text="Agrega los insumos o materiales que necesitas para producir este producto."
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
         android:id="@+id/cardViewProduct"
+        android:layout_below="@+id/cardViewTitle"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
         android:layout_margin="8dp"
@@ -45,45 +104,13 @@
 
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewTitle"
-        android:layout_below="@+id/cardViewProduct"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
-        android:layout_margin="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:padding="8dp"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:text="Producción de Productos:"
-                android:textSize="18sp"
-                android:layout_margin="4dp"
-                android:textColor="@android:color/black"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:text="Agrega los insumos o materiales que necesitas para producir este producto."
-                android:layout_margin="4dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
 
     <LinearLayout
         android:gravity="center"
         android:padding="8dp"
         android:id="@+id/layoutTitle"
-        android:layout_below="@id/cardViewTitle"
+        android:layout_below="@id/cardViewProduct"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -151,7 +178,7 @@
         android:layout_margin="8dp"
         android:layout_alignParentEnd="true"
         android:layout_above="@id/btnRegister"
-        android:src="@drawable/add_vector_asset"
+        android:src="@color/gray2"
         android:layout_width="60dp"
         android:layout_height="60dp"/>
 
@@ -161,7 +188,7 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="8dp"
         android:textColor="@android:color/white"
-        android:background="@drawable/gray_button_style"
+        android:background="@drawable/orange_button_style_ripple"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

@@ -1,78 +1,141 @@
 package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirection.StrategicMatrix;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.Dashboards.CustomerRankingFragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.Dashboards.GraphicsFragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.Dashboards.ProductRankingFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class StrategicMatrixActivity extends AppCompatActivity {
 
-    ViewPager mViewPager;
-    SectionsPagerAdapter mSectionsPagerAdapter;
-    int fragmentId;
+    CardView tab1,tab2,tab3,tab4;
+    LinearLayout linearLayout1,linearLayout2,linearLayout3,linearLayout4;
+    TextView txtText1,txtText2,txtText3,txtText4;
+    Fragment fragment1,fragment2,fragment3,fragment4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_strategic_matrix);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
-        TabItem tabItem = findViewById(R.id.tabItem);
-        TabItem tabItem2 = findViewById(R.id.tabItem2);
 
-        fragmentId = getIntent().getIntExtra("FRAGMENT_ID",0);
+        tab1 = findViewById(R.id.tab1);
+        tab2 = findViewById(R.id.tab2);
+        tab3 = findViewById(R.id.tab3);
+        tab4 = findViewById(R.id.tab4);
+        linearLayout1 = findViewById(R.id.linearLayout1);
+        linearLayout2 = findViewById(R.id.linearLayout2);
+        linearLayout3 = findViewById(R.id.linearLayout3);
+        linearLayout4 = findViewById(R.id.linearLayout4);
+        txtText1 = findViewById(R.id.txtText1);
+        txtText2 = findViewById(R.id.txtText2);
+        txtText3 = findViewById(R.id.txtText3);
+        txtText4 = findViewById(R.id.txtText4);
 
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
+        fragment1 = new CompetitorsFragment();
+        fragment2 = new InvestmentMatrixFragment();
+        fragment3 = new CompetitiveMatrixFragment();
+        fragment4 = new IndustryAtractiveFragment();
 
-        mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
+        getSupportFragmentManager().beginTransaction().add(R.id.contentFragment,fragment1).commit();
+        linearLayout1.setBackgroundResource(R.drawable.orange_button_style_ripple);
+        txtText1.setTextColor(Color.WHITE);
 
-        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+        tab1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
 
-        mViewPager.setCurrentItem(fragmentId);
-    }
+                linearLayout1.setBackgroundResource(R.drawable.orange_button_style_ripple);
+                txtText1.setTextColor(Color.WHITE);
 
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+                linearLayout2.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText2.setTextColor(Color.GRAY);
 
-        private int numOfTabs;
+                linearLayout3.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText3.setTextColor(Color.GRAY);
 
-        public SectionsPagerAdapter(FragmentManager fm, int numOfTabs) {
-            super(fm);
-            this.numOfTabs = numOfTabs;
-        }
+                linearLayout4.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText4.setTextColor(Color.GRAY);
 
-        @Override
-        public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            switch (position) {
-                case 0:
-                    return new CompetitorsFragment();
-                case 1:
-                    return new InvestmentMatrixFragment();
-                case 2:
-                    return new CompetitiveMatrixFragment();
-                case 3:
-                    return new IndustryAtractiveFragment();
 
-                default:
-                    return null;
             }
+        });
+        tab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment2).commit();
 
-        }
+                linearLayout2.setBackgroundResource(R.drawable.orange_button_style_ripple);
+                txtText2.setTextColor(Color.WHITE);
 
-        @Override
-        public int getCount() {
-            // Show 3 total pages.
-            return numOfTabs;
-        }
+                linearLayout1.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText1.setTextColor(Color.GRAY);
+
+                linearLayout3.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText3.setTextColor(Color.GRAY);
+
+                linearLayout4.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText4.setTextColor(Color.GRAY);
+
+
+            }
+        });
+        tab3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment3).commit();
+
+                linearLayout3.setBackgroundResource(R.drawable.orange_button_style_ripple);
+                txtText3.setTextColor(Color.WHITE);
+
+                linearLayout1.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText1.setTextColor(Color.GRAY);
+
+                linearLayout2.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText2.setTextColor(Color.GRAY);
+
+                linearLayout4.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText4.setTextColor(Color.GRAY);
+
+
+            }
+        });
+        tab4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment4).commit();
+
+                linearLayout4.setBackgroundResource(R.drawable.orange_button_style_ripple);
+                txtText4.setTextColor(Color.WHITE);
+
+                linearLayout1.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText1.setTextColor(Color.GRAY);
+
+                linearLayout2.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText2.setTextColor(Color.GRAY);
+
+                linearLayout3.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText3.setTextColor(Color.GRAY);
+
+
+            }
+        });
     }
+
+
 }

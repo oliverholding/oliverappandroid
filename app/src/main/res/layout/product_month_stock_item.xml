@@ -51,7 +51,7 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/btnSecurityStock"
-                android:src="@drawable/edit_pencil_vector_asset"
+                android:src="@drawable/editar"
                 android:gravity="center"
                 android:layout_margin="4dp"
                 android:layout_weight="0.2"

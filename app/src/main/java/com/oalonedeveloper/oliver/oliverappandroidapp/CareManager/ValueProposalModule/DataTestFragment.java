@@ -64,17 +64,17 @@ public class DataTestFragment extends Fragment {
                 if (answer >= 0 && answer <= 4) {
                     txtMessage.setText("¡Preocupate! Necesitas mejorar y cambiar muchas cosas");
                     txtMessage.setTextColor(getResources().getColor(R.color.redColor));
-                    imgGif.setImageResource(R.drawable.company_on_fire);
+                    //imgGif.setImageResource(R.drawable.company_on_fire);
                 }
                 else if (answer >= 5 && answer <= 7) {
                     txtMessage.setText("¡Despierta! Hay algunas cosas por mejorar");
                     txtMessage.setTextColor(getResources().getColor(R.color.yellowColor));
-                    imgGif.setImageResource(R.drawable.company_alert);
+                   // imgGif.setImageResource(R.drawable.company_alert);
                 }
                 else if (answer >= 8) {
                     txtMessage.setText("¡Vamos por buen camino y siempre se puede mejorar!");
                     txtMessage.setTextColor(getResources().getColor(R.color.greenColor));
-                    imgGif.setImageResource(R.drawable.company_good);
+                  //  imgGif.setImageResource(R.drawable.company_good);
                 }
 
 

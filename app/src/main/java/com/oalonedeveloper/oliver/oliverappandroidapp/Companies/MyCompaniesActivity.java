@@ -16,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.CareManagerActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 import com.squareup.picasso.Picasso;
 
@@ -76,21 +77,21 @@ public class MyCompaniesActivity extends AppCompatActivity {
                 viewHolder.txtCompanyRuc.setText(viewHolder.my_company_ruc);
                 if(viewHolder.my_company_verification.equals("progress")) {
                     viewHolder.txtCompanyVerification.setText("Verificación: En Proceso");
-                    viewHolder.imgCompanyVerification.setImageResource(R.drawable.transaction_in_progress);
+                    viewHolder.imgCompanyVerification.setImageResource(R.drawable.espera);
                 }
                 else if (viewHolder.my_company_verification.equals("true")) {
                     viewHolder.txtCompanyVerification.setText("Verificación: Verificado con éxito");
-                    viewHolder.imgCompanyVerification.setImageResource(R.drawable.transaction_completed);
+                    viewHolder.imgCompanyVerification.setImageResource(R.drawable.check);
                 }
                 else if (viewHolder.my_company_verification.equals("false")) {
                     viewHolder.txtCompanyVerification.setText("Verificación: No Verificado");
-                    viewHolder.imgCompanyVerification.setImageResource(R.drawable.error_icon);
+                    viewHolder.imgCompanyVerification.setImageResource(R.drawable.error);
                 }
 
                 viewHolder.btnCompanyManage.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(MyCompaniesActivity.this, OliverAppForBusinessActivity.class);
+                        Intent intent = new Intent(MyCompaniesActivity.this, CareManagerActivity.class);
                         intent.putExtra("post_key",postKey);
                         startActivity(intent);
                     }

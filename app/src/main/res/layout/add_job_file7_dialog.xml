@@ -33,7 +33,7 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:drawableStart="@drawable/calendar_icon"
+                android:drawableStart="@drawable/calendario"
                 android:id="@+id/edtBthDay"
                 android:inputType="number"
                 android:padding="8dp"
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content" />
 
             <Button
-                android:drawableStart="@drawable/calendar_icon"
+                android:drawableStart="@drawable/calendario"
                 android:id="@+id/edtBthMonth"
                 android:inputType="number"
                 android:padding="8dp"
@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content" />
 
             <Button
-                android:drawableStart="@drawable/calendar_icon"
+                android:drawableStart="@drawable/calendario"
                 android:id="@+id/edtBthYear"
                 android:inputType="number"
                 android:padding="8dp"
@@ -158,7 +158,7 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:drawableStart="@drawable/calendar_icon"
+                android:drawableStart="@drawable/calendario"
                 android:id="@+id/btnHourStart"
                 android:inputType="number"
                 android:padding="8dp"
@@ -171,7 +171,7 @@
                 android:layout_height="wrap_content" />
 
             <Button
-                android:drawableStart="@drawable/calendar_icon"
+                android:drawableStart="@drawable/calendario"
                 android:id="@+id/btnMinuteStart"
                 android:inputType="number"
                 android:padding="8dp"
@@ -200,7 +200,7 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:drawableStart="@drawable/calendar_icon"
+                android:drawableStart="@drawable/calendario"
                 android:id="@+id/btnHourEnd"
                 android:inputType="number"
                 android:padding="8dp"
@@ -213,7 +213,7 @@
                 android:layout_height="wrap_content" />
 
             <Button
-                android:drawableStart="@drawable/calendar_icon"
+                android:drawableStart="@drawable/calendario"
                 android:id="@+id/btnMinuteEnd"
                 android:inputType="number"
                 android:padding="8dp"
@@ -242,7 +242,7 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:drawableStart="@drawable/calendar_icon"
+                android:drawableStart="@drawable/calendario"
                 android:id="@+id/btnHourLunchStart"
                 android:inputType="number"
                 android:padding="8dp"
@@ -255,7 +255,7 @@
                 android:layout_height="wrap_content" />
 
             <Button
-                android:drawableStart="@drawable/calendar_icon"
+                android:drawableStart="@drawable/calendario"
                 android:id="@+id/btnMinuteLunchStart"
                 android:inputType="number"
                 android:padding="8dp"
@@ -284,7 +284,7 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:drawableStart="@drawable/calendar_icon"
+                android:drawableStart="@drawable/calendario"
                 android:id="@+id/btnHourLunchEnd"
                 android:inputType="number"
                 android:padding="8dp"
@@ -297,7 +297,7 @@
                 android:layout_height="wrap_content" />
 
             <Button
-                android:drawableStart="@drawable/calendar_icon"
+                android:drawableStart="@drawable/calendario"
                 android:id="@+id/btnMinuteLunchEnd"
                 android:inputType="number"
                 android:padding="8dp"

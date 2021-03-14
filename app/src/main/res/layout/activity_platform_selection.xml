@@ -108,7 +108,7 @@
 
                         <ImageView
                             android:layout_margin="8dp"
-                            android:src="@drawable/oliver_app_iconv2"
+                            android:src="@drawable/oliver_white_icon"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
                             android:layout_height="50dp"/>

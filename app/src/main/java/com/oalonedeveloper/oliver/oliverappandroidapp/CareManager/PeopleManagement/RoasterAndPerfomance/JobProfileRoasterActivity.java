@@ -2,6 +2,7 @@ package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagem
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -11,6 +12,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -30,6 +32,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ServerValue;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.Dashboards.CustomerRankingFragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.Dashboards.GraphicsFragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.Dashboards.ProductRankingFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.JobProfiles.JobProfileModel;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.PersonalFiles.JobProfileFilesActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.PersonalFiles.PersonalFilesActivity;
@@ -43,65 +48,88 @@ import in.galaxyofandroid.spinerdialog.SpinnerDialog;
 
 public class JobProfileRoasterActivity extends AppCompatActivity {
 
-    ViewPager mViewPager;
-    SectionsPagerAdapter mSectionsPagerAdapter;
-    int fragmentId;
+    CardView tab1,tab2,tab3;
+    LinearLayout linearLayout1,linearLayout2,linearLayout3;
+    TextView txtText1,txtText2,txtText3;
+    Fragment fragment1,fragment2,fragment3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_profile_roaster);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
-        TabItem tabItem = findViewById(R.id.tabItem);
-        TabItem tabItem2 = findViewById(R.id.tabItem2);
+        tab1 = findViewById(R.id.tab1);
+        tab2 = findViewById(R.id.tab2);
+        tab3 = findViewById(R.id.tab3);
+        linearLayout1 = findViewById(R.id.linearLayout1);
+        linearLayout2 = findViewById(R.id.linearLayout2);
+        linearLayout3 = findViewById(R.id.linearLayout3);
+        txtText1 = findViewById(R.id.txtText1);
+        txtText2 = findViewById(R.id.txtText2);
+        txtText3 = findViewById(R.id.txtText3);
 
-        fragmentId = getIntent().getIntExtra("FRAGMENT_ID",0);
+        fragment1 = new WorkerScheduleFragment();
+        fragment2 = new WorkerObjetivesFragment();
+        fragment3 = new IncentivesFragment();
 
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
+        getSupportFragmentManager().beginTransaction().add(R.id.contentFragment,fragment1).commit();
+        linearLayout1.setBackgroundResource(R.drawable.orange_button_style_ripple);
+        txtText1.setTextColor(Color.WHITE);
 
-        mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
+        tab1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
 
-        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+                linearLayout1.setBackgroundResource(R.drawable.orange_button_style_ripple);
+                txtText1.setTextColor(Color.WHITE);
 
-        mViewPager.setCurrentItem(fragmentId);
+                linearLayout2.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText2.setTextColor(Color.GRAY);
 
-    }
+                linearLayout3.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText3.setTextColor(Color.GRAY);
 
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        private int numOfTabs;
-
-        public SectionsPagerAdapter(FragmentManager fm, int numOfTabs) {
-            super(fm);
-            this.numOfTabs = numOfTabs;
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            switch (position) {
-                case 0:
-                    return new WorkerScheduleFragment();
-                case 1:
-                    return new WorkerObjetivesFragment();
-                case 2:
-                    return new IncentivesFragment();
-
-                default:
-                    return null;
             }
+        });
 
-        }
+        tab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment2).commit();
 
-        @Override
-        public int getCount() {
-            // Show 3 total pages.
-            return numOfTabs;
-        }
+                linearLayout2.setBackgroundResource(R.drawable.orange_button_style_ripple);
+                txtText2.setTextColor(Color.WHITE);
+
+                linearLayout1.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText1.setTextColor(Color.GRAY);
+
+                linearLayout3.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText3.setTextColor(Color.GRAY);
+
+
+            }
+        });
+
+        tab3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment3).commit();
+
+                linearLayout3.setBackgroundResource(R.drawable.orange_button_style_ripple);
+                txtText3.setTextColor(Color.WHITE);
+
+                linearLayout1.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText1.setTextColor(Color.GRAY);
+
+                linearLayout2.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText2.setTextColor(Color.GRAY);
+
+
+            }
+        });
+
     }
 
 

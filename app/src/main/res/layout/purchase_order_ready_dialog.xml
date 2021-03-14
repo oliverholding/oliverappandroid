@@ -33,9 +33,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <de.hdodenhof.circleimageview.CircleImageView
+                <ImageView
                     android:id="@+id/imgProduct"
-                    android:src="@drawable/icono_gestion_personas"
+                    android:src="@drawable/proveedor"
                     android:layout_weight="0.2"
                     android:layout_width="0dp"
                     android:layout_height="40dp"/>
@@ -196,7 +196,7 @@
         android:id="@+id/btnRegister"
         android:text="REGISTRAR"
         android:textColor="@android:color/white"
-        android:background="@drawable/gradient_start2"
+        android:background="@drawable/orange_button_style_ripple"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

@@ -17,37 +17,62 @@
             android:layout_height="wrap_content">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardViewTitle"
-                app:cardCornerRadius="8dp"
+                android:id="@+id/cardTitle"
                 app:cardElevation="8dp"
-                android:layout_margin="16dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="12dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:padding="8dp"
                     android:orientation="vertical"
+                    android:padding="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <TextView
-                        android:text="Información del Mercado"
-                        android:textSize="18sp"
-                        android:layout_margin="4dp"
-                        android:textColor="@android:color/black"
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content">
 
-                    <TextView
-                        android:text="Con ésta herramienta pordrás obtener mayor información del mercado objetivo en dónde realizas tus actividades."
-                        android:layout_margin="4dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/penetracion_mercado"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"/>
 
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:textSize="16sp"
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="Información del Mercado"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:textSize="12sp"
+                                android:layout_margin="4dp"
+                                android:text="Con ésta herramienta pordrás obtener mayor información del mercado objetivo en dónde realizas tus actividades."
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
 
             <LinearLayout
                 android:gravity="center"
@@ -97,7 +122,7 @@
                         <ImageView
                             android:id="@+id/btnItem1"
                             android:layout_margin="4dp"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_width="20dp"
                             android:layout_height="20dp"/>
 
@@ -122,7 +147,7 @@
                         <ImageView
                             android:id="@+id/btnShow1"
                             android:layout_margin="4dp"
-                            android:src="@drawable/information_vector_asset"
+                            android:src="@drawable/informacion"
                             android:layout_width="20dp"
                             android:layout_height="20dp"/>
 
@@ -164,7 +189,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:src="@drawable/arrow_downward"
+                    android:src="@color/orange1"
                     android:layout_width="20dp"
                     android:layout_height="20dp"/>
 
@@ -196,7 +221,7 @@
                         <ImageView
                             android:id="@+id/btnItem2"
                             android:layout_margin="4dp"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_width="20dp"
                             android:layout_height="20dp"/>
 
@@ -221,7 +246,7 @@
                         <ImageView
                             android:id="@+id/btnShow2"
                             android:layout_margin="4dp"
-                            android:src="@drawable/information_vector_asset"
+                            android:src="@drawable/informacion"
                             android:layout_width="20dp"
                             android:layout_height="20dp"/>
 
@@ -230,7 +255,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <ImageView
-                    android:src="@drawable/arrow_right"
+                    android:src="@color/orange1"
                     android:layout_weight="0.5"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
@@ -253,7 +278,7 @@
                         <ImageView
                             android:id="@+id/btnItem3"
                             android:layout_margin="4dp"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_width="20dp"
                             android:layout_height="20dp"/>
 
@@ -278,7 +303,7 @@
                         <ImageView
                             android:id="@+id/btnShow3"
                             android:layout_margin="4dp"
-                            android:src="@drawable/information_vector_asset"
+                            android:src="@drawable/informacion"
                             android:layout_width="20dp"
                             android:layout_height="20dp"/>
 
@@ -287,7 +312,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <ImageView
-                    android:src="@drawable/arrow_left"
+                    android:src="@color/orange1"
                     android:layout_weight="0.5"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
@@ -310,7 +335,7 @@
                         <ImageView
                             android:id="@+id/btnItem4"
                             android:layout_margin="4dp"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_width="20dp"
                             android:layout_height="20dp"/>
 
@@ -335,7 +360,7 @@
                         <ImageView
                             android:id="@+id/btnShow4"
                             android:layout_margin="4dp"
-                            android:src="@drawable/information_vector_asset"
+                            android:src="@drawable/informacion"
                             android:layout_width="20dp"
                             android:layout_height="20dp"/>
 
@@ -353,7 +378,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:src="@drawable/arrow_upward"
+                    android:src="@color/orange1"
                     android:layout_width="20dp"
                     android:layout_height="20dp"/>
 
@@ -407,7 +432,7 @@
                         <ImageView
                             android:id="@+id/btnItem5"
                             android:layout_margin="4dp"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_width="20dp"
                             android:layout_height="20dp"/>
 
@@ -432,7 +457,7 @@
                         <ImageView
                             android:id="@+id/btnShow5"
                             android:layout_margin="4dp"
-                            android:src="@drawable/information_vector_asset"
+                            android:src="@drawable/informacion"
                             android:layout_width="20dp"
                             android:layout_height="20dp"/>
 

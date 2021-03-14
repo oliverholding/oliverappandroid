@@ -69,7 +69,7 @@
                         <ImageView
                             android:id="@+id/btnAdd1"
                             android:layout_weight="0.1"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_width="0dp"
                             android:layout_height="30dp"/>
 

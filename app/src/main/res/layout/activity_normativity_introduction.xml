@@ -17,39 +17,63 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardViewTitle"
-                app:cardCornerRadius="8dp"
+                android:id="@+id/cardTitle"
                 app:cardElevation="8dp"
-                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="12dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:padding="8dp"
                     android:orientation="vertical"
+                    android:padding="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <TextView
-                        android:text="Introducción a la Normatividad:"
-                        android:textSize="18sp"
-                        android:layout_margin="4dp"
-                        android:textColor="@android:color/black"
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content">
 
-                    <TextView
-                        android:text="Con éstas heramientas podrás saber si tu negocio/comercio/empresa está cumpliendo con las normas peruanas en sus actividades."
-                        android:layout_margin="4dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/normas"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"/>
 
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:textSize="16sp"
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="Introducción a la Normatividad"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:textSize="12sp"
+                                android:layout_margin="4dp"
+                                android:text="Con éstas heramientas podrás saber si tu negocio/comercio/empresa está cumpliendo con las normas peruanas en sus actividades."
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
 
             <TextView
                 android:layout_margin="8dp"
@@ -79,8 +103,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            android:src="@color/colorGradientCenterRed"
+                        <ImageView
+                            android:src="@drawable/micro_empresa"
                             android:layout_margin="8dp"
                             android:layout_width="50dp"
                             android:layout_height="50dp"/>
@@ -127,8 +151,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            android:src="@color/colorGradientCenterRed"
+                        <ImageView
+                            android:src="@drawable/pequena_empresa"
                             android:layout_margin="8dp"
                             android:layout_width="50dp"
                             android:layout_height="50dp"/>
@@ -279,8 +303,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
-                            <de.hdodenhof.circleimageview.CircleImageView
-                                android:src="@color/colorGradientCenterRed"
+                            <ImageView
+                                android:src="@drawable/eirl"
                                 android:layout_margin="8dp"
                                 android:layout_width="50dp"
                                 android:layout_weight="1"
@@ -354,8 +378,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
-                            <de.hdodenhof.circleimageview.CircleImageView
-                                android:src="@color/colorGradientCenterRed"
+                            <ImageView
+                                android:src="@drawable/scrl"
                                 android:layout_margin="8dp"
                                 android:layout_width="50dp"
                                 android:layout_weight="1"
@@ -429,8 +453,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
-                            <de.hdodenhof.circleimageview.CircleImageView
-                                android:src="@color/colorGradientCenterRed"
+                            <ImageView
+                                android:src="@drawable/sac"
                                 android:layout_margin="8dp"
                                 android:layout_width="50dp"
                                 android:layout_weight="1"
@@ -504,8 +528,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
-                            <de.hdodenhof.circleimageview.CircleImageView
-                                android:src="@color/colorGradientCenterRed"
+                            <ImageView
+                                android:src="@drawable/saa"
                                 android:layout_margin="8dp"
                                 android:layout_width="50dp"
                                 android:layout_weight="1"
@@ -579,8 +603,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
-                            <de.hdodenhof.circleimageview.CircleImageView
-                                android:src="@color/colorGradientCenterRed"
+                            <ImageView
+                                android:src="@drawable/sa"
                                 android:layout_margin="8dp"
                                 android:layout_width="50dp"
                                 android:layout_weight="1"
@@ -1809,7 +1833,7 @@
 
                             <ImageView
                                 android:layout_margin="4dp"
-                                android:src="@color/colorGradientCenterRed"
+                                android:src="@drawable/tributos_impuestos"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"/>
 
@@ -1827,7 +1851,7 @@
                                 android:text="VER"
                                 android:layout_margin="4dp"
                                 android:textColor="@android:color/white"
-                                android:background="@drawable/gray_button_style"
+                                android:background="@drawable/orange_button_style_ripple"
                                 android:layout_width="match_parent"
                                 android:layout_height="35dp"/>
 
@@ -1851,7 +1875,7 @@
 
                             <ImageView
                                 android:layout_margin="4dp"
-                                android:src="@color/colorGradientCenterRed"
+                                android:src="@drawable/regulacion_laboral"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"/>
 
@@ -1869,7 +1893,7 @@
                                 android:text="VER"
                                 android:layout_margin="4dp"
                                 android:textColor="@android:color/white"
-                                android:background="@drawable/gray_button_style"
+                                android:background="@drawable/orange_button_style_ripple"
                                 android:layout_width="match_parent"
                                 android:layout_height="35dp"/>
 
@@ -1893,7 +1917,7 @@
 
                             <ImageView
                                 android:layout_margin="4dp"
-                                android:src="@color/colorGradientCenterRed"
+                                android:src="@drawable/normatividad_sanitaria"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"/>
 
@@ -1911,7 +1935,7 @@
                                 android:text="VER"
                                 android:layout_margin="4dp"
                                 android:textColor="@android:color/white"
-                                android:background="@drawable/gray_button_style"
+                                android:background="@drawable/orange_button_style_ripple"
                                 android:layout_width="match_parent"
                                 android:layout_height="35dp"/>
 
@@ -1935,7 +1959,7 @@
 
                             <ImageView
                                 android:layout_margin="4dp"
-                                android:src="@color/colorGradientCenterRed"
+                                android:src="@drawable/normatividad_ambiental"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"/>
 
@@ -1953,7 +1977,7 @@
                                 android:text="VER"
                                 android:layout_margin="4dp"
                                 android:textColor="@android:color/white"
-                                android:background="@drawable/gray_button_style"
+                                android:background="@drawable/orange_button_style_ripple"
                                 android:layout_width="match_parent"
                                 android:layout_height="35dp"/>
 
@@ -1977,7 +2001,7 @@
 
                             <ImageView
                                 android:layout_margin="4dp"
-                                android:src="@color/colorGradientCenterRed"
+                                android:src="@drawable/responsabilidad_civil_penal"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"/>
 
@@ -1995,7 +2019,7 @@
                                 android:text="VER"
                                 android:layout_margin="4dp"
                                 android:textColor="@android:color/white"
-                                android:background="@drawable/gray_button_style"
+                                android:background="@drawable/orange_button_style_ripple"
                                 android:layout_width="match_parent"
                                 android:layout_height="35dp"/>
 
@@ -2022,7 +2046,7 @@
                 android:text="RESULTADOS DE NORMATIVIDAD"
                 android:layout_margin="8dp"
                 android:textColor="@android:color/white"
-                android:background="@drawable/gray_button_style"
+                android:background="@drawable/orange_button_style_ripple"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 

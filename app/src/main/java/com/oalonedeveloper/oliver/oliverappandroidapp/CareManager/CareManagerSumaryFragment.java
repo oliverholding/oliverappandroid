@@ -39,11 +39,11 @@ public class CareManagerSumaryFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_care_manager_sumary, container, false);
 
-        imgCompanyProfile = view.findViewById(R.id.imgCompanyProfile);
+       /* imgCompanyProfile = view.findViewById(R.id.imgCompanyProfile);
         txtCompanyName = view.findViewById(R.id.txtCompanyName);
         txtCurrentMonth = view.findViewById(R.id.txtCurrentMonth);
         txtExp = view.findViewById(R.id.txtExp);
-        expBar = view.findViewById(R.id.expBar);
+        //expBar = view.findViewById(R.id.expBar);
 
         myCompanyRef = FirebaseDatabase.getInstance().getReference().child("My Companies");
 
@@ -114,7 +114,7 @@ public class CareManagerSumaryFragment extends Fragment {
             public void onCancelled(DatabaseError databaseError) {
 
             }
-        });
+        });*/
 
         return view;
     }

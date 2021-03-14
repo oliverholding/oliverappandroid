@@ -126,7 +126,7 @@
 
                     <ImageView
                         android:id="@+id/btnShowCustomers1"
-                        android:src="@drawable/search_icon"
+                        android:src="@drawable/buscar"
                         android:layout_margin="4dp"
                         android:gravity="center"
                         android:layout_weight="0.4"
@@ -183,7 +183,7 @@
 
                     <ImageView
                         android:id="@+id/btnShowCustomers2"
-                        android:src="@drawable/search_icon"
+                        android:src="@drawable/buscar"
                         android:layout_margin="4dp"
                         android:gravity="center"
                         android:layout_weight="0.4"
@@ -240,7 +240,7 @@
 
                     <ImageView
                         android:id="@+id/btnShowCustomers3"
-                        android:src="@drawable/search_icon"
+                        android:src="@drawable/buscar"
                         android:layout_margin="4dp"
                         android:gravity="center"
                         android:layout_weight="0.4"
@@ -297,7 +297,7 @@
 
                     <ImageView
                         android:id="@+id/btnShowCustomers4"
-                        android:src="@drawable/search_icon"
+                        android:src="@drawable/buscar"
                         android:layout_margin="4dp"
                         android:gravity="center"
                         android:layout_weight="0.4"
@@ -354,7 +354,7 @@
 
                     <ImageView
                         android:id="@+id/btnShowCustomers5"
-                        android:src="@drawable/search_icon"
+                        android:src="@drawable/buscar"
                         android:layout_margin="4dp"
                         android:gravity="center"
                         android:layout_weight="0.4"
@@ -411,7 +411,7 @@
 
                     <ImageView
                         android:id="@+id/btnShowCustomers6"
-                        android:src="@drawable/search_icon"
+                        android:src="@drawable/buscar"
                         android:layout_margin="4dp"
                         android:gravity="center"
                         android:layout_weight="0.4"

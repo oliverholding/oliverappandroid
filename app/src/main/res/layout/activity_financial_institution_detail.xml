@@ -83,19 +83,17 @@
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab1"
-            android:icon="@drawable/icono_saving_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab2"
-            android:icon="@drawable/icono_lending"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab3"
-            android:icon="@drawable/icono_time_deposit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 

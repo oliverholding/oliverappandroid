@@ -30,7 +30,7 @@
                 android:id="@+id/btnCancel"
                 android:layout_margin="8dp"
                 android:background="@drawable/gray_button_style"
-                android:src="@drawable/icono_logistica128"
+                android:src="@color/gray2"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"/>
 
@@ -55,7 +55,7 @@
                 android:id="@+id/btnRejected"
                 android:layout_margin="8dp"
                 android:background="@drawable/gray_button_style"
-                android:src="@drawable/icono_logistica128"
+                android:src="@drawable/orden_rechazada_proveedor"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"/>
 
@@ -80,7 +80,7 @@
                 android:id="@+id/btnReturned"
                 android:layout_margin="8dp"
                 android:background="@drawable/gray_button_style"
-                android:src="@drawable/icono_logistica128"
+                android:src="@drawable/producto_devuelto"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"/>
 
@@ -105,7 +105,7 @@
                 android:id="@+id/btnReady"
                 android:layout_margin="8dp"
                 android:background="@drawable/gray_button_style"
-                android:src="@drawable/icono_logistica128"
+                android:src="@drawable/producto_entregado_exitosamente"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"/>
 

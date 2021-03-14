@@ -1,22 +1,31 @@
 package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirection.FODA;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.Dashboards.CustomerRankingFragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.Dashboards.GraphicsFragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.Dashboards.ProductRankingFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class FodaActivity extends AppCompatActivity {
 
-    ViewPager mViewPager;
-    SectionsPagerAdapter mSectionsPagerAdapter;
-    int fragmentId;
+    CardView tab1,tab2;
+    LinearLayout linearLayout1,linearLayout2;
+    TextView txtText1,txtText2;
+    Fragment fragment1,fragment2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,53 +33,51 @@ public class FodaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_foda);
 
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
-        TabItem tabItem = findViewById(R.id.tabItem);
-        TabItem tabItem2 = findViewById(R.id.tabItem2);
+        tab1 = findViewById(R.id.tab1);
+        tab2 = findViewById(R.id.tab2);
+        linearLayout1 = findViewById(R.id.linearLayout1);
+        linearLayout2 = findViewById(R.id.linearLayout2);
+        txtText1 = findViewById(R.id.txtText1);
+        txtText2 = findViewById(R.id.txtText2);
 
-        fragmentId = getIntent().getIntExtra("FRAGMENT_ID",0);
-
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
-
-        mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
-
-        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
-
-        mViewPager.setCurrentItem(fragmentId);
-    }
-
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
-
-        private int numOfTabs;
-
-        public SectionsPagerAdapter(FragmentManager fm, int numOfTabs) {
-            super(fm);
-            this.numOfTabs = numOfTabs;
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            switch (position) {
-                case 0:
-                    return new FodaInternFragment();
-                case 1:
-                    return new FodaExternFragment();
+        fragment1 = new FodaInternFragment();
+        fragment2 = new FodaExternFragment();
 
 
-                default:
-                    return null;
+        getSupportFragmentManager().beginTransaction().add(R.id.contentFragment,fragment1).commit();
+        linearLayout1.setBackgroundResource(R.drawable.orange_button_style_ripple);
+        txtText1.setTextColor(Color.WHITE);
+
+        tab1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
+
+                linearLayout1.setBackgroundResource(R.drawable.orange_button_style_ripple);
+                txtText1.setTextColor(Color.WHITE);
+
+                linearLayout2.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText2.setTextColor(Color.GRAY);
+
+
+
             }
+        });
 
-        }
+        tab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment2).commit();
 
-        @Override
-        public int getCount() {
-            // Show 3 total pages.
-            return numOfTabs;
-        }
+                linearLayout2.setBackgroundResource(R.drawable.orange_button_style_ripple);
+                txtText2.setTextColor(Color.WHITE);
+
+                linearLayout1.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText1.setTextColor(Color.GRAY);
+
+
+            }
+        });
     }
+
 }

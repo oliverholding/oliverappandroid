@@ -184,7 +184,7 @@ public class CompanyDataSumaryFragment extends Fragment {
 
                                     if (docs_count >= 2) {
                                         showDocumentExistenceDialog();
-                                        imgTwo.setImageResource(R.drawable.error_icon);
+                                        imgTwo.setImageResource(R.drawable.error);
                                         txtPersonalData.setText("Este RUC ha sido registrado por otro usuario");
                                         txtPersonalData.setTextColor(Color.RED);
                                         dni_exist = "true";
@@ -199,14 +199,14 @@ public class CompanyDataSumaryFragment extends Fragment {
                                         if (sunat_api.equals("true")) {
                                             getSunatInformation();
                                         } else if (sunat_api.equals("false")) {
-                                            imgTwo.setImageResource(R.drawable.transaction_completed);
+                                            imgTwo.setImageResource(R.drawable.espera);
                                             txtPersonalData.setText("Datos del Negocio completado");
                                             txtPersonalData.setTextColor(Color.GREEN);
                                             personal_data_verification = "true";
                                             loadingBar.dismiss();
                                         }
                                     } else if (document_number.length() != 11) {
-                                        imgTwo.setImageResource(R.drawable.error_icon);
+                                        imgTwo.setImageResource(R.drawable.error);
                                         txtPersonalData.setText("El número de RUC es incorrecto");
                                         txtPersonalData.setTextColor(Color.RED);
                                         loadingBar.dismiss();
@@ -226,7 +226,7 @@ public class CompanyDataSumaryFragment extends Fragment {
                                 && !dataSnapshot.hasChild("economic_activity")) {
                             loadingBar.dismiss();
                         } else {
-                            imgTwo.setImageResource(R.drawable.error_icon);
+                            imgTwo.setImageResource(R.drawable.error);
                             txtPersonalData.setText("Falta completar datos");
                             txtPersonalData.setTextColor(Color.RED);
                             loadingBar.dismiss();
@@ -245,7 +245,7 @@ public class CompanyDataSumaryFragment extends Fragment {
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         if (dataSnapshot.hasChild("company_profileimage")) {
                             company_profileimage = dataSnapshot.child("company_profileimage").getValue().toString();
-                            imgOne.setImageResource(R.drawable.transaction_completed);
+                            imgOne.setImageResource(R.drawable.check);
                             txtProfileImage.setText("Foto subida con éxito");
                             txtProfileImage.setTextColor(Color.GREEN);
                             profile_image_verification = "true";
@@ -253,7 +253,7 @@ public class CompanyDataSumaryFragment extends Fragment {
 
                         if (dataSnapshot.hasChild("ruc_file")) {
                             ruc_file = dataSnapshot.child("ruc_file").getValue().toString();
-                            imgThree.setImageResource(R.drawable.transaction_completed);
+                            imgThree.setImageResource(R.drawable.check);
                             txtContactData.setText("Ficha RUC cargada con éxito");
                             txtContactData.setTextColor(Color.GREEN);
                             contact_data_verification = "true";
@@ -263,7 +263,7 @@ public class CompanyDataSumaryFragment extends Fragment {
                         if (dataSnapshot.hasChild("customer_output") && dataSnapshot.hasChild("company_value")) {
                             customer_output = dataSnapshot.child("customer_output").getValue().toString();
                             company_value = dataSnapshot.child("company_value").getValue().toString();
-                            imgFour.setImageResource(R.drawable.transaction_completed);
+                            imgFour.setImageResource(R.drawable.check);
                             txtAditionalData.setText("Datos adicionales completado");
                             txtAditionalData.setTextColor(Color.GREEN);
                             additional_data_verification = "true";
@@ -271,7 +271,7 @@ public class CompanyDataSumaryFragment extends Fragment {
                         } else if (!dataSnapshot.hasChild("customer_output") && !dataSnapshot.hasChild("company_value")) {
                             loadingBar.dismiss();
                         } else {
-                            imgFour.setImageResource(R.drawable.error_icon);
+                            imgFour.setImageResource(R.drawable.error);
                             txtAditionalData.setText("Falta completar datos");
                             txtAditionalData.setTextColor(Color.RED);
                             loadingBar.dismiss();
@@ -525,12 +525,12 @@ public class CompanyDataSumaryFragment extends Fragment {
                     domicilio_fiscal = response.getString("domicilio_fiscal");
 
                     if (fecha_inscripcion.equals(register_date)) {
-                        imgTwo.setImageResource(R.drawable.transaction_completed);
+                        imgTwo.setImageResource(R.drawable.check);
                         txtPersonalData.setText("Datos del negocio completado");
                         txtPersonalData.setTextColor(Color.GREEN);
                         personal_data_verification = "true";
                     } else if (!fecha_inscripcion.equals(register_date)){
-                        imgTwo.setImageResource(R.drawable.error_icon);
+                        imgTwo.setImageResource(R.drawable.error);
                         txtPersonalData.setText("Error en la fecha de Inscripción");
                         txtPersonalData.setTextColor(Color.RED);
                     }

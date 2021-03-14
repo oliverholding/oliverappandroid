@@ -63,7 +63,7 @@
 
                 <ImageView
                     android:id="@+id/btnWorkerRelationInfo1"
-                    android:src="@drawable/information_vector_asset"
+                    android:src="@drawable/informacion"
                     android:layout_weight="0.2"
                     android:layout_width="0dp"
                     android:layout_height="40dp"/>
@@ -88,7 +88,7 @@
 
                 <ImageView
                     android:id="@+id/btnWorkerRelationInfo2"
-                    android:src="@drawable/information_vector_asset"
+                    android:src="@drawable/informacion"
                     android:layout_weight="0.2"
                     android:layout_width="0dp"
                     android:layout_height="40dp"/>
@@ -113,7 +113,7 @@
 
                 <ImageView
                     android:id="@+id/btnWorkerRelationInfo3"
-                    android:src="@drawable/information_vector_asset"
+                    android:src="@drawable/informacion"
                     android:layout_weight="0.2"
                     android:layout_width="0dp"
                     android:layout_height="40dp"/>
@@ -138,7 +138,7 @@
 
                 <ImageView
                     android:id="@+id/btnWorkerRelationInfo4"
-                    android:src="@drawable/information_vector_asset"
+                    android:src="@drawable/informacion"
                     android:layout_weight="0.2"
                     android:layout_width="0dp"
                     android:layout_height="40dp"/>
@@ -163,7 +163,7 @@
 
                 <ImageView
                     android:id="@+id/btnWorkerRelationInfo5"
-                    android:src="@drawable/information_vector_asset"
+                    android:src="@drawable/informacion"
                     android:layout_weight="0.2"
                     android:layout_width="0dp"
                     android:layout_height="40dp"/>
@@ -188,7 +188,7 @@
 
                 <ImageView
                     android:id="@+id/btnWorkerRelationInfo6"
-                    android:src="@drawable/information_vector_asset"
+                    android:src="@drawable/informacion"
                     android:layout_weight="0.2"
                     android:layout_width="0dp"
                     android:layout_height="40dp"/>
@@ -213,7 +213,7 @@
 
                 <ImageView
                     android:id="@+id/btnWorkerRelationInfo7"
-                    android:src="@drawable/information_vector_asset"
+                    android:src="@drawable/informacion"
                     android:layout_weight="0.2"
                     android:layout_width="0dp"
                     android:layout_height="40dp"/>
@@ -238,7 +238,7 @@
 
                 <ImageView
                     android:id="@+id/btnWorkerRelationInfo8"
-                    android:src="@drawable/information_vector_asset"
+                    android:src="@drawable/informacion"
                     android:layout_weight="0.2"
                     android:layout_width="0dp"
                     android:layout_height="40dp"/>
@@ -263,7 +263,7 @@
 
                 <ImageView
                     android:id="@+id/btnWorkerRelationInfo9"
-                    android:src="@drawable/information_vector_asset"
+                    android:src="@drawable/informacion"
                     android:layout_weight="0.2"
                     android:layout_width="0dp"
                     android:layout_height="40dp"/>
@@ -288,7 +288,7 @@
 
                 <ImageView
                     android:id="@+id/btnWorkerRelationInfo10"
-                    android:src="@drawable/information_vector_asset"
+                    android:src="@drawable/informacion"
                     android:layout_weight="0.2"
                     android:layout_width="0dp"
                     android:layout_height="40dp"/>

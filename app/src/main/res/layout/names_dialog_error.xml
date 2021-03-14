@@ -18,7 +18,7 @@
 
     <ImageView
         android:layout_margin="18dp"
-        android:src="@drawable/credit_card_user_verification_icon"
+        android:src="@drawable/documento_identidad"
         android:layout_width="100dp"
         android:layout_height="100dp"/>
 

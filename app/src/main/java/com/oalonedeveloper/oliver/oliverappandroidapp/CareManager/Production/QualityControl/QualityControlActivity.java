@@ -1,17 +1,25 @@
 package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Production.QualityControl;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.database.DatabaseReference;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.Dashboards.CustomerRankingFragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.Dashboards.GraphicsFragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.Dashboards.ProductRankingFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.FinancialInstitutionsFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.FinancialProductsFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.MyProductsFragment;
@@ -20,63 +28,66 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class QualityControlActivity extends AppCompatActivity {
 
-    ViewPager mViewPager;
-    SectionsPagerAdapter mSectionsPagerAdapter;
-    int fragmentId;
+    CardView tab1,tab2;
+    LinearLayout linearLayout1,linearLayout2;
+    TextView txtText1,txtText2;
+    Fragment fragment1,fragment2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quality_control);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
-        TabItem tabItem = findViewById(R.id.tabItem);
-        TabItem tabItem2 = findViewById(R.id.tabItem2);
+        tab1 = findViewById(R.id.tab1);
+        tab2 = findViewById(R.id.tab2);
 
-        fragmentId = getIntent().getIntExtra("FRAGMENT_ID",0);
+        linearLayout1 = findViewById(R.id.linearLayout1);
+        linearLayout2 = findViewById(R.id.linearLayout2);
 
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
+        txtText1 = findViewById(R.id.txtText1);
+        txtText2 = findViewById(R.id.txtText2);
 
-        mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
 
-        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+        fragment1 = new QualityControlFragment();
+        fragment2 = new QualityControlSummaryFragment();
 
-        mViewPager.setCurrentItem(fragmentId);
-    }
 
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+        getSupportFragmentManager().beginTransaction().add(R.id.contentFragment,fragment1).commit();
+        linearLayout1.setBackgroundResource(R.drawable.orange_button_style_ripple);
+        txtText1.setTextColor(Color.WHITE);
 
-        private int numOfTabs;
+        tab1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
 
-        public SectionsPagerAdapter(FragmentManager fm, int numOfTabs) {
-            super(fm);
-            this.numOfTabs = numOfTabs;
-        }
+                linearLayout1.setBackgroundResource(R.drawable.orange_button_style_ripple);
+                txtText1.setTextColor(Color.WHITE);
 
-        @Override
-        public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            switch (position) {
-                case 0:
-                    return new QualityControlFragment();
-                case 1:
-                    return new QualityControlSummaryFragment();
-                case 2:
-                    return new QualityControlFragment();
+                linearLayout2.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText2.setTextColor(Color.GRAY);
 
-                default:
-                    return null;
+
+
+
             }
+        });
 
-        }
+        tab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment2).commit();
 
-        @Override
-        public int getCount() {
-            // Show 3 total pages.
-            return numOfTabs;
-        }
+                linearLayout2.setBackgroundResource(R.drawable.orange_button_style_ripple);
+                txtText2.setTextColor(Color.WHITE);
+
+                linearLayout1.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText1.setTextColor(Color.GRAY);
+
+
+
+
+            }
+        });
     }
 }

@@ -90,11 +90,11 @@
             android:id="@+id/btnDelete"
             android:textColor="@android:color/black"
             android:gravity="center"
-            android:src="@drawable/error_icon"
+            android:src="@drawable/error"
             android:layout_margin="4dp"
             android:layout_weight="0.5"
             android:layout_width="0dp"
-            android:layout_height="30dp"/>
+            android:layout_height="20dp"/>
 
 
     </LinearLayout>

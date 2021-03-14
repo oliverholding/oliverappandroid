@@ -41,7 +41,7 @@
                     <ImageButton
                         android:id="@+id/btnProduction"
                         android:layout_margin="4dp"
-                        android:src="@drawable/icono_logistica128"
+                        android:src="@drawable/produccion_operaciones"
                         android:background="@drawable/gray_button_style"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"/>
@@ -67,7 +67,7 @@
                     <ImageButton
                         android:id="@+id/btnStop"
                         android:layout_margin="4dp"
-                        android:src="@drawable/icono_logistica128"
+                        android:src="@drawable/produccion_detenida"
                         android:background="@drawable/gray_button_style"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"/>
@@ -93,7 +93,7 @@
                     <ImageButton
                         android:id="@+id/btnReady"
                         android:layout_margin="4dp"
-                        android:src="@drawable/icono_logistica128"
+                        android:src="@drawable/produccion_lista"
                         android:background="@drawable/gray_button_style"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"/>

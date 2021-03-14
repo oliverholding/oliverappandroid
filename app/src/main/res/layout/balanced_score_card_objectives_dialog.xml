@@ -169,7 +169,7 @@
                     <ImageView
                         android:id="@+id/btnKpiInfo1_1"
                         android:layout_margin="4dp"
-                        android:src="@drawable/information_vector_asset"
+                        android:src="@drawable/informacion"
                         android:layout_weight="0.1"
                         android:layout_width="0dp"
                         android:layout_height="20dp"/>
@@ -220,7 +220,7 @@
                     <ImageView
                         android:id="@+id/btnKpiInfo1_2"
                         android:layout_margin="4dp"
-                        android:src="@drawable/information_vector_asset"
+                        android:src="@drawable/informacion"
                         android:layout_weight="0.1"
                         android:layout_width="0dp"
                         android:layout_height="20dp"/>
@@ -301,7 +301,7 @@
                     <ImageView
                         android:id="@+id/btnKpiInfo2_1"
                         android:layout_margin="4dp"
-                        android:src="@drawable/information_vector_asset"
+                        android:src="@drawable/informacion"
                         android:layout_weight="0.1"
                         android:layout_width="0dp"
                         android:layout_height="20dp"/>
@@ -352,7 +352,7 @@
                     <ImageView
                         android:id="@+id/btnKpiInfo2_2"
                         android:layout_margin="4dp"
-                        android:src="@drawable/information_vector_asset"
+                        android:src="@drawable/informacion"
                         android:layout_weight="0.1"
                         android:layout_width="0dp"
                         android:layout_height="20dp"/>
@@ -433,7 +433,7 @@
                     <ImageView
                         android:id="@+id/btnKpiInfo3_1"
                         android:layout_margin="4dp"
-                        android:src="@drawable/information_vector_asset"
+                        android:src="@drawable/informacion"
                         android:layout_weight="0.1"
                         android:layout_width="0dp"
                         android:layout_height="20dp"/>
@@ -484,7 +484,7 @@
                     <ImageView
                         android:id="@+id/btnKpiInfo3_2"
                         android:layout_margin="4dp"
-                        android:src="@drawable/information_vector_asset"
+                        android:src="@drawable/informacion"
                         android:layout_weight="0.1"
                         android:layout_width="0dp"
                         android:layout_height="20dp"/>

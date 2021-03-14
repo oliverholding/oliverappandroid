@@ -14,33 +14,57 @@
         android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardViewTitle"
-            app:cardCornerRadius="8dp"
+            android:id="@+id/cardTitle"
             app:cardElevation="8dp"
-            android:layout_margin="8dp"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:padding="8dp"
                 android:orientation="vertical"
+                android:padding="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:text="Mis Valores"
-                    android:textSize="18sp"
-                    android:layout_margin="4dp"
-                    android:textColor="@android:color/black"
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    android:text="Aquí te enseñaremos a dar los paso necesarios para establecer los valores corporativos de tu negocio/comercio/empresa."
-                    android:layout_margin="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    <ImageView
+                        android:layout_margin="4dp"
+                        android:src="@color/gray2"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"/>
 
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textSize="16sp"
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:text="Mis Valores"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textSize="12sp"
+                            android:layout_margin="4dp"
+                            android:text="Aquí te enseñaremos a dar los paso necesarios para establecer los valores corporativos de tu negocio/comercio/empresa."
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -97,7 +121,7 @@
 
                             <ImageView
                                 android:id="@+id/btnValue1"
-                                android:src="@drawable/information_vector_asset"
+                                android:src="@drawable/informacion"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
@@ -286,7 +310,7 @@
                                 android:layout_height="wrap_content">
 
                                 <ImageView
-                                    android:src="@drawable/transaction_completed"
+                                    android:src="@drawable/check"
                                     android:layout_weight="0.2"
                                     android:layout_width="0dp"
                                     android:layout_height="45dp"/>
@@ -362,7 +386,7 @@
 
                             <ImageView
                                 android:id="@+id/btnValue2"
-                                android:src="@drawable/information_vector_asset"
+                                android:src="@drawable/informacion"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
@@ -551,7 +575,7 @@
                                 android:layout_height="wrap_content">
 
                                 <ImageView
-                                    android:src="@drawable/transaction_completed"
+                                    android:src="@drawable/check"
                                     android:layout_weight="0.2"
                                     android:layout_width="0dp"
                                     android:layout_height="45dp"/>
@@ -627,7 +651,7 @@
 
                             <ImageView
                                 android:id="@+id/btnValue3"
-                                android:src="@drawable/information_vector_asset"
+                                android:src="@drawable/informacion"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
@@ -816,7 +840,7 @@
                                 android:layout_height="wrap_content">
 
                                 <ImageView
-                                    android:src="@drawable/transaction_completed"
+                                    android:src="@drawable/check"
                                     android:layout_weight="0.2"
                                     android:layout_width="0dp"
                                     android:layout_height="45dp"/>
@@ -892,7 +916,7 @@
 
                             <ImageView
                                 android:id="@+id/btnValue4"
-                                android:src="@drawable/information_vector_asset"
+                                android:src="@drawable/informacion"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
@@ -1081,7 +1105,7 @@
                                 android:layout_height="wrap_content">
 
                                 <ImageView
-                                    android:src="@drawable/transaction_completed"
+                                    android:src="@drawable/check"
                                     android:layout_weight="0.2"
                                     android:layout_width="0dp"
                                     android:layout_height="45dp"/>
@@ -1157,7 +1181,7 @@
 
                             <ImageView
                                 android:id="@+id/btnValue5"
-                                android:src="@drawable/information_vector_asset"
+                                android:src="@drawable/informacion"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
@@ -1346,7 +1370,7 @@
                                 android:layout_height="wrap_content">
 
                                 <ImageView
-                                    android:src="@drawable/transaction_completed"
+                                    android:src="@drawable/check"
                                     android:layout_weight="0.2"
                                     android:layout_width="0dp"
                                     android:layout_height="45dp"/>
@@ -1422,7 +1446,7 @@
 
                             <ImageView
                                 android:id="@+id/btnValue6"
-                                android:src="@drawable/information_vector_asset"
+                                android:src="@drawable/informacion"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
@@ -1611,7 +1635,7 @@
                                 android:layout_height="wrap_content">
 
                                 <ImageView
-                                    android:src="@drawable/transaction_completed"
+                                    android:src="@drawable/check"
                                     android:layout_weight="0.2"
                                     android:layout_width="0dp"
                                     android:layout_height="45dp"/>
@@ -1687,7 +1711,7 @@
 
                             <ImageView
                                 android:id="@+id/btnValue7"
-                                android:src="@drawable/information_vector_asset"
+                                android:src="@drawable/informacion"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
@@ -1876,7 +1900,7 @@
                                 android:layout_height="wrap_content">
 
                                 <ImageView
-                                    android:src="@drawable/transaction_completed"
+                                    android:src="@drawable/check"
                                     android:layout_weight="0.2"
                                     android:layout_width="0dp"
                                     android:layout_height="45dp"/>
@@ -1952,7 +1976,7 @@
 
                             <ImageView
                                 android:id="@+id/btnValue8"
-                                android:src="@drawable/information_vector_asset"
+                                android:src="@drawable/informacion"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
@@ -2141,7 +2165,7 @@
                                 android:layout_height="wrap_content">
 
                                 <ImageView
-                                    android:src="@drawable/transaction_completed"
+                                    android:src="@drawable/check"
                                     android:layout_weight="0.2"
                                     android:layout_width="0dp"
                                     android:layout_height="45dp"/>
@@ -2217,7 +2241,7 @@
 
                             <ImageView
                                 android:id="@+id/btnValue9"
-                                android:src="@drawable/information_vector_asset"
+                                android:src="@drawable/informacion"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
@@ -2406,7 +2430,7 @@
                                 android:layout_height="wrap_content">
 
                                 <ImageView
-                                    android:src="@drawable/transaction_completed"
+                                    android:src="@drawable/check"
                                     android:layout_weight="0.2"
                                     android:layout_width="0dp"
                                     android:layout_height="45dp"/>
@@ -2482,7 +2506,7 @@
 
                             <ImageView
                                 android:id="@+id/btnValue10"
-                                android:src="@drawable/information_vector_asset"
+                                android:src="@drawable/informacion"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
@@ -2671,7 +2695,7 @@
                                 android:layout_height="wrap_content">
 
                                 <ImageView
-                                    android:src="@drawable/transaction_completed"
+                                    android:src="@drawable/check"
                                     android:layout_weight="0.2"
                                     android:layout_width="0dp"
                                     android:layout_height="45dp"/>
@@ -2747,7 +2771,7 @@
 
                             <ImageView
                                 android:id="@+id/btnValue11"
-                                android:src="@drawable/information_vector_asset"
+                                android:src="@drawable/informacion"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
@@ -2936,7 +2960,7 @@
                                 android:layout_height="wrap_content">
 
                                 <ImageView
-                                    android:src="@drawable/transaction_completed"
+                                    android:src="@drawable/check"
                                     android:layout_weight="0.2"
                                     android:layout_width="0dp"
                                     android:layout_height="45dp"/>
@@ -3012,7 +3036,7 @@
 
                             <ImageView
                                 android:id="@+id/btnValue12"
-                                android:src="@drawable/information_vector_asset"
+                                android:src="@drawable/informacion"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
@@ -3201,7 +3225,7 @@
                                 android:layout_height="wrap_content">
 
                                 <ImageView
-                                    android:src="@drawable/transaction_completed"
+                                    android:src="@drawable/check"
                                     android:layout_weight="0.2"
                                     android:layout_width="0dp"
                                     android:layout_height="45dp"/>
@@ -3277,7 +3301,7 @@
 
                             <ImageView
                                 android:id="@+id/btnValue13"
-                                android:src="@drawable/information_vector_asset"
+                                android:src="@drawable/informacion"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
@@ -3466,7 +3490,7 @@
                                 android:layout_height="wrap_content">
 
                                 <ImageView
-                                    android:src="@drawable/transaction_completed"
+                                    android:src="@drawable/check"
                                     android:layout_weight="0.2"
                                     android:layout_width="0dp"
                                     android:layout_height="45dp"/>
@@ -3542,7 +3566,7 @@
 
                             <ImageView
                                 android:id="@+id/btnValue14"
-                                android:src="@drawable/information_vector_asset"
+                                android:src="@drawable/informacion"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
@@ -3731,7 +3755,7 @@
                                 android:layout_height="wrap_content">
 
                                 <ImageView
-                                    android:src="@drawable/transaction_completed"
+                                    android:src="@drawable/check"
                                     android:layout_weight="0.2"
                                     android:layout_width="0dp"
                                     android:layout_height="45dp"/>
@@ -3807,7 +3831,7 @@
 
                             <ImageView
                                 android:id="@+id/btnValue15"
-                                android:src="@drawable/information_vector_asset"
+                                android:src="@drawable/informacion"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
@@ -3996,7 +4020,7 @@
                                 android:layout_height="wrap_content">
 
                                 <ImageView
-                                    android:src="@drawable/transaction_completed"
+                                    android:src="@drawable/check"
                                     android:layout_weight="0.2"
                                     android:layout_width="0dp"
                                     android:layout_height="45dp"/>
@@ -4072,7 +4096,7 @@
 
                             <ImageView
                                 android:id="@+id/btnValue16"
-                                android:src="@drawable/information_vector_asset"
+                                android:src="@drawable/informacion"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
@@ -4261,7 +4285,7 @@
                                 android:layout_height="wrap_content">
 
                                 <ImageView
-                                    android:src="@drawable/transaction_completed"
+                                    android:src="@drawable/check"
                                     android:layout_weight="0.2"
                                     android:layout_width="0dp"
                                     android:layout_height="45dp"/>
@@ -4337,7 +4361,7 @@
 
                             <ImageView
                                 android:id="@+id/btnValue17"
-                                android:src="@drawable/information_vector_asset"
+                                android:src="@drawable/informacion"
                                 android:layout_weight="0.2"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
@@ -4526,7 +4550,7 @@
                                 android:layout_height="wrap_content">
 
                                 <ImageView
-                                    android:src="@drawable/transaction_completed"
+                                    android:src="@drawable/check"
                                     android:layout_weight="0.2"
                                     android:layout_width="0dp"
                                     android:layout_height="45dp"/>

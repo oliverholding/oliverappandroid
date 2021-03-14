@@ -58,7 +58,6 @@
         <activity android:name=".CareManager.PeopleManagement.Evaluation360.JobProfilesEvaluationsActivity" />
         <activity android:name=".CareManager.PeopleManagement.Evaluation360.Evaluation360Activity" />
         <activity android:name=".CareManager.FinancialManagement.Budget.BudgetActivity" />
-        <activity android:name=".CareManager.FinancialManagement.AccountsToPaid.AccountsToPaidActivity" />
         <activity android:name=".CareManager.FinancialManagement.CashAndBanks.CashAndBanksActivity" />
         <activity android:name=".CareManager.FinancialManagement.FixedAssets.FixedAssetsActivity" />
         <activity android:name=".CareManager.FinancialManagement.FinanacialManagementActivity" />
@@ -119,7 +118,6 @@
         <activity android:name=".CareManager.SalesModule.CustomerSchedule.CustomerScheduleActivity" />
         <activity android:name=".CareManager.Commercialization.Dashboards.DashboardsActivity" />
         <activity android:name=".CareManager.Commercialization.NewMatrix10.NewMatrix10Activity" />
-        <activity android:name=".CareManager.SalesModule.SalesTutorialActivity" />
         <activity android:name=".CareManager.Commercialization.BillsIssuing.CreateInvoiceActivity" />
         <activity android:name=".CareManager.Commercialization.CustomerSupport.CustomerSuportActivity" />
         <activity android:name=".CareManager.Commercialization.CreditsAndTreasury.CreditAndTreasuryActivity" />
@@ -130,13 +128,11 @@
         <activity android:name=".CareManager.SalesModule.SalesArgument.SalesArgumentActivity" />
         <activity android:name=".CareManager.Commercialization.BillsIssuing.BillsIssuingActivity" />
         <activity android:name=".CareManager.Commercialization.ProductMarketMatrix.ProductMarketMatrixActivity" />
-        <activity android:name=".CareManager.SalesModule.SalesToolsActivity" />
         <activity android:name=".CareManager.SalesModule.SalesModuleActivity" />
         <activity android:name=".CareManager.Commercialization.CommercializationActivity" />
         <activity android:name=".CareManager.NewProductsOrServices.NewProductsOrServicesToolsActivity" />
         <activity android:name=".CareManager.NewProductsOrServices.NewProductsOrServicesActivity" />
         <activity android:name=".CareManager.BusinessModelModule.BusinessModelToolsActivity" />
-        <activity android:name=".CareManager.ValueProposalModule.ValueProposalToolsActivity" />
         <activity android:name=".CareManager.BusinessOportunitiesModule.BusinessOportunitiesToolsActivity" />
         <activity android:name=".CareManager.UserInformationModule.UserInformationModuleActivity" />
         <activity android:name=".WebViewActivity" />

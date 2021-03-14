@@ -23,7 +23,7 @@
 
         <ImageView
             android:layout_margin="12dp"
-            android:src="@drawable/cut_time_icon"
+            android:src="@drawable/horario_atencion"
             android:layout_width="100dp"
             android:layout_height="100dp"/>
 

@@ -9,7 +9,6 @@
 
     <pl.droidsonroids.gif.GifImageView
         android:layout_margin="12dp"
-        android:src="@drawable/avatar_oliver"
         android:layout_width="150dp"
         android:layout_height="150dp"/>
 

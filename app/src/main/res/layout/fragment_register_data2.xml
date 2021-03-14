@@ -36,7 +36,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@drawable/identity_card"
+                            android:src="@drawable/documento_identidad"
                             android:layout_margin="8dp"
                             android:layout_width="60dp"
                             android:layout_height="60dp"/>
@@ -162,7 +162,7 @@
                             android:layout_height="wrap_content">
 
                             <Button
-                                android:drawableStart="@drawable/calendar_icon"
+                                android:drawableStart="@drawable/calendario"
                                 android:id="@+id/edtBthDay"
                                 android:inputType="number"
                                 android:padding="8dp"
@@ -175,7 +175,7 @@
                                 android:layout_height="wrap_content" />
 
                             <Button
-                                android:drawableStart="@drawable/calendar_icon"
+                                android:drawableStart="@drawable/calendario"
                                 android:id="@+id/edtBthMonth"
                                 android:inputType="number"
                                 android:padding="8dp"
@@ -188,7 +188,7 @@
                                 android:layout_height="wrap_content" />
 
                             <Button
-                                android:drawableStart="@drawable/calendar_icon"
+                                android:drawableStart="@drawable/calendario"
                                 android:id="@+id/edtBthYear"
                                 android:inputType="number"
                                 android:padding="8dp"
@@ -242,7 +242,7 @@
             android:layout_alignParentBottom="true"
             android:text="CONTINUAR"
             android:textColor="@android:color/white"
-            android:background="@drawable/rectabgle_red_button"
+            android:background="@drawable/blue_button_style_ripple"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

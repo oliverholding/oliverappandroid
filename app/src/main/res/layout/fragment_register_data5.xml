@@ -68,7 +68,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@drawable/identity_card"
+                            android:src="@drawable/informacion_usuario"
                             android:layout_margin="8dp"
                             android:layout_width="60dp"
                             android:layout_height="60dp"/>
@@ -144,7 +144,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@drawable/finger_print"
+                            android:src="@drawable/pin_seguridad"
                             android:layout_margin="8dp"
                             android:layout_width="60dp"
                             android:layout_height="60dp"/>
@@ -203,7 +203,7 @@
             android:layout_alignParentBottom="true"
             android:text="CONTINUAR"
             android:textColor="@android:color/white"
-            android:background="@drawable/rectabgle_red_button"
+            android:background="@drawable/blue_button_style_ripple"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

@@ -145,10 +145,10 @@
                             android:id="@+id/btnPoints1"
                             android:layout_margin="4dp"
                             android:gravity="center"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_weight="0.3"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="30dp"/>
 
                     </LinearLayout>
 
@@ -181,10 +181,10 @@
                             android:id="@+id/btnPoints2"
                             android:layout_margin="4dp"
                             android:gravity="center"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_weight="0.3"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="30dp"/>
 
                     </LinearLayout>
 
@@ -217,10 +217,10 @@
                             android:id="@+id/btnPoints3"
                             android:layout_margin="4dp"
                             android:gravity="center"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_weight="0.3"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="30dp"/>
 
                     </LinearLayout>
                     <LinearLayout
@@ -252,10 +252,10 @@
                             android:id="@+id/btnPoints4"
                             android:layout_margin="4dp"
                             android:gravity="center"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_weight="0.3"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="30dp"/>
 
                     </LinearLayout>
                     <LinearLayout
@@ -287,10 +287,10 @@
                             android:id="@+id/btnPoints5"
                             android:layout_margin="4dp"
                             android:gravity="center"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_weight="0.3"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="30dp"/>
 
                     </LinearLayout>
 
@@ -323,10 +323,10 @@
                             android:id="@+id/btnPoints6"
                             android:layout_margin="4dp"
                             android:gravity="center"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_weight="0.3"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="30dp"/>
 
                     </LinearLayout>
 
@@ -418,10 +418,10 @@
                             android:id="@+id/btnChangeDiscount1"
                             android:layout_margin="4dp"
                             android:gravity="center"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_weight="0.3"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="30dp"/>
 
                     </LinearLayout>
 
@@ -454,10 +454,10 @@
                             android:id="@+id/btnChangeDiscount2"
                             android:layout_margin="4dp"
                             android:gravity="center"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_weight="0.3"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="30dp"/>
 
                     </LinearLayout>
 
@@ -490,10 +490,10 @@
                             android:id="@+id/btnChangeDiscount3"
                             android:layout_margin="4dp"
                             android:gravity="center"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_weight="0.3"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="30dp"/>
 
                     </LinearLayout>
 
@@ -526,10 +526,10 @@
                             android:id="@+id/btnChangeDiscount4"
                             android:layout_margin="4dp"
                             android:gravity="center"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_weight="0.3"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="30dp"/>
 
                     </LinearLayout>
 
@@ -562,10 +562,10 @@
                             android:id="@+id/btnChangeDiscount5"
                             android:layout_margin="4dp"
                             android:gravity="center"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_weight="0.3"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="30dp"/>
 
                     </LinearLayout>
 

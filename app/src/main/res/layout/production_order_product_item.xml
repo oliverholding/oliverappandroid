@@ -50,7 +50,7 @@
             android:textColor="@android:color/black"
             android:gravity="center"
             android:layout_margin="4dp"
-            android:src="@drawable/icono_logistica512"
+            android:src="@drawable/producto"
             android:layout_weight="0.3"
             android:layout_width="0dp"
             android:layout_height="30dp"/>

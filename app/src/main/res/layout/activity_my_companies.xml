@@ -6,19 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".Companies.MyCompaniesActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:minHeight="?attr/actionBarSize"
-        app:title="Mis Negocios"
+    <TextView
+        android:textSize="18sp"
+        android:textColor="@color/orange1"
+        android:textStyle="bold"
+        android:text="MIS NEGOCIOS"
+        android:layout_margin="22dp"
+        android:gravity="center"
+        android:id="@+id/txtTitle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:titleTextColor="@android:color/white"
-        android:background="@drawable/gradient_start2">
-
-    </androidx.appcompat.widget.Toolbar>
+        android:layout_height="wrap_content"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_below="@id/toolbar"
+        android:layout_below="@id/txtTitle"
         android:layout_above="@id/btnAddCompany"
         android:layout_margin="8dp"
         android:id="@+id/recyclerView"
@@ -30,13 +30,13 @@
 
     <Button
         android:id="@+id/btnAddCompany"
-        android:drawableStart="@drawable/add_icon"
+        android:drawableStart="@drawable/agregar_negocio"
         android:padding="8dp"
         android:layout_margin="8dp"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/gray_button_style"
+        android:background="@drawable/orange_button_style_ripple"
         android:textColor="@android:color/white"
-        android:text="Agregar Negocio"
+        android:text="Registrar Nuevo Negocio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

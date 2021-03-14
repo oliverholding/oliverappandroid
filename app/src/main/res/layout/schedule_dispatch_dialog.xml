@@ -34,9 +34,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <de.hdodenhof.circleimageview.CircleImageView
+                <ImageView
                     android:id="@+id/imgProduct"
-                    android:src="@drawable/profile_image_blue"
+                    android:src="@drawable/mis_clientes"
                     android:layout_weight="0.2"
                     android:layout_width="0dp"
                     android:layout_height="40dp"/>
@@ -73,7 +73,7 @@
                     android:layout_height="wrap_content"/>
 
                 <ImageView
-                    android:src="@drawable/edit_pencil_vector_asset"
+                    android:src="@drawable/editar"
                     android:layout_weight="0.2"
                     android:layout_width="0dp"
                     android:layout_height="20dp"/>
@@ -142,7 +142,7 @@
                     android:layout_height="wrap_content">
 
                     <Button
-                        android:drawableStart="@drawable/calendar_icon"
+                        android:drawableStart="@drawable/calendario"
                         android:id="@+id/edtBthDay"
                         android:inputType="number"
                         android:padding="8dp"
@@ -155,7 +155,7 @@
                         android:layout_height="wrap_content" />
 
                     <Button
-                        android:drawableStart="@drawable/calendar_icon"
+                        android:drawableStart="@drawable/calendario"
                         android:id="@+id/edtBthMonth"
                         android:inputType="number"
                         android:padding="8dp"
@@ -168,7 +168,7 @@
                         android:layout_height="wrap_content" />
 
                     <Button
-                        android:drawableStart="@drawable/calendar_icon"
+                        android:drawableStart="@drawable/calendario"
                         android:id="@+id/edtBthYear"
                         android:inputType="number"
                         android:padding="8dp"
@@ -376,7 +376,7 @@
         android:id="@+id/btnRegister"
         android:text="PROGRAMAR DESPACHO"
         android:textColor="@android:color/white"
-        android:background="@drawable/gradient_start2"
+        android:background="@drawable/orange_button_style_ripple"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

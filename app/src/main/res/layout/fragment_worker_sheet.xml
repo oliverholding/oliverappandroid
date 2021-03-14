@@ -17,9 +17,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <ImageView
                 android:layout_margin="8dp"
-                android:src="@drawable/profile_image_blue"
+                android:src="@drawable/funciones_trabajador"
                 android:layout_width="100dp"
                 android:layout_height="100dp"/>
 
@@ -75,7 +75,7 @@
                         <ImageView
                             android:id="@+id/btnAdd1"
                             android:layout_weight="0.1"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_width="0dp"
                             android:layout_height="30dp"/>
 
@@ -167,7 +167,7 @@
                         <ImageView
                             android:id="@+id/btnAdd2"
                             android:layout_weight="0.1"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_width="0dp"
                             android:layout_height="30dp"/>
 
@@ -251,7 +251,7 @@
                         <ImageView
                             android:id="@+id/btnAdd3"
                             android:layout_weight="0.1"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_width="0dp"
                             android:layout_height="30dp"/>
 
@@ -329,7 +329,7 @@
                         <ImageView
                             android:id="@+id/btnAdd4"
                             android:layout_weight="0.1"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_width="0dp"
                             android:layout_height="30dp"/>
 
@@ -380,7 +380,7 @@
                         <ImageView
                             android:id="@+id/btnAdd5"
                             android:layout_weight="0.1"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_width="0dp"
                             android:layout_height="30dp"/>
 
@@ -451,7 +451,7 @@
                         <ImageView
                             android:id="@+id/btnAdd6"
                             android:layout_weight="0.1"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_width="0dp"
                             android:layout_height="30dp"/>
 
@@ -543,7 +543,7 @@
                         <ImageView
                             android:id="@+id/btnAdd7"
                             android:layout_weight="0.1"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_width="0dp"
                             android:layout_height="30dp"/>
 

@@ -107,7 +107,7 @@ public class RegisterCompanyData1Fragment extends Fragment {
                     image_verification = "true";
                     txtImageVerification.setText("Foto subida con éxito");
                     txtImageVerification.setTextColor(Color.GREEN);
-                    profileImageState.setImageResource(R.drawable.transaction_completed);
+                    profileImageState.setImageResource(R.drawable.check);
                     loadingBar.dismiss();
                 } else {
                     loadingBar.dismiss();

@@ -77,7 +77,7 @@
                                 android:scaleType="centerCrop"
                                 android:layout_width="0dp"
                                 android:layout_height="0dp"
-                                android:src="@drawable/icono_carpeta"
+                                android:src="@drawable/subir_archivo"
                                 app:layout_constraintDimensionRatio="H,1:1"
                                 app:layout_constraintRight_toRightOf="parent"
                                 app:layout_constraintLeft_toLeftOf="parent"
@@ -109,7 +109,7 @@
                         <ImageView
                             android:id="@+id/profileImageState"
                             android:layout_margin="8dp"
-                            android:src="@drawable/transaction_in_progress"
+                            android:src="@drawable/espera"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
                             android:layout_height="30dp"/>
@@ -151,7 +151,7 @@
 
                 <ImageView
                     android:layout_margin="8dp"
-                    android:src="@drawable/camera_white_icon"
+                    android:src="@drawable/camara"
                     android:layout_weight="0.3"
                     android:layout_width="0dp"
                     android:layout_height="35dp"/>
@@ -179,7 +179,7 @@
 
                 <ImageView
                     android:layout_margin="8dp"
-                    android:src="@drawable/upload_file_white_icon"
+                    android:src="@drawable/galeria"
                     android:layout_weight="0.3"
                     android:layout_width="0dp"
                     android:layout_height="35dp"/>

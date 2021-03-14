@@ -71,7 +71,7 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:drawableStart="@drawable/calendar_icon"
+                android:drawableStart="@drawable/calendario"
                 android:id="@+id/edtBthDay"
                 android:padding="8dp"
                 android:maxLength="2"
@@ -83,7 +83,7 @@
                 android:layout_height="wrap_content" />
 
             <Button
-                android:drawableStart="@drawable/calendar_icon"
+                android:drawableStart="@drawable/calendario"
                 android:id="@+id/edtBthMonth"
                 android:padding="8dp"
                 android:maxLength="2"
@@ -95,7 +95,7 @@
                 android:layout_height="wrap_content" />
 
             <Button
-                android:drawableStart="@drawable/calendar_icon"
+                android:drawableStart="@drawable/calendario"
                 android:id="@+id/edtBthYear"
                 android:padding="8dp"
                 android:maxLength="4"

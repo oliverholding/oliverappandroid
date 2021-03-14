@@ -19,7 +19,7 @@
 
     <ImageView
         android:layout_margin="18dp"
-        android:src="@drawable/pin_icon"
+        android:src="@drawable/pin_seguridad"
         android:layout_width="100dp"
         android:layout_height="100dp"/>
 

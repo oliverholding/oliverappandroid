@@ -83,7 +83,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:background="@drawable/table_background"
+                    android:background="@drawable/orange_strokes_style"
                     android:orientation="vertical"
                     android:padding="8dp"
                     android:layout_weight="2"
@@ -213,7 +213,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:background="@drawable/table_background"
+                    android:background="@drawable/orange_strokes_style"
                     android:orientation="vertical"
                     android:padding="8dp"
                     android:layout_weight="2"

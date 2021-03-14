@@ -147,6 +147,7 @@
                     android:layout_height="wrap_content">
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/tab1"
                         android:layout_margin="4dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
@@ -176,6 +177,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/tab2"
                         android:layout_margin="4dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
@@ -190,6 +192,35 @@
                                 android:gravity="center"
                                 android:layout_margin="4dp"
                                 android:text="Módulos"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <View
+                                android:layout_margin="4dp"
+                                android:background="@color/gray2"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"/>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/tab3"
+                        android:layout_margin="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:padding="4dp"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:gravity="center"
+                                android:layout_margin="4dp"
+                                android:text="Logros"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
 

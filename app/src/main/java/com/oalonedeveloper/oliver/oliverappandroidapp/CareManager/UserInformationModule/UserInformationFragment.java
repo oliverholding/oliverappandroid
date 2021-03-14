@@ -16,7 +16,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.IntroductionModuleActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 
@@ -51,14 +50,6 @@ public class UserInformationFragment extends Fragment {
         txtSex = view.findViewById(R.id.txtSex);
         txtOccupation = view.findViewById(R.id.txtOccupation);
         txtAcademicDegree = view.findViewById(R.id.txtAcademicDegree);
-        btnTest1 = view.findViewById(R.id.btnTest1);
-        btnTest2 = view.findViewById(R.id.btnTest2);
-        btnTest3 = view.findViewById(R.id.btnTest3);
-        btnTest4 = view.findViewById(R.id.btnTest4);
-        btnTest5 = view.findViewById(R.id.btnTest5);
-        btnTest6 = view.findViewById(R.id.btnTest6);
-        btnTest7 = view.findViewById(R.id.btnTest7);
-        btnTest8 = view.findViewById(R.id.btnTest8);
 
 
         companyRef = FirebaseDatabase.getInstance().getReference().child("My Companies");

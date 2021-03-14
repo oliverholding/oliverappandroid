@@ -20,7 +20,7 @@
 
     <ImageView
         android:layout_margin="18dp"
-        android:src="@drawable/credit_card_user_verification_icon"
+        android:src="@drawable/documento_identidad"
         android:layout_width="100dp"
         android:layout_height="100dp"/>
 
@@ -39,7 +39,7 @@
         android:layout_margin="22dp"
         android:text="REPORTAR"
         android:textColor="@android:color/white"
-        android:background="@drawable/red_button_style"
+        android:background="@drawable/orange_button_style_ripple"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

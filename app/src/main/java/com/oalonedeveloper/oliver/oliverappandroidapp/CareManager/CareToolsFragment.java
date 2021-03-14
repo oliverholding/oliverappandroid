@@ -11,15 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BlancedScoreCard.BalancedScoreCardActivity;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessModelModule.BusinessModelActivity;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessOportunitiesModule.BusinessOportunitiesActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessPlan.BusinessPlanActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CommercializationActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.FinanacialManagementActivity;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.FinancialManagementFragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.IntructionModule.IntroductionModuleActivity;
+
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Logistic.LogisticActivity;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.NewProductsOrServices.NewProductsOrServicesActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Normativity.NormativityActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.JobProfiles.JobProfilesActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.PeopleManagementActivity;
@@ -66,17 +62,14 @@ public class CareToolsFragment extends Fragment {
         cardViewModule1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), IntroductionModuleActivity.class);
-                startActivity(intent);
+
             }
         });
 
         cardViewModule2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), BusinessOportunitiesActivity.class);
-                intent.putExtra("post_key",post_key);
-                startActivity(intent);
+
             }
         });
 
@@ -92,9 +85,7 @@ public class CareToolsFragment extends Fragment {
         cardViewModule4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), BusinessModelActivity.class);
-                intent.putExtra("post_key",post_key);
-                startActivity(intent);
+
             }
         });
 
@@ -110,9 +101,7 @@ public class CareToolsFragment extends Fragment {
         cardViewModule6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), NewProductsOrServicesActivity.class);
-                intent.putExtra("post_key",post_key);
-                startActivity(intent);
+
             }
         });
 

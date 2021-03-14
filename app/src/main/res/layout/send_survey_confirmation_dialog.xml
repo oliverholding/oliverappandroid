@@ -10,7 +10,7 @@
 
     <ImageView
         android:layout_margin="12dp"
-        android:src="@drawable/paper_write_icon"
+        android:src="@drawable/encuestas"
         android:layout_width="80dp"
         android:layout_height="80dp"/>
 

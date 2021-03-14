@@ -177,7 +177,7 @@ public class DataSumaryFragment extends Fragment {
 
                                         if (docs_count >= 2) {
                                             showDocumentExistenceDialog();
-                                            imgTwo.setImageResource(R.drawable.error_icon);
+                                            imgTwo.setImageResource(R.drawable.error);
                                             txtPersonalData.setText("El documento ha sido registrado por otro usuario");
                                             txtPersonalData.setTextColor(Color.RED);
                                             dni_exist = "true";
@@ -197,7 +197,7 @@ public class DataSumaryFragment extends Fragment {
                                 if (dni_api.equals("true")) {
                                     getReniecInformation();
                                 } else if (dni_api.equals("false")) {
-                                    imgTwo.setImageResource(R.drawable.transaction_completed);
+                                    imgTwo.setImageResource(R.drawable.check);
                                     txtPersonalData.setText("Datos personales completado");
                                     txtPersonalData.setTextColor(Color.GREEN);
                                     personal_data_verification = "true";
@@ -209,7 +209,7 @@ public class DataSumaryFragment extends Fragment {
                                     !dataSnapshot.hasChild("nacionality")) {
                                 loadingBar.dismiss();
                             } else {
-                                imgTwo.setImageResource(R.drawable.error_icon);
+                                imgTwo.setImageResource(R.drawable.error);
                                 txtPersonalData.setText("Falta completar datos");
                                 txtPersonalData.setTextColor(Color.RED);
                                 loadingBar.dismiss();
@@ -226,7 +226,7 @@ public class DataSumaryFragment extends Fragment {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             if (dataSnapshot.hasChild("profileimage")) {
-                                imgOne.setImageResource(R.drawable.transaction_completed);
+                                imgOne.setImageResource(R.drawable.check);
                                 txtProfileImage.setText("Foto de perfil cargada con éxito");
                                 txtProfileImage.setTextColor(Color.GREEN);
                                 profile_image_verification = "true";
@@ -238,7 +238,7 @@ public class DataSumaryFragment extends Fragment {
 
                                 email = dataSnapshot.child("email").getValue().toString();
 
-                                imgThree.setImageResource(R.drawable.transaction_completed);
+                                imgThree.setImageResource(R.drawable.check);
                                 txtContactData.setText("Datos de contacto completado");
                                 txtContactData.setTextColor(Color.GREEN);
                                 contact_data_verification = "true";
@@ -249,7 +249,7 @@ public class DataSumaryFragment extends Fragment {
                                 loadingBar.dismiss();
 
                             } else {
-                                imgThree.setImageResource(R.drawable.error_icon);
+                                imgThree.setImageResource(R.drawable.error);
                                 txtContactData.setText("Falta completar datos");
                                 txtContactData.setTextColor(Color.RED);
                                 loadingBar.dismiss();
@@ -257,7 +257,7 @@ public class DataSumaryFragment extends Fragment {
 
 
                             if (dataSnapshot.hasChild("occupation") && dataSnapshot.hasChild("academic_degree")) {
-                                imgFour.setImageResource(R.drawable.transaction_completed);
+                                imgFour.setImageResource(R.drawable.check);
                                 txtAditionalData.setText("Datos adicionales completado");
                                 txtAditionalData.setTextColor(Color.GREEN);
                                 additional_data_verification = "true";
@@ -265,14 +265,14 @@ public class DataSumaryFragment extends Fragment {
                             } else if (!dataSnapshot.hasChild("occupation") && !dataSnapshot.hasChild("academic_degree")) {
                                 loadingBar.dismiss();
                             } else {
-                                imgFour.setImageResource(R.drawable.error_icon);
+                                imgFour.setImageResource(R.drawable.error);
                                 txtAditionalData.setText("Falta completar datos");
                                 txtAditionalData.setTextColor(Color.RED);
                                 loadingBar.dismiss();
                             }
 
                             if (dataSnapshot.hasChild("username") && dataSnapshot.hasChild("pin")) {
-                                imgFive.setImageResource(R.drawable.transaction_completed);
+                                imgFive.setImageResource(R.drawable.check);
                                 txtAccessData.setText("Datos de acceso completado");
                                 txtAccessData.setTextColor(Color.GREEN);
                                 access_data_verification = "true";
@@ -286,7 +286,7 @@ public class DataSumaryFragment extends Fragment {
                                         long docs_count = dataSnapshot.getChildrenCount();
 
                                         if (docs_count >= 2) {
-                                            imgFive.setImageResource(R.drawable.error_icon);
+                                            imgFive.setImageResource(R.drawable.error);
                                             txtAccessData.setText("El nombre de usuario ha sido registrado por otro usuario");
                                             txtAccessData.setTextColor(Color.RED);
                                             username_exist = "true";
@@ -307,7 +307,7 @@ public class DataSumaryFragment extends Fragment {
                             } else if (!dataSnapshot.hasChild("username") && !dataSnapshot.hasChild("pin")) {
                                 loadingBar.dismiss();
                             } else {
-                                imgFive.setImageResource(R.drawable.error_icon);
+                                imgFive.setImageResource(R.drawable.error);
                                 txtAccessData.setText("Falta completar datos");
                                 txtAccessData.setTextColor(Color.RED);
                                 loadingBar.dismiss();
@@ -632,11 +632,11 @@ public class DataSumaryFragment extends Fragment {
 
                     if (!database_name.equals(json_name)) {
                         showNamesErrorDialog();
-                        imgTwo.setImageResource(R.drawable.error_icon);
+                        imgTwo.setImageResource(R.drawable.error);
                         txtPersonalData.setText("Error en los nombres");
                         txtPersonalData.setTextColor(Color.RED);
                     } else {
-                        imgTwo.setImageResource(R.drawable.transaction_completed);
+                        imgTwo.setImageResource(R.drawable.check);
                         txtPersonalData.setText("Datos personales completado");
                         txtPersonalData.setTextColor(Color.GREEN);
                         personal_data_verification = "true";

@@ -21,7 +21,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:src="@drawable/profile_image_blue"
+                android:src="@drawable/mis_clientes"
                 android:layout_weight="0.3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>

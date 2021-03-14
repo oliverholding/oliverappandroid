@@ -1,15 +1,23 @@
 package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Logistic.DemmandQuantity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.Dashboards.CustomerRankingFragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.Dashboards.GraphicsFragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.Dashboards.ProductRankingFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.FinancialInstitutionsFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.FinancialProductsFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.MyProductsFragment;
@@ -21,8 +29,10 @@ import java.util.Date;
 
 public class DemmandQuantityActivity extends AppCompatActivity {
 
-    ViewPager mViewPager;
-    SectionsPagerAdapter mSectionsPagerAdapter;
+    CardView tab1,tab2,tab3;
+    LinearLayout linearLayout1,linearLayout2,linearLayout3;
+    TextView txtText1,txtText2,txtText3;
+    Fragment fragment1,fragment2,fragment3;
     int fragmentId;
     int day,month,year,next_year;
 
@@ -39,58 +49,84 @@ public class DemmandQuantityActivity extends AppCompatActivity {
         year = cal.get(Calendar.YEAR);
         next_year = year+1;
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
-        TabItem tabItem = findViewById(R.id.tabItem);
-        TabItem tabItem2 = findViewById(R.id.tabItem2);
+        tab1 = findViewById(R.id.tab1);
+        tab2 = findViewById(R.id.tab2);
+        tab3 = findViewById(R.id.tab3);
+        linearLayout1 = findViewById(R.id.linearLayout1);
+        linearLayout2 = findViewById(R.id.linearLayout2);
+        linearLayout3 = findViewById(R.id.linearLayout3);
+        txtText1 = findViewById(R.id.txtText1);
+        txtText2 = findViewById(R.id.txtText2);
+        txtText3 = findViewById(R.id.txtText3);
+
+        fragment1 = new DemmanCurrentYearFragment();
+        fragment2 = new DemmandCurrentYearProjectionFragment();
+        fragment3 = new DemmandNextYearProjectionFragment();
+
 
         fragmentId = getIntent().getIntExtra("FRAGMENT_ID",0);
 
-        tabLayout.getTabAt(0).setText("REAL "+year);
-        tabLayout.getTabAt(1).setText("PROYECTADO "+year);
-        tabLayout.getTabAt(2).setText("PROYECTAR "+next_year);
+        txtText1.setText("Real "+year);
+        txtText2.setText("Proyectado "+year);
+        txtText3.setText("Proyectar "+next_year);
 
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
+        getSupportFragmentManager().beginTransaction().add(R.id.contentFragment,fragment1).commit();
+        linearLayout1.setBackgroundResource(R.drawable.orange_button_style_ripple);
+        txtText1.setTextColor(Color.WHITE);
 
-        mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
+        tab1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
 
-        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+                linearLayout1.setBackgroundResource(R.drawable.orange_button_style_ripple);
+                txtText1.setTextColor(Color.WHITE);
 
-        mViewPager.setCurrentItem(fragmentId);
-    }
+                linearLayout2.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText2.setTextColor(Color.GRAY);
 
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+                linearLayout3.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText3.setTextColor(Color.GRAY);
 
-        private int numOfTabs;
 
-        public SectionsPagerAdapter(FragmentManager fm, int numOfTabs) {
-            super(fm);
-            this.numOfTabs = numOfTabs;
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            switch (position) {
-                case 0:
-                    return new DemmanCurrentYearFragment();
-                case 1:
-                    return new DemmandCurrentYearProjectionFragment();
-                case 2:
-                    return new DemmandNextYearProjectionFragment();
-
-                default:
-                    return null;
             }
+        });
 
-        }
+        tab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment2).commit();
 
-        @Override
-        public int getCount() {
-            // Show 3 total pages.
-            return numOfTabs;
-        }
+                linearLayout2.setBackgroundResource(R.drawable.orange_button_style_ripple);
+                txtText2.setTextColor(Color.WHITE);
+
+                linearLayout1.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText1.setTextColor(Color.GRAY);
+
+                linearLayout3.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText3.setTextColor(Color.GRAY);
+
+
+            }
+        });
+
+        tab3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment3).commit();
+
+                linearLayout3.setBackgroundResource(R.drawable.orange_button_style_ripple);
+                txtText3.setTextColor(Color.WHITE);
+
+                linearLayout1.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText1.setTextColor(Color.GRAY);
+
+                linearLayout2.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText2.setTextColor(Color.GRAY);
+
+
+            }
+        });
     }
+
 }

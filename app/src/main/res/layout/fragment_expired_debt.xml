@@ -99,7 +99,7 @@
         android:layout_margin="4dp"
         android:text="NOTIFICAR vencimiento de deuda"
         android:padding="8dp"
-        android:drawableStart="@drawable/sms_message_icon"
+        android:drawableStart="@drawable/mensaje_texto"
         android:textColor="@android:color/white"
         android:background="@drawable/gray_button_style"
         android:layout_width="match_parent"

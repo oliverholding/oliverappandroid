@@ -55,7 +55,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:background="@drawable/table_background"
+                    android:background="@drawable/orange_strokes_style"
                     android:orientation="vertical"
                     android:padding="8dp"
                     android:layout_weight="2"
@@ -296,11 +296,10 @@
             <Button
                 android:id="@+id/btnAddProduct"
                 android:text="AGREGAR PRODUCTO"
-                android:drawableStart="@drawable/add_icon"
                 android:textColor="@android:color/white"
                 android:layout_margin="4dp"
                 android:padding="8dp"
-                android:background="@drawable/gray_button_style"
+                android:background="@drawable/orange_button_style_ripple"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"/>
 
@@ -310,7 +309,7 @@
                 android:textColor="@android:color/white"
                 android:layout_margin="4dp"
                 android:padding="8dp"
-                android:background="@drawable/gray_button_style"
+                android:background="@drawable/orange_button_style_ripple"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"/>
 
@@ -321,7 +320,7 @@
             android:padding="4dp"
             android:layout_margin="8dp"
             android:orientation="vertical"
-            android:background="@drawable/table_background"
+            android:background="@drawable/orange_strokes_style"
             android:layout_width="0dp"
             android:layout_height="wrap_content">
 
@@ -372,7 +371,7 @@
         android:textColor="@android:color/white"
         android:layout_margin="8dp"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/gray_button_style"
+        android:background="@drawable/orange_button_style_ripple"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

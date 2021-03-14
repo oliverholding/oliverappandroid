@@ -376,7 +376,7 @@
                 android:layout_height="wrap_content">
 
                 <Button
-                    android:drawableStart="@drawable/calendar_icon"
+                    android:drawableStart="@drawable/calendario"
                     android:id="@+id/edtBthDay"
                     android:inputType="number"
                     android:padding="8dp"
@@ -389,7 +389,7 @@
                     android:layout_height="wrap_content" />
 
                 <Button
-                    android:drawableStart="@drawable/calendar_icon"
+                    android:drawableStart="@drawable/calendario"
                     android:id="@+id/edtBthMonth"
                     android:inputType="number"
                     android:padding="8dp"
@@ -402,7 +402,7 @@
                     android:layout_height="wrap_content" />
 
                 <Button
-                    android:drawableStart="@drawable/calendar_icon"
+                    android:drawableStart="@drawable/calendario"
                     android:id="@+id/edtBthYear"
                     android:inputType="number"
                     android:padding="8dp"
@@ -430,7 +430,7 @@
                 android:layout_height="wrap_content">
 
                 <Button
-                    android:drawableStart="@drawable/calendar_icon"
+                    android:drawableStart="@drawable/calendario"
                     android:inputType="number"
                     android:padding="8dp"
                     android:maxLength="2"
@@ -442,7 +442,7 @@
                     android:layout_height="wrap_content" />
 
                 <Button
-                    android:drawableStart="@drawable/calendar_icon"
+                    android:drawableStart="@drawable/calendario"
                     android:inputType="number"
                     android:padding="8dp"
                     android:maxLength="2"
@@ -453,8 +453,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content" />
 
-                <Button
-                    android:drawableStart="@drawable/calendar_icon"
+                <calendario
+                    android:drawableStart="@drawable/calendario"
                     android:inputType="number"
                     android:padding="8dp"
                     android:maxLength="4"

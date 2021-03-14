@@ -134,9 +134,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <ImageView
                             android:layout_margin="4dp"
-                            android:src="@color/colorGradientCenterRed"
+                            android:src="@drawable/comparacion_empresas"
                             android:layout_width="40dp"
                             android:layout_height="40dp"/>
 
@@ -172,9 +172,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <ImageView
                             android:layout_margin="4dp"
-                            android:src="@color/colorGradientCenterRed"
+                            android:src="@drawable/pequena_empresa"
                             android:layout_width="40dp"
                             android:layout_height="40dp"/>
 
@@ -210,9 +210,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <ImageView
                             android:layout_margin="4dp"
-                            android:src="@color/colorGradientCenterRed"
+                            android:src="@drawable/micro_empresa"
                             android:layout_width="40dp"
                             android:layout_height="40dp"/>
 
@@ -387,7 +387,7 @@
 
                         <ImageView
                             android:id="@+id/btnAddIncomes"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_weight="0.1"
                             android:layout_width="0dp"
                             android:layout_height="20dp"/>
@@ -487,7 +487,7 @@
 
                         <ImageView
                             android:id="@+id/btnAddDiscounts"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_weight="0.1"
                             android:layout_width="0dp"
                             android:layout_height="20dp"/>

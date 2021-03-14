@@ -31,7 +31,7 @@
 
                     <ImageView
                         android:layout_margin="8dp"
-                        android:src="@drawable/icono_lending"
+                        android:src="@drawable/prestamo_consumo"
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="40dp"/>
@@ -80,7 +80,7 @@
 
                     <ImageView
                         android:layout_margin="8dp"
-                        android:src="@drawable/icono_lending"
+                        android:src="@drawable/prestamo_consumo"
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="40dp"/>
@@ -150,7 +150,7 @@
 
                     <ImageView
                         android:layout_margin="8dp"
-                        android:src="@drawable/icono_lending"
+                        android:src="@drawable/prestamo_consumo"
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="40dp"/>

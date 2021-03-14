@@ -140,7 +140,7 @@
 
                         <ImageView
                             android:id="@+id/btnItem1"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_width="30dp"
                             android:layout_margin="4dp"
                             android:layout_height="30dp"/>
@@ -269,7 +269,7 @@
 
                         <ImageView
                             android:id="@+id/btnItem2"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_width="30dp"
                             android:layout_margin="4dp"
                             android:layout_height="30dp"/>
@@ -398,7 +398,7 @@
 
                         <ImageView
                             android:id="@+id/btnItem3"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_width="30dp"
                             android:layout_margin="4dp"
                             android:layout_height="30dp"/>
@@ -527,7 +527,7 @@
 
                         <ImageView
                             android:id="@+id/btnItem4"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_width="30dp"
                             android:layout_margin="4dp"
                             android:layout_height="30dp"/>
@@ -655,7 +655,7 @@
 
                         <ImageView
                             android:id="@+id/btnItem5"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_width="30dp"
                             android:layout_margin="4dp"
                             android:layout_height="30dp"/>
@@ -784,7 +784,7 @@
 
                         <ImageView
                             android:id="@+id/btnItem6"
-                            android:src="@drawable/edit_pencil_vector_asset"
+                            android:src="@drawable/editar"
                             android:layout_width="30dp"
                             android:layout_margin="4dp"
                             android:layout_height="30dp"/>

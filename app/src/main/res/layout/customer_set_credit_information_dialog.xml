@@ -76,7 +76,7 @@
                     android:id="@+id/btnImageButton1"
                     android:layout_margin="4dp"
                     android:background="@drawable/gray_button_style"
-                    android:src="@drawable/add_icon"
+                    android:src="@drawable/subir_archivo"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"/>
 
@@ -100,7 +100,7 @@
                     android:id="@+id/btnImageButton2"
                     android:layout_margin="4dp"
                     android:background="@drawable/gray_button_style"
-                    android:src="@drawable/add_icon"
+                    android:src="@drawable/subir_archivo"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"/>
 
@@ -234,7 +234,7 @@
                     android:id="@+id/btnImageButton3"
                     android:layout_margin="4dp"
                     android:background="@drawable/gray_button_style"
-                    android:src="@drawable/add_icon"
+                    android:src="@drawable/subir_archivo"
                     android:layout_width="80dp"
                     android:layout_height="80dp"/>
 

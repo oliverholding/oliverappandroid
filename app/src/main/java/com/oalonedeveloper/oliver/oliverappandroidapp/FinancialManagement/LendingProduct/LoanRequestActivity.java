@@ -129,7 +129,7 @@ public class LoanRequestActivity extends AppCompatActivity {
 
                                     txtDocState.setTextColor(Color.GREEN);
                                     txtButton.setText("MODIFICAR INFORMACIÓN");
-                                    imgImageState.setImageResource(R.drawable.transaction_completed);
+                                    imgImageState.setImageResource(R.drawable.espera);
                                     simulation_verification = "true";
 
                                     userRef.child(currentUid).addValueEventListener(new ValueEventListener() {
@@ -275,7 +275,7 @@ public class LoanRequestActivity extends AppCompatActivity {
                             long n_files = dataSnapshot.child(postKey).getChildrenCount();
                             viewHolder.txtDocState.setText(n_files+ " archivos Cargados con éxito");
                             viewHolder.txtDocState.setTextColor(Color.GREEN);
-                            viewHolder.imgImageState.setImageResource(R.drawable.transaction_completed);
+                            viewHolder.imgImageState.setImageResource(R.drawable.check);
                             viewHolder.txtButtonAction.setText("AGREGAR MÁS ARCHIVOS");
                         }
                     }

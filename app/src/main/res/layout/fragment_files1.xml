@@ -34,7 +34,7 @@
                     <ImageView
                         android:layout_weight="0.1"
                         android:layout_margin="4dp"
-                        android:src="@drawable/icono_carpeta"
+                        android:src="@drawable/subir_archivo"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
 
@@ -69,7 +69,7 @@
                     <ImageView
                         android:layout_weight="0.1"
                         android:layout_margin="4dp"
-                        android:src="@drawable/upload_file_white_icon"
+                        android:src="@drawable/archivos"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
 
@@ -84,7 +84,7 @@
                     <ImageView
                         android:layout_weight="0.1"
                         android:layout_margin="4dp"
-                        android:src="@drawable/icono_carpeta"
+                        android:src="@drawable/carpeta"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
 

@@ -61,7 +61,7 @@
             android:id="@+id/btnActionButton"
             android:layout_margin="4dp"
             android:text=""
-            android:src="@drawable/icono_logistica512"
+            android:src="@drawable/compras"
             android:gravity="center"
             android:layout_weight="0.3"
             android:layout_width="0dp"

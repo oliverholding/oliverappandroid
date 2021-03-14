@@ -36,7 +36,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@drawable/identity_card"
+                            android:src="@drawable/negocios"
                             android:layout_margin="8dp"
                             android:layout_width="60dp"
                             android:layout_height="60dp"/>
@@ -94,7 +94,7 @@
                             android:layout_height="wrap_content">
 
                             <Button
-                                android:drawableStart="@drawable/calendar_icon"
+                                android:drawableStart="@drawable/calendario"
                                 android:id="@+id/edtBthDay"
                                 android:inputType="number"
                                 android:padding="8dp"
@@ -107,7 +107,7 @@
                                 android:layout_height="wrap_content" />
 
                             <Button
-                                android:drawableStart="@drawable/calendar_icon"
+                                android:drawableStart="@drawable/calendario"
                                 android:id="@+id/edtBthMonth"
                                 android:inputType="number"
                                 android:padding="8dp"
@@ -120,7 +120,7 @@
                                 android:layout_height="wrap_content" />
 
                             <Button
-                                android:drawableStart="@drawable/calendar_icon"
+                                android:drawableStart="@drawable/calendario"
                                 android:id="@+id/edtBthYear"
                                 android:inputType="number"
                                 android:padding="8dp"
@@ -172,7 +172,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@drawable/maps_icon"
+                            android:src="@drawable/ubicacion"
                             android:layout_margin="8dp"
                             android:layout_width="60dp"
                             android:layout_height="60dp"/>

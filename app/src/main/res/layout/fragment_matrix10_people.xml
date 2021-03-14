@@ -187,10 +187,10 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp">
 
-                                <de.hdodenhof.circleimageview.CircleImageView
+                                <ImageView
                                     android:id="@+id/imgProduct1"
                                     android:layout_margin="8dp"
-                                    android:src="@drawable/add_vector_asset"
+                                    android:src="@drawable/producto"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"/>
 
@@ -307,10 +307,10 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp">
 
-                                <de.hdodenhof.circleimageview.CircleImageView
+                                <ImageView
                                     android:id="@+id/imgProduct2"
                                     android:layout_margin="8dp"
-                                    android:src="@drawable/add_vector_asset"
+                                    android:src="@drawable/producto"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"/>
 
@@ -428,10 +428,10 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp">
 
-                                <de.hdodenhof.circleimageview.CircleImageView
+                                <ImageView
                                     android:id="@+id/imgProduct3"
                                     android:layout_margin="8dp"
-                                    android:src="@drawable/add_vector_asset"
+                                    android:src="@drawable/producto"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"/>
 
@@ -549,10 +549,10 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp">
 
-                                <de.hdodenhof.circleimageview.CircleImageView
+                                <ImageView
                                     android:id="@+id/imgProduct4"
                                     android:layout_margin="8dp"
-                                    android:src="@drawable/add_vector_asset"
+                                    android:src="@drawable/producto"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"/>
 
@@ -669,10 +669,10 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp">
 
-                                <de.hdodenhof.circleimageview.CircleImageView
+                                <ImageView
                                     android:id="@+id/imgProduct5"
                                     android:layout_margin="8dp"
-                                    android:src="@drawable/add_vector_asset"
+                                    android:src="@drawable/producto"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"/>
 
@@ -790,10 +790,10 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp">
 
-                                <de.hdodenhof.circleimageview.CircleImageView
+                                <ImageView
                                     android:id="@+id/imgProduct6"
                                     android:layout_margin="8dp"
-                                    android:src="@drawable/add_vector_asset"
+                                    android:src="@drawable/producto"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"/>
 
@@ -911,10 +911,10 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp">
 
-                                <de.hdodenhof.circleimageview.CircleImageView
+                                <ImageView
                                     android:id="@+id/imgProduct7"
                                     android:layout_margin="8dp"
-                                    android:src="@drawable/add_vector_asset"
+                                    android:src="@drawable/producto"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"/>
 
@@ -1032,10 +1032,10 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp">
 
-                                <de.hdodenhof.circleimageview.CircleImageView
+                                <ImageView
                                     android:id="@+id/imgProduct8"
                                     android:layout_margin="8dp"
-                                    android:src="@drawable/add_vector_asset"
+                                    android:src="@drawable/producto"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"/>
 
@@ -1153,10 +1153,10 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp">
 
-                                <de.hdodenhof.circleimageview.CircleImageView
+                                <ImageView
                                     android:id="@+id/imgProduct9"
                                     android:layout_margin="8dp"
-                                    android:src="@drawable/add_vector_asset"
+                                    android:src="@drawable/producto"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"/>
 
@@ -1274,10 +1274,10 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp">
 
-                                <de.hdodenhof.circleimageview.CircleImageView
+                                <ImageView
                                     android:id="@+id/imgProduct10"
                                     android:layout_margin="8dp"
-                                    android:src="@drawable/add_vector_asset"
+                                    android:src="@drawable/producto"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"/>
 

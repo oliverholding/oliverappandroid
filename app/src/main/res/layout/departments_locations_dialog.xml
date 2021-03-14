@@ -12,7 +12,7 @@
         android:padding="8dp"
         android:background="@drawable/edit_text_style"
         android:gravity="center_vertical"
-        android:drawableStart="@drawable/search_icon"
+        android:drawableStart="@drawable/buscar"
         android:hint=" Busca y selecciona el departamento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
