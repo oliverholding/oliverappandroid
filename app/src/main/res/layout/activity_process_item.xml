@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:gravity="center"
+        android:id="@+id/topLayout"
+        android:layout_below="@id/txtTitle"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_margin="4dp"
+            android:text=""
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <com.xw.repo.BubbleSeekBar
+            android:id="@+id/seekBar"
+            android:clickable="false"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:bsb_track_color="@color/colorGradientCenterRed"
+            app:bsb_bubble_color="@color/colorAccent"
+            app:bsb_bubble_text_color="@android:color/white"
+            app:bsb_second_track_color="@color/colorPrimary"
+            app:bsb_thumb_color="@android:color/transparent"
+            app:bsb_min="0"
+            app:bsb_max="1440"
+            app:bsb_second_track_size="14dp"
+            app:bsb_progress="0"
+            app:bsb_section_count="0"
+            app:bsb_track_size="14dp"
+            app:bsb_show_progress_in_float="false"
+            app:bsb_show_section_mark="false"
+            app:bsb_show_section_text="false"
+            app:bsb_show_thumb_text="false"
+            app:bsb_always_show_bubble="false"
+            />
+
+        <TextView
+            android:id="@+id/txtTime"
+            android:layout_margin="4dp"
+            android:text=""
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_weight="0.5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

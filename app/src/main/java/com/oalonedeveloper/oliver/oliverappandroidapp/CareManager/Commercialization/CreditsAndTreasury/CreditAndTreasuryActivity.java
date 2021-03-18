@@ -61,6 +61,7 @@ public class CreditAndTreasuryActivity extends AppCompatActivity {
         fragment4 = new CustomerCreditFragment();
 
         companyRef = FirebaseDatabase.getInstance().getReference().child("My Companies");
+        post_key = getIntent().getExtras().getString("post_key");
 
         txtCurrentDebt = findViewById(R.id.txtCurrentDebt);
         txtExpiredDebts = findViewById(R.id.txtExpiredDebts);

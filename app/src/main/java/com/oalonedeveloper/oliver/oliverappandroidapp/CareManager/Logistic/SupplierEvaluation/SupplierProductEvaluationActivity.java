@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
@@ -58,6 +59,9 @@ public class SupplierProductEvaluationActivity extends AppCompatActivity {
         txtPriceWeight = findViewById(R.id.txtPriceWeight);
         txtQualityWeight = findViewById(R.id.txtQualityWeight);
         txtTimeWeight = findViewById(R.id.txtTimeWeight);
+
+        imgProduct = findViewById(R.id.imgProduct);
+        txtProductName = findViewById(R.id.txtProductName);
 
         tab1 = findViewById(R.id.tab1);
         tab2 = findViewById(R.id.tab2);
@@ -170,6 +174,7 @@ public class SupplierProductEvaluationActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String product_image = dataSnapshot.child("product_image").getValue().toString();
                 String product_name = dataSnapshot.child("product_name").getValue().toString();
+
 
                 Picasso.with(SupplierProductEvaluationActivity.this).load(product_image).fit().into(imgProduct);
                 txtProductName.setText(product_name);

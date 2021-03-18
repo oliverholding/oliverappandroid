@@ -15,6 +15,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.CareOptionsActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.Companies.MyCompaniesActivity;
 import com.squareup.picasso.Picasso;
 
@@ -73,7 +74,7 @@ public class PlatformSelectionActivity extends AppCompatActivity {
         btnCare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PlatformSelectionActivity.this, MyCompaniesActivity.class);
+                Intent intent = new Intent(PlatformSelectionActivity.this, CareOptionsActivity.class);
                 startActivity(intent);
             }
         });

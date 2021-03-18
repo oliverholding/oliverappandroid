@@ -21,7 +21,22 @@
         android:roundIcon="@drawable/oliver_app_white_title"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CareManager.Simulators.CostPriceSimulator.CostPriceSimulatorActivity"></activity>
+        <activity android:name=".CareManager.ManagementControlAndReports.DashboardsAndKeyindex.DashboardAndKeyIndexActivity"></activity>
+        <activity android:name=".CareManager.ManagementControlAndReports.ManagementControlAndReportsActivity" />
+        <activity android:name=".CareManager.CareLearning.CareLearningActivity" />
+        <activity android:name=".CareManager.Simulators.ProjectSimulator.ProjectSimulatorActivity" />
+        <activity android:name=".CareManager.Simulators.FlowChart.FlowChartActivity" />
+        <activity android:name=".CareManager.Simulators.GanttChart.WorkChargeAnnalysisActivity" />
+        <activity android:name=".CareManager.Simulators.GanttChart.GantChartActivity" />
+        <activity android:name=".CareManager.CareOptionsActivity" />
+        <activity android:name=".CareManager.Simulators.FinancialAppeceamentSimulator.FinancialAppeceamentSimulatorActivity" />
+        <activity android:name=".CareManager.Simulators.InterestRateSimulator.InterestRateSimulatorActivity" />
+        <activity android:name=".CareManager.Simulators.QuotationReceivedAnalysys.QuotationReceivedActivityActivity" />
+        <activity android:name=".CareManager.Simulators.QuotationReceivedAnalysys.QuotationReceivedAnalysysActivity" />
+        <activity android:name=".CareManager.Simulators.QuatationSimulation.QuotationSimulationActivity" />
+        <activity android:name=".CareManager.Simulators.SalesAndProfitProyection.SalesAndProfitProjectionActivity" />
+        <activity android:name=".CareManager.Simulators.CostVolumeProfitAnalysys.CostVolumeProfitAnalysysActivity" />
+        <activity android:name=".CareManager.Simulators.CostPriceSimulator.CostPriceSimulatorActivity" />
         <activity android:name=".CareManager.Simulators.SimulatorsActivity" />
         <activity android:name=".PlatformSelectionActivity" />
         <activity android:name=".CareManager.BusinessPlan.ContingencyPlan.ContingencyPlanActivity" />
@@ -130,17 +145,10 @@
         <activity android:name=".CareManager.Commercialization.ProductMarketMatrix.ProductMarketMatrixActivity" />
         <activity android:name=".CareManager.SalesModule.SalesModuleActivity" />
         <activity android:name=".CareManager.Commercialization.CommercializationActivity" />
-        <activity android:name=".CareManager.NewProductsOrServices.NewProductsOrServicesToolsActivity" />
-        <activity android:name=".CareManager.NewProductsOrServices.NewProductsOrServicesActivity" />
-        <activity android:name=".CareManager.BusinessModelModule.BusinessModelToolsActivity" />
-        <activity android:name=".CareManager.BusinessOportunitiesModule.BusinessOportunitiesToolsActivity" />
         <activity android:name=".CareManager.UserInformationModule.UserInformationModuleActivity" />
         <activity android:name=".WebViewActivity" />
-        <activity android:name=".CareManager.BusinessModelModule.BusinessModelActivity" />
         <activity android:name=".CareManager.ValueProposalModule.ValueProposalActivity" />
         <activity android:name=".Companies.MyCustomersActivity" />
-        <activity android:name=".CareManager.BusinessOportunitiesModule.BusinessOportunitiesActivity" />
-        <activity android:name=".CareManager.IntructionModule.IntroductionModuleActivity" />
         <activity android:name=".CareManager.CareManagerActivity" />
         <activity android:name=".Companies.OliverAppForBusinessActivity" />
         <activity android:name=".Companies.AddCompanyActivity" />
@@ -150,7 +158,9 @@
         <activity android:name=".PinActivity" />
         <activity android:name=".SmsActivity" />
         <activity android:name=".PhoneAuthActivity" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/splashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

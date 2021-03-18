@@ -16,11 +16,13 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercializat
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.FinanacialManagementActivity;
 
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Logistic.LogisticActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ManagementControlAndReports.ManagementControlAndReportsActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Normativity.NormativityActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.JobProfiles.JobProfilesActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.PeopleManagementActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Production.ProductionActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.SalesModuleActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Simulators.SimulatorsActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirection.StrategicDirectionActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.UserInformationModule.UserInformationModuleActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ValueProposalModule.ValueProposalActivity;
@@ -29,7 +31,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class CareToolsFragment extends Fragment {
 
-    CardView cardViewModule1,cardViewModule2,cardViewModule3,cardViewModule4,cardViewModule5,cardViewModule6,cardViewModule7,cardViewModule8,cardViewModule9,cardViewModule10,cardViewModule11,cardViewModule12,cardViewModule13,cardViewModule14,cardViewModule15,cardViewModule16,cardViewModule18;
+    CardView cardViewModule1,cardViewModule2,cardViewModule3,cardViewModule4,cardViewModule5,cardViewModule6,cardViewModule7,cardViewModule8,cardViewModule9,cardViewModule10,cardViewModule11,cardViewModule12,cardViewModule13,cardViewModule14,cardViewModule15,cardViewModule16,cardViewModule17,cardViewModule18;
     String post_key;
 
 
@@ -58,6 +60,7 @@ public class CareToolsFragment extends Fragment {
         cardViewModule15 = view.findViewById(R.id.cardViewModule15);
         cardViewModule16 = view.findViewById(R.id.cardViewModule16);
         cardViewModule18 = view.findViewById(R.id.cardViewModule18);
+        cardViewModule17 = view.findViewById(R.id.cardViewModule17);
 
         cardViewModule1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -188,6 +191,24 @@ public class CareToolsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), BusinessPlanActivity.class);
+                intent.putExtra("post_key",post_key);
+                startActivity(intent);
+            }
+        });
+
+        cardViewModule17.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ManagementControlAndReportsActivity.class);
+                intent.putExtra("post_key",post_key);
+                startActivity(intent);
+            }
+        });
+
+        cardViewModule18.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SimulatorsActivity.class);
                 intent.putExtra("post_key",post_key);
                 startActivity(intent);
             }

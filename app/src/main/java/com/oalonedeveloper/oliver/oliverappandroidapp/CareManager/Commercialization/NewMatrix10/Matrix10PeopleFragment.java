@@ -77,7 +77,7 @@ public class Matrix10PeopleFragment extends Fragment {
     final static int Gallery_Pick = 2;
     StorageReference userProfileImageRef;
     String productRef;
-    CircleImageView imgProduct1,imgProduct2,imgProduct3,imgProduct4,imgProduct5,imgProduct6,imgProduct7,imgProduct8,imgProduct9,imgProduct10;
+    ImageView imgProduct1,imgProduct2,imgProduct3,imgProduct4,imgProduct5,imgProduct6,imgProduct7,imgProduct8,imgProduct9,imgProduct10;
     TextView txtProduct1,txtProduct2,txtProduct3,txtProduct4,txtProduct5,txtProduct6,txtProduct7,txtProduct8,txtProduct9,txtProduct10,txtProduct1A,txtProduct1B,txtProduct1C,txtProduct1D,txtProduct1E,txtProduct1F,txtProduct1G,
             txtProduct2A,txtProduct2B,txtProduct2C,txtProduct2D,txtProduct2E,txtProduct2F,txtProduct2G,txtProduct3A,txtProduct3B,txtProduct3C,txtProduct3D,txtProduct3E,txtProduct3F,txtProduct3G,
             txtProduct4A,txtProduct4B,txtProduct4C,txtProduct4D,txtProduct4E,txtProduct4F,txtProduct4G,txtProduct5A,txtProduct5B,txtProduct5C,txtProduct5D,txtProduct5E,txtProduct5F,txtProduct5G,

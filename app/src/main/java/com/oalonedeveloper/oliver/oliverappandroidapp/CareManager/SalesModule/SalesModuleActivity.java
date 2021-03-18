@@ -16,6 +16,8 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManag
 
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.CustomerSchedule.CustomerScheduleActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.MySellers.MySellersActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.SalesArgument.SalesArgumentActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.SalesFunnel.SalesFunnelActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.SalesProjection.SalesProjectionActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
@@ -49,7 +51,7 @@ public class SalesModuleActivity extends AppCompatActivity {
         btnTool1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SalesModuleActivity.this, CashAndBanksMonthlyActivity.class);
+                Intent intent = new Intent(SalesModuleActivity.this, SalesArgumentActivity.class);
                 intent.putExtra("post_key", post_key);
                 startActivity(intent);
             }
@@ -57,7 +59,7 @@ public class SalesModuleActivity extends AppCompatActivity {
         btnTool2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SalesModuleActivity.this, AccountsNoPaidMonthlyActivity.class);
+                Intent intent = new Intent(SalesModuleActivity.this, SalesFunnelActivity.class);
                 intent.putExtra("post_key", post_key);
                 startActivity(intent);
             }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:color="@color/colorAccent"
+    tools:targetApi="LOLLIPOP"
+    >
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="180"
+                android:startColor="@color/blue1"
+                android:endColor="@color/blue2"
+                />
+            <stroke android:color="@android:color/black" android:width="0dp"> </stroke>
+            <corners android:radius="0dp"> </corners>
+
+        </shape>
+
+
+
+    </item>
+    <item>
+        <bitmap android:gravity="center"
+            android:dither="true"
+            android:src="@drawable/oliver_app_white_title" />
+
+    </item>
+
+
+
+</ripple>

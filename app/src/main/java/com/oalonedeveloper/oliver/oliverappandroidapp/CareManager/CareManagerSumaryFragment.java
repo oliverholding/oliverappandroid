@@ -27,11 +27,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class CareManagerSumaryFragment extends Fragment {
 
-    CircleImageView imgCompanyProfile;
     DatabaseReference myCompanyRef;
-    String company_image,company_social_reason, post_key;
-    TextView txtCompanyName,txtCurrentMonth,txtExp;
-    BubbleSeekBar expBar;
+    String  post_key;
+    TextView txtCurrentMonth;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,11 +37,8 @@ public class CareManagerSumaryFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_care_manager_sumary, container, false);
 
-       /* imgCompanyProfile = view.findViewById(R.id.imgCompanyProfile);
-        txtCompanyName = view.findViewById(R.id.txtCompanyName);
         txtCurrentMonth = view.findViewById(R.id.txtCurrentMonth);
-        txtExp = view.findViewById(R.id.txtExp);
-        //expBar = view.findViewById(R.id.expBar);
+
 
         myCompanyRef = FirebaseDatabase.getInstance().getReference().child("My Companies");
 
@@ -58,63 +53,18 @@ public class CareManagerSumaryFragment extends Fragment {
 
         txtCurrentMonth.setText(month_name.toUpperCase()+" "+year);
 
-        expBar.setEnabled(false);
 
         myCompanyRef.child(post_key).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                company_image = dataSnapshot.child("company_image").getValue().toString();
-                company_social_reason = dataSnapshot.child("company_social_reason").getValue().toString();
-                Picasso.with(getActivity()).load(company_image).fit().into(imgCompanyProfile);
-                txtCompanyName.setText(company_social_reason);
 
-                if (dataSnapshot.hasChild("Achievements")) {
-                    myCompanyRef.child(post_key).child("Achievements").addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            int sum = 0;
-                            for (DataSnapshot ds : dataSnapshot.getChildren()) {
-                                Map<String,Object> map = (Map<String,Object>) ds.getValue();
-                                Object score = map.get("score");
-                                int exp = Integer.parseInt(String.valueOf(score));
-                                sum += exp;
-
-                                txtExp.setText("EXP: "+sum);
-                                expBar.setProgress(sum);
-
-                                if (sum <= 199) {
-                                    myCompanyRef.child(post_key).child("company_level").setValue("1");
-                                    expBar.getConfigBuilder().min(0).max(199).build();
-                                    expBar.setProgress(sum);
-                                } else if (sum >= 200 && sum <= 399) {
-                                    myCompanyRef.child(post_key).child("company_level").setValue("2");
-                                    expBar.getConfigBuilder().min(200).max(399).build();
-                                    expBar.setProgress(sum);
-                                } else if (sum >= 400 && sum <= 600) {
-                                    myCompanyRef.child(post_key).child("company_level").setValue("3");
-                                    expBar.getConfigBuilder().min(400).max(600).build();
-                                    expBar.setProgress(sum);
-                                }
-
-
-
-                            }
-
-                        }
-
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-
-                        }
-                    });
-                }
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
-        });*/
+        });
 
         return view;
     }

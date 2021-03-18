@@ -33,10 +33,10 @@ import in.galaxyofandroid.spinerdialog.SpinnerDialog;
 
 public class MissionActivity extends AppCompatActivity {
 
-    String post_key,company_name,customer_output,company_economic_activity,vision_message,goal_message;
+    String post_key,company_name,customer_output,company_economic_activity,vision_message,goal_message,company_mission;
     RadioButton rdVision1,rdVision2,rdVision3,rdVision4,rdVision5,rdGoal1,rdGoal2,rdGoal3,rdGoal4,rdGoal5;
     ImageView btnVision1,btnVision2,btnVision3,btnVision4,btnVision5,btnGoal1,btnGoal2,btnGoal3,btnGoal4,btnGoal5,btnIdeology1,btnWorkersRelation;
-    TextView txtIdeology1,txtWorkersRelation;
+    TextView txtIdeology1,txtWorkersRelation,txtMessage;
     Button btnShowVision;
     LinearLayout rootLayout;
     DatabaseReference companyRef;
@@ -78,6 +78,7 @@ public class MissionActivity extends AppCompatActivity {
         btnShowVision = findViewById(R.id.btnShowVision);
         txtWorkersRelation = findViewById(R.id.txtWorkersRelation);
         btnWorkersRelation = findViewById(R.id.btnWorkersRelation);
+        txtMessage = findViewById(R.id.txtMessage);
 
         rootLayout = findViewById(R.id.rootLayout);
 
@@ -87,6 +88,11 @@ public class MissionActivity extends AppCompatActivity {
                 company_name = dataSnapshot.child("company_name").getValue().toString();
                 customer_output = dataSnapshot.child("customer_output").getValue().toString();
                 company_economic_activity = dataSnapshot.child("company_economic_activity").getValue().toString();
+
+                if (dataSnapshot.hasChild("company_mission")) {
+                    company_mission = dataSnapshot.child("company_mission").getValue().toString();
+                    txtMessage.setText("MISIÓN: "+company_mission);
+                }
             }
 
             @Override
@@ -349,6 +355,9 @@ public class MissionActivity extends AppCompatActivity {
 
 
         txtVision.setText("Ser una empresa que se enfoca en el "+txtIdeology1.getText().toString()+" brindando servicios de "+vision_message+" para "+goal_message+" con el fin de "+worker_relation_message+" siguiendo las sinergias comprendidas con el soporte de sus colaboradores y aliados");
+
+        companyRef.child(post_key).child("company_mission").setValue("Ser una empresa que se enfoca en el "+txtIdeology1.getText().toString()+" brindando servicios de "+vision_message+" para "+goal_message+" con el fin de "+worker_relation_message+" siguiendo las sinergias comprendidas con el soporte de sus colaboradores y aliados");
+
         dialog.setView(finance_method);
         dialog.show();
     }

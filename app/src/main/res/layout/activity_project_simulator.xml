@@ -1,0 +1,1754 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CareManager.Simulators.ProjectSimulator.ProjectSimulatorActivity">
+
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardTitle"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/producto"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"/>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:textSize="16sp"
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="Simulador de Proyectos"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:textSize="12sp"
+                                android:layout_margin="4dp"
+                                android:text="Evalúa de viabilidad de un proyecto de inversión."
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:src="@drawable/capital_trabajo"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"/>
+
+                        <TextView
+                            android:textSize="18sp"
+                            android:textColor="@android:color/black"
+                            android:text="Capital Inicial"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:text="Capital Inicial"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/edtCapital"
+                            android:inputType="numberDecimal"
+                            android:hint="Capital Inicial..."
+                            android:layout_margin="8dp"
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style_1"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:src="@drawable/informacion"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"/>
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:src="@drawable/rentabilidad"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"/>
+
+                        <TextView
+                            android:textSize="18sp"
+                            android:textColor="@android:color/black"
+                            android:text="Rentabilidad Mínima Exigida"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:text="Rentabilidad Mínima Exigida (%)"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/edtRateOfReturn"
+                            android:inputType="numberDecimal"
+                            android:hint="Rentabilidad (%)..."
+                            android:layout_margin="8dp"
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style_1"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:src="@drawable/informacion"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"/>
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <HorizontalScrollView
+                android:scrollbars="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        app:cardElevation="8dp"
+                        app:cardCornerRadius="8dp"
+                        android:layout_margin="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:padding="8dp"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:padding="4dp"
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:layout_margin="4dp"
+                                        android:layout_weight="0.2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="30dp"/>
+
+                                    <TextView
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text=""
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="Período 1"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="Período 2"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="Período 3"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="Período 4"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="Período 5"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:padding="4dp"
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:src="@drawable/producto"
+                                        android:layout_margin="4dp"
+                                        android:layout_weight="0.2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="30dp"/>
+
+                                    <TextView
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="Unidades Vendidas"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/edtUnits1"
+                                        android:inputType="numberDecimal"
+                                        android:hint="S/ 0.00"
+                                        android:layout_margin="8dp"
+                                        android:padding="8dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/edtUnits2"
+                                        android:inputType="numberDecimal"
+                                        android:hint="S/ 0.00"
+                                        android:layout_margin="8dp"
+                                        android:padding="8dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/edtUnits3"
+                                        android:inputType="numberDecimal"
+                                        android:hint="S/ 0.00"
+                                        android:layout_margin="8dp"
+                                        android:padding="8dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/edtUnits4"
+                                        android:inputType="numberDecimal"
+                                        android:hint="S/ 0.00"
+                                        android:layout_margin="8dp"
+                                        android:padding="8dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/edtUnits5"
+                                        android:inputType="numberDecimal"
+                                        android:hint="S/ 0.00"
+                                        android:layout_margin="8dp"
+                                        android:padding="8dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:padding="4dp"
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:src="@drawable/precio"
+                                        android:layout_margin="4dp"
+                                        android:layout_weight="0.2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="30dp"/>
+
+                                    <TextView
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="Precio Unitario"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/edtPrice1"
+                                        android:inputType="numberDecimal"
+                                        android:hint="S/ 0.00"
+                                        android:layout_margin="8dp"
+                                        android:padding="8dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/edtPrice2"
+                                        android:inputType="numberDecimal"
+                                        android:hint="S/ 0.00"
+                                        android:layout_margin="8dp"
+                                        android:padding="8dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/edtPrice3"
+                                        android:inputType="numberDecimal"
+                                        android:hint="S/ 0.00"
+                                        android:layout_margin="8dp"
+                                        android:padding="8dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/edtPrice4"
+                                        android:inputType="numberDecimal"
+                                        android:hint="S/ 0.00"
+                                        android:layout_margin="8dp"
+                                        android:padding="8dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/edtPrice5"
+                                        android:inputType="numberDecimal"
+                                        android:hint="S/ 0.00"
+                                        android:layout_margin="8dp"
+                                        android:padding="8dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:padding="4dp"
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:src="@drawable/costos"
+                                        android:layout_margin="4dp"
+                                        android:layout_weight="0.2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="30dp"/>
+
+                                    <TextView
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="Costos Fijos Totales"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/edtCost1"
+                                        android:inputType="numberDecimal"
+                                        android:hint="S/ 0.00"
+                                        android:layout_margin="8dp"
+                                        android:padding="8dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/edtCost2"
+                                        android:inputType="numberDecimal"
+                                        android:hint="S/ 0.00"
+                                        android:layout_margin="8dp"
+                                        android:padding="8dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/edtCost3"
+                                        android:inputType="numberDecimal"
+                                        android:hint="S/ 0.00"
+                                        android:layout_margin="8dp"
+                                        android:padding="8dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/edtCost4"
+                                        android:inputType="numberDecimal"
+                                        android:hint="S/ 0.00"
+                                        android:layout_margin="8dp"
+                                        android:padding="8dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/edtCost5"
+                                        android:inputType="numberDecimal"
+                                        android:hint="S/ 0.00"
+                                        android:layout_margin="8dp"
+                                        android:padding="8dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:padding="4dp"
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:src="@drawable/costos_productos_servicios"
+                                        android:layout_margin="4dp"
+                                        android:layout_weight="0.2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="30dp"/>
+
+                                    <TextView
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="Costo Var. Unitario"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/edtCostVar1"
+                                        android:inputType="numberDecimal"
+                                        android:hint="S/ 0.00"
+                                        android:layout_margin="8dp"
+                                        android:padding="8dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/edtCostVar2"
+                                        android:inputType="numberDecimal"
+                                        android:hint="S/ 0.00"
+                                        android:layout_margin="8dp"
+                                        android:padding="8dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/edtCostVar3"
+                                        android:inputType="numberDecimal"
+                                        android:hint="S/ 0.00"
+                                        android:layout_margin="8dp"
+                                        android:padding="8dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/edtCostVar4"
+                                        android:inputType="numberDecimal"
+                                        android:hint="S/ 0.00"
+                                        android:layout_margin="8dp"
+                                        android:padding="8dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/edtCostVar5"
+                                        android:inputType="numberDecimal"
+                                        android:hint="S/ 0.00"
+                                        android:layout_margin="8dp"
+                                        android:padding="8dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:padding="4dp"
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:src="@drawable/tributos_impuestos"
+                                        android:layout_margin="4dp"
+                                        android:layout_weight="0.2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="30dp"/>
+
+                                    <TextView
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="Impuestos"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/edtTaxes1"
+                                        android:inputType="numberDecimal"
+                                        android:hint="S/ 0.00"
+                                        android:layout_margin="8dp"
+                                        android:padding="8dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/edtTaxes2"
+                                        android:inputType="numberDecimal"
+                                        android:hint="S/ 0.00"
+                                        android:layout_margin="8dp"
+                                        android:padding="8dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/edtTaxes3"
+                                        android:inputType="numberDecimal"
+                                        android:hint="S/ 0.00"
+                                        android:layout_margin="8dp"
+                                        android:padding="8dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/edtTaxes4"
+                                        android:inputType="numberDecimal"
+                                        android:hint="S/ 0.00"
+                                        android:layout_margin="8dp"
+                                        android:padding="8dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/edtTaxes5"
+                                        android:inputType="numberDecimal"
+                                        android:hint="S/ 0.00"
+                                        android:layout_margin="8dp"
+                                        android:padding="8dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <Button
+                android:id="@+id/btnSimulation"
+                android:text="SIMULAR"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:background="@drawable/orange_button_style_ripple"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <HorizontalScrollView
+                android:scrollbars="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        app:cardElevation="8dp"
+                        app:cardCornerRadius="8dp"
+                        android:layout_margin="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:padding="8dp"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:padding="4dp"
+                                android:orientation="horizontal"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:src="@drawable/estado_resultados"
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="0.2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="30dp"/>
+
+                                <TextView
+                                    android:textSize="18sp"
+                                    android:layout_margin="4dp"
+                                    android:textColor="@android:color/black"
+                                    android:text="Resultados:"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:padding="4dp"
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:src="@drawable/ingresos"
+                                        android:layout_margin="4dp"
+                                        android:layout_weight="0.2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="30dp"/>
+
+                                    <TextView
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="Ingresos"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:id="@+id/txtIncome1"
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="S/ 0.00"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:id="@+id/txtIncome2"
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="S/ 0.00"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:id="@+id/txtIncome3"
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="S/ 0.00"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:id="@+id/txtIncome4"
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="S/ 0.00"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:id="@+id/txtIncome5"
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="S/ 0.00"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:padding="4dp"
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:src="@drawable/egresos"
+                                        android:layout_margin="4dp"
+                                        android:layout_weight="0.2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="30dp"/>
+
+                                    <TextView
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="Egresos"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:id="@+id/txtOutcome1"
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="S/ 0.00"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:id="@+id/txtOutcome2"
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="S/ 0.00"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:id="@+id/txtOutcome3"
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="S/ 0.00"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:id="@+id/txtOutcome4"
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="S/ 0.00"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:id="@+id/txtOutcome5"
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="S/ 0.00"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_margin="4dp"
+                                android:background="@color/orange1"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"/>
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:padding="4dp"
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:src="@drawable/rentabilidad"
+                                        android:layout_margin="4dp"
+                                        android:layout_weight="0.2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="30dp"/>
+
+                                    <TextView
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="Utilidad Antes de Impuestos"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:id="@+id/txtEarningsBeforeTaxes1"
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="S/ 0.00"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:id="@+id/txtEarningsBeforeTaxes2"
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="S/ 0.00"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:id="@+id/txtEarningsBeforeTaxes3"
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="S/ 0.00"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:id="@+id/txtEarningsBeforeTaxes4"
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="S/ 0.00"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:id="@+id/txtEarningsBeforeTaxes5"
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="S/ 0.00"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_margin="4dp"
+                                android:background="@color/orange1"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"/>
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:padding="4dp"
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:src="@drawable/reparto_utilidades"
+                                        android:layout_margin="4dp"
+                                        android:layout_weight="0.2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="30dp"/>
+
+                                    <TextView
+                                        android:textStyle="bold"
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="Utilidad Neta"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:textStyle="bold"
+                                        android:id="@+id/txtProfit1"
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="S/ 0.00"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:textStyle="bold"
+                                        android:id="@+id/txtProfit2"
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="S/ 0.00"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:textStyle="bold"
+                                        android:id="@+id/txtProfit3"
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="S/ 0.00"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:textStyle="bold"
+                                        android:id="@+id/txtProfit4"
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="S/ 0.00"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:gravity="center"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:gravity="center"
+                                        android:textStyle="bold"
+                                        android:id="@+id/txtProfit5"
+                                        android:textSize="18sp"
+                                        android:layout_margin="4dp"
+                                        android:textColor="@android:color/black"
+                                        android:text="S/ 0.00"
+                                        android:layout_weight="1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <androidx.cardview.widget.CardView
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:src="@color/gray1"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"/>
+
+                        <TextView
+                            android:textSize="18sp"
+                            android:textColor="@android:color/black"
+                            android:text="Viabilidad"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtViability"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:text="-"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

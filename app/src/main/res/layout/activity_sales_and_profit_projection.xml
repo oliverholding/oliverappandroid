@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CareManager.Simulators.SalesAndProfitProyection.SalesAndProfitProjectionActivity">
+
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardTitle"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/producto"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"/>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:textSize="16sp"
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="Proyecciones de Ventas y Utilidades"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:textSize="12sp"
+                                android:layout_margin="4dp"
+                                android:text="Conoce tu utilidad esperada."
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:src="@drawable/costos"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"/>
+
+                        <TextView
+                            android:textSize="18sp"
+                            android:textColor="@android:color/black"
+                            android:text="Costos"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:text="Costos Fijos Totales"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/edtCost1"
+                            android:inputType="numberDecimal"
+                            android:hint="Costos Fijos Totales..."
+                            android:layout_margin="8dp"
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style_1"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:src="@drawable/informacion"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:text="Costo Variable Unitario"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/edtCost2"
+                            android:inputType="numberDecimal"
+                            android:hint="Costo Variable Unitario..."
+                            android:layout_margin="8dp"
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style_1"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:src="@drawable/informacion"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:text="Otros Costos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/edtCost3"
+                            android:inputType="numberDecimal"
+                            android:hint="Otros Costos..."
+                            android:layout_margin="8dp"
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style_1"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:src="@drawable/informacion"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"/>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:src="@drawable/ventas"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"/>
+
+                        <TextView
+                            android:textSize="18sp"
+                            android:textColor="@android:color/black"
+                            android:text="Ventas"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:text="Precio de Venta Unitario"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/edtPrice"
+                            android:inputType="numberDecimal"
+                            android:hint="Precio de Venta Unitario..."
+                            android:layout_margin="8dp"
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style_1"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:src="@drawable/informacion"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"/>
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:text="Unidades Vendidas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/edtQuantity"
+                            android:inputType="numberDecimal"
+                            android:hint="Unidades Vendidas..."
+                            android:layout_margin="8dp"
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style_1"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:src="@drawable/informacion"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"/>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:src="@drawable/rentabilidad"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"/>
+
+                        <TextView
+                            android:textSize="18sp"
+                            android:textColor="@android:color/black"
+                            android:text="Rentabilidad"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:text="Rentabilidad esperada (%)"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/edtProfit"
+                            android:inputType="numberDecimal"
+                            android:hint="Rentabilidad esperada (%)..."
+                            android:layout_margin="8dp"
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style_1"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:src="@drawable/informacion"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"/>
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:src="@drawable/tributos_impuestos"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"/>
+
+                        <TextView
+                            android:textSize="18sp"
+                            android:textColor="@android:color/black"
+                            android:text="Impuestos"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:text="Impuesto General a las Ventas - IGV (%)"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/edtIgv"
+                            android:inputType="numberDecimal"
+                            android:hint="IGV (%)..."
+                            android:layout_margin="8dp"
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style_1"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:src="@drawable/informacion"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        android:text="Impuesto a la Renta (%)"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/edtReturnTax"
+                            android:inputType="numberDecimal"
+                            android:hint="Impuesto a la Renta (%)..."
+                            android:layout_margin="8dp"
+                            android:padding="8dp"
+                            android:background="@drawable/edit_text_style_1"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:src="@drawable/informacion"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:src="@drawable/reparto_utilidades"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"/>
+
+                        <TextView
+                            android:textSize="18sp"
+                            android:textColor="@android:color/black"
+                            android:text="Utilidad Probable Real:"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtProfit"
+                        android:layout_margin="8dp"
+                        android:gravity="center"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/orange1"
+                        android:text="S/ 0.00"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:src="@drawable/reparto_utilidades"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"/>
+
+                        <TextView
+                            android:textSize="18sp"
+                            android:textColor="@android:color/black"
+                            android:text="Utilidad esperada:"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtProfit2"
+                        android:layout_margin="8dp"
+                        android:gravity="center"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/orange1"
+                        android:text="S/ 0.00"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtMessage"
+                        android:layout_margin="8dp"
+                        android:gravity="center"
+                        android:textColor="@color/orange1"
+                        android:text="-"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CareManager.CareLearning.CareLearningActivity">
+
+    <FrameLayout
+        android:layout_above="@id/bottomBar"
+        android:id="@+id/contentFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    </FrameLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottomBar"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/tab1"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout1"
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_margin="4dp"
+                        android:src="@drawable/recursos_clave"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:id="@+id/txtText1"
+                        android:text="Estudia!"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/tab2"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_margin="4dp"
+                        android:src="@drawable/recursos_clave"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:id="@+id/txtText2"
+                        android:text="Estudia!"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/tab3"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout3"
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_margin="4dp"
+                        android:src="@drawable/recursos_clave"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:id="@+id/txtText3"
+                        android:text="Estudia!"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

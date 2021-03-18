@@ -28,10 +28,10 @@ import es.dmoral.toasty.Toasty;
 
 public class VisionActivity extends AppCompatActivity {
 
-    String post_key,company_name,customer_output,company_economic_activity,vision_message,goal_message;
+    String post_key,company_name,customer_output,company_economic_activity,vision_message,goal_message,company_vision;
     RadioButton rdVision1,rdVision2,rdVision3,rdVision4,rdVision5,rdGoal1,rdGoal2,rdGoal3,rdGoal4,rdGoal5;
     ImageView btnVision1,btnVision2,btnVision3,btnVision4,btnVision5,btnGoal1,btnGoal2,btnGoal3,btnGoal4,btnGoal5,btnIdeology1,btnIdeology2;
-    TextView txtIdeology1,txtIdeology2;
+    TextView txtIdeology1,txtIdeology2,txtMessage;
     Button btnShowVision;
     LinearLayout rootLayout;
     DatabaseReference companyRef;
@@ -69,6 +69,8 @@ public class VisionActivity extends AppCompatActivity {
         txtIdeology1 = findViewById(R.id.txtIdeology1);
         txtIdeology2 = findViewById(R.id.txtIdeology2);
         btnShowVision = findViewById(R.id.btnShowVision);
+        txtMessage = findViewById(R.id.txtMessage);
+
 
         rootLayout = findViewById(R.id.rootLayout);
 
@@ -78,6 +80,11 @@ public class VisionActivity extends AppCompatActivity {
                 company_name = dataSnapshot.child("company_name").getValue().toString();
                 customer_output = dataSnapshot.child("customer_output").getValue().toString();
                 company_economic_activity = dataSnapshot.child("company_economic_activity").getValue().toString();
+
+                if (dataSnapshot.hasChild("company_vision")) {
+                    company_vision = dataSnapshot.child("company_vision").getValue().toString();
+                    txtMessage.setText("VISIÓN: "+company_vision);
+                }
             }
 
             @Override
@@ -332,7 +339,7 @@ public class VisionActivity extends AppCompatActivity {
 
 
         txtVision.setText("Identificarnos como una empresa de "+customer_output+" líder en "+company_economic_activity+" cuya visión sea "+vision_message+" y que nos lleve al cumplimiento de nuestra meta principal a largo plazo que es la de "+goal_message+" sin perder nuestra esencia en "+txtIdeology1.getText().toString()+" y "+txtIdeology2.getText().toString()+" para nuestro crecimiento sólido y sostenible a lo largo de los años");
-
+        companyRef.child(post_key).child("company_vision").setValue("Identificarnos como una empresa de "+customer_output+" líder en "+company_economic_activity+" cuya visión sea "+vision_message+" y que nos lleve al cumplimiento de nuestra meta principal a largo plazo que es la de "+goal_message+" sin perder nuestra esencia en "+txtIdeology1.getText().toString()+" y "+txtIdeology2.getText().toString()+" para nuestro crecimiento sólido y sostenible a lo largo de los años");
 
         dialog.setView(finance_method);
         dialog.show();
