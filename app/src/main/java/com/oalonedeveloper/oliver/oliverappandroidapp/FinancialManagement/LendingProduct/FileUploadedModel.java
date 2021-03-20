@@ -2,14 +2,15 @@ package com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.Lendi
 
 public class FileUploadedModel {
 
-    String url, file_name;
+    String url, file_name,doc_tittle;
 
     public FileUploadedModel() {
     }
 
-    public FileUploadedModel(String url, String file_name) {
+    public FileUploadedModel(String url, String file_name, String doc_tittle) {
         this.url = url;
         this.file_name = file_name;
+        this.doc_tittle = doc_tittle;
     }
 
     public String getUrl() {
@@ -26,5 +27,13 @@ public class FileUploadedModel {
 
     public void setFile_name(String file_name) {
         this.file_name = file_name;
+    }
+
+    public String getDoc_tittle() {
+        return doc_tittle;
+    }
+
+    public void setDoc_tittle(String doc_tittle) {
+        this.doc_tittle = doc_tittle;
     }
 }

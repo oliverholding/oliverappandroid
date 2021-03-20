@@ -56,6 +56,7 @@ public class WorkersPayrollActivity extends AppCompatActivity {
 
         linearLayout1.setBackgroundResource(R.drawable.orange_button_style_ripple);
         txtText1.setTextColor(Color.WHITE);
+        getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
 
         tab1.setOnClickListener(new View.OnClickListener() {
             @Override

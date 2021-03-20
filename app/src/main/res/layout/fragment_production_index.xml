@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".CareManager.ManagementControlAndReports.DashboardsAndKeyindex.GeneralIndexFragment">
+    tools:context=".CareManager.ManagementControlAndReports.DashboardsAndKeyindex.ProductionIndexFragment">
 
     <ScrollView
         android:scrollbars="vertical"
@@ -37,7 +37,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@drawable/mis_clientes"
+                            android:src="@drawable/orden_produccion"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
                             android:layout_height="30dp"/>
@@ -45,13 +45,12 @@
                         <TextView
                             android:textSize="18sp"
                             android:textColor="@android:color/black"
-                            android:text="Estructura de Clientes"
+                            android:text="Órdenes de Producción"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
-
 
                     <com.github.mikephil.charting.charts.PieChart
                         android:id="@+id/pieChart"
@@ -84,7 +83,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@drawable/ventas"
+                            android:src="@drawable/control_calidad"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
                             android:layout_height="30dp"/>
@@ -92,18 +91,17 @@
                         <TextView
                             android:textSize="18sp"
                             android:textColor="@android:color/black"
-                            android:text="Fluctuación de Ventas"
+                            android:text="Control de Calidad"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
 
-                    <com.github.mikephil.charting.charts.LineChart
-                        android:id="@+id/linechart"
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/barChart"
                         android:layout_width="match_parent"
                         android:layout_height="220dp"/>
-
 
                 </LinearLayout>
 
@@ -113,5 +111,6 @@
         </LinearLayout>
 
     </ScrollView>
+
 
 </RelativeLayout>

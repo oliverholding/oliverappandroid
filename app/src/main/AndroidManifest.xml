@@ -21,7 +21,11 @@
         android:roundIcon="@drawable/oliver_app_white_title"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CareManager.ManagementControlAndReports.DashboardsAndKeyindex.DashboardAndKeyIndexActivity"></activity>
+        <activity android:name=".CareManager.ManagementControlAndReports.LessonLearned.LessonLearnedActivity"></activity>
+        <activity android:name=".CareManager.ManagementControlAndReports.ContractManagement.ContractManagementActivity" />
+        <activity android:name=".CareManager.ManagementControlAndReports.DashboardProcess.DashboardProcessActivity" />
+        <activity android:name=".CareManager.ManagementControlAndReports.InternalControl.InternalControlActivity" />
+        <activity android:name=".CareManager.ManagementControlAndReports.DashboardsAndKeyindex.DashboardAndKeyIndexActivity" />
         <activity android:name=".CareManager.ManagementControlAndReports.ManagementControlAndReportsActivity" />
         <activity android:name=".CareManager.CareLearning.CareLearningActivity" />
         <activity android:name=".CareManager.Simulators.ProjectSimulator.ProjectSimulatorActivity" />

@@ -46,12 +46,12 @@ public class DashboardAndKeyIndexActivity extends AppCompatActivity {
         txtText5 = findViewById(R.id.txtText5);
         txtText6 = findViewById(R.id.txtText6);
 
-        fragment1 = new GraphicsFragment();
-        fragment2 = new ProductRankingFragment();
-        fragment3 = new CustomerRankingFragment();
-        fragment4 = new GraphicsFragment();
-        fragment5 = new ProductRankingFragment();
-        fragment6 = new CustomerRankingFragment();
+        fragment1 = new GeneralIndexFragment();
+        fragment2 = new LogisticIndexFragment();
+        fragment3 = new ProductionIndexFragment();
+        fragment4 = new PoepleIndexFragment();
+        fragment5 = new NormativityIndexFragment();
+        fragment6 = new FinanceIndexragment();
 
         getSupportFragmentManager().beginTransaction().add(R.id.contentFragment,fragment1).commit();
         linearLayout1.setBackgroundResource(R.drawable.orange_button_style_ripple);
@@ -187,6 +187,33 @@ public class DashboardAndKeyIndexActivity extends AppCompatActivity {
 
                 linearLayout6.setBackgroundResource(R.drawable.orange_strokes_style);
                 txtText6.setTextColor(Color.GRAY);
+
+
+            }
+        });
+
+        tab6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment6).commit();
+
+                linearLayout6.setBackgroundResource(R.drawable.orange_button_style_ripple);
+                txtText6.setTextColor(Color.WHITE);
+
+                linearLayout1.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText1.setTextColor(Color.GRAY);
+
+                linearLayout2.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText2.setTextColor(Color.GRAY);
+
+                linearLayout3.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText3.setTextColor(Color.GRAY);
+
+                linearLayout4.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText4.setTextColor(Color.GRAY);
+
+                linearLayout5.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText5.setTextColor(Color.GRAY);
 
 
             }

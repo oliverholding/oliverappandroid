@@ -1,0 +1,1632 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CareManager.ManagementControlAndReports.DashboardProcess.DashboardProcessActivity">
+
+
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="8dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardTitle"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@color/gray1"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"/>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:textSize="16sp"
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:text="Dashboards de Indicadores de Procesos"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:textSize="12sp"
+                                android:layout_margin="4dp"
+                                android:text="Conoce tu progreso en el sistema de gestión."
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/comercializacion"
+                            android:layout_weight="0.3"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"/>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:textColor="@android:color/black"
+                                    android:text="Comercialización"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtProgress1"
+                                android:layout_margin="4dp"
+                                android:text="Progreso:  0.00%"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <com.xw.repo.BubbleSeekBar
+                                android:id="@+id/barProgress1"
+                                android:clickable="false"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:bsb_track_color="@color/colorGradientCenterRed"
+                                app:bsb_bubble_color="@color/orange1"
+                                app:bsb_bubble_text_color="@android:color/white"
+                                app:bsb_second_track_color="@color/orange1"
+                                app:bsb_thumb_color="@android:color/transparent"
+                                app:bsb_max="100"
+                                app:bsb_min="0"
+                                app:bsb_second_track_size="6dp"
+                                app:bsb_progress="35"
+                                app:bsb_section_count="0"
+                                app:bsb_track_size="10dp"
+                                app:bsb_show_progress_in_float="false"
+                                app:bsb_show_section_mark="false"
+                                app:bsb_show_section_text="false"
+                                app:bsb_show_thumb_text="false"
+                                app:bsb_always_show_bubble="false"
+                                />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="Detalles"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:id="@+id/btnDetails1"
+                            android:src="@drawable/arrow_down_vector_asset"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="20dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout1"
+                        android:padding="8dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/matriz_productos"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:text="Matriz Producto Mercado"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/img1_1"
+                                android:src="@drawable/espera"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_margin="4dp"
+                            android:background="@color/gray2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/boletas_facturas"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:text="Emisión de Boletas y Facturas"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/img1_2"
+                                android:src="@drawable/espera"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_margin="4dp"
+                            android:background="@color/gray2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/creditos"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:text="Créditos y Cobranzas"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/img1_3"
+                                android:src="@drawable/espera"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_margin="4dp"
+                            android:background="@color/gray2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/soporte_cliente"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:text="Soporte a Clientes y Fidelización"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/img1_4"
+                                android:src="@drawable/espera"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/ventas"
+                            android:layout_weight="0.3"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"/>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:textColor="@android:color/black"
+                                    android:text="Ventas"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtProgress2"
+                                android:layout_margin="4dp"
+                                android:text="Progreso:  0.00%"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <com.xw.repo.BubbleSeekBar
+                                android:id="@+id/barProgress2"
+                                android:clickable="false"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:bsb_track_color="@color/colorGradientCenterRed"
+                                app:bsb_bubble_color="@color/orange1"
+                                app:bsb_bubble_text_color="@android:color/white"
+                                app:bsb_second_track_color="@color/orange1"
+                                app:bsb_thumb_color="@android:color/transparent"
+                                app:bsb_max="100"
+                                app:bsb_min="0"
+                                app:bsb_second_track_size="6dp"
+                                app:bsb_progress="35"
+                                app:bsb_section_count="0"
+                                app:bsb_track_size="10dp"
+                                app:bsb_show_progress_in_float="false"
+                                app:bsb_show_section_mark="false"
+                                app:bsb_show_section_text="false"
+                                app:bsb_show_thumb_text="false"
+                                app:bsb_always_show_bubble="false"
+                                />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="Detalles"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:id="@+id/btnDetails2"
+                            android:src="@drawable/arrow_down_vector_asset"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="20dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout2"
+                        android:padding="8dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/vendedor"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:text="Mis Vendedores"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/img2_1"
+                                android:src="@drawable/espera"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_margin="4dp"
+                            android:background="@color/gray2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/embudo_ventas"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:text="Embudos de Ventas"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/img2_2"
+                                android:src="@drawable/espera"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_margin="4dp"
+                            android:background="@color/gray2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/programacion_cita"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:text="Agencia de Citas"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/img2_3"
+                                android:src="@drawable/espera"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_margin="4dp"
+                            android:background="@color/gray2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/proyeccion_ventas"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:text="Proyección de Ventas"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/img2_4"
+                                android:src="@drawable/espera"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/logistica_abastecimiento"
+                            android:layout_weight="0.3"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"/>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:textColor="@android:color/black"
+                                    android:text="Logística / Abastecimiento"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtProgress3"
+                                android:layout_margin="4dp"
+                                android:text="Progreso:  0.00%"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <com.xw.repo.BubbleSeekBar
+                                android:id="@+id/barProgress3"
+                                android:clickable="false"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:bsb_track_color="@color/colorGradientCenterRed"
+                                app:bsb_bubble_color="@color/orange1"
+                                app:bsb_bubble_text_color="@android:color/white"
+                                app:bsb_second_track_color="@color/orange1"
+                                app:bsb_thumb_color="@android:color/transparent"
+                                app:bsb_max="100"
+                                app:bsb_min="0"
+                                app:bsb_second_track_size="6dp"
+                                app:bsb_progress="35"
+                                app:bsb_section_count="0"
+                                app:bsb_track_size="10dp"
+                                app:bsb_show_progress_in_float="false"
+                                app:bsb_show_section_mark="false"
+                                app:bsb_show_section_text="false"
+                                app:bsb_show_thumb_text="false"
+                                app:bsb_always_show_bubble="false"
+                                />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="Detalles"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:id="@+id/btnDetails3"
+                            android:src="@drawable/arrow_down_vector_asset"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="20dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout3"
+                        android:padding="8dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/adquisicion_bienes_servicios"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:text="Adquisición de Bienes y Servicios"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/img3_1"
+                                android:src="@drawable/espera"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_margin="4dp"
+                            android:background="@color/gray2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/busqueda_evaluacion_provedores"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:text="Búsqueda y Evaluación de Proveedores"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/img3_2"
+                                android:src="@drawable/espera"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_margin="4dp"
+                            android:background="@color/gray2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/almacenamiento"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:text="Almacenamiento"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/img3_3"
+                                android:src="@drawable/espera"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_margin="4dp"
+                            android:background="@color/gray2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/procesamiento_pedidos"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:text="Procesamiento de Pedidos"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/img3_4"
+                                android:src="@drawable/espera"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_margin="4dp"
+                            android:background="@color/gray2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/despacho_entregas"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:text="Despacho y Entrega"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/img3_5"
+                                android:src="@drawable/espera"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/produccion_operaciones"
+                            android:layout_weight="0.3"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"/>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:textColor="@android:color/black"
+                                    android:text="Producción / Operaciones"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtProgress4"
+                                android:layout_margin="4dp"
+                                android:text="Progreso:  0.00%"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <com.xw.repo.BubbleSeekBar
+                                android:id="@+id/barProgress4"
+                                android:clickable="false"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:bsb_track_color="@color/colorGradientCenterRed"
+                                app:bsb_bubble_color="@color/orange1"
+                                app:bsb_bubble_text_color="@android:color/white"
+                                app:bsb_second_track_color="@color/orange1"
+                                app:bsb_thumb_color="@android:color/transparent"
+                                app:bsb_max="100"
+                                app:bsb_min="0"
+                                app:bsb_second_track_size="6dp"
+                                app:bsb_progress="35"
+                                app:bsb_section_count="0"
+                                app:bsb_track_size="10dp"
+                                app:bsb_show_progress_in_float="false"
+                                app:bsb_show_section_mark="false"
+                                app:bsb_show_section_text="false"
+                                app:bsb_show_thumb_text="false"
+                                app:bsb_always_show_bubble="false"
+                                />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="Detalles"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:id="@+id/btnDetails4"
+                            android:src="@drawable/arrow_down_vector_asset"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="20dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout4"
+                        android:padding="8dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@color/gray1"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:text="Capacidad de Producción"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/img4_1"
+                                android:src="@drawable/espera"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_margin="4dp"
+                            android:background="@color/gray2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/orden_produccion"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:text="Órdenes de Producción"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/img4_2"
+                                android:src="@drawable/espera"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_margin="4dp"
+                            android:background="@color/gray2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/programar_mantenimiento_maquinas"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:text="Mantenimiento de Herramientas, Maquinaria y Equipos"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/img4_3"
+                                android:src="@drawable/espera"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_margin="4dp"
+                            android:background="@color/gray2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@color/gray1"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:text="Lean Manufacturing"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/img4_4"
+                                android:src="@drawable/espera"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/gestion_personas"
+                            android:layout_weight="0.3"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"/>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:textColor="@android:color/black"
+                                    android:text="Gestión de Personas"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtProgress5"
+                                android:layout_margin="4dp"
+                                android:text="Progreso:  0.00%"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <com.xw.repo.BubbleSeekBar
+                                android:id="@+id/barProgress5"
+                                android:clickable="false"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:bsb_track_color="@color/colorGradientCenterRed"
+                                app:bsb_bubble_color="@color/orange1"
+                                app:bsb_bubble_text_color="@android:color/white"
+                                app:bsb_second_track_color="@color/orange1"
+                                app:bsb_thumb_color="@android:color/transparent"
+                                app:bsb_max="100"
+                                app:bsb_min="0"
+                                app:bsb_second_track_size="6dp"
+                                app:bsb_progress="35"
+                                app:bsb_section_count="0"
+                                app:bsb_track_size="10dp"
+                                app:bsb_show_progress_in_float="false"
+                                app:bsb_show_section_mark="false"
+                                app:bsb_show_section_text="false"
+                                app:bsb_show_thumb_text="false"
+                                app:bsb_always_show_bubble="false"
+                                />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="Detalles"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:id="@+id/btnDetails5"
+                            android:src="@drawable/arrow_down_vector_asset"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="20dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout5"
+                        android:padding="8dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/perfil_puesto"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:text="Perfiles de puestos"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/img5_1"
+                                android:src="@drawable/espera"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_margin="4dp"
+                            android:background="@color/gray2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/personal_capacitado"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:text="Files de personal"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/img5_2"
+                                android:src="@drawable/espera"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_margin="4dp"
+                            android:background="@color/gray2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/planillas"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:text="Planillas"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/img5_3"
+                                android:src="@drawable/espera"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_margin="4dp"
+                            android:background="@color/gray2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/desempeno_trabajador"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:text="Roster y Performance"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/img5_4"
+                                android:src="@drawable/espera"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/normas"
+                            android:layout_weight="0.3"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"/>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:textStyle="bold"
+                                    android:layout_margin="4dp"
+                                    android:textColor="@android:color/black"
+                                    android:text="Cumplimiento de Normatividad y Responsabilidad Social"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"/>
+
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtProgress6"
+                                android:layout_margin="4dp"
+                                android:text="Progreso:  0.00%"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <com.xw.repo.BubbleSeekBar
+                                android:id="@+id/barProgress6"
+                                android:clickable="false"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:bsb_track_color="@color/colorGradientCenterRed"
+                                app:bsb_bubble_color="@color/orange1"
+                                app:bsb_bubble_text_color="@android:color/white"
+                                app:bsb_second_track_color="@color/orange1"
+                                app:bsb_thumb_color="@android:color/transparent"
+                                app:bsb_max="100"
+                                app:bsb_min="0"
+                                app:bsb_second_track_size="6dp"
+                                app:bsb_progress="35"
+                                app:bsb_section_count="0"
+                                app:bsb_track_size="10dp"
+                                app:bsb_show_progress_in_float="false"
+                                app:bsb_show_section_mark="false"
+                                app:bsb_show_section_text="false"
+                                app:bsb_show_thumb_text="false"
+                                app:bsb_always_show_bubble="false"
+                                />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:text="Detalles"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:id="@+id/btnDetails6"
+                            android:src="@drawable/arrow_down_vector_asset"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="20dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout6"
+                        android:padding="8dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/tributos_impuestos"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:text="Normatividad Tributaria"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/img6_1"
+                                android:src="@drawable/espera"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_margin="4dp"
+                            android:background="@color/gray2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/regulacion_laboral"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:text="Normatividad Laboral"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/img6_2"
+                                android:src="@drawable/espera"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_margin="4dp"
+                            android:background="@color/gray2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/normatividad_sanitaria"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:text="Normatividad Sanitaria"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/img6_3"
+                                android:src="@drawable/espera"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_margin="4dp"
+                            android:background="@color/gray2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/normatividad_ambiental"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:text="Normatividad Ambiental"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/img6_4"
+                                android:src="@drawable/espera"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_margin="4dp"
+                            android:background="@color/gray2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/responsabilidad_civil_penal"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="4dp"
+                                android:text="Responsabilidad Civil y Penal"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/img6_5"
+                                android:src="@drawable/espera"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

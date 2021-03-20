@@ -2,12 +2,18 @@ package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ManagementCon
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ManagementControlAndReports.ContractManagement.ContractManagementActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ManagementControlAndReports.DashboardProcess.DashboardProcessActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ManagementControlAndReports.DashboardsAndKeyindex.DashboardAndKeyIndexActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ManagementControlAndReports.InternalControl.InternalControlActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Simulators.CostPriceSimulator.CostPriceSimulatorActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Simulators.CostVolumeProfitAnalysys.CostVolumeProfitAnalysysActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Simulators.InterestRateSimulator.InterestRateSimulatorActivity;
@@ -48,19 +54,25 @@ public class ManagementControlAndReportsActivity extends AppCompatActivity {
         btnTool2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(ManagementControlAndReportsActivity.this, DashboardProcessActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
             }
         });
         btnTool3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(ManagementControlAndReportsActivity.this, InternalControlActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
             }
         });
         btnTool4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(ManagementControlAndReportsActivity.this, ContractManagementActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
             }
         });
         btnTool5.setOnClickListener(new View.OnClickListener() {
@@ -75,5 +87,28 @@ public class ManagementControlAndReportsActivity extends AppCompatActivity {
                
             }
         });
+    }
+
+    public static class myPostViewHolder extends RecyclerView.ViewHolder {
+        View mView;
+        String my_url, my_file_name;
+        TextView txtFileName;
+        ImageView btnDownload;
+
+        public myPostViewHolder(View itemView) {
+            super(itemView);
+            mView = itemView;
+
+            txtFileName = mView.findViewById(R.id.txtFileName);
+            btnDownload = mView.findViewById(R.id.btnDownload);
+
+        }
+        public void setUrl(String url) {
+            my_url = url;
+        }
+
+        public void setFile_name(String file_name) {
+            my_file_name = file_name;
+        }
     }
 }
