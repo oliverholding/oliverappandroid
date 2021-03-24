@@ -199,7 +199,7 @@ public class CompanyDataSumaryFragment extends Fragment {
                                         if (sunat_api.equals("true")) {
                                             getSunatInformation();
                                         } else if (sunat_api.equals("false")) {
-                                            imgTwo.setImageResource(R.drawable.espera);
+                                            imgTwo.setImageResource(R.drawable.check);
                                             txtPersonalData.setText("Datos del Negocio completado");
                                             txtPersonalData.setTextColor(Color.GREEN);
                                             personal_data_verification = "true";
@@ -303,7 +303,7 @@ public class CompanyDataSumaryFragment extends Fragment {
                     return;
                 }
                 else if (dni_exist.equals("true")) {
-                    Snackbar.make(rootLayout, "El número dw RUC ya está siendo usado por otro usario de Oliver", Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(rootLayout, "El número de RUC ya está siendo usado por otro usario de Oliver", Snackbar.LENGTH_LONG).show();
                     return;
                 }
                 else if (contact_data_verification.equals("false")) {
@@ -509,7 +509,7 @@ public class CompanyDataSumaryFragment extends Fragment {
     }
 
     private void getSunatInformation() {
-        String url = "https://api.sunat.cloud/ruc/"+document_number;
+        String url = "https://registrode.sytes.net/api-sunat/?ruc="+document_number+"&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MTU1ODQyNjksImV4cCI6MTYxNTU4Nzg2OSwiZGF0YSI6eyJjbGllbnRlIjoiam9zdGhlaW4gbWF5b3JjYSBiZWxsZXphIiwicmVnaXN0cm8iOiIyMDIxLTAzLTEyIDEwOjQ2OjIyIiwibm93IjoiMjAyMS0wMy0xMiAxNjoyNDoyOSJ9fQ.deDKtZT9bW7OJccqMG4BTlyRRaXZ6KIyPDBKUWNCzDU";
         HttpsTrustManager.allowAllSSL();
 
         RequestQueue requestQueue = Volley.newRequestQueue(Objects.requireNonNull(getActivity()));
@@ -518,11 +518,13 @@ public class CompanyDataSumaryFragment extends Fragment {
             public void onResponse(JSONObject response) {
 
                 try {
-                    razon_social = response.getString("razon_social");
-                    fecha_inscripcion = response.getString("fecha_inscripcion");
-                    contribuyente_tipo = response.getString("contribuyente_tipo");
-                    contribuyente_estado = response.getString("contribuyente_estado");
-                    domicilio_fiscal = response.getString("domicilio_fiscal");
+
+                    razon_social = response.getJSONObject("result").getString("razon_social");
+                    fecha_inscripcion = response.getJSONObject("result").getString("fecha_inscripcion");
+                    contribuyente_tipo = response.getJSONObject("result").getString("tipo");
+                    contribuyente_estado = response.getJSONObject("result").getString("estado");
+                    domicilio_fiscal = response.getJSONObject("result").getString("direccion");
+
 
                     if (fecha_inscripcion.equals(register_date)) {
                         imgTwo.setImageResource(R.drawable.check);
@@ -540,13 +542,14 @@ public class CompanyDataSumaryFragment extends Fragment {
 
                 } catch (JSONException e) {
                     e.printStackTrace();
+                    Toast.makeText(getActivity(), ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                Toast.makeText(getActivity(), ""+error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
         requestQueue.add(objectRequest);

@@ -96,7 +96,7 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@drawable/producto"
+                        android:src="@drawable/crear_presupuesto"
                         android:layout_width="30dp"
                         android:layout_height="30dp"/>
 
@@ -131,7 +131,7 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@drawable/nuevo_producto_servicio"
+                        android:src="@drawable/presupuestado_vs_real"
                         android:layout_width="30dp"
                         android:layout_height="30dp"/>
 

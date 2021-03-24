@@ -103,7 +103,7 @@
 
                     <ImageView
                         android:id="@+id/btnAddCompetence"
-                        android:src="@color/gray2"
+                        android:src="@drawable/agregar"
                         android:layout_margin="4dp"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"

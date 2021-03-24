@@ -42,6 +42,8 @@ public class RegisterData4Fragment extends Fragment {
     ArrayList<String> academicDegrees =new ArrayList<>();
     SpinnerDialog spinnerAcademicDegrees;
 
+    Fragment fragment5;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -56,6 +58,8 @@ public class RegisterData4Fragment extends Fragment {
         currentUserID = mAuth.getCurrentUser().getUid();
         userRef = FirebaseDatabase.getInstance().getReference().child("Users");
         loadingBar = new ProgressDialog(getActivity());
+
+        fragment5 = new RegisterData5Fragment();
 
         userRef.child(currentUserID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -149,9 +153,7 @@ public class RegisterData4Fragment extends Fragment {
                     Snackbar.make(rootLayout, "Debes seleccionar tu grado académico", Snackbar.LENGTH_LONG).show();
                     return;
                 } else {
-                    Intent intent = new Intent(getActivity(), RegistrationDataActivity.class);
-                    intent.putExtra("FRAGMENT_ID", 4);
-                    startActivity(intent);
+                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment5).commit();
                 }
             }
         });

@@ -35,7 +35,7 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@color/gray2"
+                        android:src="@drawable/valores_empresariales"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
@@ -91,9 +91,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/transparencia"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
 
@@ -356,9 +356,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/puntualidad"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
 
@@ -621,9 +621,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/diferencia_empresarial"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
 
@@ -886,9 +886,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/excelencia_empresarial"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
 
@@ -1151,9 +1151,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/libertad_empresarial"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
 
@@ -1416,9 +1416,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/escucha_empresarial"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
 
@@ -1681,9 +1681,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/responsabilidad"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
 
@@ -1946,9 +1946,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/emocionalidad"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
 
@@ -2211,9 +2211,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/pasion"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
 
@@ -2476,9 +2476,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/resolucion"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
 
@@ -2741,9 +2741,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/claridad"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
 
@@ -3006,9 +3006,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/lealtad"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
 
@@ -3271,9 +3271,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/excelencia_en_la_gestion"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
 
@@ -3536,9 +3536,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/investigacion_desarrollo_innovacion_calidad"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
 
@@ -3801,9 +3801,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/confidencialidad"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
 
@@ -4066,9 +4066,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/integracion_profesional_personal"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
 
@@ -4331,9 +4331,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/trabajo_en_equipo"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
 

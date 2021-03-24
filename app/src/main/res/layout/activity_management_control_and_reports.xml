@@ -59,7 +59,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/dashboards_de_indicadores_clave_nivel_general_por_area_funcional"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -95,7 +95,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/dashboards_de_indicadores_de_procesos"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -131,7 +131,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/control_interno"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -167,7 +167,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/administracion_de_contratos"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -203,7 +203,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/hallazgos_y_lecciones_aprendidas_1"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -239,7 +239,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/generador_de_reportes"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>

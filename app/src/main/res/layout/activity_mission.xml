@@ -35,7 +35,7 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@drawable/producto"
+                        android:src="@drawable/mision_empresarial"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
@@ -127,7 +127,7 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/actividades_clave"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="60dp"/>
@@ -322,7 +322,7 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/cliente_potencial"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="60dp"/>
@@ -524,7 +524,7 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/sector_empresarial"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="60dp"/>
@@ -623,7 +623,7 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/trabajadores_amables"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="60dp"/>

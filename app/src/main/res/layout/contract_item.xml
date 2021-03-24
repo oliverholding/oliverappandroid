@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"/>
 
         <ImageView
-            android:src="@color/gray1"
+            android:src="@drawable/descargar_archivo"
             android:id="@+id/btnDownload"
             android:layout_margin="4dp"
             android:layout_weight="0.5"

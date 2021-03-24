@@ -9,7 +9,7 @@
     <RelativeLayout
         android:id="@+id/rootLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <ScrollView
             android:layout_above="@id/layoutOptions"
@@ -199,6 +199,7 @@
 
         <Button
             android:id="@+id/btnContinue"
+            android:layout_margin="8dp"
             android:layout_alignParentBottom="true"
             android:text="CONTINUAR"
             android:textColor="@android:color/white"

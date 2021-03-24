@@ -38,7 +38,7 @@
 
                         <ImageView
                             android:layout_margin="4dp"
-                            android:src="@drawable/presupuestos"
+                            android:src="@drawable/plan_de_operaciones"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
                             android:layout_height="50dp"/>
@@ -104,7 +104,7 @@
 
                         <ImageView
                             android:id="@+id/btnAdd1"
-                            android:src="@color/gray2"
+                            android:src="@drawable/agregar"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
                             android:layout_height="20dp"/>
@@ -188,7 +188,7 @@
 
                         <ImageView
                             android:id="@+id/btnAdd2"
-                            android:src="@color/gray2"
+                            android:src="@drawable/agregar"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
                             android:layout_height="20dp"/>
@@ -272,7 +272,7 @@
 
                         <ImageView
                             android:id="@+id/btnEdit1"
-                            android:src="@color/gray2"
+                            android:src="@drawable/editar"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
                             android:layout_height="20dp"/>

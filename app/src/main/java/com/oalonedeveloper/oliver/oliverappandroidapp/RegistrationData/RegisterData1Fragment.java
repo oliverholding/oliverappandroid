@@ -68,6 +68,8 @@ public class RegisterData1Fragment extends Fragment {
     Button btnContinue;
     RelativeLayout rootLayout;
 
+    Fragment fragment2;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -95,6 +97,8 @@ public class RegisterData1Fragment extends Fragment {
         loadingBar.show();
         loadingBar.setCanceledOnTouchOutside(false);
         loadingBar.setCancelable(false);
+
+        fragment2 = new RegisterData2Fragment();
 
         userRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -150,9 +154,7 @@ public class RegisterData1Fragment extends Fragment {
                     return;
 
                 }else if (image_verification.equals("true")) {
-                    Intent intent = new Intent(getActivity(), RegistrationDataActivity.class);
-                    intent.putExtra("FRAGMENT_ID", 1);
-                    startActivity(intent);
+                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment2).commit();
                 }
             }
         });

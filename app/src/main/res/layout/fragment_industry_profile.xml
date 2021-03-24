@@ -265,8 +265,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
 
-                                <de.hdodenhof.circleimageview.CircleImageView
-                                    android:src="@color/colorGradientCenterRed"
+                                <ImageView
+                                    android:src="@drawable/factores_mercado"
                                     android:layout_margin="4dp"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"/>
@@ -448,8 +448,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
 
-                                <de.hdodenhof.circleimageview.CircleImageView
-                                    android:src="@color/colorGradientCenterRed"
+                                <ImageView
+                                    android:src="@drawable/factores_competitividad"
                                     android:layout_margin="4dp"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"/>
@@ -631,8 +631,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
 
-                                <de.hdodenhof.circleimageview.CircleImageView
-                                    android:src="@color/colorGradientCenterRed"
+                                <ImageView
+                                    android:src="@drawable/factores_economicos_gubernamentales"
                                     android:layout_margin="4dp"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"/>
@@ -814,8 +814,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
 
-                                <de.hdodenhof.circleimageview.CircleImageView
-                                    android:src="@color/colorGradientCenterRed"
+                                <ImageView
+                                    android:src="@drawable/factores_tecnologicos"
                                     android:layout_margin="4dp"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"/>
@@ -997,8 +997,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
 
-                                <de.hdodenhof.circleimageview.CircleImageView
-                                    android:src="@color/colorGradientCenterRed"
+                                <ImageView
+                                    android:src="@drawable/factores_sociales"
                                     android:layout_margin="4dp"
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"/>

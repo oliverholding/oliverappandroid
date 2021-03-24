@@ -59,7 +59,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/vision_empresarial"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -95,7 +95,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/mision_empresarial"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -131,7 +131,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/valores_empresariales"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -239,7 +239,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/sector_empresarial"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -275,7 +275,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/desarrollo_nuevos_mercados"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -311,7 +311,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/matriz_foda"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -347,7 +347,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/matriz_cuadros_dash"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -383,7 +383,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/ambiente_de_aprendizaje"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>

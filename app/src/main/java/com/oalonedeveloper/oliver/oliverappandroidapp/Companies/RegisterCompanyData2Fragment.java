@@ -39,7 +39,7 @@ import in.galaxyofandroid.spinerdialog.SpinnerDialog;
 public class RegisterCompanyData2Fragment extends Fragment {
 
     EditText edtCommercialName,edtDocumentNumber;
-    Button edtBthDay,edtBthMonth,edtBthYear;
+    Button edtBthDay,edtBthMonth,edtBthYear,btnContinue;
     FirebaseAuth mAuth;
     DatabaseReference userRef,ratesRef,peruLocations,economic_activities;
     String currentUserID,province_code;
@@ -60,11 +60,15 @@ public class RegisterCompanyData2Fragment extends Fragment {
     AlertDialog departmentDialog;
     Button btnDepartment,btnDistrict,btnProvince,btnEconomicActivities;
 
+    Fragment fragment3;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_register_company_data2, container, false);
+
+        fragment3 = new RegisterCompanyData3Fragment();
 
         edtCommercialName = view.findViewById(R.id.edtCommercialName);
         edtDocumentNumber = view.findViewById(R.id.edtDocumentNumber);
@@ -75,6 +79,7 @@ public class RegisterCompanyData2Fragment extends Fragment {
         btnProvince = view.findViewById(R.id.btnProvince);
         btnDistrict = view.findViewById(R.id.btnDistrict);
         btnEconomicActivities = view.findViewById(R.id.btnEconomicActivities);
+        btnContinue = view.findViewById(R.id.btnContinue);
 
         loadingBar = new ProgressDialog(getActivity());
 
@@ -349,6 +354,12 @@ public class RegisterCompanyData2Fragment extends Fragment {
             }
         });
 
+        btnContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment3).commit();
+            }
+        });
 
         return view;
     }

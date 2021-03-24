@@ -55,6 +55,8 @@ public class RegisterData2Fragment extends Fragment {
     ArrayList<String> bthYear =new ArrayList<>();
     SpinnerDialog bthYearDialog;
 
+    Fragment fragment3;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -85,6 +87,8 @@ public class RegisterData2Fragment extends Fragment {
         loadingBar.show();
         loadingBar.setCanceledOnTouchOutside(false);
         loadingBar.setCancelable(false);
+
+        fragment3 = new RegisterData3Fragment();
 
         userRef.child(currentUserID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -354,9 +358,7 @@ public class RegisterData2Fragment extends Fragment {
                     Snackbar.make(rootLayout, "Debes ingresar tu mes de nacimiento", Snackbar.LENGTH_LONG).show();
                     return;
                 } else {
-                    Intent intent = new Intent(getActivity(), RegistrationDataActivity.class);
-                    intent.putExtra("FRAGMENT_ID", 2);
-                    startActivity(intent);
+                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment3).commit();
                 }
 
             }

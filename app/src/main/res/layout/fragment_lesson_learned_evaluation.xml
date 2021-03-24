@@ -1,14 +1,963 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CareManager.ManagementControlAndReports.LessonLearned.LessonLearnedEvaluationFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
+        android:scrollbars="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <LinearLayout
+            android:padding="8dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/boletas_facturas"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"/>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:text="¿Qué es el IGV?"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:text="Selecciona una respuesta"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <Button
+                                android:id="@+id/btnAnswer1"
+                                android:hint="Seleccionar..."
+                                android:gravity="start|center"
+                                android:padding="8dp"
+                                android:drawableEnd="@drawable/arrow_down_vector_asset"
+                                android:background="@drawable/edit_text_style_1"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/matriz_productos"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"/>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:text="¿Para qué sirve una matriz de Producto - Mercado?"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:text="Selecciona una respuesta"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <Button
+                                android:id="@+id/btnAnswer2"
+                                android:gravity="start|center"
+                                android:hint="Seleccionar..."
+                                android:padding="8dp"
+                                android:drawableEnd="@drawable/arrow_down_vector_asset"
+                                android:background="@drawable/edit_text_style_1"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/creditos"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"/>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:text="¿Cuál es la diferencia entre deuda vencida y deuda vigente?"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:text="Selecciona una respuesta"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <Button
+                                android:id="@+id/btnAnswer3"
+                                android:gravity="start|center"
+                                android:hint="Seleccionar..."
+                                android:padding="8dp"
+                                android:drawableEnd="@drawable/arrow_down_vector_asset"
+                                android:background="@drawable/edit_text_style_1"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/embudo_ventas"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"/>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:text="¿Por qué es importante un embudo de ventas?"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:text="Selecciona una respuesta"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <Button
+                                android:id="@+id/btnAnswer4"
+                                android:gravity="start|center"
+                                android:hint="Seleccionar..."
+                                android:padding="8dp"
+                                android:drawableEnd="@drawable/arrow_down_vector_asset"
+                                android:background="@drawable/edit_text_style_1"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/proyeccion_unidades_vendidas"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"/>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:text="¿Por qué debemos proyectar nuestra demanda?"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:text="Selecciona una respuesta"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <Button
+                                android:id="@+id/btnAnswer5"
+                                android:gravity="start|center"
+                                android:hint="Seleccionar..."
+                                android:padding="8dp"
+                                android:drawableEnd="@drawable/arrow_down_vector_asset"
+                                android:background="@drawable/edit_text_style_1"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/adquisicion_bienes_servicios"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"/>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:text="¿Qué son las órdenes de compra"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:text="Selecciona una respuesta"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <Button
+                                android:id="@+id/btnAnswer6"
+                                android:gravity="start|center"
+                                android:hint="Seleccionar..."
+                                android:padding="8dp"
+                                android:drawableEnd="@drawable/arrow_down_vector_asset"
+                                android:background="@drawable/edit_text_style_1"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/control_inventarios"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"/>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:text="¿Cuál es la función del control de inventarios?"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:text="Selecciona una respuesta"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <Button
+                                android:id="@+id/btnAnswer7"
+                                android:gravity="start|center"
+                                android:hint="Seleccionar..."
+                                android:padding="8dp"
+                                android:drawableEnd="@drawable/arrow_down_vector_asset"
+                                android:background="@drawable/edit_text_style_1"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/ficha_tecnica_producto"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"/>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:text="¿Qué es una ficha técnica?"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:text="Selecciona una respuesta"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <Button
+                                android:id="@+id/btnAnswer8"
+                                android:gravity="start|center"
+                                android:hint="Seleccionar..."
+                                android:padding="8dp"
+                                android:drawableEnd="@drawable/arrow_down_vector_asset"
+                                android:background="@drawable/edit_text_style_1"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/orden_produccion"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"/>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:text="¿Cómo funciona la cadena de producción?"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:text="Selecciona una respuesta"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <Button
+                                android:id="@+id/btnAnswer9"
+                                android:gravity="start|center"
+                                android:hint="Seleccionar..."
+                                android:padding="8dp"
+                                android:drawableEnd="@drawable/arrow_down_vector_asset"
+                                android:background="@drawable/edit_text_style_1"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/impuesto_4ta_categoria"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"/>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:text="¿Para qué sirven los recibos por hononrarios?"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:text="Selecciona una respuesta"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <Button
+                                android:id="@+id/btnAnswer10"
+                                android:gravity="start|center"
+                                android:hint="Seleccionar..."
+                                android:padding="8dp"
+                                android:drawableEnd="@drawable/arrow_down_vector_asset"
+                                android:background="@drawable/edit_text_style_1"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/normas"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"/>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:text="¿Por qué es importante el cumplimiento de la normatividad?"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:text="Selecciona una respuesta"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <Button
+                                android:id="@+id/btnAnswer11"
+                                android:gravity="start|center"
+                                android:hint="Seleccionar..."
+                                android:padding="8dp"
+                                android:drawableEnd="@drawable/arrow_down_vector_asset"
+                                android:background="@drawable/edit_text_style_1"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/flujo_caja"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"/>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:text="¿Para qué sirve un flujo de caja?"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:text="Selecciona una respuesta"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <Button
+                                android:id="@+id/btnAnswer12"
+                                android:gravity="start|center"
+                                android:hint="Seleccionar..."
+                                android:padding="8dp"
+                                android:drawableEnd="@drawable/arrow_down_vector_asset"
+                                android:background="@drawable/edit_text_style_1"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/lean_canvas"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"/>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:text="¿Qué es el modelo o lienzo de canvas?"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:text="Selecciona una respuesta"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <Button
+                                android:id="@+id/btnAnswer13"
+                                android:gravity="start|center"
+                                android:hint="Seleccionar..."
+                                android:padding="8dp"
+                                android:drawableEnd="@drawable/arrow_down_vector_asset"
+                                android:background="@drawable/edit_text_style_1"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/balanced_scored"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"/>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:text="¿Qué utilidad tiene el Balanced Scorecard?"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:text="Selecciona una respuesta"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <Button
+                                android:id="@+id/btnAnswer14"
+                                android:gravity="start|center"
+                                android:hint="Seleccionar..."
+                                android:padding="8dp"
+                                android:drawableEnd="@drawable/arrow_down_vector_asset"
+                                android:background="@drawable/edit_text_style_1"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="4dp"
+                            android:src="@drawable/plan_negocios"
+                            android:layout_weight="0.2"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"/>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:text="¿Por qué es importante tener un plan de negocios?"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:text="Selecciona una respuesta"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <Button
+                                android:id="@+id/btnAnswer15"
+                                android:gravity="start|center"
+                                android:hint="Seleccionar..."
+                                android:padding="8dp"
+                                android:drawableEnd="@drawable/arrow_down_vector_asset"
+                                android:background="@drawable/edit_text_style_1"
+                                android:layout_margin="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btnFinish"
+                android:layout_margin="8dp"
+                android:text="Finalizar Evaluación"
+                android:textColor="@android:color/white"
+                android:background="@drawable/orange_button_style_ripple"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

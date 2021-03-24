@@ -31,4 +31,7 @@
     <color name="gray1">#47484D</color>
     <color name="gray2">#B8BEC0</color>
 
+    <color name="default_background">#fff3f3f3</color>
+
+
 </resources>

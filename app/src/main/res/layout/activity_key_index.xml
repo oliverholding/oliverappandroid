@@ -70,8 +70,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            android:src="@color/colorGradientCenterRed"
+                        <ImageView
+                            android:src="@drawable/aprendizaje_y_crecimiento"
                             android:layout_margin="4dp"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
@@ -344,8 +344,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            android:src="@color/colorGradientCenterRed"
+                        <ImageView
+                            android:src="@drawable/procesos_internos"
                             android:layout_margin="4dp"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
@@ -618,8 +618,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            android:src="@color/colorGradientCenterRed"
+                        <ImageView
+                            android:src="@drawable/mis_clientes"
                             android:layout_margin="4dp"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
@@ -893,7 +893,7 @@
                         android:layout_height="wrap_content">
 
                         <de.hdodenhof.circleimageview.CircleImageView
-                            android:src="@color/colorGradientCenterRed"
+                            android:src="@drawable/financiero"
                             android:layout_margin="4dp"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
@@ -903,7 +903,7 @@
                             android:textColor="@android:color/black"
                             android:textStyle="bold"
                             android:layout_weight="1"
-                            android:text="Clientes"
+                            android:text="Finanzas"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 

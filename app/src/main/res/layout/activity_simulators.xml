@@ -60,7 +60,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/simulador_de_costos_precios"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -96,7 +96,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/analisis_costo_volumen_utilidad"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -132,7 +132,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/proyecciones_de_ventas_y_utilidades"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -168,7 +168,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/simulador_de_cotizaciones_enviar"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -204,7 +204,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/analisis_comparativo_de_cotizaciones_recibidas"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -240,7 +240,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/simulador_de_tasas_de_interes"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -276,7 +276,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/simulador_de_apalancamiento_financiero"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -312,7 +312,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/analisis_de_la_carga_de_trabajo_planificacion_de_recursos"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -348,7 +348,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/analisis_de_procesos"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -384,7 +384,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/simulador_de_proyectos"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>

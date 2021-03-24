@@ -38,10 +38,10 @@ public class CareLearningActivity extends AppCompatActivity {
         txtText3 = findViewById(R.id.txtText3);
 
         fragment1 = new NoSubjectsFragment();
-        fragment2 = new NoSubjectsFragment();
+        fragment2 = new SubjectsFragment();
         fragment3 = new NoSubjectsFragment();
 
-        getSupportFragmentManager().beginTransaction().add(R.id.contentFragment,fragment1).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
         linearLayout1.setBackgroundResource(R.drawable.orange_button_rectangle_ripple);
         txtText1.setTextColor(Color.WHITE);
 

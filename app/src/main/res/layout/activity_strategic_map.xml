@@ -45,9 +45,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
 
-                                <de.hdodenhof.circleimageview.CircleImageView
+                                <ImageView
                                     android:layout_margin="4dp"
-                                    android:src="@color/colorGradientCenterRed"
+                                    android:src="@drawable/aprendizaje_y_crecimiento"
                                     android:layout_width="60dp"
                                     android:layout_height="60dp"/>
 
@@ -352,9 +352,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
 
-                                <de.hdodenhof.circleimageview.CircleImageView
+                                <ImageView
                                     android:layout_margin="4dp"
-                                    android:src="@color/colorGradientCenterRed"
+                                    android:src="@drawable/procesos_internos"
                                     android:layout_width="60dp"
                                     android:layout_height="60dp"/>
 
@@ -644,9 +644,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
 
-                                <de.hdodenhof.circleimageview.CircleImageView
+                                <ImageView
                                     android:layout_margin="4dp"
-                                    android:src="@color/colorGradientCenterRed"
+                                    android:src="@drawable/mis_clientes"
                                     android:layout_width="60dp"
                                     android:layout_height="60dp"/>
 
@@ -938,7 +938,7 @@
 
                                 <de.hdodenhof.circleimageview.CircleImageView
                                     android:layout_margin="4dp"
-                                    android:src="@color/colorGradientCenterRed"
+                                    android:src="@drawable/financiero"
                                     android:layout_width="60dp"
                                     android:layout_height="60dp"/>
 

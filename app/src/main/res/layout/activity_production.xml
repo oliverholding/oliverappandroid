@@ -131,7 +131,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/capacidad_de_produccion"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -311,7 +311,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/lean_manufacturing"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>

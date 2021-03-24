@@ -14,6 +14,8 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ManagementCont
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ManagementControlAndReports.DashboardProcess.DashboardProcessActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ManagementControlAndReports.DashboardsAndKeyindex.DashboardAndKeyIndexActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ManagementControlAndReports.InternalControl.InternalControlActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ManagementControlAndReports.LessonLearned.LessonLearnedActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ManagementControlAndReports.ReportGenerator.ReportGeneratorActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Simulators.CostPriceSimulator.CostPriceSimulatorActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Simulators.CostVolumeProfitAnalysys.CostVolumeProfitAnalysysActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Simulators.InterestRateSimulator.InterestRateSimulatorActivity;
@@ -78,13 +80,17 @@ public class ManagementControlAndReportsActivity extends AppCompatActivity {
         btnTool5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(ManagementControlAndReportsActivity.this, LessonLearnedActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
             }
         });
         btnTool6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               
+                Intent intent = new Intent(ManagementControlAndReportsActivity.this, ReportGeneratorActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
             }
         });
     }

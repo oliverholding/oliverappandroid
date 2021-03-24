@@ -28,7 +28,7 @@
 
                 <ImageView
                     android:layout_margin="4dp"
-                    android:src="@color/gray1"
+                    android:src="@drawable/administracion_de_contratos"
                     android:layout_weight="0.2"
                     android:layout_width="0dp"
                     android:layout_height="50dp"/>
@@ -96,7 +96,7 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@color/gray1"
+                        android:src="@drawable/mis_contratos"
                         android:layout_width="30dp"
                         android:layout_height="30dp"/>
 
@@ -131,7 +131,7 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@color/gray1"
+                        android:src="@drawable/plantillas_de_contratos"
                         android:layout_width="30dp"
                         android:layout_height="30dp"/>
 

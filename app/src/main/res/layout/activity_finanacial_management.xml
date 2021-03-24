@@ -95,7 +95,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@drawable/cobranzas"
+                        android:src="@drawable/cuentas_por_cobrar"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -131,7 +131,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@drawable/pagos"
+                        android:src="@drawable/cuentas_por_pagar"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>

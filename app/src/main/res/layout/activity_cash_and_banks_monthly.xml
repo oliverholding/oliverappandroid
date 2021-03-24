@@ -2433,7 +2433,6 @@
 
                                 <pl.droidsonroids.gif.GifImageView
                                     android:id="@+id/imgSituation1"
-                                    android:src="@color/colorGradientCenterRed"
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"/>
 
@@ -2458,7 +2457,6 @@
 
                                 <pl.droidsonroids.gif.GifImageView
                                     android:id="@+id/imgSituation2"
-                                    android:src="@color/colorGradientCenterRed"
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"/>
 
@@ -2483,7 +2481,6 @@
 
                                 <pl.droidsonroids.gif.GifImageView
                                     android:id="@+id/imgSituation3"
-                                    android:src="@color/colorGradientCenterRed"
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"/>
 
@@ -2508,7 +2505,6 @@
 
                                 <pl.droidsonroids.gif.GifImageView
                                     android:id="@+id/imgSituation4"
-                                    android:src="@color/colorGradientCenterRed"
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"/>
 
@@ -2533,7 +2529,6 @@
 
                                 <pl.droidsonroids.gif.GifImageView
                                     android:id="@+id/imgSituation5"
-                                    android:src="@color/colorGradientCenterRed"
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"/>
 
@@ -2558,7 +2553,6 @@
 
                                 <pl.droidsonroids.gif.GifImageView
                                     android:id="@+id/imgSituation6"
-                                    android:src="@color/colorGradientCenterRed"
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"/>
 
@@ -2583,7 +2577,6 @@
 
                                 <pl.droidsonroids.gif.GifImageView
                                     android:id="@+id/imgSituation7"
-                                    android:src="@color/colorGradientCenterRed"
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"/>
 
@@ -2608,7 +2601,6 @@
 
                                 <pl.droidsonroids.gif.GifImageView
                                     android:id="@+id/imgSituation8"
-                                    android:src="@color/colorGradientCenterRed"
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"/>
 
@@ -2633,7 +2625,6 @@
 
                                 <pl.droidsonroids.gif.GifImageView
                                     android:id="@+id/imgSituation9"
-                                    android:src="@color/colorGradientCenterRed"
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"/>
 
@@ -2658,7 +2649,6 @@
 
                                 <pl.droidsonroids.gif.GifImageView
                                     android:id="@+id/imgSituation10"
-                                    android:src="@color/colorGradientCenterRed"
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"/>
 
@@ -2683,7 +2673,6 @@
 
                                 <pl.droidsonroids.gif.GifImageView
                                     android:id="@+id/imgSituation11"
-                                    android:src="@color/colorGradientCenterRed"
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"/>
 
@@ -2708,7 +2697,6 @@
 
                                 <pl.droidsonroids.gif.GifImageView
                                     android:id="@+id/imgSituation12"
-                                    android:src="@color/colorGradientCenterRed"
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"/>
 

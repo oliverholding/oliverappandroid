@@ -139,7 +139,7 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@drawable/producto"
+                        android:src="@drawable/calificacion_de_gerente"
                         android:layout_width="30dp"
                         android:layout_height="30dp"/>
 
@@ -217,7 +217,7 @@
                         android:id="@+id/txtText3"
                         android:textSize="12sp"
                         android:layout_margin="4dp"
-                        android:text="Ranking de Clientes"
+                        android:text="Compañero"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 

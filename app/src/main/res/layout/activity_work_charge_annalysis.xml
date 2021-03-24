@@ -28,7 +28,7 @@
 
                 <ImageView
                     android:layout_margin="4dp"
-                    android:src="@color/gray2"
+                    android:src="@drawable/analisis_de_la_carga_de_trabajo_planificacion_de_recursos"
                     android:layout_weight="0.2"
                     android:layout_width="0dp"
                     android:layout_height="50dp"/>

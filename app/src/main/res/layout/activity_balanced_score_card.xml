@@ -59,7 +59,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@drawable/producto"
+                        android:src="@drawable/mapa_estrategico"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -95,7 +95,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@drawable/producto"
+                        android:src="@drawable/indicadores_clave"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -131,7 +131,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@drawable/producto"
+                        android:src="@drawable/plan_operativo_anual"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>

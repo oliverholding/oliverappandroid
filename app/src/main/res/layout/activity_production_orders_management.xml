@@ -96,7 +96,7 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@color/gray2"
+                        android:src="@drawable/cadena_de_produccion"
                         android:layout_width="30dp"
                         android:layout_height="30dp"/>
 

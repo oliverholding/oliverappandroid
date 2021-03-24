@@ -29,8 +29,8 @@
             <ImageButton
                 android:id="@+id/btnCancel"
                 android:layout_margin="8dp"
-                android:background="@drawable/gray_button_style"
-                android:src="@color/gray2"
+                android:background="@drawable/orange_button_style_ripple"
+                android:src="@drawable/producto_cancelado"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"/>
 

@@ -45,7 +45,7 @@ public class DashboardsActivity extends AppCompatActivity {
         fragment2 = new ProductRankingFragment();
         fragment3 = new CustomerRankingFragment();
 
-        getSupportFragmentManager().beginTransaction().add(R.id.contentFragment,fragment1).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
         linearLayout1.setBackgroundResource(R.drawable.orange_button_style_ripple);
         txtText1.setTextColor(Color.WHITE);
 

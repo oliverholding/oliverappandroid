@@ -35,7 +35,7 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@color/gray2"
+                        android:src="@drawable/vision_empresarial"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
@@ -127,7 +127,7 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/debate_entre_colaboradores"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="60dp"/>
@@ -327,7 +327,7 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/metas_empresariales"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="60dp"/>
@@ -534,7 +534,7 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/ideologia_empresarial"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="60dp"/>

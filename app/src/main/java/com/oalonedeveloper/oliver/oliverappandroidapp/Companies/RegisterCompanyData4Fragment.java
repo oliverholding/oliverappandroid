@@ -8,9 +8,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,6 +30,9 @@ public class RegisterCompanyData4Fragment extends Fragment {
     RelativeLayout rootLayout;
     ProgressDialog loadingBar;
     RadioButton rdProducts,rdProduction,rdServices,rdPrice,rdQuality,rdSaleService;
+    Button btnContinue;
+
+    Fragment fragment5;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -53,6 +58,10 @@ public class RegisterCompanyData4Fragment extends Fragment {
         rdPrice = view.findViewById(R.id.rdPrice);
         rdQuality = view.findViewById(R.id.rdQuality);
         rdSaleService = view.findViewById(R.id.rdSaleService);
+        btnContinue = view.findViewById(R.id.btnContinue);
+        rootLayout = view.findViewById(R.id.rootLayout);
+
+        fragment5 = new CompanyDataSumaryFragment();
 
         userRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -125,6 +134,22 @@ public class RegisterCompanyData4Fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 userRef.child("company_value").setValue(rdSaleService.getText().toString());
+            }
+        });
+
+        btnContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!rdProducts.isChecked() && !rdProduction.isChecked() && !rdServices.isChecked()) {
+                    Snackbar.make(rootLayout, "Debes seleccionar una alternativa", Snackbar.LENGTH_SHORT).show();
+                }
+                else if (!rdPrice.isChecked() && !rdQuality.isChecked() && !rdSaleService.isChecked()) {
+                    Snackbar.make(rootLayout, "Debes seleccionar una alternativa", Snackbar.LENGTH_SHORT).show();
+                }
+                else {
+                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment5).commit();
+                }
+
             }
         });
 

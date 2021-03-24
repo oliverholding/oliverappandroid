@@ -33,7 +33,7 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@color/gray2"
+                        android:src="@drawable/plan_de_contingencia"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
@@ -89,9 +89,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_margin="8dp"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/analisis_politico"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
@@ -162,9 +162,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_margin="8dp"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/analisis_economico"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
@@ -235,9 +235,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_margin="8dp"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/factores_sociales"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
@@ -308,9 +308,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_margin="8dp"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/factores_tecnologicos"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
@@ -381,9 +381,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_margin="8dp"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/normatividad_ambiental"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
@@ -454,9 +454,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_margin="8dp"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/analisis_legal"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>

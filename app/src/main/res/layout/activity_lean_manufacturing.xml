@@ -124,7 +124,7 @@
 
                     <ImageView
                         android:layout_margin="8dp"
-                        android:src="@drawable/producto"
+                        android:src="@drawable/capacidad_de_produccion"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="40dp"/>
@@ -179,7 +179,7 @@
 
                     <ImageView
                         android:layout_margin="8dp"
-                        android:src="@drawable/producto"
+                        android:src="@drawable/produccion_detenida"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="40dp"/>
@@ -234,7 +234,7 @@
 
                     <ImageView
                         android:layout_margin="8dp"
-                        android:src="@drawable/producto"
+                        android:src="@drawable/transporte_mercancias"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="40dp"/>
@@ -289,7 +289,7 @@
 
                     <ImageView
                         android:layout_margin="8dp"
-                        android:src="@drawable/producto"
+                        android:src="@drawable/cadena_de_produccion"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="40dp"/>
@@ -344,7 +344,7 @@
 
                     <ImageView
                         android:layout_margin="8dp"
-                        android:src="@drawable/producto"
+                        android:src="@drawable/control_inventarios"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="40dp"/>
@@ -399,7 +399,7 @@
 
                     <ImageView
                         android:layout_margin="8dp"
-                        android:src="@drawable/producto"
+                        android:src="@drawable/lean_manufacturing"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="40dp"/>

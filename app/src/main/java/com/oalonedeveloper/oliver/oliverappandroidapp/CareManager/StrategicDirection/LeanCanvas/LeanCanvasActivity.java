@@ -878,6 +878,7 @@ public class LeanCanvasActivity extends AppCompatActivity {
         final RadioButton rdNoImportant1,rdNoImportant2,rdNoImportant3,rdNoImportant4,rdRelativeImportant1,rdRelativeImportant2,rdRelativeImportant3,rdRelativeImportant4,rdVeryImportant1,rdVeryImportant2,rdVeryImportant3,rdVeryImportant4;
         Button btnFinish;
         final LinearLayout rootLayout;
+        ImageView imgCanva,imgItem1,imgItem2,imgItem3,imgItem4;
 
         txtTitle = finance_method.findViewById(R.id.txtTitle);
         txtQuestion = finance_method.findViewById(R.id.txtQuestion);
@@ -899,6 +900,163 @@ public class LeanCanvasActivity extends AppCompatActivity {
         rdVeryImportant4 = finance_method.findViewById(R.id.rdVeryImportant4);
         btnFinish = finance_method.findViewById(R.id.btnFinish);
         rootLayout = finance_method.findViewById(R.id.rootLayout);
+        imgCanva = finance_method.findViewById(R.id.imgCanva);
+        imgItem1 = finance_method.findViewById(R.id.imgItem1);
+        imgItem2 = finance_method.findViewById(R.id.imgItem2);
+        imgItem3 = finance_method.findViewById(R.id.imgItem3);
+        imgItem4 = finance_method.findViewById(R.id.imgItem4);
+
+        if (title.equals("Socios Clave")) {
+            imgCanva.setImageResource(R.drawable.socios_clave);
+        }
+        if (title.equals("Actividades Clave")) {
+            imgCanva.setImageResource(R.drawable.actividades_clave);
+        }
+        if (title.equals("Recursos Claves")) {
+            imgCanva.setImageResource(R.drawable.recursos_clave);
+        }
+        if (title.equals("Propuesta de Valor")) {
+            imgCanva.setImageResource(R.drawable.propuesta_valor);
+        }
+        if (title.equals("Relación con el Cliente")) {
+            imgCanva.setImageResource(R.drawable.relaciones_los_clientes);
+        }
+        if (title.equals("Canales")) {
+            imgCanva.setImageResource(R.drawable.canales_de_distribucion);
+        }
+        if (title.equals("Segmentos de Cliente")) {
+            imgCanva.setImageResource(R.drawable.segmento_de_clientes);
+        }
+        if (title.equals("Estructura de Costos")) {
+            imgCanva.setImageResource(R.drawable.estructura_costes);
+        }
+        if (title.equals("Flujos de Ingresos")) {
+            imgCanva.setImageResource(R.drawable.ingresos);
+        }
+
+
+        if (item_1.equals("Empresas Privadas")) {
+            imgItem1.setImageResource(R.drawable.empresas_privadas);
+        }
+        if (item_2.equals("Entidades Estatales")) {
+            imgItem2.setImageResource(R.drawable.entidades_estatales);
+        }
+        if (item_3.equals("ONG´s y Fundaciones")) {
+            imgItem3.setImageResource(R.drawable.ongs_fundaciones);
+        }
+        if (item_4.equals("Personas naturales o personas naturales con negocio")) {
+            imgItem4.setImageResource(R.drawable.personas_naturales);
+        }
+
+
+        if (item_1.equals("Atención rápida y eficiente")) {
+            imgItem1.setImageResource(R.drawable.atencion_rapida_eficiente);
+        }
+        if (item_2.equals("Personal capacitado")) {
+            imgItem2.setImageResource(R.drawable.personal_capacitado);
+        }
+        if (item_3.equals("Ofertas y Promociones")) {
+            imgItem3.setImageResource(R.drawable.ofertas_promociones);
+        }
+        if (item_4.equals("Ubicación del Negocio")) {
+            imgItem4.setImageResource(R.drawable.ubicacion_del_negocio);
+        }
+
+        if (item_1.equals("Vendedores")) {
+            imgItem1.setImageResource(R.drawable.vendedor);
+        }
+        if (item_2.equals("Capital de Trabajo")) {
+            imgItem2.setImageResource(R.drawable.capital_trabajo);
+        }
+        if (item_3.equals("Condiciones del local/puesto del negocio")) {
+            imgItem3.setImageResource(R.drawable.condiciones_del_local);
+        }
+        if (item_4.equals("Permisos y Licencias")) {
+            imgItem4.setImageResource(R.drawable.permisos_licencias);
+        }
+
+        if (item_1.equals("Garantía del producto ó servicio")) {
+            imgItem1.setImageResource(R.drawable.garantia_del_producto_servicio);
+        }
+        if (item_2.equals("Puestos de trabajos limpios")) {
+            imgItem2.setImageResource(R.drawable.puestos_de_trabajos_limpios);
+        }
+        if (item_3.equals("Producto novedoso y 100% peruano")) {
+            imgItem3.setImageResource(R.drawable.producto_novedoso);
+        }
+        if (item_4.equals("Entrega rápida")) {
+            imgItem4.setImageResource(R.drawable.entrega_rapida);
+        }
+
+
+        if (item_1.equals("Trato amable y de calidad")) {
+            imgItem1.setImageResource(R.drawable.trabajadores_amables);
+        }
+        if (item_2.equals("Información detallada de tu producto/servicio")) {
+            imgItem2.setImageResource(R.drawable.informacion_detalla_del_producto_servicio);
+        }
+        if (item_3.equals("Descuentos del producto/servicio")) {
+            imgItem3.setImageResource(R.drawable.descuentos_producto);
+        }
+        if (item_4.equals("Entrega de complementos o adicionales")) {
+            imgItem4.setImageResource(R.drawable.entrega_complementos);
+        }
+
+
+        if (item_1.equals("Redes sociales")) {
+            imgItem1.setImageResource(R.drawable.redes_sociales);
+        }
+        if (item_2.equals("Página web propia")) {
+            imgItem2.setImageResource(R.drawable.pagina_web);
+        }
+        if (item_3.equals("Distribuidores")) {
+            imgItem3.setImageResource(R.drawable.canales_de_distribucion);
+        }
+        if (item_4.equals("Local o Puesto del Negocio")) {
+            imgItem4.setImageResource(R.drawable.local_puesto_del_negocio);
+        }
+
+
+        if (item_1.equals("Trabajadores")) {
+            imgItem1.setImageResource(R.drawable.trabajadores);
+        }
+        if (item_2.equals("Funcionarios")) {
+            imgItem2.setImageResource(R.drawable.funcionarios);
+        }
+        if (item_3.equals("Comerciantes")) {
+            imgItem3.setImageResource(R.drawable.comerciantes);
+        }
+        if (item_4.equals("Extranjeros")) {
+            imgItem4.setImageResource(R.drawable.extranjeros);
+        }
+
+
+        if (item_1.equals("Servicios Públicos")) {
+            imgItem1.setImageResource(R.drawable.servicios_publicos);
+        }
+        if (item_2.equals("Sueldos y Salarios")) {
+            imgItem2.setImageResource(R.drawable.sueldos_salarios);
+        }
+        if (item_3.equals("Promoción y Publicidad")) {
+            imgItem3.setImageResource(R.drawable.promocion_publicidad);
+        }
+        if (item_4.equals("Máquinas y Equipos")) {
+            imgItem4.setImageResource(R.drawable.maquinas_equipos);
+        }
+
+
+        if (item_1.equals("Venta de Productos")) {
+            imgItem1.setImageResource(R.drawable.nuevo_producto_servicio);
+        }
+        if (item_2.equals("Servicios")) {
+            imgItem2.setImageResource(R.drawable.servicios_principales);
+        }
+        if (item_3.equals("Intermediación")) {
+            imgItem3.setImageResource(R.drawable.intermediarios);
+        }
+        if (item_4.equals("Rentas y Alquileres")) {
+            imgItem4.setImageResource(R.drawable.rentabilidad);
+        }
 
         rdNoImportant1.setOnClickListener(new View.OnClickListener() {
             @Override

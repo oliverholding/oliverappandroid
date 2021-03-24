@@ -4,40 +4,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:padding="8dp"
     tools:context=".FinancialManagement.NonProductsFragment">
 
+
+
     <LinearLayout
+        android:layout_margin="12dp"
+        android:background="@drawable/round_corner_blue_stroke_left"
         android:padding="8dp"
-        android:orientation="vertical"
         android:gravity="center"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <pl.droidsonroids.gif.GifImageView
-            android:layout_margin="8dp"
-            android:layout_width="100dp"
-            android:layout_height="100dp"/>
+            android:src="@drawable/billetera"
+            android:layout_width="130dp"
+            android:layout_height="130dp"/>
 
         <TextView
-            android:textColor="@color/colorGradientStart"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_margin="8dp"
+            android:textColor="@color/blue1"
+            android:layout_margin="18dp"
+            android:textSize="18sp"
+            android:text="Aún no cuentas con Productos Financieros"
             android:gravity="center"
-            android:text="¡Aún no cuentas con productos!"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <Button
-            android:text="EXPLORAR"
             android:textColor="@android:color/white"
-            android:background="@drawable/blue_button_style"
-            android:layout_margin="20dp"
+            android:background="@drawable/button_blue_style"
+            android:text="Explorar"
+            android:layout_margin="22dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
+
     </LinearLayout>
 
+    <TextView
+        android:textStyle="bold"
+        android:layout_marginStart="22dp"
+        android:padding="4dp"
+        android:text="Mis Productos"
+        android:background="@color/cardview_light_background"
+        android:textColor="@color/blue1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 
 </RelativeLayout>

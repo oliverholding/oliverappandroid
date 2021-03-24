@@ -60,7 +60,7 @@
                     <ImageView
                         android:id="@+id/btnDownload1"
                         android:layout_margin="4dp"
-                        android:src="@color/gray1"
+                        android:src="@drawable/descargar_archivo"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -101,7 +101,7 @@
                     <ImageView
                         android:id="@+id/btnDownload2"
                         android:layout_margin="4dp"
-                        android:src="@color/gray1"
+                        android:src="@drawable/descargar_archivo"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -142,7 +142,7 @@
                     <ImageView
                         android:id="@+id/btnDownload3"
                         android:layout_margin="4dp"
-                        android:src="@color/gray1"
+                        android:src="@drawable/descargar_archivo"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>

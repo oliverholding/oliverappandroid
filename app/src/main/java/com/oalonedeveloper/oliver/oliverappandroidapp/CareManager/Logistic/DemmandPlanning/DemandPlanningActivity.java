@@ -55,9 +55,6 @@ public class DemandPlanningActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_demand_planning);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
-        TabItem tabItem = findViewById(R.id.tabItem);
-        TabItem tabItem2 = findViewById(R.id.tabItem2);
 
         tab1 = findViewById(R.id.tab1);
         tab2 = findViewById(R.id.tab2);

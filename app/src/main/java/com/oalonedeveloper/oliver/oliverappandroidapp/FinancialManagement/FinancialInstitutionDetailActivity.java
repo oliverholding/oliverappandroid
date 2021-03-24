@@ -46,19 +46,6 @@ public class FinancialInstitutionDetailActivity extends AppCompatActivity {
         imgBackground = findViewById(R.id.imgBackground);
         imgImage = findViewById(R.id.imgImage);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
-        TabItem tabItem = findViewById(R.id.tabItem);
-        TabItem tabItem2 = findViewById(R.id.tabItem2);
-
-        fragmentId = getIntent().getIntExtra("FRAGMENT_ID",0);
-
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
-
-        mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
-
-        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
         mViewPager.setCurrentItem(fragmentId);
 

@@ -41,13 +41,13 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@drawable/recursos_clave"
+                        android:src="@drawable/cursos"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"/>
 
                     <TextView
                         android:id="@+id/txtText1"
-                        android:text="Estudia!"
+                        android:text="Cursos"
                         android:gravity="center"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
@@ -71,13 +71,13 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@drawable/recursos_clave"
+                        android:src="@drawable/explorar_cursos"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"/>
 
                     <TextView
                         android:id="@+id/txtText2"
-                        android:text="Estudia!"
+                        android:text="Explorar"
                         android:gravity="center"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
@@ -101,13 +101,13 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@drawable/recursos_clave"
+                        android:src="@drawable/mi_perfil_educativo"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"/>
 
                     <TextView
                         android:id="@+id/txtText3"
-                        android:text="Estudia!"
+                        android:text="Perfil"
                         android:gravity="center"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>

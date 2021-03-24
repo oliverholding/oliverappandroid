@@ -189,7 +189,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:src="@color/orange1"
+                    android:src="@drawable/flecha_abajo"
                     android:layout_width="20dp"
                     android:layout_height="20dp"/>
 
@@ -255,7 +255,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <ImageView
-                    android:src="@color/orange1"
+                    android:src="@drawable/flecha_derecha"
                     android:layout_weight="0.5"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
@@ -312,7 +312,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <ImageView
-                    android:src="@color/orange1"
+                    android:src="@drawable/flecha_izquierda"
                     android:layout_weight="0.5"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
@@ -378,7 +378,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:src="@color/orange1"
+                    android:src="@drawable/flecha_arriba"
                     android:layout_width="20dp"
                     android:layout_height="20dp"/>
 

@@ -28,7 +28,7 @@
 
                 <ImageView
                     android:layout_margin="4dp"
-                    android:src="@color/gray1"
+                    android:src="@drawable/control_interno"
                     android:layout_weight="0.2"
                     android:layout_width="0dp"
                     android:layout_height="50dp"/>

@@ -34,7 +34,7 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@color/gray2"
+                        android:src="@drawable/competidores_del_mercado"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
@@ -91,9 +91,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/negocios"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
 
@@ -201,9 +201,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/negocios"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
 
@@ -311,9 +311,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:layout_weight="0.2"
-                        android:src="@color/colorGradientCenterRed"
+                        android:src="@drawable/negocios"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
 

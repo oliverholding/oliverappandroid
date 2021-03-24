@@ -9,22 +9,42 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.oalonedeveloper.oliver.oliverappandroidapp.Companies.CompanyDataSumaryFragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.Companies.RegisterCompanyData1Fragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.Companies.RegisterCompanyData2Fragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.Companies.RegisterCompanyData3Fragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.Companies.RegisterCompanyData4Fragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class RegistrationDataActivity extends AppCompatActivity {
 
-    ViewPager mViewPager;
-    SectionsPagerAdapter mSectionsPagerAdapter;
-    int fragmentId;
+    Fragment fragment1,fragment2,fragment3,fragment4,fragment5,fragment6;
+    TextView txtText1,txtText2,txtText3,txtText4,txtText5,txtText6;
 
     private static final int MY_CAMERA_REQUEST_CODE = 100;
     private static final int MY_STORAGE_REQUEST_CODE = 200;
+
+    FirebaseAuth mAuth;
+    DatabaseReference userRef,ratesRef;
+    String currentUserID;
+    String profile_image_verification,dni_api,document_number,name,surname, database_name,json_name, personal_data_verification,contact_data_verification,additional_data_verification,access_data_verification,
+            docs_verification,dni_exist,saveCurrentDate,saveCurrentTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,61 +63,140 @@ public class RegistrationDataActivity extends AppCompatActivity {
             }
         }
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
-        TabItem tabItem = findViewById(R.id.tabItem);
-        TabItem tabItem2 = findViewById(R.id.tabItem2);
+        txtText1 = findViewById(R.id.txtText1);
+        txtText2 = findViewById(R.id.txtText2);
+        txtText3 = findViewById(R.id.txtText3);
+        txtText4 = findViewById(R.id.txtText4);
+        txtText5 = findViewById(R.id.txtText5);
+        txtText6 = findViewById(R.id.txtText6);
 
-        fragmentId = getIntent().getIntExtra("FRAGMENT_ID",0);
+        fragment1 = new RegisterData1Fragment();
+        fragment2 = new RegisterData2Fragment();
+        fragment3 = new RegisterData3Fragment();
+        fragment4 = new RegisterData4Fragment();
+        fragment5 = new RegisterData5Fragment();
+        fragment6 = new DataSumaryFragment();
 
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
+        getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
 
-        mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
+        txtText1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
+            }
+        });
+        txtText2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment2).commit();
+            }
+        });
+        txtText3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment3).commit();
+            }
+        });
+        txtText4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment4).commit();
+            }
+        });
+        txtText5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment5).commit();
+            }
+        });
+        txtText6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment6).commit();
+            }
+        });
 
-        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+        mAuth = FirebaseAuth.getInstance();
+        currentUserID = mAuth.getCurrentUser().getUid();
+        userRef = FirebaseDatabase.getInstance().getReference().child("Users");
+        ratesRef = FirebaseDatabase.getInstance().getReference().child("Rates");
 
-        mViewPager.setCurrentItem(fragmentId);
-    }
+        ratesRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    dni_api = dataSnapshot.child("dni_api").getValue().toString();
 
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+                    userRef.child(currentUserID).addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            if (dataSnapshot.hasChild("name") && dataSnapshot.hasChild("surname") && dataSnapshot.hasChild("document_type") && dataSnapshot.hasChild("document_number") &&
+                                    dataSnapshot.hasChild("gender") && dataSnapshot.hasChild("bth_day") && dataSnapshot.hasChild("bth_month") && dataSnapshot.hasChild("bth_year") &&
+                                    dataSnapshot.hasChild("nacionality")) {
 
-        private int numOfTabs;
+                                document_number = dataSnapshot.child("document_number").getValue().toString();
+                                name = dataSnapshot.child("name").getValue().toString();
+                                surname = dataSnapshot.child("surname").getValue().toString();
 
-        public SectionsPagerAdapter(FragmentManager fm, int numOfTabs) {
-            super(fm);
-            this.numOfTabs = numOfTabs;
-        }
+                                txtText2.setText("");
+                                txtText2.setBackgroundResource(R.drawable.check);
 
-        @Override
-        public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            switch (position) {
-                case 0:
-                    return new RegisterData1Fragment();
-                case 1:
-                    return new RegisterData2Fragment();
-                case 2:
-                    return new RegisterData3Fragment();
-                case 3:
-                    return new RegisterData4Fragment();
-                case 4:
-                    return new RegisterData5Fragment();
-                case 5:
-                    return new DataSumaryFragment();
+                            }
+                        }
 
-                default:
-                    return null;
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
+
+                    userRef.child(currentUserID).addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            if (dataSnapshot.hasChild("profileimage")) {
+                                txtText1.setText("");
+                                txtText1.setBackgroundResource(R.drawable.check);
+                            }
+
+
+                            if (dataSnapshot.hasChild("email") && dataSnapshot.hasChild("department") && dataSnapshot.hasChild("province") && dataSnapshot.hasChild("district") &&
+                                    dataSnapshot.hasChild("address")) {
+
+                                txtText3.setText("");
+                                txtText3.setBackgroundResource(R.drawable.check);
+
+                            }
+
+
+                            if (dataSnapshot.hasChild("occupation") && dataSnapshot.hasChild("academic_degree")) {
+                                txtText4.setText("");
+                                txtText4.setBackgroundResource(R.drawable.check);
+                            }
+
+                            if (dataSnapshot.hasChild("username") && dataSnapshot.hasChild("pin")) {
+                                txtText5.setText("");
+                                txtText5.setBackgroundResource(R.drawable.check);
+
+                            }
+
+
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
+
+                }
             }
 
-        }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
 
-        @Override
-        public int getCount() {
-            // Show 3 total pages.
-            return numOfTabs;
-        }
+            }
+        });
+
     }
 
     @Override

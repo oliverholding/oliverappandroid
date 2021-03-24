@@ -700,8 +700,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
-                            <de.hdodenhof.circleimageview.CircleImageView
-                                android:src="@color/colorGradientCenterRed"
+                            <ImageView
+                                android:src="@drawable/regimen_tributario_rus"
                                 android:layout_margin="8dp"
                                 android:layout_width="50dp"
                                 android:layout_weight="1"
@@ -792,8 +792,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
-                            <de.hdodenhof.circleimageview.CircleImageView
-                                android:src="@color/colorGradientCenterRed"
+                            <ImageView
+                                android:src="@drawable/regimen_tributario_rer"
                                 android:layout_margin="8dp"
                                 android:layout_width="50dp"
                                 android:layout_weight="1"
@@ -876,8 +876,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
-                            <de.hdodenhof.circleimageview.CircleImageView
-                                android:src="@color/colorGradientCenterRed"
+                            <ImageView
+                                android:src="@drawable/regimen_tributario"
                                 android:layout_margin="8dp"
                                 android:layout_width="50dp"
                                 android:layout_weight="1"
@@ -968,8 +968,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
-                            <de.hdodenhof.circleimageview.CircleImageView
-                                android:src="@color/colorGradientCenterRed"
+                            <ImageView
+                                android:src="@drawable/ley_de_zonas_altonandinas"
                                 android:layout_margin="8dp"
                                 android:layout_width="50dp"
                                 android:layout_weight="1"
@@ -1070,9 +1070,9 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <ImageView
                             android:layout_margin="4dp"
-                            android:src="@color/colorGradientCenterRed"
+                            android:src="@drawable/busqueda_y_reserva_del_nombre_para_constitucion_de_empresa"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"/>
 
@@ -1141,9 +1141,9 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <ImageView
                             android:layout_margin="4dp"
-                            android:src="@color/colorGradientCenterRed"
+                            android:src="@drawable/elaboracion_de_minuta_para_constitucion_de_empresa"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"/>
 
@@ -1282,9 +1282,9 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <ImageView
                             android:layout_margin="4dp"
-                            android:src="@color/colorGradientCenterRed"
+                            android:src="@drawable/elevar_minuta_escritura_publica"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"/>
 
@@ -1377,9 +1377,9 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <ImageView
                             android:layout_margin="4dp"
-                            android:src="@color/colorGradientCenterRed"
+                            android:src="@drawable/inscribir_escritura_publica_en_registros_publicos"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"/>
 
@@ -1447,9 +1447,9 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <ImageView
                             android:layout_margin="4dp"
-                            android:src="@color/colorGradientCenterRed"
+                            android:src="@drawable/obtencion_del_numero_de_ruc"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"/>
 
@@ -1517,9 +1517,9 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <ImageView
                             android:layout_margin="4dp"
-                            android:src="@color/colorGradientCenterRed"
+                            android:src="@drawable/elegir_regimen_tributario"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"/>
 
@@ -1582,9 +1582,9 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <ImageView
                             android:layout_margin="4dp"
-                            android:src="@color/colorGradientCenterRed"
+                            android:src="@drawable/comprar_y_legalizar_libros_contables"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"/>
 
@@ -1647,9 +1647,9 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <ImageView
                             android:layout_margin="4dp"
-                            android:src="@color/colorGradientCenterRed"
+                            android:src="@drawable/inscribir_trabajadores_essalud"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"/>
 
@@ -1712,9 +1712,9 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <ImageView
                             android:layout_margin="4dp"
-                            android:src="@color/colorGradientCenterRed"
+                            android:src="@drawable/solicitud_licencia_municipal"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"/>
 

@@ -70,11 +70,15 @@ public class RegisterCompanyData1Fragment extends Fragment {
     Button btnContinue;
     RelativeLayout rootLayout;
 
+    Fragment fragment2;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_register_company_data1, container, false);
+
+        fragment2 = new RegisterCompanyData2Fragment();
 
         profileImage = view.findViewById(R.id.profileImage);
         btnCamera = view.findViewById(R.id.btnCamera);
@@ -144,17 +148,11 @@ public class RegisterCompanyData1Fragment extends Fragment {
             public void onClick(View view) {
                 if (image_verification.equals("false")) {
                     Snackbar.make(rootLayout, "Debes cargar la foto de tu negocio", Snackbar.LENGTH_LONG).show();
-                    return;
 
                 }
-                else if (image_verification.equals("false")) {
-                    Snackbar.make(rootLayout, "Debes cargar la foto de tu negocio", Snackbar.LENGTH_LONG).show();
-                    return;
+                else if (image_verification.equals("true")) {
+                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment2).commit();
 
-                }else if (image_verification.equals("true")) {
-                    Intent intent = new Intent(getActivity(), AddCompanyActivity.class);
-                    intent.putExtra("FRAGMENT_ID", 1);
-                    startActivity(intent);
                 }
             }
         });

@@ -51,7 +51,7 @@
                     <TextView
                         android:textSize="12sp"
                         android:layout_margin="4dp"
-                        android:text="completa la información de tu colaborador."
+                        android:text="Completa la información de tu colaborador."
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
@@ -96,7 +96,7 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@color/gray2"
+                        android:src="@drawable/ficha_del_trabajador"
                         android:layout_width="30dp"
                         android:layout_height="30dp"/>
 
@@ -104,7 +104,7 @@
                         android:id="@+id/txtText1"
                         android:textSize="12sp"
                         android:layout_margin="4dp"
-                        android:text="Evolución de Ingresos"
+                        android:text="Ficha del Trabajador"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -131,7 +131,7 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@color/gray2"
+                        android:src="@drawable/boleta_pago_trabajador"
                         android:layout_width="30dp"
                         android:layout_height="30dp"/>
 
@@ -166,7 +166,7 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@color/gray2"
+                        android:src="@drawable/declaracion_jurada"
                         android:layout_width="30dp"
                         android:layout_height="30dp"/>
 

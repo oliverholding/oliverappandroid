@@ -29,6 +29,7 @@ public class PlatformSelectionActivity extends AppCompatActivity {
     DatabaseReference userRef;
     FirebaseAuth mAuth;
     String currentUserId,fullname,profileimage,username;
+    TextView txtSignOut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class PlatformSelectionActivity extends AppCompatActivity {
         profileImage = findViewById(R.id.profileImage);
         txtName = findViewById(R.id.txtName);
         txtUsername = findViewById(R.id.txtUsername);
+        txtSignOut = findViewById(R.id.txtSignOut);
 
         mAuth = FirebaseAuth.getInstance();
         currentUserId = mAuth.getCurrentUser().getUid();
@@ -67,7 +69,8 @@ public class PlatformSelectionActivity extends AppCompatActivity {
         btnOliver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(PlatformSelectionActivity.this, OliverAppActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -76,6 +79,16 @@ public class PlatformSelectionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(PlatformSelectionActivity.this, CareOptionsActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        txtSignOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAuth.signOut();
+                Intent intent = new Intent(PlatformSelectionActivity.this, PhoneAuthActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }

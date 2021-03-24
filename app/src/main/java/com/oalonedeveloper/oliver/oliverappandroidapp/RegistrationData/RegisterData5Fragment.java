@@ -35,6 +35,8 @@ public class RegisterData5Fragment extends Fragment {
     DatabaseReference userRef;
     Button btnContinue;
 
+    Fragment fragment6;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -47,6 +49,8 @@ public class RegisterData5Fragment extends Fragment {
         rootLayout = view.findViewById(R.id.rootLayout);
         btnContinue = view.findViewById(R.id.btnContinue);
         loadingBar = new ProgressDialog(getActivity());
+
+        fragment6 = new DataSumaryFragment();
 
         mAuth = FirebaseAuth.getInstance();
         currentUserID = mAuth.getCurrentUser().getUid();
@@ -160,9 +164,7 @@ public class RegisterData5Fragment extends Fragment {
                     Snackbar.make(rootLayout, "Los PIN de seguridad no coinciden", Snackbar.LENGTH_LONG).show();
                     return;
                 } else {
-                    Intent intent = new Intent(getActivity(), RegistrationDataActivity.class);
-                    intent.putExtra("FRAGMENT_ID", 5);
-                    startActivity(intent);
+                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment6).commit();
                 }
             }
         });

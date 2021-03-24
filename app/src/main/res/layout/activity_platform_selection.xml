@@ -210,4 +210,15 @@
     </androidx.cardview.widget.CardView>
 
 
+    <TextView
+        android:id="@+id/txtSignOut"
+        android:textColor="@color/redColor"
+        android:gravity="center"
+        android:layout_margin="22sp"
+        android:layout_alignParentBottom="true"
+        android:text="Cerrar Sesión"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
 </RelativeLayout>

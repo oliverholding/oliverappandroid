@@ -57,6 +57,139 @@ public class SalesAndProfitProjectionActivity extends AppCompatActivity {
 
             }
         });
+        edtCost2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (!edtCost1.getText().toString().equals("") && !edtCost2.getText().toString().equals("") && !edtPrice.getText().toString().equals("") &&!edtPrice.getText().toString().equals("")
+                        &&!edtQuantity.getText().toString().equals("")  &&!edtProfit.getText().toString().equals("")  &&!edtIgv.getText().toString().equals("")  &&!edtReturnTax.getText().toString().equals("")) {
+                    calculate();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+        edtCost3.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (!edtCost1.getText().toString().equals("") && !edtCost2.getText().toString().equals("") && !edtPrice.getText().toString().equals("") &&!edtPrice.getText().toString().equals("")
+                        &&!edtQuantity.getText().toString().equals("")  &&!edtProfit.getText().toString().equals("")  &&!edtIgv.getText().toString().equals("")  &&!edtReturnTax.getText().toString().equals("")) {
+                    calculate();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+        edtPrice.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (!edtCost1.getText().toString().equals("") && !edtCost2.getText().toString().equals("") && !edtPrice.getText().toString().equals("") &&!edtPrice.getText().toString().equals("")
+                        &&!edtQuantity.getText().toString().equals("")  &&!edtProfit.getText().toString().equals("")  &&!edtIgv.getText().toString().equals("")  &&!edtReturnTax.getText().toString().equals("")) {
+                    calculate();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+        edtQuantity.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (!edtCost1.getText().toString().equals("") && !edtCost2.getText().toString().equals("") && !edtPrice.getText().toString().equals("") &&!edtPrice.getText().toString().equals("")
+                        &&!edtQuantity.getText().toString().equals("")  &&!edtProfit.getText().toString().equals("")  &&!edtIgv.getText().toString().equals("")  &&!edtReturnTax.getText().toString().equals("")) {
+                    calculate();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+        edtProfit.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (!edtCost1.getText().toString().equals("") && !edtCost2.getText().toString().equals("") && !edtPrice.getText().toString().equals("") &&!edtPrice.getText().toString().equals("")
+                        &&!edtQuantity.getText().toString().equals("")  &&!edtProfit.getText().toString().equals("")  &&!edtIgv.getText().toString().equals("")  &&!edtReturnTax.getText().toString().equals("")) {
+                    calculate();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });edtIgv.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (!edtCost1.getText().toString().equals("") && !edtCost2.getText().toString().equals("") && !edtPrice.getText().toString().equals("") &&!edtPrice.getText().toString().equals("")
+                        &&!edtQuantity.getText().toString().equals("")  &&!edtProfit.getText().toString().equals("")  &&!edtIgv.getText().toString().equals("")  &&!edtReturnTax.getText().toString().equals("")) {
+                    calculate();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+        edtReturnTax.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (!edtCost1.getText().toString().equals("") && !edtCost2.getText().toString().equals("") && !edtPrice.getText().toString().equals("") &&!edtPrice.getText().toString().equals("")
+                        &&!edtQuantity.getText().toString().equals("")  &&!edtProfit.getText().toString().equals("")  &&!edtIgv.getText().toString().equals("")  &&!edtReturnTax.getText().toString().equals("")) {
+                    calculate();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
 
     }
 

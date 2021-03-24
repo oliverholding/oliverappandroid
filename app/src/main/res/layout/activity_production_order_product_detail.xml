@@ -178,7 +178,7 @@
         android:layout_margin="8dp"
         android:layout_alignParentEnd="true"
         android:layout_above="@id/btnRegister"
-        android:src="@color/gray2"
+        android:src="@drawable/agregar_insumos"
         android:layout_width="60dp"
         android:layout_height="60dp"/>
 

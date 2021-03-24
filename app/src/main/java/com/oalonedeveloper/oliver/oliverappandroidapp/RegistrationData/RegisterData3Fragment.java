@@ -45,6 +45,8 @@ public class RegisterData3Fragment extends Fragment {
     EditText edtSearch;
     AlertDialog departmentDialog;
 
+    Fragment fragment4;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -70,6 +72,8 @@ public class RegisterData3Fragment extends Fragment {
         loadingBar.show();
         loadingBar.setCanceledOnTouchOutside(false);
         loadingBar.setCancelable(false);
+
+        fragment4 = new RegisterData4Fragment();
 
         userRef.child(currentUserID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -270,9 +274,7 @@ public class RegisterData3Fragment extends Fragment {
                     return;
                 }
                 else {
-                    Intent intent = new Intent(getActivity(), RegistrationDataActivity.class);
-                    intent.putExtra("FRAGMENT_ID", 3);
-                    startActivity(intent);
+                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment4).commit();
                 }
             }
         });

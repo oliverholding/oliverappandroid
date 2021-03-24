@@ -131,7 +131,7 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@color/gray2"
+                        android:src="@drawable/producto_defectuoso"
                         android:layout_width="30dp"
                         android:layout_height="30dp"/>
 

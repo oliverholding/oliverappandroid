@@ -33,7 +33,7 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@color/gray2"
+                        android:src="@drawable/ambiente_de_aprendizaje"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
                         android:layout_height="50dp"/>
@@ -103,7 +103,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:src="@color/gray2"
+                android:src="@drawable/flecha_abajo"
                 android:layout_weight="0.5"
                 android:layout_width="0dp"
                 android:layout_height="30dp"/>
@@ -136,7 +136,7 @@
             </androidx.cardview.widget.CardView>
 
             <ImageView
-                android:src="@color/gray2"
+                android:src="@drawable/flecha_abajo"
                 android:layout_weight="0.5"
                 android:layout_width="0dp"
                 android:layout_height="30dp"/>
@@ -354,7 +354,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/flecha_abajo"
                         android:layout_weight="0.5"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
@@ -387,7 +387,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <ImageView
-                        android:src="@color/gray2"
+                        android:src="@drawable/flecha_abajo"
                         android:layout_weight="0.5"
                         android:layout_width="0dp"
                         android:layout_height="30dp"/>
