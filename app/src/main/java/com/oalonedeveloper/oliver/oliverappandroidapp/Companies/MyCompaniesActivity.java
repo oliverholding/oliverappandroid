@@ -1,11 +1,14 @@
 package com.oalonedeveloper.oliver.oliverappandroidapp.Companies;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -17,6 +20,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.CareManagerActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.InformalCompanies.AddInformalCompanyActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 import com.squareup.picasso.Picasso;
 
@@ -53,10 +57,42 @@ public class MyCompaniesActivity extends AppCompatActivity {
         btnAddCompany.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MyCompaniesActivity.this, AddCompanyActivity.class);
-                startActivity(intent);
+                showCompanyTypeDialog();
             }
         });
+    }
+
+    private void showCompanyTypeDialog() {
+        final AlertDialog dialog = new AlertDialog.Builder(this).create();
+
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View finance_method = inflater.inflate(R.layout.company_type_selection_dialog,null);
+
+        CardView btnInformalCompany,btnCompany;
+
+        btnInformalCompany = finance_method.findViewById(R.id.btnInformalCompany);
+        btnCompany = finance_method.findViewById(R.id.btnCompany);
+
+        btnInformalCompany.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MyCompaniesActivity.this,AddInformalCompanyActivity.class);
+                startActivity(intent);
+                dialog.dismiss();
+            }
+        });
+
+        btnCompany.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MyCompaniesActivity.this, AddCompanyActivity.class);
+                startActivity(intent);
+                dialog.dismiss();
+            }
+        });
+
+        dialog.setView(finance_method);
+        dialog.show();
     }
 
     private void displayMyCompanies() {

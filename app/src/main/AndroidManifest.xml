@@ -21,7 +21,9 @@
         android:roundIcon="@drawable/oliver_redondo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CareManager.ManagementControlAndReports.ReportGenerator.ReportGeneratorActivity"></activity>
+        <activity android:name=".InformalCompanies.AddInformalCompanyActivity"></activity>
+        <activity android:name=".CareManager.CareLearning.VideoListActivity" />
+        <activity android:name=".CareManager.ManagementControlAndReports.ReportGenerator.ReportGeneratorActivity" />
         <activity android:name=".CareManager.CareLearning.VideoSubjectActivity" />
         <activity android:name=".CareManager.CareLearning.MarketingSubjects.Subject1.MarketingSubject1Activity" />
         <activity android:name=".CareManager.ManagementControlAndReports.LessonLearned.LessonLearnedActivity" />
@@ -188,9 +190,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
-
-
     </application>
-
 
 </manifest>

@@ -22,8 +22,20 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <HorizontalScrollView
+    <Button
+        android:drawableStart="@drawable/descargar_archivo"
+        android:padding="8dp"
+        android:text="DESCARGAR"
+        android:textColor="@android:color/white"
+        android:id="@+id/btnDownload"
+        android:background="@drawable/orange_button_rectangle_ripple"
         android:layout_below="@id/videoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <HorizontalScrollView
+        android:id="@+id/scrollView"
+        android:layout_below="@id/btnDownload"
         android:scrollbars="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -166,5 +178,15 @@
         </LinearLayout>
 
     </HorizontalScrollView>
+
+    <FrameLayout
+        android:id="@+id/contentFragment"
+        android:layout_below="@id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    </FrameLayout>
+
 
 </RelativeLayout>

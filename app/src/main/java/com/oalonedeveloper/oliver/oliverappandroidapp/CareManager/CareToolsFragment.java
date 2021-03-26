@@ -23,6 +23,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManageme
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Production.ProductionActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.SalesModuleActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Simulators.SimulatorsActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirection.LeanCanvas.LeanCanvasActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirection.StrategicDirectionActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.UserInformationModule.UserInformationModuleActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ValueProposalModule.ValueProposalActivity;
@@ -88,7 +89,9 @@ public class CareToolsFragment extends Fragment {
         cardViewModule4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getActivity(), LeanCanvasActivity.class);
+                intent.putExtra("post_key",post_key);
+                startActivity(intent);
             }
         });
 

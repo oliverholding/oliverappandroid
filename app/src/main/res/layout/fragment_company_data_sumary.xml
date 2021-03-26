@@ -74,7 +74,7 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:src="@color/gray2"
+                                android:src="@drawable/subir_imagen_negocio"
                                 android:layout_weight="0.5"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
@@ -130,7 +130,7 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:src="@color/gray2"
+                                android:src="@drawable/negocios"
                                 android:layout_weight="0.5"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
@@ -186,7 +186,7 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:src="@color/gray2"
+                                android:src="@drawable/subir_archivo"
                                 android:layout_weight="0.5"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
@@ -242,7 +242,7 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:src="@color/gray2"
+                                android:src="@drawable/penetracion_mercado"
                                 android:layout_weight="0.5"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".InformalCompanies.RegisterInformalCompany4Fragment">
+
+    <RelativeLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:layout_above="@id/btnContinue"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp"
+                    android:layout_margin="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Finalizar Registro del Negocio"
+                            android:textSize="18sp"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:text="A continuación se muestra un resumen del registro de tu negocio, en caso exista una observación la podrás visualizar aquí."
+                            android:layout_margin="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_margin="8dp"
+                    app:cardElevation="8dp"
+                    app:cardCornerRadius="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:padding="8dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/subir_imagen_negocio"
+                                android:layout_weight="0.5"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="8dp"
+                                android:textSize="16sp"
+                                android:textColor="@android:color/black"
+                                android:text="Foto o Logo de del Negocio"
+                                android:layout_weight="2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/imgOne"
+                                android:src="@drawable/espera"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtProfileImage"
+                            android:layout_marginStart="20dp"
+                            android:textSize="14sp"
+                            android:text="A la espera de la imágen de tu negocio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_margin="8dp"
+                    app:cardElevation="8dp"
+                    app:cardCornerRadius="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:padding="8dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/negocios"
+                                android:layout_weight="0.5"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="8dp"
+                                android:textSize="16sp"
+                                android:textColor="@android:color/black"
+                                android:text="Datos del Negocio"
+                                android:layout_weight="2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/imgTwo"
+                                android:src="@drawable/espera"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtPersonalData"
+                            android:layout_marginStart="20dp"
+                            android:textSize="14sp"
+                            android:text="A la espera de los datos del negocio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_margin="8dp"
+                    app:cardElevation="8dp"
+                    app:cardCornerRadius="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:padding="8dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/penetracion_mercado"
+                                android:layout_weight="0.5"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:layout_margin="8dp"
+                                android:textSize="16sp"
+                                android:textColor="@android:color/black"
+                                android:text="Información Adicional"
+                                android:layout_weight="2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/imgFour"
+                                android:src="@drawable/espera"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtAditionalData"
+                            android:layout_marginStart="20dp"
+                            android:textSize="14sp"
+                            android:text="A la espera de tu información adicional"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:layout_margin="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:id="@+id/cbTermsAndConditions"
+                        android:textColor="@android:color/black"
+                        android:text="Acepto las"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtTermsAndConditions"
+                        android:layout_margin="4dp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:text="Políticas, Términos y Condiciones."
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:paddingBottom="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:id="@+id/cbLegalRepresentation"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:text="Confirmo ser el representante legal del negocio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+        <Button
+            android:id="@+id/btnContinue"
+            android:layout_alignParentBottom="true"
+            android:text="REGISTRARSE AHORA"
+            android:textColor="@android:color/white"
+            android:background="@drawable/orange_button_style_ripple"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+</FrameLayout>

@@ -29,7 +29,7 @@
             android:textStyle="bold"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:layout_weight="1.8"
+            android:layout_weight="1.5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
 
@@ -68,6 +68,16 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/btnActionButton"
+            android:layout_margin="4dp"
+            android:src="@drawable/editar"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:layout_weight="0.4"
+            android:layout_width="0dp"
+            android:layout_height="24dp"/>
 
 
 

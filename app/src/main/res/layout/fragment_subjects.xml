@@ -218,14 +218,13 @@
 
     </HorizontalScrollView>
 
-    <FrameLayout
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_below="@id/scrollView"
-        android:id="@+id/contentFragment2"
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-    </FrameLayout>
+    </androidx.recyclerview.widget.RecyclerView>
 
 
 </RelativeLayout>

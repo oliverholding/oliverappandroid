@@ -69,6 +69,7 @@
                             android:layout_height="wrap_content"/>
 
                         <TextView
+                            android:id="@+id/txtIncomes"
                             android:textSize="16sp"
                             android:textColor="@color/greenColor"
                             android:layout_margin="4dp"
@@ -101,6 +102,7 @@
                             android:layout_height="wrap_content"/>
 
                         <TextView
+                            android:id="@+id/txtOutcomes"
                             android:textSize="16sp"
                             android:textColor="@color/redColor"
                             android:layout_margin="4dp"
@@ -138,7 +140,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@drawable/capital_trabajo"
+                        android:src="@drawable/proyeccion_ventas"
                         android:layout_margin="4dp"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
@@ -148,17 +150,19 @@
                         android:textSize="14sp"
                         android:layout_margin="4dp"
                         android:textColor="@android:color/black"
-                        android:text="Capital de Trabajo"
+                        android:text="Crecimiento de ventas"
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
 
                     <TextView
+                        android:gravity="center"
+                        android:id="@+id/txtIndex1"
                         android:textSize="14sp"
                         android:layout_margin="4dp"
                         android:textColor="@android:color/black"
                         android:text="0.00%"
-                        android:layout_weight="0.3"
+                        android:layout_weight="0.5"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
 
@@ -180,7 +184,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@drawable/rotacion_inventario"
+                        android:src="@drawable/despacho_entregas"
                         android:layout_margin="4dp"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
@@ -190,17 +194,19 @@
                         android:textSize="14sp"
                         android:layout_margin="4dp"
                         android:textColor="@android:color/black"
-                        android:text="Rotación de Inventario"
+                        android:text="Pedidos despachados"
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
 
                     <TextView
+                        android:gravity="center"
+                        android:id="@+id/txtIndex2"
                         android:textSize="14sp"
                         android:layout_margin="4dp"
                         android:textColor="@android:color/black"
                         android:text="0.00%"
-                        android:layout_weight="0.3"
+                        android:layout_weight="0.5"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
 
@@ -222,7 +228,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@drawable/rentabilidad"
+                        android:src="@drawable/produccion_lista"
                         android:layout_margin="4dp"
                         android:layout_weight="0.2"
                         android:layout_width="0dp"
@@ -232,17 +238,19 @@
                         android:textSize="14sp"
                         android:layout_margin="4dp"
                         android:textColor="@android:color/black"
-                        android:text="Rentabilidad sobre las Ventas"
+                        android:text="Órdenes de Producción Listas"
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
 
                     <TextView
+                        android:gravity="center"
+                        android:id="@+id/txtIndex3"
                         android:textSize="14sp"
                         android:layout_margin="4dp"
                         android:textColor="@android:color/black"
                         android:text="0.00%"
-                        android:layout_weight="0.3"
+                        android:layout_weight="0.5"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
 

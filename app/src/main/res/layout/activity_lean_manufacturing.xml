@@ -51,7 +51,7 @@
                     <TextView
                         android:textSize="12sp"
                         android:layout_margin="4dp"
-                        android:text="Aprende sobre el Lean Manufactoring."
+                        android:text="Asigna un valor a cad auno de los procesos."
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
@@ -73,40 +73,7 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <androidx.cardview.widget.CardView
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp"
-                android:layout_margin="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
-                <LinearLayout
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/imgProduct"
-                        android:layout_margin="4dp"
-                        android:src="@color/colorGradientCenterRed"
-                        android:layout_weight="0.2"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"/>
-
-                    <TextView
-                        android:id="@+id/txtProductName"
-                        android:textStyle="bold"
-                        android:textColor="@android:color/black"
-                        android:textSize="18sp"
-                        android:layout_weight="1"
-                        android:text="product_name"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"/>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 app:cardElevation="8dp"
@@ -152,16 +119,27 @@
                             android:textColor="@android:color/black"
                             android:textSize="14sp"
                             android:layout_weight="1"
-                            android:text="77%"
+                            android:id="@+id/txtItem1"
+                            android:text="-"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 
 
                     </LinearLayout>
 
+                    <ImageView
+                        android:id="@+id/btnActionButton1"
+                        android:layout_margin="8dp"
+                        android:src="@drawable/editar"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
+
 
             <androidx.cardview.widget.CardView
                 app:cardElevation="8dp"
@@ -207,12 +185,21 @@
                             android:textColor="@android:color/black"
                             android:textSize="14sp"
                             android:layout_weight="1"
-                            android:text="25%"
+                            android:id="@+id/txtItem2"
+                            android:text="-"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 
 
                     </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/btnActionButton2"
+                        android:layout_margin="8dp"
+                        android:src="@drawable/editar"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
 
                 </LinearLayout>
 
@@ -262,12 +249,21 @@
                             android:textColor="@android:color/black"
                             android:textSize="14sp"
                             android:layout_weight="1"
-                            android:text="1%"
+                            android:id="@+id/txtItem3"
+                            android:text="-"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 
 
                     </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/btnActionButton3"
+                        android:layout_margin="8dp"
+                        android:src="@drawable/editar"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
 
                 </LinearLayout>
 
@@ -317,12 +313,21 @@
                             android:textColor="@android:color/black"
                             android:textSize="14sp"
                             android:layout_weight="1"
-                            android:text="20%"
+                            android:id="@+id/txtItem4"
+                            android:text="-"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 
 
                     </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/btnActionButton4"
+                        android:layout_margin="8dp"
+                        android:src="@drawable/editar"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
 
                 </LinearLayout>
 
@@ -372,12 +377,21 @@
                             android:textColor="@android:color/black"
                             android:textSize="14sp"
                             android:layout_weight="1"
-                            android:text="30%"
+                            android:id="@+id/txtItem5"
+                            android:text="-"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 
 
                     </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/btnActionButton5"
+                        android:layout_margin="8dp"
+                        android:src="@drawable/editar"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
 
                 </LinearLayout>
 
@@ -427,12 +441,15 @@
                             android:textColor="@android:color/black"
                             android:textSize="14sp"
                             android:layout_weight="1"
-                            android:text="152.92%"
+                            android:id="@+id/txtItem6"
+                            android:text="-"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
 
 
                     </LinearLayout>
+
+
 
                 </LinearLayout>
 

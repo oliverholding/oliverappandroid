@@ -52,7 +52,7 @@ public class ContractsTemplatesFragment extends Fragment {
                     @Override
                     public void onSuccess(Uri uri) {
                         String url = uri.toString();
-                        downloadFile(getActivity(),"contrato_trabajo_indefinido.docx",".docx",DIRECTORY_DOWNLOADS,url);
+                        downloadFile(getActivity(),"contrato_trabajo_indefinido",".docx",DIRECTORY_DOWNLOADS,url);
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -71,7 +71,7 @@ public class ContractsTemplatesFragment extends Fragment {
                     @Override
                     public void onSuccess(Uri uri) {
                         String url = uri.toString();
-                        downloadFile(getActivity(),"contrato_trabajo_temporal.docx",".docx",DIRECTORY_DOWNLOADS,url);
+                        downloadFile(getActivity(),"contrato_trabajo_temporal",".docx",DIRECTORY_DOWNLOADS,url);
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -90,7 +90,7 @@ public class ContractsTemplatesFragment extends Fragment {
                     @Override
                     public void onSuccess(Uri uri) {
                         String url = uri.toString();
-                        downloadFile(getActivity(),"contrato_de_compraventa.docx",".docx",DIRECTORY_DOWNLOADS,url);
+                        downloadFile(getActivity(),"contrato_de_compraventa",".docx",DIRECTORY_DOWNLOADS,url);
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override

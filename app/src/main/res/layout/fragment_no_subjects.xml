@@ -14,7 +14,7 @@
 
         <pl.droidsonroids.gif.GifImageView
             android:layout_margin="12dp"
-            android:src="@drawable/lupa"
+            android:src="@drawable/libros_lupa"
             android:layout_width="100dp"
             android:layout_height="100dp"/>
 
@@ -29,6 +29,7 @@
 
 
         <Button
+            android:id="@+id/btnExplore"
             android:text="EXPLORAR"
             android:textColor="@android:color/white"
             android:background="@drawable/orange_button_style_ripple"
