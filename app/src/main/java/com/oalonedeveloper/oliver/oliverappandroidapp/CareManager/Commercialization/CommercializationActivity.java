@@ -16,6 +16,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BlancedScoreCa
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BlancedScoreCard.KeyIndex.KeyIndexActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BlancedScoreCard.StrategicMap.StrategicMapActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.BillsIssuing.BillsIssuingActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CommercializationTutorial.CommercializationTutorialActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CreditsAndTreasury.CreditAndTreasuryActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CustomerSupport.CustomerSuportActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.NewMatrix10.NewMatrix10Activity;
@@ -23,7 +24,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class CommercializationActivity extends AppCompatActivity {
 
-    CardView btnTool1,btnTool2,btnTool3,btnTool4;
+    CardView btnTool1,btnTool2,btnTool3,btnTool4,btnTool0;
     String post_key;
 
     @Override
@@ -33,11 +34,20 @@ public class CommercializationActivity extends AppCompatActivity {
 
         post_key = getIntent().getExtras().getString("post_key");
 
+        btnTool0 = findViewById(R.id.btnTool0);
         btnTool1 = findViewById(R.id.btnTool1);
         btnTool2 = findViewById(R.id.btnTool2);
         btnTool3 = findViewById(R.id.btnTool3);
         btnTool4 = findViewById(R.id.btnTool4);
 
+        btnTool0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CommercializationActivity.this, CommercializationTutorialActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
         btnTool1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

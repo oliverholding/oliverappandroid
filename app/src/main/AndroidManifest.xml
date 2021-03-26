@@ -21,7 +21,8 @@
         android:roundIcon="@drawable/oliver_redondo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".InformalCompanies.AddInformalCompanyActivity"></activity>
+        <activity android:name=".CareManager.Commercialization.CommercializationTutorial.CommercializationTutorialActivity"></activity>
+        <activity android:name=".InformalCompanies.AddInformalCompanyActivity" />
         <activity android:name=".CareManager.CareLearning.VideoListActivity" />
         <activity android:name=".CareManager.ManagementControlAndReports.ReportGenerator.ReportGeneratorActivity" />
         <activity android:name=".CareManager.CareLearning.VideoSubjectActivity" />

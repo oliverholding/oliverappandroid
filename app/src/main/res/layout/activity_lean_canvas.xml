@@ -7,6 +7,7 @@
     tools:context=".CareManager.StrategicDirection.LeanCanvas.LeanCanvasActivity">
 
     <LinearLayout
+        android:id="@+id/rootLayout"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

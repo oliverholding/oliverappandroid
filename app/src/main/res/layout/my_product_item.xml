@@ -33,6 +33,7 @@
                         android:layout_height="match_parent"/>
 
                     <ImageView
+                        android:id="@+id/btnProductDetail"
                         android:layout_alignParentEnd="true"
                         android:layout_margin="12dp"
                         android:src="@drawable/editar"

@@ -26,9 +26,9 @@
         android:drawableStart="@drawable/descargar_archivo"
         android:padding="8dp"
         android:text="DESCARGAR"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:id="@+id/btnDownload"
-        android:background="@drawable/orange_button_rectangle_ripple"
+        android:background="@drawable/orange_strokes_rectangle"
         android:layout_below="@id/videoLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

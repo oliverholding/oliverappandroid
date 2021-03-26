@@ -42,6 +42,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.BillsIssuing.CreateInvoiceActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Production.ProductDatasheet.ProductDatasheetActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Production.ProductDatasheet.ProductDatasheetDetailActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 import com.squareup.picasso.Picasso;
 
@@ -259,7 +261,15 @@ public class MyProductsActivity extends AppCompatActivity {
                 viewHolder.txtProductPrice.setText("S/ "+viewHolder.my_product_price);
                 Picasso.with(MyProductsActivity.this).load(viewHolder.my_product_image).fit().into(viewHolder.imgProduct);
 
-
+                viewHolder.btnProductDetail.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MyProductsActivity.this, ProductDatasheetDetailActivity.class);
+                        intent.putExtra("post_key",post_key);
+                        intent.putExtra("product_id",postKey);
+                        startActivity(intent);
+                    }
+                });
 
             }
         };
@@ -391,7 +401,7 @@ public class MyProductsActivity extends AppCompatActivity {
     public static class CompanyProductsViewHolder extends RecyclerView.ViewHolder {
         View mView;
         String my_product_image,my_product_currency,my_product_description,my_product_measure,my_uid, my_code,my_product_name,my_product_price,my_product_stock;
-        ImageView imgProduct;
+        ImageView imgProduct,btnProductDetail;
         TextView txtProductName,txtProductPrice;
 
         public CompanyProductsViewHolder(@NonNull View itemView) {
@@ -401,6 +411,7 @@ public class MyProductsActivity extends AppCompatActivity {
             imgProduct = mView.findViewById(R.id.imgProduct);
             txtProductName = mView.findViewById(R.id.txtProductName);
             txtProductPrice = mView.findViewById(R.id.txtProductPrice);
+            btnProductDetail = mView.findViewById(R.id.btnProductDetail);
         }
         public void setProduct_image(String product_image) {
             my_product_image = product_image;

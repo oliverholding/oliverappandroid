@@ -44,6 +44,7 @@ public class LeanCanvasActivity extends AppCompatActivity {
             txtTitle4Answer1,txtTitle4Answer2,txtTitle4Answer3,txtTitle4Answer4,txtTitle5Answer1,txtTitle5Answer2,txtTitle5Answer3,txtTitle5Answer4,txtTitle6Answer1,txtTitle6Answer2,txtTitle6Answer3,txtTitle6Answer4,
             txtTitle7Answer1,txtTitle7Answer2,txtTitle7Answer3,txtTitle7Answer4, txtTitle8Answer1,txtTitle8Answer2,txtTitle8Answer3,txtTitle8Answer4, txtTitle9Answer1,txtTitle9Answer2,txtTitle9Answer3,txtTitle9Answer4;
     double value1,value2,value3,value4;
+    LinearLayout rootLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,6 +127,8 @@ public class LeanCanvasActivity extends AppCompatActivity {
         btnGraph7 = findViewById(R.id.btnGraph7);
         btnGraph8 = findViewById(R.id.btnGraph8);
         btnGraph9 = findViewById(R.id.btnGraph9);
+
+        rootLayout = findViewById(R.id.rootLayout);
 
         btnInformation1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -465,21 +468,39 @@ public class LeanCanvasActivity extends AppCompatActivity {
         btnItem1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String title = "Socios Clave";
-                String question = "¿Quiénes son tus aliados clave en tu modelo de negocio?";
-                String item_1 = "Empresas Privadas";
-                String item_2 = "Entidades Estatales";
-                String item_3 = "ONG´s y Fundaciones";
-                String item_4 = "Personas naturales o personas naturales con negocio";
-                String path = "item_1";
 
-                showLeanCanvasDialog(title,question,item_1,item_2,item_3,item_4,path);
+                companyRef.child(post_key).child("Lean Canvas").child("item_2").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            String title = "Socios Clave";
+                            String question = "¿Quiénes son tus aliados clave en tu modelo de negocio?";
+                            String item_1 = "Empresas Privadas";
+                            String item_2 = "Entidades Estatales";
+                            String item_3 = "ONG´s y Fundaciones";
+                            String item_4 = "Personas naturales o personas naturales con negocio";
+                            String path = "item_1";
+
+                            showLeanCanvasDialog(title, question, item_1, item_2, item_3, item_4, path);
+                        } else {
+                            Snackbar.make(rootLayout,"Debes completar primero ACTIVIDADES CLAVE",Snackbar.LENGTH_LONG).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
+
             }
         });
 
         btnGraph1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String title = "Socios Clave";
                 String path = "item_1";
                 String item_1 = "Empresas Privadas";
@@ -493,15 +514,32 @@ public class LeanCanvasActivity extends AppCompatActivity {
         btnItem2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String title = "Actividades Clave";
-                String question = "¿Qué actividades son clave para que tu modelo de negocio funciones?";
-                String item_1 = "Atención rápida y eficiente";
-                String item_2 = "Personal capacitado";
-                String item_3 = "Ofertas y Promociones";
-                String item_4 = "Ubicación del Negocio";
-                String path = "item_2";
 
-                showLeanCanvasDialog(title,question,item_1,item_2,item_3,item_4,path);
+                companyRef.child(post_key).child("Lean Canvas").child("item_3").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            String title = "Actividades Clave";
+                            String question = "¿Qué actividades son clave para que tu modelo de negocio funciones?";
+                            String item_1 = "Atención rápida y eficiente";
+                            String item_2 = "Personal capacitado";
+                            String item_3 = "Ofertas y Promociones";
+                            String item_4 = "Ubicación del Negocio";
+                            String path = "item_2";
+
+                            showLeanCanvasDialog(title, question, item_1, item_2, item_3, item_4, path);
+                        } else {
+                            Snackbar.make(rootLayout,"Debes completar primero RECURSOS CLAVE",Snackbar.LENGTH_LONG).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
+
             }
         });
 
@@ -521,15 +559,32 @@ public class LeanCanvasActivity extends AppCompatActivity {
         btnItem3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String title = "Recursos Claves";
-                String question = "¿Qué recursos clave requiere tu modelo de negocio?";
-                String item_1 = "Vendedores";
-                String item_2 = "Capital de Trabajo";
-                String item_3 = "Condiciones del local/puesto del negocio";
-                String item_4 = "Permisos y Licencias";
-                String path = "item_3";
 
-                showLeanCanvasDialog(title,question,item_1,item_2,item_3,item_4,path);
+                companyRef.child(post_key).child("Lean Canvas").child("item_9").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            String title = "Recursos Claves";
+                            String question = "¿Qué recursos clave requiere tu modelo de negocio?";
+                            String item_1 = "Vendedores";
+                            String item_2 = "Capital de Trabajo";
+                            String item_3 = "Condiciones del local/puesto del negocio";
+                            String item_4 = "Permisos y Licencias";
+                            String path = "item_3";
+
+                            showLeanCanvasDialog(title, question, item_1, item_2, item_3, item_4, path);
+                        } else {
+                            Snackbar.make(rootLayout,"Debes completar primero FLUJO DE INGRESOS",Snackbar.LENGTH_LONG).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
+
             }
         });
 
@@ -549,15 +604,31 @@ public class LeanCanvasActivity extends AppCompatActivity {
         btnItem4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String title = "Propuesta de Valor";
-                String question = "¿Qué probema/necesidad solucionas/satisfaces?";
-                String item_1 = "Garantía del producto ó servicio";
-                String item_2 = "Puestos de trabajos limpios";
-                String item_3 = "Producto novedoso y 100% peruano";
-                String item_4 = "Entrega rápida";
-                String path = "item_4";
+                companyRef.child(post_key).child("Lean Canvas").child("item_7").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            String title = "Propuesta de Valor";
+                            String question = "¿Qué probema/necesidad solucionas/satisfaces?";
+                            String item_1 = "Garantía del producto ó servicio";
+                            String item_2 = "Puestos de trabajos limpios";
+                            String item_3 = "Producto novedoso y 100% peruano";
+                            String item_4 = "Entrega rápida";
+                            String path = "item_4";
 
-                showLeanCanvasDialog(title,question,item_1,item_2,item_3,item_4,path);
+                            showLeanCanvasDialog(title,question,item_1,item_2,item_3,item_4,path);
+
+                        } else {
+                            Snackbar.make(rootLayout,"Debes completar primero SEGMENTO DE CLIENTES",Snackbar.LENGTH_LONG).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
             }
         });
 
@@ -577,15 +648,32 @@ public class LeanCanvasActivity extends AppCompatActivity {
         btnItem5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String title = "Relación con el Cliente";
-                String question = "¿Qué esperan tus clientes de tu negocio?";
-                String item_1 = "Trato amable y de calidad";
-                String item_2 = "Información detallada de tu producto/servicio";
-                String item_3 = "Descuentos del producto/servicio";
-                String item_4 = "Entrega de complementos o adicionales";
-                String path = "item_5";
 
-                showLeanCanvasDialog(title,question,item_1,item_2,item_3,item_4,path);
+                companyRef.child(post_key).child("Lean Canvas").child("item_6").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            String title = "Relación con el Cliente";
+                            String question = "¿Qué esperan tus clientes de tu negocio?";
+                            String item_1 = "Trato amable y de calidad";
+                            String item_2 = "Información detallada de tu producto/servicio";
+                            String item_3 = "Descuentos del producto/servicio";
+                            String item_4 = "Entrega de complementos o adicionales";
+                            String path = "item_5";
+
+                            showLeanCanvasDialog(title, question, item_1, item_2, item_3, item_4, path);
+                        } else {
+                            Snackbar.make(rootLayout,"Debes completar primero CANALES",Snackbar.LENGTH_LONG).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
+
             }
         });
 
@@ -605,15 +693,31 @@ public class LeanCanvasActivity extends AppCompatActivity {
         btnItem6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String title = "Canales";
-                String question = "¿Qué canales utilizas para contactar y atender a tus clientes?";
-                String item_1 = "Redes sociales";
-                String item_2 = "Página web propia";
-                String item_3 = "Distribuidores";
-                String item_4 = "Local o Puesto del Negocio";
-                String path = "item_6";
 
-                showLeanCanvasDialog(title,question,item_1,item_2,item_3,item_4,path);
+                companyRef.child(post_key).child("Lean Canvas").child("item_4").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            String title = "Canales";
+                            String question = "¿Qué canales utilizas para contactar y atender a tus clientes?";
+                            String item_1 = "Redes sociales";
+                            String item_2 = "Página web propia";
+                            String item_3 = "Distribuidores";
+                            String item_4 = "Local o Puesto del Negocio";
+                            String path = "item_6";
+
+                            showLeanCanvasDialog(title, question, item_1, item_2, item_3, item_4, path);
+                        } else {
+                            Snackbar.make(rootLayout,"Debes completar primero PROPUESTA DE VALOR",Snackbar.LENGTH_LONG).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
             }
         });
 
@@ -634,6 +738,8 @@ public class LeanCanvasActivity extends AppCompatActivity {
         btnItem7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 String title = "Segmentos de Cliente";
                 String question = "¿A quiénes te diriges?";
                 String item_1 = "Trabajadores";
@@ -663,15 +769,35 @@ public class LeanCanvasActivity extends AppCompatActivity {
         btnItem8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String title = "Estructura de Costos";
-                String question = "¿Cuál es tu estrctura de costos para que funcione tu negocio?";
-                String item_1 = "Servicios Públicos";
-                String item_2 = "Sueldos y Salarios";
-                String item_3 = "Promoción y Publicidad";
-                String item_4 = "Máquinas y Equipos";
-                String path = "item_8";
 
-                showLeanCanvasDialog(title,question,item_1,item_2,item_3,item_4,path);
+                companyRef.child(post_key).child("Lean Canvas").child("item_1").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                        if (dataSnapshot.exists()) {
+                            String title = "Estructura de Costos";
+                            String question = "¿Cuál es tu estrctura de costos para que funcione tu negocio?";
+                            String item_1 = "Servicios Públicos";
+                            String item_2 = "Sueldos y Salarios";
+                            String item_3 = "Promoción y Publicidad";
+                            String item_4 = "Máquinas y Equipos";
+                            String path = "item_8";
+
+                            showLeanCanvasDialog(title, question, item_1, item_2, item_3, item_4, path);
+                        } else {
+                            Snackbar.make(rootLayout,"Debes completar primero SOCIOS CLAVE",Snackbar.LENGTH_LONG).show();
+                        }
+
+                    }
+
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
+
             }
         });
 
@@ -692,15 +818,32 @@ public class LeanCanvasActivity extends AppCompatActivity {
         btnItem9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String title = "Flujos de Ingresos";
-                String question = "¿Qué representa los flujos de ingreso de tu empresa?";
-                String item_1 = "Venta de Productos";
-                String item_2 = "Servicios";
-                String item_3 = "Intermediación";
-                String item_4 = "Rentas y Alquileres";
-                String path = "item_9";
 
-                showLeanCanvasDialog(title,question,item_1,item_2,item_3,item_4,path);
+                companyRef.child(post_key).child("Lean Canvas").child("item_5").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            String title = "Flujos de Ingresos";
+                            String question = "¿Qué representa los flujos de ingreso de tu empresa?";
+                            String item_1 = "Venta de Productos";
+                            String item_2 = "Servicios";
+                            String item_3 = "Intermediación";
+                            String item_4 = "Rentas y Alquileres";
+                            String path = "item_9";
+
+                            showLeanCanvasDialog(title, question, item_1, item_2, item_3, item_4, path);
+                        } else {
+                            Snackbar.make(rootLayout,"Debes completar primero RELACIÓN CON EL CLIENTE",Snackbar.LENGTH_LONG).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
+
             }
         });
 

@@ -9,7 +9,7 @@
 
     <ImageView
         android:layout_margin="8dp"
-        android:src="@color/colorGradientCenterRed"
+        android:src="@drawable/vision_empresarial"
         android:layout_width="80dp"
         android:layout_height="80dp"/>
 
