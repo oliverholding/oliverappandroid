@@ -39,7 +39,7 @@ public class CostPriceSimulatorActivity extends AppCompatActivity {
         fragment1 = new ProductCostSimulatorFragment();
 
 
-        getSupportFragmentManager().beginTransaction().add(R.id.contentFragment,fragment1).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
         linearLayout1.setBackgroundResource(R.drawable.orange_button_style_ripple);
         txtText1.setTextColor(Color.WHITE);
 

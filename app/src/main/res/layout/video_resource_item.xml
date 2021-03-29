@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    app:cardElevation="8dp"
+    android:layout_marginTop="8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:padding="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_margin="4dp"
+            android:src="@drawable/cultura_de_aprendizaje"
+            android:layout_weight="0.1"
+            android:layout_width="0dp"
+            android:layout_height="30dp"/>
+
+        <TextView
+            android:id="@+id/txtResourceName"
+            android:text="resource_name"
+            android:layout_margin="4dp"
+            android:textColor="@android:color/black"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/btnDownload"
+            android:layout_margin="4dp"
+            android:src="@drawable/descargar_archivo"
+            android:layout_weight="0.1"
+            android:layout_width="0dp"
+            android:layout_height="30dp"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

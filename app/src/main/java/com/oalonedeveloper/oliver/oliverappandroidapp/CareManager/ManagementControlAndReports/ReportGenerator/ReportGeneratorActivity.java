@@ -129,65 +129,61 @@ public class ReportGeneratorActivity extends AppCompatActivity {
         btnPdf1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ReportGeneratorActivity.this, WebViewActivity.class);
-                intent.putExtra("url","https://oliver.com.pe/oliver-manager/company-reports/"+post_key+"/products");
-                startActivity(intent);
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://oliver.com.pe/oliver-manager-login/user/company-reports/"+post_key+"/products"));
+                startActivity(browserIntent);
             }
         });
         btnPdf2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ReportGeneratorActivity.this, WebViewActivity.class);
-                intent.putExtra("url","https://oliver.com.pe/oliver-manager/company-reports/"+post_key+"/bills");
-                startActivity(intent);
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://oliver.com.pe/oliver-manager-login/user/company-reports/"+post_key+"/bills"));
+                startActivity(browserIntent);
             }
         });
         btnPdf3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ReportGeneratorActivity.this, WebViewActivity.class);
-                intent.putExtra("url","https://oliver.com.pe/oliver-manager/company-reports/"+post_key+"/sellers");
-                startActivity(intent);
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://oliver.com.pe/oliver-manager-login/user/company-reports/"+post_key+"/sellers"));
+                startActivity(browserIntent);
             }
         });
         btnPdf4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ReportGeneratorActivity.this, WebViewActivity.class);
-                intent.putExtra("url","https://oliver.com.pe/oliver-manager/company-reports/"+post_key+"/purchased_order");
-                startActivity(intent);
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://oliver.com.pe/oliver-manager-login/user/company-reports/"+post_key+"/purchased_order"));
+                startActivity(browserIntent);
+
             }
         });
         btnPdf5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ReportGeneratorActivity.this, WebViewActivity.class);
-                intent.putExtra("url","https://oliver.com.pe/oliver-manager/company-reports/"+post_key+"/suppliers");
-                startActivity(intent);
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://oliver.com.pe/oliver-manager-login/user/company-reports/"+post_key+"/suppliers"));
+                startActivity(browserIntent);
             }
         });
         btnPdf6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ReportGeneratorActivity.this, WebViewActivity.class);
-                intent.putExtra("url","https://oliver.com.pe/oliver-manager/company-reports/"+post_key+"/warehouses");
-                startActivity(intent);
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://oliver.com.pe/oliver-manager-login/user/company-reports/"+post_key+"/warehouses"));
+                startActivity(browserIntent);
+
             }
         });
         btnPdf7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ReportGeneratorActivity.this, WebViewActivity.class);
-                intent.putExtra("url","https://oliver.com.pe/oliver-manager/company-reports/"+post_key+"/production_chain");
-                startActivity(intent);
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://oliver.com.pe/oliver-manager-login/user/company-reports/"+post_key+"/production_chain"));
+                startActivity(browserIntent);
+
             }
         });
         btnPdf8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ReportGeneratorActivity.this, WebViewActivity.class);
-                intent.putExtra("url","https://oliver.com.pe/oliver-manager/company-reports/"+post_key+"/job_profiles");
-                startActivity(intent);
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://oliver.com.pe/oliver-manager-login/user/company-reports/"+post_key+"/job_profiles"));
+                startActivity(browserIntent);
+
             }
         });
 

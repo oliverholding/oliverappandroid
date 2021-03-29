@@ -167,6 +167,7 @@
                         android:layout_height="wrap_content"/>
 
                     <ImageView
+                        android:id="@+id/btnInfo1"
                         android:src="@drawable/informacion"
                         android:layout_margin="4dp"
                         android:layout_weight="0.2"
@@ -211,6 +212,7 @@
                         android:layout_height="wrap_content"/>
 
                     <ImageView
+                        android:id="@+id/btnInfo2"
                         android:src="@drawable/informacion"
                         android:layout_margin="4dp"
                         android:layout_weight="0.2"
@@ -255,6 +257,7 @@
                         android:layout_height="wrap_content"/>
 
                     <ImageView
+                        android:id="@+id/btnInfo3"
                         android:src="@drawable/informacion"
                         android:layout_margin="4dp"
                         android:layout_weight="0.2"

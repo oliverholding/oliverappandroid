@@ -1,5 +1,6 @@
 package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager;
 
+import android.app.AlertDialog;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -8,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +39,7 @@ public class CareManagerSumaryFragment extends Fragment {
     DecimalFormat decimalFormat;
     long pending_dispatch,ready_dispatch,production_ready,production_stop,production_production;
     int sum_dispatch;
+    ImageView btnInfo1,btnInfo2,btnInfo3;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,6 +53,10 @@ public class CareManagerSumaryFragment extends Fragment {
         txtIndex1 = view.findViewById(R.id.txtIndex1);
         txtIndex2 = view.findViewById(R.id.txtIndex2);
         txtIndex3 = view.findViewById(R.id.txtIndex3);
+
+        btnInfo1 = view.findViewById(R.id.btnInfo1);
+        btnInfo2 = view.findViewById(R.id.btnInfo2);
+        btnInfo3 = view.findViewById(R.id.btnInfo3);
 
         myCompanyRef = FirebaseDatabase.getInstance().getReference().child("My Companies");
 
@@ -290,8 +297,61 @@ public class CareManagerSumaryFragment extends Fragment {
         });
 
 
+        btnInfo1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String title = "Crecimiento en Ventas";
+                String info = "Este indicador te permite analizar qué tanto han crecido o disminuido tus ventas en compración al mes pasado, recuerda que por lo general, un valor positivo en este indicador es bueno";
+                int img = R.drawable.proyeccion_ventas;
+
+                showInfoDialog(title,info,img);
+            }
+        });
+
+        btnInfo2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String title = "Pedidos Despachados";
+                String info = "Este indicador el porcentaje de pedidos que has despachado, lo más óptimo es siempre estar cerca del 100%";
+                int img = R.drawable.despacho_entregas;
+
+                showInfoDialog(title,info,img);
+            }
+        });
+
+        btnInfo3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String title = "Órdenes de Producción Listas";
+                String info = "Este indicador representa el porcentaje de órdenes de priducción que han sido terminadas con éxito, mientras este valor sea mas cerano a 100%, será mejor.";
+                int img = R.drawable.produccion_lista;
+
+                showInfoDialog(title,info,img);
+            }
+        });
 
 
         return view;
+    }
+
+    private void showInfoDialog(String title, String info, int img) {
+        final AlertDialog dialog = new AlertDialog.Builder(getActivity()).create();
+
+        LayoutInflater inflater = LayoutInflater.from(getActivity());
+        View finance_method = inflater.inflate(R.layout.info_tool_dialog,null);
+
+        ImageView imgInfo;
+        TextView txtTitle,txtInfo;
+
+        imgInfo = finance_method.findViewById(R.id.imgInfo);
+        txtTitle = finance_method.findViewById(R.id.txtTitle);
+        txtInfo = finance_method.findViewById(R.id.txtInfo);
+
+        imgInfo.setImageResource(img);
+        txtTitle.setText(title);
+        txtInfo.setText(info);
+
+        dialog.setView(finance_method);
+        dialog.show();
     }
 }

@@ -2,7 +2,9 @@ package com.oalonedeveloper.oliver.oliverappandroidapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.net.http.SslError;
 import android.os.Bundle;
+import android.webkit.SslErrorHandler;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -18,6 +20,7 @@ public class WebViewActivity extends AppCompatActivity {
             return false;
         }
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

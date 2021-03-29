@@ -1,5 +1,6 @@
 package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.CareLearning;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -80,6 +81,15 @@ public class MySubjectsFragment extends Fragment {
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
 
+                    }
+                });
+
+                viewHolder.btnSubject.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getActivity(), VideoListActivity.class);
+                        intent.putExtra("postkey",postKey);
+                        startActivity(intent);
                     }
                 });
 
