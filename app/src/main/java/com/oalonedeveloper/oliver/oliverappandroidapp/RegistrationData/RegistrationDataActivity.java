@@ -127,7 +127,7 @@ public class RegistrationDataActivity extends AppCompatActivity {
                 if (dataSnapshot.exists()) {
                     dni_api = dataSnapshot.child("dni_api").getValue().toString();
 
-                    userRef.child(currentUserID).addListenerForSingleValueEvent(new ValueEventListener() {
+                    userRef.child(currentUserID).addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             if (dataSnapshot.hasChild("name") && dataSnapshot.hasChild("surname") && dataSnapshot.hasChild("document_type") && dataSnapshot.hasChild("document_number") &&

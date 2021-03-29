@@ -44,6 +44,8 @@ public class NormativityIndexFragment extends Fragment {
 
         barChart = view.findViewById(R.id.barChart);
 
+        barChart.setNoDataText("Aún no hay datos disponibles");
+
         post_key = getActivity().getIntent().getExtras().getString("post_key");
         companyRef = FirebaseDatabase.getInstance().getReference().child("My Companies");
 
@@ -208,8 +210,8 @@ public class NormativityIndexFragment extends Fragment {
 
         data.setBarWidth(0.9f);
 
-
         barChart.setData(data);
+        barChart.invalidate();
     }
 
 }

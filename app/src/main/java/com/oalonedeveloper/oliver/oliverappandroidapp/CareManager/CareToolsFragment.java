@@ -33,7 +33,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class CareToolsFragment extends Fragment {
 
-    CardView cardViewModule1,cardViewModule2,cardViewModule3,cardViewModule4,cardViewModule5,cardViewModule6,cardViewModule7,cardViewModule8,cardViewModule9,cardViewModule10,cardViewModule11,cardViewModule12,cardViewModule13,cardViewModule14,cardViewModule15,cardViewModule16,cardViewModule17,cardViewModule18;
+    CardView cardViewModule3,cardViewModule5,cardViewModule6,cardViewModule7,cardViewModule8,cardViewModule9,cardViewModule10,cardViewModule11,cardViewModule12,cardViewModule13,cardViewModule14,cardViewModule15,cardViewModule16,cardViewModule17,cardViewModule18;
     String post_key;
 
 
@@ -45,10 +45,7 @@ public class CareToolsFragment extends Fragment {
 
         post_key = getActivity().getIntent().getExtras().getString("post_key");
 
-        cardViewModule1 = view.findViewById(R.id.cardViewModule1);
-        cardViewModule2 = view.findViewById(R.id.cardViewModule2);
         cardViewModule3 = view.findViewById(R.id.cardViewModule3);
-        cardViewModule4 = view.findViewById(R.id.cardViewModule4);
         cardViewModule5 = view.findViewById(R.id.cardViewModule5);
         cardViewModule6 = view.findViewById(R.id.cardViewModule6);
         cardViewModule7 = view.findViewById(R.id.cardViewModule7);
@@ -64,19 +61,7 @@ public class CareToolsFragment extends Fragment {
         cardViewModule18 = view.findViewById(R.id.cardViewModule18);
         cardViewModule17 = view.findViewById(R.id.cardViewModule17);
 
-        cardViewModule1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
-
-        cardViewModule2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
 
         cardViewModule3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,12 +72,6 @@ public class CareToolsFragment extends Fragment {
             }
         });
 
-        cardViewModule4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
 
         cardViewModule5.setOnClickListener(new View.OnClickListener() {
             @Override

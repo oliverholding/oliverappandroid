@@ -54,17 +54,17 @@ public class JavaMailAPI extends AsyncTask<Void, Void, Void> {
     protected void onPreExecute() {
         super.onPreExecute();
         //Show progress dialog while sending email
-        mProgressDialog = ProgressDialog.show(mContext,"Enviando mensaje", "por favor espera...",false,false);
+        //mProgressDialog = ProgressDialog.show(mContext,"Enviando mensaje", "por favor espera...",false,false);
     }
 
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
         //Dismiss progress dialog when message successfully send
-        mProgressDialog.dismiss();
+        //mProgressDialog.dismiss();
 
         //Show success toast
-        Toasty.success(mContext, "Enviado", Toast.LENGTH_LONG).show();
+        //Toasty.success(mContext, "Enviado", Toast.LENGTH_LONG).show();
     }
 
     @Override

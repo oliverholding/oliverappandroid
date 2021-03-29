@@ -59,7 +59,7 @@ public class ProductionIndexFragment extends Fragment {
         decimalFormat = new DecimalFormat("0.00");
 
         barChart = view.findViewById(R.id.barChart);
-
+        barChart.setNoDataText("Aún no hay datos disponibles");
 
         companyRef.child(post_key).child("Production Chain").orderByChild("state").equalTo("production").addValueEventListener(new ValueEventListener() {
             @Override
@@ -213,5 +213,6 @@ public class ProductionIndexFragment extends Fragment {
 
 
         barChart.setData(data);
+        barChart.invalidate();
     }
 }

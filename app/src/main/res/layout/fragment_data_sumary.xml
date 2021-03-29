@@ -74,7 +74,7 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:src="@color/gray2"
+                                android:src="@drawable/foto_perfil"
                                 android:layout_weight="0.5"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
@@ -130,7 +130,7 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:src="@color/gray2"
+                                android:src="@drawable/datos_nacimiento"
                                 android:layout_weight="0.5"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
@@ -186,7 +186,7 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:src="@color/gray2"
+                                android:src="@drawable/datos_domicilio"
                                 android:layout_weight="0.5"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
@@ -242,7 +242,7 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:src="@color/gray2"
+                                android:src="@drawable/contactos"
                                 android:layout_weight="0.5"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
@@ -298,7 +298,7 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:src="@color/gray2"
+                                android:src="@drawable/pin_seguridad"
                                 android:layout_weight="0.5"
                                 android:layout_width="0dp"
                                 android:layout_height="30dp"/>
@@ -370,7 +370,7 @@
             android:layout_alignParentBottom="true"
             android:text="REGISTRARSE AHORA"
             android:textColor="@android:color/white"
-            android:background="@drawable/blue_button_style_ripple"
+            android:background="@drawable/blue_button_rectangle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

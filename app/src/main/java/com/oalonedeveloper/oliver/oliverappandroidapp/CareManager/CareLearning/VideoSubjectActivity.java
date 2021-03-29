@@ -29,6 +29,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.CareAchievementsFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.CareLearning.VideoResourses.VideoListFragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.CareLearning.VideoResourses.VideoQuestionsFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.CareManagerSumaryFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.CareToolsFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
@@ -87,7 +88,7 @@ public class VideoSubjectActivity extends AppCompatActivity {
         view4 = findViewById(R.id.view4);
 
         fragment1 = new VideoListFragment();
-        fragment2 = new VideoListFragment();
+        fragment2 = new VideoQuestionsFragment();
         fragment3 = new VideoListFragment();
         fragment4 = new VideoListFragment();
 

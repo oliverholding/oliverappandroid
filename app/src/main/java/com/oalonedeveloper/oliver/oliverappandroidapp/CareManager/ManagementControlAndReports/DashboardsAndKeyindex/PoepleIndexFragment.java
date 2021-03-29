@@ -51,6 +51,9 @@ public class PoepleIndexFragment extends Fragment {
         companyRef = FirebaseDatabase.getInstance().getReference().child("My Companies");
         decimalFormat = new DecimalFormat("0.00");
 
+        barChart.setNoDataText("Aún no hay datos disponibles");
+        barChar2.setNoDataText("Aún no hay datos disponibles");
+
         companyRef.child(post_key).child("People Management Objectives").orderByChild("objective_qualification1").equalTo("Excelente").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -174,6 +177,7 @@ public class PoepleIndexFragment extends Fragment {
 
 
         barChar2.setData(data);
+        barChar2.invalidate();
     }
 
 
@@ -225,6 +229,7 @@ public class PoepleIndexFragment extends Fragment {
 
 
         barChart.setData(data);
+        barChart.invalidate();
     }
 
 }

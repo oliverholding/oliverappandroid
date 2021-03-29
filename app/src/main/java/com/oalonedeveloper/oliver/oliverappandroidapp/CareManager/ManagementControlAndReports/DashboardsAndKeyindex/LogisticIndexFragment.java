@@ -61,6 +61,8 @@ public class LogisticIndexFragment extends Fragment {
 
         pieChart = view.findViewById(R.id.pieChart);
 
+        barChart.setNoDataText("Aún no hay datos disponibles");
+
         decimalFormat = new DecimalFormat("0.00");
 
         companyRef.child(post_key).child("Purchased Orders").orderByChild("purchase_order_state").equalTo("pending").addValueEventListener(new ValueEventListener() {
@@ -280,6 +282,9 @@ public class LogisticIndexFragment extends Fragment {
 
 
         barChart.setData(data);
+
+        barChart.invalidate();
+
     }
 
 

@@ -6,6 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".CareManager.UserInformationModule.UserInformationModuleActivity">
 
+    <com.scwang.wave.MultiWaveHeader
+        android:id="@+id/waveHeader"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:mwhGradientAngle="145"
+        app:mwhStartColor="@color/gray1"
+        app:mwhCloseColor="@color/gray2"
+        app:mwhWaves="
+        310,0,1.7,1.3,5
+        310,0,1.7,1.3,0
+        310,0,1.7,1.3,5
+        310,0,1.7,1.3,0
+        310,0,1.7,1.3,5
+            310,0,1.7,1.3,
+            310,0,1.7,1.3,5"/>
+
     <ScrollView
         android:scrollbars="vertical"
         android:layout_width="match_parent"
@@ -32,78 +48,102 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:padding="8dp"
-                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <TextView
-                        android:textStyle="bold"
-                        android:text="Información General del Negocio"
-                        android:textSize="16sp"
-                        android:layout_margin="4dp"
-                        android:textColor="@android:color/black"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                    <ImageView
+                        android:src="@drawable/negocios"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"/>
 
-                    <TextView
-                        android:id="@+id/txtCommercialName"
-                        android:text="NOMBRE COMERCIAL: "
-                        android:layout_margin="4dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
 
-                    <TextView
-                        android:id="@+id/txtSocialReason"
-                        android:text="RAZÓN SOCIAL: "
-                        android:layout_margin="4dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        <TextView
+                            android:textStyle="bold"
+                            android:text="Información General del Negocio"
+                            android:textSize="16sp"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
 
-                    <TextView
-                        android:id="@+id/txtRuc"
-                        android:text="RUC: "
-                        android:layout_margin="4dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        <TextView
+                            android:textSize="11sp"
+                            android:id="@+id/txtCommercialName"
+                            android:text="NOMBRE COMERCIAL: "
+                            android:layout_margin="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
 
-                    <TextView
-                        android:id="@+id/txtLocation"
-                        android:text="UBICACIÓN: "
-                        android:layout_margin="4dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        <TextView
+                            android:textSize="11sp"
+                            android:id="@+id/txtSocialReason"
+                            android:text="RAZÓN SOCIAL: "
+                            android:layout_margin="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
 
-                    <TextView
-                        android:id="@+id/txtCompanyType"
-                        android:text="TIPO DE EMPRESA: "
-                        android:layout_margin="4dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        <TextView
+                            android:id="@+id/txtRuc"
+                            android:textSize="11sp"
+                            android:text="RUC: "
+                            android:layout_margin="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
 
-                    <TextView
-                        android:id="@+id/txtEconomicActivity"
-                        android:text="ACTIVIDAD ECONÓMICA: "
-                        android:layout_margin="4dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        <TextView
+                            android:id="@+id/txtLocation"
+                            android:text="UBICACIÓN: "
+                            android:textSize="11sp"
+                            android:layout_margin="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
 
-                    <TextView
-                        android:id="@+id/txtInscriptionDate"
-                        android:text="FECHA DE INSCRIPCIÓN (SUNAT): "
-                        android:layout_margin="4dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        <TextView
+                            android:id="@+id/txtCompanyType"
+                            android:text="TIPO DE EMPRESA: "
+                            android:textSize="11sp"
+                            android:layout_margin="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
 
-                    <TextView
-                        android:id="@+id/txtCompanyState"
-                        android:text="ESTADO DE LA EMPRESA: "
-                        android:layout_margin="4dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        <TextView
+                            android:id="@+id/txtEconomicActivity"
+                            android:text="ACTIVIDAD ECONÓMICA: "
+                            android:textSize="11sp"
+                            android:layout_margin="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
 
+                        <TextView
+                            android:id="@+id/txtInscriptionDate"
+                            android:text="FECHA DE INSCRIPCIÓN (SUNAT): "
+                            android:textSize="11sp"
+                            android:layout_margin="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtCompanyState"
+                            android:text="ESTADO DE LA EMPRESA: "
+                            android:textSize="11sp"
+                            android:layout_margin="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
 
                 </LinearLayout>
+
 
             </androidx.cardview.widget.CardView>
 
@@ -115,69 +155,91 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:padding="8dp"
-                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <TextView
-                        android:textStyle="bold"
-                        android:text="Información socio-económica del Propietario del negocio"
-                        android:textSize="16sp"
-                        android:layout_margin="4dp"
-                        android:textColor="@android:color/black"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                    <ImageView
+                        android:src="@drawable/analisis_economico"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"/>
 
-                    <TextView
-                        android:id="@+id/txtFullName"
-                        android:text="NOMBRE COMPLETO: "
-                        android:layout_margin="4dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
 
-                    <TextView
-                        android:id="@+id/txtDni"
-                        android:text="D.N.I: "
-                        android:layout_margin="4dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        <TextView
+                            android:textStyle="bold"
+                            android:text="Información socio-económica del Propietario del negocio"
+                            android:textSize="16sp"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
 
-                    <TextView
-                        android:id="@+id/txtUserLocation"
-                        android:text="UBICACIÓN: "
-                        android:layout_margin="4dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        <TextView
+                            android:id="@+id/txtFullName"
+                            android:text="NOMBRE COMPLETO: "
+                            android:textSize="11sp"
+                            android:layout_margin="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
 
-                    <TextView
-                        android:id="@+id/txtDateOfBirth"
-                        android:text="FECHA DE NACIMIENTO: "
-                        android:layout_margin="4dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        <TextView
+                            android:id="@+id/txtDni"
+                            android:textSize="11sp"
+                            android:text="D.N.I: "
+                            android:layout_margin="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
 
-                    <TextView
-                        android:id="@+id/txtSex"
-                        android:text="SEXO: "
-                        android:layout_margin="4dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        <TextView
+                            android:id="@+id/txtUserLocation"
+                            android:text="UBICACIÓN: "
+                            android:textSize="11sp"
+                            android:layout_margin="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
 
-                    <TextView
-                        android:id="@+id/txtOccupation"
-                        android:text="OCUPACIÓN: "
-                        android:layout_margin="4dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        <TextView
+                            android:id="@+id/txtDateOfBirth"
+                            android:text="FECHA DE NACIMIENTO: "
+                            android:textSize="11sp"
+                            android:layout_margin="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
 
-                    <TextView
-                        android:id="@+id/txtAcademicDegree"
-                        android:text="GRADO ACADÉMICO: "
-                        android:layout_margin="4dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        <TextView
+                            android:id="@+id/txtSex"
+                            android:text="SEXO: "
+                            android:textSize="11sp"
+                            android:layout_margin="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
 
+                        <TextView
+                            android:id="@+id/txtOccupation"
+                            android:text="OCUPACIÓN: "
+                            android:textSize="11sp"
+                            android:layout_margin="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtAcademicDegree"
+                            android:text="GRADO ACADÉMICO: "
+                            android:textSize="11sp"
+                            android:layout_margin="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -207,6 +269,7 @@
 
                     <TextView
                         android:text="ESTADO: AUTORIZADO"
+                        android:textSize="11sp"
                         android:layout_margin="4dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>

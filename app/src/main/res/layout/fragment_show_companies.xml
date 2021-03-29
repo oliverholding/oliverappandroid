@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Companies.ShowCompaniesFragment">
+
+    <TextView
+        android:textSize="18sp"
+        android:textColor="@color/orange1"
+        android:textStyle="bold"
+        android:text="MIS NEGOCIOS"
+        android:layout_margin="22dp"
+        android:gravity="center"
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/txtTitle"
+        android:layout_above="@id/btnAddCompany"
+        android:layout_margin="8dp"
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/btnAddCompany"
+        android:drawableStart="@drawable/agregar_negocio"
+        android:padding="8dp"
+        android:layout_margin="8dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/orange_button_style_ripple"
+        android:textColor="@android:color/white"
+        android:text="Registrar Nuevo Negocio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

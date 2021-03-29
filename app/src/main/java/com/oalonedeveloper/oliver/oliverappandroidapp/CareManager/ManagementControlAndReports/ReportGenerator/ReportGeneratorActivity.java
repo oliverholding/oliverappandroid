@@ -27,6 +27,7 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Logistic.OrderProcessing.OrderProcessingActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
+import com.oalonedeveloper.oliver.oliverappandroidapp.WebViewActivity;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -122,6 +123,71 @@ public class ReportGeneratorActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 exportExcel8();
+            }
+        });
+
+        btnPdf1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ReportGeneratorActivity.this, WebViewActivity.class);
+                intent.putExtra("url","https://oliver.com.pe/oliver-manager/company-reports/"+post_key+"/products");
+                startActivity(intent);
+            }
+        });
+        btnPdf2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ReportGeneratorActivity.this, WebViewActivity.class);
+                intent.putExtra("url","https://oliver.com.pe/oliver-manager/company-reports/"+post_key+"/bills");
+                startActivity(intent);
+            }
+        });
+        btnPdf3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ReportGeneratorActivity.this, WebViewActivity.class);
+                intent.putExtra("url","https://oliver.com.pe/oliver-manager/company-reports/"+post_key+"/sellers");
+                startActivity(intent);
+            }
+        });
+        btnPdf4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ReportGeneratorActivity.this, WebViewActivity.class);
+                intent.putExtra("url","https://oliver.com.pe/oliver-manager/company-reports/"+post_key+"/purchased_order");
+                startActivity(intent);
+            }
+        });
+        btnPdf5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ReportGeneratorActivity.this, WebViewActivity.class);
+                intent.putExtra("url","https://oliver.com.pe/oliver-manager/company-reports/"+post_key+"/suppliers");
+                startActivity(intent);
+            }
+        });
+        btnPdf6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ReportGeneratorActivity.this, WebViewActivity.class);
+                intent.putExtra("url","https://oliver.com.pe/oliver-manager/company-reports/"+post_key+"/warehouses");
+                startActivity(intent);
+            }
+        });
+        btnPdf7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ReportGeneratorActivity.this, WebViewActivity.class);
+                intent.putExtra("url","https://oliver.com.pe/oliver-manager/company-reports/"+post_key+"/production_chain");
+                startActivity(intent);
+            }
+        });
+        btnPdf8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ReportGeneratorActivity.this, WebViewActivity.class);
+                intent.putExtra("url","https://oliver.com.pe/oliver-manager/company-reports/"+post_key+"/job_profiles");
+                startActivity(intent);
             }
         });
 

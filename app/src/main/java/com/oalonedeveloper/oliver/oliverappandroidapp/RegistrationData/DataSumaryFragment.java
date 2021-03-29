@@ -54,6 +54,7 @@ import com.google.zxing.WriterException;
 import com.oalonedeveloper.oliver.oliverappandroidapp.HttpsTrustManager;
 import com.oalonedeveloper.oliver.oliverappandroidapp.JavaMailAPI;
 import com.oalonedeveloper.oliver.oliverappandroidapp.OliverAppActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.PlatformSelectionActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 import org.json.JSONException;
@@ -423,9 +424,12 @@ public class DataSumaryFragment extends Fragment {
 
     private void sendQrCodeToDatabase() {
 
+        Long tsLong = System.currentTimeMillis()/1000;
+        String timestamp = tsLong.toString();
+
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-        String path = MediaStore.Images.Media.insertImage(getActivity().getContentResolver(), bitmap, "Title", null);
+        String path = MediaStore.Images.Media.insertImage(getActivity().getContentResolver(), bitmap, timestamp, null);
         uri = Uri.parse(path);
 
         StorageReference filePath = userProfileImageRef.child(uri.getLastPathSegment()+postRandomName+".jpg");
@@ -485,7 +489,7 @@ public class DataSumaryFragment extends Fragment {
                         @Override
                         public void onComplete(@NonNull Task task) {
                             if (task.isSuccessful()) {
-                                Intent intent = new Intent(getActivity(), OliverAppActivity.class);
+                                Intent intent = new Intent(getActivity(), PlatformSelectionActivity.class);
                                 loadingBar.dismiss();
                                 startActivity(intent);
                                 getActivity().finish();
@@ -602,8 +606,6 @@ public class DataSumaryFragment extends Fragment {
                     nombres = response.getString("nombres");
                     apellido_paterno = response.getString("apellido_paterno");
                     apellido_materno = response.getString("apellido_materno");
-
-                    Toast.makeText(getActivity(), ""+nombres, Toast.LENGTH_SHORT).show();
 
                     String proces_names = Normalizer.normalize(name.toUpperCase(), Normalizer.Form.NFD);
                     final String normal_name = proces_names.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
