@@ -10,6 +10,12 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.Dashboards.CustomerRankingFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.Dashboards.GraphicsFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.Dashboards.ProductRankingFragment;
@@ -21,6 +27,9 @@ public class CareLearningActivity extends AppCompatActivity {
     LinearLayout linearLayout1,linearLayout2,linearLayout3;
     TextView txtText1,txtText2,txtText3;
     Fragment fragment1,fragment2,fragment3;
+    DatabaseReference userRef;
+    FirebaseAuth mAuth;
+    String currentUid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +46,37 @@ public class CareLearningActivity extends AppCompatActivity {
         txtText2 = findViewById(R.id.txtText2);
         txtText3 = findViewById(R.id.txtText3);
 
-        fragment1 = new NoSubjectsFragment();
+        mAuth = FirebaseAuth.getInstance();
+        currentUid = mAuth.getCurrentUser().getUid();
+        userRef = FirebaseDatabase.getInstance().getReference().child("Users");
+
+        userRef.child(currentUid).child("Care Learning").child("My Subjects").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    fragment1 = new MySubjectsFragment();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
+                    linearLayout1.setBackgroundResource(R.drawable.orange_button_rectangle_ripple);
+                    txtText1.setTextColor(Color.WHITE);
+                } else {
+                    fragment1 = new NoSubjectsFragment();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
+                    linearLayout1.setBackgroundResource(R.drawable.orange_button_rectangle_ripple);
+                    txtText1.setTextColor(Color.WHITE);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
         fragment2 = new SubjectsFragment();
         fragment3 = new NoSubjectsFragment();
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
-        linearLayout1.setBackgroundResource(R.drawable.orange_button_rectangle_ripple);
-        txtText1.setTextColor(Color.WHITE);
+
 
         tab1.setOnClickListener(new View.OnClickListener() {
             @Override

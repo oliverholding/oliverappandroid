@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView app:cardElevation="8dp"
+    app:cardCornerRadius="8dp"
+    android:layout_margin="8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:padding="8dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                android:layout_weight="0.4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imgSubject"
+                    android:src="@color/colorGradientCenterRed"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:padding="4dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txtSubjectName"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="8dp"
+                    android:text="subject_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_marginStart="8dp"
+                    android:text="Progreso:"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <com.xw.repo.BubbleSeekBar
+                    android:clickable="false"
+                    android:id="@+id/progressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:bsb_track_color="@color/gray2"
+                    app:bsb_bubble_color="@color/gray1"
+                    app:bsb_bubble_text_color="@android:color/white"
+                    app:bsb_second_track_color="@color/orange1"
+                    app:bsb_thumb_color="@android:color/transparent"
+                    app:bsb_max="100"
+                    app:bsb_min="0"
+                    app:bsb_second_track_size="8dp"
+                    app:bsb_progress="60"
+                    app:bsb_section_count="0"
+                    app:bsb_track_size="8dp"
+                    app:bsb_show_progress_in_float="false"
+                    app:bsb_show_section_mark="false"
+                    app:bsb_show_section_text="false"
+                    app:bsb_show_thumb_text="false"
+                    app:bsb_always_show_bubble="false"
+                    />
+
+                <Button
+                    android:id="@+id/btnSubject"
+                    android:text="Continuar"
+                    android:layout_margin="8dp"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/orange_button_style_ripple"
+                    android:layout_width="match_parent"
+                    android:layout_height="33dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -19,11 +19,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 import com.squareup.picasso.Picasso;
+import com.xw.repo.BubbleSeekBar;
 
 
 public class SubjectsFragment extends Fragment {
@@ -33,7 +35,9 @@ public class SubjectsFragment extends Fragment {
     TextView txtText1,txtText2,txtText3,txtText4;
     Fragment fragment1,fragment2,fragment3,fragment4;
     RecyclerView recyclerView;
-    DatabaseReference careRef;
+    DatabaseReference careRef,userRef;
+    FirebaseAuth mAuth;
+    String currentUid,subject_category;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -58,7 +62,11 @@ public class SubjectsFragment extends Fragment {
 
         recyclerView = view.findViewById(R.id.recyclerView);
 
+        mAuth = FirebaseAuth.getInstance();
+        currentUid = mAuth.getCurrentUser().getUid();
+
         careRef = FirebaseDatabase.getInstance().getReference().child("Care Learning").child("Subjects");
+        userRef = FirebaseDatabase.getInstance().getReference().child("Users");
 
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
@@ -68,6 +76,8 @@ public class SubjectsFragment extends Fragment {
 
         linearLayout1.setBackgroundResource(R.drawable.orange_button_style_ripple);
         txtText1.setTextColor(Color.WHITE);
+
+        subject_category = "marketing";
 
         tab1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +96,8 @@ public class SubjectsFragment extends Fragment {
                 linearLayout4.setBackgroundResource(R.drawable.orange_strokes_style);
                 txtText4.setTextColor(Color.GRAY);
 
+                subject_category = "marketing";
+                showSubjects();
 
 
             }
@@ -108,7 +120,8 @@ public class SubjectsFragment extends Fragment {
                 linearLayout4.setBackgroundResource(R.drawable.orange_strokes_style);
                 txtText4.setTextColor(Color.GRAY);
 
-
+                subject_category = "sales";
+                showSubjects();
             }
         });
 
@@ -129,6 +142,8 @@ public class SubjectsFragment extends Fragment {
                 linearLayout4.setBackgroundResource(R.drawable.orange_strokes_style);
                 txtText4.setTextColor(Color.GRAY);
 
+                subject_category = "business";
+                showSubjects();
 
             }
         });
@@ -136,7 +151,6 @@ public class SubjectsFragment extends Fragment {
         tab4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
 
                 linearLayout4.setBackgroundResource(R.drawable.orange_button_style_ripple);
                 txtText4.setTextColor(Color.WHITE);
@@ -150,6 +164,8 @@ public class SubjectsFragment extends Fragment {
                 linearLayout3.setBackgroundResource(R.drawable.orange_strokes_style);
                 txtText3.setTextColor(Color.GRAY);
 
+                subject_category = "startup";
+                showSubjects();
 
             }
         });
@@ -160,7 +176,7 @@ public class SubjectsFragment extends Fragment {
     }
 
     private void showSubjects() {
-        Query query = careRef.orderByChild("position");
+        Query query = careRef.orderByChild("subject_category").equalTo(subject_category);
         FirebaseRecyclerAdapter<SubjectModel,SubjectViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<SubjectModel, SubjectViewHolder>
                 (SubjectModel.class,R.layout.care_subject_item,SubjectViewHolder.class,query) {
             @Override
@@ -179,6 +195,8 @@ public class SubjectsFragment extends Fragment {
                     public void onClick(View v) {
                         Intent intent = new Intent(getActivity(), VideoListActivity.class);
                         intent.putExtra("postkey",postKey);
+                        userRef.child(currentUid).child("Care Learning").child("My Subjects").child(postKey).child("subject_id").setValue(postKey);
+                        userRef.child(currentUid).child("Care Learning").child("My Subjects").child(postKey).child("progress").setValue(0);
                         startActivity(intent);
                     }
                 });
@@ -195,6 +213,7 @@ public class SubjectsFragment extends Fragment {
         ImageView imgSubject;
         TextView txtSubjectName;
         Button btnSubject;
+        BubbleSeekBar progressBar;
 
         public SubjectViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -203,6 +222,7 @@ public class SubjectsFragment extends Fragment {
             txtSubjectName = mView.findViewById(R.id.txtSubjectName);
             imgSubject = mView.findViewById(R.id.imgSubject);
             btnSubject = mView.findViewById(R.id.btnSubject);
+            progressBar = mView.findViewById(R.id.progressBar);
         }
         public void setPosition(String position) {
             my_position = position;
