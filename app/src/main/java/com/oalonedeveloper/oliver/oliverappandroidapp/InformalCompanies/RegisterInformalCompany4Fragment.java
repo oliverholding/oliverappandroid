@@ -149,6 +149,14 @@ public class RegisterInformalCompany4Fragment extends Fragment {
             }
         }
 
+        txtTermsAndConditions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://oliver.com.pe/terms-conditions-companies/"));
+                startActivity(browserIntent);
+            }
+        });
+
         ratesRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

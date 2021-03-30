@@ -282,7 +282,7 @@
             android:layout_alignParentBottom="true"
             android:text="REGISTRARSE AHORA"
             android:textColor="@android:color/white"
-            android:background="@drawable/orange_button_style_ripple"
+            android:background="@drawable/orange_button_rectangle_ripple"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

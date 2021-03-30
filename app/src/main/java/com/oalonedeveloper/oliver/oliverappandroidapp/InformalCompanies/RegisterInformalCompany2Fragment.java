@@ -99,7 +99,7 @@ public class RegisterInformalCompany2Fragment extends Fragment {
         loadingBar.setCanceledOnTouchOutside(false);
         loadingBar.setCancelable(false);
 
-        currentUserRef.child(currentUserID).addValueEventListener(new ValueEventListener() {
+        currentUserRef.child(currentUserID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 document_number = dataSnapshot.child("document_number").getValue().toString();

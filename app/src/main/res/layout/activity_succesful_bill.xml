@@ -46,6 +46,7 @@
 
     <Button
         android:text="ENVIAR POR CORREO"
+        android:visibility="gone"
         android:textColor="@android:color/white"
         android:background="@drawable/orange_button_style_ripple"
         android:layout_margin="12dp"

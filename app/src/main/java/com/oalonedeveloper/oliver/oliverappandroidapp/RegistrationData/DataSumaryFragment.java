@@ -153,6 +153,14 @@ public class DataSumaryFragment extends Fragment {
             }
         }
 
+        txtTermsAndConditions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://oliver.com.pe/terms-conditions/"));
+                startActivity(browserIntent);
+            }
+        });
+
 
         ratesRef.addValueEventListener(new ValueEventListener() {
             @Override

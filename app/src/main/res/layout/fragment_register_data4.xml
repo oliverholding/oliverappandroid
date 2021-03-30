@@ -21,66 +21,58 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_margin="8dp"
-                    app:cardElevation="8dp"
-                    app:cardCornerRadius="8dp"
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <LinearLayout
-                        android:padding="8dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
+                    <ImageView
+                        android:src="@drawable/ocupacion"
+                        android:layout_margin="8dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"/>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="Ocupación"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content" />
 
-                        <ImageView
-                            android:src="@drawable/ocupacion"
-                            android:layout_margin="8dp"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"/>
+                    <Button
+                        android:id="@+id/btnOccupation"
+                        android:padding="8dp"
+                        android:gravity="start|center_vertical"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:hint="Ocupación..."
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
-                        <TextView
-                            android:layout_margin="8dp"
-                            android:textSize="16sp"
-                            android:textColor="@android:color/black"
-                            android:text="Ocupación"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="Grado Académico"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
-                        <Button
-                            android:id="@+id/btnOccupation"
-                            android:padding="8dp"
-                            android:gravity="start|center_vertical"
-                            android:layout_margin="8dp"
-                            android:background="@drawable/edit_text_style"
-                            android:hint="Ocupación..."
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
-                        <TextView
-                            android:layout_margin="8dp"
-                            android:textSize="16sp"
-                            android:textColor="@android:color/black"
-                            android:text="Grado Académico"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
-                        <Button
-                            android:id="@+id/btnAcademicDegree"
-                            android:padding="8dp"
-                            android:gravity="start|center_vertical"
-                            android:layout_margin="8dp"
-                            android:background="@drawable/edit_text_style"
-                            android:hint="Grado Académico..."
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                    <Button
+                        android:id="@+id/btnAcademicDegree"
+                        android:padding="8dp"
+                        android:gravity="start|center_vertical"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:hint="Grado Académico..."
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
 
-                    </LinearLayout>
+                </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
 
             </LinearLayout>
 

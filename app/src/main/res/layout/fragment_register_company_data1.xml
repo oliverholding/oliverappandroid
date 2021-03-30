@@ -201,9 +201,8 @@
             android:id="@+id/btnContinue"
             android:layout_alignParentBottom="true"
             android:text="CONTINUAR"
-            android:layout_margin="8dp"
             android:textColor="@android:color/white"
-            android:background="@drawable/gray_button_style"
+            android:background="@drawable/orange_button_rectangle_ripple"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

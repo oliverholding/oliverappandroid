@@ -73,7 +73,7 @@ public class CareManagerSumaryFragment extends Fragment {
         txtCurrentMonth.setText(month_name.toUpperCase()+" "+year);
 
 
-        myCompanyRef.child(post_key).child("My Bills").orderByChild("issuing_year").equalTo(year).addValueEventListener(new ValueEventListener() {
+        myCompanyRef.child(post_key).child("My Bills").orderByChild("issuing_year").equalTo(year).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
@@ -186,7 +186,7 @@ public class CareManagerSumaryFragment extends Fragment {
             }
         });
 
-        myCompanyRef.child(post_key).child("Dispatches").orderByChild("dispatch_state").equalTo("pending").addValueEventListener(new ValueEventListener() {
+        myCompanyRef.child(post_key).child("Dispatches").orderByChild("dispatch_state").equalTo("pending").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
@@ -194,7 +194,7 @@ public class CareManagerSumaryFragment extends Fragment {
                 }
 
 
-                myCompanyRef.child(post_key).child("Dispatches").orderByChild("dispatch_state").equalTo("ready").addValueEventListener(new ValueEventListener() {
+                myCompanyRef.child(post_key).child("Dispatches").orderByChild("dispatch_state").equalTo("ready").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         if (dataSnapshot.exists()) {
@@ -231,7 +231,7 @@ public class CareManagerSumaryFragment extends Fragment {
             }
         });
 
-        myCompanyRef.child(post_key).child("Production Chain").orderByChild("state").equalTo("production").addValueEventListener(new ValueEventListener() {
+        myCompanyRef.child(post_key).child("Production Chain").orderByChild("state").equalTo("production").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
@@ -239,7 +239,7 @@ public class CareManagerSumaryFragment extends Fragment {
                 }
 
 
-                myCompanyRef.child(post_key).child("Production Chain").orderByChild("state").equalTo("stop").addValueEventListener(new ValueEventListener() {
+                myCompanyRef.child(post_key).child("Production Chain").orderByChild("state").equalTo("stop").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         if (dataSnapshot.exists()) {
@@ -247,7 +247,7 @@ public class CareManagerSumaryFragment extends Fragment {
                         }
 
 
-                        myCompanyRef.child(post_key).child("Production Chain").orderByChild("state").equalTo("ready").addValueEventListener(new ValueEventListener() {
+                        myCompanyRef.child(post_key).child("Production Chain").orderByChild("state").equalTo("ready").addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(DataSnapshot dataSnapshot) {
                                 if (dataSnapshot.exists()) {

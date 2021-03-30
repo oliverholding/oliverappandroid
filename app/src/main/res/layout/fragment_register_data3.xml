@@ -21,144 +21,127 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_margin="8dp"
-                    app:cardElevation="8dp"
-                    app:cardCornerRadius="8dp"
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <LinearLayout
-                        android:padding="8dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
+                    <ImageView
+                        android:src="@drawable/correo_electronico"
+                        android:layout_margin="8dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"/>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="Correo Electrónico"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content" />
 
-                        <ImageView
-                            android:src="@drawable/correo_electronico"
-                            android:layout_margin="8dp"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"/>
-
-                        <TextView
-                            android:layout_margin="8dp"
-                            android:textSize="16sp"
-                            android:textColor="@android:color/black"
-                            android:text="Correo Electrónico"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
-                        <EditText
-                            android:id="@+id/edtEmail"
-                            android:inputType="textEmailAddress"
-                            android:padding="8dp"
-                            android:layout_margin="8dp"
-                            android:background="@drawable/edit_text_style"
-                            android:hint="Correo Electrónico..."
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                    <EditText
+                        android:id="@+id/edtEmail"
+                        android:inputType="textEmailAddress"
+                        android:padding="8dp"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:hint="Correo Electrónico..."
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
 
-                    </LinearLayout>
+                </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_margin="8dp"
-                    app:cardElevation="8dp"
-                    app:cardCornerRadius="8dp"
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <LinearLayout
-                        android:padding="8dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
+                    <ImageView
+                        android:src="@drawable/ubicacion"
+                        android:layout_margin="8dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"/>
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="Departamento o Región de Domicilio"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content" />
 
-                        <ImageView
-                            android:src="@drawable/ubicacion"
-                            android:layout_margin="8dp"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"/>
+                    <Button
+                        android:id="@+id/btnDepartment"
+                        android:padding="8dp"
+                        android:gravity="start|center_vertical"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:hint="Departamento o Región..."
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
-                        <TextView
-                            android:layout_margin="8dp"
-                            android:textSize="16sp"
-                            android:textColor="@android:color/black"
-                            android:text="Departamento o Región de Domicilio"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="Provincia de Domicilio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
-                        <Button
-                            android:id="@+id/btnDepartment"
-                            android:padding="8dp"
-                            android:gravity="start|center_vertical"
-                            android:layout_margin="8dp"
-                            android:background="@drawable/edit_text_style"
-                            android:hint="Departamento o Región..."
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                    <Button
+                        android:id="@+id/btnProvince"
+                        android:padding="8dp"
+                        android:gravity="start|center_vertical"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:hint="Provincia..."
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
-                        <TextView
-                            android:layout_margin="8dp"
-                            android:textSize="16sp"
-                            android:textColor="@android:color/black"
-                            android:text="Provincia de Domicilio"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="Distrito de Domicilio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
-                        <Button
-                            android:id="@+id/btnProvince"
-                            android:padding="8dp"
-                            android:gravity="start|center_vertical"
-                            android:layout_margin="8dp"
-                            android:background="@drawable/edit_text_style"
-                            android:hint="Provincia..."
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                    <Button
+                        android:id="@+id/btnDistrict"
+                        android:padding="8dp"
+                        android:gravity="start|center_vertical"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:hint="Distrito..."
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
-                        <TextView
-                            android:layout_margin="8dp"
-                            android:textSize="16sp"
-                            android:textColor="@android:color/black"
-                            android:text="Distrito de Domicilio"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black"
+                        android:text="Dirección exacta de domicilio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
-                        <Button
-                            android:id="@+id/btnDistrict"
-                            android:padding="8dp"
-                            android:gravity="start|center_vertical"
-                            android:layout_margin="8dp"
-                            android:background="@drawable/edit_text_style"
-                            android:hint="Distrito..."
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                    <EditText
+                        android:id="@+id/edtAddress"
+                        android:inputType="textCapWords"
+                        android:padding="8dp"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/edit_text_style"
+                        android:hint="Dirección exacta..."
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
-                        <TextView
-                            android:layout_margin="8dp"
-                            android:textSize="16sp"
-                            android:textColor="@android:color/black"
-                            android:text="Dirección exacta de domicilio"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                </LinearLayout>
 
-                        <EditText
-                            android:id="@+id/edtAddress"
-                            android:inputType="textCapWords"
-                            android:padding="8dp"
-                            android:layout_margin="8dp"
-                            android:background="@drawable/edit_text_style"
-                            android:hint="Dirección exacta..."
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
 
 
             </LinearLayout>
@@ -171,7 +154,7 @@
             android:layout_alignParentBottom="true"
             android:text="CONTINUAR"
             android:textColor="@android:color/white"
-            android:background="@drawable/blue_button_style_ripple"
+            android:background="@drawable/blue_button_rectangle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
