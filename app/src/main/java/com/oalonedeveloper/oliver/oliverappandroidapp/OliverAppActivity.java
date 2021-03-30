@@ -60,7 +60,7 @@ public class OliverAppActivity extends AppCompatActivity {
 
         fragment1 = new NonProductsFragment();
         fragment2 = new NonProductsFragment();
-        fragment3 = new NonProductsFragment();
+        fragment3 = new FinancialInstitutionsFragment();
 
         getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
         linearLayout1.setBackgroundResource(R.drawable.blue_button_rectangle);

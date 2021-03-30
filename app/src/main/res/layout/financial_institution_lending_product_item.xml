@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="8dp"
-    app:cardElevation="8dp"
-    app:cardCornerRadius="8dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <LinearLayout
         android:padding="8dp"
+        android:background="@drawable/round_corner_blue_stroke_left"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -26,7 +25,7 @@
                 android:layout_margin="4dp"
                 android:src="@color/colorGradientEndRed"
                 android:layout_width="0dp"
-                android:layout_height="50dp"/>
+                android:layout_height="60dp"/>
 
             <LinearLayout
                 android:orientation="vertical"
@@ -36,9 +35,9 @@
 
                 <TextView
                     android:id="@+id/txtProductName"
-                    android:layout_margin="4dp"
+                    android:layout_margin="8dp"
                     android:textStyle="bold"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:text="Product_name"
                     android:textColor="@android:color/black"
                     android:layout_width="match_parent"
@@ -46,46 +45,20 @@
 
                 <TextView
                     android:id="@+id/txtProductDescription"
-                    android:layout_margin="4dp"
-                    android:textSize="12sp"
+                    android:layout_margin="8dp"
+                    android:textSize="11sp"
                     android:text="Product_short_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
-                <androidx.cardview.widget.CardView
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="8dp"
-                    android:layout_margin="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/imgBackground"
-                        android:src="@color/colorGradientEndRed"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                    </ImageView>
-
-                    <LinearLayout
-                        android:id="@+id/btnProductDetail"
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:textColor="@android:color/white"
-                            android:layout_margin="8dp"
-                            android:textStyle="bold"
-                            android:gravity="center"
-                            android:text="VER MÁS"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
-
-                    </LinearLayout>
-
-
-                </androidx.cardview.widget.CardView>
+               <Button
+                   android:text="Ver Más"
+                   android:textColor="@android:color/white"
+                   android:layout_margin="8dp"
+                   android:background="@drawable/blue_button_style_ripple"
+                   android:id="@+id/imgBackground"
+                   android:layout_width="match_parent"
+                   android:layout_height="35dp"/>
 
             </LinearLayout>
 
@@ -93,4 +66,4 @@
 
     </LinearLayout>
 
-</androidx.cardview.widget.CardView>
+</RelativeLayout>

@@ -26,13 +26,12 @@ public class FinancialInstitutionDetailActivity extends AppCompatActivity {
 
     String post_key;
     DatabaseReference financialInstitutionsRef;
-    String financial_institution_name,financial_institution_image,financial_institution_background_image;
-    TextView txtFinancialInstitutionName;
+    String financial_institution_name,financial_institution_image,financial_institution_background_image,financial_institution_slogan,financial_institution_type;
+    TextView txtFinancialInstitutionName,txtFinancialInstitutionSlogan,txtFinancialInstitutionType;
     ImageView imgBackground;
     CircleImageView imgImage;
-    ViewPager mViewPager;
-    SectionsPagerAdapter mSectionsPagerAdapter;
-    int fragmentId;
+    Fragment fragment1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +44,12 @@ public class FinancialInstitutionDetailActivity extends AppCompatActivity {
         txtFinancialInstitutionName = findViewById(R.id.txtFinancialInstitutionName);
         imgBackground = findViewById(R.id.imgBackground);
         imgImage = findViewById(R.id.imgImage);
+        txtFinancialInstitutionSlogan = findViewById(R.id.txtFinancialInstitutionSlogan);
+        txtFinancialInstitutionType = findViewById(R.id.txtFinancialInstitutionType);
 
+        fragment1 = new FinancialProductLendingsListFragment();
 
-        mViewPager.setCurrentItem(fragmentId);
+        getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
 
         financialInstitutionsRef.child(post_key).addValueEventListener(new ValueEventListener() {
             @Override
@@ -55,7 +57,11 @@ public class FinancialInstitutionDetailActivity extends AppCompatActivity {
                 financial_institution_name = dataSnapshot.child("financial_institution_name").getValue().toString();
                 financial_institution_image = dataSnapshot.child("financial_institution_image").getValue().toString();
                 financial_institution_background_image = dataSnapshot.child("financial_institution_background_image").getValue().toString();
-                txtFinancialInstitutionName.setText(financial_institution_name);
+                financial_institution_slogan = dataSnapshot.child("financial_institution_slogan").getValue().toString();
+                financial_institution_type = dataSnapshot.child("financial_institution_type").getValue().toString();
+                txtFinancialInstitutionName.setText(financial_institution_name.toUpperCase());
+                txtFinancialInstitutionSlogan.setText(financial_institution_slogan);
+                txtFinancialInstitutionType.setText(financial_institution_type);
                 Picasso.with(FinancialInstitutionDetailActivity.this).load(financial_institution_image).fit().into(imgImage);
                 Picasso.with(FinancialInstitutionDetailActivity.this).load(financial_institution_background_image).fit().into(imgBackground);
 
@@ -68,37 +74,5 @@ public class FinancialInstitutionDetailActivity extends AppCompatActivity {
         });
     }
 
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        private int numOfTabs;
-
-        public SectionsPagerAdapter(FragmentManager fm, int numOfTabs) {
-            super(fm);
-            this.numOfTabs = numOfTabs;
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            switch (position) {
-                case 0:
-                    return new FinancialProductLendingsListFragment();
-                case 1:
-                    return new FinancialProductLendingsListFragment();
-                case 2:
-                    return new FinancialProductLendingsListFragment();
-
-                default:
-                    return null;
-            }
-
-        }
-
-        @Override
-        public int getCount() {
-            // Show 3 total pages.
-            return numOfTabs;
-        }
-    }
 }

@@ -8,111 +8,53 @@
     tools:context=".FinancialManagement.FinancialProductLendingsListFragment">
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewTitle"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
-        android:layout_margin="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+   <LinearLayout
+       android:id="@+id/topLayout"
+       android:padding="8dp"
+       android:gravity="center"
+       android:orientation="vertical"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:padding="4dp"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+       <TextView
+           android:layout_margin="4dp"
+           android:lineSpacingExtra="8dp"
+           android:textColor="@color/blue1"
+           android:text="Solicita el préstamo que mejor se adapte a tus necesidades. Simula tu préstamo, completa la documntación requerida y espera la aprobación."
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"/>
 
+       <Button
+           android:padding="12dp"
+           android:textSize="11sp"
+           android:layout_margin="12dp"
+           android:text="Mis Solicitudes"
+           android:gravity="center"
+           android:textColor="@android:color/white"
+           android:background="@drawable/blue_button_rectangle"
+           android:layout_width="wrap_content"
+           android:layout_height="38dp"/>
 
-            <LinearLayout
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+       <TextView
+           android:textStyle="bold"
+           android:textSize="14sp"
+           android:gravity="center"
+           android:textColor="@color/blue1"
+           android:maxLines="1"
+           android:text="- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"/>
 
-                <ImageView
-                    android:layout_margin="4dp"
-                    android:src="@drawable/solicitud_prestamo"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"/>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="4dp"
-                    android:layout_weight="3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:layout_margin="4dp"
-                        android:textColor="@android:color/black"
-                        android:text="PRÉSTAMOS DE CONSUMO"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-
-                    <TextView
-                        android:textSize="12sp"
-                        android:layout_margin="4dp"
-                        android:text="Solicita el préstamo que mejor se adecue a tus necesidades"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
+   </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_below="@+id/cardViewTitle"
-        android:layout_above="@id/cardBottom"
+        android:layout_below="@+id/topLayout"
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     </androidx.recyclerview.widget.RecyclerView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardBottom"
-        android:layout_alignParentBottom="true"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
-        android:layout_margin="4dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/imgBackgroundButton"
-            android:src="@color/colorGradientEndRed"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </ImageView>
-
-        <LinearLayout
-            android:id="@+id/btnRequestLoan"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:textColor="@android:color/white"
-                android:layout_margin="12dp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:text="MIS SOLICITUDES DE PRÉSTAMO"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-        </LinearLayout>
-
-
-    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>

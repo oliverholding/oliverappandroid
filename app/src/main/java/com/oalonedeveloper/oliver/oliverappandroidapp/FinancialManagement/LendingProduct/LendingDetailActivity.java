@@ -9,6 +9,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -22,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.FinancialInstitutionDetailActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.FinancialInstitutionsFragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.FinancialProductLendingsListFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.FinancialProductsFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.MyProductsFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
@@ -34,12 +36,10 @@ public class LendingDetailActivity extends AppCompatActivity {
     String product_key,institution_key, financial_institution_name,financial_institution_image,financial_institution_background_image;;
     DatabaseReference financialInstitutionsRef;
     TextView txtProductName,txtFinancialInstitutionName;
-    ImageView imgBackground,imgBackgroundButton;
+    ImageView imgBackground;
     CircleImageView imgProductImage;
-    LinearLayout btnLoanRequest;
-    ViewPager mViewPager;
-    SectionsPagerAdapter mSectionsPagerAdapter;
-    int fragmentId;
+    Button btnLoanRequest;
+    Fragment fragment1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +54,11 @@ public class LendingDetailActivity extends AppCompatActivity {
         txtFinancialInstitutionName = findViewById(R.id.txtFinancialInstitutionName);
         imgBackground = findViewById(R.id.imgBackground);
         imgProductImage = findViewById(R.id.imgProductImage);
-        imgBackgroundButton = findViewById(R.id.imgBackgroundButton);
         btnLoanRequest = findViewById(R.id.btnLoanRequest);
 
+        fragment1 = new LendingDetailsAndBenefitsFragment();
 
+        getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
 
         financialInstitutionsRef.child(institution_key).addValueEventListener(new ValueEventListener() {
             @Override
@@ -67,7 +68,6 @@ public class LendingDetailActivity extends AppCompatActivity {
                 financial_institution_background_image = dataSnapshot.child("financial_institution_background_image").getValue().toString();
                 txtFinancialInstitutionName.setText("Por "+financial_institution_name);
                 Picasso.with(LendingDetailActivity.this).load(financial_institution_background_image).fit().into(imgBackground);
-                Picasso.with(LendingDetailActivity.this).load(financial_institution_background_image).fit().into(imgBackgroundButton);
 
                 financialInstitutionsRef.child(institution_key).child("Products").child(product_key).addValueEventListener(new ValueEventListener() {
                     @Override

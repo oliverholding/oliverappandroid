@@ -74,7 +74,7 @@ public class CareLearningActivity extends AppCompatActivity {
 
 
         fragment2 = new SubjectsFragment();
-        fragment3 = new NoSubjectsFragment();
+        fragment3 = new ProfileLearningFragment();
 
 
 

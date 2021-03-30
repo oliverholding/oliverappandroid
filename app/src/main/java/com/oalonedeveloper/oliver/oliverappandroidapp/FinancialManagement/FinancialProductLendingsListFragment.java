@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -36,7 +37,6 @@ public class FinancialProductLendingsListFragment extends Fragment {
     String post_key,financial_institution_background_image;
     DatabaseReference financialInstitutionsRef;
     RecyclerView recyclerView;
-    ImageView imgBackgroundButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,20 +46,6 @@ public class FinancialProductLendingsListFragment extends Fragment {
         financialInstitutionsRef = FirebaseDatabase.getInstance().getReference().child("Financial Institutions");
         post_key = getActivity().getIntent().getExtras().getString("post_key");
 
-        imgBackgroundButton = view.findViewById(R.id.imgBackgroundButton);
-
-        financialInstitutionsRef.child(post_key).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                financial_institution_background_image = dataSnapshot.child("financial_institution_background_image").getValue().toString();
-                Picasso.with(getActivity()).load(financial_institution_background_image).fit().into(imgBackgroundButton);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
 
         recyclerView = view.findViewById(R.id.recyclerView);
 
@@ -90,9 +76,8 @@ public class FinancialProductLendingsListFragment extends Fragment {
                 viewHolder.txtProductName.setText(viewHolder.my_product_name);
                 viewHolder.txtProductDescription.setText(viewHolder.my_product_short_description);
                 Picasso.with(getActivity()).load(viewHolder.my_product_img).fit().into(viewHolder.imgImage);
-                Picasso.with(getActivity()).load(financial_institution_background_image).fit().into(viewHolder.imgBackground);
 
-                viewHolder.btnProductDetail.setOnClickListener(new View.OnClickListener() {
+                viewHolder.imgBackground.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(getActivity(), LendingDetailActivity.class);
@@ -111,9 +96,8 @@ public class FinancialProductLendingsListFragment extends Fragment {
         View mView;
         CircleImageView imgImage;
         TextView txtProductName,txtProductDescription;
-        ImageView imgBackground;
+        Button imgBackground;
         String my_product,my_product_short_description,my_product_name,my_product_img;
-        LinearLayout btnProductDetail;
 
         public FinancialProductViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -123,7 +107,7 @@ public class FinancialProductLendingsListFragment extends Fragment {
             txtProductName = itemView.findViewById(R.id.txtProductName);
             txtProductDescription = itemView.findViewById(R.id.txtProductDescription);
             imgBackground = itemView.findViewById(R.id.imgBackground);
-            btnProductDetail = itemView.findViewById(R.id.btnProductDetail);
+
 
         }
         public void setProduct(String product) {

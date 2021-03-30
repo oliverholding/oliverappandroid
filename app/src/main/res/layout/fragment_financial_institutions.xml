@@ -5,11 +5,37 @@
     android:layout_height="match_parent"
     tools:context=".FinancialManagement.FinancialInstitutionsFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <LinearLayout
+        android:layout_margin="12dp"
+        android:background="@drawable/round_corner_blue_stroke_left"
+        android:padding="8dp"
+        android:gravity="center"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </androidx.recyclerview.widget.RecyclerView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="12dp"
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:textStyle="bold"
+        android:layout_marginStart="22dp"
+        android:padding="4dp"
+        android:text="Socios"
+        android:background="@color/cardview_light_background"
+        android:textColor="@color/blue1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
 
 </FrameLayout>

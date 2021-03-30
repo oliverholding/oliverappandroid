@@ -6,26 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".FinancialManagement.FinancialInstitutionDetailActivity">
 
-    <ImageView
-        android:id="@+id/imgBackground"
-        android:src="@color/colorGradientCenter"
-        android:layout_above="@id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-    <LinearLayout
-        android:id="@+id/appBar"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardTop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <ImageView
+            android:id="@+id/imgBackground"
+            android:src="@color/colorGradientCenter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
         <LinearLayout
-            android:padding="8dp"
+            android:padding="18dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <LinearLayout
                 android:gravity="center"
+                android:layout_marginEnd="12dp"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -49,17 +49,30 @@
                         android:id="@+id/txtFinancialInstitutionName"
                         android:layout_margin="4dp"
                         android:textStyle="bold"
+                        android:gravity="end"
                         android:textSize="18sp"
                         android:textColor="@android:color/white"
-                        android:text="FINANCIAL_INSTITUTION_NAME"
+                        android:text=""
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
                     <TextView
+                        android:id="@+id/txtFinancialInstitutionSlogan"
                         android:layout_margin="4dp"
                         android:textSize="12sp"
+                        android:gravity="end"
                         android:textColor="@android:color/white"
-                        android:text="FINANCIAL_INSTITUTION_NAME"
+                        android:text=""
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtFinancialInstitutionType"
+                        android:layout_margin="12dp"
+                        android:textSize="10sp"
+                        android:gravity="end"
+                        android:textColor="@android:color/white"
+                        android:text=""
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
@@ -70,43 +83,91 @@
 
         </LinearLayout>
 
-    </LinearLayout>
 
-    <com.google.android.material.tabs.TabLayout
-        android:layout_below="@+id/appBar"
-        android:id="@+id/tabLayout"
-        app:tabTextColor="@android:color/black"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab2"
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+    </androidx.cardview.widget.CardView>
 
 
-    </com.google.android.material.tabs.TabLayout>
-
-    <androidx.viewpager.widget.ViewPager
-        android:layout_below="@id/tabLayout"
-        android:id="@+id/container"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_below="@+id/cardTop"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp"
+        android:layout_margin="18dp"
+        android:layout_centerInParent="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </androidx.viewpager.widget.ViewPager>
+        <LinearLayout
+            android:padding="4dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <HorizontalScrollView
+                android:id="@+id/scrollView"
+                android:layout_below="@id/btnDownload"
+                android:scrollbars="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/tab1"
+                        android:layout_margin="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:padding="4dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/txt1"
+                                android:textColor="@color/blue1"
+                                android:gravity="center"
+                                android:layout_margin="4dp"
+                                android:text="Préstamos de Consumo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <View
+                                android:id="@+id/view1"
+                                android:layout_margin="4dp"
+                                android:background="@color/blue1"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"/>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <FrameLayout
+                android:id="@+id/contentFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
 
 
 </RelativeLayout>

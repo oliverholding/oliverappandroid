@@ -8,7 +8,6 @@
     tools:context=".FinancialManagement.NonProductsFragment">
 
 
-
     <LinearLayout
         android:layout_margin="12dp"
         android:background="@drawable/round_corner_blue_stroke_left"

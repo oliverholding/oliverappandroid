@@ -7,64 +7,73 @@
     android:layout_height="match_parent"
     tools:context=".FinancialManagement.LendingProduct.LoanRequestActivity">
 
-    <ImageView
-        android:id="@+id/imgBackground"
-        android:src="@color/colorGradientCenter"
-        android:layout_above="@id/simulationCard"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-    <LinearLayout
-        android:id="@+id/appBar"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardTop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <ImageView
+            android:id="@+id/imgBackground"
+            android:src="@color/colorGradientCenter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
         <LinearLayout
-            android:padding="8dp"
-            android:orientation="vertical"
+            android:id="@+id/appBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:gravity="center"
-                android:orientation="horizontal"
+                android:padding="18dp"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/imgProductImage"
-                    android:layout_weight="1"
-                    android:layout_margin="8dp"
-                    android:src="@color/colorGradientCenter"
-                    android:layout_width="0dp"
-                    android:layout_height="80dp"/>
-
                 <LinearLayout
+                    android:layout_marginEnd="12dp"
                     android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_weight="3"
-                    android:layout_width="0dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <TextView
-                        android:id="@+id/txtProductName"
-                        android:layout_margin="4dp"
-                        android:textStyle="bold"
-                        android:textSize="18sp"
-                        android:textColor="@android:color/white"
-                        android:text="PRODUCT_NAME"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/imgProductImage"
+                        android:layout_weight="1"
+                        android:layout_margin="8dp"
+                        android:src="@color/colorGradientCenter"
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"/>
 
-                    <TextView
-                        android:id="@+id/txtFinancialInstitutionName"
-                        android:layout_margin="4dp"
-                        android:textSize="12sp"
-                        android:textColor="@android:color/white"
-                        android:text="FINANCIAL_INSTITUTION_NAME"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                    <LinearLayout
+                        android:gravity="end
+"
+                        android:orientation="vertical"
+                        android:layout_weight="3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
 
+                        <TextView
+                            android:id="@+id/txtProductName"
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:gravity="end"
+                            android:textSize="18sp"
+                            android:textColor="@android:color/white"
+                            android:text="PRODUCT_NAME"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtFinancialInstitutionName"
+                            android:layout_margin="4dp"
+                            android:gravity="end"
+                            android:textSize="12sp"
+                            android:textColor="@android:color/white"
+                            android:text="FINANCIAL_INSTITUTION_NAME"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -72,184 +81,278 @@
 
         </LinearLayout>
 
-    </LinearLayout>
-
-    <androidx.cardview.widget.CardView
-        app:cardElevation="8dp"
-        android:id="@+id/cardMessage"
-        android:layout_below="@id/appBar"
-        app:cardCornerRadius="8dp"
-        android:layout_margin="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:padding="8dp"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imgFinancialInstitution"
-                android:src="@color/colorGradientEndRed"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="30dp"/>
-
-            <TextView
-                android:layout_margin="4dp"
-                android:textColor="@android:color/black"
-                android:text="Completa todos los pasos para Finalizar tu Solicitud"
-                android:layout_weight="9"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
-
-        </LinearLayout>
-
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/simulationCard"
-        android:layout_below="@id/cardMessage"
-        android:layout_margin="8dp"
+        android:id="@+id/cardView"
+        android:layout_above="@+id/btnLoanRequest"
+        android:layout_below="@+id/cardTop"
         app:cardElevation="8dp"
         app:cardCornerRadius="8dp"
+        android:layout_margin="18dp"
+        android:layout_centerInParent="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:padding="8dp"
+            android:padding="4dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <LinearLayout
+                android:id="@+id/progressLayout"
                 android:gravity="center"
+                android:layout_margin="12dp"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/imgImageState"
-                    android:layout_weight="1"
-                    android:layout_margin="4dp"
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"/>
+                <TextView
+                    android:id="@+id/txtText1"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/blue1"
+                    android:padding="4dp"
+                    android:background="@drawable/blue_circle_style"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
 
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_weight="4"
-                    android:layout_width="0dp"
+                <View
+                    android:background="@color/blue1"
+                    android:layout_width="40dp"
+                    android:layout_height="1dp"/>
+                <TextView
+                    android:id="@+id/txtText2"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textColor="@color/blue1"
+                    android:padding="4dp"
+                    android:background="@drawable/blue_circle_style"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+
+                <View
+                    android:background="@color/blue1"
+                    android:layout_width="40dp"
+                    android:layout_height="1dp"/>
+
+                <TextView
+                    android:id="@+id/txtText3"
+                    android:gravity="center"
+                    android:text="3"
+                    android:textColor="@color/blue1"
+                    android:padding="4dp"
+                    android:background="@drawable/blue_circle_style"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+
+
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:padding="12dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <TextView
-                        android:id="@+id/txtDocName"
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_alignParentEnd="true"
                         android:layout_margin="4dp"
-                        android:textStyle="bold"
-                        android:textSize="18sp"
-                        android:text="Simulación del Préstamo"
-                        android:textColor="@android:color/black"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:src="@color/redColor"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"/>
 
-                    <TextView
-                        android:id="@+id/txtDocState"
-                        android:layout_margin="4dp"
-                        android:textSize="12sp"
-                        android:text="Estado: a la espera de tu información"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-
-                    <androidx.cardview.widget.CardView
-                        app:cardCornerRadius="8dp"
-                        app:cardElevation="8dp"
-                        android:layout_margin="4dp"
+                    <LinearLayout
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:id="@+id/imgBackgroundSimulation"
-                            android:src="@color/colorGradientEndRed"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            android:layout_margin="4dp"
+                            android:src="@drawable/simulador_toma_deciciones"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"/>
 
-                        </ImageView>
+                        <TextView
+                            android:text="Simulación del Préstamo"
+                            android:layout_margin="4dp"
+                            android:textStyle="bold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
 
                         <LinearLayout
-                            android:id="@+id/btnSimulation"
+                            android:gravity="center"
                             android:orientation="horizontal"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <TextView
-                                android:id="@+id/txtButton"
-                                android:textColor="@android:color/white"
-                                android:layout_margin="8dp"
-                                android:textStyle="bold"
-                                android:gravity="center"
-                                android:text="COMPLETAR INFORMACIÓN"
-                                android:layout_width="match_parent"
+                                android:text="A la espera de tu información"
+                                android:layout_margin="4dp"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/btnArrowSimulation"
+                                android:src="@drawable/blue_arrow_down_vector_asset"
+                                android:layout_weight="0.1"
+                                android:layout_width="0dp"
+                                android:layout_height="30dp"/>
 
                         </LinearLayout>
 
 
-                    </androidx.cardview.widget.CardView>
+                        <LinearLayout
+                            android:id="@+id/simulationLayout"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
 
-                </LinearLayout>
+                            <ScrollView
+                                android:scrollbars="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
 
-            </LinearLayout>
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:text="¿Cuánto dinero necesitas?"
+                                        android:layout_margin="4dp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/blue1"
+                                        android:textSize="12sp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"/>
+
+                                    <EditText
+                                        android:hint="Monto..."
+                                        android:padding="8dp"
+                                        android:layout_margin="4dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"/>
+
+                                    <RadioGroup
+                                        android:orientation="horizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <RadioButton
+                                            android:text="Soles (S/)"
+                                            android:layout_margin="8dp"
+                                            android:layout_weight="1"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"/>
+
+                                        <RadioButton
+                                            android:text="Dólares ($)"
+                                            android:layout_margin="8dp"
+                                            android:layout_weight="1"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"/>
+
+                                    </RadioGroup>
+
+                                    <TextView
+                                        android:text="Meses de Pago"
+                                        android:layout_margin="4dp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/blue1"
+                                        android:textSize="12sp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"/>
+
+                                    <Button
+                                        android:gravity="start|center"
+                                        android:hint="Meses..."
+                                        android:padding="8dp"
+                                        android:layout_margin="4dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"/>
+
+                                    <TextView
+                                        android:text="Meses de Gracia"
+                                        android:layout_margin="4dp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/blue1"
+                                        android:textSize="12sp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"/>
+
+                                    <Button
+                                        android:gravity="start|center"
+                                        android:hint="Meses..."
+                                        android:padding="8dp"
+                                        android:layout_margin="4dp"
+                                        android:background="@drawable/edit_text_style_1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"/>
+
+                                    <TextView
+                                        android:text="Cuota Mensual Estimada"
+                                        android:layout_margin="4dp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/blue1"
+                                        android:textSize="12sp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"/>
+
+                                    <TextView
+                                        android:text="S/ 0.00"
+                                        android:layout_margin="4dp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/blue1"
+                                        android:textSize="12sp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"/>
+
+                                    <LinearLayout
+                                        android:gravity="end"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <Button
+                                            android:layout_margin="8dp"
+                                            android:text="Completar Simulación"
+                                            android:padding="12dp"
+                                            android:textColor="@android:color/white"
+                                            android:background="@drawable/blue_button_style_ripple"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </ScrollView>
+
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_below="@id/simulationCard"
-        android:layout_above="@+id/cardBottom"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </androidx.recyclerview.widget.RecyclerView>
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardBottom"
-        android:layout_alignParentBottom="true"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
-        android:layout_margin="4dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/imgBackgroundButton"
-            android:src="@color/colorGradientEndRed"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </ImageView>
-
-        <LinearLayout
-            android:id="@+id/btnRequestLoan"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:textColor="@android:color/white"
-                android:layout_margin="12dp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:text="FINALIZAR SOLICITUD"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-        </LinearLayout>
-
 
     </androidx.cardview.widget.CardView>
 

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CareManager.CareLearning.ProfileLearningFragment">
+
+    <com.scwang.wave.MultiWaveHeader
+        android:id="@+id/waveHeader"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:mwhGradientAngle="145"
+        app:mwhStartColor="@color/gray1"
+        app:mwhCloseColor="@color/gray2"
+        app:mwhWaves="
+        310,0,1.7,1.3,5
+        310,0,1.7,1.3,0
+        310,0,1.7,1.3,5
+        310,0,1.7,1.3,0
+        310,0,1.7,1.3,5
+            310,0,1.7,1.3,
+            310,0,1.7,1.3,5"/>
+
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgProfile"
+                android:layout_margin="12dp"
+                android:layout_width="180dp"
+                android:layout_height="180dp"/>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:src="@drawable/foto_perfil"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"/>
+
+                    <LinearLayout
+                        android:padding="8dp"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textStyle="bold"
+                            android:text="Información Personal"
+                            android:textSize="16sp"
+                            android:layout_margin="4dp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textSize="11sp"
+                            android:id="@+id/txtName"
+                            android:text="NOMBRE: "
+                            android:layout_margin="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textSize="11sp"
+                            android:id="@+id/txtDate"
+                            android:text="FECHA DE NACIMIENTO: "
+                            android:layout_margin="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtEmail"
+                            android:textSize="11sp"
+                            android:text="CORREO: "
+                            android:layout_margin="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtDocumentNumber"
+                            android:text="Nº DE DOCUMENTO: "
+                            android:textSize="11sp"
+                            android:layout_margin="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtGender"
+                            android:text="SEXO: "
+                            android:textSize="11sp"
+                            android:layout_margin="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtAddress"
+                            android:text="DOMICILIO: "
+                            android:textSize="11sp"
+                            android:layout_margin="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

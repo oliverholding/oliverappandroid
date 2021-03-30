@@ -38,13 +38,14 @@ public class LoanRequestActivity extends AppCompatActivity {
     String product_key,institution_key, financial_institution_name,financial_institution_image,financial_institution_background_image,currentUid, request_id, simulation_verification,document_number;
     TextView txtProductName,txtFinancialInstitutionName,txtDocState,txtButton;
     DatabaseReference financialInstitutionsRef,expressLoanRef,toPath,userRef;
-    ImageView imgBackground,imgBackgroundButton,imgBackgroundSimulation,imgImageState;
+    ImageView imgBackground,imgBackgroundButton,btnArrowSimulation;
     CircleImageView imgProductImage,imgFinancialInstitution;
     LinearLayout btnRequestLoan;
     RecyclerView recyclerView;
     FirebaseAuth mAuth;
-    LinearLayout btnSimulation;
+    LinearLayout simulationLayout;
     RelativeLayout rootLayout;
+    String item_verify_1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,25 +68,29 @@ public class LoanRequestActivity extends AppCompatActivity {
         imgProductImage = findViewById(R.id.imgProductImage);
         imgBackgroundButton = findViewById(R.id.imgBackgroundButton);
         btnRequestLoan = findViewById(R.id.btnRequestLoan);
-        imgFinancialInstitution = findViewById(R.id.imgFinancialInstitution);
-        imgBackgroundSimulation = findViewById(R.id.imgBackgroundSimulation);
-        btnSimulation = findViewById(R.id.btnSimulation);
-        txtDocState = findViewById(R.id.txtDocState);
-        txtButton = findViewById(R.id.txtButton);
-        imgImageState = findViewById(R.id.imgImageState);
+        btnArrowSimulation = findViewById(R.id.btnArrowSimulation);
+        simulationLayout = findViewById(R.id.simulationLayout);
+
+        item_verify_1 = "close";
+        simulationLayout.setVisibility(View.GONE);
+
+        btnArrowSimulation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (item_verify_1.equals("close")) {
+                    btnArrowSimulation.setImageResource(R.drawable.blue_arrow_up_vector_asset);
+                    simulationLayout.setVisibility(View.VISIBLE);
+                    item_verify_1 = "open";
+
+                } else if (item_verify_1.equals("open")) {
+                    btnArrowSimulation.setImageResource(R.drawable.blue_arrow_down_vector_asset);
+                    simulationLayout.setVisibility(View.GONE);
+                    item_verify_1 = "close";
+                }
+            }
+        });
+
         rootLayout = findViewById(R.id.rootLayout);
-
-        recyclerView = findViewById(R.id.recyclerView);
-
-        recyclerView.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setReverseLayout(false);
-        linearLayoutManager.setStackFromEnd(false);
-        recyclerView.setLayoutManager(linearLayoutManager);
-
-        simulation_verification = "false";
-
-        showDocumentRequired();
 
         financialInstitutionsRef.child(institution_key).addValueEventListener(new ValueEventListener() {
             @Override
@@ -95,63 +100,16 @@ public class LoanRequestActivity extends AppCompatActivity {
                 financial_institution_background_image = dataSnapshot.child("financial_institution_background_image").getValue().toString();
                 txtFinancialInstitutionName.setText("Por "+financial_institution_name);
                 Picasso.with(LoanRequestActivity.this).load(financial_institution_background_image).fit().into(imgBackground);
-                Picasso.with(LoanRequestActivity.this).load(financial_institution_background_image).fit().into(imgBackgroundButton);
-                Picasso.with(LoanRequestActivity.this).load(financial_institution_background_image).fit().into(imgBackgroundSimulation);
-                Picasso.with(LoanRequestActivity.this).load(financial_institution_image).fit().into(imgFinancialInstitution);
 
                 financialInstitutionsRef.child(institution_key).child("Products").child(product_key).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         String product_name = dataSnapshot.child("product_name").getValue().toString();
-                        String product_short_description = dataSnapshot.child("product_short_description").getValue().toString();
-                        String product_completed_description = dataSnapshot.child("product_completed_description").getValue().toString();
                         String product_img = dataSnapshot.child("product_img").getValue().toString();
 
                         Picasso.with(LoanRequestActivity.this).load(product_img).fit().into(imgProductImage);
                         txtProductName.setText(product_name);
 
-                        userRef.child(currentUid).child(institution_key).child(product_key).addValueEventListener(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(DataSnapshot dataSnapshot) {
-                                if (dataSnapshot.child("Simulation").hasChild("expected_quote") && dataSnapshot.child("Simulation").hasChild("requested_amount") && dataSnapshot.child("Simulation").hasChild("requested_currency")
-                                        && dataSnapshot.child("Simulation").hasChild("requested_grace") && dataSnapshot.child("Simulation").hasChild("requested_month")) {
-
-                                    String requested_currency = dataSnapshot.child("Simulation").child("requested_currency").getValue().toString();
-                                    String requested_amount = dataSnapshot.child("Simulation").child("requested_amount").getValue().toString();
-                                    String requested_month = dataSnapshot.child("Simulation").child("requested_month").getValue().toString();
-
-                                    if (requested_currency.equals("PEN")) {
-                                        txtDocState.setText("Completado - S/ "+requested_amount+" a "+requested_month+" meses");
-                                    }
-                                    if (requested_currency.equals("USD")) {
-                                        txtDocState.setText("Completado - $ "+requested_amount+" a "+requested_month+" meses");
-                                    }
-
-                                    txtDocState.setTextColor(Color.GREEN);
-                                    txtButton.setText("MODIFICAR INFORMACIÓN");
-                                    imgImageState.setImageResource(R.drawable.espera);
-                                    simulation_verification = "true";
-
-                                    userRef.child(currentUid).addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(DataSnapshot dataSnapshot) {
-                                            document_number = dataSnapshot.child("document_number").getValue().toString();
-                                        }
-
-                                        @Override
-                                        public void onCancelled(DatabaseError databaseError) {
-
-                                        }
-                                    });
-                                }
-                            }
-
-                            @Override
-                            public void onCancelled(DatabaseError databaseError) {
-
-                            }
-                        });
-
                     }
 
                     @Override
@@ -167,140 +125,6 @@ public class LoanRequestActivity extends AppCompatActivity {
             }
         });
 
-        btnRequestLoan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (simulation_verification.equals("false")) {
-                    Snackbar.make(rootLayout, "Debes ingresar la información de la simulación", Snackbar.LENGTH_LONG);
-                } else {
-                    registerLoanRequest();
-                }
-
-            }
-        });
-
-        btnSimulation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoanRequestActivity.this, LoanSimulationActivity.class);
-                intent.putExtra("product_key",product_key);
-                intent.putExtra("institution_key",institution_key);
-                startActivity(intent);
-            }
-        });
-    }
-
-    private void registerLoanRequest() {
-
-        Calendar calForDate = Calendar.getInstance();
-        SimpleDateFormat currentDate = new SimpleDateFormat("ddMMyyyy");
-        String saveCurrentDate = currentDate.format(calForDate.getTime());
-
-        Calendar calForTime = Calendar.getInstance();
-        SimpleDateFormat currentTime = new SimpleDateFormat("HHmmss");
-        String saveCurrentTime = currentTime.format(calForTime.getTime());
-
-        Date date= new Date();
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(date);
-        final int day = cal.get(Calendar.DAY_OF_MONTH);
-        final int month = cal.get(Calendar.MONTH)+1;
-        final int year = cal.get(Calendar.YEAR);
-
-        Calendar calForTime2 = Calendar.getInstance();
-        SimpleDateFormat currentTime2 = new SimpleDateFormat("HH:mm:ss");
-        final String saveCurrentTime2 = currentTime2.format(calForTime2.getTime());
-
-        request_id = saveCurrentDate+saveCurrentTime;
-
-        expressLoanRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-                toPath.child(request_id+currentUid).setValue(dataSnapshot.getValue(), new DatabaseReference.CompletionListener() {
-                    @Override
-                    public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
-                        if (databaseError != null) {
-                            Toast.makeText(LoanRequestActivity.this, "Hubo un Error", Toast.LENGTH_SHORT).show();
-                        } else {
-
-                            toPath.child(request_id+currentUid).child("customer_id").setValue(currentUid);
-                            toPath.child(request_id+currentUid).child("product_id").setValue(product_key);
-                            toPath.child(request_id+currentUid).child("request_state").setValue("sent");
-                            toPath.child(request_id+currentUid).child("request_day").setValue(day+"");
-                            toPath.child(request_id+currentUid).child("request_month").setValue(month+"");
-                            toPath.child(request_id+currentUid).child("request_year").setValue(year+"");
-                            toPath.child(request_id+currentUid).child("requested_time").setValue(saveCurrentTime2);
-                            toPath.child(request_id+currentUid).child("requested_date").setValue(day+"/"+month+"/"+year);
-                            toPath.child(request_id+currentUid).child("customer_document_number").setValue(document_number);
-
-
-                            expressLoanRef.removeValue();
-                            Intent intent = new Intent(LoanRequestActivity.this, LoanRequestSentSuccessfullyActivity.class);
-                            intent.putExtra("product_key",product_key);
-                            intent.putExtra("institution_key",institution_key);
-                            startActivity(intent);
-                            finish();
-
-                        }
-                    }
-                });
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-    }
-
-    private void showDocumentRequired() {
-        Query query = financialInstitutionsRef.child(institution_key).child("Products").child(product_key).child("Required Documentation").orderByChild("step");
-        FirebaseRecyclerAdapter<DocumentRequiredModel, DocumentRequiredViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<DocumentRequiredModel, DocumentRequiredViewHolder>
-                (DocumentRequiredModel.class, R.layout.financial_institution_documentation_customer_product_required_item,DocumentRequiredViewHolder.class,query) {
-            @Override
-            protected void populateViewHolder(final DocumentRequiredViewHolder viewHolder, DocumentRequiredModel model, int position) {
-                final String postKey = getRef(position).getKey();
-                viewHolder.setDoc_description(model.getDoc_description());
-                viewHolder.setDoc_tittle(model.getDoc_tittle());
-                viewHolder.setStep(model.getStep());
-
-                viewHolder.txtDocName.setText(viewHolder.my_step+". "+viewHolder.my_doc_tittle);
-                Picasso.with(LoanRequestActivity.this).load(financial_institution_background_image).fit().into(viewHolder.imgBackground);
-
-                userRef.child(currentUid).child(institution_key).child(product_key).addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.hasChild(postKey)) {
-                            long n_files = dataSnapshot.child(postKey).getChildrenCount();
-                            viewHolder.txtDocState.setText(n_files+ " archivos Cargados con éxito");
-                            viewHolder.txtDocState.setTextColor(Color.GREEN);
-                            viewHolder.imgImageState.setImageResource(R.drawable.check);
-                            viewHolder.txtButtonAction.setText("AGREGAR MÁS ARCHIVOS");
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
-
-
-                viewHolder.btnActionButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(LoanRequestActivity.this, UploadDocumentationActivity.class);
-                        intent.putExtra("product_key",product_key);
-                        intent.putExtra("institution_key",institution_key);
-                        intent.putExtra("doc_key",postKey);
-                        startActivity(intent);
-                    }
-                });
-
-            }
-        };
-        recyclerView.setAdapter(firebaseRecyclerAdapter);
     }
 
     public static class DocumentRequiredViewHolder extends RecyclerView.ViewHolder {

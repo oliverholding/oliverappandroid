@@ -12,177 +12,96 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
+            android:padding="12dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <androidx.cardview.widget.CardView
-                android:layout_margin="8dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp"
+            <TextView
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="4dp"
+                android:text="Descripción del Préstamo"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"/>
 
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:padding="8dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:layout_margin="8dp"
-                        android:src="@drawable/prestamo_consumo"
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"/>
-
-                    <LinearLayout
-                        android:layout_weight="6"
-                        android:padding="4dp"
-                        android:orientation="vertical"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:textStyle="bold"
-                            android:textColor="@android:color/black"
-                            android:layout_margin="2dp"
-                            android:text="Descripción del Préstamo"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
-
-                        <TextView
-                            android:id="@+id/txtLendingDescription"
-                            android:layout_margin="2dp"
-                            android:text="product_description"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_margin="8dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp"
+            <TextView
+                android:id="@+id/txtLendingDescription"
+                android:layout_margin="4dp"
+                android:text="product_description"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"/>
 
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:padding="8dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:layout_margin="8dp"
-                        android:src="@drawable/prestamo_consumo"
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"/>
-
-                    <LinearLayout
-                        android:layout_weight="6"
-                        android:padding="4dp"
-                        android:orientation="vertical"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:textStyle="bold"
-                            android:textColor="@android:color/black"
-                            android:layout_margin="2dp"
-                            android:text="Características del Préstamo"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
-
-                        <TextView
-                            android:id="@+id/txtBenefit1"
-                            android:layout_margin="2dp"
-                            android:text="- benefit1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
-
-                        <TextView
-                            android:id="@+id/txtBenefit2"
-                            android:layout_margin="2dp"
-                            android:text="- benefit2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
-
-                        <TextView
-                            android:id="@+id/txtBenefit3"
-                            android:layout_margin="2dp"
-                            android:text="- benefit3"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
-
-                        <TextView
-                            android:id="@+id/txtBenefit4"
-                            android:layout_margin="2dp"
-                            android:text="- benefit4"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_margin="8dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp"
+            <TextView
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:textColor="@color/blue1"
+                android:maxLines="1"
+                android:text="- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"/>
 
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:padding="8dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="4dp"
+                android:text="Características del Préstamo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-                    <ImageView
-                        android:layout_margin="8dp"
-                        android:src="@drawable/prestamo_consumo"
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"/>
+            <TextView
+                android:id="@+id/txtBenefit1"
+                android:layout_margin="4dp"
+                android:text="- benefit1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-                    <LinearLayout
-                        android:layout_weight="6"
-                        android:padding="4dp"
-                        android:orientation="vertical"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/txtBenefit2"
+                android:layout_margin="4dp"
+                android:text="- benefit2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-                        <TextView
-                            android:textStyle="bold"
-                            android:textColor="@android:color/black"
-                            android:layout_margin="2dp"
-                            android:text="Monto mínimo de solicitud"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txtBenefit3"
+                android:layout_margin="4dp"
+                android:text="- benefit3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-                        <TextView
-                            android:id="@+id/txtMinAmount"
-                            android:layout_margin="2dp"
-                            android:text="Solicítalo desde S/ 0.00"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txtBenefit4"
+                android:layout_margin="4dp"
+                android:text="- benefit4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-                    </LinearLayout>
+            <TextView
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:textColor="@color/blue1"
+                android:maxLines="1"
+                android:text="- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
+            <TextView
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="4dp"
+                android:text="Monto mínimo de solicitud"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/txtMinAmount"
+                android:layout_margin="4dp"
+                android:text="Solicítalo desde S/ 0.00"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
         </LinearLayout>
 

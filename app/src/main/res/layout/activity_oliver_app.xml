@@ -55,6 +55,8 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:layout_marginStart="8dp"
+                    android:drawableStart="@drawable/movimientos_vector_asset"
                     android:text="Movimientos"
                     android:textColor="@color/blue1"
                     android:layout_weight="1"
@@ -68,6 +70,8 @@
                     android:layout_height="match_parent"/>
 
                 <TextView
+                    android:layout_marginStart="8dp"
+                    android:drawableStart="@drawable/perfil_vector_asset"
                     android:text="Perfil"
                     android:textColor="@color/blue1"
                     android:layout_weight="1"
