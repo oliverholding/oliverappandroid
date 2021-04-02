@@ -26,6 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.LendingProduct.FinancialProductModel;
 import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.LendingProduct.LendingDetailActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.LendingProduct.LoanRequestSentSuccessfullyActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.LendingProduct.LoanRequestsListActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 import com.squareup.picasso.Picasso;
 
@@ -37,6 +38,7 @@ public class FinancialProductLendingsListFragment extends Fragment {
     String post_key,financial_institution_background_image;
     DatabaseReference financialInstitutionsRef;
     RecyclerView recyclerView;
+    Button btnMyRequest;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -54,6 +56,17 @@ public class FinancialProductLendingsListFragment extends Fragment {
         linearLayoutManager.setReverseLayout(false);
         linearLayoutManager.setStackFromEnd(false);
         recyclerView.setLayoutManager(linearLayoutManager);
+
+        btnMyRequest = view.findViewById(R.id.btnMyRequest);
+
+        btnMyRequest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(getActivity(), LoanRequestsListActivity.class);
+                intent.putExtra("post_key",post_key);
+                startActivity(intent);
+            }
+        });
 
         showFinancialInstitutionLendings();
 

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="8dp"
+    app:cardMaxElevation="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:padding="8dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_margin="4dp"
+            android:text="dd/mm/yyyy"
+            android:gravity="end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgProduct"
+                android:src="@color/blue1"
+                android:layout_margin="4dp"
+                android:layout_weight="0.3"
+                android:layout_width="0dp"
+                android:layout_height="60dp"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txtProductName"
+                    android:textStyle="bold"
+                    android:text="Producto: Préstamo 000001"
+                    android:textColor="@color/blue1"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtRequestAmount"
+                    android:text="Monto Solicitado: S/ 0.00"
+                    android:textColor="@color/blue1"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+           android:layout_marginTop="22dp"
+            android:paddingStart="22dp"
+            android:paddingEnd="22dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_centerInParent="true"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="60dp"
+                android:background="@color/gray2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/imgStep1"
+                    android:src="@drawable/gray_circle_style"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"/>
+
+                <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/imgStep2"
+                    android:src="@drawable/gray_circle_style"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"/>
+
+                <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/imgStep3"
+                    android:src="@drawable/gray_circle_style"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:paddingStart="22dp"
+            android:paddingEnd="22dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txtStep1"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"/>
+
+                <TextView
+                    android:id="@+id/txtStep2"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"/>
+
+                <TextView
+                    android:id="@+id/txtStep3"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txtMessage"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_margin="8dp"
+            android:padding="8dp"
+            android:text="Tienes 00 días para aceptar el préstamo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnRequestDetail"
+            android:textColor="@android:color/white"
+            android:text="Ver condiciones del Préstamo"
+            android:background="@drawable/blue_button_style_ripple"
+            android:layout_margin="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

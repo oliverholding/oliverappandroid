@@ -7,7 +7,7 @@ android {
         applicationId "com.oalonedeveloper.oliver.oliverappandroidapp"
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 4
+        versionCode 7
         multiDexEnabled true
         versionName "1.0"
 
@@ -87,6 +87,7 @@ dependencies {
     implementation 'com.itextpdf:itextpdf:5.0.6'
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
 }
 
 apply plugin: 'com.google.gms.google-services'

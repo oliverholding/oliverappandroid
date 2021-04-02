@@ -51,7 +51,6 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/orange_button_style_ripple"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp"
@@ -66,7 +65,7 @@
 
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:text="Tutorial del Módulo"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -87,7 +86,6 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/orange_button_style_ripple"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp"
@@ -102,7 +100,7 @@
 
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:text=" Matriz Productos-Mercado"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -123,7 +121,6 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/orange_button_style_ripple"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp"
@@ -138,7 +135,7 @@
 
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:text=" Emisión de Boletas y Facturas"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -159,7 +156,6 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/orange_button_style_ripple"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp"
@@ -174,7 +170,7 @@
 
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:text="Créditos y Cobranzas"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -195,7 +191,6 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/orange_button_style_ripple"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp"
@@ -210,7 +205,7 @@
 
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:text="Soporte a Clientes y Fidelización"
                         android:layout_weight="1"
                         android:layout_width="0dp"

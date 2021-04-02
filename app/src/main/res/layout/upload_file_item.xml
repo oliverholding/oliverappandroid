@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardElevation="8dp"
-    app:cardCornerRadius="8dp"
-    android:layout_margin="4dp"
+    android:padding="8dp"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -15,12 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_margin="4dp"
-            android:layout_weight="0.4"
-            android:layout_width="0dp"
-            android:layout_height="40dp"/>
-
         <TextView
             android:id="@+id/txtFileName"
             android:text="FileName.Type"
@@ -29,13 +22,18 @@
             android:layout_height="wrap_content"/>
 
         <ImageView
+            android:src="@drawable/tacho_basura"
             android:id="@+id/btnDeleteFile"
             android:layout_margin="4dp"
-            android:layout_weight="0.5"
+            android:layout_weight="0.2"
             android:layout_width="0dp"
             android:layout_height="20dp"/>
 
-
     </LinearLayout>
 
-</androidx.cardview.widget.CardView>
+    <View
+        android:background="@color/gray1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+</LinearLayout>

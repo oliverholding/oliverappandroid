@@ -70,9 +70,9 @@ public class PlatformSelectionActivity extends AppCompatActivity {
         btnOliver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*Intent intent = new Intent(PlatformSelectionActivity.this, OliverAppActivity.class);
-                startActivity(intent);*/
-                Toast.makeText(PlatformSelectionActivity.this, "Acceso denegado", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(PlatformSelectionActivity.this, OliverAppActivity.class);
+                startActivity(intent);
+                //Toast.makeText(PlatformSelectionActivity.this, "Acceso denegado", Toast.LENGTH_SHORT).show();
             }
         });
 

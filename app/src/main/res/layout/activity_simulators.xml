@@ -52,7 +52,6 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/orange_button_style_ripple"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp"
@@ -67,7 +66,7 @@
 
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:text="Simulador de Costos y Precios"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -88,7 +87,6 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/orange_button_style_ripple"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp"
@@ -103,7 +101,7 @@
 
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:text="Análisis Costo-Volumen-Utilidad"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -124,7 +122,6 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/orange_button_style_ripple"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp"
@@ -139,7 +136,7 @@
 
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:text="Proyecciones de Ventas y Utilidades"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -160,7 +157,6 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/orange_button_style_ripple"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp"
@@ -175,7 +171,7 @@
 
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:text="Simulador de Cotizaciones a enviar"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -196,7 +192,6 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/orange_button_style_ripple"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp"
@@ -211,7 +206,7 @@
 
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:text="Análisis comparativo de Cotizaciones recibidas"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -232,7 +227,6 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/orange_button_style_ripple"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp"
@@ -247,7 +241,7 @@
 
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:text="Simulador de Tasas de Interés"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -268,7 +262,6 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/orange_button_style_ripple"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp"
@@ -283,7 +276,7 @@
 
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:text="Simulador de Apalancamiento Financiero"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -304,7 +297,6 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/orange_button_style_ripple"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp"
@@ -319,7 +311,7 @@
 
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:text="Análisis de la carga de trabajo y planificación de recursos"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -340,7 +332,6 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/orange_button_style_ripple"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp"
@@ -355,7 +346,7 @@
 
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:text="Análisis de Procesos"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -376,7 +367,6 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/orange_button_style_ripple"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp"
@@ -391,7 +381,7 @@
 
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:text="Simulador de Proyectos"
                         android:layout_weight="1"
                         android:layout_width="0dp"

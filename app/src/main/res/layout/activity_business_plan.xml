@@ -51,7 +51,6 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/orange_button_style_ripple"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp"
@@ -66,7 +65,7 @@
 
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:text="Sub-Plan Comercial"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -87,7 +86,6 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/orange_button_style_ripple"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp"
@@ -102,7 +100,7 @@
 
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:text="Sub-Plan de Producción / Operaciones"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -123,7 +121,6 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/orange_button_style_ripple"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp"
@@ -138,7 +135,7 @@
 
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:text="Sub-Plan de Recursos Humanos y Administración"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -157,7 +154,6 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/orange_button_style_ripple"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp"
@@ -172,7 +168,7 @@
 
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:text="Sub-Plan Financiero"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -191,7 +187,6 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/orange_button_style_ripple"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp"
@@ -206,7 +201,7 @@
 
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:text="Resumen Ejecutivo"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -225,7 +220,6 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/orange_button_style_ripple"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp"
@@ -240,7 +234,7 @@
 
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:text="Plan de Contingencia y de Continuidad del Negocio"
                         android:layout_weight="1"
                         android:layout_width="0dp"

@@ -85,14 +85,15 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_above="@+id/btnLoanRequest"
         android:layout_below="@+id/cardTop"
+        android:layout_above="@id/btnSendRequest"
         app:cardElevation="8dp"
         app:cardCornerRadius="8dp"
         android:layout_margin="18dp"
         android:layout_centerInParent="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
 
         <LinearLayout
             android:padding="4dp"
@@ -152,6 +153,7 @@
             </LinearLayout>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/simulationCardView"
                 android:layout_margin="8dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp"
@@ -164,11 +166,12 @@
                     android:layout_height="wrap_content">
 
                     <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/imgState1"
                         android:layout_alignParentEnd="true"
                         android:layout_margin="4dp"
-                        android:src="@color/redColor"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"/>
+                        android:src="@android:color/holo_red_dark"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"/>
 
                     <LinearLayout
                         android:orientation="vertical"
@@ -195,6 +198,7 @@
                             android:layout_height="wrap_content">
 
                             <TextView
+                                android:id="@+id/txtSimulationMessage"
                                 android:text="A la espera de tu información"
                                 android:layout_margin="4dp"
                                 android:layout_weight="1"
@@ -237,8 +241,10 @@
                                         android:layout_height="wrap_content"/>
 
                                     <EditText
+                                        android:id="@+id/edtAmount"
                                         android:hint="Monto..."
                                         android:padding="8dp"
+                                        android:inputType="numberDecimal"
                                         android:layout_margin="4dp"
                                         android:background="@drawable/edit_text_style_1"
                                         android:layout_width="match_parent"
@@ -250,6 +256,7 @@
                                         android:layout_height="wrap_content">
 
                                         <RadioButton
+                                            android:id="@+id/rdPen"
                                             android:text="Soles (S/)"
                                             android:layout_margin="8dp"
                                             android:layout_weight="1"
@@ -257,6 +264,7 @@
                                             android:layout_height="wrap_content"/>
 
                                         <RadioButton
+                                            android:id="@+id/rdUsd"
                                             android:text="Dólares ($)"
                                             android:layout_margin="8dp"
                                             android:layout_weight="1"
@@ -275,6 +283,7 @@
                                         android:layout_height="wrap_content"/>
 
                                     <Button
+                                        android:id="@+id/btnPaymentMonth"
                                         android:gravity="start|center"
                                         android:hint="Meses..."
                                         android:padding="8dp"
@@ -293,6 +302,7 @@
                                         android:layout_height="wrap_content"/>
 
                                     <Button
+                                        android:id="@+id/btnGraceMonth"
                                         android:gravity="start|center"
                                         android:hint="Meses..."
                                         android:padding="8dp"
@@ -311,11 +321,12 @@
                                         android:layout_height="wrap_content"/>
 
                                     <TextView
+                                        android:id="@+id/txtPayment"
                                         android:text="S/ 0.00"
                                         android:layout_margin="4dp"
                                         android:textStyle="bold"
                                         android:textColor="@color/blue1"
-                                        android:textSize="12sp"
+                                        android:textSize="14sp"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"/>
 
@@ -325,13 +336,15 @@
                                         android:layout_height="wrap_content">
 
                                         <Button
+                                            android:id="@+id/btnFinish"
                                             android:layout_margin="8dp"
                                             android:text="Completar Simulación"
                                             android:padding="12dp"
+                                            android:textSize="11sp"
                                             android:textColor="@android:color/white"
                                             android:background="@drawable/blue_button_style_ripple"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"/>
+                                            android:layout_width="match_parent"
+                                            android:layout_height="38dp"/>
 
                                     </LinearLayout>
 
@@ -345,15 +358,29 @@
 
                     </LinearLayout>
 
-
                 </RelativeLayout>
 
-
-
             </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </androidx.recyclerview.widget.RecyclerView>
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btnSendRequest"
+        android:text="Finalizar Solicitud"
+        android:textColor="@android:color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+        android:background="@drawable/blue_button_style_ripple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </RelativeLayout>

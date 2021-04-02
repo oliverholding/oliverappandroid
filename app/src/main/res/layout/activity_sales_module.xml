@@ -51,7 +51,6 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/orange_button_style_ripple"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp"
@@ -66,7 +65,7 @@
 
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:text="Mis Vendedores"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -87,7 +86,6 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/orange_button_style_ripple"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp"
@@ -102,7 +100,7 @@
 
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:text="Argumentarios de Ventas"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -123,7 +121,6 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/orange_button_style_ripple"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp"
@@ -138,7 +135,7 @@
 
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:text="Embudos de Ventas"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -159,7 +156,6 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/orange_button_style_ripple"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp"
@@ -174,7 +170,7 @@
 
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:text="Agenda de Citas"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -195,7 +191,6 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/orange_button_style_ripple"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="8dp"
@@ -210,7 +205,7 @@
 
                     <TextView
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:text="Proyección de Ventas"
                         android:layout_weight="1"
                         android:layout_width="0dp"

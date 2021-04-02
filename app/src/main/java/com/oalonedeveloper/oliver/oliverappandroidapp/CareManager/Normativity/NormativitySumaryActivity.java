@@ -112,9 +112,12 @@ public class NormativitySumaryActivity extends AppCompatActivity {
                     int norm_4 = dataSnapshot.child("Environmental").child("norm_4").getValue(Integer.class);
                     int  norm_5 = dataSnapshot.child("Environmental").child("norm_5").getValue(Integer.class);
                     int norm_6 = dataSnapshot.child("Environmental").child("norm_6").getValue(Integer.class);
+                    int norm_7 = dataSnapshot.child("Environmental").child("norm_7").getValue(Integer.class);
+                    int norm_8 = dataSnapshot.child("Environmental").child("norm_8").getValue(Integer.class);
+                    int norm_9 = dataSnapshot.child("Environmental").child("norm_9").getValue(Integer.class);
 
-                    double total_percent = (norm_1+norm_2+norm_3+norm_4+norm_5+norm_6);
-                    double total_percent_real = (total_percent/6)*100;
+                    double total_percent = (norm_1+norm_2+norm_3+norm_4+norm_5+norm_6+norm_7+norm_8+norm_9);
+                    double total_percent_real = (total_percent/9)*100;
                     String total_percent_st = decimalFormat.format(total_percent_real);
                     txtEnvironmentalNormativity.setText(total_percent_st+"%");
 
