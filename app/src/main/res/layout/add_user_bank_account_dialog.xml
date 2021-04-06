@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/rootLayout"
+        android:padding="12dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textColor="@color/blue1"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="AGREGAR NUEVA CUENTA BANCARIA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textColor="@color/blue1"
+            android:text="Selecciona la institución Financiera de tu cuenta:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnFinancialInstitutionName"
+            android:gravity="center|start"
+            android:hint="Institución Financiera..."
+            android:padding="8dp"
+            android:background="@drawable/edit_text_style_1"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textColor="@color/blue1"
+            android:text="Ingresa el número de Cuenta Bancario:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/edtCc"
+            android:inputType="number"
+            android:gravity="center|start"
+            android:hint="Número de Cuenta Bancario..."
+            android:padding="8dp"
+            android:background="@drawable/edit_text_style_1"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textColor="@color/blue1"
+            android:text="Ingresa el número de Cuenta Interancario:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/edtCci"
+            android:gravity="center|start"
+            android:inputType="number"
+            android:hint="Número de Cuenta Interancario..."
+            android:padding="8dp"
+            android:background="@drawable/edit_text_style_1"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:textColor="@color/blue1"
+            android:text="Moneda:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <RadioGroup
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rdPen"
+                android:layout_margin="8dp"
+                android:text="Soles"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/rdUsd"
+                android:layout_margin="8dp"
+                android:text="Dólares"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:text="REGISTRAR"
+            android:layout_margin="8dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/button_blue_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</ScrollView>

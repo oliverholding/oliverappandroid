@@ -11,6 +11,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CommercializationActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CommercializationTutorial.CommercializationTutorialActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Production.CriticalInventoryControl.CirticalInventoryControlActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Production.LeanManufacturing.LeanManufacturingActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Production.MachineryMaintenance.MachineryMaintenanceActivity;
@@ -23,7 +25,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class ProductionActivity extends AppCompatActivity {
 
-    CardView btnTool1,btnTool2,btnTool3,btnTool4,btnTool5,btnTool6,btnTool7,btnTool8;
+    CardView btnTool1,btnTool2,btnTool3,btnTool4,btnTool5,btnTool6,btnTool7,btnTool8,btnTool0;
     String post_key;
 
     @Override
@@ -41,7 +43,16 @@ public class ProductionActivity extends AppCompatActivity {
         btnTool6 = findViewById(R.id.btnTool6);
         btnTool7 = findViewById(R.id.btnTool7);
         btnTool8 = findViewById(R.id.btnTool8);
+        btnTool0 = findViewById(R.id.btnTool0);
 
+        btnTool0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProductionActivity.this, ProductionTutorialActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
         btnTool1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

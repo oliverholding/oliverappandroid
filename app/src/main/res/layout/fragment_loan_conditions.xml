@@ -26,53 +26,77 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content">
 
-               <TextView
-                   android:textColor="@color/blue1"
-                   android:textStyle="bold"
-                   android:text="CONDICIONES DEL PRÉSTAMO"
-                   android:layout_margin="4dp"
+               <LinearLayout
+                   android:orientation="horizontal"
                    android:layout_width="match_parent"
-                   android:layout_height="wrap_content"/>
+                   android:layout_height="wrap_content">
 
-               <TextView
-                   android:id="@+id/txtLoanAmount"
-                   android:textColor="@color/blue1"
-                   android:text="Monto del Préstamo: S/ 0.00"
-                   android:layout_margin="4dp"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"/>
+                   <TextView
+                       android:textColor="@color/blue1"
+                       android:textStyle="bold"
+                       android:text="CONDICIONES DEL PRÉSTAMO"
+                       android:layout_margin="4dp"
+                       android:layout_weight="1"
+                       android:layout_width="0dp"
+                       android:layout_height="wrap_content"/>
 
-               <TextView
-                   android:id="@+id/txtLoanMonth"
-                   android:textColor="@color/blue1"
-                   android:text="Duración del Préstamo: 00 Meses"
-                   android:layout_margin="4dp"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"/>
 
-               <TextView
-                   android:id="@+id/txtGraceMonth"
-                   android:textColor="@color/blue1"
-                   android:text="Período de Gracia: 00 Meses"
-                   android:layout_margin="4dp"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"/>
+                   <ImageView
+                       android:src="@drawable/blue_arrow_up_vector_asset"
+                       android:layout_weight="0.2"
+                       android:layout_width="0dp"
+                       android:layout_height="30dp"/>
 
-               <TextView
-                   android:id="@+id/txtTcea"
-                   android:textColor="@color/blue1"
-                   android:text="Tasa de Costo Efectivo Anual"
-                   android:layout_margin="4dp"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"/>
+               </LinearLayout>
 
-               <TextView
-                   android:id="@+id/txtReferenceDate"
-                   android:textColor="@color/blue1"
-                   android:text="Fecha Rerencial de Inicio de Pago: dd/mm/yyyy"
-                   android:layout_margin="4dp"
+               <LinearLayout
+                   android:orientation="vertical"
+                   android:id="@+id/conditionsLayout"
                    android:layout_width="match_parent"
-                   android:layout_height="wrap_content"/>
+                   android:layout_height="wrap_content">
+
+                   <TextView
+                       android:id="@+id/txtLoanAmount"
+                       android:textColor="@color/blue1"
+                       android:text="Monto del Préstamo: S/ 0.00"
+                       android:layout_margin="4dp"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"/>
+
+                   <TextView
+                       android:id="@+id/txtLoanMonth"
+                       android:textColor="@color/blue1"
+                       android:text="Duración del Préstamo: 00 Meses"
+                       android:layout_margin="4dp"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"/>
+
+                   <TextView
+                       android:id="@+id/txtGraceMonth"
+                       android:textColor="@color/blue1"
+                       android:text="Período de Gracia: 00 Meses"
+                       android:layout_margin="4dp"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"/>
+
+                   <TextView
+                       android:id="@+id/txtTcea"
+                       android:textColor="@color/blue1"
+                       android:text="Tasa de Costo Efectivo Anual"
+                       android:layout_margin="4dp"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"/>
+
+                   <TextView
+                       android:id="@+id/txtReferenceDate"
+                       android:textColor="@color/blue1"
+                       android:text="Fecha Rerencial de Inicio de Pago: dd/mm/yyyy"
+                       android:layout_margin="4dp"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"/>
+
+               </LinearLayout>
+
 
            </LinearLayout>
 
@@ -220,14 +244,35 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <Button
-            android:id="@+id/btnContinue"
-            android:text="Continuar"
-            android:textColor="@android:color/white"
-            android:background="@drawable/blue_button_style_ripple"
-            android:layout_margin="4dp"
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtCancelLoan"
+                android:text="RECHAZAR"
+                android:gravity="center"
+                android:textColor="@color/redColor"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnContinue"
+                android:text="Continuar"
+                android:textColor="@android:color/white"
+                android:background="@drawable/blue_button_style_ripple"
+                android:layout_margin="4dp"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
 
     </LinearLayout>
 

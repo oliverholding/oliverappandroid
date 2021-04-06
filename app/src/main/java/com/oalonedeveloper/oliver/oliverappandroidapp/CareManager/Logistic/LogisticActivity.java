@@ -11,6 +11,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CommercializationActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CommercializationTutorial.CommercializationTutorialActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.AccountsNoPaid.AccountsNoPaidMonthlyActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.AccountsToPaid.AccountsToPaidMonthlyActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.Budget.BudgetActivity;
@@ -33,7 +35,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class LogisticActivity extends AppCompatActivity {
 
-    CardView btnTool1,btnTool2,btnTool3,btnTool4,btnTool5,btnTool6,btnTool7,btnTool8,btnTool9;
+    CardView btnTool1,btnTool2,btnTool3,btnTool4,btnTool5,btnTool6,btnTool7,btnTool8,btnTool9,btnTool0;
     String post_key;
 
     @Override
@@ -43,6 +45,7 @@ public class LogisticActivity extends AppCompatActivity {
 
         post_key = getIntent().getExtras().getString("post_key");
 
+        btnTool0 = findViewById(R.id.btnTool0);
         btnTool1 = findViewById(R.id.btnTool1);
         btnTool2 = findViewById(R.id.btnTool2);
         btnTool3 = findViewById(R.id.btnTool3);
@@ -53,6 +56,14 @@ public class LogisticActivity extends AppCompatActivity {
         btnTool8 = findViewById(R.id.btnTool8);
         btnTool9 = findViewById(R.id.btnTool9);
 
+        btnTool0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LogisticActivity.this, LogisticTutorialActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
         btnTool1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

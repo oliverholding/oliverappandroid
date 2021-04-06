@@ -109,6 +109,7 @@ public class LoanRequestsListActivity extends AppCompatActivity {
         showRequestLoan();
     }
 
+    String request_id;
     private void showRequestLoan() {
         Query query = financialInstitutionsRef.child(post_key).child("Loan Requests").orderByChild("customer_id").equalTo(currentUid);
         FirebaseRecyclerAdapter<RequestLoanModel, RequestsLoanViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<RequestLoanModel, RequestsLoanViewHolder>
@@ -116,6 +117,7 @@ public class LoanRequestsListActivity extends AppCompatActivity {
             @Override
             protected void populateViewHolder(final RequestsLoanViewHolder viewHolder, RequestLoanModel model, int position) {
                 final String postKey = getRef(position).getKey();
+                request_id = postKey;
                 viewHolder.setCustomer_id(model.getCustomer_id());
                 viewHolder.setDesgravamen_rate(model.getDesgravamen_rate());
                 viewHolder.setDocument_number(model.getDocument_number());
@@ -215,6 +217,10 @@ public class LoanRequestsListActivity extends AppCompatActivity {
                                                 expiration_days_ago = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
                                                 expiration_days_ago = Math.abs(expiration_days_ago);
 
+                                                if (expiration_days_ago < 0) {
+                                                    financialInstitutionsRef.child(post_key).child("Loan Requests").child(postKey).child("request_state").setValue("canceled");
+                                                }
+
                                                 viewHolder.txtMessage.setText("Tienes "+expiration_days_ago+" días para aceptar el préstamo");
 
                                             } catch (ParseException e) {
@@ -292,10 +298,13 @@ public class LoanRequestsListActivity extends AppCompatActivity {
                     viewHolder.txtStep2.setTypeface(null, Typeface.BOLD);
 
                     viewHolder.imgStep3.setImageResource(R.drawable.check_azul);
-                    viewHolder.txtStep3.setText("Préstamo Desembolsado");
+                    viewHolder.txtStep3.setText("Por Desembolsar");
                     viewHolder.txtStep3.setTextColor(Color.BLACK);
                     viewHolder.btnRequestDetail.setVisibility(View.VISIBLE);
                     viewHolder.txtMessage.setVisibility(View.GONE);
+                    viewHolder.txtStep3.setTypeface(null, Typeface.BOLD);
+
+                    viewHolder.btnRequestDetail.setText("VER DETALLES DEL PRÉSTAMO");
                 }
 
                 financialInstitutionsRef.child(post_key).child("Loan Requests").child(postKey).child("Simulation").addValueEventListener(new ValueEventListener() {
@@ -323,26 +332,74 @@ public class LoanRequestsListActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
 
-                        financialInstitutionsRef.child(post_key).child("Loan Requests").child(postKey).addValueEventListener(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(DataSnapshot dataSnapshot) {
-                                if (dataSnapshot.hasChild("operation_id")) {
-                                    String operation_id = dataSnapshot.child("operation_id").getValue().toString();
+                        if (viewHolder.my_request_state.equals("approved")) {
 
-                                    Intent intent = new Intent(LoanRequestsListActivity.this,LendingConditionsActivity.class);
-                                    intent.putExtra("post_key",post_key);
-                                    intent.putExtra("operation_id",operation_id);
-                                    startActivity(intent);
+                            financialInstitutionsRef.child(post_key).child("Loan Requests").child(postKey).addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.hasChild("operation_id")) {
+                                        String operation_id = dataSnapshot.child("operation_id").getValue().toString();
+
+                                        Intent intent = new Intent(LoanRequestsListActivity.this,LendingConditionsActivity.class);
+                                        intent.putExtra("post_key",post_key);
+                                        intent.putExtra("request_id",postKey);
+                                        intent.putExtra("operation_id",operation_id);
+                                        startActivity(intent);
+
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
 
                                 }
-                            }
+                            });
 
-                            @Override
-                            public void onCancelled(DatabaseError databaseError) {
+                        }
+                        if (viewHolder.my_request_state.equals("ready")) {
 
-                            }
-                        });
+                            financialInstitutionsRef.child(post_key).child("Loan Requests").child(postKey).addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.hasChild("operation_id")) {
+                                        final String operation_id = dataSnapshot.child("operation_id").getValue().toString();
 
+                                        lendingRef.child(operation_id).addListenerForSingleValueEvent(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                                String lending_state = dataSnapshot.child("lending_state").getValue().toString();
+
+                                                if (lending_state.equals("approved")) {
+                                                    Intent intent = new Intent(LoanRequestsListActivity.this, LoanInProcessToGetActivity.class);
+                                                    intent.putExtra("operation_id",operation_id);
+                                                    intent.putExtra("institution_key", post_key);
+                                                    startActivity(intent);
+                                                }
+                                                if (lending_state.equals("ready")) {
+                                                    Intent intent = new Intent(LoanRequestsListActivity.this, LoanBillsAndDetailsActivity.class);
+                                                    intent.putExtra("product_key",viewHolder.my_product_id);
+                                                    intent.putExtra("institution_key", post_key);
+                                                    intent.putExtra("operation_id",operation_id);
+                                                    startActivity(intent);
+                                                }
+
+                                            }
+
+                                            @Override
+                                            public void onCancelled(DatabaseError databaseError) {
+
+                                            }
+                                        });
+
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+
+                                }
+                            });
+                        }
                     }
                 });
 
@@ -353,9 +410,9 @@ public class LoanRequestsListActivity extends AppCompatActivity {
 
     public static class RequestsLoanViewHolder extends RecyclerView.ViewHolder {
         View mView;
-        String my_customer_id,my_document_number,my_product_id,my_product_img,my_product_name,my_request_day,my_request_month,my_request_state,my_requested_date,my_requested_time;
+        String my_customer_id,my_document_number,my_product_id,my_product_img,my_product_name,my_request_day,my_request_month,my_request_state,my_requested_date,my_requested_time,my_product_tea;
 
-        int my_desgravamen_rate,my_product_fixed_fee,my_product_tea,my_request_year;
+        int my_desgravamen_rate,my_product_fixed_fee,my_request_year;
 
         CircleImageView imgProduct;
         TextView txtProductName,txtStep1,txtStep2,txtStep3,txtRequestAmount,txtDate,txtMessage;
@@ -433,7 +490,7 @@ public class LoanRequestsListActivity extends AppCompatActivity {
         }
 
 
-        public void setProduct_tea(int product_tea) {
+        public void setProduct_tea(String  product_tea) {
             my_product_tea = product_tea;
         }
 

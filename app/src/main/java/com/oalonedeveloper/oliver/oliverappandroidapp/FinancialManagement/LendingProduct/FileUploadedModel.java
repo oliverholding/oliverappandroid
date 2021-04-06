@@ -7,10 +7,10 @@ public class FileUploadedModel {
     public FileUploadedModel() {
     }
 
-    public FileUploadedModel(String url, String file_name, String doc_tittle) {
+    public FileUploadedModel(String url, String file_name, String doc_title) {
         this.url = url;
         this.file_name = file_name;
-        this.doc_tittle = doc_tittle;
+        this.doc_tittle = doc_title;
     }
 
     public String getUrl() {

@@ -23,7 +23,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class SalesModuleActivity extends AppCompatActivity {
 
-    CardView btnTool0,btnTool1,btnTool2,btnTool3,btnTool4;
+    CardView btnTool0,btnTool1,btnTool2,btnTool3,btnTool4,btnTool00;
     String post_key;
 
     @Override
@@ -39,6 +39,7 @@ public class SalesModuleActivity extends AppCompatActivity {
         btnTool2 = findViewById(R.id.btnTool2);
         btnTool3 = findViewById(R.id.btnTool3);
         btnTool4 = findViewById(R.id.btnTool4);
+        btnTool00 = findViewById(R.id.btnTool00);
 
         btnTool0.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +77,14 @@ public class SalesModuleActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SalesModuleActivity.this, SalesProjectionActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+        btnTool00.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SalesModuleActivity.this, SalesModuleTutorialActivity.class);
                 intent.putExtra("post_key", post_key);
                 startActivity(intent);
             }

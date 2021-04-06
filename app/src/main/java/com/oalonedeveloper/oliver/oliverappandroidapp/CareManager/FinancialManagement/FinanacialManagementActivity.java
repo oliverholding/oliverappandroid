@@ -24,7 +24,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class FinanacialManagementActivity extends AppCompatActivity {
 
-    CardView btnTool1,btnTool2,btnTool3,btnTool4,btnTool5,btnTool6,btnTool7,btnTool8;
+    CardView btnTool1,btnTool2,btnTool3,btnTool4,btnTool5,btnTool6,btnTool7,btnTool8,btnTool0;
     String post_key;
 
     @Override
@@ -42,7 +42,16 @@ public class FinanacialManagementActivity extends AppCompatActivity {
         btnTool6 = findViewById(R.id.btnTool6);
         btnTool7 = findViewById(R.id.btnTool7);
         btnTool8 = findViewById(R.id.btnTool8);
+        btnTool0 = findViewById(R.id.btnTool0);
 
+        btnTool0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FinanacialManagementActivity.this, FinanceTutorialActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
         btnTool1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

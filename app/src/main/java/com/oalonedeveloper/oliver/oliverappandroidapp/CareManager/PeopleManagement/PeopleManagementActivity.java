@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CommercializationActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CommercializationTutorial.CommercializationTutorialActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.Evaluation360.JobProfilesEvaluationsActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.JobProfiles.JobProfilesActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.PeopleManagement.PersonalFiles.JobProfileFilesActivity;
@@ -16,7 +18,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class PeopleManagementActivity extends AppCompatActivity {
 
-    CardView btnTool1,btnTool2,btnTool3,btnTool4,btnTool5;
+    CardView btnTool1,btnTool2,btnTool3,btnTool4,btnTool5,btnTool0;
     String post_key;
 
     @Override
@@ -31,7 +33,16 @@ public class PeopleManagementActivity extends AppCompatActivity {
         btnTool3 = findViewById(R.id.btnTool3);
         btnTool4 = findViewById(R.id.btnTool4);
         btnTool5 = findViewById(R.id.btnTool5);
+        btnTool0 = findViewById(R.id.btnTool0);
 
+        btnTool0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PeopleManagementActivity.this, PeopleManagementTutorialActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
         btnTool1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

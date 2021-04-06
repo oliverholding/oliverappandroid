@@ -1,4 +1,4 @@
-package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CommercializationTutorial;
+package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,12 +11,14 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CommercializationTutorial.SliderAdapter;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CommercializationTutorial.SliderItem;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CommercializationTutorialActivity extends AppCompatActivity {
+public class SalesModuleTutorialActivity extends AppCompatActivity {
 
     private ViewPager2 viewPager2;
     Handler slideHandler = new Handler();
@@ -24,19 +26,18 @@ public class CommercializationTutorialActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_commercialization_tutorial);
+        setContentView(R.layout.activity_sales_module_tutorial);
 
         viewPager2 = findViewById(R.id.viewPagerImageSlider);
 
         List<SliderItem> sliderItems = new ArrayList<>();
-        sliderItems.add(new SliderItem("https://oliver.com.pe/wp-content/uploads/2021/04/Mesa-de-trabajo-1.png"));
-        sliderItems.add(new SliderItem("https://oliver.com.pe/wp-content/uploads/2021/04/Mesa-de-trabajo-2.png"));
-        sliderItems.add(new SliderItem("https://oliver.com.pe/wp-content/uploads/2021/04/Mesa-de-trabajo-3.png"));
-        sliderItems.add(new SliderItem("https://oliver.com.pe/wp-content/uploads/2021/04/Mesa-de-trabajo-4.png"));
-        sliderItems.add(new SliderItem("https://oliver.com.pe/wp-content/uploads/2021/04/Mesa-de-trabajo-6.png"));
-        sliderItems.add(new SliderItem("https://oliver.com.pe/wp-content/uploads/2021/04/Mesa-de-trabajo-7.png"));
-        sliderItems.add(new SliderItem("https://oliver.com.pe/wp-content/uploads/2021/04/Mesa-de-trabajo-8.png"));
-        sliderItems.add(new SliderItem("https://oliver.com.pe/wp-content/uploads/2021/04/Mesa-de-trabajo-9.png"));
+        sliderItems.add(new SliderItem("https://oliver.com.pe/wp-content/uploads/2021/04/Mesa-de-trabajo-10.png"));
+        sliderItems.add(new SliderItem("https://oliver.com.pe/wp-content/uploads/2021/04/Mesa-de-trabajo-11.png"));
+        sliderItems.add(new SliderItem("https://oliver.com.pe/wp-content/uploads/2021/04/Mesa-de-trabajo-12.png"));
+        sliderItems.add(new SliderItem("https://oliver.com.pe/wp-content/uploads/2021/04/Mesa-de-trabajo-13.png"));
+        sliderItems.add(new SliderItem("https://oliver.com.pe/wp-content/uploads/2021/04/Mesa-de-trabajo-14.png"));
+        sliderItems.add(new SliderItem("https://oliver.com.pe/wp-content/uploads/2021/04/Mesa-de-trabajo-15.png"));
+
 
 
         viewPager2.setAdapter(new SliderAdapter(sliderItems,viewPager2,this));

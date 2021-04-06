@@ -43,6 +43,41 @@
             </LinearLayout>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/btnTool00"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:src="@drawable/tutorial"
+                        android:layout_weight="0.2"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:text="Tutorial del Módulo"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:id="@+id/btnTool0"
                 app:cardElevation="8dp"
                 app:cardCornerRadius="8dp"

@@ -2,12 +2,12 @@ package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercializa
 
 public class SliderItem {
 
-    private int image;
+    private String image;
 
-    SliderItem(int image) {
+    public SliderItem(String image) {
         this.image = image;
     }
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 }

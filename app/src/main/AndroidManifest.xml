@@ -7,7 +7,6 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <meta-data
@@ -21,7 +20,15 @@
         android:roundIcon="@drawable/oliver_redondo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FinancialManagement.LendingProduct.LendingConditionsActivity"></activity>
+        <activity android:name=".CareManager.FinancialManagement.FinanceTutorialActivity"></activity>
+        <activity android:name=".CareManager.Normativity.NormativityTutorialActivity" />
+        <activity android:name=".CareManager.PeopleManagement.PeopleManagementTutorialActivity" />
+        <activity android:name=".CareManager.Production.ProductionTutorialActivity" />
+        <activity android:name=".CareManager.Logistic.LogisticTutorialActivity" />
+        <activity android:name=".CareManager.SalesModule.SalesModuleTutorialActivity" />
+        <activity android:name=".FinancialManagement.LendingProduct.LoanBillsAndDetailsActivity" />
+        <activity android:name=".FinancialManagement.LendingProduct.LoanInProcessToGetActivity" />
+        <activity android:name=".FinancialManagement.LendingProduct.LendingConditionsActivity" />
         <activity android:name=".FinancialManagement.LendingProduct.LoanRequestsListActivity" />
         <activity android:name=".CareManager.ElectronicBills.ElectronicBillsActivity" />
         <activity android:name=".CareManager.Commercialization.CommercializationTutorial.CommercializationTutorialActivity" />

@@ -2,14 +2,14 @@ package com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.Lendi
 
 public class RequestLoanModel {
 
-    String customer_id,document_number,product_id,product_img,product_name,request_day,request_month,request_state,requested_date,requested_time;
+    String customer_id,document_number,product_id,product_img,product_name,request_day,request_month,request_state,requested_date,requested_time,product_tea;
 
-    int desgravamen_rate,product_fixed_fee,product_tea,request_year;
+    int desgravamen_rate,product_fixed_fee,request_year;
 
     public RequestLoanModel() {
     }
 
-    public RequestLoanModel(String customer_id, String document_number, String product_id, String product_img, String product_name, String request_day, String request_month, String request_state, String requested_date, String requested_time, int desgravamen_rate, int product_fixed_fee, int product_tea, int request_year) {
+    public RequestLoanModel(String customer_id, String document_number, String product_id, String product_img, String product_name, String request_day, String request_month, String request_state, String requested_date, String requested_time, String product_tea, int desgravamen_rate, int product_fixed_fee, int request_year) {
         this.customer_id = customer_id;
         this.document_number = document_number;
         this.product_id = product_id;
@@ -122,11 +122,11 @@ public class RequestLoanModel {
         this.product_fixed_fee = product_fixed_fee;
     }
 
-    public int getProduct_tea() {
+    public String getProduct_tea() {
         return product_tea;
     }
 
-    public void setProduct_tea(int product_tea) {
+    public void setProduct_tea(String product_tea) {
         this.product_tea = product_tea;
     }
 

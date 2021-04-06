@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -24,7 +23,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
-import com.oalonedeveloper.oliver.oliverappandroidapp.RegistrationData.RegisterData2Fragment;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -32,7 +30,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 
-public class LoanConditionsFragment extends Fragment {
+public class LoanReadyDetailsFragment extends Fragment {
 
     ArrayList<LendingSimulationModel> list;
     RecyclerView recyclerView;
@@ -42,17 +40,13 @@ public class LoanConditionsFragment extends Fragment {
     int day,month,year,payment_year;
     String capital_st,amortization_st,interest_st,desgravament_st,fee_st,total_quote_st,fixed_quote_st;
     DecimalFormat decimalFormat;
-    CheckBox checkBox;
-    Button btnContinue;
     RelativeLayout rootLayout;
-    Fragment fragment2;
-    LinearLayout conditionsLayout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_loan_conditions, container, false);
+        View view = inflater.inflate(R.layout.fragment_loan_ready_details, container, false);
 
         operation_id = getActivity().getIntent().getExtras().getString("operation_id");
         post_key = getActivity().getIntent().getExtras().getString("post_key");
@@ -79,12 +73,8 @@ public class LoanConditionsFragment extends Fragment {
         txtGraceMonth = view.findViewById(R.id.txtGraceMonth);
         txtTcea = view.findViewById(R.id.txtTcea);
         txtReferenceDate = view.findViewById(R.id.txtReferenceDate);
-        checkBox = view.findViewById(R.id.checkBox);
-        btnContinue = view.findViewById(R.id.btnContinue);
         txtCancelLoan = view.findViewById(R.id.txtCancelLoan);
-        conditionsLayout = view.findViewById(R.id.conditionsLayout);
 
-        fragment2 = new LoanContractFragment();
 
         Date date= new Date();
         Calendar cal = Calendar.getInstance();
@@ -93,7 +83,6 @@ public class LoanConditionsFragment extends Fragment {
         month = cal.get(Calendar.MONTH)+1;
         year = cal.get(Calendar.YEAR);
 
-        btnContinue.setVisibility(View.GONE);
 
         lendingRef.child(operation_id).addValueEventListener(new ValueEventListener() {
             @Override
@@ -128,12 +117,9 @@ public class LoanConditionsFragment extends Fragment {
                     txtLoanAmount.setText("Monto del Préstamo: $ "+issuing_amount);
                 }
 
-                double tcea_db = Double.parseDouble(issuing_tcea);
-                String tcea_st = decimalFormat.format(tcea_db);
-
                 txtLoanMonth.setText("Duración del Préstamo: "+issuing_lending_month+" meses");
                 txtGraceMonth.setText("Período de Gracia: "+issuing_grace_month+" meses");
-                txtTcea.setText("Tasa de Costo Efectivo Anual: "+tcea_st+"%");
+                txtTcea.setText("Tasa de Costo Efectivo Anual: "+issuing_tcea+"%");
                 txtReferenceDate.setText("Fecha Rerencial de Inicio de Pago: ");
 
                 int issuing_month_int = Integer.parseInt(issuing_month);
@@ -158,8 +144,6 @@ public class LoanConditionsFragment extends Fragment {
                         String document_number = dataSnapshot.child("document_number").getValue().toString();
                         String document_type = dataSnapshot.child("document_type").getValue().toString();
                         String fullname = dataSnapshot.child("fullname").getValue().toString();
-
-                        checkBox.setText("Yo, "+fullname+" con "+document_type+": "+document_number+" afirmo que estoy de acuerdo con estas condiciones.");
 
                     }
 
@@ -293,69 +277,7 @@ public class LoanConditionsFragment extends Fragment {
             }
         });
 
-        checkBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (checkBox.isChecked()) {
-                    btnContinue.setVisibility(View.VISIBLE);
 
-                } else {
-                    btnContinue.setVisibility(View.GONE);
-                }
-            }
-        });
-
-        btnContinue.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (checkBox.isChecked()) {
-                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment2).commit();
-
-                } else {
-                    Snackbar.make(rootLayout,"Debes aceptar las condiciones",Snackbar.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-        txtCancelLoan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                final AlertDialog dialog = new AlertDialog.Builder(getActivity()).create();
-
-                LayoutInflater inflater = LayoutInflater.from(getActivity());
-                View finance_method = inflater.inflate(R.layout.decline_loan_dialog,null);
-
-                Button btnReturn;
-                TextView txtReject;
-
-                btnReturn = finance_method.findViewById(R.id.btnReturn);
-                txtReject = finance_method.findViewById(R.id.txtReject);
-
-                btnReturn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        dialog.dismiss();
-                    }
-                });
-
-                txtReject.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        financialInstitutionsRef.child(post_key).child("Loan Requests").child(request_id).child("request_state").setValue("canceled");
-                        Intent intent = new Intent(getActivity(),LoanRequestsListActivity.class);
-                        intent.putExtra("post_key",post_key);
-                        startActivity(intent);
-                        getActivity().finish();
-                        dialog.dismiss();
-                    }
-                });
-
-                dialog.setView(finance_method);
-                dialog.show();
-
-            }
-        });
 
         return view;
     }

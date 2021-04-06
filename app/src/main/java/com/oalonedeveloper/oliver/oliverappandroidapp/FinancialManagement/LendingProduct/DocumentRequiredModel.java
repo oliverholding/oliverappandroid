@@ -2,14 +2,14 @@ package com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.Lendi
 
 public class DocumentRequiredModel {
 
-    String doc_description,doc_tittle,step;
+    String doc_description,doc_title,step;
 
     public DocumentRequiredModel() {
     }
 
     public DocumentRequiredModel(String doc_description, String doc_tittle, String step) {
         this.doc_description = doc_description;
-        this.doc_tittle = doc_tittle;
+        this.doc_title = doc_tittle;
         this.step = step;
     }
 
@@ -21,12 +21,12 @@ public class DocumentRequiredModel {
         this.doc_description = doc_description;
     }
 
-    public String getDoc_tittle() {
-        return doc_tittle;
+    public String getDoc_title() {
+        return doc_title;
     }
 
-    public void setDoc_tittle(String doc_tittle) {
-        this.doc_tittle = doc_tittle;
+    public void setDoc_title(String doc_title) {
+        this.doc_title = doc_title;
     }
 
     public String getStep() {

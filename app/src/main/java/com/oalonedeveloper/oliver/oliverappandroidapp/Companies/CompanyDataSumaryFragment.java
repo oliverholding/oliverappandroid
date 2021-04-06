@@ -211,6 +211,9 @@ public class CompanyDataSumaryFragment extends Fragment {
                                             txtPersonalData.setText("Datos del Negocio completado");
                                             txtPersonalData.setTextColor(Color.GREEN);
                                             personal_data_verification = "true";
+
+                                            continueWithoutVerification();
+
                                             loadingBar.dismiss();
                                         }
                                     } else if (document_number.length() != 11) {
@@ -372,6 +375,26 @@ public class CompanyDataSumaryFragment extends Fragment {
         });
 
         return view;
+    }
+
+    private void continueWithoutVerification() {
+
+        userRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                razon_social = dataSnapshot.child("commercial_name").getValue().toString();
+                contribuyente_tipo = "";
+                contribuyente_estado = "Desconocido";
+                domicilio_fiscal = "Desconocido";
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
     }
 
     private void sendEmail() {
@@ -576,7 +599,7 @@ public class CompanyDataSumaryFragment extends Fragment {
         txtDocMessage = add_bank_account.findViewById(R.id.txtDocMessage);
         btnReport = add_bank_account.findViewById(R.id.btnReport);
 
-        txtDocMessage.setText("EL DOCUMENTO "+document_number+" HA SIDO REGISTRADO POR OTRO USUARIO DE OLIVER BANK");
+        txtDocMessage.setText("EL DOCUMENTO "+document_number+" HA SIDO REGISTRADO POR OTRO USUARIO");
 
         btnReport.setOnClickListener(new View.OnClickListener() {
             @Override

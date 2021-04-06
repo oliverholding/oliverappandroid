@@ -59,7 +59,7 @@ import in.galaxyofandroid.spinerdialog.SpinnerDialog;
 public class LoanRequestActivity extends AppCompatActivity {
 
     String product_key,institution_key, financial_institution_name,financial_institution_image,financial_institution_background_image,currentUid, downloadUrl, product_img,document_number,
-            product_name;
+            product_name,product_tea_st;
     TextView txtProductName,txtFinancialInstitutionName,txtText1,txtText2,txtSimulationMessage;
     DatabaseReference financialInstitutionsRef,expressLoanRef,toPath,userRef;
     ImageView imgBackground,imgBackgroundButton,btnArrowSimulation;
@@ -235,7 +235,8 @@ public class LoanRequestActivity extends AppCompatActivity {
         financialInstitutionsRef.child(institution_key).child("Products").child(product_key).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                product_tea = dataSnapshot.child("product_tea").getValue(Double.class);
+                product_tea_st = dataSnapshot.child("product_tea").getValue().toString();
+                product_tea = Double.parseDouble(product_tea_st);
                 product_min_capital = dataSnapshot.child("product_min_capital").getValue(Double.class);
 
                 product_min_month = dataSnapshot.child("product_min_month").getValue(Integer.class);
@@ -441,7 +442,7 @@ public class LoanRequestActivity extends AppCompatActivity {
                                     toPath.child(timestamp+currentUid).child("product_id").setValue(product_key);
                                     toPath.child(timestamp+currentUid).child("product_img").setValue(product_img);
                                     toPath.child(timestamp+currentUid).child("product_name").setValue(product_name);
-                                    toPath.child(timestamp+currentUid).child("product_tea").setValue(product_tea);
+                                    toPath.child(timestamp+currentUid).child("product_tea").setValue(product_tea+"");
                                     toPath.child(timestamp+currentUid).child("request_day").setValue(day+"");
                                     toPath.child(timestamp+currentUid).child("request_month").setValue(month+"");
                                     toPath.child(timestamp+currentUid).child("request_year").setValue(year);
@@ -480,7 +481,7 @@ public class LoanRequestActivity extends AppCompatActivity {
             protected void populateViewHolder(final DocumentRequiredViewHolder viewHolder, DocumentRequiredModel model, int position) {
                 final String postKey = getRef(position).getKey();
                 viewHolder.setStep(model.getStep());
-                viewHolder.setDoc_tittle(model.getDoc_tittle());
+                viewHolder.setDoc_title(model.getDoc_title());
                 viewHolder.setDoc_description(model.getDoc_description());
 
                 doc_path = postKey;
@@ -649,8 +650,8 @@ public class LoanRequestActivity extends AppCompatActivity {
         }
 
 
-        public void setDoc_tittle(String doc_tittle) {
-            my_doc_tittle = doc_tittle;
+        public void setDoc_title(String doc_title) {
+            my_doc_tittle = doc_title;
         }
 
 

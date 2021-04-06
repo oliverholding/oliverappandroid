@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:layout_margin="8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:padding="8dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/cuentas_por_pagar"
+                android:layout_weight="0.2"
+                android:layout_margin="8dp"
+                android:layout_width="0dp"
+                android:layout_height="50dp"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txtAmount"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="4dp"
+                    android:text="Monto:"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtExpirationDate"
+                    android:textStyle="bold"
+                    android:layout_margin="4dp"
+                    android:text="Fecha de Vencimiento:"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtDaysToExpire"
+                    android:textStyle="bold"
+                    android:layout_margin="4dp"
+                    android:text="Vence en:"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                
+                <TextView
+                    android:id="@+id/txtBillState"
+                    android:textColor="@android:color/white"
+                    android:text="Estado: Por Pagar"
+                    android:background="@drawable/blue_button_rectangle"
+                    android:layout_margin="4dp"
+                    android:padding="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
