@@ -138,6 +138,15 @@ public class ShowCompaniesFragment extends Fragment {
                         startActivity(intent);
                     }
                 });
+
+                viewHolder.btnFinanceCompany.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getActivity(), OliverAppForBusinessActivity.class);
+                        intent.putExtra("post_key",postKey);
+                        startActivity(intent);
+                    }
+                });
             }
         };
         recyclerView.setAdapter(firebaseRecyclerAdapter);
@@ -150,7 +159,7 @@ public class ShowCompaniesFragment extends Fragment {
         CircleImageView imgCompanyProfile;
         TextView txtCompanyName,txtCompanyRuc,txtCompanyVerification;
         ImageView imgCompanyVerification;
-        Button btnCompanyManage;
+        Button btnCompanyManage,btnFinanceCompany;
         String my_company_name,my_company_ruc,my_company_verification,my_company_image;
 
 
@@ -165,6 +174,7 @@ public class ShowCompaniesFragment extends Fragment {
             txtCompanyVerification = mView.findViewById(R.id.txtCompanyVerification);
             imgCompanyVerification = mView.findViewById(R.id.imgCompanyVerification);
             btnCompanyManage = mView.findViewById(R.id.btnCompanyManage);
+            btnFinanceCompany = mView.findViewById(R.id.btnFinanceCompany);
 
 
         }

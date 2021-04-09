@@ -42,6 +42,7 @@
 
 
                    <ImageView
+                       android:id="@+id/btnOpenClose"
                        android:src="@drawable/blue_arrow_up_vector_asset"
                        android:layout_weight="0.2"
                        android:layout_width="0dp"

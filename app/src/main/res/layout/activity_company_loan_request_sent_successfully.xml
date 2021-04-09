@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FinancialManagement.LendingProduct.LoanInProcessToGetActivity">
+    tools:context=".FinancialManagement.CompanyLendingProduct.CompanyLoanRequestSentSuccessfullyActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardTop"
@@ -151,18 +151,9 @@
 
             <pl.droidsonroids.gif.GifImageView
                 android:layout_margin="22dp"
-                android:src="@drawable/prestamo_por_desembolsar_gif"
+                android:src="@drawable/solicitud_enviada_gif"
                 android:layout_width="150dp"
                 android:layout_height="150dp"/>
-
-            <TextView
-                android:layout_margin="8dp"
-                android:textStyle="bold"
-                android:text="En Proceso de Desembolso"
-                android:textColor="@color/blue1"
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
 
             <TextView
                 android:id="@+id/txtMessage"
@@ -176,7 +167,7 @@
 
             <Button
                 android:id="@+id/btnRequests"
-                android:text="REGRESAR A Mis Solicitudes"
+                android:text="Ver Mis Solicitudes"
                 android:textColor="@android:color/white"
                 android:layout_margin="22dp"
                 android:background="@drawable/blue_button_style_ripple"
@@ -186,6 +177,5 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
 
 </RelativeLayout>

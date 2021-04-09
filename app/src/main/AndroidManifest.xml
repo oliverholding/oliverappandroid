@@ -20,7 +20,14 @@
         android:roundIcon="@drawable/oliver_redondo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CareManager.FinancialManagement.FinanceTutorialActivity"></activity>
+        <activity android:name=".FinancialManagement.CompanyLendingProduct.CompanyLoanInProcessToGetActivity"></activity>
+        <activity android:name=".FinancialManagement.CompanyLendingProduct.CompanyLendingConditionsActivity" />
+        <activity android:name=".FinancialManagement.CompanyLendingProduct.CompanyLoanRequestsListActivity" />
+        <activity android:name=".FinancialManagement.CompanyLendingProduct.CompanyLoanRequestSentSuccessfullyActivity" />
+        <activity android:name=".FinancialManagement.CompanyLendingProduct.CompanyLoanRequestActivity" />
+        <activity android:name=".FinancialManagement.CompanyLendingProduct.CompanyLendingDetailActivity" />
+        <activity android:name=".FinancialManagement.FinancialInstitutionForCompaniesDetailActivityActivity" />
+        <activity android:name=".CareManager.FinancialManagement.FinanceTutorialActivity" />
         <activity android:name=".CareManager.Normativity.NormativityTutorialActivity" />
         <activity android:name=".CareManager.PeopleManagement.PeopleManagementTutorialActivity" />
         <activity android:name=".CareManager.Production.ProductionTutorialActivity" />

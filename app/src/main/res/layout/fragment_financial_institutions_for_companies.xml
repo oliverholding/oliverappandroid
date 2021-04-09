@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:padding="8dp"
-    tools:context=".FinancialManagement.MyProductsFragment">
+    tools:context=".FinancialManagement.LendingProduct.FinancialInstitutionsForCompaniesFragment">
 
     <LinearLayout
         android:layout_margin="12dp"
@@ -16,12 +14,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-       <androidx.recyclerview.widget.RecyclerView
-           android:id="@+id/recyclerView"
-           android:layout_width="match_parent"
-           android:layout_height="match_parent">
 
-       </androidx.recyclerview.widget.RecyclerView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="12dp"
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
 
 
     </LinearLayout>
@@ -30,10 +30,10 @@
         android:textStyle="bold"
         android:layout_marginStart="22dp"
         android:padding="4dp"
-        android:text="Mis Productos"
+        android:text="Socios"
         android:background="@color/cardview_light_background"
         android:textColor="@color/blue1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-</RelativeLayout>
+</FrameLayout>

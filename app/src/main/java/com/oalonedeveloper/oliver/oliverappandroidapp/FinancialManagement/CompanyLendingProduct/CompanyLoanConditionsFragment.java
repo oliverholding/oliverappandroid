@@ -1,4 +1,4 @@
-package com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.LendingProduct;
+package com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.CompanyLendingProduct;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
@@ -24,6 +25,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.LendingProduct.LendingSimulationAdapter;
+import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.LendingProduct.LendingSimulationModel;
+import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.LendingProduct.LoanContractFragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.LendingProduct.LoanRequestsListActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 import java.text.DecimalFormat;
@@ -32,17 +37,20 @@ import java.util.Calendar;
 import java.util.Date;
 
 
-public class LoanReadyDetailsFragment extends Fragment {
+public class CompanyLoanConditionsFragment extends Fragment {
 
     ArrayList<LendingSimulationModel> list;
     RecyclerView recyclerView;
-    String operation_id,post_key,request_id,verification_arrow;
-    DatabaseReference lendingRef,userRef,financialInstitutionsRef;
+    String operation_id,post_key,request_id,verification_arrow,company_id;
+    DatabaseReference lendingRef,userRef,financialInstitutionsRef, userRealRef;
     TextView txtLoanAmount,txtLoanMonth,txtGraceMonth,txtTcea,txtReferenceDate,txtCancelLoan;
     int day,month,year,payment_year;
     String capital_st,amortization_st,interest_st,desgravament_st,fee_st,total_quote_st,fixed_quote_st;
     DecimalFormat decimalFormat;
+    CheckBox checkBox;
+    Button btnContinue;
     RelativeLayout rootLayout;
+    Fragment fragment2;
     LinearLayout conditionsLayout;
     ImageView btnOpenClose;
 
@@ -50,23 +58,26 @@ public class LoanReadyDetailsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_loan_ready_details, container, false);
+        View view = inflater.inflate(R.layout.fragment_company_loan_conditions, container, false);
 
         operation_id = getActivity().getIntent().getExtras().getString("operation_id");
         post_key = getActivity().getIntent().getExtras().getString("post_key");
+        company_id = getActivity().getIntent().getExtras().getString("company_id");
         request_id = getActivity().getIntent().getExtras().getString("request_id");
-        lendingRef = FirebaseDatabase.getInstance().getReference().child("Lendings");
-        userRef = FirebaseDatabase.getInstance().getReference().child("Users");
+        lendingRef = FirebaseDatabase.getInstance().getReference().child("Company Lendings");
+        userRef = FirebaseDatabase.getInstance().getReference().child("My Companies");
+        userRealRef = FirebaseDatabase.getInstance().getReference().child("Users");
         financialInstitutionsRef = FirebaseDatabase.getInstance().getReference().child("Financial Institutions");
 
         decimalFormat = new DecimalFormat("0.00");
+
 
         list = new ArrayList<>();
 
         recyclerView = view.findViewById(R.id.recyclerView);
 
         recyclerView.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+        final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(linearLayoutManager);
 
         LendingSimulationAdapter adapter = new LendingSimulationAdapter(list);
@@ -77,10 +88,13 @@ public class LoanReadyDetailsFragment extends Fragment {
         txtGraceMonth = view.findViewById(R.id.txtGraceMonth);
         txtTcea = view.findViewById(R.id.txtTcea);
         txtReferenceDate = view.findViewById(R.id.txtReferenceDate);
+        checkBox = view.findViewById(R.id.checkBox);
+        btnContinue = view.findViewById(R.id.btnContinue);
         txtCancelLoan = view.findViewById(R.id.txtCancelLoan);
         conditionsLayout = view.findViewById(R.id.conditionsLayout);
         btnOpenClose = view.findViewById(R.id.btnOpenClose);
 
+        fragment2 = new CompanyLoanContractFragment();
 
         Date date= new Date();
         Calendar cal = Calendar.getInstance();
@@ -88,6 +102,8 @@ public class LoanReadyDetailsFragment extends Fragment {
         day = cal.get(Calendar.DAY_OF_MONTH);
         month = cal.get(Calendar.MONTH)+1;
         year = cal.get(Calendar.YEAR);
+
+        btnContinue.setVisibility(View.GONE);
 
         verification_arrow = "open";
 
@@ -106,8 +122,6 @@ public class LoanReadyDetailsFragment extends Fragment {
                 }
             }
         });
-
-
 
         lendingRef.child(operation_id).addValueEventListener(new ValueEventListener() {
             @Override
@@ -142,9 +156,12 @@ public class LoanReadyDetailsFragment extends Fragment {
                     txtLoanAmount.setText("Monto del Préstamo: $ "+issuing_amount);
                 }
 
+                double tcea_db = Double.parseDouble(issuing_tcea);
+                String tcea_st = decimalFormat.format(tcea_db);
+
                 txtLoanMonth.setText("Duración del Préstamo: "+issuing_lending_month+" meses");
                 txtGraceMonth.setText("Período de Gracia: "+issuing_grace_month+" meses");
-                txtTcea.setText("Tasa de Costo Efectivo Anual: "+issuing_tcea+"%");
+                txtTcea.setText("Tasa de Costo Efectivo Anual: "+tcea_st+"%");
                 txtReferenceDate.setText("Fecha Rerencial de Inicio de Pago: ");
 
                 int issuing_month_int = Integer.parseInt(issuing_month);
@@ -166,9 +183,27 @@ public class LoanReadyDetailsFragment extends Fragment {
                 userRef.child(customer_id).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        String document_number = dataSnapshot.child("document_number").getValue().toString();
-                        String document_type = dataSnapshot.child("document_type").getValue().toString();
-                        String fullname = dataSnapshot.child("fullname").getValue().toString();
+
+                        String uid = dataSnapshot.child("uid").getValue().toString();
+                        final String company_social_reason = dataSnapshot.child("company_social_reason").getValue().toString();
+
+                        userRealRef.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                String document_number = dataSnapshot.child("document_number").getValue().toString();
+                                String document_type = dataSnapshot.child("document_type").getValue().toString();
+                                String fullname = dataSnapshot.child("fullname").getValue().toString();
+
+                                checkBox.setText("Yo, "+fullname+" con "+document_type+": "+document_number+", representante legal de la empresa "+company_social_reason+" afirmo que estoy de acuerdo con estas condiciones.");
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+                        });
+
+
 
                     }
 
@@ -302,7 +337,70 @@ public class LoanReadyDetailsFragment extends Fragment {
             }
         });
 
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (checkBox.isChecked()) {
+                    btnContinue.setVisibility(View.VISIBLE);
 
+                } else {
+                    btnContinue.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        btnContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (checkBox.isChecked()) {
+                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment2).commit();
+
+                } else {
+                    Snackbar.make(rootLayout,"Debes aceptar las condiciones",Snackbar.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        txtCancelLoan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final AlertDialog dialog = new AlertDialog.Builder(getActivity()).create();
+
+                LayoutInflater inflater = LayoutInflater.from(getActivity());
+                View finance_method = inflater.inflate(R.layout.decline_loan_dialog,null);
+
+                Button btnReturn;
+                TextView txtReject;
+
+                btnReturn = finance_method.findViewById(R.id.btnReturn);
+                txtReject = finance_method.findViewById(R.id.txtReject);
+
+                btnReturn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+
+                txtReject.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        financialInstitutionsRef.child(post_key).child("Company Loan Requests").child(request_id).child("request_state").setValue("canceled");
+                        Intent intent = new Intent(getActivity(), CompanyLoanRequestsListActivity.class);
+                        intent.putExtra("post_key",post_key);
+                        intent.putExtra("company_id",company_id);
+                        startActivity(intent);
+                        getActivity().finish();
+                        dialog.dismiss();
+                    }
+                });
+
+                dialog.setView(finance_method);
+                dialog.show();
+
+            }
+        });
 
         return view;
     }

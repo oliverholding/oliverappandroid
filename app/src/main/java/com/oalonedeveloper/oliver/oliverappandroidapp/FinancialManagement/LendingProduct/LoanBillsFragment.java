@@ -18,6 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -31,6 +32,7 @@ public class LoanBillsFragment extends Fragment {
     String operation_id;
     int day,month,year;
     long diff,expiration_days_ago;
+    DecimalFormat decimalFormat;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,6 +42,8 @@ public class LoanBillsFragment extends Fragment {
 
         lendingRef = FirebaseDatabase.getInstance().getReference().child("Lendings");
         operation_id = getActivity().getIntent().getExtras().getString("operation_id");
+
+        decimalFormat = new DecimalFormat("0.00");
 
         Date date= new Date();
         Calendar cal = Calendar.getInstance();
@@ -72,13 +76,16 @@ public class LoanBillsFragment extends Fragment {
                 viewHolder.setBill_expiration_day(model.getBill_expiration_day());
                 viewHolder.setBill_expiration_month(model.getBill_expiration_month());
                 viewHolder.setBill_expiration_year(model.getBill_expiration_year());
+                viewHolder.setBill_state(model.getBill_state());
 
+                double amount_db = Double.parseDouble(viewHolder.my_bill_amount);
+                String amount = decimalFormat.format(amount_db);
 
                 if (viewHolder.my_bill_currency.equals("PEN")) {
-                    viewHolder.txtAmount.setText("Monto: S/ "+viewHolder.my_bill_amount);
+                    viewHolder.txtAmount.setText("Monto: S/ "+amount);
                 }
                 if (viewHolder.my_bill_currency.equals("USD")) {
-                    viewHolder.txtAmount.setText("Monto: $ "+viewHolder.my_bill_amount);
+                    viewHolder.txtAmount.setText("Monto: $ "+amount);
                 }
 
                 viewHolder.txtExpirationDate.setText("Fecha de Vencimiento: "+viewHolder.my_bill_expiration_day+"/"+viewHolder.my_bill_expiration_month+"/"+viewHolder.my_bill_expiration_year);
@@ -121,8 +128,9 @@ public class LoanBillsFragment extends Fragment {
 
     public static class LoanBillsViewHolder extends RecyclerView.ViewHolder {
         View mView;
-        String my_bill_amount,my_bill_capital,my_bill_currency,my_bill_expiration_day,my_bill_expiration_month,my_bill_expiration_year,my_bill_state;
+        String my_bill_amount,my_bill_currency,my_bill_expiration_day,my_bill_expiration_month,my_bill_expiration_year,my_bill_state;
         TextView txtAmount,txtExpirationDate,txtDaysToExpire,txtBillState;
+        double my_bill_capital;
 
         public LoanBillsViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -139,7 +147,7 @@ public class LoanBillsFragment extends Fragment {
             my_bill_amount = bill_amount;
         }
 
-        public void setBill_capital(String bill_capital) {
+        public void setBill_capital(double bill_capital) {
             my_bill_capital = bill_capital;
         }
         public void setBill_currency(String bill_currency) {

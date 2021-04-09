@@ -4,10 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".FinancialManagement.LendingProduct.LoanReadyDetailsFragment">
+    tools:context=".FinancialManagement.CompanyLendingProduct.CompanyLoanConditionsFragment">
 
     <LinearLayout
         android:padding="8dp"
+        android:layout_above="@id/bottomLayout"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -32,11 +33,12 @@
                     <TextView
                         android:textColor="@color/blue1"
                         android:textStyle="bold"
-                        android:text="DETALLES DEL PRÉSTAMO"
+                        android:text="CONDICIONES DEL PRÉSTAMO"
                         android:layout_margin="4dp"
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"/>
+
 
                     <ImageView
                         android:id="@+id/btnOpenClose"
@@ -48,8 +50,8 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/conditionsLayout"
                     android:orientation="vertical"
+                    android:id="@+id/conditionsLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -93,9 +95,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
-
                 </LinearLayout>
-
 
 
             </LinearLayout>
@@ -230,5 +230,50 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/bottomLayout"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_margin="4dp"
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtCancelLoan"
+                android:text="RECHAZAR"
+                android:gravity="center"
+                android:textColor="@color/redColor"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnContinue"
+                android:text="Continuar"
+                android:textColor="@android:color/white"
+                android:background="@drawable/blue_button_style_ripple"
+                android:layout_margin="4dp"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
 
 </RelativeLayout>

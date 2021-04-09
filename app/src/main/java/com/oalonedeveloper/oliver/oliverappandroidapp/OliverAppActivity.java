@@ -41,7 +41,10 @@ public class OliverAppActivity extends AppCompatActivity {
     CardView tab1,tab2,tab3;
     LinearLayout linearLayout1,linearLayout2,linearLayout3;
     TextView txtText1,txtText2,txtText3;
-    Fragment fragment1,fragment2,fragment3;
+    Fragment fragment1,fragment2,fragment3,fragment4;
+    DatabaseReference userRef;
+    FirebaseAuth mAuth;
+    String currentUid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,18 +61,53 @@ public class OliverAppActivity extends AppCompatActivity {
         txtText2 = findViewById(R.id.txtText2);
         txtText3 = findViewById(R.id.txtText3);
 
-        fragment1 = new NonProductsFragment();
-        fragment2 = new NonProductsFragment();
-        fragment3 = new FinancialInstitutionsFragment();
+        userRef = FirebaseDatabase.getInstance().getReference().child("Users");
+        mAuth = FirebaseAuth.getInstance();
+        currentUid = mAuth.getCurrentUser().getUid();
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
+        fragment1 = new NonProductsFragment();
+        fragment2 = new MyProductsFragment();
+        fragment3 = new FinancialInstitutionsFragment();
+        fragment4 = new FinancialProductsFragment();
+
+        userRef.child(currentUid).child("Financial Products").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment2).commit();
+                } else {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
         linearLayout1.setBackgroundResource(R.drawable.blue_button_rectangle);
         txtText1.setTextColor(Color.WHITE);
 
         tab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
+                userRef.child(currentUid).child("Financial Products").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment2).commit();
+                        } else {
+                            getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
 
                 linearLayout1.setBackgroundResource(R.drawable.blue_button_rectangle);
                 txtText1.setTextColor(Color.WHITE);
@@ -87,7 +125,7 @@ public class OliverAppActivity extends AppCompatActivity {
         tab2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment2).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment4).commit();
 
                 linearLayout2.setBackgroundResource(R.drawable.blue_button_rectangle);
                 txtText2.setTextColor(Color.WHITE);

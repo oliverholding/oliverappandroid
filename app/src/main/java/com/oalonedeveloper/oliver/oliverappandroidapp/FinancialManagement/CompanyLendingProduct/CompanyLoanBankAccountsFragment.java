@@ -1,4 +1,4 @@
-package com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.LendingProduct;
+package com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.CompanyLendingProduct;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -31,6 +31,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.LendingProduct.LoanBankAccountModel;
+import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.LendingProduct.LoanInProcessToGetActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 import java.util.ArrayList;
@@ -39,12 +41,11 @@ import es.dmoral.toasty.Toasty;
 import in.galaxyofandroid.spinerdialog.OnSpinerItemClick;
 import in.galaxyofandroid.spinerdialog.SpinnerDialog;
 
-public class LoanBankAccountsFragment extends Fragment {
+public class CompanyLoanBankAccountsFragment extends Fragment {
 
     RecyclerView recyclerView;
-    DatabaseReference userRef,financial_institutions_account,lendingRef,financialInstitutionsRef;
-    FirebaseAuth mAuth;
-    String currentUid,operation_id,post_key,request_id,product_key;
+    DatabaseReference userRef,financial_institutions_account,lendingRef,financialInstitutionsRef,userRealRef;
+    String currentUid,operation_id,post_key,request_id,product_key,company_id;
     LinearLayout accountSelectedLayout;
     TextView txtFinancialInstitutionName,txtCc,txtCci,txtCurrency;
     Button btnAddBankAccounts;
@@ -60,15 +61,15 @@ public class LoanBankAccountsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_loan_bank_accounts, container, false);
+        View view = inflater.inflate(R.layout.fragment_company_loan_bank_accounts, container, false);
 
-
-        userRef = FirebaseDatabase.getInstance().getReference().child("Users");
+        userRef = FirebaseDatabase.getInstance().getReference().child("My Companies");
         financial_institutions_account = FirebaseDatabase.getInstance().getReference().child("Financial Institutions Accounts");
-        lendingRef = FirebaseDatabase.getInstance().getReference().child("Lendings");
+        lendingRef = FirebaseDatabase.getInstance().getReference().child("Company Lendings");
         financialInstitutionsRef = FirebaseDatabase.getInstance().getReference().child("Financial Institutions");
-        mAuth = FirebaseAuth.getInstance();
-        currentUid = mAuth.getCurrentUser().getUid();
+        userRealRef = FirebaseDatabase.getInstance().getReference().child("Users");
+        company_id = getActivity().getIntent().getExtras().getString("company_id");
+        currentUid = company_id;
         operation_id = getActivity().getIntent().getExtras().getString("operation_id");
         post_key = getActivity().getIntent().getExtras().getString("post_key");
         request_id = getActivity().getIntent().getExtras().getString("request_id");
@@ -117,11 +118,27 @@ public class LoanBankAccountsFragment extends Fragment {
                 userRef.child(currentUid).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        String document_number = dataSnapshot.child("document_number").getValue().toString();
-                        String document_type = dataSnapshot.child("document_type").getValue().toString();
-                        String fullname = dataSnapshot.child("fullname").getValue().toString();
 
-                        checkBox.setText("Yo, "+fullname+" con "+document_type+": "+document_number+" confirmo que soy titular de la cuenta registrada.");
+                        String uid = dataSnapshot.child("uid").getValue().toString();
+                        final String company_social_reason = dataSnapshot.child("company_social_reason").getValue().toString();
+
+                        userRealRef.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                String document_number = dataSnapshot.child("document_number").getValue().toString();
+                                String document_type = dataSnapshot.child("document_type").getValue().toString();
+                                String fullname = dataSnapshot.child("fullname").getValue().toString();
+
+                                checkBox.setText("Yo, "+fullname+" con "+document_type+": "+document_number+", representante legal de la empresa  "+company_social_reason+" confirmo que soy titular de la cuenta registrada.");
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+                        });
+
+
 
                     }
 
@@ -156,13 +173,14 @@ public class LoanBankAccountsFragment extends Fragment {
             public void onClick(View v) {
                 if (checkBox.isChecked()) {
                     lendingRef.child(operation_id).child("lending_state").setValue("approved");
-                    financialInstitutionsRef.child(post_key).child("Loan Requests").child(request_id).child("request_state").setValue("ready");
+                    financialInstitutionsRef.child(post_key).child("Company Loan Requests").child(request_id).child("request_state").setValue("ready");
                     lendingRef.child(operation_id).child("Customer Bank Account").child("customer_account_cc").setValue(cc);
                     lendingRef.child(operation_id).child("Customer Bank Account").child("customer_account_cci").setValue(cci);
                     lendingRef.child(operation_id).child("Customer Bank Account").child("customer_account_currency").setValue(currency);
                     lendingRef.child(operation_id).child("Customer Bank Account").child("customer_financial_institution_account").setValue(financial_institution);
-                    Intent intent = new Intent(getActivity(), LoanInProcessToGetActivity.class);
+                    Intent intent = new Intent(getActivity(), CompanyLoanInProcessToGetActivity.class);
                     intent.putExtra("institution_key",post_key);
+                    intent.putExtra("company_id",company_id);
                     intent.putExtra("product_key",product_key);
                     intent.putExtra("operation_id",operation_id);
                     startActivity(intent);

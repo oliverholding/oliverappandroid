@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -36,7 +37,7 @@ public class LoanConditionsFragment extends Fragment {
 
     ArrayList<LendingSimulationModel> list;
     RecyclerView recyclerView;
-    String operation_id,post_key,request_id;
+    String operation_id,post_key,request_id,verification_arrow;
     DatabaseReference lendingRef,userRef,financialInstitutionsRef;
     TextView txtLoanAmount,txtLoanMonth,txtGraceMonth,txtTcea,txtReferenceDate,txtCancelLoan;
     int day,month,year,payment_year;
@@ -47,6 +48,7 @@ public class LoanConditionsFragment extends Fragment {
     RelativeLayout rootLayout;
     Fragment fragment2;
     LinearLayout conditionsLayout;
+    ImageView btnOpenClose;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -68,7 +70,7 @@ public class LoanConditionsFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recyclerView);
 
         recyclerView.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+        final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(linearLayoutManager);
 
         LendingSimulationAdapter adapter = new LendingSimulationAdapter(list);
@@ -83,6 +85,7 @@ public class LoanConditionsFragment extends Fragment {
         btnContinue = view.findViewById(R.id.btnContinue);
         txtCancelLoan = view.findViewById(R.id.txtCancelLoan);
         conditionsLayout = view.findViewById(R.id.conditionsLayout);
+        btnOpenClose = view.findViewById(R.id.btnOpenClose);
 
         fragment2 = new LoanContractFragment();
 
@@ -94,6 +97,24 @@ public class LoanConditionsFragment extends Fragment {
         year = cal.get(Calendar.YEAR);
 
         btnContinue.setVisibility(View.GONE);
+
+        verification_arrow = "open";
+
+        btnOpenClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (verification_arrow.equals("open")) {
+                    verification_arrow = "close";
+                    btnOpenClose.setImageResource(R.drawable.blue_arrow_down_vector_asset);
+                    conditionsLayout.setVisibility(View.GONE);
+                }
+                else if (verification_arrow.equals("close")) {
+                    verification_arrow = "open";
+                    btnOpenClose.setImageResource(R.drawable.blue_arrow_up_vector_asset);
+                    conditionsLayout.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
         lendingRef.child(operation_id).addValueEventListener(new ValueEventListener() {
             @Override
