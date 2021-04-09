@@ -3,19 +3,17 @@ package com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.Lendi
 public class LoanBillsModel {
 
     String bill_amount,bill_currency,bill_expiration_day,bill_expiration_month,bill_expiration_year,bill_state;
-    double bill_capital;
 
     public LoanBillsModel() {
     }
 
-    public LoanBillsModel(String bill_amount, String bill_currency, String bill_expiration_day, String bill_expiration_month, String bill_expiration_year, String bill_state, double bill_capital) {
+    public LoanBillsModel(String bill_amount, String bill_currency, String bill_expiration_day, String bill_expiration_month, String bill_expiration_year, String bill_state) {
         this.bill_amount = bill_amount;
         this.bill_currency = bill_currency;
         this.bill_expiration_day = bill_expiration_day;
         this.bill_expiration_month = bill_expiration_month;
         this.bill_expiration_year = bill_expiration_year;
         this.bill_state = bill_state;
-        this.bill_capital = bill_capital;
     }
 
     public String getBill_amount() {
@@ -64,13 +62,5 @@ public class LoanBillsModel {
 
     public void setBill_state(String bill_state) {
         this.bill_state = bill_state;
-    }
-
-    public double getBill_capital() {
-        return bill_capital;
-    }
-
-    public void setBill_capital(double bill_capital) {
-        this.bill_capital = bill_capital;
     }
 }

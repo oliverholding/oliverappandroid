@@ -1,4 +1,4 @@
-package com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.LendingProduct;
+package com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.CompanyLendingProduct;
 
 import android.os.Bundle;
 
@@ -16,6 +16,7 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.LendingProduct.LoanBillsModel;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 import java.text.DecimalFormat;
@@ -25,7 +26,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
-public class LoanBillsFragment extends Fragment {
+
+public class CompanyLoanBillsFragment extends Fragment {
 
     RecyclerView recyclerView;
     DatabaseReference lendingRef;
@@ -38,9 +40,9 @@ public class LoanBillsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_loan_bills, container, false);
+        View view = inflater.inflate(R.layout.fragment_company_loan_bills, container, false);
 
-        lendingRef = FirebaseDatabase.getInstance().getReference().child("Lendings");
+        lendingRef = FirebaseDatabase.getInstance().getReference().child("Company Lendings");
         operation_id = getActivity().getIntent().getExtras().getString("operation_id");
 
         decimalFormat = new DecimalFormat("0.00");
@@ -60,6 +62,7 @@ public class LoanBillsFragment extends Fragment {
         recyclerView.setLayoutManager(linearLayoutManager);
 
         showBills();
+
 
         return view;
     }
@@ -127,8 +130,9 @@ public class LoanBillsFragment extends Fragment {
 
     public static class LoanBillsViewHolder extends RecyclerView.ViewHolder {
         View mView;
-        String my_bill_amount,my_bill_currency,my_bill_expiration_day,my_bill_expiration_month,my_bill_expiration_year,my_bill_state,my_bill_capital;
+        String my_bill_amount,my_bill_currency,my_bill_expiration_day,my_bill_expiration_month,my_bill_expiration_year,my_bill_state;
         TextView txtAmount,txtExpirationDate,txtDaysToExpire,txtBillState;
+        double my_bill_capital;
 
         public LoanBillsViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -145,9 +149,6 @@ public class LoanBillsFragment extends Fragment {
             my_bill_amount = bill_amount;
         }
 
-        public void setBill_capital(String bill_capital) {
-            my_bill_capital = bill_capital;
-        }
         public void setBill_currency(String bill_currency) {
             my_bill_currency = bill_currency;
         }

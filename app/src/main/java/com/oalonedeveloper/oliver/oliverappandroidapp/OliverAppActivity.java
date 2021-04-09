@@ -70,7 +70,7 @@ public class OliverAppActivity extends AppCompatActivity {
         fragment3 = new FinancialInstitutionsFragment();
         fragment4 = new FinancialProductsFragment();
 
-        userRef.child(currentUid).child("Financial Products").addValueEventListener(new ValueEventListener() {
+        userRef.child(currentUid).child("Financial Products").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {

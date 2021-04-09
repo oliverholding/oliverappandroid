@@ -4,30 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.CareManagerActivity;
-import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.FinancialInstitutionsFragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.FinancialProductsFragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.CompanyLendingProduct.MyCompanyProductsFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.LendingProduct.FinancialInstitutionsForCompaniesFragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.MyProductsFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.NonProductsFragment;
-import com.oalonedeveloper.oliver.oliverappandroidapp.OliverAppActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
-import com.squareup.picasso.Picasso;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class OliverAppForBusinessActivity extends AppCompatActivity {
 
@@ -60,7 +51,7 @@ public class OliverAppForBusinessActivity extends AppCompatActivity {
         currentUid = post_key;
 
         fragment1 = new NonProductsFragment();
-        //fragment2 = new MyProductsFragment();
+        fragment2 = new MyCompanyProductsFragment();
         fragment3 = new FinancialInstitutionsForCompaniesFragment();
         //fragment4 = new FinancialProductsFragment();
 
@@ -68,9 +59,9 @@ public class OliverAppForBusinessActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    //getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment2).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment2).commit();
                 } else {
-                    //getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
                 }
             }
 

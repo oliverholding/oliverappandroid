@@ -379,7 +379,7 @@ public class CompanyLoanRequestsListActivity extends AppCompatActivity {
                                                     startActivity(intent);
                                                 }
                                                 if (lending_state.equals("ready")) {
-                                                    Intent intent = new Intent(CompanyLoanRequestsListActivity.this, LoanBillsAndDetailsActivity.class);
+                                                    Intent intent = new Intent(CompanyLoanRequestsListActivity.this, CompanyLoanBillsAndDetailsActivity.class);
                                                     intent.putExtra("product_key",viewHolder.my_product_id);
                                                     intent.putExtra("institution_key", post_key);
                                                     intent.putExtra("operation_id",operation_id);
