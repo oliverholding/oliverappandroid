@@ -142,17 +142,12 @@ public class RegisterData4Fragment extends Fragment {
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (TextUtils.isEmpty(btnOccupation.getText().toString())) {
-                    Snackbar.make(rootLayout, "Debes seleccionar tu ocupación", Snackbar.LENGTH_LONG).show();
-                    return;
+                if (TextUtils.isEmpty(btnOccupation.getText().toString()) && TextUtils.isEmpty(btnAcademicDegree.getText().toString())) {
+                    userRef.child(currentUserID).child("occupation").setValue("Desconocido");
+                    userRef.child(currentUserID).child("academic_degree").setValue("Desconocido");
+                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment5).commit();
                 }
-                else if (TextUtils.isEmpty(btnAcademicDegree.getText().toString())) {
-                    Snackbar.make(rootLayout, "Debes seleccionar tu grado académico", Snackbar.LENGTH_LONG).show();
-                    return;
-                } else if (TextUtils.isEmpty(btnAcademicDegree.getText().toString())) {
-                    Snackbar.make(rootLayout, "Debes seleccionar tu grado académico", Snackbar.LENGTH_LONG).show();
-                    return;
-                } else {
+                 else {
                     getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment5).commit();
                 }
             }

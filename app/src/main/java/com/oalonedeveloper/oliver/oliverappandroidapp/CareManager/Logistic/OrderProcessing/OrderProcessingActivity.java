@@ -106,6 +106,7 @@ public class OrderProcessingActivity extends AppCompatActivity {
         image_verification = "";
         customer_id = "";
         customer_name = "";
+        downloadUrl = "https://oliver.com.pe/wp-content/uploads/2021/04/desarrollo_nuevo_producto.png";
 
         post_key = getIntent().getExtras().getString("post_key");
         companyRef = FirebaseDatabase.getInstance().getReference().child("My Companies");
@@ -391,11 +392,7 @@ public class OrderProcessingActivity extends AppCompatActivity {
                 btnRegisterNewProduct.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (!image_verification.equals("true")) {
-                            Snackbar.make(rootLayout, "Debes subir una foto de perfil", Snackbar.LENGTH_LONG).show();
-                            return;
-                        }
-                        else if (TextUtils.isEmpty(edtProductName.getText().toString())) {
+                       if (TextUtils.isEmpty(edtProductName.getText().toString())) {
                             Snackbar.make(rootLayout, "Debes ingresar el nombre de tu producto", Snackbar.LENGTH_LONG).show();
                             return;
                         } else if (TextUtils.isEmpty(edtPrice.getText().toString())) {

@@ -9,7 +9,7 @@
     <com.scwang.wave.MultiWaveHeader
         android:id="@+id/waveHeader"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="140dp"
         app:mwhGradientAngle="145"
         app:mwhStartColor="@color/blue1"
         app:mwhCloseColor="@color/blue2"
@@ -27,70 +27,61 @@
         android:layout_margin="4dp"
         android:scaleType="centerInside"
         android:src="@drawable/oliver_app_white_title"
-        android:layout_width="100dp"
-        android:layout_height="60dp"/>
+        android:layout_width="120dp"
+        android:layout_height="90dp"/>
 
-    <androidx.cardview.widget.CardView
-        android:layout_below="@+id/imgTitle"
+
+    <LinearLayout
+        android:layout_below="@+id/waveHeader"
         android:layout_above="@id/bottomBar"
-        app:cardElevation="8dp"
-        app:cardCornerRadius="8dp"
-        android:layout_margin="18dp"
-        android:layout_centerInParent="true"
+        android:padding="16dp"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:padding="16dp"
-            android:orientation="vertical"
+            android:layout_margin="12dp"
+            android:background="@drawable/round_corner_blue_stroke_left"
+            android:padding="8dp"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:layout_margin="12dp"
-                android:background="@drawable/round_corner_blue_stroke_left"
-                android:padding="8dp"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginStart="8dp"
+                android:drawableStart="@drawable/movimientos_vector_asset"
+                android:text="Movimientos"
+                android:textColor="@color/blue1"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
 
-                <TextView
-                    android:layout_marginStart="8dp"
-                    android:drawableStart="@drawable/movimientos_vector_asset"
-                    android:text="Movimientos"
-                    android:textColor="@color/blue1"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
+            <View
+                android:background="@color/blue1"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"/>
 
-                <View
-                    android:background="@color/blue1"
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"/>
-
-                <TextView
-                    android:layout_marginStart="8dp"
-                    android:drawableStart="@drawable/perfil_vector_asset"
-                    android:text="Perfil"
-                    android:textColor="@color/blue1"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
-
-            </LinearLayout>
-
-            <FrameLayout
-                android:id="@+id/contentFragment"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-            </FrameLayout>
+            <TextView
+                android:layout_marginStart="8dp"
+                android:drawableStart="@drawable/perfil_vector_asset"
+                android:text="Perfil"
+                android:textColor="@color/blue1"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
 
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+        <FrameLayout
+            android:id="@+id/contentFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
+
+    </LinearLayout>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/bottomBar"

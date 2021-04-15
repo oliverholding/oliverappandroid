@@ -14,6 +14,7 @@ import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.os.Environment;
@@ -88,6 +89,8 @@ public class DataSumaryFragment extends Fragment {
     CheckBox cbTermsAndConditions;
     Button btnContinue;
     RelativeLayout rootLayout;
+    CardView cardFragment1,cardFragment2,cardFragment3,cardFragment4,cardFragment5;
+    Fragment fragment1,fragment2,fragment3,fragment4,fragment5;
 
     private StorageReference userProfileImageRef;
     String TAG = "GenerateQRCode",downloadUrlQr;
@@ -116,6 +119,12 @@ public class DataSumaryFragment extends Fragment {
 
         phoneNumber = mAuth.getCurrentUser().getPhoneNumber();
 
+        fragment1 = new RegisterData1Fragment();
+        fragment2 = new RegisterData2Fragment();
+        fragment3 = new RegisterData3Fragment();
+        fragment4 = new RegisterData4Fragment();
+        fragment5 = new RegisterData5Fragment();
+
         imgOne = view.findViewById(R.id.imgOne);
         txtProfileImage = view.findViewById(R.id.txtProfileImage);
         imgTwo = view.findViewById(R.id.imgTwo);
@@ -130,6 +139,11 @@ public class DataSumaryFragment extends Fragment {
         txtTermsAndConditions = view.findViewById(R.id.txtTermsAndConditions);
         btnContinue = view.findViewById(R.id.btnContinue);
         rootLayout = view.findViewById(R.id.rootLayout);
+        cardFragment1 = view.findViewById(R.id.cardFragment1);
+        cardFragment2 = view.findViewById(R.id.cardFragment2);
+        cardFragment3 = view.findViewById(R.id.cardFragment3);
+        cardFragment4 = view.findViewById(R.id.cardFragment4);
+        cardFragment5 = view.findViewById(R.id.cardFragment5);
 
         loadingBar.setTitle("Preparando todo...");
         loadingBar.setMessage("Cargando...");
@@ -161,6 +175,36 @@ public class DataSumaryFragment extends Fragment {
             }
         });
 
+        cardFragment1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
+            }
+        });
+        cardFragment2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment2).commit();
+            }
+        });
+        cardFragment3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment3).commit();
+            }
+        });
+        cardFragment4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment4).commit();
+            }
+        });
+        cardFragment5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment5).commit();
+            }
+        });
 
         ratesRef.addValueEventListener(new ValueEventListener() {
             @Override

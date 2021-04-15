@@ -20,6 +20,16 @@
         android:roundIcon="@drawable/oliver_redondo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".CareManager.Commercialization.BillList.BillListActivity"></activity>
+        <activity android:name=".Companies.RegisterCompanyActivity" />
+        <activity android:name=".CareManager.StrategicDirection.LeanCanvas.RealLeanCanvasActivity" />
+        <activity android:name=".FinancialManagement.Factoring.FactoringBillsAndDetailsActivity" />
+        <activity android:name=".FinancialManagement.Factoring.FactoringInProcessToGetActivity" />
+        <activity android:name=".FinancialManagement.Factoring.FactoringConditionsActivity" />
+        <activity android:name=".FinancialManagement.Factoring.FactoringRequestsListActivity" />
+        <activity android:name=".FinancialManagement.Factoring.FactoringSentSuccessfullyActivity" />
+        <activity android:name=".FinancialManagement.Factoring.FactoringRequestActivity" />
+        <activity android:name=".FinancialManagement.Factoring.FactoringDetailActivity" />
         <activity android:name=".FinancialManagement.CompanyLendingProduct.CompanyLoanBillsAndDetailsActivity" />
         <activity android:name=".FinancialManagement.CompanyLendingProduct.CompanyLoanInProcessToGetActivity" />
         <activity android:name=".FinancialManagement.CompanyLendingProduct.CompanyLendingConditionsActivity" />

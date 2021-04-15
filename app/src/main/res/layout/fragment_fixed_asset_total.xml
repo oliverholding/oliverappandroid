@@ -70,9 +70,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <ImageView
                             android:layout_margin="4dp"
-                            android:src="@color/colorGradientCenterRed"
+                            android:src="@drawable/activos_tangibles"
                             android:layout_width="60dp"
                             android:layout_height="60dp"/>
 
@@ -114,9 +114,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <ImageView
                             android:layout_margin="4dp"
-                            android:src="@color/colorGradientCenterRed"
+                            android:src="@drawable/activos_intangibles"
                             android:layout_width="60dp"
                             android:layout_height="60dp"/>
 

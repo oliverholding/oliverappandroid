@@ -131,7 +131,7 @@ public class CreateInvoiceActivity extends AppCompatActivity {
         expiration_year = "";
         customer_name = "";
         customer_document_number = "";
-        observations = "";
+        observations = "Sin Observaciones";
         total_amount_st = "";
         total_taxes_st = "";
         sellerPostKey = "";
@@ -390,7 +390,7 @@ public class CreateInvoiceActivity extends AppCompatActivity {
 
                         HashMap hashMap = new HashMap();
                         hashMap.put("seller_name", edtName.getText().toString());
-                        hashMap.put("seller_email", edtEmail.getText().toString());
+                        hashMap.put("seller_email", edtEmail.getText().toString()+"");
                         hashMap.put("seller_document_number", edtDocumentNumber.getText().toString());
                         hashMap.put("seller_phone", ccpPhoneCode.getSelectedCountryCode()+edtPhoneNumber.getText().toString());
                         hashMap.put("register_date", saveCurrentDate);

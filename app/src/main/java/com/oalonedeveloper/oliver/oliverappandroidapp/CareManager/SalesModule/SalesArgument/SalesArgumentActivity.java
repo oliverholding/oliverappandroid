@@ -3,6 +3,9 @@ package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.S
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -12,6 +15,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
@@ -190,15 +194,53 @@ public class SalesArgumentActivity extends AppCompatActivity {
         }
 
         TextView txtPhrase,txtPhrase2;
+        Button btnShare;
+        final String phrase;
 
         txtPhrase = finance_method.findViewById(R.id.txtPhrase);
         txtPhrase2 = finance_method.findViewById(R.id.txtPhrase2);
+        btnShare = finance_method.findViewById(R.id.btnShare);
 
         txtPhrase.setText(btnGreeting.getText().toString()+", mi nombre es "+edtSellerName.getText().toString()+" de "+company_name+", y le contactamos porque quisiera presentarle nuestro "+edtProductName.getText().toString()+" que estamos seguros que les va a interesar.");
         txtPhrase2.setText("Nuestro "+edtProductName.getText().toString()+" se diferencia por "+btnCharacteristic.getText().toString()+" que no lo tiene nuestra competencia. Sus pagos lo pueden realizar de lassiguientes formas: "+payment_method1+" "+payment_method2+" "+payment_method3+" "+payment_method4+". Si lo requiere pregunte por nuestros múltiples servicios. Pueden hacer sus pedidos por whatsapp al teléfono: "+edtCompanyNumber.getText().toString()+" en el siguiente horario: "+btnCompanySchedule.getText().toString());
 
+        phrase = "Nuestro "+edtProductName.getText().toString()+" se diferencia por "+btnCharacteristic.getText().toString()+" que no lo tiene nuestra competencia. Sus pagos lo pueden realizar de lassiguientes formas: "+payment_method1+" "+payment_method2+" "+payment_method3+" "+payment_method4+". Si lo requiere pregunte por nuestros múltiples servicios. Pueden hacer sus pedidos por whatsapp al teléfono: "+edtCompanyNumber.getText().toString()+" en el siguiente horario: "+btnCompanySchedule.getText().toString();
+
+        btnShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openWhatsappTosendMessage(phrase);
+            }
+        });
+
         dialog.setView(finance_method);
         dialog.show();
 
+    }
+
+    private void openWhatsappTosendMessage(String phrase) {
+        boolean installed = appInstalledOrNot("com.whatsapp");
+        if (installed) {
+            String message = "";
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("http://api.whatsapp.com/send?" + "&text=" + phrase));
+            startActivity(intent);
+        } else {
+            Toast.makeText(SalesArgumentActivity.this, "No tienes instalado WhatsApp", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private boolean appInstalledOrNot(String url) {
+        PackageManager packageManager = SalesArgumentActivity.this.getPackageManager();
+        boolean app_installed;
+
+        try {
+            packageManager.getPackageInfo(url, PackageManager.GET_ACTIVITIES);
+            app_installed = true;
+        } catch (PackageManager.NameNotFoundException e) {
+            app_installed = false;
+        }
+
+        return app_installed;
     }
 }

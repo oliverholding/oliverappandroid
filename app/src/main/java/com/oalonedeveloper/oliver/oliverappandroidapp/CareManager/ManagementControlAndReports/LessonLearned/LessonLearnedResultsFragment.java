@@ -20,7 +20,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class LessonLearnedResultsFragment extends Fragment {
 
-    TextView txtCorrect,txtIncorrect;
+    TextView txtCorrect,txtIncorrect,txtQuestion1,txtQuestion2,txtQuestion3,txtQuestion4,txtQuestion5,txtQuestion6,txtQuestion7,txtQuestion8,txtQuestion9,txtQuestion10,txtQuestion11,txtQuestion12,txtQuestion13,txtQuestion14,txtQuestion15;
     Button btnFinish;
     String post_key;
     DatabaseReference companyRef;
@@ -35,6 +35,22 @@ public class LessonLearnedResultsFragment extends Fragment {
         txtCorrect = view.findViewById(R.id.txtCorrect);
         txtIncorrect = view.findViewById(R.id.txtIncorrect);
         btnFinish = view.findViewById(R.id.btnFinish);
+
+        txtQuestion1 = view.findViewById(R.id.txtQuestion1);
+        txtQuestion2 = view.findViewById(R.id.txtQuestion2);
+        txtQuestion3 = view.findViewById(R.id.txtQuestion3);
+        txtQuestion4 = view.findViewById(R.id.txtQuestion4);
+        txtQuestion5 = view.findViewById(R.id.txtQuestion5);
+        txtQuestion6 = view.findViewById(R.id.txtQuestion6);
+        txtQuestion7 = view.findViewById(R.id.txtQuestion7);
+        txtQuestion8 = view.findViewById(R.id.txtQuestion8);
+        txtQuestion9 = view.findViewById(R.id.txtQuestion9);
+        txtQuestion10 = view.findViewById(R.id.txtQuestion10);
+        txtQuestion11 = view.findViewById(R.id.txtQuestion11);
+        txtQuestion12 = view.findViewById(R.id.txtQuestion12);
+        txtQuestion13 = view.findViewById(R.id.txtQuestion13);
+        txtQuestion14 = view.findViewById(R.id.txtQuestion14);
+        txtQuestion15 = view.findViewById(R.id.txtQuestion15);
 
         post_key = getActivity().getIntent().getExtras().getString("post_key");
         companyRef = FirebaseDatabase.getInstance().getReference().child("My Companies");

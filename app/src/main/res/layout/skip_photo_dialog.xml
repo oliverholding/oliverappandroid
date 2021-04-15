@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:padding="12dp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_margin="12dp"
+        android:textColor="@color/blue1"
+        android:gravity="center"
+        android:text="¿Estás seguro que deseas omitir este paso?"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtYes"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_margin="8dp"
+            android:textColor="@color/blue1"
+            android:gravity="center"
+            android:text="Sí"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnNo"
+            android:text="NO"
+            android:textColor="@android:color/white"
+            android:layout_margin="8dp"
+            android:background="@drawable/button_blue_style"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</LinearLayout>

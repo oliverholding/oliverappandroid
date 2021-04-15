@@ -44,4 +44,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <Button
+        android:id="@+id/btnShare"
+        android:text="COMPARTIR"
+        android:textColor="@android:color/white"
+        android:layout_margin="12dp"
+        android:background="@drawable/orange_button_style_ripple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
 </LinearLayout>

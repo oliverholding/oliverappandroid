@@ -1,9 +1,11 @@
 package com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,6 +15,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.CompanyLendingProduct.CompanyFinancialProductLendingsListFragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.Factoring.ProductFactoringListFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 import com.squareup.picasso.Picasso;
 
@@ -26,7 +29,10 @@ public class FinancialInstitutionForCompaniesDetailActivityActivity extends AppC
     TextView txtFinancialInstitutionName,txtFinancialInstitutionSlogan,txtFinancialInstitutionType;
     ImageView imgBackground;
     CircleImageView imgImage;
-    Fragment fragment1;
+    Fragment fragment1,fragment2;
+    CardView tab1,tab2;
+    TextView txt1,txt2;
+    View view1,view2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +49,43 @@ public class FinancialInstitutionForCompaniesDetailActivityActivity extends AppC
         txtFinancialInstitutionSlogan = findViewById(R.id.txtFinancialInstitutionSlogan);
         txtFinancialInstitutionType = findViewById(R.id.txtFinancialInstitutionType);
 
+        tab1 = findViewById(R.id.tab1);
+        tab2 = findViewById(R.id.tab2);
+        txt1 = findViewById(R.id.txt1);
+        txt2 = findViewById(R.id.txt2);
+        view1 = findViewById(R.id.view1);
+        view2 = findViewById(R.id.view2);
+
         fragment1 = new CompanyFinancialProductLendingsListFragment();
+        fragment2 = new ProductFactoringListFragment();
 
         getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
+
+        tab1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txt1.setTextColor(getResources().getColor(R.color.blue1));
+                view1.setBackgroundResource(R.color.blue1);
+
+                txt2.setTextColor(getResources().getColor(R.color.gray2));
+                view2.setBackgroundResource(R.color.gray2);
+
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
+            }
+        });
+
+        tab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txt2.setTextColor(getResources().getColor(R.color.blue1));
+                view2.setBackgroundResource(R.color.blue1);
+
+                txt1.setTextColor(getResources().getColor(R.color.gray2));
+                view1.setBackgroundResource(R.color.gray2);
+
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment2).commit();
+            }
+        });
 
         financialInstitutionsRef.child(post_key).addValueEventListener(new ValueEventListener() {
             @Override

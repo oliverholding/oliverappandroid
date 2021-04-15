@@ -130,15 +130,16 @@ public class CreateBillActivity extends AppCompatActivity {
         expiration_day = "";
         expiration_month = "";
         expiration_year = "";
-        customer_name = "";
-        customer_document_number = "";
-        observations = "";
+        customer_name = "Sin Información";
+        customer_document_number = "Sin Información";
+        observations = "Sin Observaciones";
         total_amount_st = "";
         total_taxes_st = "";
         sellerPostKey = "";
 
-
         customer_info_exist = "false";
+
+        customerPostKey = "00000000";
 
         txtSocialReason = findViewById(R.id.txtSocialReason);
         txtCompanyAddress = findViewById(R.id.txtCompanyAddress);

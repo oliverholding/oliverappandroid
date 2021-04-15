@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ public class PlatformSelectionActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     String currentUserId,fullname,profileimage,username;
     TextView txtSignOut;
+    ImageView btnSignOut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,10 +45,21 @@ public class PlatformSelectionActivity extends AppCompatActivity {
         txtName = findViewById(R.id.txtName);
         txtUsername = findViewById(R.id.txtUsername);
         txtSignOut = findViewById(R.id.txtSignOut);
+        btnSignOut = findViewById(R.id.btnSignOut);
 
         mAuth = FirebaseAuth.getInstance();
         currentUserId = mAuth.getCurrentUser().getUid();
         userRef = FirebaseDatabase.getInstance().getReference().child("Users");
+
+        btnSignOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAuth.signOut();
+                Intent intent = new Intent(PlatformSelectionActivity.this, PhoneAuthActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         userRef.child(currentUserId).addValueEventListener(new ValueEventListener() {
             @Override

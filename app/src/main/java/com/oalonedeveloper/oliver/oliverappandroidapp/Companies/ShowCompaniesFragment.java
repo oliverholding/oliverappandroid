@@ -58,7 +58,8 @@ public class ShowCompaniesFragment extends Fragment {
         btnAddCompany.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showCompanyTypeDialog();
+                Intent intent = new Intent(getActivity(),RegisterCompanyActivity.class);
+                startActivity(intent);
             }
         });
 

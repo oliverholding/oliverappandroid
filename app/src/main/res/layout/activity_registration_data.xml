@@ -9,7 +9,7 @@
     <com.scwang.wave.MultiWaveHeader
         android:id="@+id/waveHeader"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="140dp"
         app:mwhGradientAngle="145"
         app:mwhStartColor="@color/blue1"
         app:mwhCloseColor="@color/blue2"
@@ -31,13 +31,14 @@
         android:layout_height="60dp"/>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_below="@+id/imgTitle"
         app:cardElevation="8dp"
         app:cardCornerRadius="8dp"
         android:layout_margin="18dp"
         android:layout_centerInParent="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:padding="16dp"
@@ -140,17 +141,18 @@
 
             </LinearLayout>
 
-            <FrameLayout
-                android:id="@+id/contentFragment"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-
-            </FrameLayout>
-
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <FrameLayout
+        android:layout_below="@id/cardView"
+        android:id="@+id/contentFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    </FrameLayout>
 
 
 </RelativeLayout>

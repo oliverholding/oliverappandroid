@@ -74,8 +74,8 @@ public class FixedAssetTotalFragment extends Fragment {
 
         //initializing colors for the entries
         ArrayList<Integer> colors = new ArrayList<>();
-        colors.add(Color.parseColor("#304567"));
-        colors.add(Color.parseColor("#309967"));
+        colors.add(Color.parseColor("#E36F1E"));
+        colors.add(Color.parseColor("#00b1f7"));
 
         //input data and fit data into pie chart entry
         for(String type: typeAmountMap.keySet()){

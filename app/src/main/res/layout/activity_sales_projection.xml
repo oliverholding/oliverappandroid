@@ -44,7 +44,7 @@
                         android:layout_margin="4dp"
                         android:textStyle="bold"
                         android:textColor="@android:color/black"
-                        android:text="Proyecciñon de Ventas"
+                        android:text="Proyección de Ventas"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 

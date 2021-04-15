@@ -76,6 +76,8 @@ public class CareManagerSumaryFragment extends Fragment {
         myCompanyRef.child(post_key).child("My Bills").orderByChild("issuing_year").equalTo(year).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                bills = 0;
+                bills_last = 0;
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     int issuing_month = ds.child("issuing_month").getValue(Integer.class);
                     if (issuing_month == month) {
@@ -94,7 +96,7 @@ public class CareManagerSumaryFragment extends Fragment {
 
                     }
 
-                    double bills_var = ((bills_last/bills)-1)*100;
+                    double bills_var = ((bills/bills_last)-1)*100;
                     String bills_var_st = decimalFormat.format(bills_var);
 
                     if (bills_var > 0) {

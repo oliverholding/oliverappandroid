@@ -1,5 +1,6 @@
 package com.oalonedeveloper.oliver.oliverappandroidapp.Companies;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -147,7 +148,7 @@ public class RegisterCompanyData1Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (image_verification.equals("false")) {
-                    Snackbar.make(rootLayout, "Debes cargar la foto de tu negocio", Snackbar.LENGTH_LONG).show();
+                    showSkipPhotoDialog();
 
                 }
                 else if (image_verification.equals("true")) {
@@ -158,6 +159,41 @@ public class RegisterCompanyData1Fragment extends Fragment {
         });
 
         return view;
+    }
+
+    private void showSkipPhotoDialog() {
+        final AlertDialog dialog = new AlertDialog.Builder(getActivity()).create();
+        dialog.setCancelable(false);
+
+        LayoutInflater inflater = LayoutInflater.from(getActivity());
+        View finance_method = inflater.inflate(R.layout.skip_photo_dialog,null);
+
+        TextView txtYes;
+        Button btnNo;
+
+        txtYes = finance_method.findViewById(R.id.txtYes);
+        btnNo = finance_method.findViewById(R.id.btnNo);
+
+        txtYes.setTextColor(getResources().getColor(R.color.orange1));
+        btnNo.setBackgroundResource(R.drawable.orange_button_style_ripple);
+
+        txtYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                userRef.child("company_profileimage").setValue("https://oliver.com.pe/wp-content/uploads/2021/04/agregar_negocio.png");
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment2).commit();
+                dialog.dismiss();
+            }
+        });
+        btnNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.setView(finance_method);
+        dialog.show();
     }
 
     private void setPic() {

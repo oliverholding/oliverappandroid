@@ -82,8 +82,8 @@ public class CompanyDataSumaryFragment extends Fragment {
     String profile_image_verification,sunat_api,document_number,name,surname, database_name,json_name, personal_data_verification,contact_data_verification,additional_data_verification,access_data_verification,
             docs_verification,dni_exist,saveCurrentDate,saveCurrentTime,company_bth_day,company_bth_month,company_bth_year,company_profileimage, department,province,district,ruc_file;
     TextView txtProfileImage,txtPersonalData,txtContactData,txtAditionalData,txtAccessData,txtTermsAndConditions,txtAdditionalData;
-    String olbk_phone_number,username_exist,username,postRandomName,phoneNumber,email,document_state, razon_social,fecha_inscripcion,contribuyente_tipo,contribuyente_estado,register_date,domicilio_fiscal,company_economic_activity,customer_output,company_value;
-    CheckBox cbTermsAndConditions,cbLegalRepresentation;
+    String olbk_phone_number,username_exist,username,postRandomName,phoneNumber,email,document_state, razon_social,contribuyente_tipo,contribuyente_estado,register_date,domicilio_fiscal,company_economic_activity,customer_output,company_value;
+    CheckBox cbTermsAndConditions;
     Button btnContinue;
     RelativeLayout rootLayout;
 
@@ -124,7 +124,6 @@ public class CompanyDataSumaryFragment extends Fragment {
         txtAccessData = view.findViewById(R.id.txtAccessData);
         cbTermsAndConditions = view.findViewById(R.id.cbTermsAndConditions);
         txtTermsAndConditions = view.findViewById(R.id.txtTermsAndConditions);
-        cbLegalRepresentation = view.findViewById(R.id.cbLegalRepresentation);
         imgFour = view.findViewById(R.id.imgFour);
         btnContinue = view.findViewById(R.id.btnContinue);
         rootLayout = view.findViewById(R.id.rootLayout);
@@ -185,7 +184,7 @@ public class CompanyDataSumaryFragment extends Fragment {
 
                             register_date = company_bth_year +"-"+company_bth_month+"-"+company_bth_day;
 
-                            userRef.orderByChild("company_document_number").equalTo(document_number).addValueEventListener(new ValueEventListener() {
+                            userRef.orderByChild("company_document_number").equalTo(document_number).addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(DataSnapshot dataSnapshot) {
                                     long docs_count = dataSnapshot.getChildrenCount();
@@ -262,15 +261,6 @@ public class CompanyDataSumaryFragment extends Fragment {
                             profile_image_verification = "true";
                         }
 
-                        if (dataSnapshot.hasChild("ruc_file")) {
-                            ruc_file = dataSnapshot.child("ruc_file").getValue().toString();
-                            imgThree.setImageResource(R.drawable.check);
-                            txtContactData.setText("Ficha RUC cargada con éxito");
-                            txtContactData.setTextColor(Color.GREEN);
-                            contact_data_verification = "true";
-                            loadingBar.dismiss();
-                        }
-
                         if (dataSnapshot.hasChild("customer_output") && dataSnapshot.hasChild("company_value")) {
                             customer_output = dataSnapshot.child("customer_output").getValue().toString();
                             company_value = dataSnapshot.child("company_value").getValue().toString();
@@ -288,6 +278,7 @@ public class CompanyDataSumaryFragment extends Fragment {
                             loadingBar.dismiss();
                         }
                     }
+
 
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
@@ -317,20 +308,13 @@ public class CompanyDataSumaryFragment extends Fragment {
                     Snackbar.make(rootLayout, "El número de RUC ya está siendo usado por otro usario de Oliver", Snackbar.LENGTH_LONG).show();
                     return;
                 }
-                else if (contact_data_verification.equals("false")) {
-                    Snackbar.make(rootLayout, "Debes subir tu Ficha RUC", Snackbar.LENGTH_LONG).show();
-                    return;
-                }
                 else if (additional_data_verification.equals("false")) {
                     Snackbar.make(rootLayout, "Debes completar la información adicional", Snackbar.LENGTH_LONG).show();
                     return;
                 } else if (!cbTermsAndConditions.isChecked()) {
                     Snackbar.make(rootLayout, "Debes aceptar los términos y condiciones", Snackbar.LENGTH_LONG).show();
                     return;
-                } else if (!cbLegalRepresentation.isChecked()) {
-                    Snackbar.make(rootLayout, "Debes confirmar que eres el representante legal", Snackbar.LENGTH_LONG).show();
-                    return;
-                }else if (permission.equals("false")) {
+                } else if (permission.equals("false")) {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                         if (getActivity().checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                             requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, MY_STORAGE_REQUEST_CODE);
@@ -365,7 +349,7 @@ public class CompanyDataSumaryFragment extends Fragment {
 
                     postRandomName = saveCurrentDate + saveCurrentTime;
 
-                    sendEmail();
+                    //sendEmail();
                     generateQrCode();
                     saveQrCode();
                     sendQrCodeToDatabase();
@@ -379,7 +363,7 @@ public class CompanyDataSumaryFragment extends Fragment {
 
     private void continueWithoutVerification() {
 
-        userRef.addValueEventListener(new ValueEventListener() {
+        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 razon_social = dataSnapshot.child("commercial_name").getValue().toString();
@@ -540,7 +524,7 @@ public class CompanyDataSumaryFragment extends Fragment {
     }
 
     private void getSunatInformation() {
-        String url = "https://registrode.sytes.net/api-sunat/?ruc="+document_number+"&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MTU1ODQyNjksImV4cCI6MTYxNTU4Nzg2OSwiZGF0YSI6eyJjbGllbnRlIjoiam9zdGhlaW4gbWF5b3JjYSBiZWxsZXphIiwicmVnaXN0cm8iOiIyMDIxLTAzLTEyIDEwOjQ2OjIyIiwibm93IjoiMjAyMS0wMy0xMiAxNjoyNDoyOSJ9fQ.deDKtZT9bW7OJccqMG4BTlyRRaXZ6KIyPDBKUWNCzDU";
+        String url = "https://dniruc.apisperu.com/api/v1/ruc/"+document_number+"?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im9saXZlcnBmYXNjZUBnbWFpbC5jb20ifQ.Uy9tuYJ9YBgsDgyoovlwkKtw_Vwt6hWuUieoG24bJx0";
         HttpsTrustManager.allowAllSSL();
 
         RequestQueue requestQueue = Volley.newRequestQueue(Objects.requireNonNull(getActivity()));
@@ -550,25 +534,12 @@ public class CompanyDataSumaryFragment extends Fragment {
 
                 try {
 
-                    razon_social = response.getJSONObject("result").getString("razon_social");
-                    fecha_inscripcion = response.getJSONObject("result").getString("fecha_inscripcion");
-                    contribuyente_tipo = response.getJSONObject("result").getString("tipo");
-                    contribuyente_estado = response.getJSONObject("result").getString("estado");
-                    domicilio_fiscal = response.getJSONObject("result").getString("direccion");
+                    razon_social = response.getString("razonSocial");
+                    contribuyente_tipo = response.getString("tipo");
+                    contribuyente_estado = response.getString("estado");
+                    domicilio_fiscal = response.getString("direccion");
 
 
-                    if (fecha_inscripcion.equals(register_date)) {
-                        imgTwo.setImageResource(R.drawable.check);
-                        txtPersonalData.setText("Datos del negocio completado");
-                        txtPersonalData.setTextColor(Color.GREEN);
-                        personal_data_verification = "true";
-                    } else if (!fecha_inscripcion.equals(register_date)){
-                        imgTwo.setImageResource(R.drawable.error);
-                        txtPersonalData.setText("Error en la fecha de Inscripción");
-                        txtPersonalData.setTextColor(Color.RED);
-                    }
-
-                    cbLegalRepresentation.setText("Confirmo ser el representante legal de "+razon_social);
                     loadingBar.dismiss();
 
                 } catch (JSONException e) {

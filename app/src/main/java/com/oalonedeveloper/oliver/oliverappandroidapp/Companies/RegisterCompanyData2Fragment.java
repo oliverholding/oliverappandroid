@@ -15,6 +15,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -32,6 +34,8 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.Locations.PeruLocationsMod
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 import in.galaxyofandroid.spinerdialog.OnSpinerItemClick;
 import in.galaxyofandroid.spinerdialog.SpinnerDialog;
@@ -39,28 +43,24 @@ import in.galaxyofandroid.spinerdialog.SpinnerDialog;
 public class RegisterCompanyData2Fragment extends Fragment {
 
     EditText edtCommercialName,edtDocumentNumber;
-    Button edtBthDay,edtBthMonth,edtBthYear,btnContinue;
+    Button btnContinue;
     FirebaseAuth mAuth;
     DatabaseReference userRef,ratesRef,peruLocations,economic_activities;
     String currentUserID,province_code;
     RelativeLayout rootLayout;
     ProgressDialog loadingBar;
 
-    ArrayList<String> bthDay =new ArrayList<>();
-    SpinnerDialog bthDayDialog;
-
-    ArrayList<String> bthMonth =new ArrayList<>();
-    SpinnerDialog bthMonthDialog;
-
-    ArrayList<String> bthYear =new ArrayList<>();
-    SpinnerDialog bthYearDialog;
 
     RecyclerView recyclerView;
     EditText edtSearch;
     AlertDialog departmentDialog;
-    Button btnDepartment,btnDistrict,btnProvince,btnEconomicActivities;
+    Button btnDepartment,btnDistrict,btnProvince;
 
     Fragment fragment3;
+
+    CheckBox checkBox;
+
+    int day,month,year;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -68,18 +68,22 @@ public class RegisterCompanyData2Fragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_register_company_data2, container, false);
 
-        fragment3 = new RegisterCompanyData3Fragment();
+        fragment3 = new RegisterCompanyData4Fragment();
 
         edtCommercialName = view.findViewById(R.id.edtCommercialName);
         edtDocumentNumber = view.findViewById(R.id.edtDocumentNumber);
-        edtBthDay = view.findViewById(R.id.edtBthDay);
-        edtBthMonth = view.findViewById(R.id.edtBthMonth);
-        edtBthYear = view.findViewById(R.id.edtBthYear);
         btnDepartment = view.findViewById(R.id.btnDepartment);
         btnProvince = view.findViewById(R.id.btnProvince);
         btnDistrict = view.findViewById(R.id.btnDistrict);
-        btnEconomicActivities = view.findViewById(R.id.btnEconomicActivities);
         btnContinue = view.findViewById(R.id.btnContinue);
+        checkBox = view.findViewById(R.id.checkBox);
+
+        Date date= new Date();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        day = cal.get(Calendar.DAY_OF_MONTH);
+        month = cal.get(Calendar.MONTH)+1;
+        year = cal.get(Calendar.YEAR);
 
         loadingBar = new ProgressDialog(getActivity());
 
@@ -107,18 +111,6 @@ public class RegisterCompanyData2Fragment extends Fragment {
                     String company_document_number = dataSnapshot.child("company_document_number").getValue().toString();
                     edtDocumentNumber.setText(company_document_number);
                 }
-                if (dataSnapshot.hasChild("company_bth_day")) {
-                    String company_bth_day = dataSnapshot.child("company_bth_day").getValue().toString();
-                    edtBthDay.setText(company_bth_day);
-                }
-                if (dataSnapshot.hasChild("company_bth_month")) {
-                    String company_bth_month = dataSnapshot.child("company_bth_month").getValue().toString();
-                    edtBthMonth.setText(company_bth_month);
-                }
-                if (dataSnapshot.hasChild("company_bth_year")) {
-                    String company_bth_year = dataSnapshot.child("company_bth_year").getValue().toString();
-                    edtBthYear.setText(company_bth_year);
-                }
                 if (dataSnapshot.hasChild("department")) {
                     String department = dataSnapshot.child("department").getValue().toString();
                     btnDepartment.setText(department);
@@ -130,10 +122,6 @@ public class RegisterCompanyData2Fragment extends Fragment {
                 if (dataSnapshot.hasChild("district")) {
                     String district = dataSnapshot.child("district").getValue().toString();
                     btnDistrict.setText(district);
-                }
-                if (dataSnapshot.hasChild("economic_activity")) {
-                    String economic_activity = dataSnapshot.child("economic_activity").getValue().toString();
-                    btnEconomicActivities.setText(economic_activity);
                 }
                 loadingBar.dismiss();
             }
@@ -187,71 +175,26 @@ public class RegisterCompanyData2Fragment extends Fragment {
             }
         });
 
-        bthDay.add("01"); bthDay.add("02"); bthDay.add("03"); bthDay.add("04"); bthDay.add("05"); bthDay.add("06"); bthDay.add("07"); bthDay.add("08"); bthDay.add("09"); bthDay.add("10");
-        bthDay.add("11"); bthDay.add("12"); bthDay.add("13"); bthDay.add("14"); bthDay.add("15"); bthDay.add("16"); bthDay.add("17"); bthDay.add("18"); bthDay.add("19"); bthDay.add("20");
-        bthDay.add("21"); bthDay.add("22"); bthDay.add("23"); bthDay.add("24"); bthDay.add("25"); bthDay.add("26"); bthDay.add("27"); bthDay.add("28"); bthDay.add("29"); bthDay.add("30");
-        bthDay.add("31");
-
-        edtBthDay.setOnClickListener(new View.OnClickListener() {
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                bthDayDialog.showSpinerDialog();
-            }
-        });
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+                if (buttonView.isChecked()) {
+                    edtDocumentNumber.setVisibility(View.GONE);
+                    userRef.child("company_document_number").setValue("00000000000");
+                } else {
+                    edtDocumentNumber.setVisibility(View.VISIBLE);
+                }
 
-        bthDayDialog = new SpinnerDialog(getActivity(),bthDay, "Selecciona el Día de Inscripción");
-        bthDayDialog.bindOnSpinerListener(new OnSpinerItemClick() {
-            @Override
-            public void onClick(String item2, int position2) {
-                edtBthDay.setText(item2);
-                userRef.child("company_bth_day").setValue(item2);
-            }
-        });
 
-        bthMonth.add("01");bthMonth.add("02");bthMonth.add("03");bthMonth.add("04");bthMonth.add("05");bthMonth.add("06");bthMonth.add("07");bthMonth.add("08");bthMonth.add("09");bthMonth.add("10");
-        bthMonth.add("11");bthMonth.add("12");
+            }}
+        );
 
-        edtBthMonth.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bthMonthDialog.showSpinerDialog();
-            }
-        });
 
-        bthMonthDialog = new SpinnerDialog(getActivity(),bthMonth, "Selecciona el Mes de Inscripción");
-        bthMonthDialog.bindOnSpinerListener(new OnSpinerItemClick() {
-            @Override
-            public void onClick(String item2, int position2) {
-                edtBthMonth.setText(item2);
-                userRef.child("company_bth_month").setValue(item2);
-            }
-        });
+        userRef.child("company_bth_day").setValue(day+"");
+        userRef.child("company_bth_month").setValue(month+"");
+        userRef.child("company_bth_year").setValue(year+"");
+        userRef.child("economic_activity").setValue("Desconocido");
 
-        bthYear.add("2020");bthYear.add("2019");bthYear.add("2018");bthYear.add("2017");bthYear.add("2016");bthYear.add("2015");bthYear.add("2014");bthYear.add("2013");bthYear.add("2012");bthYear.add("2011");bthYear.add("2010");
-        bthYear.add("2009");bthYear.add("2008");bthYear.add("2007");bthYear.add("2006");bthYear.add("2005");bthYear.add("2004");bthYear.add("2003");bthYear.add("2002");bthYear.add("2001");bthYear.add("2000");
-        bthYear.add("1999");bthYear.add("1998");bthYear.add("1997");bthYear.add("1996");bthYear.add("1995");bthYear.add("1994");bthYear.add("1993");bthYear.add("1992");bthYear.add("1991");bthYear.add("1990");
-        bthYear.add("1989");bthYear.add("1988");bthYear.add("1987");bthYear.add("1986");bthYear.add("1985");bthYear.add("1984");bthYear.add("1983");bthYear.add("1982");bthYear.add("1981");bthYear.add("1980");
-        bthYear.add("1979");bthYear.add("1978");bthYear.add("1977");bthYear.add("1976");bthYear.add("1975");bthYear.add("1974");bthYear.add("1973");bthYear.add("1972");bthYear.add("1971");bthYear.add("1970");
-        bthYear.add("1969");bthYear.add("1968");bthYear.add("1967");bthYear.add("1966");bthYear.add("1965");bthYear.add("1964");bthYear.add("1963");bthYear.add("1962");bthYear.add("1961");bthYear.add("1960");
-        bthYear.add("1959");bthYear.add("1958");bthYear.add("1957");bthYear.add("1956");bthYear.add("1955");bthYear.add("1954");bthYear.add("1953");bthYear.add("1952");bthYear.add("1951");bthYear.add("1950");
-        bthYear.add("1949");bthYear.add("1948");bthYear.add("1947");bthYear.add("1946");bthYear.add("1945");bthYear.add("1944");bthYear.add("1943");bthYear.add("1942");bthYear.add("1941");bthYear.add("1940");
-        bthYear.add("1939");bthYear.add("1938");bthYear.add("1937");bthYear.add("1936");bthYear.add("1935");bthYear.add("1934");bthYear.add("1933");bthYear.add("1932");bthYear.add("1931");bthYear.add("1930");
-
-        edtBthYear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bthYearDialog.showSpinerDialog();
-            }
-        });
-
-        bthYearDialog = new SpinnerDialog(getActivity(),bthYear, "Selecciona el Año de Inscripción");
-        bthYearDialog.bindOnSpinerListener(new OnSpinerItemClick() {
-            @Override
-            public void onClick(String item2, int position2) {
-                edtBthYear.setText(item2);
-                userRef.child("company_bth_year").setValue(item2);
-            }
-        });
 
         btnDepartment.addTextChangedListener(new TextWatcher() {
             @Override
@@ -347,12 +290,6 @@ public class RegisterCompanyData2Fragment extends Fragment {
             }
         });
 
-        btnEconomicActivities.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showEconomicActtivitiesDialog();
-            }
-        });
 
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -364,89 +301,6 @@ public class RegisterCompanyData2Fragment extends Fragment {
         return view;
     }
 
-    private void showEconomicActtivitiesDialog() {
-        departmentDialog = new AlertDialog.Builder(getActivity()).create();
-
-        LayoutInflater inflater = LayoutInflater.from(getActivity());
-        View finance_method = inflater.inflate(R.layout.departments_locations_dialog,null);
-
-        edtSearch = finance_method.findViewById(R.id.edtSearch);
-        recyclerView = finance_method.findViewById(R.id.recyclerView);
-
-        recyclerView.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
-        linearLayoutManager.setReverseLayout(false);
-        linearLayoutManager.setStackFromEnd(false);
-        recyclerView.setLayoutManager(linearLayoutManager);
-
-        showEconomicActivities();
-
-        edtSearch.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                searchEconomicActivities();
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
-
-
-
-
-        departmentDialog.setView(finance_method);
-        departmentDialog.show();
-    }
-
-    private void searchEconomicActivities() {
-        Query query = economic_activities.orderByChild("name").startAt(edtSearch.getText().toString().toUpperCase()).endAt(edtSearch.getText().toString().toUpperCase()+"\uf8ff");
-        FirebaseRecyclerAdapter<EconomicActivitiesModel, EconomicActivitiesViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<EconomicActivitiesModel, EconomicActivitiesViewHolder>
-                (EconomicActivitiesModel.class, R.layout.location_item, EconomicActivitiesViewHolder.class, query) {
-            @Override
-            protected void populateViewHolder(final EconomicActivitiesViewHolder viewHolder, EconomicActivitiesModel model, final int position) {
-                viewHolder.setName(model.getName());
-
-                viewHolder.mView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        btnEconomicActivities.setText(viewHolder.act_name);
-                        userRef.child("economic_activity").setValue(viewHolder.act_name);
-                        departmentDialog.dismiss();
-                    }
-                });
-            }
-        };
-        recyclerView.setAdapter(firebaseRecyclerAdapter);
-    }
-
-    private void showEconomicActivities() {
-        Query query = economic_activities.orderByValue();
-        FirebaseRecyclerAdapter<EconomicActivitiesModel, EconomicActivitiesViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<EconomicActivitiesModel, EconomicActivitiesViewHolder>
-                (EconomicActivitiesModel.class, R.layout.location_item, EconomicActivitiesViewHolder.class, query) {
-            @Override
-            protected void populateViewHolder(final EconomicActivitiesViewHolder viewHolder, EconomicActivitiesModel model, final int position) {
-                final String postKey = getRef(position).getKey();
-                viewHolder.setName(model.getName());
-
-                viewHolder.mView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        btnEconomicActivities.setText(viewHolder.act_name);
-                        userRef.child("economic_activity").setValue(viewHolder.act_name);
-                        departmentDialog.dismiss();
-                    }
-                });
-            }
-        };
-        recyclerView.setAdapter(firebaseRecyclerAdapter);
-    }
 
     private void showDistrictDialog() {
         departmentDialog = new AlertDialog.Builder(getActivity()).create();

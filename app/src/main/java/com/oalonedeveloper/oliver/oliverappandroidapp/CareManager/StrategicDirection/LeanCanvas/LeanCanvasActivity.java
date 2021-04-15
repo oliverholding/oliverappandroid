@@ -130,6 +130,10 @@ public class LeanCanvasActivity extends AppCompatActivity {
 
         rootLayout = findViewById(R.id.rootLayout);
 
+        btnItem7.setFocusable(true);
+        btnItem7.setFocusableInTouchMode(true);
+        btnItem7.requestFocus();
+
         btnInformation1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -20,11 +20,12 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercializat
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CreditsAndTreasury.CreditAndTreasuryActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CustomerSupport.CustomerSuportActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.NewMatrix10.NewMatrix10Activity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.Companies.MyProductsActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class CommercializationActivity extends AppCompatActivity {
 
-    CardView btnTool1,btnTool2,btnTool3,btnTool4,btnTool0;
+    CardView btnTool1,btnTool3,btnTool4,btnTool0,btnTool01;
     String post_key;
 
     @Override
@@ -36,9 +37,9 @@ public class CommercializationActivity extends AppCompatActivity {
 
         btnTool0 = findViewById(R.id.btnTool0);
         btnTool1 = findViewById(R.id.btnTool1);
-        btnTool2 = findViewById(R.id.btnTool2);
         btnTool3 = findViewById(R.id.btnTool3);
         btnTool4 = findViewById(R.id.btnTool4);
+        btnTool01 = findViewById(R.id.btnTool01);
 
         btnTool0.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,14 +57,7 @@ public class CommercializationActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        btnTool2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(CommercializationActivity.this, BillsIssuingActivity.class);
-                intent.putExtra("post_key", post_key);
-                startActivity(intent);
-            }
-        });
+
         btnTool3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,6 +70,14 @@ public class CommercializationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(CommercializationActivity.this, CustomerSuportActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+        btnTool01.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CommercializationActivity.this, MyProductsActivity.class);
                 intent.putExtra("post_key", post_key);
                 startActivity(intent);
             }

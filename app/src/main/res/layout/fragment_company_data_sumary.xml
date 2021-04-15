@@ -165,61 +165,6 @@
 
                 </androidx.cardview.widget.CardView>
 
-                <androidx.cardview.widget.CardView
-                    android:layout_margin="8dp"
-                    app:cardElevation="8dp"
-                    app:cardCornerRadius="8dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:padding="8dp"
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <LinearLayout
-                            android:padding="8dp"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <ImageView
-                                android:src="@drawable/subir_archivo"
-                                android:layout_weight="0.5"
-                                android:layout_width="0dp"
-                                android:layout_height="30dp"/>
-
-                            <TextView
-                                android:layout_margin="8dp"
-                                android:textSize="16sp"
-                                android:textColor="@android:color/black"
-                                android:text="Ficha RUC"
-                                android:layout_weight="2"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content" />
-
-                            <ImageView
-                                android:id="@+id/imgThree"
-                                android:src="@drawable/espera"
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="30dp"/>
-
-                        </LinearLayout>
-
-                        <TextView
-                            android:id="@+id/txtContactData"
-                            android:layout_marginStart="20dp"
-                            android:textSize="14sp"
-                            android:text="A la espera de tu Ficha RUC"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:layout_margin="8dp"
@@ -304,28 +249,6 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:paddingStart="8dp"
-                    android:paddingEnd="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:paddingBottom="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <CheckBox
-                        android:id="@+id/cbLegalRepresentation"
-                        android:textStyle="bold"
-                        android:textColor="@android:color/black"
-                        android:text="Confirmo ser el representante legal del negocio"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-
-                </LinearLayout>
 
             </LinearLayout>
 

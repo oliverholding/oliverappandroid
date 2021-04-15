@@ -7,13 +7,16 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,6 +25,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.Dashboards.CustomerRankingFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.Dashboards.GraphicsFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.Dashboards.ProductRankingFragment;
+import com.oalonedeveloper.oliver.oliverappandroidapp.PhoneAuthActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.PlatformSelectionActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 import com.oalonedeveloper.oliver.oliverappandroidapp.RegistrationData.DataSumaryFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.RegistrationData.RegisterData1Fragment;
@@ -47,6 +52,8 @@ public class CareManagerActivity extends AppCompatActivity {
     TextView txtCompanyName,txtExp,txtRuc,txt1,txt2,txt3;
     View view1,view2,view3;
     BubbleSeekBar expBar;
+    ImageView btnSignOut;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +74,8 @@ public class CareManagerActivity extends AppCompatActivity {
         view1 = findViewById(R.id.view1);
         view2 = findViewById(R.id.view2);
         view3 = findViewById(R.id.view3);
+        btnSignOut = findViewById(R.id.btnSignOut);
+        mAuth = FirebaseAuth.getInstance();
 
         fragment1 = new CareManagerSumaryFragment();
         fragment2 = new CareToolsFragment();
@@ -178,6 +187,16 @@ public class CareManagerActivity extends AppCompatActivity {
 
             public void onCancelled(DatabaseError databaseError) {
 
+            }
+        });
+
+        btnSignOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAuth.signOut();
+                Intent intent = new Intent(CareManagerActivity.this, PhoneAuthActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }

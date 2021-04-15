@@ -12,6 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+    <ImageView
+        android:id="@+id/btnSignOut"
+        android:layout_margin="12dp"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/cerrar_sesion_1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"/>
+
     <RelativeLayout
         android:id="@+id/topLayout"
         android:orientation="horizontal"

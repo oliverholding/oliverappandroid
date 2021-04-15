@@ -143,7 +143,7 @@ public class OutsoursingActivity extends AppCompatActivity {
                                 double extra = Double.parseDouble(edtExtraProcess.getText().toString());
 
                                 double wait_weight = wait*0.45;
-                                double extra_weight = extra*0.45;
+                                double extra_weight = extra*0.55;
 
                                 double weighted = wait_weight+extra_weight;
 

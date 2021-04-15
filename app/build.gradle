@@ -7,7 +7,7 @@ android {
         applicationId "com.oalonedeveloper.oliver.oliverappandroidapp"
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 17
+        versionCode 29
         multiDexEnabled true
         versionName "1.0"
 

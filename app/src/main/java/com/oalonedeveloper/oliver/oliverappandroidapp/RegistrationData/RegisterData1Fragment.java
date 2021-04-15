@@ -1,5 +1,6 @@
 package com.oalonedeveloper.oliver.oliverappandroidapp.RegistrationData;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -100,7 +101,7 @@ public class RegisterData1Fragment extends Fragment {
 
         fragment2 = new RegisterData2Fragment();
 
-        userRef.addValueEventListener(new ValueEventListener() {
+        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.hasChild("profileimage")) {
@@ -145,13 +146,8 @@ public class RegisterData1Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (image_verification.equals("false")) {
+                    showSkipPhotoDialog();
                     Snackbar.make(rootLayout, "Debes cargar una foto de perfil correctamente", Snackbar.LENGTH_LONG).show();
-                    return;
-
-                }
-                else if (image_verification.equals("false")) {
-                    Snackbar.make(rootLayout, "Debes cargar una foto de perfil correctamente", Snackbar.LENGTH_LONG).show();
-                    return;
 
                 }else if (image_verification.equals("true")) {
                     getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment2).commit();
@@ -160,6 +156,38 @@ public class RegisterData1Fragment extends Fragment {
         });
 
         return view;
+    }
+
+    private void showSkipPhotoDialog() {
+        final AlertDialog dialog = new AlertDialog.Builder(getActivity()).create();
+        dialog.setCancelable(false);
+
+        LayoutInflater inflater = LayoutInflater.from(getActivity());
+        View finance_method = inflater.inflate(R.layout.skip_photo_dialog,null);
+
+        TextView txtYes;
+        Button btnNo;
+
+        txtYes = finance_method.findViewById(R.id.txtYes);
+        btnNo = finance_method.findViewById(R.id.btnNo);
+
+        txtYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment2).commit();
+                dialog.dismiss();
+                userRef.child("profileimage").setValue("https://oliver.com.pe/wp-content/uploads/2021/04/camara_foto_perfil.png");
+            }
+        });
+        btnNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.setView(finance_method);
+        dialog.show();
     }
 
     private void setPic() {

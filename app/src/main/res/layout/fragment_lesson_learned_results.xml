@@ -5,58 +5,409 @@
     android:layout_height="match_parent"
     tools:context=".CareManager.ManagementControlAndReports.LessonLearned.LessonLearnedResultsFragment">
 
-    <LinearLayout
-        android:padding="12dp"
-        android:gravity="center"
-        android:orientation="vertical"
+    <ScrollView
+        android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:textSize="18sp"
-            android:layout_margin="4dp"
-            android:textStyle="bold"
-            android:textColor="@color/orange1"
-            android:text="Resultados de la Evaluación:"
+        <LinearLayout
+            android:padding="12dp"
+            android:gravity="center"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_margin="18dp"
-            android:src="@drawable/evaluacion"
-            android:layout_width="80dp"
-            android:layout_height="80dp"/>
+            <TextView
+                android:textSize="18sp"
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                android:textColor="@color/orange1"
+                android:text="Resultados de la Evaluación:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:layout_margin="18dp"
+                android:src="@drawable/evaluacion"
+                android:layout_width="80dp"
+                android:layout_height="80dp"/>
 
 
-        <TextView
-            android:id="@+id/txtCorrect"
-            android:textSize="14sp"
-            android:layout_margin="12dp"
-            android:textStyle="bold"
-            android:textColor="@color/greenColor"
-            android:text="Respuestas Correctas: - "
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txtCorrect"
+                android:textSize="14sp"
+                android:layout_margin="12dp"
+                android:textStyle="bold"
+                android:textColor="@color/greenColor"
+                android:text="Respuestas Correctas: - "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-        <TextView
-            android:id="@+id/txtIncorrect"
-            android:textSize="14sp"
-            android:layout_margin="12dp"
-            android:textStyle="bold"
-            android:textColor="@color/redColor"
-            android:text="Respuestas Incorrectas: - "
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txtIncorrect"
+                android:textSize="14sp"
+                android:layout_margin="12dp"
+                android:textStyle="bold"
+                android:textColor="@color/redColor"
+                android:text="Respuestas Incorrectas: - "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-        <Button
-            android:id="@+id/btnFinish"
-            android:layout_margin="18dp"
-            android:text="Intentarlo nuevamente"
-            android:textColor="@android:color/white"
-            android:background="@drawable/orange_button_style_ripple"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            <TextView
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="4dp"
+                android:text="¿Qué es el IGV?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/txtQuestion1"
+                android:textSize="14sp"
+                android:layout_margin="4dp"
+                android:text="Respuesta Incorrecta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:background="@color/gray2"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="4dp"
+                android:text="¿Para qué sirve una matriz de Producto - Mercado?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtQuestion2"
+                android:textSize="14sp"
+                android:layout_margin="4dp"
+                android:text="Respuesta Incorrecta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:background="@color/gray2"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="4dp"
+                android:text="¿Cuál es la diferencia entre deuda vencida y deuda vigente?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtQuestion3"
+                android:textSize="14sp"
+                android:layout_margin="4dp"
+                android:text="Respuesta Incorrecta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:background="@color/gray2"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+
+            <TextView
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="4dp"
+                android:text="¿Por qué es importante un embudo de ventas?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtQuestion4"
+                android:textSize="14sp"
+                android:layout_margin="4dp"
+                android:text="Respuesta Incorrecta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:background="@color/gray2"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="4dp"
+                android:text="¿Por qué debemos proyectar nuestra demanda?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtQuestion5"
+                android:textSize="14sp"
+                android:layout_margin="4dp"
+                android:text="Respuesta Incorrecta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:background="@color/gray2"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="4dp"
+                android:text="¿Qué son las órdenes de compra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtQuestion6"
+                android:textSize="14sp"
+                android:layout_margin="4dp"
+                android:text="Respuesta Incorrecta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:background="@color/gray2"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="4dp"
+                android:text="¿Cuál es la función del control de inventarios?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtQuestion7"
+                android:textSize="14sp"
+                android:layout_margin="4dp"
+                android:text="Respuesta Incorrecta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:background="@color/gray2"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="4dp"
+                android:text="¿Qué es una ficha técnica?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtQuestion8"
+                android:textSize="14sp"
+                android:layout_margin="4dp"
+                android:text="Respuesta Incorrecta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:background="@color/gray2"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="4dp"
+                android:text="¿Cómo funciona la cadena de producción?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtQuestion9"
+                android:textSize="14sp"
+                android:layout_margin="4dp"
+                android:text="Respuesta Incorrecta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:background="@color/gray2"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="4dp"
+                android:text="¿Para qué sirven los recibos por hononrarios?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtQuestion10"
+                android:textSize="14sp"
+                android:layout_margin="4dp"
+                android:text="Respuesta Incorrecta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:background="@color/gray2"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="4dp"
+                android:text="¿Por qué es importante el cumplimiento de la normatividad?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtQuestion11"
+                android:textSize="14sp"
+                android:layout_margin="4dp"
+                android:text="Respuesta Incorrecta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:background="@color/gray2"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="4dp"
+                android:text="¿Para qué sirve un flujo de caja?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtQuestion12"
+                android:textSize="14sp"
+                android:layout_margin="4dp"
+                android:text="Respuesta Incorrecta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:background="@color/gray2"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="4dp"
+                android:text="¿Qué es el modelo o lienzo de canvas?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtQuestion13"
+                android:textSize="14sp"
+                android:layout_margin="4dp"
+                android:text="Respuesta Incorrecta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:background="@color/gray2"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="4dp"
+                android:text="¿Qué utilidad tiene el Balanced Scorecard?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtQuestion14"
+                android:textSize="14sp"
+                android:layout_margin="4dp"
+                android:text="Respuesta Incorrecta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:background="@color/gray2"
+                android:layout_margin="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_margin="4dp"
+                android:text="¿Por qué es importante tener un plan de negocios?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtQuestion15"
+                android:textSize="14sp"
+                android:layout_margin="4dp"
+                android:text="Respuesta Incorrecta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+            <Button
+                android:id="@+id/btnFinish"
+                android:layout_margin="18dp"
+                android:text="Intentarlo nuevamente"
+                android:textColor="@android:color/white"
+                android:background="@drawable/orange_button_style_ripple"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
 
 </RelativeLayout>

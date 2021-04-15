@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.BillsIssuing.BillsIssuingActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.AccountsNoPaid.AccountsNoPaidMonthlyActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.CashAndBanks.CashAndBanksMonthlyActivity;
 
@@ -23,7 +24,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class SalesModuleActivity extends AppCompatActivity {
 
-    CardView btnTool0,btnTool1,btnTool2,btnTool3,btnTool4,btnTool00;
+    CardView btnTool0,btnTool1,btnTool2,btnTool3,btnTool4,btnTool00,btnTool22;
     String post_key;
 
     @Override
@@ -40,6 +41,7 @@ public class SalesModuleActivity extends AppCompatActivity {
         btnTool3 = findViewById(R.id.btnTool3);
         btnTool4 = findViewById(R.id.btnTool4);
         btnTool00 = findViewById(R.id.btnTool00);
+        btnTool22 = findViewById(R.id.btnTool22);
 
         btnTool0.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +87,14 @@ public class SalesModuleActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SalesModuleActivity.this, SalesModuleTutorialActivity.class);
+                intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+        btnTool22.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SalesModuleActivity.this, BillsIssuingActivity.class);
                 intent.putExtra("post_key", post_key);
                 startActivity(intent);
             }

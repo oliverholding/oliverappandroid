@@ -98,7 +98,7 @@
 
                     <EditText
                         android:id="@+id/edtDocumentNumber"
-                        android:inputType="number"
+                        android:inputType="text"
                         android:padding="8dp"
                         android:layout_margin="8dp"
                         android:background="@drawable/edit_text_style"
@@ -197,6 +197,7 @@
 
 
                     <TextView
+                        android:visibility="gone"
                         android:layout_margin="8dp"
                         android:textSize="16sp"
                         android:textColor="@android:color/black"
@@ -205,6 +206,7 @@
                         android:layout_height="wrap_content" />
 
                     <com.hbb20.CountryCodePicker
+                        android:visibility="gone"
                         android:id="@+id/ccpCNationalityountry"
                         app:ccp_textSize="14sp"
                         android:layout_margin="8dp"

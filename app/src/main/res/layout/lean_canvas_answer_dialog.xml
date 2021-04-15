@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/rootLayout"
+        android:padding="12dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgCanva"
+                android:layout_margin="4dp"
+                android:src="@color/colorGradientCenterRed"
+                android:layout_weight="0.2"
+                android:layout_width="0dp"
+                android:layout_height="30dp"/>
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:textColor="@android:color/black"
+                android:layout_weight="1"
+                android:layout_margin="4dp"
+                android:text="title"
+                android:textStyle="bold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtQuestion"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_margin="8dp"
+            android:text="question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/edtAnswer"
+            android:inputType="textMultiLine"
+            android:hint="Respuesta..."
+            android:padding="8dp"
+            android:background="@drawable/edit_text_style_1"
+            android:layout_margin="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:text="FINALIZAR"
+            android:id="@+id/btnFinish"
+            android:layout_margin="8dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/orange_button_style_ripple"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+</ScrollView>

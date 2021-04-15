@@ -54,6 +54,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardFragment1"
                     android:layout_margin="8dp"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp"
@@ -110,6 +111,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardFragment2"
                     android:layout_margin="8dp"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp"
@@ -166,6 +168,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardFragment3"
                     android:layout_margin="8dp"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp"
@@ -222,6 +225,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardFragment4"
                     android:layout_margin="8dp"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp"
@@ -278,6 +282,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardFragment5"
                     android:layout_margin="8dp"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp"

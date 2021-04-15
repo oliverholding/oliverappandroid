@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
 import android.text.Editable;
+import android.text.InputFilter;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -197,7 +198,7 @@ public class RegisterData2Fragment extends Fragment {
         });
 
 
-        documentType.add("D.N.I");
+        documentType.add("D.N.I"); documentType.add("Carnet de Extranjería"); documentType.add("Pasaporte");
 
         btnDocumentType.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -210,6 +211,9 @@ public class RegisterData2Fragment extends Fragment {
         spinnerDocummentType.bindOnSpinerListener(new OnSpinerItemClick() {
             @Override
             public void onClick(String item2, int position2) {
+                if (item2.equals("D.N.I")) {
+                    edtDocumentNumber.setFilters(new InputFilter[] {new InputFilter.LengthFilter(8)});
+                }
                 btnDocumentType.setText(item2);
                 userRef.child(currentUserID).child("document_type").setValue(item2);
 
@@ -319,6 +323,7 @@ public class RegisterData2Fragment extends Fragment {
         });
 
         userRef.child(currentUserID).child("nacionality").setValue(ccpCNationalityountry.getSelectedCountryName());
+        userRef.child(currentUserID).child("document_type").setValue("D.N.I");
 
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override

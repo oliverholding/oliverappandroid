@@ -66,14 +66,31 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content">
 
-                        <TextView
-                            android:textStyle="bold"
-                            android:text="Información General del Negocio"
-                            android:textSize="16sp"
-                            android:layout_margin="4dp"
-                            android:textColor="@android:color/black"
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:textStyle="bold"
+                                android:text="Información General del Negocio"
+                                android:textSize="16sp"
+                                android:layout_margin="4dp"
+                                android:textColor="@android:color/black"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:id="@+id/btnEdit1"
+                                android:layout_margin="4dp"
+                                android:src="@drawable/editar"
+                                android:layout_weight="0.2"
+                                android:layout_width="0dp"
+                                android:layout_height="25dp"/>
+
+                        </LinearLayout>
 
                         <TextView
                             android:textSize="11sp"

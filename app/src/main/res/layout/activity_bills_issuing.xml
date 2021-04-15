@@ -63,101 +63,34 @@
 
     </androidx.cardview.widget.CardView>
 
+
     <LinearLayout
-        android:layout_below="@id/cardTitle"
-        android:id="@+id/topLayout"
+        android:layout_centerInParent="true"
+        android:id="@+id/buttonsLayout"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_margin="12dp"
-            android:gravity="center"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"
-            android:text="MIS PRE BOLETAS Y PRE FACTURAS"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
         <LinearLayout
-            android:padding="8dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_margin="4dp"
-                android:text=""
-                android:textStyle="bold"
+            <Button
+                android:id="@+id/btnBillList"
+                android:text="MIS BOLETAS Y FACTURAS REGISTRADAS"
+                android:padding="8dp"
                 android:gravity="center"
-                android:textColor="@android:color/black"
-                android:layout_weight="0.3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:id="@+id/txtBillCode"
-                android:layout_margin="4dp"
-                android:text="CÓDIGO"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:textColor="@android:color/black"
+                android:drawableStart="@drawable/boletas_facturas"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:background="@drawable/orange_button_style_ripple"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
 
-            <TextView
-                android:id="@+id/txtCustomerName"
-                android:layout_margin="4dp"
-                android:text="CLIENTE"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:layout_weight="2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:id="@+id/txtBillAmount"
-                android:layout_margin="4dp"
-                android:text="MONTO"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:textColor="@android:color/black"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:layout_margin="4dp"
-                android:text="ESTADO"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:textColor="@android:color/black"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
 
         </LinearLayout>
-
-    </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_below="@id/topLayout"
-        android:layout_above="@id/buttonsLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </androidx.recyclerview.widget.RecyclerView>
-
-    <LinearLayout
-        android:id="@+id/buttonsLayout"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
         <LinearLayout
             android:orientation="horizontal"

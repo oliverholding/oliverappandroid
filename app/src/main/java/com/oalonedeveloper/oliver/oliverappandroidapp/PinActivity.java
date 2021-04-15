@@ -74,7 +74,7 @@ public class PinActivity extends AppCompatActivity {
                     username = dataSnapshot.child("username").getValue().toString();
                     pin_attempts = dataSnapshot.child("pin_attempts").getValue(Integer.class);
 
-                    txtMessage.setText("Hola, " + username + "!");
+                    txtMessage.setText(username );
 
 
                     loadingBar.dismiss();
