@@ -169,7 +169,7 @@
                         android:id="@+id/txtText3"
                         android:textSize="12sp"
                         android:layout_margin="4dp"
-                        android:text="Negocios"
+                        android:text="Finanzas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -196,7 +196,7 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@drawable/curso_de_startups"
+                        android:src="@drawable/logistica_abastecimiento"
                         android:layout_width="30dp"
                         android:layout_height="30dp"/>
 
@@ -204,7 +204,42 @@
                         android:id="@+id/txtText4"
                         android:textSize="12sp"
                         android:layout_margin="4dp"
-                        android:text="Startups"
+                        android:text="Logística"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/tab5"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:layout_margin="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout5"
+                    android:background="@drawable/orange_strokes_style"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_margin="4dp"
+                        android:src="@drawable/produccion"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:id="@+id/txtText5"
+                        android:textSize="12sp"
+                        android:layout_margin="4dp"
+                        android:text="Producción"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 

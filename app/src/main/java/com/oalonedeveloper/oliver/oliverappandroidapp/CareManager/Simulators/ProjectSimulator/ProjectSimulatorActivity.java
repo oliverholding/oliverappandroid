@@ -2,11 +2,14 @@ package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Simulators.Pr
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -24,6 +27,7 @@ public class ProjectSimulatorActivity extends AppCompatActivity {
             txtEarningsBeforeTaxes4,txtEarningsBeforeTaxes5,txtProfit1,txtProfit2,txtProfit3,txtProfit4,txtProfit5,txtViability;
     RelativeLayout rootLayout;
     DecimalFormat decimalFormat;
+    ImageView txtInfo1,txtInfo2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +94,8 @@ public class ProjectSimulatorActivity extends AppCompatActivity {
         edtRateOfReturn = findViewById(R.id.edtRateOfReturn);
 
         txtViability = findViewById(R.id.txtViability);
+        txtInfo1 = findViewById(R.id.txtInfo1);
+        txtInfo2 = findViewById(R.id.txtInfo2);
 
         rootLayout = findViewById(R.id.rootLayout);
 
@@ -183,6 +189,29 @@ public class ProjectSimulatorActivity extends AppCompatActivity {
                 }
             }
         });
+
+        txtInfo1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String title = "Capital Inicial";
+                String info = "Dinero que se usará para iniciar el proyecto";
+                int img = R.drawable.capital_trabajo;
+
+                showInfoDialog(title,info,img);
+            }
+        });
+
+        txtInfo2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String title = "Rentabilidad Mínima Exigida";
+                String info = "Porncentaje de rentabilidad que como inversionista exige para ganar más que otras alternativas";
+                int img = R.drawable.rentabilidad;
+
+                showInfoDialog(title,info,img);
+            }
+        });
+
     }
 
     private void calculate() {
@@ -314,6 +343,27 @@ public class ProjectSimulatorActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    private void showInfoDialog(String title, String info, int img) {
+        final AlertDialog dialog = new AlertDialog.Builder(this).create();
+
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View finance_method = inflater.inflate(R.layout.info_tool_dialog, null);
+
+        ImageView imgInfo;
+        TextView txtTitle, txtInfo;
+
+        imgInfo = finance_method.findViewById(R.id.imgInfo);
+        txtTitle = finance_method.findViewById(R.id.txtTitle);
+        txtInfo = finance_method.findViewById(R.id.txtInfo);
+
+        imgInfo.setImageResource(img);
+        txtTitle.setText(title);
+        txtInfo.setText(info);
+
+        dialog.setView(finance_method);
+        dialog.show();
 
     }
 }

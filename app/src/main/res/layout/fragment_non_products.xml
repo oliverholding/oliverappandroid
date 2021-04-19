@@ -18,7 +18,7 @@
         android:layout_height="match_parent">
 
         <pl.droidsonroids.gif.GifImageView
-            android:src="@drawable/billetera"
+            android:src="@drawable/billetera_gif"
             android:layout_width="130dp"
             android:layout_height="130dp"/>
 

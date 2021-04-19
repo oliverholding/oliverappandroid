@@ -22,6 +22,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.Factoring.FactoringBillsAndDetailsActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.Factoring.FactoringInProcessToGetActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.LendingProduct.LoanBillsAndDetailsActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.LendingProduct.LoanInProcessToGetActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.FinancialManagement.MyProductsModel;
@@ -33,7 +35,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class MyCompanyProductsFragment extends Fragment {
 
     RecyclerView recyclerView;
-    DatabaseReference userRef,lendingRef,financialInstitutionsRef;
+    DatabaseReference userRef,lendingRef,financialInstitutionsRef,factoringRef;
 
     String currentUid,post_key;
 
@@ -50,6 +52,7 @@ public class MyCompanyProductsFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recyclerView);
         userRef = FirebaseDatabase.getInstance().getReference().child("My Companies");
         lendingRef = FirebaseDatabase.getInstance().getReference().child("Company Lendings");
+        factoringRef = FirebaseDatabase.getInstance().getReference().child("Factoring");
         financialInstitutionsRef = FirebaseDatabase.getInstance().getReference().child("Financial Institutions");
 
         recyclerView.setHasFixedSize(true);
@@ -78,23 +81,58 @@ public class MyCompanyProductsFragment extends Fragment {
                 lendingRef.child(viewHolder.my_operation_id).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        String issuing_product_id = dataSnapshot.child("issuing_product_id").getValue().toString();
+                        if (dataSnapshot.exists()) {
+                            String issuing_product_id = dataSnapshot.child("issuing_product_id").getValue().toString();
 
-                        financialInstitutionsRef.child(viewHolder.my_financial_institution_id).child("Company Products").child(issuing_product_id).addValueEventListener(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(DataSnapshot dataSnapshot) {
-                                String product_name = dataSnapshot.child("product_name").getValue().toString();
-                                String product_img = dataSnapshot.child("product_img").getValue().toString();
-                                viewHolder.txtProductName.setText("Producto: "+product_name);
-                                Picasso.with(getActivity()).load(product_img).fit().into(viewHolder.imgProduct);
+                            financialInstitutionsRef.child(viewHolder.my_financial_institution_id).child("Company Products").child(issuing_product_id).addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    String product_name = dataSnapshot.child("product_name").getValue().toString();
+                                    String product_img = dataSnapshot.child("product_img").getValue().toString();
+                                    viewHolder.txtProductName.setText("Producto: " + product_name);
+                                    Picasso.with(getActivity()).load(product_img).fit().into(viewHolder.imgProduct);
 
-                            }
+                                }
 
-                            @Override
-                            public void onCancelled(DatabaseError databaseError) {
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
 
-                            }
-                        });
+                                }
+                            });
+                        } else {
+                            factoringRef.child(viewHolder.my_operation_id).addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.exists()) {
+                                        String issuing_product_id = dataSnapshot.child("issuing_product_id").getValue().toString();
+
+                                        financialInstitutionsRef.child(viewHolder.my_financial_institution_id).child("Company Products").child(issuing_product_id).addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                                String product_name = dataSnapshot.child("product_name").getValue().toString();
+                                                String product_img = dataSnapshot.child("product_img").getValue().toString();
+                                                viewHolder.txtProductName.setText("Producto: "+product_name);
+                                                Picasso.with(getActivity()).load(product_img).fit().into(viewHolder.imgProduct);
+
+                                            }
+
+                                            @Override
+                                            public void onCancelled(DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                    }
+
+
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+
+                                }
+                            });
+                        }
+
 
                     }
 
@@ -123,27 +161,69 @@ public class MyCompanyProductsFragment extends Fragment {
                         lendingRef.child(viewHolder.my_operation_id).addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(DataSnapshot dataSnapshot) {
-                                String lending_state = dataSnapshot.child("lending_state").getValue().toString();
+                                if (dataSnapshot.exists()) {
+                                    String lending_state = dataSnapshot.child("lending_state").getValue().toString();
 
-                                if (lending_state.equals("approved")) {
-                                    Intent intent = new Intent(getActivity(), CompanyLoanBillsAndDetailsActivity.class);
-                                    intent.putExtra("operation_id",viewHolder.my_operation_id);
-                                    intent.putExtra("company_id",post_key);
-                                    intent.putExtra("institution_key", viewHolder.my_financial_institution_id);
-                                    startActivity(intent);
-                                }
-                                if (lending_state.equals("ready")) {
+                                    if (lending_state.equals("approved")) {
+                                        Intent intent = new Intent(getActivity(), CompanyLoanBillsAndDetailsActivity.class);
+                                        intent.putExtra("operation_id", viewHolder.my_operation_id);
+                                        intent.putExtra("company_id", post_key);
+                                        intent.putExtra("institution_key", viewHolder.my_financial_institution_id);
+                                        startActivity(intent);
+                                    }
+                                    if (lending_state.equals("ready")) {
 
-                                    lendingRef.child(viewHolder.my_operation_id).addValueEventListener(new ValueEventListener() {
+                                        lendingRef.child(viewHolder.my_operation_id).addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                                String issuing_product_id = dataSnapshot.child("issuing_product_id").getValue().toString();
+                                                Intent intent = new Intent(getActivity(), CompanyLoanBillsAndDetailsActivity.class);
+                                                intent.putExtra("product_key", issuing_product_id);
+                                                intent.putExtra("company_id", post_key);
+                                                intent.putExtra("institution_key", viewHolder.my_financial_institution_id);
+                                                intent.putExtra("operation_id", viewHolder.my_operation_id);
+                                                startActivity(intent);
+                                            }
+
+                                            @Override
+                                            public void onCancelled(DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                    }
+                                } else {
+                                    factoringRef.child(viewHolder.my_operation_id).addListenerForSingleValueEvent(new ValueEventListener() {
                                         @Override
                                         public void onDataChange(DataSnapshot dataSnapshot) {
-                                            String issuing_product_id = dataSnapshot.child("issuing_product_id").getValue().toString();
-                                            Intent intent = new Intent(getActivity(), CompanyLoanBillsAndDetailsActivity.class);
-                                            intent.putExtra("product_key",issuing_product_id);
-                                            intent.putExtra("company_id",post_key);
-                                            intent.putExtra("institution_key", viewHolder.my_financial_institution_id);
-                                            intent.putExtra("operation_id",viewHolder.my_operation_id);
-                                            startActivity(intent);
+                                            String lending_state = dataSnapshot.child("factoring_state").getValue().toString();
+
+                                            if (lending_state.equals("approved")) {
+                                                Intent intent = new Intent(getActivity(), FactoringInProcessToGetActivity.class);
+                                                intent.putExtra("operation_id", viewHolder.my_operation_id);
+                                                intent.putExtra("company_id", post_key);
+                                                intent.putExtra("institution_key", viewHolder.my_financial_institution_id);
+                                                startActivity(intent);
+                                            }
+                                            if (lending_state.equals("ready")) {
+
+                                                factoringRef.child(viewHolder.my_operation_id).addValueEventListener(new ValueEventListener() {
+                                                    @Override
+                                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                                        String issuing_product_id = dataSnapshot.child("issuing_product_id").getValue().toString();
+                                                        Intent intent = new Intent(getActivity(), FactoringBillsAndDetailsActivity.class);
+                                                        intent.putExtra("product_key", issuing_product_id);
+                                                        intent.putExtra("company_id", post_key);
+                                                        intent.putExtra("institution_key", viewHolder.my_financial_institution_id);
+                                                        intent.putExtra("operation_id", viewHolder.my_operation_id);
+                                                        startActivity(intent);
+                                                    }
+
+                                                    @Override
+                                                    public void onCancelled(DatabaseError databaseError) {
+
+                                                    }
+                                                });
+                                            }
                                         }
 
                                         @Override
@@ -152,6 +232,7 @@ public class MyCompanyProductsFragment extends Fragment {
                                         }
                                     });
                                 }
+
 
                             }
 

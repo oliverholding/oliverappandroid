@@ -2,11 +2,14 @@ package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Simulators.In
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -30,6 +33,7 @@ public class InterestRateSimulatorActivity extends AppCompatActivity {
     SpinnerDialog spinnerMonthsDialog;
     ArrayList<String> arr_days =new ArrayList<>();
     SpinnerDialog spinnerDaysDialog;
+    ImageView txtInfo1;
 
     DecimalFormat decimalFormat;
 
@@ -43,6 +47,8 @@ public class InterestRateSimulatorActivity extends AppCompatActivity {
         btnDays = findViewById(R.id.btnDays);
         txtRate1 = findViewById(R.id.txtRate1);
         txtRate2 = findViewById(R.id.txtRate2);
+
+        txtInfo1 = findViewById(R.id.txtInfo1);
 
         rootLayout = findViewById(R.id.rootLayout);
 
@@ -106,7 +112,7 @@ public class InterestRateSimulatorActivity extends AppCompatActivity {
                     double annual_rate = Double.parseDouble(edtRate.getText().toString())/100;
                     double months = Double.parseDouble(item2);
 
-                    double pow = (months/30);
+                    double pow = (months/360);
                     double tem = (Math.pow((1+annual_rate),pow)-1)*100;
                     String tem_st = decimalFormat.format(tem);
                     txtRate2.setText(tem_st+"%");
@@ -117,5 +123,39 @@ public class InterestRateSimulatorActivity extends AppCompatActivity {
             }
         });
 
+        txtInfo1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String title = "Tasa Efectiva Anual";
+                String info = "Es el precio del dinero, esta tasa principalmente es dada por las instituciones financieras para representar el interés a cobrar por el capital prestado";
+                int img = R.drawable.tributos_impuestos;
+
+                showInfoDialog(title,info,img);
+            }
+        });
+
     }
+
+    private void showInfoDialog(String title, String info, int img) {
+        final AlertDialog dialog = new AlertDialog.Builder(this).create();
+
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View finance_method = inflater.inflate(R.layout.info_tool_dialog, null);
+
+        ImageView imgInfo;
+        TextView txtTitle, txtInfo;
+
+        imgInfo = finance_method.findViewById(R.id.imgInfo);
+        txtTitle = finance_method.findViewById(R.id.txtTitle);
+        txtInfo = finance_method.findViewById(R.id.txtInfo);
+
+        imgInfo.setImageResource(img);
+        txtTitle.setText(title);
+        txtInfo.setText(info);
+
+        dialog.setView(finance_method);
+        dialog.show();
+
+    }
+
 }

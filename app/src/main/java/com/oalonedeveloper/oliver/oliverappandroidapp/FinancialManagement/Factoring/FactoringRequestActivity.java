@@ -18,6 +18,7 @@ import android.provider.OpenableColumns;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -353,8 +354,8 @@ public class FactoringRequestActivity extends AppCompatActivity {
                 financialInstitutionsRef.child(institution_key).child("Company Products").child(product_key).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        String product_name = dataSnapshot.child("product_name").getValue().toString();
-                        String product_img = dataSnapshot.child("product_img").getValue().toString();
+                        product_name = dataSnapshot.child("product_name").getValue().toString();
+                        product_img = dataSnapshot.child("product_img").getValue().toString();
 
                         Picasso.with(FactoringRequestActivity.this).load(product_img).fit().into(imgProductImage);
                         txtProductName.setText(product_name);
@@ -477,7 +478,7 @@ public class FactoringRequestActivity extends AppCompatActivity {
                                     toPath.child(timestamp+currentUid).child("request_state").setValue("sent");
                                     toPath.child(timestamp+currentUid).child("requested_date").setValue(day+"/"+month+"/"+year);
                                     toPath.child(timestamp+currentUid).child("requested_time").setValue(saveCurrentTime);
-                                    toPath.child(timestamp+currentUid).child("factoring_max_rate").setValue(factoring_max_rate);
+                                    toPath.child(timestamp+currentUid).child("factoring_max_rate").setValue(factoring_max_rate*100);
                                     toPath.child(timestamp+currentUid).child("timestamp").setValue(timestamp);
 
                                     expressLoanRef.removeValue();
@@ -650,13 +651,16 @@ public class FactoringRequestActivity extends AppCompatActivity {
         }
 
         double amount_to_finance = invoice_amount*factoring_max_rate;
-        double ted = Math.pow((1+tea),(1.00/360.00))-1;
+        double ted = (Math.pow((1+tea),(1.00/360.00))-1);
+
 
         double interest = (amount_to_finance*(1-(1/(Math.pow((1+ted),expiration_days_ago)))));
         double fee = (invoice_amount*(product_rate_fee));
         double igv = fee*0.18;
         double customer_payment = warranty_rate*amount_to_finance;
         double factoring = amount_to_finance-(interest+igv)-customer_payment;
+
+        Log.d("fee",fee+"");
 
         String factoring_st = decimalFormat.format(factoring);
 

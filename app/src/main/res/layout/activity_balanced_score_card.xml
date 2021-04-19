@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:src="@drawable/balanced_scored"
+                    android:src="@drawable/balanced_score"
                     android:layout_weight="0.2"
                     android:layout_margin="4dp"
                     android:layout_width="0dp"

@@ -166,7 +166,7 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@drawable/produccion_operaciones"
+                        android:src="@drawable/produccion"
                         android:layout_width="30dp"
                         android:layout_height="30dp"/>
 
@@ -236,7 +236,7 @@
 
                     <ImageView
                         android:layout_margin="4dp"
-                        android:src="@drawable/normas"
+                        android:src="@drawable/normatividad"
                         android:layout_width="30dp"
                         android:layout_height="30dp"/>
 

@@ -41,79 +41,113 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
-                <LinearLayout
-                    android:padding="8dp"
-                    android:orientation="horizontal"
+                <androidx.cardview.widget.CardView
+                    app:cardElevation="12dp"
+                    app:cardCornerRadius="15dp"
+                    android:layout_margin="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <LinearLayout
-                        android:orientation="vertical"
                         android:gravity="center"
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <ImageView
                             android:layout_margin="8dp"
                             android:src="@drawable/ingresos"
-                            android:layout_width="70dp"
+                            android:layout_weight="0.3"
+                            android:layout_width="0dp"
                             android:layout_height="70dp"/>
 
-                        <TextView
-                            android:textColor="@color/greenColor"
-                            android:layout_margin="4dp"
-                            android:textStyle="bold"
-                            android:text="INGRESOS"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:gravity="end"
+                            android:padding="12dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/txtIncomes"
-                            android:textSize="16sp"
-                            android:textColor="@color/greenColor"
-                            android:layout_margin="4dp"
-                            android:textStyle="bold"
-                            android:text="S/ 0.00"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:textColor="@color/greenColor"
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:text="INGRESOS"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:id="@+id/txtIncomes"
+                                android:textSize="16sp"
+                                android:textColor="@color/greenColor"
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:text="S/ 0.00"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    app:cardElevation="12dp"
+                    app:cardCornerRadius="15dp"
+                    android:layout_margin="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
                     <LinearLayout
-                        android:orientation="vertical"
                         android:gravity="center"
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <ImageView
                             android:layout_margin="8dp"
                             android:src="@drawable/egresos"
-                            android:layout_width="70dp"
+                            android:layout_weight="0.3"
+                            android:layout_width="0dp"
                             android:layout_height="70dp"/>
 
-                        <TextView
-                            android:textColor="@color/redColor"
-                            android:layout_margin="4dp"
-                            android:textStyle="bold"
-                            android:text="EGRESOS"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:gravity="end"
+                            android:padding="12dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/txtOutcomes"
-                            android:textSize="16sp"
-                            android:textColor="@color/redColor"
-                            android:layout_margin="4dp"
-                            android:textStyle="bold"
-                            android:text="S/ 0.00"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:textColor="@color/redColor"
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:text="EGRESOS"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:id="@+id/txtOutcomes"
+                                android:textSize="16sp"
+                                android:textColor="@color/redColor"
+                                android:layout_margin="4dp"
+                                android:textStyle="bold"
+                                android:text="S/ 0.00"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
-                </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
 
             </LinearLayout>

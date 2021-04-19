@@ -31,6 +31,8 @@
 
     <color name="gray1">#47484D</color>
     <color name="gray2">#B8BEC0</color>
+    <color name="gray3">#e6e6e6</color>
+    <color name="gray4">#cccccc</color>
 
     <color name="default_background">#fff3f3f3</color>
 

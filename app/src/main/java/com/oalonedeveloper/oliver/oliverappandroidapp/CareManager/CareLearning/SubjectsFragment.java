@@ -30,10 +30,9 @@ import com.xw.repo.BubbleSeekBar;
 
 public class SubjectsFragment extends Fragment {
 
-    CardView tab1,tab2,tab3,tab4;
-    LinearLayout linearLayout1,linearLayout2,linearLayout3,linearLayout4;
-    TextView txtText1,txtText2,txtText3,txtText4;
-    Fragment fragment1,fragment2,fragment3,fragment4;
+    CardView tab1,tab2,tab3,tab4,tab5;
+    LinearLayout linearLayout1,linearLayout2,linearLayout3,linearLayout4,linearLayout5;
+    TextView txtText1,txtText2,txtText3,txtText4,txtText5;
     RecyclerView recyclerView;
     DatabaseReference careRef,userRef;
     FirebaseAuth mAuth;
@@ -49,16 +48,19 @@ public class SubjectsFragment extends Fragment {
         tab2 = view.findViewById(R.id.tab2);
         tab3 = view.findViewById(R.id.tab3);
         tab4 = view.findViewById(R.id.tab4);
+        tab5 = view.findViewById(R.id.tab5);
 
         linearLayout1 = view.findViewById(R.id.linearLayout1);
         linearLayout2 = view.findViewById(R.id.linearLayout2);
         linearLayout3 = view.findViewById(R.id.linearLayout3);
         linearLayout4 = view.findViewById(R.id.linearLayout4);
+        linearLayout5 = view.findViewById(R.id.linearLayout5);
 
         txtText1 = view.findViewById(R.id.txtText1);
         txtText2 = view.findViewById(R.id.txtText2);
         txtText3 = view.findViewById(R.id.txtText3);
         txtText4 = view.findViewById(R.id.txtText4);
+        txtText5 = view.findViewById(R.id.txtText5);
 
         recyclerView = view.findViewById(R.id.recyclerView);
 
@@ -96,6 +98,9 @@ public class SubjectsFragment extends Fragment {
                 linearLayout4.setBackgroundResource(R.drawable.orange_strokes_style);
                 txtText4.setTextColor(Color.GRAY);
 
+                linearLayout5.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText5.setTextColor(Color.GRAY);
+
                 subject_category = "marketing";
                 showSubjects();
 
@@ -120,6 +125,9 @@ public class SubjectsFragment extends Fragment {
                 linearLayout4.setBackgroundResource(R.drawable.orange_strokes_style);
                 txtText4.setTextColor(Color.GRAY);
 
+                linearLayout5.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText5.setTextColor(Color.GRAY);
+
                 subject_category = "sales";
                 showSubjects();
             }
@@ -142,7 +150,10 @@ public class SubjectsFragment extends Fragment {
                 linearLayout4.setBackgroundResource(R.drawable.orange_strokes_style);
                 txtText4.setTextColor(Color.GRAY);
 
-                subject_category = "business";
+                linearLayout5.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText5.setTextColor(Color.GRAY);
+
+                subject_category = "finance";
                 showSubjects();
 
             }
@@ -164,7 +175,35 @@ public class SubjectsFragment extends Fragment {
                 linearLayout3.setBackgroundResource(R.drawable.orange_strokes_style);
                 txtText3.setTextColor(Color.GRAY);
 
-                subject_category = "startup";
+                linearLayout5.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText5.setTextColor(Color.GRAY);
+
+                subject_category = "logistic";
+                showSubjects();
+
+            }
+        });
+
+        tab5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                linearLayout5.setBackgroundResource(R.drawable.orange_button_style_ripple);
+                txtText5.setTextColor(Color.WHITE);
+
+                linearLayout1.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText1.setTextColor(Color.GRAY);
+
+                linearLayout2.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText2.setTextColor(Color.GRAY);
+
+                linearLayout3.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText3.setTextColor(Color.GRAY);
+
+                linearLayout4.setBackgroundResource(R.drawable.orange_strokes_style);
+                txtText4.setTextColor(Color.GRAY);
+
+                subject_category = "production";
                 showSubjects();
 
             }

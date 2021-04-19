@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
@@ -25,7 +26,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class StrategicDirectionActivity extends AppCompatActivity {
 
-    CardView btnTool1,btnTool2,btnTool3,btnTool4,btnTool5,btnTool6,btnTool7,btnTool8,btnTool9,btnTool10;
+    CardView btnTool1,btnTool2,btnTool3,btnTool4,btnTool5,btnTool6,btnTool7,btnTool8,btnTool9,btnTool10,btnTool11;
     String post_key;
 
     @Override
@@ -45,6 +46,7 @@ public class StrategicDirectionActivity extends AppCompatActivity {
         btnTool8 = findViewById(R.id.btnTool8);
         btnTool9 = findViewById(R.id.btnTool9);
         btnTool10 = findViewById(R.id.btnTool10);
+        btnTool11 = findViewById(R.id.btnTool11);
 
         btnTool1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,6 +126,13 @@ public class StrategicDirectionActivity extends AppCompatActivity {
                 Intent intent = new Intent(StrategicDirectionActivity.this, OrganizationLearningActivity.class);
                 intent.putExtra("post_key", post_key);
                 startActivity(intent);
+            }
+        });
+        btnTool11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://oliver.com.pe/oliver-manager-login/user/company-reports/"+post_key+"/company"));
+                startActivity(browserIntent);
             }
         });
     }

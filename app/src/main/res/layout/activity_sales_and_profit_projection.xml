@@ -134,6 +134,7 @@
                             android:layout_height="wrap_content"/>
 
                         <ImageView
+                            android:id="@+id/txtInfo1"
                             android:src="@drawable/informacion"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
@@ -166,6 +167,7 @@
                             android:layout_height="wrap_content"/>
 
                         <ImageView
+                            android:id="@+id/txtInfo2"
                             android:src="@drawable/informacion"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
@@ -198,6 +200,7 @@
                             android:layout_height="wrap_content"/>
 
                         <ImageView
+                            android:id="@+id/txtInfo3"
                             android:src="@drawable/informacion"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
@@ -272,6 +275,7 @@
                             android:layout_height="wrap_content"/>
 
                         <ImageView
+                            android:id="@+id/txtInfo4"
                             android:src="@drawable/informacion"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
@@ -305,6 +309,7 @@
                             android:layout_height="wrap_content"/>
 
                         <ImageView
+                            android:id="@+id/txtInfo5"
                             android:src="@drawable/informacion"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
@@ -379,6 +384,7 @@
                             android:layout_height="wrap_content"/>
 
                         <ImageView
+                            android:id="@+id/txtInfo6"
                             android:src="@drawable/informacion"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
@@ -454,6 +460,7 @@
                             android:layout_height="wrap_content"/>
 
                         <ImageView
+                            android:id="@+id/txtInfo7"
                             android:src="@drawable/informacion"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"
@@ -486,6 +493,7 @@
                             android:layout_height="wrap_content"/>
 
                         <ImageView
+                            android:id="@+id/txtInfo8"
                             android:src="@drawable/informacion"
                             android:layout_weight="0.2"
                             android:layout_width="0dp"

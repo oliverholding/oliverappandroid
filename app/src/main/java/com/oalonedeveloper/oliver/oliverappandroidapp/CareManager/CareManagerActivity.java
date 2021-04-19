@@ -44,7 +44,6 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class CareManagerActivity extends AppCompatActivity {
 
-    CardView tab1,tab2,tab3;
     Fragment fragment1,fragment2,fragment3;
     CircleImageView imgCompanyProfile;
     DatabaseReference myCompanyRef;
@@ -60,9 +59,6 @@ public class CareManagerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_care_manager);
 
-        tab1 = findViewById(R.id.tab1);
-        tab2 = findViewById(R.id.tab2);
-        tab3 = findViewById(R.id.tab3);
 
         txtExp = findViewById(R.id.txtExp);
         expBar = findViewById(R.id.expBar);
@@ -82,9 +78,10 @@ public class CareManagerActivity extends AppCompatActivity {
         fragment3 = new CareAchievementsFragment();
 
         getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
+        view1.setBackgroundResource(R.color.orange1);
 
 
-        tab1.setOnClickListener(new View.OnClickListener() {
+        txt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
@@ -93,12 +90,12 @@ public class CareManagerActivity extends AppCompatActivity {
                 txt3.setTextColor(Color.GRAY);
 
                 view1.setBackgroundResource(R.color.orange1);
-                view2.setBackgroundResource(R.color.gray2);
-                view3.setBackgroundResource(R.color.gray2);
+                view2.setBackgroundResource(0);
+                view3.setBackgroundResource(0);
             }
         });
 
-        tab2.setOnClickListener(new View.OnClickListener() {
+        txt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment2).commit();
@@ -107,12 +104,12 @@ public class CareManagerActivity extends AppCompatActivity {
                 txt3.setTextColor(Color.GRAY);
 
                 view2.setBackgroundResource(R.color.orange1);
-                view1.setBackgroundResource(R.color.gray2);
-                view3.setBackgroundResource(R.color.gray2);
+                view1.setBackgroundResource(0);
+                view3.setBackgroundResource(0);
             }
         });
 
-        tab3.setOnClickListener(new View.OnClickListener() {
+        txt3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment3).commit();
@@ -121,8 +118,8 @@ public class CareManagerActivity extends AppCompatActivity {
                 txt1.setTextColor(Color.GRAY);
 
                 view3.setBackgroundResource(R.color.orange1);
-                view2.setBackgroundResource(R.color.gray2);
-                view1.setBackgroundResource(R.color.gray2);
+                view2.setBackgroundResource(0);
+                view1.setBackgroundResource(0);
 
             }
         });

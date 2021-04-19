@@ -2,10 +2,14 @@ package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Simulators.Sa
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +22,7 @@ public class SalesAndProfitProjectionActivity extends AppCompatActivity {
     EditText edtCost1,edtCost2,edtCost3,edtPrice,edtQuantity,edtProfit,edtIgv,edtReturnTax;
     TextView txtProfit,txtMessage,txtProfit2;
     DecimalFormat decimalFormat;
+    ImageView txtInfo1,txtInfo2,txtInfo3,txtInfo4,txtInfo5,txtInfo6,txtInfo7,txtInfo8;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +40,15 @@ public class SalesAndProfitProjectionActivity extends AppCompatActivity {
         txtProfit = findViewById(R.id.txtProfit);
         txtProfit2 = findViewById(R.id.txtProfit2);
         txtMessage = findViewById(R.id.txtMessage);
+
+        txtInfo1 = findViewById(R.id.txtInfo1);
+        txtInfo2 = findViewById(R.id.txtInfo2);
+        txtInfo3 = findViewById(R.id.txtInfo3);
+        txtInfo4 = findViewById(R.id.txtInfo4);
+        txtInfo5 = findViewById(R.id.txtInfo5);
+        txtInfo6 = findViewById(R.id.txtInfo6);
+        txtInfo7 = findViewById(R.id.txtInfo7);
+        txtInfo8 = findViewById(R.id.txtInfo8);
 
         decimalFormat = new DecimalFormat("0.00");
 
@@ -190,6 +204,93 @@ public class SalesAndProfitProjectionActivity extends AppCompatActivity {
             }
         });
 
+        txtInfo1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String title = "Costos Fijos Totales";
+                String info = "Se refiere a los egresos de forma recurrente que no dependen de la producción o cantidad comericializada en conjunto";
+                int img = R.drawable.costos;
+
+                showInfoDialog(title,info,img);
+            }
+        });
+
+        txtInfo2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String title = "Costo variable Unitario";
+                String info = "Son los costos que cambian al mismo tiempo que cambia la cantidad producida o comercializada";
+                int img = R.drawable.costos;
+
+                showInfoDialog(title,info,img);
+            }
+        });
+
+        txtInfo3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String title = "Otros Costos";
+                String info = "Se refieren a otros costos en general";
+                int img = R.drawable.costos;
+
+                showInfoDialog(title,info,img);
+            }
+        });
+
+        txtInfo4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String title = "Precio de Venta Unitario";
+                String info = "Es el valor al que venderás tu producto o servicio";
+                int img = R.drawable.ventas;
+
+                showInfoDialog(title,info,img);
+            }
+        });
+        txtInfo5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String title = "Unidades Vendidas";
+                String info = "Cantidad de productos o servicios que se venderán durante el período";
+                int img = R.drawable.ventas;
+
+                showInfoDialog(title,info,img);
+            }
+        });
+
+        txtInfo6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String title = "Rentabilidad esperada";
+                String info = "Es el porcentaje que se espera ganar después de todos los costos";
+                int img = R.drawable.rentabilidad;
+
+                showInfoDialog(title,info,img);
+            }
+        });
+
+        txtInfo7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String title = "IGV";
+                String info = "Es la tasa impositiva que se aplica a todas las ventas que realizas";
+                int img = R.drawable.tributos_impuestos;
+
+                showInfoDialog(title,info,img);
+            }
+        });
+
+        txtInfo8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String title = "Imapuesto a la renta";
+                String info = "Es tasa impositiva que se aplica a la utilidad bruta";
+                int img = R.drawable.tributos_impuestos;
+
+                showInfoDialog(title,info,img);
+            }
+        });
+
 
     }
 
@@ -232,4 +333,27 @@ public class SalesAndProfitProjectionActivity extends AppCompatActivity {
 
 
     }
+
+    private void showInfoDialog(String title, String info, int img) {
+        final AlertDialog dialog = new AlertDialog.Builder(this).create();
+
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View finance_method = inflater.inflate(R.layout.info_tool_dialog, null);
+
+        ImageView imgInfo;
+        TextView txtTitle, txtInfo;
+
+        imgInfo = finance_method.findViewById(R.id.imgInfo);
+        txtTitle = finance_method.findViewById(R.id.txtTitle);
+        txtInfo = finance_method.findViewById(R.id.txtInfo);
+
+        imgInfo.setImageResource(img);
+        txtTitle.setText(title);
+        txtInfo.setText(info);
+
+        dialog.setView(finance_method);
+        dialog.show();
+
+    }
+
 }

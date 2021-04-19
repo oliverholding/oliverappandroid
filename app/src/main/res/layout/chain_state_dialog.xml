@@ -41,7 +41,7 @@
                     <ImageButton
                         android:id="@+id/btnProduction"
                         android:layout_margin="4dp"
-                        android:src="@drawable/produccion_operaciones"
+                        android:src="@drawable/cadena_de_produccion"
                         android:background="@drawable/gray_button_style"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"/>

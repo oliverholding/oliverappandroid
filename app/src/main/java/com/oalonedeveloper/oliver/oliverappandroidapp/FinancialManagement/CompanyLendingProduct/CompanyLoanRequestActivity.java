@@ -315,8 +315,8 @@ public class CompanyLoanRequestActivity extends AppCompatActivity {
                 financialInstitutionsRef.child(institution_key).child("Company Products").child(product_key).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        String product_name = dataSnapshot.child("product_name").getValue().toString();
-                        String product_img = dataSnapshot.child("product_img").getValue().toString();
+                        product_name = dataSnapshot.child("product_name").getValue().toString();
+                        product_img = dataSnapshot.child("product_img").getValue().toString();
 
                         Picasso.with(CompanyLoanRequestActivity.this).load(product_img).fit().into(imgProductImage);
                         txtProductName.setText(product_name);

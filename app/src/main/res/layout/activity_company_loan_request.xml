@@ -179,7 +179,7 @@
 
                         <ImageView
                             android:layout_margin="4dp"
-                            android:src="@drawable/simulador_toma_deciciones"
+                            android:src="@drawable/simulador_decisiones"
                             android:layout_width="40dp"
                             android:layout_height="40dp"/>
 
