@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.View;
 
 
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CommercializationActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.AccountsNoPaid.AccountsNoPaidMonthlyActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.AccountsToPaid.AccountsToPaidMonthlyActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.Budget.BudgetActivity;
@@ -20,11 +21,12 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManag
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.FinancialStatements.FinancialStatementsActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.FixedAssets.FixedAssetsActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.RiskManagement.RiskManagementActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ModuleQualificationActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class FinanacialManagementActivity extends AppCompatActivity {
 
-    CardView btnTool1,btnTool2,btnTool3,btnTool4,btnTool5,btnTool6,btnTool7,btnTool8,btnTool0;
+    CardView btnTool1,btnTool2,btnTool3,btnTool4,btnTool5,btnTool6,btnTool7,btnTool8,btnTool0,btnTool9;
     String post_key;
 
     @Override
@@ -43,6 +45,7 @@ public class FinanacialManagementActivity extends AppCompatActivity {
         btnTool7 = findViewById(R.id.btnTool7);
         btnTool8 = findViewById(R.id.btnTool8);
         btnTool0 = findViewById(R.id.btnTool0);
+        btnTool9 = findViewById(R.id.btnTool9);
 
         btnTool0.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,6 +116,15 @@ public class FinanacialManagementActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(FinanacialManagementActivity.this, RiskManagementActivity.class);
                 intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+        btnTool9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FinanacialManagementActivity.this, ModuleQualificationActivity.class);
+                intent.putExtra("post_key", post_key);
+                intent.putExtra("path", "finance");
                 startActivity(intent);
             }
         });

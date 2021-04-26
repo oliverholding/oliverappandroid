@@ -12,6 +12,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CommercializationActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ModuleQualificationActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirection.BusinessModel.BusinessModelActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirection.FODA.FodaActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.StrategicDirection.IndustryInformation.IndustryInformationActivity;
@@ -26,7 +28,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class StrategicDirectionActivity extends AppCompatActivity {
 
-    CardView btnTool1,btnTool2,btnTool3,btnTool4,btnTool5,btnTool6,btnTool7,btnTool8,btnTool9,btnTool10,btnTool11;
+    CardView btnTool1,btnTool2,btnTool3,btnTool4,btnTool5,btnTool6,btnTool7,btnTool8,btnTool9,btnTool10,btnTool11,btnTool12;
     String post_key;
 
     @Override
@@ -47,6 +49,7 @@ public class StrategicDirectionActivity extends AppCompatActivity {
         btnTool9 = findViewById(R.id.btnTool9);
         btnTool10 = findViewById(R.id.btnTool10);
         btnTool11 = findViewById(R.id.btnTool11);
+        btnTool12 = findViewById(R.id.btnTool12);
 
         btnTool1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,6 +136,15 @@ public class StrategicDirectionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://oliver.com.pe/oliver-manager-login/user/company-reports/"+post_key+"/company"));
                 startActivity(browserIntent);
+            }
+        });
+        btnTool12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(StrategicDirectionActivity.this, ModuleQualificationActivity.class);
+                intent.putExtra("post_key", post_key);
+                intent.putExtra("path", "strategic");
+                startActivity(intent);
             }
         });
     }

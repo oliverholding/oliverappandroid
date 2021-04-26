@@ -15,11 +15,13 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessPlan.E
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessPlan.FinancialPlan.FinancialPlanActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessPlan.HumanResourcesPlan.HumanResourcesPlanActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BusinessPlan.OperationPlan.OperationPlanActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CommercializationActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ModuleQualificationActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class BusinessPlanActivity extends AppCompatActivity {
 
-    CardView btnTool1,btnTool2,btnTool3,btnTool4,btnTool5,btnTool6;
+    CardView btnTool1,btnTool2,btnTool3,btnTool4,btnTool5,btnTool6,btnTool7;
     String post_key;
 
 
@@ -36,6 +38,7 @@ public class BusinessPlanActivity extends AppCompatActivity {
         btnTool4 = findViewById(R.id.btnTool4);
         btnTool5 = findViewById(R.id.btnTool5);
         btnTool6 = findViewById(R.id.btnTool6);
+        btnTool7 = findViewById(R.id.btnTool7);
 
         btnTool1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +85,15 @@ public class BusinessPlanActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(BusinessPlanActivity.this, ContingencyPlanActivity.class);
                 intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+        btnTool7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BusinessPlanActivity.this, ModuleQualificationActivity.class);
+                intent.putExtra("post_key", post_key);
+                intent.putExtra("path", "business_plan");
                 startActivity(intent);
             }
         });

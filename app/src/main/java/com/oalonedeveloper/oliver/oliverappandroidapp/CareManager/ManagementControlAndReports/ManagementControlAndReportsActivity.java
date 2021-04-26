@@ -10,12 +10,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CommercializationActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ManagementControlAndReports.ContractManagement.ContractManagementActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ManagementControlAndReports.DashboardProcess.DashboardProcessActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ManagementControlAndReports.DashboardsAndKeyindex.DashboardAndKeyIndexActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ManagementControlAndReports.InternalControl.InternalControlActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ManagementControlAndReports.LessonLearned.LessonLearnedActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ManagementControlAndReports.ReportGenerator.ReportGeneratorActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ModuleQualificationActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Simulators.CostPriceSimulator.CostPriceSimulatorActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Simulators.CostVolumeProfitAnalysys.CostVolumeProfitAnalysysActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Simulators.InterestRateSimulator.InterestRateSimulatorActivity;
@@ -27,7 +29,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class ManagementControlAndReportsActivity extends AppCompatActivity {
 
-    CardView btnTool1,btnTool2,btnTool3,btnTool4,btnTool5,btnTool6;
+    CardView btnTool1,btnTool2,btnTool3,btnTool4,btnTool5,btnTool6,btnTool7;
     String post_key;
 
     @Override
@@ -43,6 +45,7 @@ public class ManagementControlAndReportsActivity extends AppCompatActivity {
         btnTool4 = findViewById(R.id.btnTool4);
         btnTool5 = findViewById(R.id.btnTool5);
         btnTool6 = findViewById(R.id.btnTool6);
+        btnTool7 = findViewById(R.id.btnTool7);
 
 
         btnTool1.setOnClickListener(new View.OnClickListener() {
@@ -90,6 +93,15 @@ public class ManagementControlAndReportsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ManagementControlAndReportsActivity.this, ReportGeneratorActivity.class);
                 intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+        btnTool7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ManagementControlAndReportsActivity.this, ModuleQualificationActivity.class);
+                intent.putExtra("post_key", post_key);
+                intent.putExtra("path", "management_control");
                 startActivity(intent);
             }
         });

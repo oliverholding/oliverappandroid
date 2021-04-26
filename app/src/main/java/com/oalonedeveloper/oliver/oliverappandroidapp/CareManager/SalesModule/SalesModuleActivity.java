@@ -12,9 +12,11 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.BillsIssuing.BillsIssuingActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CommercializationActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.AccountsNoPaid.AccountsNoPaidMonthlyActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.CashAndBanks.CashAndBanksMonthlyActivity;
 
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ModuleQualificationActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.CustomerSchedule.CustomerScheduleActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.MySellers.MySellersActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.SalesModule.SalesArgument.SalesArgumentActivity;
@@ -24,7 +26,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class SalesModuleActivity extends AppCompatActivity {
 
-    CardView btnTool0,btnTool1,btnTool2,btnTool3,btnTool4,btnTool00,btnTool22;
+    CardView btnTool0,btnTool1,btnTool2,btnTool3,btnTool4,btnTool00,btnTool22,btnTool5;
     String post_key;
 
     @Override
@@ -42,6 +44,7 @@ public class SalesModuleActivity extends AppCompatActivity {
         btnTool4 = findViewById(R.id.btnTool4);
         btnTool00 = findViewById(R.id.btnTool00);
         btnTool22 = findViewById(R.id.btnTool22);
+        btnTool5 = findViewById(R.id.btnTool5);
 
         btnTool0.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +99,15 @@ public class SalesModuleActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(SalesModuleActivity.this, BillsIssuingActivity.class);
                 intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+        btnTool5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SalesModuleActivity.this, ModuleQualificationActivity.class);
+                intent.putExtra("post_key", post_key);
+                intent.putExtra("path", "sales");
                 startActivity(intent);
             }
         });

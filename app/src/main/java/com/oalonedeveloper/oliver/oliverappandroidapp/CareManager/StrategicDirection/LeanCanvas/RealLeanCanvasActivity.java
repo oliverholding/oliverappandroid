@@ -274,7 +274,7 @@ public class RealLeanCanvasActivity extends AppCompatActivity {
                     root4.setFocusable(true);
                     root4.setFocusableInTouchMode(true);
                     root4.requestFocus();
-                    root4.setBackgroundResource(R.drawable.orange_strokes_style);
+                    root4.setBackgroundResource(R.drawable.orange_strokes_focus_style);
                 }
                 if (dataSnapshot.hasChild("item_1")) {
                     String item = dataSnapshot.child("item_1").getValue().toString();
@@ -283,7 +283,7 @@ public class RealLeanCanvasActivity extends AppCompatActivity {
                     root7.setFocusable(true);
                     root7.setFocusableInTouchMode(true);
                     root7.requestFocus();
-                    root7.setBackgroundResource(R.drawable.orange_strokes_style);
+                    root7.setBackgroundResource(R.drawable.orange_strokes_focus_style);
                 }
                 if (dataSnapshot.hasChild("item_2")) {
                     String item = dataSnapshot.child("item_2").getValue().toString();
@@ -297,7 +297,7 @@ public class RealLeanCanvasActivity extends AppCompatActivity {
                     root6.setFocusable(true);
                     root6.setFocusableInTouchMode(true);
                     root6.requestFocus();
-                    root6.setBackgroundResource(R.drawable.orange_strokes_style);
+                    root6.setBackgroundResource(R.drawable.orange_strokes_focus_style);
                 }
                 if (dataSnapshot.hasChild("item_3")) {
                     String item = dataSnapshot.child("item_3").getValue().toString();
@@ -311,7 +311,7 @@ public class RealLeanCanvasActivity extends AppCompatActivity {
                     root5.setFocusable(true);
                     root5.setFocusableInTouchMode(true);
                     root5.requestFocus();
-                    root5.setBackgroundResource(R.drawable.orange_strokes_style);
+                    root5.setBackgroundResource(R.drawable.orange_strokes_focus_style);
                 }
                 if (dataSnapshot.hasChild("item_4")) {
                     String item = dataSnapshot.child("item_4").getValue().toString();
@@ -325,7 +325,7 @@ public class RealLeanCanvasActivity extends AppCompatActivity {
                     root9.setFocusable(true);
                     root9.setFocusableInTouchMode(true);
                     root9.requestFocus();
-                    root9.setBackgroundResource(R.drawable.orange_strokes_style);
+                    root9.setBackgroundResource(R.drawable.orange_strokes_focus_style);
                 }
                 if (dataSnapshot.hasChild("item_5")) {
                     String item = dataSnapshot.child("item_5").getValue().toString();
@@ -339,7 +339,7 @@ public class RealLeanCanvasActivity extends AppCompatActivity {
                     root3.setFocusable(true);
                     root3.setFocusableInTouchMode(true);
                     root3.requestFocus();
-                    root3.setBackgroundResource(R.drawable.orange_strokes_style);
+                    root3.setBackgroundResource(R.drawable.orange_strokes_focus_style);
                 }
                 if (dataSnapshot.hasChild("item_6")) {
                     String item = dataSnapshot.child("item_6").getValue().toString();
@@ -353,7 +353,7 @@ public class RealLeanCanvasActivity extends AppCompatActivity {
                     root2.setFocusable(true);
                     root2.setFocusableInTouchMode(true);
                     root2.requestFocus();
-                    root2.setBackgroundResource(R.drawable.orange_strokes_style);
+                    root2.setBackgroundResource(R.drawable.orange_strokes_focus_style);
                 }
                 if (dataSnapshot.hasChild("item_7")) {
                     String item = dataSnapshot.child("item_7").getValue().toString();
@@ -367,7 +367,7 @@ public class RealLeanCanvasActivity extends AppCompatActivity {
                     root1.setFocusable(true);
                     root1.setFocusableInTouchMode(true);
                     root1.requestFocus();
-                    root1.setBackgroundResource(R.drawable.orange_strokes_style);
+                    root1.setBackgroundResource(R.drawable.orange_strokes_focus_style);
                 }
                 if (dataSnapshot.hasChild("item_8")) {
                     String item = dataSnapshot.child("item_8").getValue().toString();
@@ -381,7 +381,7 @@ public class RealLeanCanvasActivity extends AppCompatActivity {
                     root8.setFocusable(true);
                     root8.setFocusableInTouchMode(true);
                     root8.requestFocus();
-                    root8.setBackgroundResource(R.drawable.orange_strokes_style);
+                    root8.setBackgroundResource(R.drawable.orange_strokes_focus_style);
                 }
                 if (dataSnapshot.hasChild("item_9")) {
                     String item = dataSnapshot.child("item_9").getValue().toString();

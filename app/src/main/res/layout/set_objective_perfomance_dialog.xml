@@ -54,7 +54,7 @@
             android:layout_margin="8dp"
             android:textSize="16sp"
             android:textColor="@android:color/black"
-            android:text="¿Cuál es la calficación del superior?"
+            android:text="¿Cuál es la calificación del superior?"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -72,7 +72,7 @@
             android:layout_margin="8dp"
             android:textSize="16sp"
             android:textColor="@android:color/black"
-            android:text="¿Cuál es la calficación de un compañero?"
+            android:text="¿Cuál es la calificación de un compañero?"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         app:mwhGradientAngle="145"
-        app:mwhStartColor="@color/blue1"
-        app:mwhCloseColor="@color/blue2"
+        app:mwhStartColor="@color/blue2"
+        app:mwhCloseColor="@color/blue1"
         app:mwhWaves="
         310,0,1.7,1.3,5
         310,0,1.7,1.3,0

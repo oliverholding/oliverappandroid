@@ -79,12 +79,12 @@
             <Button
                 android:id="@+id/btnBillList"
                 android:text="MIS BOLETAS Y FACTURAS REGISTRADAS"
-                android:padding="8dp"
+                android:padding="16dp"
                 android:gravity="center"
                 android:drawableStart="@drawable/boletas_facturas"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:layout_margin="8dp"
-                android:background="@drawable/orange_button_style_ripple"
+                android:background="@drawable/orange_strokes_focus_style"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
@@ -100,12 +100,12 @@
             <Button
                 android:id="@+id/btnCreateBill"
                 android:text="CREAR PRE BOLETA"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:layout_margin="8dp"
-                android:padding="8dp"
+                android:padding="16dp"
                 android:gravity="center"
                 android:drawableStart="@drawable/crear_boleta"
-                android:background="@drawable/orange_button_style_ripple"
+                android:background="@drawable/orange_strokes_focus_style"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
@@ -113,12 +113,12 @@
             <Button
                 android:id="@+id/btnCreateInvoice"
                 android:text="CREAR PRE FACTURA"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:layout_margin="8dp"
-                android:padding="8dp"
+                android:padding="16dp"
                 android:gravity="center"
                 android:drawableStart="@drawable/crear_factura"
-                android:background="@drawable/orange_button_style_ripple"
+                android:background="@drawable/orange_strokes_focus_style"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
@@ -133,12 +133,12 @@
             <Button
                 android:id="@+id/btnDashboards"
                 android:text="DASHBOARDS DE VENTAS"
-                android:padding="8dp"
+                android:padding="16dp"
                 android:gravity="center"
                 android:drawableStart="@drawable/dashboards"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:layout_margin="8dp"
-                android:background="@drawable/orange_button_style_ripple"
+                android:background="@drawable/orange_strokes_focus_style"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>

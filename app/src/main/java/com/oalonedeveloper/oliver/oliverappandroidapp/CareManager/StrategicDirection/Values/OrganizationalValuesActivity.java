@@ -7,6 +7,8 @@ import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -14,27 +16,29 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Production.ProductionOrders.ProductionOrderProductDetailActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.UserInformationModule.UserInformationModuleActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 import es.dmoral.toasty.Toasty;
 
 public class OrganizationalValuesActivity extends AppCompatActivity {
 
-    LinearLayout step1value1,step1value2,step1value3,step1value4,step1value5,step1value6,step1value7,step1value8,step1value9,step1value10,step1value11,step1value12,step1value13,step1value14,step1value15,step1value16,step1value17;
-    RadioButton rdIdentified1,rdIdentified2,rdIdentified3,rdIdentified4,rdIdentified5,rdIdentified6,rdIdentified7,rdIdentified8,rdIdentified9,rdIdentified10,rdIdentified11,rdIdentified12,rdIdentified13,rdIdentified14,rdIdentified15,rdIdentified16,rdIdentified17;
-    RadioButton rdNonIdentified1,rdNonIdentified2,rdNonIdentified3,rdNonIdentified4,rdNonIdentified5,rdNonIdentified6,rdNonIdentified7,rdNonIdentified8,rdNonIdentified9,rdNonIdentified10,rdNonIdentified11,rdNonIdentified12,rdNonIdentified13,rdNonIdentified14,rdNonIdentified15,rdNonIdentified16,rdNonIdentified17;
-    LinearLayout step2value1,step2value2,step2value3,step2value4,step2value5,step2value6,step2value7,step2value8,step2value9,step2value10,step2value11,step2value12,step2value13,step2value14,step2value15,step2value16,step2value17;
-    RadioButton rdYes1,rdYes2,rdYes3,rdYes4,rdYes5,rdYes6,rdYes7,rdYes8,rdYes9,rdYes10,rdYes11,rdYes12,rdYes13,rdYes14,rdYes15,rdYes16,rdYes17;
-    RadioButton rdNo1,rdNo2,rdNo3,rdNo4,rdNo5,rdNo6,rdNo7,rdNo8,rdNo9,rdNo10,rdNo11,rdNo12,rdNo13,rdNo14,rdNo15,rdNo16,rdNo17;
-    LinearLayout step3value1,step3value2,step3value3,step3value4,step3value5,step3value6,step3value7,step3value8,step3value9,step3value10,step3value11,step3value12,step3value13,step3value14,step3value15,step3value16,step3value17;
-    RadioButton rdYesHabits1,rdYesHabits2,rdYesHabits3,rdYesHabits4,rdYesHabits5,rdYesHabits6,rdYesHabits7,rdYesHabits8,rdYesHabits9,rdYesHabits10,rdYesHabits11,rdYesHabits12,rdYesHabits13,rdYesHabits14,rdYesHabits15,rdYesHabits16,rdYesHabits17;
-    RadioButton rdNoHabits1,rdNoHabits2,rdNoHabits3,rdNoHabits4,rdNoHabits5,rdNoHabits6,rdNoHabits7,rdNoHabits8,rdNoHabits9,rdNoHabits10,rdNoHabits11,rdNoHabits12,rdNoHabits13,rdNoHabits14,rdNoHabits15,rdNoHabits16,rdNoHabits17;
-    LinearLayout step4value1,step4value2,step4value3,step4value4,step4value5,step4value6,step4value7,step4value8,step4value9,step4value10,step4value11,step4value12,step4value13,step4value14,step4value15,step4value16,step4value17;
-    RadioButton rdYesAdvantage1,rdYesAdvantage2,rdYesAdvantage3,rdYesAdvantage4,rdYesAdvantage5,rdYesAdvantage6,rdYesAdvantage7,rdYesAdvantage8,rdYesAdvantage9,rdYesAdvantage10,rdYesAdvantage11,rdYesAdvantage12,rdYesAdvantage13,rdYesAdvantage14,rdYesAdvantage15,rdYesAdvantage16,rdYesAdvantage17;
-    RadioButton rdAdvantage1,rdAdvantage2,rdAdvantage3,rdAdvantage4,rdAdvantage5,rdAdvantage6,rdAdvantage7,rdAdvantage8,rdAdvantage9,rdAdvantage10,rdAdvantage11,rdAdvantage12,rdAdvantage13,rdAdvantage14,rdAdvantage15,rdAdvantage16,rdAdvantage17;
-    LinearLayout step5value1,step5value2,step5value3,step5value4,step5value5,step5value6,step5value7,step5value8,step5value9,step5value10,step5value11,step5value12,step5value13,step5value14,step5value15,step5value16,step5value17;
-    CardView cardValue1,cardValue2,cardValue3,cardValue4,cardValue5,cardValue6,cardValue7,cardValue8,cardValue9,cardValue10,cardValue11,cardValue12,cardValue13,cardValue14,cardValue15,cardValue16,cardValue17;
-    ImageView btnValue1,btnValue2,btnValue3,btnValue4,btnValue5,btnValue6,btnValue7,btnValue8,btnValue9,btnValue10,btnValue11,btnValue12,btnValue13,btnValue14,btnValue15,btnValue16,btnValue17;
+    LinearLayout step1value1,step1value2,step1value3,step1value4,step1value5,step1value6,step1value7,step1value8,step1value9,step1value10,step1value11,step1value12,step1value13,step1value14,step1value15,step1value16,step1value17,step1value18;
+    RadioButton rdIdentified1,rdIdentified2,rdIdentified3,rdIdentified4,rdIdentified5,rdIdentified6,rdIdentified7,rdIdentified8,rdIdentified9,rdIdentified10,rdIdentified11,rdIdentified12,rdIdentified13,rdIdentified14,rdIdentified15,rdIdentified16,rdIdentified17,rdIdentified18;
+    RadioButton rdNonIdentified1,rdNonIdentified2,rdNonIdentified3,rdNonIdentified4,rdNonIdentified5,rdNonIdentified6,rdNonIdentified7,rdNonIdentified8,rdNonIdentified9,rdNonIdentified10,rdNonIdentified11,rdNonIdentified12,rdNonIdentified13,rdNonIdentified14,rdNonIdentified15,rdNonIdentified16,rdNonIdentified17,rdNonIdentified18;
+    LinearLayout step2value1,step2value2,step2value3,step2value4,step2value5,step2value6,step2value7,step2value8,step2value9,step2value10,step2value11,step2value12,step2value13,step2value14,step2value15,step2value16,step2value17,step2value18;
+    RadioButton rdYes1,rdYes2,rdYes3,rdYes4,rdYes5,rdYes6,rdYes7,rdYes8,rdYes9,rdYes10,rdYes11,rdYes12,rdYes13,rdYes14,rdYes15,rdYes16,rdYes17,rdYes18;
+    RadioButton rdNo1,rdNo2,rdNo3,rdNo4,rdNo5,rdNo6,rdNo7,rdNo8,rdNo9,rdNo10,rdNo11,rdNo12,rdNo13,rdNo14,rdNo15,rdNo16,rdNo17,rdNo18;
+    LinearLayout step3value1,step3value2,step3value3,step3value4,step3value5,step3value6,step3value7,step3value8,step3value9,step3value10,step3value11,step3value12,step3value13,step3value14,step3value15,step3value16,step3value17,step3value18;
+    RadioButton rdYesHabits1,rdYesHabits2,rdYesHabits3,rdYesHabits4,rdYesHabits5,rdYesHabits6,rdYesHabits7,rdYesHabits8,rdYesHabits9,rdYesHabits10,rdYesHabits11,rdYesHabits12,rdYesHabits13,rdYesHabits14,rdYesHabits15,rdYesHabits16,rdYesHabits17,rdYesHabits18;
+    RadioButton rdNoHabits1,rdNoHabits2,rdNoHabits3,rdNoHabits4,rdNoHabits5,rdNoHabits6,rdNoHabits7,rdNoHabits8,rdNoHabits9,rdNoHabits10,rdNoHabits11,rdNoHabits12,rdNoHabits13,rdNoHabits14,rdNoHabits15,rdNoHabits16,rdNoHabits17,rdNoHabits18;
+    LinearLayout step4value1,step4value2,step4value3,step4value4,step4value5,step4value6,step4value7,step4value8,step4value9,step4value10,step4value11,step4value12,step4value13,step4value14,step4value15,step4value16,step4value17,step4value18;
+    RadioButton rdYesAdvantage1,rdYesAdvantage2,rdYesAdvantage3,rdYesAdvantage4,rdYesAdvantage5,rdYesAdvantage6,rdYesAdvantage7,rdYesAdvantage8,rdYesAdvantage9,rdYesAdvantage10,rdYesAdvantage11,rdYesAdvantage12,rdYesAdvantage13,rdYesAdvantage14,rdYesAdvantage15,rdYesAdvantage16,rdYesAdvantage17,rdYesAdvantage18;
+    RadioButton rdAdvantage1,rdAdvantage2,rdAdvantage3,rdAdvantage4,rdAdvantage5,rdAdvantage6,rdAdvantage7,rdAdvantage8,rdAdvantage9,rdAdvantage10,rdAdvantage11,rdAdvantage12,rdAdvantage13,rdAdvantage14,rdAdvantage15,rdAdvantage16,rdAdvantage17,rdAdvantage18;
+    LinearLayout step5value1,step5value2,step5value3,step5value4,step5value5,step5value6,step5value7,step5value8,step5value9,step5value10,step5value11,step5value12,step5value13,step5value14,step5value15,step5value16,step5value17,step5value18;
+    CardView cardValue1,cardValue2,cardValue3,cardValue4,cardValue5,cardValue6,cardValue7,cardValue8,cardValue9,cardValue10,cardValue11,cardValue12,cardValue13,cardValue14,cardValue15,cardValue16,cardValue17,cardValue18;
+    ImageView btnValue1,btnValue2,btnValue3,btnValue4,btnValue5,btnValue6,btnValue7,btnValue8,btnValue9,btnValue10,btnValue11,btnValue12,btnValue13,btnValue14,btnValue15,btnValue16,btnValue17,btnValue18;
+    TextView txtValueName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +62,7 @@ public class OrganizationalValuesActivity extends AppCompatActivity {
         step1value15 = findViewById(R.id.step1value15);
         step1value16 = findViewById(R.id.step1value16);
         step1value17 = findViewById(R.id.step1value17);
+        step1value18 = findViewById(R.id.step1value18);
 
         rdIdentified1 = findViewById(R.id.rdIdentified1);
         rdIdentified2 = findViewById(R.id.rdIdentified2);
@@ -76,6 +81,7 @@ public class OrganizationalValuesActivity extends AppCompatActivity {
         rdIdentified15 = findViewById(R.id.rdIdentified15);
         rdIdentified16 = findViewById(R.id.rdIdentified16);
         rdIdentified17 = findViewById(R.id.rdIdentified17);
+        rdIdentified18 = findViewById(R.id.rdIdentified18);
 
         rdNonIdentified1 = findViewById(R.id.rdNonIdentified1);
         rdNonIdentified2 = findViewById(R.id.rdNonIdentified2);
@@ -94,6 +100,7 @@ public class OrganizationalValuesActivity extends AppCompatActivity {
         rdNonIdentified15 = findViewById(R.id.rdNonIdentified15);
         rdNonIdentified16 = findViewById(R.id.rdNonIdentified16);
         rdNonIdentified17 = findViewById(R.id.rdNonIdentified17);
+        rdNonIdentified18 = findViewById(R.id.rdNonIdentified18);
 
         step2value1 = findViewById(R.id.step2value1);
         step2value2 = findViewById(R.id.step2value2);
@@ -112,6 +119,7 @@ public class OrganizationalValuesActivity extends AppCompatActivity {
         step2value15 = findViewById(R.id.step2value15);
         step2value16 = findViewById(R.id.step2value16);
         step2value17 = findViewById(R.id.step2value17);
+        step2value18 = findViewById(R.id.step2value18);
 
         rdYes1 = findViewById(R.id.rdYes1);
         rdYes2 = findViewById(R.id.rdYes2);
@@ -130,6 +138,7 @@ public class OrganizationalValuesActivity extends AppCompatActivity {
         rdYes15 = findViewById(R.id.rdYes15);
         rdYes16 = findViewById(R.id.rdYes16);
         rdYes17 = findViewById(R.id.rdYes17);
+        rdYes18 = findViewById(R.id.rdYes18);
 
         rdNo1 = findViewById(R.id.rdNo1);
         rdNo2 = findViewById(R.id.rdNo2);
@@ -148,6 +157,7 @@ public class OrganizationalValuesActivity extends AppCompatActivity {
         rdNo15 = findViewById(R.id.rdNo15);
         rdNo16 = findViewById(R.id.rdNo16);
         rdNo17 = findViewById(R.id.rdNo17);
+        rdNo18 = findViewById(R.id.rdNo18);
 
         step3value1 = findViewById(R.id.step3value1);
         step3value2 = findViewById(R.id.step3value2);
@@ -166,6 +176,7 @@ public class OrganizationalValuesActivity extends AppCompatActivity {
         step3value15 = findViewById(R.id.step3value15);
         step3value16 = findViewById(R.id.step3value16);
         step3value17 = findViewById(R.id.step3value17);
+        step3value18 = findViewById(R.id.step3value18);
 
         rdYesHabits1 = findViewById(R.id.rdYesHabits1);
         rdYesHabits2 = findViewById(R.id.rdYesHabits2);
@@ -184,6 +195,7 @@ public class OrganizationalValuesActivity extends AppCompatActivity {
         rdYesHabits15 = findViewById(R.id.rdYesHabits15);
         rdYesHabits16 = findViewById(R.id.rdYesHabits16);
         rdYesHabits17 = findViewById(R.id.rdYesHabits17);
+        rdYesHabits18 = findViewById(R.id.rdYesHabits18);
 
         rdNoHabits1 = findViewById(R.id.rdNoHabits1);
         rdNoHabits2 = findViewById(R.id.rdNoHabits2);
@@ -202,6 +214,7 @@ public class OrganizationalValuesActivity extends AppCompatActivity {
         rdNoHabits15 = findViewById(R.id.rdNoHabits15);
         rdNoHabits16 = findViewById(R.id.rdNoHabits16);
         rdNoHabits17 = findViewById(R.id.rdNoHabits17);
+        rdNoHabits18 = findViewById(R.id.rdNoHabits18);
 
         step4value1 = findViewById(R.id.step4value1);
         step4value2 = findViewById(R.id.step4value2);
@@ -220,6 +233,7 @@ public class OrganizationalValuesActivity extends AppCompatActivity {
         step4value15 = findViewById(R.id.step4value15);
         step4value16 = findViewById(R.id.step4value16);
         step4value17 = findViewById(R.id.step4value17);
+        step4value18 = findViewById(R.id.step4value18);
 
         rdYesAdvantage1 = findViewById(R.id.rdYesAdvantage1);
         rdYesAdvantage2 = findViewById(R.id.rdYesAdvantage2);
@@ -238,6 +252,7 @@ public class OrganizationalValuesActivity extends AppCompatActivity {
         rdYesAdvantage15 = findViewById(R.id.rdYesAdvantage15);
         rdYesAdvantage16 = findViewById(R.id.rdYesAdvantage16);
         rdYesAdvantage17 = findViewById(R.id.rdYesAdvantage17);
+        rdYesAdvantage18 = findViewById(R.id.rdYesAdvantage18);
 
         rdAdvantage1 = findViewById(R.id.rdAdvantage1);
         rdAdvantage2 = findViewById(R.id.rdAdvantage2);
@@ -256,6 +271,7 @@ public class OrganizationalValuesActivity extends AppCompatActivity {
         rdAdvantage15 = findViewById(R.id.rdAdvantage15);
         rdAdvantage16 = findViewById(R.id.rdAdvantage16);
         rdAdvantage17 = findViewById(R.id.rdAdvantage17);
+        rdAdvantage18 = findViewById(R.id.rdAdvantage18);
 
         step5value1 = findViewById(R.id.step5value1);
         step5value2 = findViewById(R.id.step5value2);
@@ -274,6 +290,7 @@ public class OrganizationalValuesActivity extends AppCompatActivity {
         step5value15 = findViewById(R.id.step5value15);
         step5value16 = findViewById(R.id.step5value16);
         step5value17 = findViewById(R.id.step5value17);
+        step5value18 = findViewById(R.id.step5value18);
 
         cardValue1 = findViewById(R.id.cardValue1);
         cardValue2 = findViewById(R.id.cardValue2);
@@ -292,6 +309,7 @@ public class OrganizationalValuesActivity extends AppCompatActivity {
         cardValue15 = findViewById(R.id.cardValue15);
         cardValue16 = findViewById(R.id.cardValue16);
         cardValue17 = findViewById(R.id.cardValue17);
+        cardValue18 = findViewById(R.id.cardValue18);
 
         btnValue1 = findViewById(R.id.btnValue1);
         btnValue2 = findViewById(R.id.btnValue2);
@@ -310,6 +328,9 @@ public class OrganizationalValuesActivity extends AppCompatActivity {
         btnValue15 = findViewById(R.id.btnValue15);
         btnValue16 = findViewById(R.id.btnValue16);
         btnValue17 = findViewById(R.id.btnValue17);
+        btnValue18 = findViewById(R.id.btnValue18);
+
+        txtValueName = findViewById(R.id.txtValueName);
 
         btnValue1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -471,6 +492,12 @@ public class OrganizationalValuesActivity extends AppCompatActivity {
                 showValueDescriptionDialog(title,description);
             }
         });
+        btnValue18.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               showEditValueDialog();
+            }
+        });
 
         value1();
         value2();
@@ -489,7 +516,33 @@ public class OrganizationalValuesActivity extends AppCompatActivity {
         value15();
         value16();
         value17();
+        value18();
 
+    }
+
+    private void showEditValueDialog() {
+        final AlertDialog dialog = new AlertDialog.Builder(this).create();
+
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View finance_method = inflater.inflate(R.layout.edit_organizational_value_dialog,null);
+
+        final EditText edtName;
+        Button btnFinish;
+
+        edtName = finance_method.findViewById(R.id.edtName);
+        btnFinish = finance_method.findViewById(R.id.btnFinish);
+
+        btnFinish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtValueName.setText(edtName.getText().toString());
+                dialog.dismiss();
+                Toasty.success(OrganizationalValuesActivity.this, "Actualizado", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        dialog.setView(finance_method);
+        dialog.show();
     }
 
     private void showValueDescriptionDialog(String title, String description) {
@@ -509,6 +562,76 @@ public class OrganizationalValuesActivity extends AppCompatActivity {
 
         dialog.setView(finance_method);
         dialog.show();
+    }
+
+    private void value18() {
+        step2value18.setVisibility(View.GONE);
+        step3value18.setVisibility(View.GONE);
+        step4value18.setVisibility(View.GONE);
+        step5value18.setVisibility(View.GONE);
+
+        rdIdentified18.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                step1value18.setVisibility(View.GONE);
+                step2value18.setVisibility(View.VISIBLE);
+            }
+        });
+        rdNonIdentified18.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toasty.error(OrganizationalValuesActivity.this, "Valor Descartado", Toast.LENGTH_LONG).show();
+                cardValue18.setVisibility(View.GONE);
+            }
+        });
+
+        rdYes18.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toasty.error(OrganizationalValuesActivity.this, "Valor Descartado", Toast.LENGTH_LONG).show();
+                cardValue18.setVisibility(View.GONE);
+            }
+        });
+
+        rdNo18.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                step2value18.setVisibility(View.GONE);
+                step3value18.setVisibility(View.VISIBLE);
+            }
+        });
+
+        rdYesHabits18.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                step3value18.setVisibility(View.GONE);
+                step4value18.setVisibility(View.VISIBLE);
+            }
+        });
+
+        rdNoHabits18.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toasty.error(OrganizationalValuesActivity.this, "Valor Descartado", Toast.LENGTH_LONG).show();
+                cardValue18.setVisibility(View.GONE);
+            }
+        });
+
+        rdYesAdvantage18.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                step5value18.setVisibility(View.VISIBLE);
+                step4value18.setVisibility(View.GONE);
+            }
+        });
+
+        rdAdvantage18.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toasty.error(OrganizationalValuesActivity.this, "Valor Descartado", Toast.LENGTH_LONG).show();
+                cardValue18.setVisibility(View.GONE);
+            }
+        });
     }
 
 

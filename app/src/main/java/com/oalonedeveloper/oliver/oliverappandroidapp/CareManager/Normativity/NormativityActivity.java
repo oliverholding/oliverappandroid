@@ -21,12 +21,14 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CommercializationActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.AccountsNoPaid.AccountsNoPaidMonthlyActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.AccountsToPaid.AccountsToPaidMonthlyActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.Budget.BudgetActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.CashAndBanks.CashAndBanksMonthlyActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.CashFlow.CashFlowActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.FinanacialManagementActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ModuleQualificationActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 import es.dmoral.toasty.Toasty;
@@ -35,7 +37,7 @@ import static android.os.Environment.DIRECTORY_DOWNLOADS;
 
 public class NormativityActivity extends AppCompatActivity {
 
-    CardView btnTool0,btnTool1,btnTool2,btnTool3,btnTool4,btnTool5,btnTool6,btnTool00,btnTool7;
+    CardView btnTool0,btnTool1,btnTool2,btnTool3,btnTool4,btnTool5,btnTool6,btnTool00,btnTool7,btnTool8;
     String post_key;
     StorageReference mStorage;
     StorageReference ref;
@@ -56,6 +58,7 @@ public class NormativityActivity extends AppCompatActivity {
         btnTool6= findViewById(R.id.btnTool6);
         btnTool00 = findViewById(R.id.btnTool00);
         btnTool7 = findViewById(R.id.btnTool7);
+        btnTool8 = findViewById(R.id.btnTool8);
         mStorage = FirebaseStorage.getInstance().getReference();
 
         btnTool00.setOnClickListener(new View.OnClickListener() {
@@ -139,6 +142,15 @@ public class NormativityActivity extends AppCompatActivity {
                         Toast.makeText(NormativityActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
+            }
+        });
+        btnTool8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(NormativityActivity.this, ModuleQualificationActivity.class);
+                intent.putExtra("post_key", post_key);
+                intent.putExtra("path", "normativity");
+                startActivity(intent);
             }
         });
 

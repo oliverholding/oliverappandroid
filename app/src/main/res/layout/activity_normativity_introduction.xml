@@ -422,7 +422,7 @@
                             <TextView
                                 android:layout_margin="4dp"
                                 android:gravity="center"
-                                android:text="Aporrtes de cada socio. Se deben inscribir en Registros Públicos."
+                                android:text="Aportes de cada socio. Se deben inscribir en Registros Públicos."
                                 android:layout_width="match_parent"
                                 android:layout_weight="2"
                                 android:layout_height="0dp"/>
@@ -828,7 +828,7 @@
                             <TextView
                                 android:gravity="center_vertical"
                                 android:layout_margin="4dp"
-                                android:text="3. Los pagos son de acuerdo a porcentajes mensuales, que varían de 1.5% a 2.5% mensual, en base al total de ingresos y egerso mensuales."
+                                android:text="3. Los pagos son de acuerdo a porcentajes mensuales, que varían de 1.5% a 2.5% mensual, en base al total de ingresos y egreso mensuales."
                                 android:layout_width="match_parent"
                                 android:layout_weight="2"
                                 android:layout_height="0dp"/>

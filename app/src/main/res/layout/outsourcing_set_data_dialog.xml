@@ -28,7 +28,7 @@
                 android:layout_margin="8dp"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"
-                android:text="¿Del 0% al 100% qué tanto debes esperar para producti este producto?"
+                android:text="¿Del 0% al 100% qué tanto debes esperar para producir este producto?"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -46,7 +46,7 @@
                 android:layout_margin="8dp"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"
-                android:text="¿Del 0% al 100% qué tanto proceso extra debes realizar para producti este producto?"
+                android:text="¿Del 0% al 100% qué tanto proceso extra debes realizar para producir este producto?"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 

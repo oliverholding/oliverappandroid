@@ -16,11 +16,13 @@ import com.google.android.material.tabs.TabLayout;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BlancedScoreCard.AnnualOperativePlan.AnnualOperativePlanActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BlancedScoreCard.KeyIndex.KeyIndexActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.BlancedScoreCard.StrategicMap.StrategicMapActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CommercializationActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ModuleQualificationActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class BalancedScoreCardActivity extends AppCompatActivity {
 
-    CardView btnTool1,btnTool2,btnTool3;
+    CardView btnTool1,btnTool2,btnTool3,btnTool5;
     String post_key;
 
 
@@ -34,6 +36,7 @@ public class BalancedScoreCardActivity extends AppCompatActivity {
         btnTool1 = findViewById(R.id.btnTool1);
         btnTool2 = findViewById(R.id.btnTool2);
         btnTool3 = findViewById(R.id.btnTool3);
+        btnTool5 = findViewById(R.id.btnTool5);
 
         btnTool1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +59,15 @@ public class BalancedScoreCardActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(BalancedScoreCardActivity.this, AnnualOperativePlanActivity.class);
                 intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+        btnTool5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BalancedScoreCardActivity.this, ModuleQualificationActivity.class);
+                intent.putExtra("post_key", post_key);
+                intent.putExtra("path", "balanced_scorecard");
                 startActivity(intent);
             }
         });

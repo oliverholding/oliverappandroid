@@ -20,12 +20,13 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercializat
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CreditsAndTreasury.CreditAndTreasuryActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CustomerSupport.CustomerSuportActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.NewMatrix10.NewMatrix10Activity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ModuleQualificationActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.Companies.MyProductsActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class CommercializationActivity extends AppCompatActivity {
 
-    CardView btnTool1,btnTool3,btnTool4,btnTool0,btnTool01;
+    CardView btnTool1,btnTool3,btnTool4,btnTool0,btnTool01,btnTool5;
     String post_key;
 
     @Override
@@ -40,6 +41,7 @@ public class CommercializationActivity extends AppCompatActivity {
         btnTool3 = findViewById(R.id.btnTool3);
         btnTool4 = findViewById(R.id.btnTool4);
         btnTool01 = findViewById(R.id.btnTool01);
+        btnTool5 = findViewById(R.id.btnTool5);
 
         btnTool0.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +81,15 @@ public class CommercializationActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(CommercializationActivity.this, MyProductsActivity.class);
                 intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+        btnTool5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CommercializationActivity.this, ModuleQualificationActivity.class);
+                intent.putExtra("post_key", post_key);
+                intent.putExtra("path", "commercialization");
                 startActivity(intent);
             }
         });

@@ -44,10 +44,10 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class CareManagerActivity extends AppCompatActivity {
 
-    Fragment fragment1,fragment2,fragment3;
+    Fragment fragment1,fragment2,fragment3,fragment21;
     CircleImageView imgCompanyProfile;
     DatabaseReference myCompanyRef;
-    String company_image,company_social_reason, post_key,company_ruc;
+    String company_image,company_social_reason, post_key,company_ruc,abvo_store_state;
     TextView txtCompanyName,txtExp,txtRuc,txt1,txt2,txt3;
     View view1,view2,view3;
     BubbleSeekBar expBar;
@@ -75,10 +75,13 @@ public class CareManagerActivity extends AppCompatActivity {
 
         fragment1 = new CareManagerSumaryFragment();
         fragment2 = new CareToolsFragment();
+        fragment21 = new CareToolsHideFragment();
         fragment3 = new CareAchievementsFragment();
 
         getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment1).commit();
         view1.setBackgroundResource(R.color.orange1);
+
+        txt2.setEnabled(false);
 
 
         txt1.setOnClickListener(new View.OnClickListener() {
@@ -98,14 +101,28 @@ public class CareManagerActivity extends AppCompatActivity {
         txt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment,fragment2).commit();
-                txt2.setTextColor(getResources().getColor(R.color.orange1));
-                txt1.setTextColor(Color.GRAY);
-                txt3.setTextColor(Color.GRAY);
 
-                view2.setBackgroundResource(R.color.orange1);
-                view1.setBackgroundResource(0);
-                view3.setBackgroundResource(0);
+                if (abvo_store_state.equals("none")) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment, fragment21).commit();
+                    txt2.setTextColor(getResources().getColor(R.color.orange1));
+                    txt1.setTextColor(Color.GRAY);
+                    txt3.setTextColor(Color.GRAY);
+
+                    view2.setBackgroundResource(R.color.orange1);
+                    view1.setBackgroundResource(0);
+                    view3.setBackgroundResource(0);
+                } else {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment, fragment2).commit();
+                    txt2.setTextColor(getResources().getColor(R.color.orange1));
+                    txt1.setTextColor(Color.GRAY);
+                    txt3.setTextColor(Color.GRAY);
+
+                    view2.setBackgroundResource(R.color.orange1);
+                    view1.setBackgroundResource(0);
+                    view3.setBackgroundResource(0);
+                }
+
+
             }
         });
 
@@ -131,6 +148,19 @@ public class CareManagerActivity extends AppCompatActivity {
         imgCompanyProfile = findViewById(R.id.imgCompanyProfile);
         txtCompanyName = findViewById(R.id.txtCompanyName);
         txtRuc = findViewById(R.id.txtRuc);
+
+        myCompanyRef.child(post_key).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                abvo_store_state = dataSnapshot.child("abvo_store_state").getValue().toString();
+                txt2.setEnabled(true);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
         myCompanyRef.child(post_key).addValueEventListener(new ValueEventListener() {
             public void onDataChange(DataSnapshot dataSnapshot) {

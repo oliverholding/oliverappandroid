@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.CommercializationActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.AccountsNoPaid.AccountsNoPaidMonthlyActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.AccountsToPaid.AccountsToPaidMonthlyActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.Budget.BudgetActivity;
@@ -17,6 +18,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManag
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.FinancialStatements.FinancialStatementsActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.FixedAssets.FixedAssetsActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.FinancialManagement.RiskManagement.RiskManagementActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ModuleQualificationActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Simulators.CostPriceSimulator.CostPriceSimulatorActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Simulators.CostVolumeProfitAnalysys.CostVolumeProfitAnalysysActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Simulators.FinancialAppeceamentSimulator.FinancialAppeceamentSimulatorActivity;
@@ -31,7 +33,7 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class SimulatorsActivity extends AppCompatActivity {
 
-    CardView btnTool1,btnTool2,btnTool3,btnTool4,btnTool5,btnTool6,btnTool7,btnTool8,btnTool9,btnTool10;
+    CardView btnTool1,btnTool2,btnTool3,btnTool4,btnTool5,btnTool6,btnTool7,btnTool8,btnTool9,btnTool10,btnTool11;
     String post_key;
 
     @Override
@@ -51,6 +53,7 @@ public class SimulatorsActivity extends AppCompatActivity {
         btnTool8 = findViewById(R.id.btnTool8);
         btnTool9 = findViewById(R.id.btnTool9);
         btnTool10 = findViewById(R.id.btnTool10);
+        btnTool11 = findViewById(R.id.btnTool11);
 
         btnTool1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,6 +132,15 @@ public class SimulatorsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(SimulatorsActivity.this, ProjectSimulatorActivity.class);
                 intent.putExtra("post_key", post_key);
+                startActivity(intent);
+            }
+        });
+        btnTool11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SimulatorsActivity.this, ModuleQualificationActivity.class);
+                intent.putExtra("post_key", post_key);
+                intent.putExtra("path", "simulators");
                 startActivity(intent);
             }
         });
