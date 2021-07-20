@@ -182,6 +182,7 @@ public class PurchaseOrdersListActivity extends AppCompatActivity {
                                                     //String warehouse_destination_id = ds.child(" warehouse_destination_id").getValue().toString();
                                                     Map<String, Object> map = (Map<String, Object>) ds.getValue();
                                                     Object warehouse_destination_id = map.get("warehouse_destination_id");
+                                                    final Object item_code = map.get("item_code");
                                                     final Object item_quantity = map.get("item_quantity");
                                                     final Object item_image = map.get("item_image");
                                                     final Object item_measure = map.get("item_measure");
@@ -278,6 +279,7 @@ public class PurchaseOrdersListActivity extends AppCompatActivity {
 
                                                                 companyRef.child(post_key).child("Purchased Orders").child(postKey).child("purchase_payment_state").setValue("paid");
 
+                                                                companyRef.child(post_key).child("Warehouses").child(warehouse_destination_id_st).child("Products").child(ds.getKey()).child("product_code").setValue(item_code);
                                                                 companyRef.child(post_key).child("Warehouses").child(warehouse_destination_id_st).child("Products").child(ds.getKey()).child("product_stock").setValue(item_quantity);
                                                                 companyRef.child(post_key).child("Warehouses").child(warehouse_destination_id_st).child("Products").child(ds.getKey()).child("company_id").setValue(post_key);
                                                                 companyRef.child(post_key).child("Warehouses").child(warehouse_destination_id_st).child("Products").child(ds.getKey()).child("product_currency").setValue(item_currency_st);

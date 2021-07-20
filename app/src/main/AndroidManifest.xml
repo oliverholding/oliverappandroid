@@ -20,7 +20,8 @@
         android:roundIcon="@drawable/oliver_redondo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CareManager.ModuleQualificationActivity"></activity>
+        <activity android:name=".CareManager.CareLearning.VideoResourses.PdfViewerActivity"></activity>
+        <activity android:name=".CareManager.ModuleQualificationActivity" />
         <activity android:name=".CareManager.Commercialization.BillList.BillListActivity" />
         <activity android:name=".Companies.RegisterCompanyActivity" />
         <activity android:name=".CareManager.StrategicDirection.LeanCanvas.RealLeanCanvasActivity" />

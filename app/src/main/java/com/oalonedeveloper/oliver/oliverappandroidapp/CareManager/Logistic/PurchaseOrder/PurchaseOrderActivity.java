@@ -659,6 +659,7 @@ public class PurchaseOrderActivity extends AppCompatActivity {
                                     double total = quantity*price;
                                     String total_st = decimalFormat.format(total);
 
+                                    companyRef.child(post_key).child("Purchased Order Items").child(postKey).child("item_code").setValue(viewHolder.my_code);
                                     companyRef.child(post_key).child("Purchased Order Items").child(postKey).child("item_image").setValue(viewHolder.my_product_image);
                                     companyRef.child(post_key).child("Purchased Order Items").child(postKey).child("item_measure").setValue("quantity");
                                     companyRef.child(post_key).child("Purchased Order Items").child(postKey).child("item_currency").setValue("PEN");

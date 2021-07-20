@@ -154,15 +154,24 @@ public class WarehouseProductsFragment extends Fragment {
                 viewHolder.setProduct_price(model.getProduct_price());
                 viewHolder.setProduct_stock(model.getProduct_stock());
 
+                viewHolder.setIsRecyclable(false);
+
                 viewHolder.txtProductName.setText(viewHolder.my_product_name);
                 Picasso.with(getActivity()).load(viewHolder.my_product_image).fit().into(viewHolder.imgProduct);
                 viewHolder.txtWarehouseStock.setText(viewHolder.my_product_stock);
+                viewHolder.txtStoreStock.setText("0");
                 companyRef.child(post_key).child("My Products").child(postKey).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         if (dataSnapshot.hasChild("product_stock")) {
                             String product_stock = dataSnapshot.child("product_stock").getValue().toString();
                             viewHolder.txtStoreStock.setText(product_stock);
+                        } else {
+                            viewHolder.txtStoreStock.setText("0");
+                        }
+
+                        if (!dataSnapshot.exists()) {
+                            viewHolder.txtStoreStock.setText("0");
                         }
                     }
 
@@ -565,7 +574,7 @@ public class WarehouseProductsFragment extends Fragment {
                                                         companyRef.child(post_key).child("Warehouses").child(warehouse_id).child("Products").child(postKey).child("product_description").setValue(product_description);
                                                         companyRef.child(post_key).child("Warehouses").child(warehouse_id).child("Products").child(postKey).child("product_measure").setValue(product_measure);
                                                         companyRef.child(post_key).child("Warehouses").child(warehouse_id).child("Products").child(postKey).child("company_id").setValue(company_id);
-                                                        companyRef.child(post_key).child("Warehouses").child(warehouse_id).child("Products").child(postKey).child("code").setValue(code);
+                                                        companyRef.child(post_key).child("Warehouses").child(warehouse_id).child("Products").child(postKey).child("product_code").setValue(code);
                                                         companyRef.child(post_key).child("Warehouses").child(warehouse_id).child("Products").child(postKey).child("product_name").setValue(product_name);
                                                         companyRef.child(post_key).child("Warehouses").child(warehouse_id).child("Products").child(postKey).child("product_price").setValue(product_price);
                                                         companyRef.child(post_key).child("Warehouses").child(warehouse_id).child("Products").child(postKey).child("timestamp").setValue(timestamp);

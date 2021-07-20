@@ -130,6 +130,12 @@ public class SendToStoreFragment extends Fragment {
                         if (dataSnapshot.hasChild("product_stock")) {
                             String product_stock = dataSnapshot.child("product_stock").getValue().toString();
                             viewHolder.txtStoreStock.setText(product_stock);
+                        }else {
+                            viewHolder.txtStoreStock.setText("0");
+                        }
+
+                        if (!dataSnapshot.exists()) {
+                            viewHolder.txtStoreStock.setText("0");
                         }
                     }
 

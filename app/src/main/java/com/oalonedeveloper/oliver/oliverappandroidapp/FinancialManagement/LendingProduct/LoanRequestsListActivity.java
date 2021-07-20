@@ -72,8 +72,8 @@ public class LoanRequestsListActivity extends AppCompatActivity {
 
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setReverseLayout(false);
-        linearLayoutManager.setStackFromEnd(false);
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
         recyclerView.setLayoutManager(linearLayoutManager);
 
         Date date= new Date();
@@ -111,7 +111,7 @@ public class LoanRequestsListActivity extends AppCompatActivity {
 
     String request_id;
     private void showRequestLoan() {
-        Query query = financialInstitutionsRef.child(post_key).child("Loan Requests").orderByChild("customer_id").equalTo(currentUid);
+        Query query = financialInstitutionsRef.child(post_key).child("Loan Requests").orderByChild("timestamp");
         FirebaseRecyclerAdapter<RequestLoanModel, RequestsLoanViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<RequestLoanModel, RequestsLoanViewHolder>
                 (RequestLoanModel.class,R.layout.request_financial_product_item,RequestsLoanViewHolder.class,query) {
             @Override
@@ -132,6 +132,11 @@ public class LoanRequestsListActivity extends AppCompatActivity {
                 viewHolder.setRequest_year(model.getRequest_year());
                 viewHolder.setRequested_date(model.getRequested_date());
                 viewHolder.setRequested_time(model.getRequested_time());
+
+                if (!viewHolder.my_customer_id.equals(currentUid)){
+                    viewHolder.mView.setVisibility(View.GONE);
+                    viewHolder.mView.getLayoutParams().height = 0;
+                }
 
                 Picasso.with(LoanRequestsListActivity.this).load(viewHolder.my_product_img).fit().into(viewHolder.imgProduct);
                 viewHolder.txtProductName.setText("Producto: "+viewHolder.my_product_name);

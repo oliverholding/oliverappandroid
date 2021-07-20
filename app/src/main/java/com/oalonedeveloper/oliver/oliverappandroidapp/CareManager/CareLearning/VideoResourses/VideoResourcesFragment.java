@@ -2,10 +2,12 @@ package com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.CareLearning.
 
 import android.app.DownloadManager;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -28,6 +30,8 @@ import com.google.firebase.database.Query;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
+
+import java.io.File;
 
 import es.dmoral.toasty.Toasty;
 
@@ -94,6 +98,20 @@ public class VideoResourcesFragment extends Fragment {
                             @Override
                             public void onSuccess(Uri uri) {
                                 String url = uri.toString();
+                                Intent intent = new Intent(getActivity(),PdfViewerActivity.class);
+                                intent.putExtra("url",url);
+                                startActivity(intent);
+                            }
+                        });
+
+
+
+
+                        /*ref = mStorage.child("Video Resources").child(viewHolder.my_resource_doc_name);
+                        ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                            @Override
+                            public void onSuccess(Uri uri) {
+                                String url = uri.toString();
                                 downloadFile(getActivity(),viewHolder.my_resource_url,viewHolder.my_resource_extension,DIRECTORY_DOWNLOADS,url);
                             }
                         }).addOnFailureListener(new OnFailureListener() {
@@ -101,7 +119,7 @@ public class VideoResourcesFragment extends Fragment {
                             public void onFailure(@NonNull Exception e) {
                                 Toast.makeText(getActivity(), ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                             }
-                        });
+                        });*/
                     }
                 });
 

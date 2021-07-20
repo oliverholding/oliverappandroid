@@ -91,6 +91,19 @@ public class WarehouseActivity extends AppCompatActivity {
 
         txtWarehouseName = findViewById(R.id.txtWarehouseName);
 
+        companyRef.child(post_key).child("Warehouses").child(warehouse_id).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                warehouse_name = dataSnapshot.child("warehouse_name").getValue().toString();
+                txtWarehouseName.setText(warehouse_name.toUpperCase());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
         tab1 = findViewById(R.id.tab1);
         tab2 = findViewById(R.id.tab2);
 

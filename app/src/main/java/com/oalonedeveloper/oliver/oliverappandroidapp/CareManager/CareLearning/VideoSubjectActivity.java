@@ -35,6 +35,9 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.CareLearning.V
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.CareManagerSumaryFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.CareToolsFragment;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
 import es.dmoral.toasty.Toasty;
 
@@ -42,7 +45,7 @@ import static android.os.Environment.DIRECTORY_DOWNLOADS;
 
 public class VideoSubjectActivity extends AppCompatActivity {
 
-    VideoView video_view;
+    YouTubePlayerView video_view;
     StorageReference mStorage;
     StorageReference ref;
     Button btnDownload;
@@ -63,13 +66,15 @@ public class VideoSubjectActivity extends AppCompatActivity {
         btnDownload = findViewById(R.id.btnDownload);
 
         video_view = findViewById(R.id.video_view);
-        MediaController mediaController = new MediaController(this);
+        /*MediaController mediaController = new MediaController(this);
         video_view.setMediaController(mediaController);
-        mediaController.setAnchorView(video_view);
+        mediaController.setAnchorView(video_view);*/
         mStorage = FirebaseStorage.getInstance().getReference();
 
         video_id = getIntent().getExtras().getString("video_id");
         subject_id = getIntent().getExtras().getString("subject_id");
+
+        getLifecycle().addObserver(video_view);
 
         careRef = FirebaseDatabase.getInstance().getReference().child("Care Learning").child("Subjects");
 
@@ -170,9 +175,13 @@ public class VideoSubjectActivity extends AppCompatActivity {
                 video_name = dataSnapshot.child("video_name").getValue().toString();
                 video_url = dataSnapshot.child("video_url").getValue().toString();
 
-                Uri uri = Uri.parse(video_url);
-                video_view.setVideoURI(uri);
-                video_view.start();
+
+                video_view.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
+                    @Override
+                    public void onReady(@NonNull YouTubePlayer youTubePlayer) {
+                        youTubePlayer.loadVideo(video_url, 0);
+                    }
+                });
             }
 
             @Override
@@ -180,9 +189,6 @@ public class VideoSubjectActivity extends AppCompatActivity {
 
             }
         });
-
-
-
 
         btnDownload.setOnClickListener(new View.OnClickListener() {
             @Override
