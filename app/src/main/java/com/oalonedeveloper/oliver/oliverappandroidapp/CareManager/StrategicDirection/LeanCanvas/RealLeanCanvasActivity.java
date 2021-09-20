@@ -452,6 +452,26 @@ public class RealLeanCanvasActivity extends AppCompatActivity {
             imgCanva.setImageResource(R.drawable.ingresos);
         }
 
+        companyRef.child(post_key).child("Real Lean Canvas").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+
+                    if (dataSnapshot.hasChild(path)) {
+                        String path_ds = dataSnapshot.child(path).getValue().toString();
+                        edtAnswer.setText(path_ds);
+                    }
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
         btnFinish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

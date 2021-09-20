@@ -1592,7 +1592,7 @@ public class CreateInvoiceActivity extends AppCompatActivity {
 
                         CircleImageView imgProductDialog;
                         TextView txtProductName;
-                        final EditText edtQuantity;
+                        final EditText edtQuantity,edtPrice;
                         Button btnRegister;
                         final RelativeLayout rootLayout;
 
@@ -1602,6 +1602,7 @@ public class CreateInvoiceActivity extends AppCompatActivity {
                         edtQuantity = finance_method.findViewById(R.id.edtQuantity);
                         btnRegister = finance_method.findViewById(R.id.btnRegister);
                         rootLayout = finance_method.findViewById(R.id.rootLayout);
+                        edtPrice = finance_method.findViewById(R.id.edtPrice);
 
                         Picasso.with(CreateInvoiceActivity.this).load(viewHolder.my_product_image).fit().into(imgProductDialog);
                         txtProductName.setText("Cantidad para "+viewHolder.my_product_name);
@@ -1636,7 +1637,7 @@ public class CreateInvoiceActivity extends AppCompatActivity {
                                 else {
                                     //Calculate total:
                                     quantity_db = Double.parseDouble(edtQuantity.getText().toString());
-                                    double price = Double.parseDouble(viewHolder.my_product_price);
+                                    double price = Double.parseDouble(edtPrice.getText().toString());
 
                                     double total_db = quantity_db * price;
                                     final double total_round = Math.round(total_db * 100.0) / 100.0;
@@ -1648,7 +1649,7 @@ public class CreateInvoiceActivity extends AppCompatActivity {
                                     companyRef.child(post_key).child("Product Bill").child(postKey).child("measure").setValue("quantity");
                                     companyRef.child(post_key).child("Product Bill").child(postKey).child("code").setValue(viewHolder.my_code);
                                     companyRef.child(post_key).child("Product Bill").child(postKey).child("name").setValue(viewHolder.my_product_name);
-                                    companyRef.child(post_key).child("Product Bill").child(postKey).child("price").setValue(viewHolder.my_product_price);
+                                    companyRef.child(post_key).child("Product Bill").child(postKey).child("price").setValue(edtPrice.getText().toString());
                                     companyRef.child(post_key).child("Product Bill").child(postKey).child("discount").setValue("0.00");
                                     companyRef.child(post_key).child("Product Bill").child(postKey).child("total").setValue(total_st);
                                     companyRef.child(post_key).child("Product Bill").child(postKey).child("product_id").setValue(postKey);

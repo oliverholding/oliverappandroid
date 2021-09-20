@@ -64,6 +64,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
+            <EditText
+                android:id="@+id/edtPrice"
+                android:inputType="numberDecimal"
+                android:padding="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/edit_text_style"
+                android:hint="Precio..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
             <Button
                 android:id="@+id/btnRegister"
                 android:text="ESTABLECER"

@@ -40,6 +40,15 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"/>
 
+                    <ImageView
+                        android:id="@+id/btnDeleteProduct"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_margin="12dp"
+                        android:src="@drawable/tacho_basura"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"/>
+
                 </RelativeLayout>
 
 

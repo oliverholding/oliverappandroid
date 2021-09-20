@@ -12,12 +12,14 @@ import android.widget.RelativeLayout;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.hbb20.CountryCodePicker;
+import com.oalonedeveloper.oliver.oliverappandroidapp.EmailAuth.RegisterEmailActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.EmailAuth.SignInEmailActivity;
 
 public class PhoneAuthActivity extends AppCompatActivity {
 
     CountryCodePicker countryPhoneCodePicker;
     EditText edtPhoneNumber;
-    Button btnContinue;
+    Button btnContinue,btnEmailSignIn,btnRegisterSignIn;
     RelativeLayout rootLayout;
 
     @Override
@@ -29,6 +31,8 @@ public class PhoneAuthActivity extends AppCompatActivity {
         edtPhoneNumber = findViewById(R.id.edtPhoneNumber);
         btnContinue = findViewById(R.id.btnContinue);
         rootLayout = findViewById(R.id.rootLayout);
+        btnEmailSignIn = findViewById(R.id.btnEmailSignIn);
+        btnRegisterSignIn = findViewById(R.id.btnRegisterSignIn);
 
 
         btnContinue.setOnClickListener(new View.OnClickListener() {
@@ -42,6 +46,22 @@ public class PhoneAuthActivity extends AppCompatActivity {
                     intent.putExtra("phone_number",edtPhoneNumber.getText().toString());
                     startActivity(intent);
                 }
+            }
+        });
+
+        btnEmailSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PhoneAuthActivity.this, SignInEmailActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnRegisterSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PhoneAuthActivity.this, RegisterEmailActivity.class);
+                startActivity(intent);
             }
         });
     }

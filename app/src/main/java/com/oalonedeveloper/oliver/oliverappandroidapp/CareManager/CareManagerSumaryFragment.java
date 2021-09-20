@@ -161,7 +161,7 @@ public class CareManagerSumaryFragment extends Fragment {
 
                                 igv_taxes = (bills*0.18)-(purchase_total*0.18);
 
-                                total_outcomes = total_salary+purchase_total+igv_taxes;
+                                total_outcomes = total_salary+purchase_total;
                                 String total_outcomes_st = decimalFormat.format(total_outcomes);
                                 txtOutcomes.setText("S/ "+total_outcomes_st);
 

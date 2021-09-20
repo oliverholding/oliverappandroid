@@ -30,9 +30,9 @@ import es.dmoral.toasty.Toasty;
 public class ProductDatasheetDetailActivity extends AppCompatActivity {
 
     DatabaseReference companyRef;
-    String post_key,product_id,product_image,code,product_name,product_description,product_specifications,product_measurements,product_security_usage;
-    TextView txtProductName,txtProductCode,txtDescription,txtSpecifications,txtMeasurements,txtSecurityUsage;
-    ImageView imgProduct,btnEditDescription,btnSpecifications,btnMeasurements,btnSecurityUsage;
+    String post_key,product_id,product_image,code,product_name,product_description,product_specifications,product_measurements,product_security_usage,product_price;
+    TextView txtProductName,txtProductCode,txtDescription,txtSpecifications,txtMeasurements,txtSecurityUsage,txtProductPrice;
+    ImageView imgProduct,btnEditDescription,btnSpecifications,btnMeasurements,btnSecurityUsage,btnEditName,btnEditPrice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +55,9 @@ public class ProductDatasheetDetailActivity extends AppCompatActivity {
         btnMeasurements = findViewById(R.id.btnMeasurements);
         txtMeasurements = findViewById(R.id.txtMeasurements);
         txtSecurityUsage = findViewById(R.id.txtSecurityUsage);
+        btnEditName = findViewById(R.id.btnEditName);
+        btnEditPrice = findViewById(R.id.btnEditPrice);
+        txtProductPrice = findViewById(R.id.txtProductPrice);
 
         companyRef.child(post_key).child("My Products").child(product_id).addValueEventListener(new ValueEventListener() {
             @Override
@@ -62,6 +65,7 @@ public class ProductDatasheetDetailActivity extends AppCompatActivity {
                 product_image = dataSnapshot.child("product_image").getValue().toString();
                 code = dataSnapshot.child("code").getValue().toString();
                 product_name = dataSnapshot.child("product_name").getValue().toString();
+                product_price = dataSnapshot.child("product_price").getValue().toString();
 
                 if (dataSnapshot.hasChild("product_description")) {
                     product_description = dataSnapshot.child("product_description").getValue().toString();
@@ -94,6 +98,7 @@ public class ProductDatasheetDetailActivity extends AppCompatActivity {
                 Picasso.with(ProductDatasheetDetailActivity.this).load(product_image).fit().into(imgProduct);
 
                 txtProductName.setText(product_name);
+                txtProductPrice.setText("S/ "+product_price);
                 txtProductCode.setText("Código: "+code);
             }
 
@@ -142,6 +147,24 @@ public class ProductDatasheetDetailActivity extends AppCompatActivity {
 
             }
         });
+
+        btnEditName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String message = "Nombre";
+                String path = "product_name";
+                showDataDialog(message,path);
+            }
+        });
+
+        btnEditPrice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String message = "Precio";
+                String path = "product_price";
+                showDataDialog(message,path);
+            }
+        });
     }
 
     private void showDataDialog(String message, final String path) {
@@ -160,6 +183,20 @@ public class ProductDatasheetDetailActivity extends AppCompatActivity {
         edtInput = finance_method.findViewById(R.id.edtInput);
         btnRegister = finance_method.findViewById(R.id.btnRegister);
         rootLayout = finance_method.findViewById(R.id.rootLayout);
+
+        companyRef.child(post_key).child("My Products").child(product_id).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String path_ds = dataSnapshot.child(path).getValue().toString();
+
+                edtInput.setText(path_ds);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
         txtMessage.setText(message);
         edtInput.setHint(message);

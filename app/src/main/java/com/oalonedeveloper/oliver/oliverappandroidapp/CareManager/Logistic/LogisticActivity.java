@@ -32,11 +32,12 @@ import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Logistic.Purch
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Logistic.Storage.StorageActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Logistic.SupplierEvaluation.SupplierEvaluationActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.ModuleQualificationActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.Companies.MyProductsActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 public class LogisticActivity extends AppCompatActivity {
 
-    CardView btnTool1,btnTool2,btnTool3,btnTool4,btnTool5,btnTool6,btnTool7,btnTool8,btnTool9,btnTool0,btnTool10;
+    CardView btnTool1,btnTool2,btnTool3,btnTool4,btnTool5,btnTool6,btnTool7,btnTool8,btnTool9,btnTool0,btnTool10,btnTool01;
     String post_key;
 
     @Override
@@ -57,6 +58,7 @@ public class LogisticActivity extends AppCompatActivity {
         btnTool8 = findViewById(R.id.btnTool8);
         btnTool9 = findViewById(R.id.btnTool9);
         btnTool10 = findViewById(R.id.btnTool10);
+        btnTool01 = findViewById(R.id.btnTool01);
 
         btnTool0.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,6 +146,14 @@ public class LogisticActivity extends AppCompatActivity {
                 Intent intent = new Intent(LogisticActivity.this, ModuleQualificationActivity.class);
                 intent.putExtra("post_key", post_key);
                 intent.putExtra("path", "logistic");
+                startActivity(intent);
+            }
+        });
+        btnTool01.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LogisticActivity.this, MyProductsActivity.class);
+                intent.putExtra("post_key", post_key);
                 startActivity(intent);
             }
         });

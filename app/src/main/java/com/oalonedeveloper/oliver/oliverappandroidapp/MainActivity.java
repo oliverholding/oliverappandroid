@@ -28,6 +28,11 @@ public class MainActivity extends AppCompatActivity {
                         .putExtra("phone", FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber().isEmpty()));
                 finish();
             }
+            else if (!FirebaseAuth.getInstance().getCurrentUser().getEmail().isEmpty()) {
+                startActivity(new Intent(this, PinActivity.class)
+                        .putExtra("email", FirebaseAuth.getInstance().getCurrentUser().getEmail().isEmpty()));
+                finish();
+            }
         }
         else
         {

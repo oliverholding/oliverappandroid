@@ -104,6 +104,7 @@ public class MyProductsActivity extends AppCompatActivity {
 
         btnAddProduct = findViewById(R.id.btnAddProduct);
         image_verification = "";
+        downloadUrl = "http://oliver.com.pe/wp-content/uploads/2021/04/desarrollo_nuevo_producto.png";
 
         btnAddProduct.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -271,6 +272,14 @@ public class MyProductsActivity extends AppCompatActivity {
                     }
                 });
 
+                viewHolder.btnDeleteProduct.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        companyRef.child(post_key).child("My Products").child(postKey).removeValue();
+                        Toast.makeText(MyProductsActivity.this, "Producto Eliminado", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
             }
         };
         recyclerView.setAdapter(firebaseRecyclerAdapter);
@@ -401,7 +410,7 @@ public class MyProductsActivity extends AppCompatActivity {
     public static class CompanyProductsViewHolder extends RecyclerView.ViewHolder {
         View mView;
         String my_product_image,my_product_currency,my_product_description,my_product_measure,my_uid, my_code,my_product_name,my_product_price,my_product_stock;
-        ImageView imgProduct,btnProductDetail;
+        ImageView imgProduct,btnProductDetail,btnDeleteProduct;
         TextView txtProductName,txtProductPrice;
 
         public CompanyProductsViewHolder(@NonNull View itemView) {
@@ -412,6 +421,7 @@ public class MyProductsActivity extends AppCompatActivity {
             txtProductName = mView.findViewById(R.id.txtProductName);
             txtProductPrice = mView.findViewById(R.id.txtProductPrice);
             btnProductDetail = mView.findViewById(R.id.btnProductDetail);
+            btnDeleteProduct = mView.findViewById(R.id.btnDeleteProduct);
         }
         public void setProduct_image(String product_image) {
             my_product_image = product_image;

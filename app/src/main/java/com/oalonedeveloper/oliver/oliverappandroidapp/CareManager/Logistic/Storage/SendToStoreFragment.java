@@ -228,7 +228,7 @@ public class SendToStoreFragment extends Fragment {
                                                                 String product_description = dataSnapshot.child("product_description").getValue().toString();
                                                                 String product_measure = dataSnapshot.child("product_measure").getValue().toString();
                                                                 String company_id = dataSnapshot.child("company_id").getValue().toString();
-                                                                String code = dataSnapshot.child("code").getValue().toString();
+                                                                String code = dataSnapshot.child("product_code").getValue().toString();
                                                                 String product_name = dataSnapshot.child("product_name").getValue().toString();
                                                                 product_price = dataSnapshot.child("product_price").getValue().toString();
                                                                 String product_stock = dataSnapshot.child("product_stock").getValue().toString();

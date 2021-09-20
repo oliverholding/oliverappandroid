@@ -43,6 +43,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.hbb20.CountryCodePicker;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.BillsIssuing.CreateBillActivity;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Logistic.Storage.WarehousesModel;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Production.ProductionOrders.ProductionOrderProductDetailActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.Companies.ProductsModel;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
@@ -85,6 +86,7 @@ public class PurchaseOrderActivity extends AppCompatActivity {
     StorageReference userProfileImageRef;
     final static int Gallery_Pick = 2;
     RelativeLayout rootLayout;
+    RecyclerView recyclerView1;
 
     ArrayList<String> bthDay =new ArrayList<>();
     SpinnerDialog bthDayDialog;
@@ -121,7 +123,7 @@ public class PurchaseOrderActivity extends AppCompatActivity {
         txtExpirationDate = findViewById(R.id.txtExpirationDate);
 
         image_verification = "";
-        supplier_id = "";
+        supplier_id = "000000";
         downloadUrl = "https://oliver.com.pe/wp-content/uploads/2021/04/desarrollo_nuevo_producto.png";
 
         post_key = getIntent().getExtras().getString("post_key");
@@ -234,7 +236,9 @@ public class PurchaseOrderActivity extends AppCompatActivity {
                 if (supplier_id.equals("")) {
                     Snackbar.make(rootLayout,"Debes seleccionar primero al Proveedor", Snackbar.LENGTH_LONG).show();
                 } else {
-                    showAddProductDialog();
+
+                    showSelectorDialog();
+
                 }
 
             }
@@ -243,69 +247,248 @@ public class PurchaseOrderActivity extends AppCompatActivity {
         btnRegisterPurchaseOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Long tsLong = System.currentTimeMillis()/1000;
-                final String timestamp = tsLong.toString();
-                Calendar calForDate = Calendar.getInstance();
-                SimpleDateFormat currentDate = new SimpleDateFormat("dd-MM-yyyy");
-                String saveCurrentDate = currentDate.format(calForDate.getTime());
 
-                Calendar calForTime = Calendar.getInstance();
-                SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss");
-                String saveCurrentTime = currentTime.format(calForTime.getTime());
+                if (supplier_id.equals("")) {
+                    Snackbar.make(rootLayout, "Debes registrar al proveedor ", Snackbar.LENGTH_LONG).show();
+                } else {
+                    Long tsLong = System.currentTimeMillis()/1000;
+                    final String timestamp = tsLong.toString();
+                    Calendar calForDate = Calendar.getInstance();
+                    SimpleDateFormat currentDate = new SimpleDateFormat("dd-MM-yyyy");
+                    String saveCurrentDate = currentDate.format(calForDate.getTime());
 
-                Date date= new Date();
-                Calendar cal = Calendar.getInstance();
-                cal.setTime(date);
-                day = cal.get(Calendar.DAY_OF_MONTH);
-                month = cal.get(Calendar.MONTH)+1;
-                year = cal.get(Calendar.YEAR);
+                    Calendar calForTime = Calendar.getInstance();
+                    SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss");
+                    String saveCurrentTime = currentTime.format(calForTime.getTime());
 
-                companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("purchase_order_id").setValue(timestamp);
-                companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("purchase_order_state").setValue("pending");
-                companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("purchase_order_supplier_id").setValue(supplier_id);
-                companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("purchase_order_destination_address").setValue(address_value);
-                companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("purchase_order_sales_conditions").setValue(sales_conditions_value);
-                companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("purchase_order_total_amount").setValue(total_amount_st);
-                companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("timestamp").setValue(ServerValue.TIMESTAMP);
-                companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("operation_date").setValue(saveCurrentDate);
-                companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("operation_time").setValue(saveCurrentTime);
-                companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("operation_day").setValue(day+"");
-                companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("operation_month").setValue(month+"");
-                companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("operation_year").setValue(year+"");
-                companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("expiration_day").setValue(expiration_day);
-                companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("expiration_month").setValue(expiration_month);
-                companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("expiration_year").setValue(expiration_year);
-                companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("purchase_payment_state").setValue("no_paid");
-                companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("purchase_order_currency").setValue("PEN");
+                    Date date= new Date();
+                    Calendar cal = Calendar.getInstance();
+                    cal.setTime(date);
+                    day = cal.get(Calendar.DAY_OF_MONTH);
+                    month = cal.get(Calendar.MONTH)+1;
+                    year = cal.get(Calendar.YEAR);
+
+                    companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("purchase_order_id").setValue(timestamp);
+                    companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("purchase_order_state").setValue("pending");
+                    companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("purchase_order_supplier_id").setValue(supplier_id);
+                    companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("purchase_order_destination_address").setValue(address_value);
+                    companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("purchase_order_sales_conditions").setValue(sales_conditions_value);
+                    companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("purchase_order_total_amount").setValue(total_amount_st);
+                    companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("timestamp").setValue(ServerValue.TIMESTAMP);
+                    companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("operation_date").setValue(saveCurrentDate);
+                    companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("operation_time").setValue(saveCurrentTime);
+                    companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("operation_day").setValue(day+"");
+                    companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("operation_month").setValue(month+"");
+                    companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("operation_year").setValue(year+"");
+                    companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("expiration_day").setValue(expiration_day);
+                    companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("expiration_month").setValue(expiration_month);
+                    companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("expiration_year").setValue(expiration_year);
+                    companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("purchase_payment_state").setValue("no_paid");
+                    companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("purchase_order_currency").setValue("PEN");
 
 
-                companyRef.child(post_key).child("Purchased Order Items").addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("Items").setValue(dataSnapshot.getValue(), new DatabaseReference.CompletionListener() {
-                            @Override
-                            public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
-                                if (databaseError != null) {
-                                    Toast.makeText(PurchaseOrderActivity.this, "Hubo un Error", Toast.LENGTH_SHORT).show();
-                                } else {
-                                    companyRef.child(post_key).child("Purchased Order Items").removeValue();
-                                    Intent intent = new Intent(PurchaseOrderActivity.this, PurchaseOrdersListActivity.class);
-                                    intent.putExtra("post_key",post_key);
-                                    startActivity(intent);
-                                    finish();
+                    companyRef.child(post_key).child("Purchased Order Items").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            companyRef.child(post_key).child("Purchased Orders").child(timestamp).child("Items").setValue(dataSnapshot.getValue(), new DatabaseReference.CompletionListener() {
+                                @Override
+                                public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                                    if (databaseError != null) {
+                                        Toast.makeText(PurchaseOrderActivity.this, "Hubo un Error", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        companyRef.child(post_key).child("Purchased Order Items").removeValue();
+                                        Intent intent = new Intent(PurchaseOrderActivity.this, PurchaseOrdersListActivity.class);
+                                        intent.putExtra("post_key",post_key);
+                                        startActivity(intent);
+                                        finish();
+                                    }
                                 }
-                            }
-                        });
-                    }
+                            });
+                        }
 
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
 
-                    }
-                });
+                        }
+                    });
 
+                }
             }
         });
+    }
+
+    private void showSelectorDialog() {
+        final AlertDialog dialog = new AlertDialog.Builder(this).create();
+
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View finance_method = inflater.inflate(R.layout.purchase_order_item_selection,null);
+
+        Button btnPurchaseList,btnWarehouses;
+
+        btnPurchaseList = finance_method.findViewById(R.id.btnPurchaseList);
+        btnWarehouses = finance_method.findViewById(R.id.btnWarehouses);
+
+        btnPurchaseList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showAddProductDialog();
+                dialog.dismiss();
+            }
+        });
+
+        btnWarehouses.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showWarehouselist();
+            }
+        });
+
+        dialog.setView(finance_method);
+        dialog.show();
+
+    }
+
+    private void showWarehouselist() {
+        final AlertDialog dialog = new AlertDialog.Builder(this).create();
+
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View finance_method = inflater.inflate(R.layout.purchase_order_list_warehouses,null);
+
+        recyclerView1 = finance_method.findViewById(R.id.recyclerView1);
+
+        recyclerView1.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setReverseLayout(false);
+        linearLayoutManager.setStackFromEnd(false);
+        recyclerView1.setLayoutManager(linearLayoutManager);
+
+        showWareHouses();
+
+
+        dialog.setView(finance_method);
+        dialog.show();
+    }
+
+    private void showWareHouses() {
+        Query query = companyRef.child(post_key).child("Warehouses").orderByChild("timestamp");
+        FirebaseRecyclerAdapter<WarehousesModel, PurchaseOrdersListActivity.WarehousesViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<WarehousesModel, PurchaseOrdersListActivity.WarehousesViewHolder>
+                (WarehousesModel.class,R.layout.warehouse_item, PurchaseOrdersListActivity.WarehousesViewHolder.class,query) {
+            @Override
+            protected void populateViewHolder(PurchaseOrdersListActivity.WarehousesViewHolder viewHolder, WarehousesModel model1, int position2) {
+                final String postKey = getRef(position2).getKey();
+                viewHolder.setWarehouse_destination(model1.getWarehouse_destination());
+                viewHolder.setWarehouse_name(model1.getWarehouse_name());
+
+                viewHolder.txtWarehouseName.setText(viewHolder.ware_name);
+
+                if (viewHolder.ware_destiny.equals("products")) {
+                    viewHolder.txtWarehouseDestination.setText("Destino: Productos Terminados");
+                }
+                if (viewHolder.ware_destiny.equals("materials")) {
+                    viewHolder.txtWarehouseDestination.setText("Destino: Materiales e Insumos");
+                }
+
+                viewHolder.btnManageWarehouse.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Query query = companyRef.child(post_key).child("Warehouses").child(postKey).child("Products");
+                        FirebaseRecyclerAdapter<ProductsModel, CompanyProductsViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<ProductsModel, CompanyProductsViewHolder>
+                                (ProductsModel.class,R.layout.product_bill_item, CompanyProductsViewHolder.class,query) {
+                            @Override
+                            protected void populateViewHolder(final CompanyProductsViewHolder viewHolder, ProductsModel model, int position) {
+                                final String postKey = getRef(position).getKey();
+                                viewHolder.setProduct_image(model.getProduct_image());
+                                viewHolder.setProduct_currency(model.getProduct_currency());
+                                viewHolder.setProduct_description(model.getProduct_description());
+                                viewHolder.setProduct_measure(model.getProduct_measure());
+                                viewHolder.setUid(model.getUid());
+                                viewHolder.setCode(model.getCode());
+                                viewHolder.setProduct_name(model.getProduct_name());
+                                viewHolder.setProduct_price(model.getProduct_price());
+                                viewHolder.setProduct_stock(model.getProduct_stock());
+
+                                viewHolder.txtProductName.setText(viewHolder.my_product_name);
+                                viewHolder.txtProductPrice.setText("S/ "+viewHolder.my_product_price);
+                                Picasso.with(PurchaseOrderActivity.this).load(viewHolder.my_product_image).fit().into(viewHolder.imgProduct);
+
+                                viewHolder.mView.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        final AlertDialog dialog = new AlertDialog.Builder(PurchaseOrderActivity.this).create();
+
+                                        LayoutInflater inflater = LayoutInflater.from(PurchaseOrderActivity.this);
+                                        View finance_method = inflater.inflate(R.layout.set_quantity_price_item_purchase_dialog,null);
+
+                                        CircleImageView imgProduct;
+                                        TextView txtProductName,txtMessage;
+                                        final EditText edtQuantity,edtPrice;
+                                        Button btnRegister;
+                                        final RelativeLayout rootLayout;
+
+                                        imgProduct = finance_method.findViewById(R.id.imgProduct);
+                                        txtProductName = finance_method.findViewById(R.id.txtProductName);
+                                        txtMessage = finance_method.findViewById(R.id.txtMessage);
+                                        edtQuantity = finance_method.findViewById(R.id.edtQuantity);
+                                        edtPrice = finance_method.findViewById(R.id.edtPrice);
+                                        btnRegister = finance_method.findViewById(R.id.btnRegister);
+                                        rootLayout = finance_method.findViewById(R.id.rootLayout);
+
+                                        Picasso.with(PurchaseOrderActivity.this).load(viewHolder.my_product_image).fit().into(imgProduct);
+                                        txtProductName.setText(viewHolder.my_product_name);
+                                        txtMessage.setText("Ingresa la cantidad a comprar de "+viewHolder.my_product_name+" y su precio actual");
+                                        edtPrice.setText(viewHolder.my_product_price);
+
+
+                                        btnRegister.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                if (TextUtils.isEmpty(edtPrice.getText().toString())) {
+                                                    Snackbar.make(rootLayout,"Debes registrar el precio de "+viewHolder.my_product_name,Snackbar.LENGTH_LONG);
+                                                } else if (TextUtils.isEmpty(edtQuantity.getText().toString())) {
+                                                    Snackbar.make(rootLayout, "Debes registrar la cantidad de " + viewHolder.my_product_name, Snackbar.LENGTH_LONG);
+                                                } else {
+                                                    Long tsLong = System.currentTimeMillis()/1000;
+                                                    final String timestamp = tsLong.toString();
+
+                                                    double quantity = Double.parseDouble(edtQuantity.getText().toString());
+                                                    double price = Double.parseDouble(edtPrice.getText().toString());
+                                                    double total = quantity*price;
+                                                    String total_st = decimalFormat.format(total);
+
+                                                    companyRef.child(post_key).child("Purchased Order Items").child(postKey).child("item_code").setValue(viewHolder.my_code);
+                                                    companyRef.child(post_key).child("Purchased Order Items").child(postKey).child("item_image").setValue(viewHolder.my_product_image);
+                                                    companyRef.child(post_key).child("Purchased Order Items").child(postKey).child("item_measure").setValue("quantity");
+                                                    companyRef.child(post_key).child("Purchased Order Items").child(postKey).child("item_currency").setValue("PEN");
+                                                    companyRef.child(post_key).child("Purchased Order Items").child(postKey).child("item_description").setValue(viewHolder.my_product_description);
+                                                    companyRef.child(post_key).child("Purchased Order Items").child(postKey).child("item_name").setValue(viewHolder.my_product_name);
+                                                    companyRef.child(post_key).child("Purchased Order Items").child(postKey).child("item_price").setValue(edtPrice.getText().toString());
+                                                    companyRef.child(post_key).child("Purchased Order Items").child(postKey).child("item_quantity").setValue(edtQuantity.getText().toString());
+                                                    companyRef.child(post_key).child("Purchased Order Items").child(postKey).child("item_total").setValue(total_st);
+                                                    companyRef.child(post_key).child("Purchased Order Items").child(postKey).child("timestamp").setValue(ServerValue.TIMESTAMP);
+
+                                                    companyRef.child(post_key).child("Purchased Items").child(postKey).child("product_price").setValue(edtPrice.getText().toString());
+
+                                                    companyRef.child(post_key).child("Purchased Items").child(postKey).child("Suppliers").child(supplier_id).child("supplier_id").setValue(supplier_id);
+                                                    companyRef.child(post_key).child("Purchased Items").child(postKey).child("Suppliers").child(supplier_id).child("Prices").child(year+"").child(year+""+month).child("price").setValue(edtPrice.getText().toString());
+
+                                                    Toasty.success(PurchaseOrderActivity.this, viewHolder.my_product_name+ "Registrado", Toast.LENGTH_LONG).show();
+                                                    dialog.dismiss();
+                                                }
+                                            }
+                                        });
+
+                                        dialog.setView(finance_method);
+                                        dialog.show();
+                                    }
+                                });
+                            }
+                        };
+                        recyclerView1.setAdapter(firebaseRecyclerAdapter);
+                    }
+                });
+            }
+        };
+        recyclerView1.setAdapter(firebaseRecyclerAdapter);
     }
 
     private void showExpirationDateDialog() {
@@ -646,7 +829,7 @@ public class PurchaseOrderActivity extends AppCompatActivity {
                         btnRegister.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                if (TextUtils.isEmpty(edtPrice.getText().toString())) {
+                                 if (TextUtils.isEmpty(edtPrice.getText().toString())) {
                                     Snackbar.make(rootLayout,"Debes registrar el precio de "+viewHolder.my_product_name,Snackbar.LENGTH_LONG);
                                 } else if (TextUtils.isEmpty(edtQuantity.getText().toString())) {
                                     Snackbar.make(rootLayout, "Debes registrar la cantidad de " + viewHolder.my_product_name, Snackbar.LENGTH_LONG);
@@ -1120,6 +1303,32 @@ public class PurchaseOrderActivity extends AppCompatActivity {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    public static class WarehousesViewHolder extends RecyclerView.ViewHolder {
+
+        View mView;
+        String ware_name,ware_destiny;
+        TextView txtWarehouseName,txtWarehouseDestination,btnManageWarehouse;
+
+        public WarehousesViewHolder(@NonNull View itemView) {
+            super(itemView);
+            mView = itemView;
+
+            txtWarehouseName = mView.findViewById(R.id.txtWarehouseName);
+            txtWarehouseDestination = mView.findViewById(R.id.txtWarehouseDestination);
+            btnManageWarehouse = mView.findViewById(R.id.btnManageWarehouse);
+
+            btnManageWarehouse.setText("SELECCIONAR");
+        }
+
+        public void setWarehouse_name(String warehouse_name) {
+            ware_name = warehouse_name;
+        }
+
+        public void setWarehouse_destination(String warehouse_destination) {
+            ware_destiny = warehouse_destination;
         }
     }
 }
