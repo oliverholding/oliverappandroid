@@ -126,8 +126,13 @@ public class PurchaseOrdersListActivity extends AppCompatActivity {
                     companyRef.child(post_key).child("My Suppliers").child(viewHolder.my_purchase_order_supplier_id).addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-                            String supplier_name = dataSnapshot.child("supplier_name").getValue().toString();
-                            viewHolder.txtSupplier.setText(supplier_name);
+                            if (dataSnapshot.hasChild("supplier_name")) {
+                                String supplier_name = dataSnapshot.child("supplier_name").getValue().toString();
+                                viewHolder.txtSupplier.setText(supplier_name);
+                            } else {
+                                viewHolder.txtSupplier.setText("Desconocido");
+                            }
+
                         }
 
                         @Override
@@ -146,11 +151,21 @@ public class PurchaseOrdersListActivity extends AppCompatActivity {
                         View finance_method = inflater.inflate(R.layout.purchase_state_options_dialog,null);
 
                         ImageButton btnReady,btnReturned,btnCancel,btnRejected;
+                        Button btnDelte;
 
                         btnReady = finance_method.findViewById(R.id.btnReady);
                         btnReturned = finance_method.findViewById(R.id.btnReturned);
                         btnCancel = finance_method.findViewById(R.id.btnCancel);
                         btnRejected = finance_method.findViewById(R.id.btnRejected);
+                        btnDelte = finance_method.findViewById(R.id.btnDelte);
+
+                        btnDelte.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                companyRef.child(post_key).child("Purchased Orders").child(postKey).removeValue();
+                                dialog.dismiss();
+                            }
+                        });
 
                         purchase_order_id = postKey;
 

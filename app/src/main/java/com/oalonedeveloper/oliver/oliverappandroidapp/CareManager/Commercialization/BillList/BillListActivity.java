@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -18,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Commercialization.BillsIssuing.MyBillsModel;
+import com.oalonedeveloper.oliver.oliverappandroidapp.CareManager.Logistic.PurchaseOrder.PurchaseOrdersListActivity;
 import com.oalonedeveloper.oliver.oliverappandroidapp.R;
 
 import java.text.ParseException;
@@ -78,30 +82,33 @@ public class BillListActivity extends AppCompatActivity {
                 companyRef.child(post_key).child("My Bills").child(postKey).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        String expiration_day = dataSnapshot.child("expiration_day").getValue().toString();
-                        String expiration_month = dataSnapshot.child("expiration_month").getValue().toString();
-                        String expiration_year = dataSnapshot.child("expiration_year").getValue().toString();
-                        String state = dataSnapshot.child("state").getValue().toString();
+                        if (dataSnapshot.exists()) {
+                            String expiration_day = dataSnapshot.child("expiration_day").getValue().toString();
+                            String expiration_month = dataSnapshot.child("expiration_month").getValue().toString();
+                            String expiration_year = dataSnapshot.child("expiration_year").getValue().toString();
+                            String state = dataSnapshot.child("state").getValue().toString();
 
-                        SimpleDateFormat myFormat = new SimpleDateFormat("dd MM yyyy");
-                        String inputString1 = day+" "+month+" "+year;
-                        String inputString2 = expiration_day+" "+expiration_month+" "+expiration_year;
+                            SimpleDateFormat myFormat = new SimpleDateFormat("dd MM yyyy");
+                            String inputString1 = day+" "+month+" "+year;
+                            String inputString2 = expiration_day+" "+expiration_month+" "+expiration_year;
 
-                        try {
-                            Date date1 = myFormat.parse(inputString1);
-                            Date date2 = myFormat.parse(inputString2);
-                            diff = date2.getTime() - date1.getTime();
+                            try {
+                                Date date1 = myFormat.parse(inputString1);
+                                Date date2 = myFormat.parse(inputString2);
+                                diff = date2.getTime() - date1.getTime();
 
-                            expiration_days_ago = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
-                            //Toast.makeText(BillsIssuingActivity.this, "EXPIRED "+expiration_days_ago, Toast.LENGTH_SHORT).show();
+                                expiration_days_ago = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+                                //Toast.makeText(BillsIssuingActivity.this, "EXPIRED "+expiration_days_ago, Toast.LENGTH_SHORT).show();
 
-                            if (diff < 0 && state.equals("no_paid"))  {
-                                companyRef.child(post_key).child("My Bills").child(postKey).child("state").setValue("expired");
+                                if (diff < 0 && state.equals("no_paid"))  {
+                                    companyRef.child(post_key).child("My Bills").child(postKey).child("state").setValue("expired");
+                                }
+
+                            } catch (ParseException e) {
+                                e.printStackTrace();
                             }
-
-                        } catch (ParseException e) {
-                            e.printStackTrace();
                         }
+
                     }
 
                     @Override
@@ -131,6 +138,41 @@ public class BillListActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         companyRef.child(post_key).child("My Bills").child(postKey).child("state").setValue("paid");
+                    }
+                });
+
+                viewHolder.mView.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        final AlertDialog dialog = new AlertDialog.Builder(BillListActivity.this).create();
+
+                        LayoutInflater inflater = LayoutInflater.from(BillListActivity.this);
+                        View finance_method = inflater.inflate(R.layout.delete_bill_dialog,null);
+
+                        Button btnDelte,btSkip;
+
+                        btnDelte = finance_method.findViewById(R.id.btnDelte);
+                        btSkip = finance_method.findViewById(R.id.btSkip);
+
+                        btnDelte.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                companyRef.child(post_key).child("My Bills").child(postKey).removeValue();
+                                dialog.dismiss();
+                            }
+                        });
+
+                        btSkip.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                dialog.dismiss();
+                            }
+                        });
+
+                        dialog.setView(finance_method);
+                        dialog.show();
+
+                        return false;
                     }
                 });
 

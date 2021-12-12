@@ -60,11 +60,6 @@ public class PinActivity extends AppCompatActivity {
         userRef = FirebaseDatabase.getInstance().getReference().child("Users");
 
 
-        int date_time_checker = android.provider.Settings.Global.getInt(getContentResolver(), android.provider.Settings.Global.AUTO_TIME,0);
-
-        if (date_time_checker == 0) {
-            showDateErrorDialog();
-        }
 
         userRef.child(currentUserID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -83,10 +78,6 @@ public class PinActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                     loadingBar.dismiss();
-                }
-
-                if (pin_attempts >= 3) {
-                    showRestrictionDialog();
                 }
             }
 
@@ -127,27 +118,5 @@ public class PinActivity extends AppCompatActivity {
 
     }
 
-    private void showRestrictionDialog() {
-        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-        dialog.setCancelable(false);
 
-        LayoutInflater inflater = LayoutInflater.from(this);
-        View finance_method = inflater.inflate(R.layout.pin_restriction_dialog,null);
-
-
-        dialog.setView(finance_method);
-        dialog.show();
-    }
-
-    private void showDateErrorDialog() {
-        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-        dialog.setCancelable(false);
-
-        LayoutInflater inflater = LayoutInflater.from(this);
-        View finance_method = inflater.inflate(R.layout.date_timte_auto_no_active_dialog,null);
-
-
-        dialog.setView(finance_method);
-        dialog.show();
-    }
 }

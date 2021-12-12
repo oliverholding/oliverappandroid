@@ -46,7 +46,7 @@ public class ShowCompaniesFragment extends Fragment {
         btnAddCompany = view.findViewById(R.id.btnAddCompany);
 
         mAuth = FirebaseAuth.getInstance();
-        currentUid = mAuth.getCurrentUser().getUid();
+        currentUid =  mAuth.getCurrentUser().getUid();
 
         companyRef = FirebaseDatabase.getInstance().getReference().child("My Companies");
 

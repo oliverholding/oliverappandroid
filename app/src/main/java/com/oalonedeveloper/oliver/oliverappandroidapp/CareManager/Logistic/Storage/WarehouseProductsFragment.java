@@ -278,7 +278,7 @@ public class WarehouseProductsFragment extends Fragment {
                             hashMap.put("product_description","");
                             hashMap.put("product_measure","quantity");
                             hashMap.put("company_id",post_key);
-                            hashMap.put("code",day+""+month+""+year+""+current_time);
+                            hashMap.put("product_code",day+""+month+""+year+""+current_time);
                             hashMap.put("product_name",edtProductName.getText().toString().toUpperCase());
                             hashMap.put("product_price",edtPrice.getText().toString());
                             hashMap.put("product_stock",edtStock.getText().toString());

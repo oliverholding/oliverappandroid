@@ -123,4 +123,13 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/btnDelte"
+        android:text="ELIMINAR ESTA ÓRDEN DE COMPRA"
+        android:textColor="@android:color/white"
+        android:background="@drawable/orange_button_rectangle_ripple"
+        android:layout_margin="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
 </LinearLayout>

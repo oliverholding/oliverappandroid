@@ -229,10 +229,6 @@ public class DataSumaryFragment extends Fragment {
                                         long docs_count = dataSnapshot.getChildrenCount();
 
                                         if (docs_count >= 2) {
-                                            showDocumentExistenceDialog();
-                                            imgTwo.setImageResource(R.drawable.error);
-                                            txtPersonalData.setText("El documento ha sido registrado por otro usuario");
-                                            txtPersonalData.setTextColor(Color.RED);
                                             dni_exist = "true";
                                         } else if (docs_count == 1) {
                                             dni_exist = "false";
@@ -393,10 +389,6 @@ public class DataSumaryFragment extends Fragment {
                 }
                 else if (personal_data_verification.equals("false")) {
                     Snackbar.make(rootLayout, "Debes completar tu información personal", Snackbar.LENGTH_LONG).show();
-                    return;
-                }
-                else if (dni_exist.equals("true")) {
-                    Snackbar.make(rootLayout, "El número de documento registrado ya está siendo usado por otro usario de Oliver Bank", Snackbar.LENGTH_LONG).show();
                     return;
                 }
                 else if (contact_data_verification.equals("false")) {
@@ -573,49 +565,6 @@ public class DataSumaryFragment extends Fragment {
             e.printStackTrace();
         }
     }
-
-    private void showDocumentExistenceDialog() {
-        final AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());
-
-        LayoutInflater inflater = LayoutInflater.from(getActivity());
-        final View add_bank_account = inflater.inflate(R.layout.document_non_existence_dialog,null);
-
-        TextView txtDocMessage;
-        Button btnReport;
-
-        txtDocMessage = add_bank_account.findViewById(R.id.txtDocMessage);
-        btnReport = add_bank_account.findViewById(R.id.btnReport);
-
-        txtDocMessage.setText("EL DOCUMENTO "+document_number+" HA SIDO REGISTRADO POR OTRO USUARIO DE OLIVER BANK");
-
-        btnReport.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                olbk_phone_number = "51947625082";
-
-                boolean installed = appInstalledOrNot("com.whatsapp");
-                if (installed) {
-                    String message = "Hola, deseo reportar que el número de documento "+document_number+ " me pertenece y está siendo usado por otro usuario";
-                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse("http://api.whatsapp.com/send?phone=" + olbk_phone_number + "&text=" + message));
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(getActivity(), "No tienes instalado WhatsApp", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-        dialog.setPositiveButton("Cerrar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-
-            }
-        });
-
-        dialog.setView(add_bank_account);
-        dialog.show();
-    }
-
 
     private void generateQrCode() {
         inputValue = currentUserID;

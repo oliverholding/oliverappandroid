@@ -3,16 +3,28 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/activity_bill_list.xml" value="0.35052083333333334" />
         <entry key="app/src/main/res/layout/activity_commercialization.xml" value="0.35052083333333334" />
         <entry key="app/src/main/res/layout/activity_lean_canvas.xml" value="0.35052083333333334" />
         <entry key="app/src/main/res/layout/activity_logistic.xml" value="0.35052083333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.35052083333333334" />
+        <entry key="app/src/main/res/layout/activity_my_companies.xml" value="0.35052083333333334" />
         <entry key="app/src/main/res/layout/activity_phone_auth.xml" value="0.35052083333333334" />
+        <entry key="app/src/main/res/layout/activity_purchase_orders_list.xml" value="0.35052083333333334" />
         <entry key="app/src/main/res/layout/activity_register_email.xml" value="0.33645833333333336" />
         <entry key="app/src/main/res/layout/activity_sign_in_email.xml" value="0.35052083333333334" />
         <entry key="app/src/main/res/layout/add_new_product_dialog.xml" value="0.35052083333333334" />
+        <entry key="app/src/main/res/layout/add_supplier_dialog.xml" value="0.35052083333333334" />
+        <entry key="app/src/main/res/layout/customer_ranking_item.xml" value="0.35052083333333334" />
+        <entry key="app/src/main/res/layout/delete_bill_dialog.xml" value="0.35052083333333334" />
         <entry key="app/src/main/res/layout/fragment_care_tools.xml" value="0.35052083333333334" />
+        <entry key="app/src/main/res/layout/fragment_customer_ranking.xml" value="0.35052083333333334" />
+        <entry key="app/src/main/res/layout/fragment_graphics.xml" value="0.35052083333333334" />
+        <entry key="app/src/main/res/layout/fragment_product_ranking.xml" value="0.35052083333333334" />
+        <entry key="app/src/main/res/layout/fragment_register_data3.xml" value="0.33061594202898553" />
         <entry key="app/src/main/res/layout/my_product_item.xml" value="0.2558876811594203" />
+        <entry key="app/src/main/res/layout/product_ranking_item.xml" value="0.35052083333333334" />
+        <entry key="app/src/main/res/layout/purchase_state_options_dialog.xml" value="0.35052083333333334" />
         <entry key="app/src/main/res/layout/set_quantity_dialog.xml" value="0.24954710144927536" />
       </map>
     </option>
